@@ -1,6 +1,6 @@
-package com.hearlers.gateway.presentation.rest.auth;
+package com.hearlers.gateway.presentations.rest.auth;
 
-import com.hearlers.gateway.application.user.service.UserService;
+import com.hearlers.gateway.applications.users.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

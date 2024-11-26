@@ -1,4 +1,4 @@
-package com.hearlers.gateway.application.user.usecase.dto;
+package com.hearlers.gateway.applications.users.useCases.GetKakaoAccessTokenUseCase.dto;
 
 
 import lombok.Getter;
