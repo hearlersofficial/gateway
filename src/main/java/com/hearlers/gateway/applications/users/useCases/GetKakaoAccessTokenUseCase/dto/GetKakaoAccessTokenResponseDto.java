@@ -1,15 +1,18 @@
 package com.hearlers.gateway.applications.users.useCases.GetKakaoAccessTokenUseCase.dto;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 import lombok.ToString;
 
 @Getter
 @ToString
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class GetKakaoAccessTokenResponseDto {
-    private String token_type;
-    private String access_token;
-    private int expires_in;
-    private String refresh_token;
-    private int refresh_token_expires_in;
+    private String tokenType;
+    private String accessToken;
+    private int expiresIn;
+    private String refreshToken;
+    private int refreshTokenExpiresIn;
     private String scope;
 }

@@ -1,17 +1,20 @@
 package com.hearlers.gateway.presentations.rest.auth.dto;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.hearlers.gateway.presentations.rest.auth.enums.Gender;
 import com.hearlers.gateway.presentations.rest.auth.enums.Mbti;
 import java.time.Instant;
 
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class UserProfile {
-    private String profile_image;
-    private String phone_number;
+    private String profileImage;
+    private String phoneNumber;
     private Gender gender;
     private Instant birthday;
     private String introduction;
     private Mbti mbti;
-    private Instant created_at;
-    private Instant updated_at;
-    private Instant deleted_at;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private Instant deletedAt;
 }

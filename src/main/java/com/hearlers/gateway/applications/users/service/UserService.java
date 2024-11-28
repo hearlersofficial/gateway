@@ -22,7 +22,7 @@ public class UserService {
 
         // 유저 정보 받아오기
         GetKakaoUserInfoRequestDto userInfoRequest = new GetKakaoUserInfoRequestDto();
-        userInfoRequest.setAccessToken(tokenResponse.getAccess_token());
+        userInfoRequest.setAccessToken(tokenResponse.getAccessToken());
         GetKakaoUserInfoResponseDto result = getKakaoUserInfo.execute(userInfoRequest);
         System.out.println(result);
     }
