@@ -1,3 +1,8 @@
 kakao:
   client_id: ${KAKAO_CLIENT_ID}
   redirect_uri: http://localhost:8080/auth/callback/kakao
+
+jwt:
+  secret: ${JWT_SECRET}
+  access_expiration_time: 86400     # Access token 만료 시간 : 하루
+  refresh_expiration_time: 2592000    # Refresh token 만료 시간 : 한달
