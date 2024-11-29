@@ -83,6 +83,11 @@ public class AuthController {
         response.sendRedirect("/");
     }
 
+    @PostMapping("/refresh")
+    public void refreshToken() {
+        // TODO : refreshToken을 바탕으로 새로운 accessToken 발급
+    }
+
     private void addCookieToResponse(HttpServletResponse response, String token, String name, int maxAge) {
         CreateCookieRequestDto createCookieRequestDto = CreateCookieRequestDto.builder()
                 .token(token)
