@@ -1,4 +1,4 @@
-package com.hearlers.gateway.applications.users.useCases.GetKakaoUserInfoUseCase.dto;
+package com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

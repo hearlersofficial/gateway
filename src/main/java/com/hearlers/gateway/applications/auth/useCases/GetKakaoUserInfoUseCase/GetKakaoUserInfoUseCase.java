@@ -1,7 +1,7 @@
-package com.hearlers.gateway.applications.users.useCases.GetKakaoUserInfoUseCase;
+package com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase;
 
-import com.hearlers.gateway.applications.users.useCases.GetKakaoUserInfoUseCase.dto.GetKakaoUserInfoRequestDto;
-import com.hearlers.gateway.applications.users.useCases.GetKakaoUserInfoUseCase.dto.GetKakaoUserInfoResponseDto;
+import com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase.dto.GetKakaoUserInfoRequestDto;
+import com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase.dto.GetKakaoUserInfoResponseDto;
 import com.hearlers.gateway.shared.application.UseCase;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @Component
-public class GetKakaoUserInfo implements UseCase<GetKakaoUserInfoRequestDto, GetKakaoUserInfoResponseDto> {
+public class GetKakaoUserInfoUseCase implements UseCase<GetKakaoUserInfoRequestDto, GetKakaoUserInfoResponseDto> {
 
     private final String KAUTH_USER_URL_HOST = "https://kapi.kakao.com";
 

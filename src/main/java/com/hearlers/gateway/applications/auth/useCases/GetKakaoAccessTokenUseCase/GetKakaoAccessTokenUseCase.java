@@ -1,7 +1,7 @@
-package com.hearlers.gateway.applications.users.useCases.GetKakaoAccessTokenUseCase;
+package com.hearlers.gateway.applications.auth.useCases.GetKakaoAccessTokenUseCase;
 
-import com.hearlers.gateway.applications.users.useCases.GetKakaoAccessTokenUseCase.dto.GetKakaoAccessTokenRequestDto;
-import com.hearlers.gateway.applications.users.useCases.GetKakaoAccessTokenUseCase.dto.GetKakaoAccessTokenResponseDto;
+import com.hearlers.gateway.applications.auth.useCases.GetKakaoAccessTokenUseCase.dto.GetKakaoAccessTokenRequestDto;
+import com.hearlers.gateway.applications.auth.useCases.GetKakaoAccessTokenUseCase.dto.GetKakaoAccessTokenResponseDto;
 import com.hearlers.gateway.shared.application.UseCase;
 import io.netty.handler.codec.http.HttpHeaderValues;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +12,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @Component
-public class GetKakaoAccessToken implements
+public class GetKakaoAccessTokenUseCase implements
         UseCase<GetKakaoAccessTokenRequestDto, GetKakaoAccessTokenResponseDto> {
 
     @Value("${kakao.client_id}")

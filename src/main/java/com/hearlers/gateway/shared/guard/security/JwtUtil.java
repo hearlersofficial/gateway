@@ -29,24 +29,22 @@ public class JwtUtil {
         this.accessTokenExpTime = accessTokenExpTime;
         this.refreshTokenExpTime = refreshTokenExpTime;
     }
-
-    /*
-    TODO: 추후에 refreshToken 생성 및 반환
-    * */
-
+    
     // accessToken 생성 및 반환
-    public TokenDto returnToken(CreateTokenRequestDto dto) {
-        return createAccessToken(dto, accessTokenExpTime);
+    public TokenDto returnToken(CreateTokenRequestDto dto, boolean rememberMe) {
+        return createToken(dto, accessTokenExpTime, refreshTokenExpTime, rememberMe);
     }
 
     // accessToken 생성
-    private TokenDto createAccessToken(CreateTokenRequestDto dto, long accessTokenExpTime) {
+    private TokenDto createToken(CreateTokenRequestDto dto, long accessTokenExpTime, long refreshTokenExpTime,
+                                 boolean rememberMe) {
         Claims claims = Jwts.claims();
         claims.put("id", dto.getId());
         claims.put("auth_channel", dto.getAuthChannel());
 
         ZonedDateTime now = ZonedDateTime.now();
         ZonedDateTime accessTokenValidity = now.plusSeconds(accessTokenExpTime);
+        ZonedDateTime refreshTokenValidity = now.plusSeconds(refreshTokenExpTime);
 
         // access token
         String accessToken = Jwts.builder()
@@ -56,9 +54,23 @@ public class JwtUtil {
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
 
-        return TokenDto.builder()
-                .accessToken(accessToken)
-                .refreshToken(null)
-                .build();
+        if (!rememberMe) {
+            return TokenDto.builder()
+                    .accessToken(accessToken)
+                    .build();
+        } else {
+            // refresh token
+            String refreshToken = Jwts.builder()
+                    .setClaims(claims)
+                    .setIssuedAt(Date.from(now.toInstant()))
+                    .setExpiration(Date.from(refreshTokenValidity.toInstant()))
+                    .signWith(key, SignatureAlgorithm.HS256)
+                    .compact();
+
+            return TokenDto.builder()
+                    .accessToken(accessToken)
+                    .refreshToken(refreshToken)
+                    .build();
+        }
     }
 }
