@@ -1,6 +1,5 @@
 package com.hearlers.gateway.presentations.rest.auth;
 
-
 import static com.hearlers.gateway.shared.enums.AuthChannel.AUTH_CHANNEL_KAKAO;
 import static com.hearlers.gateway.shared.enums.AuthChannel.AUTH_CHANNEL_NONE;
 
