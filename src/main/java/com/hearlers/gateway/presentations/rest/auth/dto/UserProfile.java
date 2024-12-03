@@ -2,8 +2,8 @@ package com.hearlers.gateway.presentations.rest.auth.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.hearlers.gateway.presentations.rest.auth.enums.Gender;
-import com.hearlers.gateway.presentations.rest.auth.enums.Mbti;
+import com.hearlers.gateway.shared.enums.Gender;
+import com.hearlers.gateway.shared.enums.Mbti;
 import java.time.Instant;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)

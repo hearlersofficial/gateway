@@ -2,8 +2,9 @@ package com.hearlers.gateway.presentations.rest.auth.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.hearlers.gateway.presentations.rest.auth.enums.ProgressStatus;
-import com.hearlers.gateway.presentations.rest.auth.enums.ProgressType;
+
+import com.hearlers.gateway.shared.enums.ProgressStatus;
+import com.hearlers.gateway.shared.enums.ProgressType;
 import java.time.Instant;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
