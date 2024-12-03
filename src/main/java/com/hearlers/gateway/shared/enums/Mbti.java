@@ -1,6 +1,7 @@
-package com.hearlers.gateway.presentations.rest.auth.enums;
+package com.hearlers.gateway.shared.enums;
 
 public enum Mbti {
+    MBTI_UNSPECIFIED,
     MBTI_NONE,
     MBTI_ENTP,
     MBTI_ENFP,

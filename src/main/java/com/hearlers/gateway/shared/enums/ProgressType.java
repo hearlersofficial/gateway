@@ -1,6 +1,7 @@
-package com.hearlers.gateway.presentations.rest.auth.enums;
+package com.hearlers.gateway.shared.enums;
 
 public enum ProgressType {
+    PROGRESS_TYPE_UNSPECIFIED,
     PROGRESS_TYPE_ONBOARDING,
     PROGRESS_TYPE_VERIFICATION,
 }
