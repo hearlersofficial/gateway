@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class SetUserInfoRequestDto {
+public class UpdateUserInfoRequestDto {
     private String nickname;
     private Mbti mbti;
     private Gender gender;

@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class SetUserActivityRequestDto {
+public class CreateUserActivityRequestDto {
     private ActivityType activityType;
     private Map<String, Object> activityData;
     private DevicePlatform platform;
