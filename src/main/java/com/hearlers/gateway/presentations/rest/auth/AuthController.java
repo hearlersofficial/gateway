@@ -48,7 +48,7 @@ public class AuthController {
 
         // 발급받은 accessToken 쿠키에 저장
         addCookieToResponse(response, token.getAccessToken(), "accessToken", ACCESS_TOKEN_MAX_AGE);
-        
+
         String accessTokenExpiresAt = java.time.ZonedDateTime.now()
                 .plusSeconds(ACCESS_TOKEN_MAX_AGE)
                 .toInstant()
@@ -82,8 +82,21 @@ public class AuthController {
         // 발급받은 accessToken 쿠키에 저장
         addCookieToResponse(response, token.getAccessToken(), "accessToken", ACCESS_TOKEN_MAX_AGE);
 
+        String accessTokenExpiresAt = java.time.ZonedDateTime.now()
+                .plusSeconds(ACCESS_TOKEN_MAX_AGE)
+                .toInstant()
+                .toString();
+
+        addCookieToResponse(response, accessTokenExpiresAt, "accessTokenExpiresAt", ACCESS_TOKEN_MAX_AGE);
+
         // 발급받은 refreshToken 쿠키에 저장
         addCookieToResponse(response, token.getRefreshToken(), "refreshToken", REFRESH_TOKEN_MAX_AGE);
+
+        String refreshTokenExpiresAt = java.time.ZonedDateTime.now()
+                .plusSeconds(REFRESH_TOKEN_MAX_AGE)
+                .toInstant()
+                .toString();
+        addCookieToResponse(response, refreshTokenExpiresAt, "refreshTokenExpiresAt", REFRESH_TOKEN_MAX_AGE);
 
         response.sendRedirect("/");
     }
