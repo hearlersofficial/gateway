@@ -2,7 +2,7 @@ package com.hearlers.gateway.applications.counsel.model;
 
 import java.time.LocalDate;
 
-public abstract class CounselMessage {
+public class CounselMessage {
     private int id;
     private int counselId;
     private String message;

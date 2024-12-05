@@ -26,16 +26,17 @@ public class CounselorsController {
         // TODO : 내부 서버와 통신하여 최초 상담 시작
         // CounselorId를 바탕으로 조회
 
-        // TODO return 타입 변경 -> ResponseEntity<List<InitiateCounselResponseDto>>
+        // TODO return 타입 변경 -> ResponseEntity<List<CreateCounselResponseDto>>
 
     }
 
+    // 기존에 진행중이던 상담 입장시
     @GetMapping("/{counselorId}/counsels/{counselId}")
     public void getCounsel(
             @PathVariable("counselorId") int counselorId,
             @PathVariable("counselId") int counselId) {
         // TODO : 내부 서버와 통신하여 상담 재개 (counselorId와 counselId로 조회해서)
-        // TODO return 타입 변경 -> ResponseEntity<List<ResumeCounselResponseDto>>
+        // TODO return 타입 변경 -> ResponseEntity<List<GetCounselResponseDto>>
     }
 
     @PostMapping("/{counselorId}/counsels/{counselId}")
