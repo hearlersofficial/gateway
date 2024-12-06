@@ -88,11 +88,13 @@ public class CounselorsController {
 
         List<GetCounselorsResponseDto> counselors = new ArrayList<>();
         counselors.add(
-                new GetCounselorsResponseDto(1, CounselorType.DEPRESSION, CounselorName.DAHYE, "Experienced counselor",
+                new GetCounselorsResponseDto(1, CounselorType.COUNSELOR_TYPE_DEPRESSION,
+                        CounselorName.COUNSELOR_NAME_DAHYE, "Experienced counselor",
                         "Hello, I'm John",
                         "Option1", "Option2"));
         counselors.add(
-                new GetCounselorsResponseDto(2, CounselorType.ANXIETY, CounselorName.JIHWAN, "Experienced counselor",
+                new GetCounselorsResponseDto(2, CounselorType.COUNSELOR_TYPE_ANXIETY,
+                        CounselorName.COUNSELOR_NAME_JIHWAN, "Experienced counselor",
                         "Hello, I'm Jane",
                         "Option1", "Option2"));
 

@@ -1,12 +1,12 @@
 package com.hearlers.gateway.shared.enums;
 
 public enum CounselorName {
-    DAHYE,
-    JIHWAN,
-    ELLIE,
-    YOON,
-    CHERRY,
-    ADEN,
-    HIKO,
-    ARU
+    COUNSELOR_NAME_DAHYE,
+    COUNSELOR_NAME_JIHWAN,
+    COUNSELOR_NAME_ELLIE,
+    COUNSELOR_NAME_YOON,
+    COUNSELOR_NAME_CHERRY,
+    COUNSELOR_NAME_ADEN,
+    COUNSELOR_NAME_HIKO,
+    COUNSELOR_NAME_ARU
 }

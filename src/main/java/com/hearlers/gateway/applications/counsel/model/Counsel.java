@@ -1,7 +1,9 @@
 package com.hearlers.gateway.applications.counsel.model;
 
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class Counsel {
     private int counselId;
     private int userId;
