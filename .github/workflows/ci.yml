@@ -4,6 +4,10 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  KAKAO_CLIENT_ID : ${{ secrets.KAKAO_CLIENT_ID }}
+  JWT_SECRET : ${{ secrets.JWT_SECRET }}
+
 jobs:
   build:
 
