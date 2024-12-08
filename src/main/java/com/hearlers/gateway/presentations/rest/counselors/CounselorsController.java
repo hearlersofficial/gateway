@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/counselors")
-@Tag(name = "CounselorsController", description = "상담 관련 API")
+@Tag(name = "CounselorsController", description = "상담 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
 public class CounselorsController {
 
     @Operation(summary = "최초 상담 시작", description = "최초 상담 시작 API로 버블을 통해 입장 or 일반 입장 두 가지 케이스가 가능합니다.")

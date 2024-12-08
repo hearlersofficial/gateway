@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
-@Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
+@Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
 public class AuthController {
     private final AuthService authService;
     private final JwtUtil jwtUtil;

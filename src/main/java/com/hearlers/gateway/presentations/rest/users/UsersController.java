@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/users")
-@Tag(name = "UsersController", description = "유저 관련 API")
+@Tag(name = "UsersController", description = "유저 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
 public class UsersController {
 
     @Operation(summary = "User Activities 정보 업데이트")
