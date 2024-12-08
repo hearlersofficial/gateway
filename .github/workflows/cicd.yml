@@ -70,7 +70,7 @@ jobs:
 
       - name: Run Docker Container
         run: |
-          sudo docker stop ${{ env.DOCKER_CONTAINER }} && sudo docker rm ${{ env.DOCKER_CONTAINER }} && sudo docker rmi ${{ env.DOCKER_IMAGE_MAIN }}:latest
+          sudo docker stop ${{ env.DOCKER_CONTAINER }} && sudo docker rm ${{ env.DOCKER_CONTAINER }} && sudo docker rmi ${{ env.DOCKER_IMAGE }}:latest
           sudo docker run --env-file ./.env --platform linux/amd64 -d -p ${{ secrets.PORT }}:${{ secrets.PORT }} --name ${{ env.DOCKER_CONTAINER }} --network gateway --restart always ${{ env.DOCKER_IMAGE }}:latest
         
 
