@@ -8,6 +8,7 @@ GEN_DIR=src/gen
 BUF=buf
 
 build:
-	@echo "Building Protocol Buffers..."
+	git submodule foreach git pull origin main
+	@echo "[LOG] Building Protocol Buffers..."
 	cd $(PROTO_DIR) && $(BUF) generate --template=buf.gen.java.yaml
-	@echo "Protocol Buffers build completed!"
+	@echo "[LOG] Protocol Buffers build completed!"
