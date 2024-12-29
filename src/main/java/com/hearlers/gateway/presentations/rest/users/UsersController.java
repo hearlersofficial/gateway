@@ -1,13 +1,15 @@
 package com.hearlers.gateway.presentations.rest.users;
 
+import com.hearlers.api.proto.v1.service.UpdateUserRequest;
+import com.hearlers.api.proto.v1.service.UpdateUserResponse;
+import com.hearlers.api.proto.v1.service.UserServiceGrpc;
 import com.hearlers.gateway.applications.counsel.model.Counsel;
 import com.hearlers.gateway.presentations.common.dto.ResponseDto;
 import com.hearlers.gateway.presentations.rest.users.dto.CreateUserActivityRequestDto;
 import com.hearlers.gateway.presentations.rest.users.dto.GetMyAllCounselsResponseDto;
 import com.hearlers.gateway.presentations.rest.users.dto.UpdateUserInfoRequestDto;
 import com.hearlers.gateway.presentations.rest.users.dto.UpdateUserInfoResponseDto;
-import com.hearlers.gateway.shared.enums.Gender;
-import com.hearlers.gateway.shared.enums.Mbti;
+import com.hearlers.gateway.shared.guard.security.AuthGuard;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -18,19 +20,24 @@ import jakarta.validation.Valid;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 @Tag(name = "UsersController", description = "유저 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
 public class UsersController {
+
+    private final UserServiceGrpc.UserServiceBlockingStub userServiceBlockingStub;
 
     @Operation(summary = "User Activities 정보 업데이트")
     @ApiResponses(value = {
@@ -77,16 +84,44 @@ public class UsersController {
             @ApiResponse(responseCode = "400", description = "User 정보 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PutMapping("/me")
+    @AuthGuard
     public ResponseEntity<ResponseDto.Success<UpdateUserInfoResponseDto>> updateUserInfo(
-            @Valid @RequestBody UpdateUserInfoRequestDto request) {
-        // TODO : request를 바탕으로 내부 서버와 통신하여 User 정보 업데이트
-        UpdateUserInfoResponseDto responseDto = new UpdateUserInfoResponseDto("킹왕짱", Mbti.MBTI_ENFJ,
-                Gender.GENDER_FEMALE);
+            @RequestAttribute("userId") int userId, @RequestBody UpdateUserInfoRequestDto request) {
+
+        UpdateUserRequest.Builder updateUserRequestBuilder = UpdateUserRequest.newBuilder()
+                .setUserId(userId);
+
+        if (request.getNickname() != null) {
+            updateUserRequestBuilder.setNickname(request.getNickname());
+        }
+        if (request.getProfileImage() != null) {
+            updateUserRequestBuilder.setProfileImage(request.getProfileImage());
+        }
+        if (request.getPhoneNumber() != null) {
+            updateUserRequestBuilder.setPhoneNumber(request.getPhoneNumber());
+        }
+        if (request.getGender() != null) {
+            updateUserRequestBuilder.setGender(request.getGender());
+        }
+        if (request.getBirthday() != null) {
+            updateUserRequestBuilder.setBirthday(request.getBirthday());
+        }
+        if (request.getIntroduction() != null) {
+            updateUserRequestBuilder.setIntroduction(request.getIntroduction());
+        }
+        if (request.getMbti() != null) {
+            updateUserRequestBuilder.setMbti(request.getMbti());
+        }
+
+        UpdateUserRequest updateUserRequest = updateUserRequestBuilder.build();
+
+        UpdateUserResponse updateUserResponse = userServiceBlockingStub.updateUser(updateUserRequest);
+        ;
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
                         ResponseDto.Success.<UpdateUserInfoResponseDto>builder()
                                 .message("User 정보 업데이트 성공")
-                                .data(responseDto)
+                                .data(new UpdateUserInfoResponseDto(userId, true))
                                 .build()
                 );
     }
