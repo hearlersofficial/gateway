@@ -6,7 +6,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: v1/service/user.proto")
+    comments = "Source: com/hearlers/v1/service/user.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UserServiceGrpc {
 
@@ -201,6 +201,68 @@ public final class UserServiceGrpc {
     return getFindOneAuthUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest,
+      com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse> getCheckRemainingTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckRemainingTokens",
+      requestType = com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest,
+      com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse> getCheckRemainingTokensMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest, com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse> getCheckRemainingTokensMethod;
+    if ((getCheckRemainingTokensMethod = UserServiceGrpc.getCheckRemainingTokensMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getCheckRemainingTokensMethod = UserServiceGrpc.getCheckRemainingTokensMethod) == null) {
+          UserServiceGrpc.getCheckRemainingTokensMethod = getCheckRemainingTokensMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest, com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckRemainingTokens"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("CheckRemainingTokens"))
+              .build();
+        }
+      }
+    }
+    return getCheckRemainingTokensMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.ReserveTokensRequest,
+      com.hearlers.api.proto.v1.service.ReserveTokensResponse> getReserveTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReserveTokens",
+      requestType = com.hearlers.api.proto.v1.service.ReserveTokensRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.ReserveTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.ReserveTokensRequest,
+      com.hearlers.api.proto.v1.service.ReserveTokensResponse> getReserveTokensMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.ReserveTokensRequest, com.hearlers.api.proto.v1.service.ReserveTokensResponse> getReserveTokensMethod;
+    if ((getReserveTokensMethod = UserServiceGrpc.getReserveTokensMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getReserveTokensMethod = UserServiceGrpc.getReserveTokensMethod) == null) {
+          UserServiceGrpc.getReserveTokensMethod = getReserveTokensMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.ReserveTokensRequest, com.hearlers.api.proto.v1.service.ReserveTokensResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReserveTokens"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.ReserveTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.ReserveTokensResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("ReserveTokens"))
+              .build();
+        }
+      }
+    }
+    return getReserveTokensMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateUserRequest,
       com.hearlers.api.proto.v1.service.UpdateUserResponse> getUpdateUserMethod;
 
@@ -375,6 +437,26 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * 잔여 토큰 체크
+     * </pre>
+     */
+    default void checkRemainingTokens(com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckRemainingTokensMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 토큰 예약 (잔여 토큰 없을 시 에러)
+     * </pre>
+     */
+    default void reserveTokens(com.hearlers.api.proto.v1.service.ReserveTokensRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ReserveTokensResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReserveTokensMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 유저 업데이트
      * </pre>
      */
@@ -491,6 +573,28 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * 잔여 토큰 체크
+     * </pre>
+     */
+    public void checkRemainingTokens(com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckRemainingTokensMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 토큰 예약 (잔여 토큰 없을 시 에러)
+     * </pre>
+     */
+    public void reserveTokens(com.hearlers.api.proto.v1.service.ReserveTokensRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ReserveTokensResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReserveTokensMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 유저 업데이트
      * </pre>
      */
@@ -588,6 +692,26 @@ public final class UserServiceGrpc {
     public com.hearlers.api.proto.v1.service.FindOneAuthUserResponse findOneAuthUser(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindOneAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 잔여 토큰 체크
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse checkRemainingTokens(com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckRemainingTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 토큰 예약 (잔여 토큰 없을 시 에러)
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.ReserveTokensResponse reserveTokens(com.hearlers.api.proto.v1.service.ReserveTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReserveTokensMethod(), getCallOptions(), request);
     }
 
     /**
@@ -697,6 +821,28 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * 잔여 토큰 체크
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse> checkRemainingTokens(
+        com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckRemainingTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 토큰 예약 (잔여 토큰 없을 시 에러)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.ReserveTokensResponse> reserveTokens(
+        com.hearlers.api.proto.v1.service.ReserveTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReserveTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 유저 업데이트
      * </pre>
      */
@@ -724,8 +870,10 @@ public final class UserServiceGrpc {
   private static final int METHODID_VERIFY_REFRESH_TOKEN = 3;
   private static final int METHODID_FIND_ONE_USER = 4;
   private static final int METHODID_FIND_ONE_AUTH_USER = 5;
-  private static final int METHODID_UPDATE_USER = 6;
-  private static final int METHODID_CREATE_ACTIVITY = 7;
+  private static final int METHODID_CHECK_REMAINING_TOKENS = 6;
+  private static final int METHODID_RESERVE_TOKENS = 7;
+  private static final int METHODID_UPDATE_USER = 8;
+  private static final int METHODID_CREATE_ACTIVITY = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -767,6 +915,14 @@ public final class UserServiceGrpc {
         case METHODID_FIND_ONE_AUTH_USER:
           serviceImpl.findOneAuthUser((com.hearlers.api.proto.v1.service.FindOneAuthUserRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneAuthUserResponse>) responseObserver);
+          break;
+        case METHODID_CHECK_REMAINING_TOKENS:
+          serviceImpl.checkRemainingTokens((com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse>) responseObserver);
+          break;
+        case METHODID_RESERVE_TOKENS:
+          serviceImpl.reserveTokens((com.hearlers.api.proto.v1.service.ReserveTokensRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ReserveTokensResponse>) responseObserver);
           break;
         case METHODID_UPDATE_USER:
           serviceImpl.updateUser((com.hearlers.api.proto.v1.service.UpdateUserRequest) request,
@@ -837,6 +993,20 @@ public final class UserServiceGrpc {
               com.hearlers.api.proto.v1.service.FindOneAuthUserResponse>(
                 service, METHODID_FIND_ONE_AUTH_USER)))
         .addMethod(
+          getCheckRemainingTokensMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest,
+              com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse>(
+                service, METHODID_CHECK_REMAINING_TOKENS)))
+        .addMethod(
+          getReserveTokensMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.ReserveTokensRequest,
+              com.hearlers.api.proto.v1.service.ReserveTokensResponse>(
+                service, METHODID_RESERVE_TOKENS)))
+        .addMethod(
           getUpdateUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -904,6 +1074,8 @@ public final class UserServiceGrpc {
               .addMethod(getVerifyRefreshTokenMethod())
               .addMethod(getFindOneUserMethod())
               .addMethod(getFindOneAuthUserMethod())
+              .addMethod(getCheckRemainingTokensMethod())
+              .addMethod(getReserveTokensMethod())
               .addMethod(getUpdateUserMethod())
               .addMethod(getCreateActivityMethod())
               .build();

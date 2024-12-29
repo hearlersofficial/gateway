@@ -6,7 +6,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: v1/service/counsel.proto")
+    comments = "Source: com/hearlers/v1/service/counsel.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CounselServiceGrpc {
 
@@ -139,6 +139,192 @@ public final class CounselServiceGrpc {
     return getGetMessageListMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetPromptListRequest,
+      com.hearlers.api.proto.v1.service.GetPromptListResult> getGetPromptListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPromptList",
+      requestType = com.hearlers.api.proto.v1.service.GetPromptListRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.GetPromptListResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetPromptListRequest,
+      com.hearlers.api.proto.v1.service.GetPromptListResult> getGetPromptListMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetPromptListRequest, com.hearlers.api.proto.v1.service.GetPromptListResult> getGetPromptListMethod;
+    if ((getGetPromptListMethod = CounselServiceGrpc.getGetPromptListMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getGetPromptListMethod = CounselServiceGrpc.getGetPromptListMethod) == null) {
+          CounselServiceGrpc.getGetPromptListMethod = getGetPromptListMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.GetPromptListRequest, com.hearlers.api.proto.v1.service.GetPromptListResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPromptList"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.GetPromptListRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.GetPromptListResult.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("GetPromptList"))
+              .build();
+        }
+      }
+    }
+    return getGetPromptListMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePromptRequest,
+      com.hearlers.api.proto.v1.service.CreatePromptResult> getCreatePromptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePrompt",
+      requestType = com.hearlers.api.proto.v1.service.CreatePromptRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreatePromptResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePromptRequest,
+      com.hearlers.api.proto.v1.service.CreatePromptResult> getCreatePromptMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePromptRequest, com.hearlers.api.proto.v1.service.CreatePromptResult> getCreatePromptMethod;
+    if ((getCreatePromptMethod = CounselServiceGrpc.getCreatePromptMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreatePromptMethod = CounselServiceGrpc.getCreatePromptMethod) == null) {
+          CounselServiceGrpc.getCreatePromptMethod = getCreatePromptMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreatePromptRequest, com.hearlers.api.proto.v1.service.CreatePromptResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePrompt"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreatePromptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreatePromptResult.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreatePrompt"))
+              .build();
+        }
+      }
+    }
+    return getCreatePromptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptRequest,
+      com.hearlers.api.proto.v1.service.UpdatePromptResult> getUpdatePromptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePrompt",
+      requestType = com.hearlers.api.proto.v1.service.UpdatePromptRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdatePromptResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptRequest,
+      com.hearlers.api.proto.v1.service.UpdatePromptResult> getUpdatePromptMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptRequest, com.hearlers.api.proto.v1.service.UpdatePromptResult> getUpdatePromptMethod;
+    if ((getUpdatePromptMethod = CounselServiceGrpc.getUpdatePromptMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdatePromptMethod = CounselServiceGrpc.getUpdatePromptMethod) == null) {
+          CounselServiceGrpc.getUpdatePromptMethod = getUpdatePromptMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdatePromptRequest, com.hearlers.api.proto.v1.service.UpdatePromptResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePrompt"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdatePromptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdatePromptResult.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdatePrompt"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePromptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselorRequest,
+      com.hearlers.api.proto.v1.service.CreateCounselorResult> getCreateCounselorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCounselor",
+      requestType = com.hearlers.api.proto.v1.service.CreateCounselorRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateCounselorResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselorRequest,
+      com.hearlers.api.proto.v1.service.CreateCounselorResult> getCreateCounselorMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselorRequest, com.hearlers.api.proto.v1.service.CreateCounselorResult> getCreateCounselorMethod;
+    if ((getCreateCounselorMethod = CounselServiceGrpc.getCreateCounselorMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreateCounselorMethod = CounselServiceGrpc.getCreateCounselorMethod) == null) {
+          CounselServiceGrpc.getCreateCounselorMethod = getCreateCounselorMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateCounselorRequest, com.hearlers.api.proto.v1.service.CreateCounselorResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCounselor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateCounselorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateCounselorResult.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreateCounselor"))
+              .build();
+        }
+      }
+    }
+    return getCreateCounselorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselorListRequest,
+      com.hearlers.api.proto.v1.service.GetCounselorListResult> getGetCounselorListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCounselorList",
+      requestType = com.hearlers.api.proto.v1.service.GetCounselorListRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.GetCounselorListResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselorListRequest,
+      com.hearlers.api.proto.v1.service.GetCounselorListResult> getGetCounselorListMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselorListRequest, com.hearlers.api.proto.v1.service.GetCounselorListResult> getGetCounselorListMethod;
+    if ((getGetCounselorListMethod = CounselServiceGrpc.getGetCounselorListMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getGetCounselorListMethod = CounselServiceGrpc.getGetCounselorListMethod) == null) {
+          CounselServiceGrpc.getGetCounselorListMethod = getGetCounselorListMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.GetCounselorListRequest, com.hearlers.api.proto.v1.service.GetCounselorListResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCounselorList"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.GetCounselorListRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.GetCounselorListResult.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("GetCounselorList"))
+              .build();
+        }
+      }
+    }
+    return getGetCounselorListMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselorRequest,
+      com.hearlers.api.proto.v1.service.UpdateCounselorResult> getUpdateCounselorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCounselor",
+      requestType = com.hearlers.api.proto.v1.service.UpdateCounselorRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateCounselorResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselorRequest,
+      com.hearlers.api.proto.v1.service.UpdateCounselorResult> getUpdateCounselorMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselorRequest, com.hearlers.api.proto.v1.service.UpdateCounselorResult> getUpdateCounselorMethod;
+    if ((getUpdateCounselorMethod = CounselServiceGrpc.getUpdateCounselorMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdateCounselorMethod = CounselServiceGrpc.getUpdateCounselorMethod) == null) {
+          CounselServiceGrpc.getUpdateCounselorMethod = getUpdateCounselorMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateCounselorRequest, com.hearlers.api.proto.v1.service.UpdateCounselorResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCounselor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateCounselorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateCounselorResult.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdateCounselor"))
+              .build();
+        }
+      }
+    }
+    return getUpdateCounselorMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +400,48 @@ public final class CounselServiceGrpc {
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetMessageListResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMessageListMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getPromptList(com.hearlers.api.proto.v1.service.GetPromptListRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetPromptListResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPromptListMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createPrompt(com.hearlers.api.proto.v1.service.CreatePromptRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePromptResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePromptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updatePrompt(com.hearlers.api.proto.v1.service.UpdatePromptRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePromptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselorResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCounselorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getCounselorList(com.hearlers.api.proto.v1.service.GetCounselorListRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselorListResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCounselorListMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCounselorMethod(), responseObserver);
+    }
   }
 
   /**
@@ -274,6 +502,54 @@ public final class CounselServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMessageListMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPromptList(com.hearlers.api.proto.v1.service.GetPromptListRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetPromptListResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPromptListMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createPrompt(com.hearlers.api.proto.v1.service.CreatePromptRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePromptResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePromptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updatePrompt(com.hearlers.api.proto.v1.service.UpdatePromptRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePromptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselorResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCounselorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getCounselorList(com.hearlers.api.proto.v1.service.GetCounselorListRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselorListResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCounselorListMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCounselorMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -318,6 +594,48 @@ public final class CounselServiceGrpc {
     public com.hearlers.api.proto.v1.service.GetMessageListResult getMessageList(com.hearlers.api.proto.v1.service.GetMessageListRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMessageListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.GetPromptListResult getPromptList(com.hearlers.api.proto.v1.service.GetPromptListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPromptListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.CreatePromptResult createPrompt(com.hearlers.api.proto.v1.service.CreatePromptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePromptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdatePromptResult updatePrompt(com.hearlers.api.proto.v1.service.UpdatePromptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePromptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselorResult createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.GetCounselorListResult getCounselorList(com.hearlers.api.proto.v1.service.GetCounselorListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCounselorListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateCounselorResult updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCounselorMethod(), getCallOptions(), request);
     }
   }
 
@@ -368,12 +686,66 @@ public final class CounselServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMessageListMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.GetPromptListResult> getPromptList(
+        com.hearlers.api.proto.v1.service.GetPromptListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPromptListMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreatePromptResult> createPrompt(
+        com.hearlers.api.proto.v1.service.CreatePromptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePromptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdatePromptResult> updatePrompt(
+        com.hearlers.api.proto.v1.service.UpdatePromptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePromptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateCounselorResult> createCounselor(
+        com.hearlers.api.proto.v1.service.CreateCounselorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCounselorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.GetCounselorListResult> getCounselorList(
+        com.hearlers.api.proto.v1.service.GetCounselorListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCounselorListMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateCounselorResult> updateCounselor(
+        com.hearlers.api.proto.v1.service.UpdateCounselorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCounselorMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_COUNSEL = 0;
   private static final int METHODID_GET_COUNSEL_LIST = 1;
   private static final int METHODID_CREATE_MESSAGE = 2;
   private static final int METHODID_GET_MESSAGE_LIST = 3;
+  private static final int METHODID_GET_PROMPT_LIST = 4;
+  private static final int METHODID_CREATE_PROMPT = 5;
+  private static final int METHODID_UPDATE_PROMPT = 6;
+  private static final int METHODID_CREATE_COUNSELOR = 7;
+  private static final int METHODID_GET_COUNSELOR_LIST = 8;
+  private static final int METHODID_UPDATE_COUNSELOR = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -407,6 +779,30 @@ public final class CounselServiceGrpc {
         case METHODID_GET_MESSAGE_LIST:
           serviceImpl.getMessageList((com.hearlers.api.proto.v1.service.GetMessageListRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetMessageListResult>) responseObserver);
+          break;
+        case METHODID_GET_PROMPT_LIST:
+          serviceImpl.getPromptList((com.hearlers.api.proto.v1.service.GetPromptListRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetPromptListResult>) responseObserver);
+          break;
+        case METHODID_CREATE_PROMPT:
+          serviceImpl.createPrompt((com.hearlers.api.proto.v1.service.CreatePromptRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePromptResult>) responseObserver);
+          break;
+        case METHODID_UPDATE_PROMPT:
+          serviceImpl.updatePrompt((com.hearlers.api.proto.v1.service.UpdatePromptRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptResult>) responseObserver);
+          break;
+        case METHODID_CREATE_COUNSELOR:
+          serviceImpl.createCounselor((com.hearlers.api.proto.v1.service.CreateCounselorRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselorResult>) responseObserver);
+          break;
+        case METHODID_GET_COUNSELOR_LIST:
+          serviceImpl.getCounselorList((com.hearlers.api.proto.v1.service.GetCounselorListRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselorListResult>) responseObserver);
+          break;
+        case METHODID_UPDATE_COUNSELOR:
+          serviceImpl.updateCounselor((com.hearlers.api.proto.v1.service.UpdateCounselorRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResult>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -454,6 +850,48 @@ public final class CounselServiceGrpc {
               com.hearlers.api.proto.v1.service.GetMessageListRequest,
               com.hearlers.api.proto.v1.service.GetMessageListResult>(
                 service, METHODID_GET_MESSAGE_LIST)))
+        .addMethod(
+          getGetPromptListMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.GetPromptListRequest,
+              com.hearlers.api.proto.v1.service.GetPromptListResult>(
+                service, METHODID_GET_PROMPT_LIST)))
+        .addMethod(
+          getCreatePromptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreatePromptRequest,
+              com.hearlers.api.proto.v1.service.CreatePromptResult>(
+                service, METHODID_CREATE_PROMPT)))
+        .addMethod(
+          getUpdatePromptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdatePromptRequest,
+              com.hearlers.api.proto.v1.service.UpdatePromptResult>(
+                service, METHODID_UPDATE_PROMPT)))
+        .addMethod(
+          getCreateCounselorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateCounselorRequest,
+              com.hearlers.api.proto.v1.service.CreateCounselorResult>(
+                service, METHODID_CREATE_COUNSELOR)))
+        .addMethod(
+          getGetCounselorListMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.GetCounselorListRequest,
+              com.hearlers.api.proto.v1.service.GetCounselorListResult>(
+                service, METHODID_GET_COUNSELOR_LIST)))
+        .addMethod(
+          getUpdateCounselorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateCounselorRequest,
+              com.hearlers.api.proto.v1.service.UpdateCounselorResult>(
+                service, METHODID_UPDATE_COUNSELOR)))
         .build();
   }
 
@@ -506,6 +944,12 @@ public final class CounselServiceGrpc {
               .addMethod(getGetCounselListMethod())
               .addMethod(getCreateMessageMethod())
               .addMethod(getGetMessageListMethod())
+              .addMethod(getGetPromptListMethod())
+              .addMethod(getCreatePromptMethod())
+              .addMethod(getUpdatePromptMethod())
+              .addMethod(getCreateCounselorMethod())
+              .addMethod(getGetCounselorListMethod())
+              .addMethod(getUpdateCounselorMethod())
               .build();
         }
       }
