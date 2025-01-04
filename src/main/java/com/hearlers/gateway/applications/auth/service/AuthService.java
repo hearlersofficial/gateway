@@ -6,13 +6,19 @@ import com.hearlers.api.proto.v1.service.ConnectAuthChannelRequest;
 import com.hearlers.api.proto.v1.service.ConnectAuthChannelResponse;
 import com.hearlers.api.proto.v1.service.FindOneAuthUserRequest;
 import com.hearlers.api.proto.v1.service.FindOneAuthUserResponse;
+import com.hearlers.api.proto.v1.service.InitializeUserRequest;
+import com.hearlers.api.proto.v1.service.InitializeUserResponse;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub;
+import com.hearlers.gateway.applications.auth.useCases.CreateUserUseCase.CreateUserUseCase;
 import com.hearlers.gateway.applications.auth.useCases.GetKakaoAccessTokenUseCase.GetKakaoAccessTokenUseCase;
 import com.hearlers.gateway.applications.auth.useCases.GetKakaoAccessTokenUseCase.dto.GetKakaoAccessTokenRequestDto;
 import com.hearlers.gateway.applications.auth.useCases.GetKakaoAccessTokenUseCase.dto.GetKakaoAccessTokenResponseDto;
 import com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase.GetKakaoUserInfoUseCase;
 import com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase.dto.GetKakaoUserInfoRequestDto;
 import com.hearlers.gateway.applications.auth.useCases.GetKakaoUserInfoUseCase.dto.GetKakaoUserInfoResponseDto;
+import com.hearlers.gateway.applications.auth.useCases.SaveRefreshTokenUseCase.SaveRefreshTokenUseCase;
+import com.hearlers.gateway.shared.guard.dto.TokenDto;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +30,16 @@ public class AuthService {
     private final GetKakaoAccessTokenUseCase getKakaoAccessTokenUseCase;
     private final GetKakaoUserInfoUseCase getKakaoUserInfoUseCase;
     private final UserServiceBlockingStub userServiceBlockingStub;
+    private final CreateUserUseCase createUserUseCase;
+    private final SaveRefreshTokenUseCase saveRefreshTokenUseCase;
+
+    public InitializeUserResponse initializeUser(InitializeUserRequest request) {
+        return createUserUseCase.execute(request);
+    }
+
+    public SaveRefreshTokenResponse saveRefreshToken(int userId, TokenDto token) {
+        return saveRefreshTokenUseCase.execute(saveRefreshTokenUseCase.configureRequest(userId, token));
+    }
 
     public AuthUser kakaoLogin(String code, int userId) {
         GetKakaoAccessTokenRequestDto tokenRequest = new GetKakaoAccessTokenRequestDto();

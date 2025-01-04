@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-@Tag(name = "UsersController", description = "유저 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
+@Tag(name = "UsersController", description = "유저 관련 API")
 public class UsersController {
 
     private final UserServiceGrpc.UserServiceBlockingStub userServiceBlockingStub;

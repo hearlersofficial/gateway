@@ -4,9 +4,7 @@ import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
-import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
-import com.hearlers.api.proto.v1.service.UserServiceGrpc;
 import com.hearlers.gateway.applications.auth.service.AuthService;
 import com.hearlers.gateway.applications.utils.service.UtilService;
 import com.hearlers.gateway.applications.utils.useCases.CreateCookieUseCase.dto.CreateCookieRequestDto;
@@ -39,12 +37,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
-@Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
+@Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
     private final AuthService authService;
     private final JwtUtil jwtUtil;
     private final UtilService utilService;
-    private final UserServiceGrpc.UserServiceBlockingStub userServiceBlockingStub;
 
 
     @Value("${kakao.client_id}")
@@ -63,8 +60,8 @@ public class AuthController {
     })
     @PostMapping("/initiate")
     public ResponseEntity<ResponseDto.Success<TokenDto>> createUser(HttpServletResponse response) {
-        InitializeUserRequest request = InitializeUserRequest.newBuilder().build();
-        InitializeUserResponse initializeUserResponse = userServiceBlockingStub.initializeUser(request);
+        InitializeUserResponse initializeUserResponse = authService.initializeUser(
+                InitializeUserRequest.newBuilder().build());
 
         CreateTokenRequestDto dto = new CreateTokenRequestDto(initializeUserResponse.getUser().getId(),
                 initializeUserResponse.getAuthUser().getAuthChannel());
@@ -119,16 +116,10 @@ public class AuthController {
         int userId = Integer.parseInt(state);
         AuthUser authUser = authService.kakaoLogin(code, userId);
         AuthChannel authChannel = authUser.getAuthChannel();
-        
-        TokenDto token = jwtUtil.returnToken(new CreateTokenRequestDto(userId, authChannel), true);
-        SaveRefreshTokenRequest saveRefreshTokenRequest = SaveRefreshTokenRequest.newBuilder()
-                .setUserId(userId)
-                .setToken(token.getRefreshToken())
-                .setExpiresAt(token.getRefreshTokenExpiresAt().toString())
-                .build();
 
-        SaveRefreshTokenResponse saveRefreshTokenResponse = userServiceBlockingStub.saveRefreshToken(
-                saveRefreshTokenRequest);
+        TokenDto token = jwtUtil.returnToken(new CreateTokenRequestDto(userId, authChannel), true);
+
+        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(userId, token);
 
         if (!saveRefreshTokenResponse.getSuccess()) {
             throw new Error("RefreshToken 저장 실패");
