@@ -1,5 +1,6 @@
 package com.hearlers.gateway.shared.guard.security;
 
+import com.hearlers.gateway.config.JwtProperties;
 import com.hearlers.gateway.presentations.rest.auth.dto.CreateTokenRequestDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
 import io.jsonwebtoken.Claims;
@@ -13,6 +14,7 @@ import io.jsonwebtoken.security.Keys;
 import java.security.Key;
 import java.time.ZonedDateTime;
 import java.util.Date;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -25,14 +27,12 @@ public class JwtUtil {
     private final long refreshTokenExpTime;
 
     public JwtUtil(
-            @Value("${jwt.secret}") String secretKey,
-            @Value("${jwt.access_expiration_time}") long accessTokenExpTime,
-            @Value("${jwt.refresh_expiration_time}") long refreshTokenExpTime
+            JwtProperties jwtProperties
     ) {
-        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
+        byte[] keyBytes = Decoders.BASE64.decode(jwtProperties.getSecret());
         this.key = Keys.hmacShaKeyFor(keyBytes);
-        this.accessTokenExpTime = accessTokenExpTime;
-        this.refreshTokenExpTime = refreshTokenExpTime;
+        this.accessTokenExpTime = jwtProperties.getAccessExpirationTime();
+        this.refreshTokenExpTime = jwtProperties.getRefreshExpirationTime();
     }
 
     // accessToken 생성 및 반환

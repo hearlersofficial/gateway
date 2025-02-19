@@ -9,6 +9,7 @@ import com.hearlers.gateway.applications.auth.service.AuthService;
 import com.hearlers.gateway.applications.utils.service.UtilService;
 import com.hearlers.gateway.applications.utils.useCases.CreateCookieUseCase.dto.CreateCookieRequestDto;
 import com.hearlers.gateway.applications.utils.useCases.CreateCookieUseCase.dto.CreateCookieResponseDto;
+import com.hearlers.gateway.config.KakaoProperties;
 import com.hearlers.gateway.presentations.common.dto.ResponseDto;
 import com.hearlers.gateway.presentations.rest.auth.dto.CreateTokenRequestDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
@@ -24,7 +25,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,15 +39,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
+    private final KakaoProperties kakaoProperties;
     private final AuthService authService;
     private final JwtUtil jwtUtil;
     private final UtilService utilService;
-
-
-    @Value("${kakao.client_id}")
-    String clientId;
-    @Value("${kakao.redirect_uri}")
-    String redirectUri;
 
     private static final int ACCESS_TOKEN_MAX_AGE = 60 * 60; // 1시간
     private static final int REFRESH_TOKEN_MAX_AGE = 60 * 60 * 24 * 7; // 7일
@@ -97,8 +92,8 @@ public class AuthController {
     public void kakao(@RequestAttribute("userId") String userId, HttpServletResponse response) throws IOException {
         StringBuffer url = new StringBuffer();
         url.append("https://kauth.kakao.com/oauth/authorize?");
-        url.append("client_id=").append(clientId);
-        url.append("&redirect_uri=").append(redirectUri);
+        url.append("client_id=").append(kakaoProperties.getClientId());
+        url.append("&redirect_uri=").append(kakaoProperties.getRedirectUri());
         url.append("&response_type=code");
         url.append("&state=").append(userId);
         response.sendRedirect(url.toString());
