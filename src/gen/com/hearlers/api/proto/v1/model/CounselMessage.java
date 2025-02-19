@@ -27,7 +27,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CounselMessage() {
+    id_ = "";
+    counselId_ = "";
     message_ = "";
+    reactedAt_ = "";
+    reaction_ = 0;
     createdAt_ = "";
     updatedAt_ = "";
     deletedAt_ = "";
@@ -47,25 +51,81 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private int id_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
-   * <code>int32 id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
   @java.lang.Override
-  public int getId() {
-    return id_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int COUNSEL_ID_FIELD_NUMBER = 2;
-  private int counselId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselId_ = "";
   /**
-   * <code>int32 counsel_id = 2 [json_name = "counselId"];</code>
+   * <code>string counsel_id = 2 [json_name = "counselId"];</code>
    * @return The counselId.
    */
   @java.lang.Override
-  public int getCounselId() {
-    return counselId_;
+  public java.lang.String getCounselId() {
+    java.lang.Object ref = counselId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counsel_id = 2 [json_name = "counselId"];</code>
+   * @return The bytes for counselId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselIdBytes() {
+    java.lang.Object ref = counselId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
@@ -118,7 +178,72 @@ private static final long serialVersionUID = 0L;
     return isUserMessage_;
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 5;
+  public static final int REACTED_AT_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reactedAt_ = "";
+  /**
+   * <pre>
+   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * </pre>
+   *
+   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * @return The reactedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getReactedAt() {
+    java.lang.Object ref = reactedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reactedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * </pre>
+   *
+   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * @return The bytes for reactedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getReactedAtBytes() {
+    java.lang.Object ref = reactedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      reactedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REACTION_FIELD_NUMBER = 6;
+  private int reaction_ = 0;
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * @return The enum numeric value on the wire for reaction.
+   */
+  @java.lang.Override public int getReactionValue() {
+    return reaction_;
+  }
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * @return The reaction.
+   */
+  @java.lang.Override public com.hearlers.api.proto.v1.model.CounselMessageReaction getReaction() {
+    com.hearlers.api.proto.v1.model.CounselMessageReaction result = com.hearlers.api.proto.v1.model.CounselMessageReaction.forNumber(reaction_);
+    return result == null ? com.hearlers.api.proto.v1.model.CounselMessageReaction.UNRECOGNIZED : result;
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
   /**
@@ -126,7 +251,7 @@ private static final long serialVersionUID = 0L;
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
+   * <code>string created_at = 7 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -147,7 +272,7 @@ private static final long serialVersionUID = 0L;
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
+   * <code>string created_at = 7 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -165,7 +290,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 6;
+  public static final int UPDATED_AT_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
@@ -173,7 +298,7 @@ private static final long serialVersionUID = 0L;
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -194,7 +319,7 @@ private static final long serialVersionUID = 0L;
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -212,7 +337,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DELETED_AT_FIELD_NUMBER = 7;
+  public static final int DELETED_AT_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deletedAt_ = "";
   /**
@@ -220,7 +345,7 @@ private static final long serialVersionUID = 0L;
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -241,7 +366,7 @@ private static final long serialVersionUID = 0L;
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -273,11 +398,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0) {
-      output.writeInt32(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
     }
-    if (counselId_ != 0) {
-      output.writeInt32(2, counselId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, counselId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, message_);
@@ -285,14 +410,20 @@ private static final long serialVersionUID = 0L;
     if (isUserMessage_ != false) {
       output.writeBool(4, isUserMessage_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reactedAt_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, reactedAt_);
+    }
+    if (reaction_ != com.hearlers.api.proto.v1.model.CounselMessageReaction.COUNSEL_MESSAGE_REACTION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, reaction_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, createdAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, updatedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, updatedAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, deletedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, deletedAt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -303,13 +434,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
     }
-    if (counselId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, counselId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, counselId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, message_);
@@ -318,14 +447,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, isUserMessage_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reactedAt_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, reactedAt_);
+    }
+    if (reaction_ != com.hearlers.api.proto.v1.model.CounselMessageReaction.COUNSEL_MESSAGE_REACTION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, reaction_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, createdAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, updatedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, updatedAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, deletedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -342,14 +478,17 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.model.CounselMessage other = (com.hearlers.api.proto.v1.model.CounselMessage) obj;
 
-    if (getId()
-        != other.getId()) return false;
-    if (getCounselId()
-        != other.getCounselId()) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getCounselId()
+        .equals(other.getCounselId())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
     if (getIsUserMessage()
         != other.getIsUserMessage()) return false;
+    if (!getReactedAt()
+        .equals(other.getReactedAt())) return false;
+    if (reaction_ != other.reaction_) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -368,14 +507,18 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId();
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + COUNSEL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCounselId();
+    hash = (53 * hash) + getCounselId().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + IS_USER_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsUserMessage());
+    hash = (37 * hash) + REACTED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getReactedAt().hashCode();
+    hash = (37 * hash) + REACTION_FIELD_NUMBER;
+    hash = (53 * hash) + reaction_;
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -513,10 +656,12 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      id_ = 0;
-      counselId_ = 0;
+      id_ = "";
+      counselId_ = "";
       message_ = "";
       isUserMessage_ = false;
+      reactedAt_ = "";
+      reaction_ = 0;
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -566,12 +711,18 @@ private static final long serialVersionUID = 0L;
         result.isUserMessage_ = isUserMessage_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.createdAt_ = createdAt_;
+        result.reactedAt_ = reactedAt_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.updatedAt_ = updatedAt_;
+        result.reaction_ = reaction_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createdAt_ = createdAt_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updatedAt_ = updatedAt_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.deletedAt_ = deletedAt_;
       }
     }
@@ -588,11 +739,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.model.CounselMessage other) {
       if (other == com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance()) return this;
-      if (other.getId() != 0) {
-        setId(other.getId());
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
-      if (other.getCounselId() != 0) {
-        setCounselId(other.getCounselId());
+      if (!other.getCounselId().isEmpty()) {
+        counselId_ = other.counselId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
@@ -602,19 +757,27 @@ private static final long serialVersionUID = 0L;
       if (other.getIsUserMessage() != false) {
         setIsUserMessage(other.getIsUserMessage());
       }
+      if (!other.getReactedAt().isEmpty()) {
+        reactedAt_ = other.reactedAt_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.reaction_ != 0) {
+        setReactionValue(other.getReactionValue());
+      }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getUpdatedAt().isEmpty()) {
         updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDeletedAt().isEmpty()) {
         deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -643,16 +806,16 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              id_ = input.readInt32();
+            case 10: {
+              id_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
-            case 16: {
-              counselId_ = input.readInt32();
+            } // case 10
+            case 18: {
+              counselId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 26: {
               message_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
@@ -664,20 +827,30 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 32
             case 42: {
-              createdAt_ = input.readStringRequireUtf8();
+              reactedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 50: {
-              updatedAt_ = input.readStringRequireUtf8();
+            case 48: {
+              reaction_ = input.readEnum();
               bitField0_ |= 0x00000020;
               break;
-            } // case 50
+            } // case 48
             case 58: {
-              deletedAt_ = input.readStringRequireUtf8();
+              createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              updatedAt_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
+            case 74: {
+              deletedAt_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -695,66 +868,146 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int id_ ;
+    private java.lang.Object id_ = "";
     /**
-     * <code>int32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
-    @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(int value) {
-
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
+      id_ = getDefaultInstance().getId();
       bitField0_ = (bitField0_ & ~0x00000001);
-      id_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private int counselId_ ;
+    private java.lang.Object counselId_ = "";
     /**
-     * <code>int32 counsel_id = 2 [json_name = "counselId"];</code>
+     * <code>string counsel_id = 2 [json_name = "counselId"];</code>
      * @return The counselId.
      */
-    @java.lang.Override
-    public int getCounselId() {
-      return counselId_;
+    public java.lang.String getCounselId() {
+      java.lang.Object ref = counselId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 counsel_id = 2 [json_name = "counselId"];</code>
+     * <code>string counsel_id = 2 [json_name = "counselId"];</code>
+     * @return The bytes for counselId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselIdBytes() {
+      java.lang.Object ref = counselId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counsel_id = 2 [json_name = "counselId"];</code>
      * @param value The counselId to set.
      * @return This builder for chaining.
      */
-    public Builder setCounselId(int value) {
-
+    public Builder setCounselId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       counselId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 counsel_id = 2 [json_name = "counselId"];</code>
+     * <code>string counsel_id = 2 [json_name = "counselId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselId() {
+      counselId_ = getDefaultInstance().getCounselId();
       bitField0_ = (bitField0_ & ~0x00000002);
-      counselId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counsel_id = 2 [json_name = "counselId"];</code>
+     * @param value The bytes for counselId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,13 +1116,158 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object reactedAt_ = "";
+    /**
+     * <pre>
+     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * </pre>
+     *
+     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * @return The reactedAt.
+     */
+    public java.lang.String getReactedAt() {
+      java.lang.Object ref = reactedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reactedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * </pre>
+     *
+     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * @return The bytes for reactedAt.
+     */
+    public com.google.protobuf.ByteString
+        getReactedAtBytes() {
+      java.lang.Object ref = reactedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reactedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * </pre>
+     *
+     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * @param value The reactedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReactedAt(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      reactedAt_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * </pre>
+     *
+     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReactedAt() {
+      reactedAt_ = getDefaultInstance().getReactedAt();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * </pre>
+     *
+     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * @param value The bytes for reactedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReactedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      reactedAt_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int reaction_ = 0;
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * @return The enum numeric value on the wire for reaction.
+     */
+    @java.lang.Override public int getReactionValue() {
+      return reaction_;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * @param value The enum numeric value on the wire for reaction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReactionValue(int value) {
+      reaction_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * @return The reaction.
+     */
+    @java.lang.Override
+    public com.hearlers.api.proto.v1.model.CounselMessageReaction getReaction() {
+      com.hearlers.api.proto.v1.model.CounselMessageReaction result = com.hearlers.api.proto.v1.model.CounselMessageReaction.forNumber(reaction_);
+      return result == null ? com.hearlers.api.proto.v1.model.CounselMessageReaction.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * @param value The reaction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReaction(com.hearlers.api.proto.v1.model.CounselMessageReaction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      reaction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReaction() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      reaction_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -889,7 +1287,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -910,7 +1308,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -918,7 +1316,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       createdAt_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -927,12 +1325,12 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
       createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -941,7 +1339,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -950,7 +1348,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       createdAt_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -961,7 +1359,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -981,7 +1379,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -1002,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1010,7 +1408,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       updatedAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1019,12 +1417,12 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
       updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1033,7 +1431,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1042,7 +1440,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       updatedAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1053,7 +1451,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -1073,7 +1471,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -1094,7 +1492,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1102,7 +1500,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deletedAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1111,12 +1509,12 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
       deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1125,7 +1523,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1134,7 +1532,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deletedAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

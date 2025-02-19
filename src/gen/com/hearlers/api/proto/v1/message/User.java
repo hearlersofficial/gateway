@@ -42,7 +42,7 @@ public final class User {
       "\n\"com/hearlers/v1/message/user.proto\022\027co" +
       "m.hearlers.v1.message\032%com/hearlers/v1/m" +
       "odel/auth_user.proto\"\225\001\n\022UserUpdatedPayl" +
-      "oad\022\027\n\007user_id\030\001 \001(\005R\006userId\022E\n\014auth_cha" +
+      "oad\022\027\n\007user_id\030\001 \001(\tR\006userId\022E\n\014auth_cha" +
       "nnel\030\002 \001(\0162\".com.hearlers.v1.model.AuthC" +
       "hannelR\013authChannel\022\037\n\013occurred_at\030\003 \001(\t" +
       "R\noccurredAtB%\n!com.hearlers.api.proto.v" +

@@ -10,15 +10,21 @@ public interface FindOneUserRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional int32 user_id = 1 [json_name = "userId"];</code>
+   * <code>optional string user_id = 1 [json_name = "userId"];</code>
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
   /**
-   * <code>optional int32 user_id = 1 [json_name = "userId"];</code>
+   * <code>optional string user_id = 1 [json_name = "userId"];</code>
    * @return The userId.
    */
-  int getUserId();
+  java.lang.String getUserId();
+  /**
+   * <code>optional string user_id = 1 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 
   /**
    * <code>optional string nickname = 2 [json_name = "nickname"];</code>

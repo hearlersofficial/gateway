@@ -31,6 +31,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CounselCreatedPayload() {
+    counselId_ = "";
+    userId_ = "";
+    counselorId_ = "";
     occurredAt_ = "";
   }
 
@@ -48,36 +51,120 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUNSEL_ID_FIELD_NUMBER = 1;
-  private int counselId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselId_ = "";
   /**
-   * <code>int32 counsel_id = 1 [json_name = "counselId"];</code>
+   * <code>string counsel_id = 1 [json_name = "counselId"];</code>
    * @return The counselId.
    */
   @java.lang.Override
-  public int getCounselId() {
-    return counselId_;
+  public java.lang.String getCounselId() {
+    java.lang.Object ref = counselId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counsel_id = 1 [json_name = "counselId"];</code>
+   * @return The bytes for counselId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselIdBytes() {
+    java.lang.Object ref = counselId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private int userId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userId_ = "";
   /**
-   * <code>int32 user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId"];</code>
    * @return The userId.
    */
   @java.lang.Override
-  public int getUserId() {
-    return userId_;
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int COUNSELOR_ID_FIELD_NUMBER = 3;
-  private int counselorId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselorId_ = "";
   /**
-   * <code>int32 counselor_id = 3 [json_name = "counselorId"];</code>
+   * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
    * @return The counselorId.
    */
   @java.lang.Override
-  public int getCounselorId() {
-    return counselorId_;
+  public java.lang.String getCounselorId() {
+    java.lang.Object ref = counselorId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselorId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselorIdBytes() {
+    java.lang.Object ref = counselorId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselorId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int OCCURRED_AT_FIELD_NUMBER = 4;
@@ -141,14 +228,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (counselId_ != 0) {
-      output.writeInt32(1, counselId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, counselId_);
     }
-    if (userId_ != 0) {
-      output.writeInt32(2, userId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
     }
-    if (counselorId_ != 0) {
-      output.writeInt32(3, counselorId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, counselorId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(occurredAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, occurredAt_);
@@ -162,17 +249,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (counselId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, counselId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, counselId_);
     }
-    if (userId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, userId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
     }
-    if (counselorId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, counselorId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, counselorId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(occurredAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, occurredAt_);
@@ -192,12 +276,12 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.message.CounselCreatedPayload other = (com.hearlers.api.proto.v1.message.CounselCreatedPayload) obj;
 
-    if (getCounselId()
-        != other.getCounselId()) return false;
-    if (getUserId()
-        != other.getUserId()) return false;
-    if (getCounselorId()
-        != other.getCounselorId()) return false;
+    if (!getCounselId()
+        .equals(other.getCounselId())) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
+    if (!getCounselorId()
+        .equals(other.getCounselorId())) return false;
     if (!getOccurredAt()
         .equals(other.getOccurredAt())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -212,11 +296,11 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + COUNSEL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCounselId();
+    hash = (53 * hash) + getCounselId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId();
+    hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCounselorId();
+    hash = (53 * hash) + getCounselorId().hashCode();
     hash = (37 * hash) + OCCURRED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getOccurredAt().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -354,9 +438,9 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      counselId_ = 0;
-      userId_ = 0;
-      counselorId_ = 0;
+      counselId_ = "";
+      userId_ = "";
+      counselorId_ = "";
       occurredAt_ = "";
       return this;
     }
@@ -417,14 +501,20 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.message.CounselCreatedPayload other) {
       if (other == com.hearlers.api.proto.v1.message.CounselCreatedPayload.getDefaultInstance()) return this;
-      if (other.getCounselId() != 0) {
-        setCounselId(other.getCounselId());
+      if (!other.getCounselId().isEmpty()) {
+        counselId_ = other.counselId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
-      if (other.getUserId() != 0) {
-        setUserId(other.getUserId());
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
-      if (other.getCounselorId() != 0) {
-        setCounselorId(other.getCounselorId());
+      if (!other.getCounselorId().isEmpty()) {
+        counselorId_ = other.counselorId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       if (!other.getOccurredAt().isEmpty()) {
         occurredAt_ = other.occurredAt_;
@@ -457,21 +547,21 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              counselId_ = input.readInt32();
+            case 10: {
+              counselId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
-            case 16: {
-              userId_ = input.readInt32();
+            } // case 10
+            case 18: {
+              userId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
-            case 24: {
-              counselorId_ = input.readInt32();
+            } // case 18
+            case 26: {
+              counselorId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 24
+            } // case 26
             case 34: {
               occurredAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
@@ -494,98 +584,218 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int counselId_ ;
+    private java.lang.Object counselId_ = "";
     /**
-     * <code>int32 counsel_id = 1 [json_name = "counselId"];</code>
+     * <code>string counsel_id = 1 [json_name = "counselId"];</code>
      * @return The counselId.
      */
-    @java.lang.Override
-    public int getCounselId() {
-      return counselId_;
+    public java.lang.String getCounselId() {
+      java.lang.Object ref = counselId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 counsel_id = 1 [json_name = "counselId"];</code>
+     * <code>string counsel_id = 1 [json_name = "counselId"];</code>
+     * @return The bytes for counselId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselIdBytes() {
+      java.lang.Object ref = counselId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counsel_id = 1 [json_name = "counselId"];</code>
      * @param value The counselId to set.
      * @return This builder for chaining.
      */
-    public Builder setCounselId(int value) {
-
+    public Builder setCounselId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       counselId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 counsel_id = 1 [json_name = "counselId"];</code>
+     * <code>string counsel_id = 1 [json_name = "counselId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselId() {
+      counselId_ = getDefaultInstance().getCounselId();
       bitField0_ = (bitField0_ & ~0x00000001);
-      counselId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counsel_id = 1 [json_name = "counselId"];</code>
+     * @param value The bytes for counselId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private int userId_ ;
+    private java.lang.Object userId_ = "";
     /**
-     * <code>int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId"];</code>
      * @return The userId.
      */
-    @java.lang.Override
-    public int getUserId() {
-      return userId_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserId(int value) {
-
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       userId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
+      userId_ = getDefaultInstance().getUserId();
       bitField0_ = (bitField0_ & ~0x00000002);
-      userId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      userId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private int counselorId_ ;
+    private java.lang.Object counselorId_ = "";
     /**
-     * <code>int32 counselor_id = 3 [json_name = "counselorId"];</code>
+     * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
      * @return The counselorId.
      */
-    @java.lang.Override
-    public int getCounselorId() {
-      return counselorId_;
+    public java.lang.String getCounselorId() {
+      java.lang.Object ref = counselorId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselorId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 counselor_id = 3 [json_name = "counselorId"];</code>
+     * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
+     * @return The bytes for counselorId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselorIdBytes() {
+      java.lang.Object ref = counselorId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselorId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
      * @param value The counselorId to set.
      * @return This builder for chaining.
      */
-    public Builder setCounselorId(int value) {
-
+    public Builder setCounselorId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       counselorId_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 counselor_id = 3 [json_name = "counselorId"];</code>
+     * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselorId() {
+      counselorId_ = getDefaultInstance().getCounselorId();
       bitField0_ = (bitField0_ & ~0x00000004);
-      counselorId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counselor_id = 3 [json_name = "counselorId"];</code>
+     * @param value The bytes for counselorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselorIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselorId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

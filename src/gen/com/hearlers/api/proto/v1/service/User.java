@@ -154,20 +154,20 @@ public final class User {
       "arlers.v1.model.UserR\004user\022<\n\tauth_user\030" +
       "\002 \001(\0132\037.com.hearlers.v1.model.AuthUserR\010" +
       "authUser\"\230\001\n\031ConnectAuthChannelRequest\022\027" +
-      "\n\007user_id\030\001 \001(\005R\006userId\022E\n\014auth_channel\030" +
+      "\n\007user_id\030\001 \001(\tR\006userId\022E\n\014auth_channel\030" +
       "\002 \001(\0162\".com.hearlers.v1.model.AuthChanne" +
       "lR\013authChannel\022\033\n\tunique_id\030\003 \001(\tR\010uniqu" +
       "eId\"Z\n\032ConnectAuthChannelResponse\022<\n\taut" +
       "h_user\030\001 \001(\0132\037.com.hearlers.v1.model.Aut" +
       "hUserR\010authUser\"g\n\027SaveRefreshTokenReque" +
-      "st\022\027\n\007user_id\030\001 \001(\005R\006userId\022\024\n\005token\030\002 \001" +
+      "st\022\027\n\007user_id\030\001 \001(\tR\006userId\022\024\n\005token\030\002 \001" +
       "(\tR\005token\022\035\n\nexpires_at\030\003 \001(\tR\texpiresAt" +
       "\"4\n\030SaveRefreshTokenResponse\022\030\n\007success\030" +
       "\001 \001(\010R\007success\"J\n\031VerifyRefreshTokenRequ" +
-      "est\022\027\n\007user_id\030\001 \001(\005R\006userId\022\024\n\005token\030\002 " +
+      "est\022\027\n\007user_id\030\001 \001(\tR\006userId\022\024\n\005token\030\002 " +
       "\001(\tR\005token\"6\n\032VerifyRefreshTokenResponse" +
       "\022\030\n\007success\030\001 \001(\010R\007success\"l\n\022FindOneUse" +
-      "rRequest\022\034\n\007user_id\030\001 \001(\005H\000R\006userId\210\001\001\022\037" +
+      "rRequest\022\034\n\007user_id\030\001 \001(\tH\000R\006userId\210\001\001\022\037" +
       "\n\010nickname\030\002 \001(\tH\001R\010nickname\210\001\001B\n\n\010_user" +
       "_idB\013\n\t_nickname\"F\n\023FindOneUserResponse\022" +
       "/\n\004user\030\001 \001(\0132\033.com.hearlers.v1.model.Us" +
@@ -176,8 +176,8 @@ public final class User {
       "inationR\npagination\"G\n\022FindManyUserResul" +
       "t\0221\n\005users\030\001 \003(\0132\033.com.hearlers.v1.model" +
       ".UserR\005users\"\207\002\n\026FindOneAuthUserRequest\022" +
-      "%\n\014auth_user_id\030\001 \001(\005H\000R\nauthUserId\210\001\001\022\034" +
-      "\n\007user_id\030\002 \001(\005H\001R\006userId\210\001\001\022J\n\014auth_cha" +
+      "%\n\014auth_user_id\030\001 \001(\tH\000R\nauthUserId\210\001\001\022\034" +
+      "\n\007user_id\030\002 \001(\tH\001R\006userId\210\001\001\022J\n\014auth_cha" +
       "nnel\030\003 \001(\0162\".com.hearlers.v1.model.AuthC" +
       "hannelH\002R\013authChannel\210\001\001\022 \n\tunique_id\030\004 " +
       "\001(\tH\003R\010uniqueId\210\001\001B\017\n\r_auth_user_idB\n\n\010_" +
@@ -185,17 +185,17 @@ public final class User {
       "\n\027FindOneAuthUserResponse\022<\n\tauth_user\030\001" +
       " \001(\0132\037.com.hearlers.v1.model.AuthUserR\010a" +
       "uthUser\"6\n\033CheckRemainingTokensRequest\022\027" +
-      "\n\007user_id\030\001 \001(\005R\006userId\"\257\001\n\034CheckRemaini" +
+      "\n\007user_id\030\001 \001(\tR\006userId\"\257\001\n\034CheckRemaini" +
       "ngTokensResponse\022)\n\020remaining_tokens\030\001 \001" +
       "(\005R\017remainingTokens\022\035\n\nmax_tokens\030\002 \001(\005R" +
       "\tmaxTokens\022\032\n\010reserved\030\003 \001(\010R\010reserved\022)" +
       "\n\020reserved_timeout\030\004 \001(\tR\017reservedTimeou" +
       "t\"/\n\024ReserveTokensRequest\022\027\n\007user_id\030\001 \001" +
-      "(\005R\006userId\"}\n\025ReserveTokensResponse\022)\n\020r" +
+      "(\tR\006userId\"}\n\025ReserveTokensResponse\022)\n\020r" +
       "emaining_tokens\030\001 \001(\005R\017remainingTokens\022\035" +
       "\n\nmax_tokens\030\002 \001(\005R\tmaxTokens\022\032\n\010reserve" +
       "d\030\003 \001(\010R\010reserved\"\275\003\n\021UpdateUserRequest\022" +
-      "\027\n\007user_id\030\001 \001(\005R\006userId\022\037\n\010nickname\030\002 \001" +
+      "\027\n\007user_id\030\001 \001(\tR\006userId\022\037\n\010nickname\030\002 \001" +
       "(\tH\000R\010nickname\210\001\001\022(\n\rprofile_image\030\003 \001(\t" +
       "H\001R\014profileImage\210\001\001\022&\n\014phone_number\030\004 \001(" +
       "\tH\002R\013phoneNumber\210\001\001\022:\n\006gender\030\005 \001(\0162\035.co" +

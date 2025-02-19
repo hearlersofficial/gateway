@@ -177,7 +177,7 @@ public enum CounselPromptType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.CounselOuterClass.getDescriptor().getEnumTypes().get(2);
+    return com.hearlers.api.proto.v1.model.CounselOuterClass.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final CounselPromptType[] VALUES = values();

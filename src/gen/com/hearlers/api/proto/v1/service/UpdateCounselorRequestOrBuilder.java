@@ -10,10 +10,16 @@ public interface UpdateCounselorRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 counselor_id = 1 [json_name = "counselorId"];</code>
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
    * @return The counselorId.
    */
-  int getCounselorId();
+  java.lang.String getCounselorId();
+  /**
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  com.google.protobuf.ByteString
+      getCounselorIdBytes();
 
   /**
    * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>

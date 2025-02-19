@@ -10,10 +10,16 @@ public interface ConnectAuthChannelRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 user_id = 1 [json_name = "userId"];</code>
+   * <code>string user_id = 1 [json_name = "userId"];</code>
    * @return The userId.
    */
-  int getUserId();
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 
   /**
    * <code>.com.hearlers.v1.model.AuthChannel auth_channel = 2 [json_name = "authChannel"];</code>

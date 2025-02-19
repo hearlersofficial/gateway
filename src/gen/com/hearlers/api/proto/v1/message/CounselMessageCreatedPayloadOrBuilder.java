@@ -10,25 +10,55 @@ public interface CounselMessageCreatedPayloadOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 counsel_id = 1 [json_name = "counselId"];</code>
-   * @return The counselId.
+   * <code>string counsel_message_id = 1 [json_name = "counselMessageId"];</code>
+   * @return The counselMessageId.
    */
-  int getCounselId();
+  java.lang.String getCounselMessageId();
+  /**
+   * <code>string counsel_message_id = 1 [json_name = "counselMessageId"];</code>
+   * @return The bytes for counselMessageId.
+   */
+  com.google.protobuf.ByteString
+      getCounselMessageIdBytes();
 
   /**
-   * <code>string message = 2 [json_name = "message"];</code>
+   * <code>string counsel_id = 2 [json_name = "counselId"];</code>
+   * @return The counselId.
+   */
+  java.lang.String getCounselId();
+  /**
+   * <code>string counsel_id = 2 [json_name = "counselId"];</code>
+   * @return The bytes for counselId.
+   */
+  com.google.protobuf.ByteString
+      getCounselIdBytes();
+
+  /**
+   * <code>string user_id = 3 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 3 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
+  /**
+   * <code>string message = 4 [json_name = "message"];</code>
    * @return The message.
    */
   java.lang.String getMessage();
   /**
-   * <code>string message = 2 [json_name = "message"];</code>
+   * <code>string message = 4 [json_name = "message"];</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();
 
   /**
-   * <code>bool is_user_message = 3 [json_name = "isUserMessage"];</code>
+   * <code>bool is_user_message = 5 [json_name = "isUserMessage"];</code>
    * @return The isUserMessage.
    */
   boolean getIsUserMessage();
@@ -38,7 +68,7 @@ public interface CounselMessageCreatedPayloadOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string occurred_at = 4 [json_name = "occurredAt"];</code>
+   * <code>string occurred_at = 6 [json_name = "occurredAt"];</code>
    * @return The occurredAt.
    */
   java.lang.String getOccurredAt();
@@ -47,7 +77,7 @@ public interface CounselMessageCreatedPayloadOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string occurred_at = 4 [json_name = "occurredAt"];</code>
+   * <code>string occurred_at = 6 [json_name = "occurredAt"];</code>
    * @return The bytes for occurredAt.
    */
   com.google.protobuf.ByteString

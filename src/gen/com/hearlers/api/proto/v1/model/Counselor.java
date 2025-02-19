@@ -27,7 +27,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Counselor() {
-    counselorType_ = 0;
+    id_ = "";
+    toneId_ = "";
     name_ = "";
     description_ = "";
     gender_ = 0;
@@ -53,32 +54,81 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private int id_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
-   * <code>int32 id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
   @java.lang.Override
-  public int getId() {
-    return id_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int COUNSELOR_TYPE_FIELD_NUMBER = 2;
-  private int counselorType_ = 0;
+  public static final int TONE_ID_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object toneId_ = "";
   /**
-   * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-   * @return The enum numeric value on the wire for counselorType.
+   * <code>string tone_id = 2 [json_name = "toneId"];</code>
+   * @return The toneId.
    */
-  @java.lang.Override public int getCounselorTypeValue() {
-    return counselorType_;
+  @java.lang.Override
+  public java.lang.String getToneId() {
+    java.lang.Object ref = toneId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      toneId_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-   * @return The counselorType.
+   * <code>string tone_id = 2 [json_name = "toneId"];</code>
+   * @return The bytes for toneId.
    */
-  @java.lang.Override public com.hearlers.api.proto.v1.model.CounselorType getCounselorType() {
-    com.hearlers.api.proto.v1.model.CounselorType result = com.hearlers.api.proto.v1.model.CounselorType.forNumber(counselorType_);
-    return result == null ? com.hearlers.api.proto.v1.model.CounselorType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getToneIdBytes() {
+    java.lang.Object ref = toneId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      toneId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
@@ -449,11 +499,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0) {
-      output.writeInt32(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
     }
-    if (counselorType_ != com.hearlers.api.proto.v1.model.CounselorType.COUNSELOR_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, counselorType_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, toneId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, name_);
@@ -491,13 +541,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
     }
-    if (counselorType_ != com.hearlers.api.proto.v1.model.CounselorType.COUNSELOR_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, counselorType_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, toneId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, name_);
@@ -542,9 +590,10 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.model.Counselor other = (com.hearlers.api.proto.v1.model.Counselor) obj;
 
-    if (getId()
-        != other.getId()) return false;
-    if (counselorType_ != other.counselorType_) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getToneId()
+        .equals(other.getToneId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getDescription()
@@ -574,9 +623,9 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId();
-    hash = (37 * hash) + COUNSELOR_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + counselorType_;
+    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getToneId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -726,8 +775,8 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      id_ = 0;
-      counselorType_ = 0;
+      id_ = "";
+      toneId_ = "";
       name_ = "";
       description_ = "";
       gender_ = 0;
@@ -774,7 +823,7 @@ private static final long serialVersionUID = 0L;
         result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.counselorType_ = counselorType_;
+        result.toneId_ = toneId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
@@ -817,11 +866,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.model.Counselor other) {
       if (other == com.hearlers.api.proto.v1.model.Counselor.getDefaultInstance()) return this;
-      if (other.getId() != 0) {
-        setId(other.getId());
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
-      if (other.counselorType_ != 0) {
-        setCounselorTypeValue(other.getCounselorTypeValue());
+      if (!other.getToneId().isEmpty()) {
+        toneId_ = other.toneId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -892,16 +945,16 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              id_ = input.readInt32();
+            case 10: {
+              id_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
-            case 16: {
-              counselorType_ = input.readEnum();
+            } // case 10
+            case 18: {
+              toneId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 26: {
               name_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
@@ -964,87 +1017,146 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int id_ ;
+    private java.lang.Object id_ = "";
     /**
-     * <code>int32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
-    @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(int value) {
-
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
+      id_ = getDefaultInstance().getId();
       bitField0_ = (bitField0_ & ~0x00000001);
-      id_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private int counselorType_ = 0;
+    private java.lang.Object toneId_ = "";
     /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @return The enum numeric value on the wire for counselorType.
+     * <code>string tone_id = 2 [json_name = "toneId"];</code>
+     * @return The toneId.
      */
-    @java.lang.Override public int getCounselorTypeValue() {
-      return counselorType_;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @param value The enum numeric value on the wire for counselorType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCounselorTypeValue(int value) {
-      counselorType_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @return The counselorType.
-     */
-    @java.lang.Override
-    public com.hearlers.api.proto.v1.model.CounselorType getCounselorType() {
-      com.hearlers.api.proto.v1.model.CounselorType result = com.hearlers.api.proto.v1.model.CounselorType.forNumber(counselorType_);
-      return result == null ? com.hearlers.api.proto.v1.model.CounselorType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @param value The counselorType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCounselorType(com.hearlers.api.proto.v1.model.CounselorType value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public java.lang.String getToneId() {
+      java.lang.Object ref = toneId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        toneId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
+    }
+    /**
+     * <code>string tone_id = 2 [json_name = "toneId"];</code>
+     * @return The bytes for toneId.
+     */
+    public com.google.protobuf.ByteString
+        getToneIdBytes() {
+      java.lang.Object ref = toneId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toneId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string tone_id = 2 [json_name = "toneId"];</code>
+     * @param value The toneId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToneId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      toneId_ = value;
       bitField0_ |= 0x00000002;
-      counselorType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
+     * <code>string tone_id = 2 [json_name = "toneId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearCounselorType() {
+    public Builder clearToneId() {
+      toneId_ = getDefaultInstance().getToneId();
       bitField0_ = (bitField0_ & ~0x00000002);
-      counselorType_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tone_id = 2 [json_name = "toneId"];</code>
+     * @param value The bytes for toneId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToneIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      toneId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

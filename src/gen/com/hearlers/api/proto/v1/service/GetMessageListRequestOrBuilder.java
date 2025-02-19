@@ -10,8 +10,14 @@ public interface GetMessageListRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 counsel_id = 1 [json_name = "counselId"];</code>
+   * <code>string counsel_id = 1 [json_name = "counselId"];</code>
    * @return The counselId.
    */
-  int getCounselId();
+  java.lang.String getCounselId();
+  /**
+   * <code>string counsel_id = 1 [json_name = "counselId"];</code>
+   * @return The bytes for counselId.
+   */
+  com.google.protobuf.ByteString
+      getCounselIdBytes();
 }

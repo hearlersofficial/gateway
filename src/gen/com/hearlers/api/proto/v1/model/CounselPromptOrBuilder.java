@@ -10,10 +10,16 @@ public interface CounselPromptOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
-  int getId();
+  java.lang.String getId();
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 
   /**
    * <code>string persona = 2 [json_name = "persona"];</code>

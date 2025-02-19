@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateCounselorRequest() {
+    counselorId_ = "";
     counselorType_ = 0;
     name_ = "";
     description_ = "";
@@ -47,14 +48,42 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUNSELOR_ID_FIELD_NUMBER = 1;
-  private int counselorId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselorId_ = "";
   /**
-   * <code>int32 counselor_id = 1 [json_name = "counselorId"];</code>
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
    * @return The counselorId.
    */
   @java.lang.Override
-  public int getCounselorId() {
-    return counselorId_;
+  public java.lang.String getCounselorId() {
+    java.lang.Object ref = counselorId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselorId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselorIdBytes() {
+    java.lang.Object ref = counselorId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselorId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int COUNSELOR_TYPE_FIELD_NUMBER = 2;
@@ -185,8 +214,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (counselorId_ != 0) {
-      output.writeInt32(1, counselorId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, counselorId_);
     }
     if (counselorType_ != com.hearlers.api.proto.v1.model.CounselorType.COUNSELOR_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, counselorType_);
@@ -209,9 +238,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (counselorId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, counselorId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, counselorId_);
     }
     if (counselorType_ != com.hearlers.api.proto.v1.model.CounselorType.COUNSELOR_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -242,8 +270,8 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.service.UpdateCounselorRequest other = (com.hearlers.api.proto.v1.service.UpdateCounselorRequest) obj;
 
-    if (getCounselorId()
-        != other.getCounselorId()) return false;
+    if (!getCounselorId()
+        .equals(other.getCounselorId())) return false;
     if (counselorType_ != other.counselorType_) return false;
     if (!getName()
         .equals(other.getName())) return false;
@@ -262,7 +290,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCounselorId();
+    hash = (53 * hash) + getCounselorId().hashCode();
     hash = (37 * hash) + COUNSELOR_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + counselorType_;
     hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -402,7 +430,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      counselorId_ = 0;
+      counselorId_ = "";
       counselorType_ = 0;
       name_ = "";
       description_ = "";
@@ -469,8 +497,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.UpdateCounselorRequest other) {
       if (other == com.hearlers.api.proto.v1.service.UpdateCounselorRequest.getDefaultInstance()) return this;
-      if (other.getCounselorId() != 0) {
-        setCounselorId(other.getCounselorId());
+      if (!other.getCounselorId().isEmpty()) {
+        counselorId_ = other.counselorId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       if (other.counselorType_ != 0) {
         setCounselorTypeValue(other.getCounselorTypeValue());
@@ -514,11 +544,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              counselorId_ = input.readInt32();
+            case 10: {
+              counselorId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
+            } // case 10
             case 16: {
               counselorType_ = input.readEnum();
               bitField0_ |= 0x00000002;
@@ -556,34 +586,74 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int counselorId_ ;
+    private java.lang.Object counselorId_ = "";
     /**
-     * <code>int32 counselor_id = 1 [json_name = "counselorId"];</code>
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
      * @return The counselorId.
      */
-    @java.lang.Override
-    public int getCounselorId() {
-      return counselorId_;
+    public java.lang.String getCounselorId() {
+      java.lang.Object ref = counselorId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselorId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 counselor_id = 1 [json_name = "counselorId"];</code>
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+     * @return The bytes for counselorId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselorIdBytes() {
+      java.lang.Object ref = counselorId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselorId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
      * @param value The counselorId to set.
      * @return This builder for chaining.
      */
-    public Builder setCounselorId(int value) {
-
+    public Builder setCounselorId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       counselorId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 counselor_id = 1 [json_name = "counselorId"];</code>
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselorId() {
+      counselorId_ = getDefaultInstance().getCounselorId();
       bitField0_ = (bitField0_ & ~0x00000001);
-      counselorId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+     * @param value The bytes for counselorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselorIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselorId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

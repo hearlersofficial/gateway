@@ -56,7 +56,7 @@ public final class UserOuterClass {
     java.lang.String[] descriptorData = {
       "\n com/hearlers/v1/model/user.proto\022\025com." +
       "hearlers.v1.model\032\034google/protobuf/struc" +
-      "t.proto\"\244\002\n\004User\022\016\n\002id\030\001 \001(\005R\002id\022\032\n\010nick" +
+      "t.proto\"\244\002\n\004User\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010nick" +
       "name\030\002 \001(\tR\010nickname\022E\n\014user_profile\030\003 \001" +
       "(\0132\".com.hearlers.v1.model.UserProfileR\013" +
       "userProfile\022L\n\017user_progresses\030\004 \003(\0132#.c" +

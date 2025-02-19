@@ -46,15 +46,17 @@ public final class Counsel {
     java.lang.String[] descriptorData = {
       "\n%com/hearlers/v1/message/counsel.proto\022" +
       "\027com.hearlers.v1.message\"\223\001\n\025CounselCrea" +
-      "tedPayload\022\035\n\ncounsel_id\030\001 \001(\005R\tcounselI" +
-      "d\022\027\n\007user_id\030\002 \001(\005R\006userId\022!\n\014counselor_" +
-      "id\030\003 \001(\005R\013counselorId\022\037\n\013occurred_at\030\004 \001" +
-      "(\tR\noccurredAt\"\240\001\n\034CounselMessageCreated" +
-      "Payload\022\035\n\ncounsel_id\030\001 \001(\005R\tcounselId\022\030" +
-      "\n\007message\030\002 \001(\tR\007message\022&\n\017is_user_mess" +
-      "age\030\003 \001(\010R\risUserMessage\022\037\n\013occurred_at\030" +
-      "\004 \001(\tR\noccurredAtB%\n!com.hearlers.api.pr" +
-      "oto.v1.messageP\001b\006proto3"
+      "tedPayload\022\035\n\ncounsel_id\030\001 \001(\tR\tcounselI" +
+      "d\022\027\n\007user_id\030\002 \001(\tR\006userId\022!\n\014counselor_" +
+      "id\030\003 \001(\tR\013counselorId\022\037\n\013occurred_at\030\004 \001" +
+      "(\tR\noccurredAt\"\347\001\n\034CounselMessageCreated" +
+      "Payload\022,\n\022counsel_message_id\030\001 \001(\tR\020cou" +
+      "nselMessageId\022\035\n\ncounsel_id\030\002 \001(\tR\tcouns" +
+      "elId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030\n\007message" +
+      "\030\004 \001(\tR\007message\022&\n\017is_user_message\030\005 \001(\010" +
+      "R\risUserMessage\022\037\n\013occurred_at\030\006 \001(\tR\noc" +
+      "curredAtB%\n!com.hearlers.api.proto.v1.me" +
+      "ssageP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -71,7 +73,7 @@ public final class Counsel {
     internal_static_com_hearlers_v1_message_CounselMessageCreatedPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_message_CounselMessageCreatedPayload_descriptor,
-        new java.lang.String[] { "CounselId", "Message", "IsUserMessage", "OccurredAt", });
+        new java.lang.String[] { "CounselMessageId", "CounselId", "UserId", "Message", "IsUserMessage", "OccurredAt", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

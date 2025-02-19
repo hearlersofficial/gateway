@@ -51,7 +51,7 @@ public final class AuthUserOuterClass {
     java.lang.String[] descriptorData = {
       "\n%com/hearlers/v1/model/auth_user.proto\022" +
       "\025com.hearlers.v1.model\"\236\003\n\010AuthUser\022\016\n\002i" +
-      "d\030\001 \001(\005R\002id\022\027\n\007user_id\030\002 \001(\005R\006userId\022E\n\014" +
+      "d\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022E\n\014" +
       "auth_channel\030\003 \001(\0162\".com.hearlers.v1.mod" +
       "el.AuthChannelR\013authChannel\022U\n\022oauth_cha" +
       "nnel_info\030\004 \001(\0132\'.com.hearlers.v1.model." +
@@ -61,7 +61,7 @@ public final class AuthUserOuterClass {
       "ogin_at\030\006 \001(\tR\013lastLoginAt\022\035\n\ncreated_at" +
       "\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tu" +
       "pdatedAt\022\035\n\ndeleted_at\030\t \001(\tR\tdeletedAt\"" +
-      "\343\001\n\020OAuthChannelInfo\022\016\n\002id\030\001 \001(\005R\002id\022E\n\014" +
+      "\343\001\n\020OAuthChannelInfo\022\016\n\002id\030\001 \001(\tR\002id\022E\n\014" +
       "auth_channel\030\002 \001(\0162\".com.hearlers.v1.mod" +
       "el.AuthChannelR\013authChannel\022\033\n\tunique_id" +
       "\030\003 \001(\tR\010uniqueId\022\035\n\ncreated_at\030\004 \001(\tR\tcr" +

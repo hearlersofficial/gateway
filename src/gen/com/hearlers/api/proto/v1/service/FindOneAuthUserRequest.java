@@ -31,6 +31,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private FindOneAuthUserRequest() {
+    authUserId_ = "";
+    userId_ = "";
     authChannel_ = 0;
     uniqueId_ = "";
   }
@@ -50,9 +52,10 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int AUTH_USER_ID_FIELD_NUMBER = 1;
-  private int authUserId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authUserId_ = "";
   /**
-   * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+   * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
    * @return Whether the authUserId field is set.
    */
   @java.lang.Override
@@ -60,18 +63,46 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+   * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
    * @return The authUserId.
    */
   @java.lang.Override
-  public int getAuthUserId() {
-    return authUserId_;
+  public java.lang.String getAuthUserId() {
+    java.lang.Object ref = authUserId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authUserId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
+   * @return The bytes for authUserId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAuthUserIdBytes() {
+    java.lang.Object ref = authUserId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      authUserId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private int userId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userId_ = "";
   /**
-   * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+   * <code>optional string user_id = 2 [json_name = "userId"];</code>
    * @return Whether the userId field is set.
    */
   @java.lang.Override
@@ -79,12 +110,39 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+   * <code>optional string user_id = 2 [json_name = "userId"];</code>
    * @return The userId.
    */
   @java.lang.Override
-  public int getUserId() {
-    return userId_;
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string user_id = 2 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int AUTH_CHANNEL_FIELD_NUMBER = 3;
@@ -174,10 +232,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt32(1, authUserId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, authUserId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeInt32(2, userId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(3, authChannel_);
@@ -195,12 +253,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, authUserId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, authUserId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, userId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -226,13 +282,13 @@ private static final long serialVersionUID = 0L;
 
     if (hasAuthUserId() != other.hasAuthUserId()) return false;
     if (hasAuthUserId()) {
-      if (getAuthUserId()
-          != other.getAuthUserId()) return false;
+      if (!getAuthUserId()
+          .equals(other.getAuthUserId())) return false;
     }
     if (hasUserId() != other.hasUserId()) return false;
     if (hasUserId()) {
-      if (getUserId()
-          != other.getUserId()) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
     }
     if (hasAuthChannel() != other.hasAuthChannel()) return false;
     if (hasAuthChannel()) {
@@ -256,11 +312,11 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAuthUserId()) {
       hash = (37 * hash) + AUTH_USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthUserId();
+      hash = (53 * hash) + getAuthUserId().hashCode();
     }
     if (hasUserId()) {
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId();
+      hash = (53 * hash) + getUserId().hashCode();
     }
     if (hasAuthChannel()) {
       hash = (37 * hash) + AUTH_CHANNEL_FIELD_NUMBER;
@@ -405,8 +461,8 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      authUserId_ = 0;
-      userId_ = 0;
+      authUserId_ = "";
+      userId_ = "";
       authChannel_ = 0;
       uniqueId_ = "";
       return this;
@@ -475,10 +531,14 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest other) {
       if (other == com.hearlers.api.proto.v1.service.FindOneAuthUserRequest.getDefaultInstance()) return this;
       if (other.hasAuthUserId()) {
-        setAuthUserId(other.getAuthUserId());
+        authUserId_ = other.authUserId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       if (other.hasUserId()) {
-        setUserId(other.getUserId());
+        userId_ = other.userId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       if (other.hasAuthChannel()) {
         setAuthChannel(other.getAuthChannel());
@@ -514,16 +574,16 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              authUserId_ = input.readInt32();
+            case 10: {
+              authUserId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
-            case 16: {
-              userId_ = input.readInt32();
+            } // case 10
+            case 18: {
+              userId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 24: {
               authChannel_ = input.readEnum();
               bitField0_ |= 0x00000004;
@@ -551,82 +611,160 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int authUserId_ ;
+    private java.lang.Object authUserId_ = "";
     /**
-     * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+     * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
      * @return Whether the authUserId field is set.
      */
-    @java.lang.Override
     public boolean hasAuthUserId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+     * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
      * @return The authUserId.
      */
-    @java.lang.Override
-    public int getAuthUserId() {
-      return authUserId_;
+    public java.lang.String getAuthUserId() {
+      java.lang.Object ref = authUserId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authUserId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+     * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
+     * @return The bytes for authUserId.
+     */
+    public com.google.protobuf.ByteString
+        getAuthUserIdBytes() {
+      java.lang.Object ref = authUserId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
      * @param value The authUserId to set.
      * @return This builder for chaining.
      */
-    public Builder setAuthUserId(int value) {
-
+    public Builder setAuthUserId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       authUserId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+     * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAuthUserId() {
+      authUserId_ = getDefaultInstance().getAuthUserId();
       bitField0_ = (bitField0_ & ~0x00000001);
-      authUserId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
+     * @param value The bytes for authUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      authUserId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private int userId_ ;
+    private java.lang.Object userId_ = "";
     /**
-     * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>optional string user_id = 2 [json_name = "userId"];</code>
      * @return Whether the userId field is set.
      */
-    @java.lang.Override
     public boolean hasUserId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>optional string user_id = 2 [json_name = "userId"];</code>
      * @return The userId.
      */
-    @java.lang.Override
-    public int getUserId() {
-      return userId_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>optional string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string user_id = 2 [json_name = "userId"];</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserId(int value) {
-
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       userId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+     * <code>optional string user_id = 2 [json_name = "userId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
+      userId_ = getDefaultInstance().getUserId();
       bitField0_ = (bitField0_ & ~0x00000002);
-      userId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string user_id = 2 [json_name = "userId"];</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      userId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -10,16 +10,28 @@ public interface CounselMessageOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
-  int getId();
+  java.lang.String getId();
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 
   /**
-   * <code>int32 counsel_id = 2 [json_name = "counselId"];</code>
+   * <code>string counsel_id = 2 [json_name = "counselId"];</code>
    * @return The counselId.
    */
-  int getCounselId();
+  java.lang.String getCounselId();
+  /**
+   * <code>string counsel_id = 2 [json_name = "counselId"];</code>
+   * @return The bytes for counselId.
+   */
+  com.google.protobuf.ByteString
+      getCounselIdBytes();
 
   /**
    * <code>string message = 3 [json_name = "message"];</code>
@@ -44,7 +56,38 @@ public interface CounselMessageOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
+   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * @return The reactedAt.
+   */
+  java.lang.String getReactedAt();
+  /**
+   * <pre>
+   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * </pre>
+   *
+   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * @return The bytes for reactedAt.
+   */
+  com.google.protobuf.ByteString
+      getReactedAtBytes();
+
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * @return The enum numeric value on the wire for reaction.
+   */
+  int getReactionValue();
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * @return The reaction.
+   */
+  com.hearlers.api.proto.v1.model.CounselMessageReaction getReaction();
+
+  /**
+   * <pre>
+   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * </pre>
+   *
+   * <code>string created_at = 7 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -53,7 +96,7 @@ public interface CounselMessageOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
+   * <code>string created_at = 7 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -64,7 +107,7 @@ public interface CounselMessageOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
@@ -73,7 +116,7 @@ public interface CounselMessageOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
@@ -84,7 +127,7 @@ public interface CounselMessageOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -93,7 +136,7 @@ public interface CounselMessageOrBuilder extends
    * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

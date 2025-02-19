@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdatePromptRequest() {
+    promptId_ = "";
     persona_ = "";
     context_ = "";
     instruction_ = "";
@@ -50,14 +51,42 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROMPT_ID_FIELD_NUMBER = 1;
-  private int promptId_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object promptId_ = "";
   /**
-   * <code>int32 prompt_id = 1 [json_name = "promptId"];</code>
+   * <code>string prompt_id = 1 [json_name = "promptId"];</code>
    * @return The promptId.
    */
   @java.lang.Override
-  public int getPromptId() {
-    return promptId_;
+  public java.lang.String getPromptId() {
+    java.lang.Object ref = promptId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      promptId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string prompt_id = 1 [json_name = "promptId"];</code>
+   * @return The bytes for promptId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPromptIdBytes() {
+    java.lang.Object ref = promptId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      promptId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PERSONA_FIELD_NUMBER = 2;
@@ -347,8 +376,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (promptId_ != 0) {
-      output.writeInt32(1, promptId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(promptId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, promptId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(persona_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, persona_);
@@ -380,9 +409,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (promptId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, promptId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(promptId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, promptId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(persona_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, persona_);
@@ -420,8 +448,8 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.service.UpdatePromptRequest other = (com.hearlers.api.proto.v1.service.UpdatePromptRequest) obj;
 
-    if (getPromptId()
-        != other.getPromptId()) return false;
+    if (!getPromptId()
+        .equals(other.getPromptId())) return false;
     if (!getPersona()
         .equals(other.getPersona())) return false;
     if (!getContext()
@@ -448,7 +476,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROMPT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPromptId();
+    hash = (53 * hash) + getPromptId().hashCode();
     hash = (37 * hash) + PERSONA_FIELD_NUMBER;
     hash = (53 * hash) + getPersona().hashCode();
     hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
@@ -594,7 +622,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      promptId_ = 0;
+      promptId_ = "";
       persona_ = "";
       context_ = "";
       instruction_ = "";
@@ -673,8 +701,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.UpdatePromptRequest other) {
       if (other == com.hearlers.api.proto.v1.service.UpdatePromptRequest.getDefaultInstance()) return this;
-      if (other.getPromptId() != 0) {
-        setPromptId(other.getPromptId());
+      if (!other.getPromptId().isEmpty()) {
+        promptId_ = other.promptId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       if (!other.getPersona().isEmpty()) {
         persona_ = other.persona_;
@@ -737,11 +767,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              promptId_ = input.readInt32();
+            case 10: {
+              promptId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
+            } // case 10
             case 18: {
               persona_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
@@ -794,34 +824,74 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int promptId_ ;
+    private java.lang.Object promptId_ = "";
     /**
-     * <code>int32 prompt_id = 1 [json_name = "promptId"];</code>
+     * <code>string prompt_id = 1 [json_name = "promptId"];</code>
      * @return The promptId.
      */
-    @java.lang.Override
-    public int getPromptId() {
-      return promptId_;
+    public java.lang.String getPromptId() {
+      java.lang.Object ref = promptId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        promptId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 prompt_id = 1 [json_name = "promptId"];</code>
+     * <code>string prompt_id = 1 [json_name = "promptId"];</code>
+     * @return The bytes for promptId.
+     */
+    public com.google.protobuf.ByteString
+        getPromptIdBytes() {
+      java.lang.Object ref = promptId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        promptId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string prompt_id = 1 [json_name = "promptId"];</code>
      * @param value The promptId to set.
      * @return This builder for chaining.
      */
-    public Builder setPromptId(int value) {
-
+    public Builder setPromptId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       promptId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 prompt_id = 1 [json_name = "promptId"];</code>
+     * <code>string prompt_id = 1 [json_name = "promptId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPromptId() {
+      promptId_ = getDefaultInstance().getPromptId();
       bitField0_ = (bitField0_ & ~0x00000001);
-      promptId_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prompt_id = 1 [json_name = "promptId"];</code>
+     * @param value The bytes for promptId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      promptId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

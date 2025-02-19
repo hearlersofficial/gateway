@@ -10,16 +10,28 @@ public interface CreateCounselRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 user_id = 1 [json_name = "userId"];</code>
+   * <code>string user_id = 1 [json_name = "userId"];</code>
    * @return The userId.
    */
-  int getUserId();
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 
   /**
-   * <code>int32 counselor_id = 2 [json_name = "counselorId"];</code>
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
    * @return The counselorId.
    */
-  int getCounselorId();
+  java.lang.String getCounselorId();
+  /**
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  com.google.protobuf.ByteString
+      getCounselorIdBytes();
 
   /**
    * <code>string intro_message = 3 [json_name = "introMessage"];</code>

@@ -10,26 +10,38 @@ public interface FindOneAuthUserRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+   * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
    * @return Whether the authUserId field is set.
    */
   boolean hasAuthUserId();
   /**
-   * <code>optional int32 auth_user_id = 1 [json_name = "authUserId"];</code>
+   * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
    * @return The authUserId.
    */
-  int getAuthUserId();
+  java.lang.String getAuthUserId();
+  /**
+   * <code>optional string auth_user_id = 1 [json_name = "authUserId"];</code>
+   * @return The bytes for authUserId.
+   */
+  com.google.protobuf.ByteString
+      getAuthUserIdBytes();
 
   /**
-   * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+   * <code>optional string user_id = 2 [json_name = "userId"];</code>
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
   /**
-   * <code>optional int32 user_id = 2 [json_name = "userId"];</code>
+   * <code>optional string user_id = 2 [json_name = "userId"];</code>
    * @return The userId.
    */
-  int getUserId();
+  java.lang.String getUserId();
+  /**
+   * <code>optional string user_id = 2 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 
   /**
    * <code>optional .com.hearlers.v1.model.AuthChannel auth_channel = 3 [json_name = "authChannel"];</code>

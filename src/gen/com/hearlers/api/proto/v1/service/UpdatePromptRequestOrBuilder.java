@@ -10,10 +10,16 @@ public interface UpdatePromptRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 prompt_id = 1 [json_name = "promptId"];</code>
+   * <code>string prompt_id = 1 [json_name = "promptId"];</code>
    * @return The promptId.
    */
-  int getPromptId();
+  java.lang.String getPromptId();
+  /**
+   * <code>string prompt_id = 1 [json_name = "promptId"];</code>
+   * @return The bytes for promptId.
+   */
+  com.google.protobuf.ByteString
+      getPromptIdBytes();
 
   /**
    * <code>string persona = 2 [json_name = "persona"];</code>
