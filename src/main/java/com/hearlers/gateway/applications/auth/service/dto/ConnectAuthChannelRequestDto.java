@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class ConnectAuthChannelRequestDto {
-    private int userId;
+    private String userId;
     private AuthChannel authChannel;
     private String uniqueId; // kakaoId
 }

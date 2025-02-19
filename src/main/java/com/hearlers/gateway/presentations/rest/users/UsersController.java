@@ -58,9 +58,9 @@ public class UsersController {
     @GetMapping("/me/counselors/all/counsels")
     public ResponseEntity<ResponseDto.Success<GetMyAllCounselsResponseDto>> getMyAllCounsels() {
         // TODO : 내부 서버와 통신하여 내 모든 상담 채팅 목록 조회
-        Counsel counsel1 = new Counsel(1, 1, "안녕", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
+        Counsel counsel1 = new Counsel("1", "1", "안녕", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
                 LocalDate.now().minusDays(5), null);
-        Counsel counsel2 = new Counsel(2, 2, "잘가", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
+        Counsel counsel2 = new Counsel("2", "2", "잘가", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
                 LocalDate.now().minusDays(10), null);
 
         // Counsel 리스트 생성
@@ -86,7 +86,7 @@ public class UsersController {
     @PutMapping("/me")
     @AuthGuard
     public ResponseEntity<ResponseDto.Success<UpdateUserInfoResponseDto>> updateUserInfo(
-            @RequestAttribute("userId") int userId, @RequestBody UpdateUserInfoRequestDto request) {
+            @RequestAttribute("userId") String userId, @RequestBody UpdateUserInfoRequestDto request) {
 
         UpdateUserRequest.Builder updateUserRequestBuilder = UpdateUserRequest.newBuilder()
                 .setUserId(userId);

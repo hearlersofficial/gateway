@@ -12,7 +12,7 @@ import lombok.Getter;
 public class GetCounselorsResponseDto {
 
     @Schema(description = "상담사 ID", example = "1")
-    private int counselorId;
+    private String counselorId;
 
     @Schema(description = "상담사 타입", example = "COUNSELOR_TYPE_DEPRESSION")
     private CounselorType counselorType;

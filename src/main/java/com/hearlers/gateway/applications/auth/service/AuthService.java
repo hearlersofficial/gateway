@@ -37,11 +37,11 @@ public class AuthService {
         return createUserUseCase.execute(request);
     }
 
-    public SaveRefreshTokenResponse saveRefreshToken(int userId, TokenDto token) {
+    public SaveRefreshTokenResponse saveRefreshToken(String userId, TokenDto token) {
         return saveRefreshTokenUseCase.execute(saveRefreshTokenUseCase.configureRequest(userId, token));
     }
 
-    public AuthUser kakaoLogin(String code, int userId) {
+    public AuthUser kakaoLogin(String code, String userId) {
         GetKakaoAccessTokenRequestDto tokenRequest = new GetKakaoAccessTokenRequestDto();
         tokenRequest.setCode(code);
         GetKakaoAccessTokenResponseDto tokenResponse = getKakaoAccessTokenUseCase.execute(tokenRequest);

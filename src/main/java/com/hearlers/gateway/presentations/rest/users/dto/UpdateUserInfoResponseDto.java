@@ -10,7 +10,7 @@ import lombok.Getter;
 public class UpdateUserInfoResponseDto {
 
     @Schema(description = "유저 ID", example = "1")
-    private int userId;
+    private String userId;
 
     @Schema(description = "변경 여부", example = "true")
     private boolean isUpdated;

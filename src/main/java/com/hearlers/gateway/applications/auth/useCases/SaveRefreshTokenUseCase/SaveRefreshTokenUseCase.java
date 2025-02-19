@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class SaveRefreshTokenUseCase implements UseCase<SaveRefreshTokenRequest, SaveRefreshTokenResponse> {
     private final UserServiceGrpc.UserServiceBlockingStub userServiceBlockingStub;
 
-    public SaveRefreshTokenRequest configureRequest(int userId, TokenDto token) {
+    public SaveRefreshTokenRequest configureRequest(String userId, TokenDto token) {
         return SaveRefreshTokenRequest.newBuilder()
                 .setUserId(userId)
                 .setToken(token.getRefreshToken())

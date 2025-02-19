@@ -94,7 +94,7 @@ public class AuthController {
     })
     @GetMapping("/login/kakao")
     @AuthGuard
-    public void kakao(@RequestAttribute("userId") int userId, HttpServletResponse response) throws IOException {
+    public void kakao(@RequestAttribute("userId") String userId, HttpServletResponse response) throws IOException {
         StringBuffer url = new StringBuffer();
         url.append("https://kauth.kakao.com/oauth/authorize?");
         url.append("client_id=").append(clientId);
@@ -113,13 +113,12 @@ public class AuthController {
     public void kakaoCallback(@RequestParam("code") String code, @RequestParam("state") String state,
                               HttpServletResponse response) throws IOException {
 
-        int userId = Integer.parseInt(state);
-        AuthUser authUser = authService.kakaoLogin(code, userId);
+        AuthUser authUser = authService.kakaoLogin(code, state);
         AuthChannel authChannel = authUser.getAuthChannel();
 
-        TokenDto token = jwtUtil.returnToken(new CreateTokenRequestDto(userId, authChannel), true);
+        TokenDto token = jwtUtil.returnToken(new CreateTokenRequestDto(state, authChannel), true);
 
-        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(userId, token);
+        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(state, token);
 
         if (!saveRefreshTokenResponse.getSuccess()) {
             throw new Error("RefreshToken 저장 실패");

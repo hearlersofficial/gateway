@@ -8,10 +8,10 @@ import lombok.Getter;
 @Getter
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class CreateTokenRequestDto {
-    private int id;
+    private String id;
     private com.hearlers.api.proto.v1.model.AuthChannel authChannel;
 
-    public CreateTokenRequestDto(int id, AuthChannel authChannel) {
+    public CreateTokenRequestDto(String id, AuthChannel authChannel) {
         this.id = id;
         this.authChannel = com.hearlers.api.proto.v1.model.AuthChannel.valueOf(authChannel.name());
     }

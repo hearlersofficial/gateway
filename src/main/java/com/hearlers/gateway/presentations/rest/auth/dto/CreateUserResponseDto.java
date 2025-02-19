@@ -10,7 +10,7 @@ import lombok.Getter;
 @Getter
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class CreateUserResponseDto {
-    private int id;
+    private String id;
     private String nickname;
     private AuthChannel authChannel;
     private UserProfile userProfile;

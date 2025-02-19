@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Counsel {
-    private int counselId;
-    private int userId;
+    private String counselId;
+    private String userId;
     private String lastMessage;
     private LocalDate lastChattedAt;
     private LocalDate createdAt;
