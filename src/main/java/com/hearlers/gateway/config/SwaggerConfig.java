@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfig {
-    
+
     @Bean
     public OpenAPI openAPI() {
         Info info = new Info()
@@ -18,14 +18,13 @@ public class SwaggerConfig {
                 .description("Hearlers-gateway-API 명세")
                 .version("1.0.0");
 
-        String securityJwtName = "JWT";
-        SecurityRequirement securityRequirement = new SecurityRequirement().addList(securityJwtName);
+        String cookieAuthName = "accessToken"; // JWT 토큰이 담기는 쿠키 이름으로 설정
+        SecurityRequirement securityRequirement = new SecurityRequirement().addList(cookieAuthName);
         Components components = new Components()
-                .addSecuritySchemes(securityJwtName, new SecurityScheme()
-                        .name(securityJwtName)
-                        .type(SecurityScheme.Type.HTTP)
-                        .scheme("bearer")
-                        .bearerFormat("JWT"));
+                .addSecuritySchemes(cookieAuthName, new SecurityScheme()
+                        .name(cookieAuthName)
+                        .type(SecurityScheme.Type.APIKEY)
+                        .in(SecurityScheme.In.COOKIE));
 
         return new OpenAPI()
                 .info(info)

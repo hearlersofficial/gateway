@@ -7,13 +7,13 @@ jwt:
   access_expiration_time: 86400     # Access token 만료 시간 : 하루
   refresh_expiration_time: 2592000    # Refresh token 만료 시간 : 한달
 
+version:
+  version: /v1
+
 springdoc:
-  api-docs:
-    path: /api-docs
   default-consumes-media-type: application/json
   default-produces-media-type: application/json
   swagger-ui:
     operations-sorter: alpha
     tags-sorter: alpha
     doc-expansion: none
-    path: /swagger-docs
