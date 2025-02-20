@@ -56,6 +56,9 @@ dependencies {
 
     // SpringBoot Configuration Processor
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    // Spring Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 protobuf {
