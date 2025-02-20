@@ -37,5 +37,8 @@ public class ResponseDto {
 
         @Schema(description = "데이터")
         private D data;
+
+        @Schema(description = "버전")
+        private String version;
     }
 }
