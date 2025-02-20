@@ -20,6 +20,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -35,7 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/v1/auth")
 @RequiredArgsConstructor
 @Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
@@ -48,6 +49,7 @@ public class AuthController {
     private static final int REFRESH_TOKEN_MAX_AGE = 60 * 60 * 24 * 7; // 7일
 
 
+    @SecurityRequirements
     @Operation(summary = "비로그인 유저 생성", description = "비로그인 유저를 생성하고, accessToken 발급")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "비로그인 유저 생성 성공, 쿠키에 accessToken과 accessTokenExpiresAt 저장"),
@@ -82,6 +84,7 @@ public class AuthController {
                 );
     }
 
+    @SecurityRequirements
     @Operation(summary = "카카오 로그인", description = "카카오 로그인을 위한 인증 코드 요청, 카카오로 리다이렉트")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "302", description = "카카오로 리다이렉트"),
