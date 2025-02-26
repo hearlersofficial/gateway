@@ -6,6 +6,10 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * 상담 메시지
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.CreateMessageRequest}
  */
 public final class CreateMessageRequest extends
@@ -289,6 +293,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 상담 메시지
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.CreateMessageRequest}
    */
   public static final class Builder extends

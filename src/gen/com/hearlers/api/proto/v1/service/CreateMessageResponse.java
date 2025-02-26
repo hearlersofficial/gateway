@@ -43,30 +43,56 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int COUNSEL_MESSAGE_FIELD_NUMBER = 1;
-  private com.hearlers.api.proto.v1.model.CounselMessage counselMessage_;
+  public static final int CREATED_COUNSEL_MESSAGE_FIELD_NUMBER = 1;
+  private com.hearlers.api.proto.v1.model.CounselMessage createdCounselMessage_;
   /**
-   * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
-   * @return Whether the counselMessage field is set.
+   * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
+   * @return Whether the createdCounselMessage field is set.
    */
   @java.lang.Override
-  public boolean hasCounselMessage() {
+  public boolean hasCreatedCounselMessage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
-   * @return The counselMessage.
+   * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
+   * @return The createdCounselMessage.
    */
   @java.lang.Override
-  public com.hearlers.api.proto.v1.model.CounselMessage getCounselMessage() {
-    return counselMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselMessage_;
+  public com.hearlers.api.proto.v1.model.CounselMessage getCreatedCounselMessage() {
+    return createdCounselMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : createdCounselMessage_;
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+   * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
    */
   @java.lang.Override
-  public com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCounselMessageOrBuilder() {
-    return counselMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselMessage_;
+  public com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCreatedCounselMessageOrBuilder() {
+    return createdCounselMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : createdCounselMessage_;
+  }
+
+  public static final int COUNSELOR_RESPONSE_MESSAGE_FIELD_NUMBER = 2;
+  private com.hearlers.api.proto.v1.model.CounselMessage counselorResponseMessage_;
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+   * @return Whether the counselorResponseMessage field is set.
+   */
+  @java.lang.Override
+  public boolean hasCounselorResponseMessage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+   * @return The counselorResponseMessage.
+   */
+  @java.lang.Override
+  public com.hearlers.api.proto.v1.model.CounselMessage getCounselorResponseMessage() {
+    return counselorResponseMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselorResponseMessage_;
+  }
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+   */
+  @java.lang.Override
+  public com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCounselorResponseMessageOrBuilder() {
+    return counselorResponseMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselorResponseMessage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -84,7 +110,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getCounselMessage());
+      output.writeMessage(1, getCreatedCounselMessage());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getCounselorResponseMessage());
     }
     getUnknownFields().writeTo(output);
   }
@@ -97,7 +126,11 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCounselMessage());
+        .computeMessageSize(1, getCreatedCounselMessage());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getCounselorResponseMessage());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -114,10 +147,15 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.service.CreateMessageResponse other = (com.hearlers.api.proto.v1.service.CreateMessageResponse) obj;
 
-    if (hasCounselMessage() != other.hasCounselMessage()) return false;
-    if (hasCounselMessage()) {
-      if (!getCounselMessage()
-          .equals(other.getCounselMessage())) return false;
+    if (hasCreatedCounselMessage() != other.hasCreatedCounselMessage()) return false;
+    if (hasCreatedCounselMessage()) {
+      if (!getCreatedCounselMessage()
+          .equals(other.getCreatedCounselMessage())) return false;
+    }
+    if (hasCounselorResponseMessage() != other.hasCounselorResponseMessage()) return false;
+    if (hasCounselorResponseMessage()) {
+      if (!getCounselorResponseMessage()
+          .equals(other.getCounselorResponseMessage())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -130,9 +168,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasCounselMessage()) {
-      hash = (37 * hash) + COUNSEL_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getCounselMessage().hashCode();
+    if (hasCreatedCounselMessage()) {
+      hash = (37 * hash) + CREATED_COUNSEL_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedCounselMessage().hashCode();
+    }
+    if (hasCounselorResponseMessage()) {
+      hash = (37 * hash) + COUNSELOR_RESPONSE_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getCounselorResponseMessage().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -264,17 +306,23 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage
               .alwaysUseFieldBuilders) {
-        getCounselMessageFieldBuilder();
+        getCreatedCounselMessageFieldBuilder();
+        getCounselorResponseMessageFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      counselMessage_ = null;
-      if (counselMessageBuilder_ != null) {
-        counselMessageBuilder_.dispose();
-        counselMessageBuilder_ = null;
+      createdCounselMessage_ = null;
+      if (createdCounselMessageBuilder_ != null) {
+        createdCounselMessageBuilder_.dispose();
+        createdCounselMessageBuilder_ = null;
+      }
+      counselorResponseMessage_ = null;
+      if (counselorResponseMessageBuilder_ != null) {
+        counselorResponseMessageBuilder_.dispose();
+        counselorResponseMessageBuilder_ = null;
       }
       return this;
     }
@@ -311,10 +359,16 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.counselMessage_ = counselMessageBuilder_ == null
-            ? counselMessage_
-            : counselMessageBuilder_.build();
+        result.createdCounselMessage_ = createdCounselMessageBuilder_ == null
+            ? createdCounselMessage_
+            : createdCounselMessageBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.counselorResponseMessage_ = counselorResponseMessageBuilder_ == null
+            ? counselorResponseMessage_
+            : counselorResponseMessageBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -331,8 +385,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.CreateMessageResponse other) {
       if (other == com.hearlers.api.proto.v1.service.CreateMessageResponse.getDefaultInstance()) return this;
-      if (other.hasCounselMessage()) {
-        mergeCounselMessage(other.getCounselMessage());
+      if (other.hasCreatedCounselMessage()) {
+        mergeCreatedCounselMessage(other.getCreatedCounselMessage());
+      }
+      if (other.hasCounselorResponseMessage()) {
+        mergeCounselorResponseMessage(other.getCounselorResponseMessage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -362,11 +419,18 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               input.readMessage(
-                  getCounselMessageFieldBuilder().getBuilder(),
+                  getCreatedCounselMessageFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              input.readMessage(
+                  getCounselorResponseMessageFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -384,125 +448,246 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.hearlers.api.proto.v1.model.CounselMessage counselMessage_;
+    private com.hearlers.api.proto.v1.model.CounselMessage createdCounselMessage_;
     private com.google.protobuf.SingleFieldBuilder<
-        com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder> counselMessageBuilder_;
+        com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder> createdCounselMessageBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
-     * @return Whether the counselMessage field is set.
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
+     * @return Whether the createdCounselMessage field is set.
      */
-    public boolean hasCounselMessage() {
+    public boolean hasCreatedCounselMessage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
-     * @return The counselMessage.
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
+     * @return The createdCounselMessage.
      */
-    public com.hearlers.api.proto.v1.model.CounselMessage getCounselMessage() {
-      if (counselMessageBuilder_ == null) {
-        return counselMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselMessage_;
+    public com.hearlers.api.proto.v1.model.CounselMessage getCreatedCounselMessage() {
+      if (createdCounselMessageBuilder_ == null) {
+        return createdCounselMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : createdCounselMessage_;
       } else {
-        return counselMessageBuilder_.getMessage();
+        return createdCounselMessageBuilder_.getMessage();
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
-    public Builder setCounselMessage(com.hearlers.api.proto.v1.model.CounselMessage value) {
-      if (counselMessageBuilder_ == null) {
+    public Builder setCreatedCounselMessage(com.hearlers.api.proto.v1.model.CounselMessage value) {
+      if (createdCounselMessageBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        counselMessage_ = value;
+        createdCounselMessage_ = value;
       } else {
-        counselMessageBuilder_.setMessage(value);
+        createdCounselMessageBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
-    public Builder setCounselMessage(
+    public Builder setCreatedCounselMessage(
         com.hearlers.api.proto.v1.model.CounselMessage.Builder builderForValue) {
-      if (counselMessageBuilder_ == null) {
-        counselMessage_ = builderForValue.build();
+      if (createdCounselMessageBuilder_ == null) {
+        createdCounselMessage_ = builderForValue.build();
       } else {
-        counselMessageBuilder_.setMessage(builderForValue.build());
+        createdCounselMessageBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
-    public Builder mergeCounselMessage(com.hearlers.api.proto.v1.model.CounselMessage value) {
-      if (counselMessageBuilder_ == null) {
+    public Builder mergeCreatedCounselMessage(com.hearlers.api.proto.v1.model.CounselMessage value) {
+      if (createdCounselMessageBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0) &&
-          counselMessage_ != null &&
-          counselMessage_ != com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance()) {
-          getCounselMessageBuilder().mergeFrom(value);
+          createdCounselMessage_ != null &&
+          createdCounselMessage_ != com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance()) {
+          getCreatedCounselMessageBuilder().mergeFrom(value);
         } else {
-          counselMessage_ = value;
+          createdCounselMessage_ = value;
         }
       } else {
-        counselMessageBuilder_.mergeFrom(value);
+        createdCounselMessageBuilder_.mergeFrom(value);
       }
-      if (counselMessage_ != null) {
+      if (createdCounselMessage_ != null) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
-    public Builder clearCounselMessage() {
+    public Builder clearCreatedCounselMessage() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      counselMessage_ = null;
-      if (counselMessageBuilder_ != null) {
-        counselMessageBuilder_.dispose();
-        counselMessageBuilder_ = null;
+      createdCounselMessage_ = null;
+      if (createdCounselMessageBuilder_ != null) {
+        createdCounselMessageBuilder_.dispose();
+        createdCounselMessageBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
-    public com.hearlers.api.proto.v1.model.CounselMessage.Builder getCounselMessageBuilder() {
+    public com.hearlers.api.proto.v1.model.CounselMessage.Builder getCreatedCounselMessageBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
-      return getCounselMessageFieldBuilder().getBuilder();
+      return getCreatedCounselMessageFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
-    public com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCounselMessageOrBuilder() {
-      if (counselMessageBuilder_ != null) {
-        return counselMessageBuilder_.getMessageOrBuilder();
+    public com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCreatedCounselMessageOrBuilder() {
+      if (createdCounselMessageBuilder_ != null) {
+        return createdCounselMessageBuilder_.getMessageOrBuilder();
       } else {
-        return counselMessage_ == null ?
-            com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselMessage_;
+        return createdCounselMessage_ == null ?
+            com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : createdCounselMessage_;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+     * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder> 
-        getCounselMessageFieldBuilder() {
-      if (counselMessageBuilder_ == null) {
-        counselMessageBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+        getCreatedCounselMessageFieldBuilder() {
+      if (createdCounselMessageBuilder_ == null) {
+        createdCounselMessageBuilder_ = new com.google.protobuf.SingleFieldBuilder<
             com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder>(
-                getCounselMessage(),
+                getCreatedCounselMessage(),
                 getParentForChildren(),
                 isClean());
-        counselMessage_ = null;
+        createdCounselMessage_ = null;
       }
-      return counselMessageBuilder_;
+      return createdCounselMessageBuilder_;
+    }
+
+    private com.hearlers.api.proto.v1.model.CounselMessage counselorResponseMessage_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder> counselorResponseMessageBuilder_;
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     * @return Whether the counselorResponseMessage field is set.
+     */
+    public boolean hasCounselorResponseMessage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     * @return The counselorResponseMessage.
+     */
+    public com.hearlers.api.proto.v1.model.CounselMessage getCounselorResponseMessage() {
+      if (counselorResponseMessageBuilder_ == null) {
+        return counselorResponseMessage_ == null ? com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselorResponseMessage_;
+      } else {
+        return counselorResponseMessageBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    public Builder setCounselorResponseMessage(com.hearlers.api.proto.v1.model.CounselMessage value) {
+      if (counselorResponseMessageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        counselorResponseMessage_ = value;
+      } else {
+        counselorResponseMessageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    public Builder setCounselorResponseMessage(
+        com.hearlers.api.proto.v1.model.CounselMessage.Builder builderForValue) {
+      if (counselorResponseMessageBuilder_ == null) {
+        counselorResponseMessage_ = builderForValue.build();
+      } else {
+        counselorResponseMessageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    public Builder mergeCounselorResponseMessage(com.hearlers.api.proto.v1.model.CounselMessage value) {
+      if (counselorResponseMessageBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          counselorResponseMessage_ != null &&
+          counselorResponseMessage_ != com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance()) {
+          getCounselorResponseMessageBuilder().mergeFrom(value);
+        } else {
+          counselorResponseMessage_ = value;
+        }
+      } else {
+        counselorResponseMessageBuilder_.mergeFrom(value);
+      }
+      if (counselorResponseMessage_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    public Builder clearCounselorResponseMessage() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      counselorResponseMessage_ = null;
+      if (counselorResponseMessageBuilder_ != null) {
+        counselorResponseMessageBuilder_.dispose();
+        counselorResponseMessageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.CounselMessage.Builder getCounselorResponseMessageBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getCounselorResponseMessageFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCounselorResponseMessageOrBuilder() {
+      if (counselorResponseMessageBuilder_ != null) {
+        return counselorResponseMessageBuilder_.getMessageOrBuilder();
+      } else {
+        return counselorResponseMessage_ == null ?
+            com.hearlers.api.proto.v1.model.CounselMessage.getDefaultInstance() : counselorResponseMessage_;
+      }
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder> 
+        getCounselorResponseMessageFieldBuilder() {
+      if (counselorResponseMessageBuilder_ == null) {
+        counselorResponseMessageBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.hearlers.api.proto.v1.model.CounselMessage, com.hearlers.api.proto.v1.model.CounselMessage.Builder, com.hearlers.api.proto.v1.model.CounselMessageOrBuilder>(
+                getCounselorResponseMessage(),
+                getParentForChildren(),
+                isClean());
+        counselorResponseMessage_ = null;
+      }
+      return counselorResponseMessageBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.CreateMessageResponse)

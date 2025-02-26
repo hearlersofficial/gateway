@@ -32,6 +32,8 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     lastMessage_ = "";
     lastChatedAt_ = "";
+    counselTechniqueId_ = "";
+    counselorUserRelationshipId_ = "";
     createdAt_ = "";
     updatedAt_ = "";
     deletedAt_ = "";
@@ -210,10 +212,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastChatedAt_ = "";
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
    * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
    * @return The lastChatedAt.
    */
@@ -231,10 +229,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
    * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
    * @return The bytes for lastChatedAt.
    */
@@ -253,15 +247,89 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 6;
+  public static final int COUNSEL_TECHNIQUE_ID_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselTechniqueId_ = "";
+  /**
+   * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+   * @return The counselTechniqueId.
+   */
+  @java.lang.Override
+  public java.lang.String getCounselTechniqueId() {
+    java.lang.Object ref = counselTechniqueId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselTechniqueId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+   * @return The bytes for counselTechniqueId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselTechniqueIdBytes() {
+    java.lang.Object ref = counselTechniqueId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselTechniqueId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COUNSELOR_USER_RELATIONSHIP_ID_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselorUserRelationshipId_ = "";
+  /**
+   * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+   * @return The counselorUserRelationshipId.
+   */
+  @java.lang.Override
+  public java.lang.String getCounselorUserRelationshipId() {
+    java.lang.Object ref = counselorUserRelationshipId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselorUserRelationshipId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+   * @return The bytes for counselorUserRelationshipId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselorUserRelationshipIdBytes() {
+    java.lang.Object ref = counselorUserRelationshipId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselorUserRelationshipId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string created_at = 6 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -278,11 +346,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string created_at = 6 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -300,15 +364,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 7;
+  public static final int UPDATED_AT_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -325,11 +385,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -347,15 +403,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DELETED_AT_FIELD_NUMBER = 8;
+  public static final int DELETED_AT_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deletedAt_ = "";
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -372,11 +424,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -423,14 +471,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastChatedAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, lastChatedAt_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselTechniqueId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, counselTechniqueId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorUserRelationshipId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, counselorUserRelationshipId_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, createdAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, updatedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, updatedAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, deletedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, deletedAt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -456,14 +510,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastChatedAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, lastChatedAt_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselTechniqueId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, counselTechniqueId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorUserRelationshipId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, counselorUserRelationshipId_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, createdAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, updatedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, updatedAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, deletedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -490,6 +550,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLastMessage())) return false;
     if (!getLastChatedAt()
         .equals(other.getLastChatedAt())) return false;
+    if (!getCounselTechniqueId()
+        .equals(other.getCounselTechniqueId())) return false;
+    if (!getCounselorUserRelationshipId()
+        .equals(other.getCounselorUserRelationshipId())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -517,6 +581,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLastMessage().hashCode();
     hash = (37 * hash) + LAST_CHATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getLastChatedAt().hashCode();
+    hash = (37 * hash) + COUNSEL_TECHNIQUE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCounselTechniqueId().hashCode();
+    hash = (37 * hash) + COUNSELOR_USER_RELATIONSHIP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCounselorUserRelationshipId().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -659,6 +727,8 @@ private static final long serialVersionUID = 0L;
       userId_ = "";
       lastMessage_ = "";
       lastChatedAt_ = "";
+      counselTechniqueId_ = "";
+      counselorUserRelationshipId_ = "";
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -711,12 +781,18 @@ private static final long serialVersionUID = 0L;
         result.lastChatedAt_ = lastChatedAt_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.createdAt_ = createdAt_;
+        result.counselTechniqueId_ = counselTechniqueId_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.updatedAt_ = updatedAt_;
+        result.counselorUserRelationshipId_ = counselorUserRelationshipId_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.createdAt_ = createdAt_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updatedAt_ = updatedAt_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.deletedAt_ = deletedAt_;
       }
     }
@@ -758,19 +834,29 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getCounselTechniqueId().isEmpty()) {
+        counselTechniqueId_ = other.counselTechniqueId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getCounselorUserRelationshipId().isEmpty()) {
+        counselorUserRelationshipId_ = other.counselorUserRelationshipId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getUpdatedAt().isEmpty()) {
         updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getDeletedAt().isEmpty()) {
         deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -825,20 +911,30 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 42
             case 50: {
-              createdAt_ = input.readStringRequireUtf8();
+              counselTechniqueId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
-              updatedAt_ = input.readStringRequireUtf8();
+              counselorUserRelationshipId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
             case 66: {
-              deletedAt_ = input.readStringRequireUtf8();
+              createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
               break;
             } // case 66
+            case 74: {
+              updatedAt_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
+            case 82: {
+              deletedAt_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1146,10 +1242,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object lastChatedAt_ = "";
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
      * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
      * @return The lastChatedAt.
      */
@@ -1166,10 +1258,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
      * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
      * @return The bytes for lastChatedAt.
      */
@@ -1187,10 +1275,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
      * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
      * @param value The lastChatedAt to set.
      * @return This builder for chaining.
@@ -1204,10 +1288,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
      * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
      * @return This builder for chaining.
      */
@@ -1218,10 +1298,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
      * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
      * @param value The bytes for lastChatedAt to set.
      * @return This builder for chaining.
@@ -1236,13 +1312,153 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object counselTechniqueId_ = "";
+    /**
+     * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+     * @return The counselTechniqueId.
+     */
+    public java.lang.String getCounselTechniqueId() {
+      java.lang.Object ref = counselTechniqueId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselTechniqueId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+     * @return The bytes for counselTechniqueId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselTechniqueIdBytes() {
+      java.lang.Object ref = counselTechniqueId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselTechniqueId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+     * @param value The counselTechniqueId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselTechniqueId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      counselTechniqueId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCounselTechniqueId() {
+      counselTechniqueId_ = getDefaultInstance().getCounselTechniqueId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+     * @param value The bytes for counselTechniqueId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselTechniqueIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselTechniqueId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object counselorUserRelationshipId_ = "";
+    /**
+     * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+     * @return The counselorUserRelationshipId.
+     */
+    public java.lang.String getCounselorUserRelationshipId() {
+      java.lang.Object ref = counselorUserRelationshipId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselorUserRelationshipId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+     * @return The bytes for counselorUserRelationshipId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselorUserRelationshipIdBytes() {
+      java.lang.Object ref = counselorUserRelationshipId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselorUserRelationshipId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+     * @param value The counselorUserRelationshipId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselorUserRelationshipId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      counselorUserRelationshipId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCounselorUserRelationshipId() {
+      counselorUserRelationshipId_ = getDefaultInstance().getCounselorUserRelationshipId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+     * @param value The bytes for counselorUserRelationshipId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselorUserRelationshipIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselorUserRelationshipId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object createdAt_ = "";
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1258,11 +1474,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1279,11 +1491,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1291,30 +1499,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       createdAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
       createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -1323,18 +1523,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       createdAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
     private java.lang.Object updatedAt_ = "";
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -1350,11 +1546,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -1371,11 +1563,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1383,30 +1571,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       updatedAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
       updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1415,18 +1595,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       updatedAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
 
     private java.lang.Object deletedAt_ = "";
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -1442,11 +1618,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -1463,11 +1635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1475,30 +1643,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deletedAt_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
       deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-     * </pre>
-     *
-     * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+     * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1507,7 +1667,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deletedAt_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

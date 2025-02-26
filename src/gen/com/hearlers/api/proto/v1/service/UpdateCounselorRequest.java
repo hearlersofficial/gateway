@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   }
   private UpdateCounselorRequest() {
     counselorId_ = "";
-    counselorType_ = 0;
+    toneId_ = "";
     name_ = "";
     description_ = "";
     counselorGender_ = 0;
@@ -47,6 +47,7 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.service.UpdateCounselorRequest.class, com.hearlers.api.proto.v1.service.UpdateCounselorRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int COUNSELOR_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object counselorId_ = "";
@@ -86,29 +87,66 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COUNSELOR_TYPE_FIELD_NUMBER = 2;
-  private int counselorType_ = 0;
+  public static final int TONE_ID_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object toneId_ = "";
   /**
-   * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-   * @return The enum numeric value on the wire for counselorType.
+   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+   * @return Whether the toneId field is set.
    */
-  @java.lang.Override public int getCounselorTypeValue() {
-    return counselorType_;
+  @java.lang.Override
+  public boolean hasToneId() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-   * @return The counselorType.
+   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+   * @return The toneId.
    */
-  @java.lang.Override public com.hearlers.api.proto.v1.model.CounselorType getCounselorType() {
-    com.hearlers.api.proto.v1.model.CounselorType result = com.hearlers.api.proto.v1.model.CounselorType.forNumber(counselorType_);
-    return result == null ? com.hearlers.api.proto.v1.model.CounselorType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getToneId() {
+    java.lang.Object ref = toneId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      toneId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+   * @return The bytes for toneId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getToneIdBytes() {
+    java.lang.Object ref = toneId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      toneId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
+   * <code>optional string name = 3 [json_name = "name"];</code>
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string name = 3 [json_name = "name"];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -125,7 +163,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
+   * <code>optional string name = 3 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -147,7 +185,15 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
   /**
-   * <code>string description = 4 [json_name = "description"];</code>
+   * <code>optional string description = 4 [json_name = "description"];</code>
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string description = 4 [json_name = "description"];</code>
    * @return The description.
    */
   @java.lang.Override
@@ -164,7 +210,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 4 [json_name = "description"];</code>
+   * <code>optional string description = 4 [json_name = "description"];</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -185,14 +231,21 @@ private static final long serialVersionUID = 0L;
   public static final int COUNSELOR_GENDER_FIELD_NUMBER = 5;
   private int counselorGender_ = 0;
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+   * @return Whether the counselorGender field is set.
+   */
+  @java.lang.Override public boolean hasCounselorGender() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
    * @return The enum numeric value on the wire for counselorGender.
    */
   @java.lang.Override public int getCounselorGenderValue() {
     return counselorGender_;
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
    * @return The counselorGender.
    */
   @java.lang.Override public com.hearlers.api.proto.v1.model.CounselorGender getCounselorGender() {
@@ -217,16 +270,16 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, counselorId_);
     }
-    if (counselorType_ != com.hearlers.api.proto.v1.model.CounselorType.COUNSELOR_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, counselorType_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, toneId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, description_);
     }
-    if (counselorGender_ != com.hearlers.api.proto.v1.model.CounselorGender.COUNSELOR_GENDER_UNSPECIFIED.getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(5, counselorGender_);
     }
     getUnknownFields().writeTo(output);
@@ -241,17 +294,16 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, counselorId_);
     }
-    if (counselorType_ != com.hearlers.api.proto.v1.model.CounselorType.COUNSELOR_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, counselorType_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, toneId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, description_);
     }
-    if (counselorGender_ != com.hearlers.api.proto.v1.model.CounselorGender.COUNSELOR_GENDER_UNSPECIFIED.getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, counselorGender_);
     }
@@ -272,12 +324,25 @@ private static final long serialVersionUID = 0L;
 
     if (!getCounselorId()
         .equals(other.getCounselorId())) return false;
-    if (counselorType_ != other.counselorType_) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getDescription()
-        .equals(other.getDescription())) return false;
-    if (counselorGender_ != other.counselorGender_) return false;
+    if (hasToneId() != other.hasToneId()) return false;
+    if (hasToneId()) {
+      if (!getToneId()
+          .equals(other.getToneId())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName()
+          .equals(other.getName())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+    }
+    if (hasCounselorGender() != other.hasCounselorGender()) return false;
+    if (hasCounselorGender()) {
+      if (counselorGender_ != other.counselorGender_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -291,14 +356,22 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCounselorId().hashCode();
-    hash = (37 * hash) + COUNSELOR_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + counselorType_;
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + COUNSELOR_GENDER_FIELD_NUMBER;
-    hash = (53 * hash) + counselorGender_;
+    if (hasToneId()) {
+      hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getToneId().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasCounselorGender()) {
+      hash = (37 * hash) + COUNSELOR_GENDER_FIELD_NUMBER;
+      hash = (53 * hash) + counselorGender_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -431,7 +504,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       counselorId_ = "";
-      counselorType_ = 0;
+      toneId_ = "";
       name_ = "";
       description_ = "";
       counselorGender_ = 0;
@@ -471,18 +544,24 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.counselorId_ = counselorId_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.counselorType_ = counselorType_;
+        result.toneId_ = toneId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.counselorGender_ = counselorGender_;
+        to_bitField0_ |= 0x00000008;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -502,21 +581,23 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.counselorType_ != 0) {
-        setCounselorTypeValue(other.getCounselorTypeValue());
+      if (other.hasToneId()) {
+        toneId_ = other.toneId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
         name_ = other.name_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
         description_ = other.description_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (other.counselorGender_ != 0) {
-        setCounselorGenderValue(other.getCounselorGenderValue());
+      if (other.hasCounselorGender()) {
+        setCounselorGender(other.getCounselorGender());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -549,11 +630,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 16: {
-              counselorType_ = input.readEnum();
+            case 18: {
+              toneId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 26: {
               name_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
@@ -658,62 +739,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int counselorType_ = 0;
+    private java.lang.Object toneId_ = "";
     /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @return The enum numeric value on the wire for counselorType.
+     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * @return Whether the toneId field is set.
      */
-    @java.lang.Override public int getCounselorTypeValue() {
-      return counselorType_;
+    public boolean hasToneId() {
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @param value The enum numeric value on the wire for counselorType to set.
-     * @return This builder for chaining.
+     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * @return The toneId.
      */
-    public Builder setCounselorTypeValue(int value) {
-      counselorType_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @return The counselorType.
-     */
-    @java.lang.Override
-    public com.hearlers.api.proto.v1.model.CounselorType getCounselorType() {
-      com.hearlers.api.proto.v1.model.CounselorType result = com.hearlers.api.proto.v1.model.CounselorType.forNumber(counselorType_);
-      return result == null ? com.hearlers.api.proto.v1.model.CounselorType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
-     * @param value The counselorType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCounselorType(com.hearlers.api.proto.v1.model.CounselorType value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public java.lang.String getToneId() {
+      java.lang.Object ref = toneId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        toneId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
+    }
+    /**
+     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * @return The bytes for toneId.
+     */
+    public com.google.protobuf.ByteString
+        getToneIdBytes() {
+      java.lang.Object ref = toneId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toneId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * @param value The toneId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToneId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      toneId_ = value;
       bitField0_ |= 0x00000002;
-      counselorType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorType counselor_type = 2 [json_name = "counselorType"];</code>
+     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearCounselorType() {
+    public Builder clearToneId() {
+      toneId_ = getDefaultInstance().getToneId();
       bitField0_ = (bitField0_ & ~0x00000002);
-      counselorType_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * @param value The bytes for toneId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToneIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      toneId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>optional string name = 3 [json_name = "name"];</code>
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string name = 3 [json_name = "name"];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -729,7 +843,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>optional string name = 3 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -746,7 +860,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>optional string name = 3 [json_name = "name"];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -759,7 +873,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>optional string name = 3 [json_name = "name"];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -769,7 +883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>optional string name = 3 [json_name = "name"];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -785,7 +899,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 4 [json_name = "description"];</code>
+     * <code>optional string description = 4 [json_name = "description"];</code>
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string description = 4 [json_name = "description"];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -801,7 +922,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 4 [json_name = "description"];</code>
+     * <code>optional string description = 4 [json_name = "description"];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -818,7 +939,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 4 [json_name = "description"];</code>
+     * <code>optional string description = 4 [json_name = "description"];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -831,7 +952,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 4 [json_name = "description"];</code>
+     * <code>optional string description = 4 [json_name = "description"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -841,7 +962,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 4 [json_name = "description"];</code>
+     * <code>optional string description = 4 [json_name = "description"];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -857,14 +978,21 @@ private static final long serialVersionUID = 0L;
 
     private int counselorGender_ = 0;
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+     * @return Whether the counselorGender field is set.
+     */
+    @java.lang.Override public boolean hasCounselorGender() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @return The enum numeric value on the wire for counselorGender.
      */
     @java.lang.Override public int getCounselorGenderValue() {
       return counselorGender_;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @param value The enum numeric value on the wire for counselorGender to set.
      * @return This builder for chaining.
      */
@@ -875,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @return The counselorGender.
      */
     @java.lang.Override
@@ -884,7 +1012,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.hearlers.api.proto.v1.model.CounselorGender.UNRECOGNIZED : result;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @param value The counselorGender to set.
      * @return This builder for chaining.
      */
@@ -898,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselorGender() {

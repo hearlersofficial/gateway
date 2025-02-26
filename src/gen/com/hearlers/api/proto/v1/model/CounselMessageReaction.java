@@ -105,7 +105,7 @@ public enum CounselMessageReaction
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.CounselOuterClass.getDescriptor().getEnumTypes().get(4);
+    return com.hearlers.api.proto.v1.model.CounselOuterClass.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final CounselMessageReaction[] VALUES = values();

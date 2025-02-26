@@ -46,35 +46,66 @@ public final class CounselServiceGrpc {
     return getCreateCounselMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselListRequest,
-      com.hearlers.api.proto.v1.service.GetCounselListResponse> getGetCounselListMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselsRequest,
+      com.hearlers.api.proto.v1.service.FindCounselsResponse> getFindCounselsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetCounselList",
-      requestType = com.hearlers.api.proto.v1.service.GetCounselListRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.GetCounselListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "FindCounsels",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselListRequest,
-      com.hearlers.api.proto.v1.service.GetCounselListResponse> getGetCounselListMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselListRequest, com.hearlers.api.proto.v1.service.GetCounselListResponse> getGetCounselListMethod;
-    if ((getGetCounselListMethod = CounselServiceGrpc.getGetCounselListMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselsRequest,
+      com.hearlers.api.proto.v1.service.FindCounselsResponse> getFindCounselsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselsRequest, com.hearlers.api.proto.v1.service.FindCounselsResponse> getFindCounselsMethod;
+    if ((getFindCounselsMethod = CounselServiceGrpc.getFindCounselsMethod) == null) {
       synchronized (CounselServiceGrpc.class) {
-        if ((getGetCounselListMethod = CounselServiceGrpc.getGetCounselListMethod) == null) {
-          CounselServiceGrpc.getGetCounselListMethod = getGetCounselListMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.GetCounselListRequest, com.hearlers.api.proto.v1.service.GetCounselListResponse>newBuilder()
+        if ((getFindCounselsMethod = CounselServiceGrpc.getFindCounselsMethod) == null) {
+          CounselServiceGrpc.getFindCounselsMethod = getFindCounselsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselsRequest, com.hearlers.api.proto.v1.service.FindCounselsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCounselList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounsels"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetCounselListRequest.getDefaultInstance()))
+                  com.hearlers.api.proto.v1.service.FindCounselsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetCounselListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("GetCounselList"))
+                  com.hearlers.api.proto.v1.service.FindCounselsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounsels"))
               .build();
         }
       }
     }
-    return getGetCounselListMethod;
+    return getFindCounselsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselByIdResponse> getFindCounselByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselById",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselByIdResponse> getFindCounselByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselByIdRequest, com.hearlers.api.proto.v1.service.FindCounselByIdResponse> getFindCounselByIdMethod;
+    if ((getFindCounselByIdMethod = CounselServiceGrpc.getFindCounselByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindCounselByIdMethod = CounselServiceGrpc.getFindCounselByIdMethod) == null) {
+          CounselServiceGrpc.getFindCounselByIdMethod = getFindCounselByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselByIdRequest, com.hearlers.api.proto.v1.service.FindCounselByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounselById"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselByIdMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateMessageRequest,
@@ -108,35 +139,35 @@ public final class CounselServiceGrpc {
     return getCreateMessageMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetMessageListRequest,
-      com.hearlers.api.proto.v1.service.GetMessageListResponse> getGetMessageListMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindMessagesRequest,
+      com.hearlers.api.proto.v1.service.FindMessagesResponse> getFindMessagesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetMessageList",
-      requestType = com.hearlers.api.proto.v1.service.GetMessageListRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.GetMessageListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "FindMessages",
+      requestType = com.hearlers.api.proto.v1.service.FindMessagesRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindMessagesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetMessageListRequest,
-      com.hearlers.api.proto.v1.service.GetMessageListResponse> getGetMessageListMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetMessageListRequest, com.hearlers.api.proto.v1.service.GetMessageListResponse> getGetMessageListMethod;
-    if ((getGetMessageListMethod = CounselServiceGrpc.getGetMessageListMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindMessagesRequest,
+      com.hearlers.api.proto.v1.service.FindMessagesResponse> getFindMessagesMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindMessagesRequest, com.hearlers.api.proto.v1.service.FindMessagesResponse> getFindMessagesMethod;
+    if ((getFindMessagesMethod = CounselServiceGrpc.getFindMessagesMethod) == null) {
       synchronized (CounselServiceGrpc.class) {
-        if ((getGetMessageListMethod = CounselServiceGrpc.getGetMessageListMethod) == null) {
-          CounselServiceGrpc.getGetMessageListMethod = getGetMessageListMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.GetMessageListRequest, com.hearlers.api.proto.v1.service.GetMessageListResponse>newBuilder()
+        if ((getFindMessagesMethod = CounselServiceGrpc.getFindMessagesMethod) == null) {
+          CounselServiceGrpc.getFindMessagesMethod = getFindMessagesMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindMessagesRequest, com.hearlers.api.proto.v1.service.FindMessagesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMessageList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindMessages"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetMessageListRequest.getDefaultInstance()))
+                  com.hearlers.api.proto.v1.service.FindMessagesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetMessageListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("GetMessageList"))
+                  com.hearlers.api.proto.v1.service.FindMessagesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindMessages"))
               .build();
         }
       }
     }
-    return getGetMessageListMethod;
+    return getFindMessagesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.ReactMessageRequest,
@@ -170,99 +201,6 @@ public final class CounselServiceGrpc {
     return getReactMessageMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePromptRequest,
-      com.hearlers.api.proto.v1.service.CreatePromptResponse> getCreatePromptMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreatePrompt",
-      requestType = com.hearlers.api.proto.v1.service.CreatePromptRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.CreatePromptResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePromptRequest,
-      com.hearlers.api.proto.v1.service.CreatePromptResponse> getCreatePromptMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePromptRequest, com.hearlers.api.proto.v1.service.CreatePromptResponse> getCreatePromptMethod;
-    if ((getCreatePromptMethod = CounselServiceGrpc.getCreatePromptMethod) == null) {
-      synchronized (CounselServiceGrpc.class) {
-        if ((getCreatePromptMethod = CounselServiceGrpc.getCreatePromptMethod) == null) {
-          CounselServiceGrpc.getCreatePromptMethod = getCreatePromptMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreatePromptRequest, com.hearlers.api.proto.v1.service.CreatePromptResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePrompt"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.CreatePromptRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.CreatePromptResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreatePrompt"))
-              .build();
-        }
-      }
-    }
-    return getCreatePromptMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetPromptListRequest,
-      com.hearlers.api.proto.v1.service.GetPromptListResponse> getGetPromptListMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetPromptList",
-      requestType = com.hearlers.api.proto.v1.service.GetPromptListRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.GetPromptListResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetPromptListRequest,
-      com.hearlers.api.proto.v1.service.GetPromptListResponse> getGetPromptListMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetPromptListRequest, com.hearlers.api.proto.v1.service.GetPromptListResponse> getGetPromptListMethod;
-    if ((getGetPromptListMethod = CounselServiceGrpc.getGetPromptListMethod) == null) {
-      synchronized (CounselServiceGrpc.class) {
-        if ((getGetPromptListMethod = CounselServiceGrpc.getGetPromptListMethod) == null) {
-          CounselServiceGrpc.getGetPromptListMethod = getGetPromptListMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.GetPromptListRequest, com.hearlers.api.proto.v1.service.GetPromptListResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPromptList"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetPromptListRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetPromptListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("GetPromptList"))
-              .build();
-        }
-      }
-    }
-    return getGetPromptListMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptRequest,
-      com.hearlers.api.proto.v1.service.UpdatePromptResponse> getUpdatePromptMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdatePrompt",
-      requestType = com.hearlers.api.proto.v1.service.UpdatePromptRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.UpdatePromptResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptRequest,
-      com.hearlers.api.proto.v1.service.UpdatePromptResponse> getUpdatePromptMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptRequest, com.hearlers.api.proto.v1.service.UpdatePromptResponse> getUpdatePromptMethod;
-    if ((getUpdatePromptMethod = CounselServiceGrpc.getUpdatePromptMethod) == null) {
-      synchronized (CounselServiceGrpc.class) {
-        if ((getUpdatePromptMethod = CounselServiceGrpc.getUpdatePromptMethod) == null) {
-          CounselServiceGrpc.getUpdatePromptMethod = getUpdatePromptMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdatePromptRequest, com.hearlers.api.proto.v1.service.UpdatePromptResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePrompt"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.UpdatePromptRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.UpdatePromptResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdatePrompt"))
-              .build();
-        }
-      }
-    }
-    return getUpdatePromptMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselorRequest,
       com.hearlers.api.proto.v1.service.CreateCounselorResponse> getCreateCounselorMethod;
 
@@ -294,35 +232,66 @@ public final class CounselServiceGrpc {
     return getCreateCounselorMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselorListRequest,
-      com.hearlers.api.proto.v1.service.GetCounselorListResponse> getGetCounselorListMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorsRequest,
+      com.hearlers.api.proto.v1.service.FindCounselorsResponse> getFindCounselorsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetCounselorList",
-      requestType = com.hearlers.api.proto.v1.service.GetCounselorListRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.GetCounselorListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselors",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselorsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselorsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselorListRequest,
-      com.hearlers.api.proto.v1.service.GetCounselorListResponse> getGetCounselorListMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.GetCounselorListRequest, com.hearlers.api.proto.v1.service.GetCounselorListResponse> getGetCounselorListMethod;
-    if ((getGetCounselorListMethod = CounselServiceGrpc.getGetCounselorListMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorsRequest,
+      com.hearlers.api.proto.v1.service.FindCounselorsResponse> getFindCounselorsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorsRequest, com.hearlers.api.proto.v1.service.FindCounselorsResponse> getFindCounselorsMethod;
+    if ((getFindCounselorsMethod = CounselServiceGrpc.getFindCounselorsMethod) == null) {
       synchronized (CounselServiceGrpc.class) {
-        if ((getGetCounselorListMethod = CounselServiceGrpc.getGetCounselorListMethod) == null) {
-          CounselServiceGrpc.getGetCounselorListMethod = getGetCounselorListMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.GetCounselorListRequest, com.hearlers.api.proto.v1.service.GetCounselorListResponse>newBuilder()
+        if ((getFindCounselorsMethod = CounselServiceGrpc.getFindCounselorsMethod) == null) {
+          CounselServiceGrpc.getFindCounselorsMethod = getFindCounselorsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselorsRequest, com.hearlers.api.proto.v1.service.FindCounselorsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCounselorList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselors"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetCounselorListRequest.getDefaultInstance()))
+                  com.hearlers.api.proto.v1.service.FindCounselorsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.GetCounselorListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("GetCounselorList"))
+                  com.hearlers.api.proto.v1.service.FindCounselorsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounselors"))
               .build();
         }
       }
     }
-    return getGetCounselorListMethod;
+    return getFindCounselorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselorByIdResponse> getFindCounselorByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselorById",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselorByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselorByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselorByIdResponse> getFindCounselorByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorByIdRequest, com.hearlers.api.proto.v1.service.FindCounselorByIdResponse> getFindCounselorByIdMethod;
+    if ((getFindCounselorByIdMethod = CounselServiceGrpc.getFindCounselorByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindCounselorByIdMethod = CounselServiceGrpc.getFindCounselorByIdMethod) == null) {
+          CounselServiceGrpc.getFindCounselorByIdMethod = getFindCounselorByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselorByIdRequest, com.hearlers.api.proto.v1.service.FindCounselorByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselorById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselorByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselorByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounselorById"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselorByIdMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselorRequest,
@@ -354,6 +323,812 @@ public final class CounselServiceGrpc {
       }
     }
     return getUpdateCounselorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest,
+      com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse> getFindCounselorUserRelationshipsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselorUserRelationships",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest,
+      com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse> getFindCounselorUserRelationshipsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest, com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse> getFindCounselorUserRelationshipsMethod;
+    if ((getFindCounselorUserRelationshipsMethod = CounselServiceGrpc.getFindCounselorUserRelationshipsMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindCounselorUserRelationshipsMethod = CounselServiceGrpc.getFindCounselorUserRelationshipsMethod) == null) {
+          CounselServiceGrpc.getFindCounselorUserRelationshipsMethod = getFindCounselorUserRelationshipsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest, com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselorUserRelationships"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounselorUserRelationships"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselorUserRelationshipsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest,
+      com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse> getCreateCounselTechniqueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCounselTechnique",
+      requestType = com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest,
+      com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse> getCreateCounselTechniqueMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest, com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse> getCreateCounselTechniqueMethod;
+    if ((getCreateCounselTechniqueMethod = CounselServiceGrpc.getCreateCounselTechniqueMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreateCounselTechniqueMethod = CounselServiceGrpc.getCreateCounselTechniqueMethod) == null) {
+          CounselServiceGrpc.getCreateCounselTechniqueMethod = getCreateCounselTechniqueMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest, com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCounselTechnique"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreateCounselTechnique"))
+              .build();
+        }
+      }
+    }
+    return getCreateCounselTechniqueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> getFindCounselTechniquesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselTechniques",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> getFindCounselTechniquesMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest, com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> getFindCounselTechniquesMethod;
+    if ((getFindCounselTechniquesMethod = CounselServiceGrpc.getFindCounselTechniquesMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindCounselTechniquesMethod = CounselServiceGrpc.getFindCounselTechniquesMethod) == null) {
+          CounselServiceGrpc.getFindCounselTechniquesMethod = getFindCounselTechniquesMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest, com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselTechniques"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounselTechniques"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselTechniquesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse> getFindCounselTechniqueByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselTechniqueById",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse> getFindCounselTechniqueByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest, com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse> getFindCounselTechniqueByIdMethod;
+    if ((getFindCounselTechniqueByIdMethod = CounselServiceGrpc.getFindCounselTechniqueByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindCounselTechniqueByIdMethod = CounselServiceGrpc.getFindCounselTechniqueByIdMethod) == null) {
+          CounselServiceGrpc.getFindCounselTechniqueByIdMethod = getFindCounselTechniqueByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest, com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselTechniqueById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindCounselTechniqueById"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselTechniqueByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest,
+      com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse> getUpdateCounselTechniqueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCounselTechnique",
+      requestType = com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest,
+      com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse> getUpdateCounselTechniqueMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest, com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse> getUpdateCounselTechniqueMethod;
+    if ((getUpdateCounselTechniqueMethod = CounselServiceGrpc.getUpdateCounselTechniqueMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdateCounselTechniqueMethod = CounselServiceGrpc.getUpdateCounselTechniqueMethod) == null) {
+          CounselServiceGrpc.getUpdateCounselTechniqueMethod = getUpdateCounselTechniqueMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest, com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCounselTechnique"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdateCounselTechnique"))
+              .build();
+        }
+      }
+    }
+    return getUpdateCounselTechniqueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest,
+      com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> getSaveCounselTechniqueSequenceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SaveCounselTechniqueSequence",
+      requestType = com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest,
+      com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> getSaveCounselTechniqueSequenceMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest, com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> getSaveCounselTechniqueSequenceMethod;
+    if ((getSaveCounselTechniqueSequenceMethod = CounselServiceGrpc.getSaveCounselTechniqueSequenceMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getSaveCounselTechniqueSequenceMethod = CounselServiceGrpc.getSaveCounselTechniqueSequenceMethod) == null) {
+          CounselServiceGrpc.getSaveCounselTechniqueSequenceMethod = getSaveCounselTechniqueSequenceMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest, com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SaveCounselTechniqueSequence"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("SaveCounselTechniqueSequence"))
+              .build();
+        }
+      }
+    }
+    return getSaveCounselTechniqueSequenceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePersonaRequest,
+      com.hearlers.api.proto.v1.service.CreatePersonaResponse> getCreatePersonaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePersona",
+      requestType = com.hearlers.api.proto.v1.service.CreatePersonaRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreatePersonaResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePersonaRequest,
+      com.hearlers.api.proto.v1.service.CreatePersonaResponse> getCreatePersonaMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreatePersonaRequest, com.hearlers.api.proto.v1.service.CreatePersonaResponse> getCreatePersonaMethod;
+    if ((getCreatePersonaMethod = CounselServiceGrpc.getCreatePersonaMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreatePersonaMethod = CounselServiceGrpc.getCreatePersonaMethod) == null) {
+          CounselServiceGrpc.getCreatePersonaMethod = getCreatePersonaMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreatePersonaRequest, com.hearlers.api.proto.v1.service.CreatePersonaResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePersona"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreatePersonaRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreatePersonaResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreatePersona"))
+              .build();
+        }
+      }
+    }
+    return getCreatePersonaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonasRequest,
+      com.hearlers.api.proto.v1.service.FindPersonasResponse> getFindPersonasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindPersonas",
+      requestType = com.hearlers.api.proto.v1.service.FindPersonasRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindPersonasResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonasRequest,
+      com.hearlers.api.proto.v1.service.FindPersonasResponse> getFindPersonasMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonasRequest, com.hearlers.api.proto.v1.service.FindPersonasResponse> getFindPersonasMethod;
+    if ((getFindPersonasMethod = CounselServiceGrpc.getFindPersonasMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindPersonasMethod = CounselServiceGrpc.getFindPersonasMethod) == null) {
+          CounselServiceGrpc.getFindPersonasMethod = getFindPersonasMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindPersonasRequest, com.hearlers.api.proto.v1.service.FindPersonasResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindPersonas"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindPersonasRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindPersonasResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindPersonas"))
+              .build();
+        }
+      }
+    }
+    return getFindPersonasMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaByIdRequest,
+      com.hearlers.api.proto.v1.service.FindPersonaByIdResponse> getFindPersonaByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindPersonaById",
+      requestType = com.hearlers.api.proto.v1.service.FindPersonaByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindPersonaByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaByIdRequest,
+      com.hearlers.api.proto.v1.service.FindPersonaByIdResponse> getFindPersonaByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaByIdRequest, com.hearlers.api.proto.v1.service.FindPersonaByIdResponse> getFindPersonaByIdMethod;
+    if ((getFindPersonaByIdMethod = CounselServiceGrpc.getFindPersonaByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindPersonaByIdMethod = CounselServiceGrpc.getFindPersonaByIdMethod) == null) {
+          CounselServiceGrpc.getFindPersonaByIdMethod = getFindPersonaByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindPersonaByIdRequest, com.hearlers.api.proto.v1.service.FindPersonaByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindPersonaById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindPersonaByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindPersonaByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindPersonaById"))
+              .build();
+        }
+      }
+    }
+    return getFindPersonaByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePersonaRequest,
+      com.hearlers.api.proto.v1.service.UpdatePersonaResponse> getUpdatePersonaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePersona",
+      requestType = com.hearlers.api.proto.v1.service.UpdatePersonaRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdatePersonaResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePersonaRequest,
+      com.hearlers.api.proto.v1.service.UpdatePersonaResponse> getUpdatePersonaMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePersonaRequest, com.hearlers.api.proto.v1.service.UpdatePersonaResponse> getUpdatePersonaMethod;
+    if ((getUpdatePersonaMethod = CounselServiceGrpc.getUpdatePersonaMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdatePersonaMethod = CounselServiceGrpc.getUpdatePersonaMethod) == null) {
+          CounselServiceGrpc.getUpdatePersonaMethod = getUpdatePersonaMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdatePersonaRequest, com.hearlers.api.proto.v1.service.UpdatePersonaResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePersona"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdatePersonaRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdatePersonaResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdatePersona"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePersonaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateContextRequest,
+      com.hearlers.api.proto.v1.service.CreateContextResponse> getCreateContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateContext",
+      requestType = com.hearlers.api.proto.v1.service.CreateContextRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateContextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateContextRequest,
+      com.hearlers.api.proto.v1.service.CreateContextResponse> getCreateContextMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateContextRequest, com.hearlers.api.proto.v1.service.CreateContextResponse> getCreateContextMethod;
+    if ((getCreateContextMethod = CounselServiceGrpc.getCreateContextMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreateContextMethod = CounselServiceGrpc.getCreateContextMethod) == null) {
+          CounselServiceGrpc.getCreateContextMethod = getCreateContextMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateContextRequest, com.hearlers.api.proto.v1.service.CreateContextResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateContext"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateContextResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreateContext"))
+              .build();
+        }
+      }
+    }
+    return getCreateContextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindContextsRequest,
+      com.hearlers.api.proto.v1.service.FindContextsResponse> getFindContextsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindContexts",
+      requestType = com.hearlers.api.proto.v1.service.FindContextsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindContextsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindContextsRequest,
+      com.hearlers.api.proto.v1.service.FindContextsResponse> getFindContextsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindContextsRequest, com.hearlers.api.proto.v1.service.FindContextsResponse> getFindContextsMethod;
+    if ((getFindContextsMethod = CounselServiceGrpc.getFindContextsMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindContextsMethod = CounselServiceGrpc.getFindContextsMethod) == null) {
+          CounselServiceGrpc.getFindContextsMethod = getFindContextsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindContextsRequest, com.hearlers.api.proto.v1.service.FindContextsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindContexts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindContextsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindContexts"))
+              .build();
+        }
+      }
+    }
+    return getFindContextsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindContextByIdRequest,
+      com.hearlers.api.proto.v1.service.FindContextByIdResponse> getFindContextByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindContextById",
+      requestType = com.hearlers.api.proto.v1.service.FindContextByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindContextByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindContextByIdRequest,
+      com.hearlers.api.proto.v1.service.FindContextByIdResponse> getFindContextByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindContextByIdRequest, com.hearlers.api.proto.v1.service.FindContextByIdResponse> getFindContextByIdMethod;
+    if ((getFindContextByIdMethod = CounselServiceGrpc.getFindContextByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindContextByIdMethod = CounselServiceGrpc.getFindContextByIdMethod) == null) {
+          CounselServiceGrpc.getFindContextByIdMethod = getFindContextByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindContextByIdRequest, com.hearlers.api.proto.v1.service.FindContextByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindContextById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindContextByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindContextByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindContextById"))
+              .build();
+        }
+      }
+    }
+    return getFindContextByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateContextRequest,
+      com.hearlers.api.proto.v1.service.UpdateContextResponse> getUpdateContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateContext",
+      requestType = com.hearlers.api.proto.v1.service.UpdateContextRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateContextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateContextRequest,
+      com.hearlers.api.proto.v1.service.UpdateContextResponse> getUpdateContextMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateContextRequest, com.hearlers.api.proto.v1.service.UpdateContextResponse> getUpdateContextMethod;
+    if ((getUpdateContextMethod = CounselServiceGrpc.getUpdateContextMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdateContextMethod = CounselServiceGrpc.getUpdateContextMethod) == null) {
+          CounselServiceGrpc.getUpdateContextMethod = getUpdateContextMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateContextRequest, com.hearlers.api.proto.v1.service.UpdateContextResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateContext"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateContextResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdateContext"))
+              .build();
+        }
+      }
+    }
+    return getUpdateContextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateInstructionRequest,
+      com.hearlers.api.proto.v1.service.CreateInstructionResponse> getCreateInstructionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateInstruction",
+      requestType = com.hearlers.api.proto.v1.service.CreateInstructionRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateInstructionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateInstructionRequest,
+      com.hearlers.api.proto.v1.service.CreateInstructionResponse> getCreateInstructionMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateInstructionRequest, com.hearlers.api.proto.v1.service.CreateInstructionResponse> getCreateInstructionMethod;
+    if ((getCreateInstructionMethod = CounselServiceGrpc.getCreateInstructionMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreateInstructionMethod = CounselServiceGrpc.getCreateInstructionMethod) == null) {
+          CounselServiceGrpc.getCreateInstructionMethod = getCreateInstructionMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateInstructionRequest, com.hearlers.api.proto.v1.service.CreateInstructionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateInstruction"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateInstructionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateInstructionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreateInstruction"))
+              .build();
+        }
+      }
+    }
+    return getCreateInstructionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionsRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionsResponse> getFindInstructionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindInstructions",
+      requestType = com.hearlers.api.proto.v1.service.FindInstructionsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindInstructionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionsRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionsResponse> getFindInstructionsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionsRequest, com.hearlers.api.proto.v1.service.FindInstructionsResponse> getFindInstructionsMethod;
+    if ((getFindInstructionsMethod = CounselServiceGrpc.getFindInstructionsMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindInstructionsMethod = CounselServiceGrpc.getFindInstructionsMethod) == null) {
+          CounselServiceGrpc.getFindInstructionsMethod = getFindInstructionsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindInstructionsRequest, com.hearlers.api.proto.v1.service.FindInstructionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindInstructions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindInstructions"))
+              .build();
+        }
+      }
+    }
+    return getFindInstructionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionByIdRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionByIdResponse> getFindInstructionByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindInstructionById",
+      requestType = com.hearlers.api.proto.v1.service.FindInstructionByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindInstructionByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionByIdRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionByIdResponse> getFindInstructionByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionByIdRequest, com.hearlers.api.proto.v1.service.FindInstructionByIdResponse> getFindInstructionByIdMethod;
+    if ((getFindInstructionByIdMethod = CounselServiceGrpc.getFindInstructionByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindInstructionByIdMethod = CounselServiceGrpc.getFindInstructionByIdMethod) == null) {
+          CounselServiceGrpc.getFindInstructionByIdMethod = getFindInstructionByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindInstructionByIdRequest, com.hearlers.api.proto.v1.service.FindInstructionByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindInstructionById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindInstructionById"))
+              .build();
+        }
+      }
+    }
+    return getFindInstructionByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateInstructionRequest,
+      com.hearlers.api.proto.v1.service.UpdateInstructionResponse> getUpdateInstructionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInstruction",
+      requestType = com.hearlers.api.proto.v1.service.UpdateInstructionRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateInstructionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateInstructionRequest,
+      com.hearlers.api.proto.v1.service.UpdateInstructionResponse> getUpdateInstructionMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateInstructionRequest, com.hearlers.api.proto.v1.service.UpdateInstructionResponse> getUpdateInstructionMethod;
+    if ((getUpdateInstructionMethod = CounselServiceGrpc.getUpdateInstructionMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdateInstructionMethod = CounselServiceGrpc.getUpdateInstructionMethod) == null) {
+          CounselServiceGrpc.getUpdateInstructionMethod = getUpdateInstructionMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateInstructionRequest, com.hearlers.api.proto.v1.service.UpdateInstructionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateInstruction"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateInstructionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateInstructionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdateInstruction"))
+              .build();
+        }
+      }
+    }
+    return getUpdateInstructionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateInstructionItemRequest,
+      com.hearlers.api.proto.v1.service.CreateInstructionItemResponse> getCreateInstructionItemMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateInstructionItem",
+      requestType = com.hearlers.api.proto.v1.service.CreateInstructionItemRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateInstructionItemResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateInstructionItemRequest,
+      com.hearlers.api.proto.v1.service.CreateInstructionItemResponse> getCreateInstructionItemMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateInstructionItemRequest, com.hearlers.api.proto.v1.service.CreateInstructionItemResponse> getCreateInstructionItemMethod;
+    if ((getCreateInstructionItemMethod = CounselServiceGrpc.getCreateInstructionItemMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreateInstructionItemMethod = CounselServiceGrpc.getCreateInstructionItemMethod) == null) {
+          CounselServiceGrpc.getCreateInstructionItemMethod = getCreateInstructionItemMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateInstructionItemRequest, com.hearlers.api.proto.v1.service.CreateInstructionItemResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateInstructionItem"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateInstructionItemRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateInstructionItemResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreateInstructionItem"))
+              .build();
+        }
+      }
+    }
+    return getCreateInstructionItemMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionItemsRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionItemsResponse> getFindInstructionItemsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindInstructionItems",
+      requestType = com.hearlers.api.proto.v1.service.FindInstructionItemsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindInstructionItemsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionItemsRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionItemsResponse> getFindInstructionItemsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionItemsRequest, com.hearlers.api.proto.v1.service.FindInstructionItemsResponse> getFindInstructionItemsMethod;
+    if ((getFindInstructionItemsMethod = CounselServiceGrpc.getFindInstructionItemsMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindInstructionItemsMethod = CounselServiceGrpc.getFindInstructionItemsMethod) == null) {
+          CounselServiceGrpc.getFindInstructionItemsMethod = getFindInstructionItemsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindInstructionItemsRequest, com.hearlers.api.proto.v1.service.FindInstructionItemsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindInstructionItems"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionItemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionItemsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindInstructionItems"))
+              .build();
+        }
+      }
+    }
+    return getFindInstructionItemsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse> getFindInstructionItemByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindInstructionItemById",
+      requestType = com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest,
+      com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse> getFindInstructionItemByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest, com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse> getFindInstructionItemByIdMethod;
+    if ((getFindInstructionItemByIdMethod = CounselServiceGrpc.getFindInstructionItemByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindInstructionItemByIdMethod = CounselServiceGrpc.getFindInstructionItemByIdMethod) == null) {
+          CounselServiceGrpc.getFindInstructionItemByIdMethod = getFindInstructionItemByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest, com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindInstructionItemById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindInstructionItemById"))
+              .build();
+        }
+      }
+    }
+    return getFindInstructionItemByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest,
+      com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse> getUpdateInstructionItemMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInstructionItem",
+      requestType = com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest,
+      com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse> getUpdateInstructionItemMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest, com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse> getUpdateInstructionItemMethod;
+    if ((getUpdateInstructionItemMethod = CounselServiceGrpc.getUpdateInstructionItemMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdateInstructionItemMethod = CounselServiceGrpc.getUpdateInstructionItemMethod) == null) {
+          CounselServiceGrpc.getUpdateInstructionItemMethod = getUpdateInstructionItemMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest, com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateInstructionItem"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdateInstructionItem"))
+              .build();
+        }
+      }
+    }
+    return getUpdateInstructionItemMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateToneRequest,
+      com.hearlers.api.proto.v1.service.CreateToneResponse> getCreateToneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTone",
+      requestType = com.hearlers.api.proto.v1.service.CreateToneRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateToneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateToneRequest,
+      com.hearlers.api.proto.v1.service.CreateToneResponse> getCreateToneMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateToneRequest, com.hearlers.api.proto.v1.service.CreateToneResponse> getCreateToneMethod;
+    if ((getCreateToneMethod = CounselServiceGrpc.getCreateToneMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getCreateToneMethod = CounselServiceGrpc.getCreateToneMethod) == null) {
+          CounselServiceGrpc.getCreateToneMethod = getCreateToneMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateToneRequest, com.hearlers.api.proto.v1.service.CreateToneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTone"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateToneRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateToneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("CreateTone"))
+              .build();
+        }
+      }
+    }
+    return getCreateToneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonesRequest,
+      com.hearlers.api.proto.v1.service.FindTonesResponse> getFindTonesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindTones",
+      requestType = com.hearlers.api.proto.v1.service.FindTonesRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindTonesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonesRequest,
+      com.hearlers.api.proto.v1.service.FindTonesResponse> getFindTonesMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonesRequest, com.hearlers.api.proto.v1.service.FindTonesResponse> getFindTonesMethod;
+    if ((getFindTonesMethod = CounselServiceGrpc.getFindTonesMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindTonesMethod = CounselServiceGrpc.getFindTonesMethod) == null) {
+          CounselServiceGrpc.getFindTonesMethod = getFindTonesMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindTonesRequest, com.hearlers.api.proto.v1.service.FindTonesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindTones"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindTonesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindTonesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindTones"))
+              .build();
+        }
+      }
+    }
+    return getFindTonesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindToneByIdRequest,
+      com.hearlers.api.proto.v1.service.FindToneByIdResponse> getFindToneByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindToneById",
+      requestType = com.hearlers.api.proto.v1.service.FindToneByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindToneByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindToneByIdRequest,
+      com.hearlers.api.proto.v1.service.FindToneByIdResponse> getFindToneByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindToneByIdRequest, com.hearlers.api.proto.v1.service.FindToneByIdResponse> getFindToneByIdMethod;
+    if ((getFindToneByIdMethod = CounselServiceGrpc.getFindToneByIdMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getFindToneByIdMethod = CounselServiceGrpc.getFindToneByIdMethod) == null) {
+          CounselServiceGrpc.getFindToneByIdMethod = getFindToneByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindToneByIdRequest, com.hearlers.api.proto.v1.service.FindToneByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindToneById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindToneByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindToneByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("FindToneById"))
+              .build();
+        }
+      }
+    }
+    return getFindToneByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateToneRequest,
+      com.hearlers.api.proto.v1.service.UpdateToneResponse> getUpdateToneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTone",
+      requestType = com.hearlers.api.proto.v1.service.UpdateToneRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateToneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateToneRequest,
+      com.hearlers.api.proto.v1.service.UpdateToneResponse> getUpdateToneMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateToneRequest, com.hearlers.api.proto.v1.service.UpdateToneResponse> getUpdateToneMethod;
+    if ((getUpdateToneMethod = CounselServiceGrpc.getUpdateToneMethod) == null) {
+      synchronized (CounselServiceGrpc.class) {
+        if ((getUpdateToneMethod = CounselServiceGrpc.getUpdateToneMethod) == null) {
+          CounselServiceGrpc.getUpdateToneMethod = getUpdateToneMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateToneRequest, com.hearlers.api.proto.v1.service.UpdateToneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTone"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateToneRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateToneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselServiceMethodDescriptorSupplier("UpdateTone"))
+              .build();
+        }
+      }
+    }
+    return getUpdateToneMethod;
   }
 
   /**
@@ -406,7 +1181,7 @@ public final class CounselServiceGrpc {
 
     /**
      * <pre>
-     * 한 사이클의 상담
+     * 상담 (한 사이클)
      * TODO: 한 사이클의 끝을 어떻게 지정할 지 결정
      * </pre>
      */
@@ -416,15 +1191,25 @@ public final class CounselServiceGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: 상담사 별로 조회
+     * </pre>
      */
-    default void getCounselList(com.hearlers.api.proto.v1.service.GetCounselListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCounselListMethod(), responseObserver);
+    default void findCounsels(com.hearlers.api.proto.v1.service.FindCounselsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findCounselById(com.hearlers.api.proto.v1.service.FindCounselByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselByIdMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * 상담 중 하나의 채팅 메시지 생성
+     * 상담 메시지 (상담 중 하나의 채팅팅)
      * </pre>
      */
     default void createMessage(com.hearlers.api.proto.v1.service.CreateMessageRequest request,
@@ -434,9 +1219,9 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    default void getMessageList(com.hearlers.api.proto.v1.service.GetMessageListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetMessageListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMessageListMethod(), responseObserver);
+    default void findMessages(com.hearlers.api.proto.v1.service.FindMessagesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindMessagesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindMessagesMethod(), responseObserver);
     }
 
     /**
@@ -447,27 +1232,9 @@ public final class CounselServiceGrpc {
     }
 
     /**
-     */
-    default void createPrompt(com.hearlers.api.proto.v1.service.CreatePromptRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePromptResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePromptMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void getPromptList(com.hearlers.api.proto.v1.service.GetPromptListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetPromptListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPromptListMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void updatePrompt(com.hearlers.api.proto.v1.service.UpdatePromptRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePromptMethod(), responseObserver);
-    }
-
-    /**
+     * <pre>
+     * 상담사
+     * </pre>
      */
     default void createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselorResponse> responseObserver) {
@@ -476,9 +1243,16 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    default void getCounselorList(com.hearlers.api.proto.v1.service.GetCounselorListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselorListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCounselorListMethod(), responseObserver);
+    default void findCounselors(com.hearlers.api.proto.v1.service.FindCounselorsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselorsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findCounselorById(com.hearlers.api.proto.v1.service.FindCounselorByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselorByIdMethod(), responseObserver);
     }
 
     /**
@@ -486,6 +1260,214 @@ public final class CounselServiceGrpc {
     default void updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCounselorMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 상담사와 유저의 관계
+     * TODO: CQRS 패턴으로 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * Relationship은 읽을 시 싱딤시와, 상담사의 모든 Counsels를 다 가지고 오는게 의미있는 단위
+     * Relationship 뷰 테이블에 이미 상담사와 모든 유저의 대화 내용을 미리 조인해둔 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * DDD를 안함
+     * 별도의 모듈
+     * </pre>
+     */
+    default void findCounselorUserRelationships(com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselorUserRelationshipsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 상담 기법
+     * </pre>
+     */
+    default void createCounselTechnique(com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCounselTechniqueMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselTechniquesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findCounselTechniqueById(com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselTechniqueByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateCounselTechnique(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCounselTechniqueMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveCounselTechniqueSequenceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Persona
+     * </pre>
+     */
+    default void createPersona(com.hearlers.api.proto.v1.service.CreatePersonaRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePersonaResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePersonaMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findPersonas(com.hearlers.api.proto.v1.service.FindPersonasRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonasResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindPersonasMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findPersonaById(com.hearlers.api.proto.v1.service.FindPersonaByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindPersonaByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updatePersona(com.hearlers.api.proto.v1.service.UpdatePersonaRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePersonaResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePersonaMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Context
+     * </pre>
+     */
+    default void createContext(com.hearlers.api.proto.v1.service.CreateContextRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateContextResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateContextMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findContexts(com.hearlers.api.proto.v1.service.FindContextsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindContextsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindContextsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findContextById(com.hearlers.api.proto.v1.service.FindContextByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindContextByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindContextByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateContext(com.hearlers.api.proto.v1.service.UpdateContextRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateContextResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateContextMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Instruction
+     * </pre>
+     */
+    default void createInstruction(com.hearlers.api.proto.v1.service.CreateInstructionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateInstructionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateInstructionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findInstructions(com.hearlers.api.proto.v1.service.FindInstructionsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindInstructionsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findInstructionById(com.hearlers.api.proto.v1.service.FindInstructionByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindInstructionByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateInstruction(com.hearlers.api.proto.v1.service.UpdateInstructionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateInstructionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateInstructionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * InstructionItem
+     * </pre>
+     */
+    default void createInstructionItem(com.hearlers.api.proto.v1.service.CreateInstructionItemRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateInstructionItemResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateInstructionItemMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findInstructionItems(com.hearlers.api.proto.v1.service.FindInstructionItemsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionItemsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindInstructionItemsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findInstructionItemById(com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindInstructionItemByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateInstructionItem(com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateInstructionItemMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Tone
+     * </pre>
+     */
+    default void createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateToneResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateToneMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindTonesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindToneByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindToneByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateToneResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateToneMethod(), responseObserver);
     }
   }
 
@@ -518,7 +1500,7 @@ public final class CounselServiceGrpc {
 
     /**
      * <pre>
-     * 한 사이클의 상담
+     * 상담 (한 사이클)
      * TODO: 한 사이클의 끝을 어떻게 지정할 지 결정
      * </pre>
      */
@@ -529,16 +1511,27 @@ public final class CounselServiceGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: 상담사 별로 조회
+     * </pre>
      */
-    public void getCounselList(com.hearlers.api.proto.v1.service.GetCounselListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselListResponse> responseObserver) {
+    public void findCounsels(com.hearlers.api.proto.v1.service.FindCounselsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetCounselListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getFindCounselsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findCounselById(com.hearlers.api.proto.v1.service.FindCounselByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * 상담 중 하나의 채팅 메시지 생성
+     * 상담 메시지 (상담 중 하나의 채팅팅)
      * </pre>
      */
     public void createMessage(com.hearlers.api.proto.v1.service.CreateMessageRequest request,
@@ -549,10 +1542,10 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    public void getMessageList(com.hearlers.api.proto.v1.service.GetMessageListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetMessageListResponse> responseObserver) {
+    public void findMessages(com.hearlers.api.proto.v1.service.FindMessagesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindMessagesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetMessageListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getFindMessagesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -564,30 +1557,9 @@ public final class CounselServiceGrpc {
     }
 
     /**
-     */
-    public void createPrompt(com.hearlers.api.proto.v1.service.CreatePromptRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePromptResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreatePromptMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void getPromptList(com.hearlers.api.proto.v1.service.GetPromptListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetPromptListResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetPromptListMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void updatePrompt(com.hearlers.api.proto.v1.service.UpdatePromptRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdatePromptMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
+     * <pre>
+     * 상담사
+     * </pre>
      */
     public void createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselorResponse> responseObserver) {
@@ -597,10 +1569,18 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    public void getCounselorList(com.hearlers.api.proto.v1.service.GetCounselorListRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselorListResponse> responseObserver) {
+    public void findCounselors(com.hearlers.api.proto.v1.service.FindCounselorsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetCounselorListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getFindCounselorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findCounselorById(com.hearlers.api.proto.v1.service.FindCounselorByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselorByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -609,6 +1589,240 @@ public final class CounselServiceGrpc {
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCounselorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 상담사와 유저의 관계
+     * TODO: CQRS 패턴으로 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * Relationship은 읽을 시 싱딤시와, 상담사의 모든 Counsels를 다 가지고 오는게 의미있는 단위
+     * Relationship 뷰 테이블에 이미 상담사와 모든 유저의 대화 내용을 미리 조인해둔 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * DDD를 안함
+     * 별도의 모듈
+     * </pre>
+     */
+    public void findCounselorUserRelationships(com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselorUserRelationshipsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 상담 기법
+     * </pre>
+     */
+    public void createCounselTechnique(com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCounselTechniqueMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselTechniquesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findCounselTechniqueById(com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselTechniqueByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateCounselTechnique(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCounselTechniqueMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSaveCounselTechniqueSequenceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Persona
+     * </pre>
+     */
+    public void createPersona(com.hearlers.api.proto.v1.service.CreatePersonaRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePersonaResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePersonaMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findPersonas(com.hearlers.api.proto.v1.service.FindPersonasRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonasResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindPersonasMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findPersonaById(com.hearlers.api.proto.v1.service.FindPersonaByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindPersonaByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updatePersona(com.hearlers.api.proto.v1.service.UpdatePersonaRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePersonaResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePersonaMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Context
+     * </pre>
+     */
+    public void createContext(com.hearlers.api.proto.v1.service.CreateContextRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateContextResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateContextMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findContexts(com.hearlers.api.proto.v1.service.FindContextsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindContextsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindContextsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findContextById(com.hearlers.api.proto.v1.service.FindContextByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindContextByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindContextByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateContext(com.hearlers.api.proto.v1.service.UpdateContextRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateContextResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateContextMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Instruction
+     * </pre>
+     */
+    public void createInstruction(com.hearlers.api.proto.v1.service.CreateInstructionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateInstructionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateInstructionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findInstructions(com.hearlers.api.proto.v1.service.FindInstructionsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindInstructionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findInstructionById(com.hearlers.api.proto.v1.service.FindInstructionByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindInstructionByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateInstruction(com.hearlers.api.proto.v1.service.UpdateInstructionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateInstructionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateInstructionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * InstructionItem
+     * </pre>
+     */
+    public void createInstructionItem(com.hearlers.api.proto.v1.service.CreateInstructionItemRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateInstructionItemResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateInstructionItemMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findInstructionItems(com.hearlers.api.proto.v1.service.FindInstructionItemsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionItemsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindInstructionItemsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findInstructionItemById(com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindInstructionItemByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateInstructionItem(com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateInstructionItemMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Tone
+     * </pre>
+     */
+    public void createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateToneResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateToneMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindTonesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindToneByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindToneByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateToneResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateToneMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -630,7 +1844,7 @@ public final class CounselServiceGrpc {
 
     /**
      * <pre>
-     * 한 사이클의 상담
+     * 상담 (한 사이클)
      * TODO: 한 사이클의 끝을 어떻게 지정할 지 결정
      * </pre>
      */
@@ -640,15 +1854,25 @@ public final class CounselServiceGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: 상담사 별로 조회
+     * </pre>
      */
-    public com.hearlers.api.proto.v1.service.GetCounselListResponse getCounselList(com.hearlers.api.proto.v1.service.GetCounselListRequest request) {
+    public com.hearlers.api.proto.v1.service.FindCounselsResponse findCounsels(com.hearlers.api.proto.v1.service.FindCounselsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCounselListMethod(), getCallOptions(), request);
+          getChannel(), getFindCounselsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselByIdResponse findCounselById(com.hearlers.api.proto.v1.service.FindCounselByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselByIdMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * 상담 중 하나의 채팅 메시지 생성
+     * 상담 메시지 (상담 중 하나의 채팅팅)
      * </pre>
      */
     public com.hearlers.api.proto.v1.service.CreateMessageResponse createMessage(com.hearlers.api.proto.v1.service.CreateMessageRequest request) {
@@ -658,9 +1882,9 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    public com.hearlers.api.proto.v1.service.GetMessageListResponse getMessageList(com.hearlers.api.proto.v1.service.GetMessageListRequest request) {
+    public com.hearlers.api.proto.v1.service.FindMessagesResponse findMessages(com.hearlers.api.proto.v1.service.FindMessagesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetMessageListMethod(), getCallOptions(), request);
+          getChannel(), getFindMessagesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -671,27 +1895,9 @@ public final class CounselServiceGrpc {
     }
 
     /**
-     */
-    public com.hearlers.api.proto.v1.service.CreatePromptResponse createPrompt(com.hearlers.api.proto.v1.service.CreatePromptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreatePromptMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.hearlers.api.proto.v1.service.GetPromptListResponse getPromptList(com.hearlers.api.proto.v1.service.GetPromptListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetPromptListMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.hearlers.api.proto.v1.service.UpdatePromptResponse updatePrompt(com.hearlers.api.proto.v1.service.UpdatePromptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdatePromptMethod(), getCallOptions(), request);
-    }
-
-    /**
+     * <pre>
+     * 상담사
+     * </pre>
      */
     public com.hearlers.api.proto.v1.service.CreateCounselorResponse createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -700,9 +1906,16 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    public com.hearlers.api.proto.v1.service.GetCounselorListResponse getCounselorList(com.hearlers.api.proto.v1.service.GetCounselorListRequest request) {
+    public com.hearlers.api.proto.v1.service.FindCounselorsResponse findCounselors(com.hearlers.api.proto.v1.service.FindCounselorsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCounselorListMethod(), getCallOptions(), request);
+          getChannel(), getFindCounselorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselorByIdResponse findCounselorById(com.hearlers.api.proto.v1.service.FindCounselorByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselorByIdMethod(), getCallOptions(), request);
     }
 
     /**
@@ -710,6 +1923,214 @@ public final class CounselServiceGrpc {
     public com.hearlers.api.proto.v1.service.UpdateCounselorResponse updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCounselorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 상담사와 유저의 관계
+     * TODO: CQRS 패턴으로 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * Relationship은 읽을 시 싱딤시와, 상담사의 모든 Counsels를 다 가지고 오는게 의미있는 단위
+     * Relationship 뷰 테이블에 이미 상담사와 모든 유저의 대화 내용을 미리 조인해둔 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * DDD를 안함
+     * 별도의 모듈
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse findCounselorUserRelationships(com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselorUserRelationshipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 상담 기법
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse createCounselTechnique(com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselTechniqueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniquesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse findCounselTechniqueById(com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniqueByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse updateCounselTechnique(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCounselTechniqueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSaveCounselTechniqueSequenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Persona
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreatePersonaResponse createPersona(com.hearlers.api.proto.v1.service.CreatePersonaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePersonaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindPersonasResponse findPersonas(com.hearlers.api.proto.v1.service.FindPersonasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindPersonasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindPersonaByIdResponse findPersonaById(com.hearlers.api.proto.v1.service.FindPersonaByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindPersonaByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdatePersonaResponse updatePersona(com.hearlers.api.proto.v1.service.UpdatePersonaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePersonaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Context
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateContextResponse createContext(com.hearlers.api.proto.v1.service.CreateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindContextsResponse findContexts(com.hearlers.api.proto.v1.service.FindContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindContextByIdResponse findContextById(com.hearlers.api.proto.v1.service.FindContextByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindContextByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateContextResponse updateContext(com.hearlers.api.proto.v1.service.UpdateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Instruction
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateInstructionResponse createInstruction(com.hearlers.api.proto.v1.service.CreateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionsResponse findInstructions(com.hearlers.api.proto.v1.service.FindInstructionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionByIdResponse findInstructionById(com.hearlers.api.proto.v1.service.FindInstructionByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateInstructionResponse updateInstruction(com.hearlers.api.proto.v1.service.UpdateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * InstructionItem
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateInstructionItemResponse createInstructionItem(com.hearlers.api.proto.v1.service.CreateInstructionItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstructionItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionItemsResponse findInstructionItems(com.hearlers.api.proto.v1.service.FindInstructionItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse findInstructionItemById(com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionItemByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse updateInstructionItem(com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstructionItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Tone
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateToneResponse createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateToneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindTonesResponse findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindToneByIdResponse findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindToneByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateToneResponse updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateToneMethod(), getCallOptions(), request);
     }
   }
 
@@ -731,7 +2152,7 @@ public final class CounselServiceGrpc {
 
     /**
      * <pre>
-     * 한 사이클의 상담
+     * 상담 (한 사이클)
      * TODO: 한 사이클의 끝을 어떻게 지정할 지 결정
      * </pre>
      */
@@ -742,16 +2163,27 @@ public final class CounselServiceGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: 상담사 별로 조회
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.GetCounselListResponse> getCounselList(
-        com.hearlers.api.proto.v1.service.GetCounselListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselsResponse> findCounsels(
+        com.hearlers.api.proto.v1.service.FindCounselsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetCounselListMethod(), getCallOptions()), request);
+          getChannel().newCall(getFindCounselsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselByIdResponse> findCounselById(
+        com.hearlers.api.proto.v1.service.FindCounselByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselByIdMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
-     * 상담 중 하나의 채팅 메시지 생성
+     * 상담 메시지 (상담 중 하나의 채팅팅)
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateMessageResponse> createMessage(
@@ -762,10 +2194,10 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.GetMessageListResponse> getMessageList(
-        com.hearlers.api.proto.v1.service.GetMessageListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindMessagesResponse> findMessages(
+        com.hearlers.api.proto.v1.service.FindMessagesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetMessageListMethod(), getCallOptions()), request);
+          getChannel().newCall(getFindMessagesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -777,30 +2209,9 @@ public final class CounselServiceGrpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreatePromptResponse> createPrompt(
-        com.hearlers.api.proto.v1.service.CreatePromptRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreatePromptMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.GetPromptListResponse> getPromptList(
-        com.hearlers.api.proto.v1.service.GetPromptListRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetPromptListMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdatePromptResponse> updatePrompt(
-        com.hearlers.api.proto.v1.service.UpdatePromptRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdatePromptMethod(), getCallOptions()), request);
-    }
-
-    /**
+     * <pre>
+     * 상담사
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateCounselorResponse> createCounselor(
         com.hearlers.api.proto.v1.service.CreateCounselorRequest request) {
@@ -810,10 +2221,18 @@ public final class CounselServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.GetCounselorListResponse> getCounselorList(
-        com.hearlers.api.proto.v1.service.GetCounselorListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselorsResponse> findCounselors(
+        com.hearlers.api.proto.v1.service.FindCounselorsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetCounselorListMethod(), getCallOptions()), request);
+          getChannel().newCall(getFindCounselorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselorByIdResponse> findCounselorById(
+        com.hearlers.api.proto.v1.service.FindCounselorByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselorByIdMethod(), getCallOptions()), request);
     }
 
     /**
@@ -823,19 +2242,278 @@ public final class CounselServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCounselorMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 상담사와 유저의 관계
+     * TODO: CQRS 패턴으로 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * Relationship은 읽을 시 싱딤시와, 상담사의 모든 Counsels를 다 가지고 오는게 의미있는 단위
+     * Relationship 뷰 테이블에 이미 상담사와 모든 유저의 대화 내용을 미리 조인해둔 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * DDD를 안함
+     * 별도의 모듈
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse> findCounselorUserRelationships(
+        com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselorUserRelationshipsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 상담 기법
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse> createCounselTechnique(
+        com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCounselTechniqueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> findCounselTechniques(
+        com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselTechniquesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse> findCounselTechniqueById(
+        com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselTechniqueByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse> updateCounselTechnique(
+        com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCounselTechniqueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> saveCounselTechniqueSequence(
+        com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSaveCounselTechniqueSequenceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Persona
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreatePersonaResponse> createPersona(
+        com.hearlers.api.proto.v1.service.CreatePersonaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePersonaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindPersonasResponse> findPersonas(
+        com.hearlers.api.proto.v1.service.FindPersonasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindPersonasMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindPersonaByIdResponse> findPersonaById(
+        com.hearlers.api.proto.v1.service.FindPersonaByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindPersonaByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdatePersonaResponse> updatePersona(
+        com.hearlers.api.proto.v1.service.UpdatePersonaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePersonaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Context
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateContextResponse> createContext(
+        com.hearlers.api.proto.v1.service.CreateContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateContextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindContextsResponse> findContexts(
+        com.hearlers.api.proto.v1.service.FindContextsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindContextsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindContextByIdResponse> findContextById(
+        com.hearlers.api.proto.v1.service.FindContextByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindContextByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateContextResponse> updateContext(
+        com.hearlers.api.proto.v1.service.UpdateContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateContextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Instruction
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateInstructionResponse> createInstruction(
+        com.hearlers.api.proto.v1.service.CreateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateInstructionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindInstructionsResponse> findInstructions(
+        com.hearlers.api.proto.v1.service.FindInstructionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindInstructionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindInstructionByIdResponse> findInstructionById(
+        com.hearlers.api.proto.v1.service.FindInstructionByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindInstructionByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateInstructionResponse> updateInstruction(
+        com.hearlers.api.proto.v1.service.UpdateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateInstructionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * InstructionItem
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateInstructionItemResponse> createInstructionItem(
+        com.hearlers.api.proto.v1.service.CreateInstructionItemRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateInstructionItemMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindInstructionItemsResponse> findInstructionItems(
+        com.hearlers.api.proto.v1.service.FindInstructionItemsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindInstructionItemsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse> findInstructionItemById(
+        com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindInstructionItemByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse> updateInstructionItem(
+        com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateInstructionItemMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Tone
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateToneResponse> createTone(
+        com.hearlers.api.proto.v1.service.CreateToneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateToneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindTonesResponse> findTones(
+        com.hearlers.api.proto.v1.service.FindTonesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindTonesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindToneByIdResponse> findToneById(
+        com.hearlers.api.proto.v1.service.FindToneByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindToneByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateToneResponse> updateTone(
+        com.hearlers.api.proto.v1.service.UpdateToneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateToneMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_COUNSEL = 0;
-  private static final int METHODID_GET_COUNSEL_LIST = 1;
-  private static final int METHODID_CREATE_MESSAGE = 2;
-  private static final int METHODID_GET_MESSAGE_LIST = 3;
-  private static final int METHODID_REACT_MESSAGE = 4;
-  private static final int METHODID_CREATE_PROMPT = 5;
-  private static final int METHODID_GET_PROMPT_LIST = 6;
-  private static final int METHODID_UPDATE_PROMPT = 7;
-  private static final int METHODID_CREATE_COUNSELOR = 8;
-  private static final int METHODID_GET_COUNSELOR_LIST = 9;
-  private static final int METHODID_UPDATE_COUNSELOR = 10;
+  private static final int METHODID_FIND_COUNSELS = 1;
+  private static final int METHODID_FIND_COUNSEL_BY_ID = 2;
+  private static final int METHODID_CREATE_MESSAGE = 3;
+  private static final int METHODID_FIND_MESSAGES = 4;
+  private static final int METHODID_REACT_MESSAGE = 5;
+  private static final int METHODID_CREATE_COUNSELOR = 6;
+  private static final int METHODID_FIND_COUNSELORS = 7;
+  private static final int METHODID_FIND_COUNSELOR_BY_ID = 8;
+  private static final int METHODID_UPDATE_COUNSELOR = 9;
+  private static final int METHODID_FIND_COUNSELOR_USER_RELATIONSHIPS = 10;
+  private static final int METHODID_CREATE_COUNSEL_TECHNIQUE = 11;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUES = 12;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID = 13;
+  private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 14;
+  private static final int METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE = 15;
+  private static final int METHODID_CREATE_PERSONA = 16;
+  private static final int METHODID_FIND_PERSONAS = 17;
+  private static final int METHODID_FIND_PERSONA_BY_ID = 18;
+  private static final int METHODID_UPDATE_PERSONA = 19;
+  private static final int METHODID_CREATE_CONTEXT = 20;
+  private static final int METHODID_FIND_CONTEXTS = 21;
+  private static final int METHODID_FIND_CONTEXT_BY_ID = 22;
+  private static final int METHODID_UPDATE_CONTEXT = 23;
+  private static final int METHODID_CREATE_INSTRUCTION = 24;
+  private static final int METHODID_FIND_INSTRUCTIONS = 25;
+  private static final int METHODID_FIND_INSTRUCTION_BY_ID = 26;
+  private static final int METHODID_UPDATE_INSTRUCTION = 27;
+  private static final int METHODID_CREATE_INSTRUCTION_ITEM = 28;
+  private static final int METHODID_FIND_INSTRUCTION_ITEMS = 29;
+  private static final int METHODID_FIND_INSTRUCTION_ITEM_BY_ID = 30;
+  private static final int METHODID_UPDATE_INSTRUCTION_ITEM = 31;
+  private static final int METHODID_CREATE_TONE = 32;
+  private static final int METHODID_FIND_TONES = 33;
+  private static final int METHODID_FIND_TONE_BY_ID = 34;
+  private static final int METHODID_UPDATE_TONE = 35;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -858,45 +2536,145 @@ public final class CounselServiceGrpc {
           serviceImpl.createCounsel((com.hearlers.api.proto.v1.service.CreateCounselRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselResponse>) responseObserver);
           break;
-        case METHODID_GET_COUNSEL_LIST:
-          serviceImpl.getCounselList((com.hearlers.api.proto.v1.service.GetCounselListRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselListResponse>) responseObserver);
+        case METHODID_FIND_COUNSELS:
+          serviceImpl.findCounsels((com.hearlers.api.proto.v1.service.FindCounselsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSEL_BY_ID:
+          serviceImpl.findCounselById((com.hearlers.api.proto.v1.service.FindCounselByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselByIdResponse>) responseObserver);
           break;
         case METHODID_CREATE_MESSAGE:
           serviceImpl.createMessage((com.hearlers.api.proto.v1.service.CreateMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateMessageResponse>) responseObserver);
           break;
-        case METHODID_GET_MESSAGE_LIST:
-          serviceImpl.getMessageList((com.hearlers.api.proto.v1.service.GetMessageListRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetMessageListResponse>) responseObserver);
+        case METHODID_FIND_MESSAGES:
+          serviceImpl.findMessages((com.hearlers.api.proto.v1.service.FindMessagesRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindMessagesResponse>) responseObserver);
           break;
         case METHODID_REACT_MESSAGE:
           serviceImpl.reactMessage((com.hearlers.api.proto.v1.service.ReactMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ReactMessageResponse>) responseObserver);
           break;
-        case METHODID_CREATE_PROMPT:
-          serviceImpl.createPrompt((com.hearlers.api.proto.v1.service.CreatePromptRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePromptResponse>) responseObserver);
-          break;
-        case METHODID_GET_PROMPT_LIST:
-          serviceImpl.getPromptList((com.hearlers.api.proto.v1.service.GetPromptListRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetPromptListResponse>) responseObserver);
-          break;
-        case METHODID_UPDATE_PROMPT:
-          serviceImpl.updatePrompt((com.hearlers.api.proto.v1.service.UpdatePromptRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptResponse>) responseObserver);
-          break;
         case METHODID_CREATE_COUNSELOR:
           serviceImpl.createCounselor((com.hearlers.api.proto.v1.service.CreateCounselorRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselorResponse>) responseObserver);
           break;
-        case METHODID_GET_COUNSELOR_LIST:
-          serviceImpl.getCounselorList((com.hearlers.api.proto.v1.service.GetCounselorListRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.GetCounselorListResponse>) responseObserver);
+        case METHODID_FIND_COUNSELORS:
+          serviceImpl.findCounselors((com.hearlers.api.proto.v1.service.FindCounselorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSELOR_BY_ID:
+          serviceImpl.findCounselorById((com.hearlers.api.proto.v1.service.FindCounselorByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorByIdResponse>) responseObserver);
           break;
         case METHODID_UPDATE_COUNSELOR:
           serviceImpl.updateCounselor((com.hearlers.api.proto.v1.service.UpdateCounselorRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSELOR_USER_RELATIONSHIPS:
+          serviceImpl.findCounselorUserRelationships((com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_COUNSEL_TECHNIQUE:
+          serviceImpl.createCounselTechnique((com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSEL_TECHNIQUES:
+          serviceImpl.findCounselTechniques((com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID:
+          serviceImpl.findCounselTechniqueById((com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_COUNSEL_TECHNIQUE:
+          serviceImpl.updateCounselTechnique((com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse>) responseObserver);
+          break;
+        case METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE:
+          serviceImpl.saveCounselTechniqueSequence((com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PERSONA:
+          serviceImpl.createPersona((com.hearlers.api.proto.v1.service.CreatePersonaRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreatePersonaResponse>) responseObserver);
+          break;
+        case METHODID_FIND_PERSONAS:
+          serviceImpl.findPersonas((com.hearlers.api.proto.v1.service.FindPersonasRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonasResponse>) responseObserver);
+          break;
+        case METHODID_FIND_PERSONA_BY_ID:
+          serviceImpl.findPersonaById((com.hearlers.api.proto.v1.service.FindPersonaByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PERSONA:
+          serviceImpl.updatePersona((com.hearlers.api.proto.v1.service.UpdatePersonaRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePersonaResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_CONTEXT:
+          serviceImpl.createContext((com.hearlers.api.proto.v1.service.CreateContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateContextResponse>) responseObserver);
+          break;
+        case METHODID_FIND_CONTEXTS:
+          serviceImpl.findContexts((com.hearlers.api.proto.v1.service.FindContextsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindContextsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_CONTEXT_BY_ID:
+          serviceImpl.findContextById((com.hearlers.api.proto.v1.service.FindContextByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindContextByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_CONTEXT:
+          serviceImpl.updateContext((com.hearlers.api.proto.v1.service.UpdateContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateContextResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_INSTRUCTION:
+          serviceImpl.createInstruction((com.hearlers.api.proto.v1.service.CreateInstructionRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateInstructionResponse>) responseObserver);
+          break;
+        case METHODID_FIND_INSTRUCTIONS:
+          serviceImpl.findInstructions((com.hearlers.api.proto.v1.service.FindInstructionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_INSTRUCTION_BY_ID:
+          serviceImpl.findInstructionById((com.hearlers.api.proto.v1.service.FindInstructionByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_INSTRUCTION:
+          serviceImpl.updateInstruction((com.hearlers.api.proto.v1.service.UpdateInstructionRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateInstructionResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_INSTRUCTION_ITEM:
+          serviceImpl.createInstructionItem((com.hearlers.api.proto.v1.service.CreateInstructionItemRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateInstructionItemResponse>) responseObserver);
+          break;
+        case METHODID_FIND_INSTRUCTION_ITEMS:
+          serviceImpl.findInstructionItems((com.hearlers.api.proto.v1.service.FindInstructionItemsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionItemsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_INSTRUCTION_ITEM_BY_ID:
+          serviceImpl.findInstructionItemById((com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_INSTRUCTION_ITEM:
+          serviceImpl.updateInstructionItem((com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_TONE:
+          serviceImpl.createTone((com.hearlers.api.proto.v1.service.CreateToneRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateToneResponse>) responseObserver);
+          break;
+        case METHODID_FIND_TONES:
+          serviceImpl.findTones((com.hearlers.api.proto.v1.service.FindTonesRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonesResponse>) responseObserver);
+          break;
+        case METHODID_FIND_TONE_BY_ID:
+          serviceImpl.findToneById((com.hearlers.api.proto.v1.service.FindToneByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindToneByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TONE:
+          serviceImpl.updateTone((com.hearlers.api.proto.v1.service.UpdateToneRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateToneResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -924,12 +2702,19 @@ public final class CounselServiceGrpc {
               com.hearlers.api.proto.v1.service.CreateCounselResponse>(
                 service, METHODID_CREATE_COUNSEL)))
         .addMethod(
-          getGetCounselListMethod(),
+          getFindCounselsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.hearlers.api.proto.v1.service.GetCounselListRequest,
-              com.hearlers.api.proto.v1.service.GetCounselListResponse>(
-                service, METHODID_GET_COUNSEL_LIST)))
+              com.hearlers.api.proto.v1.service.FindCounselsRequest,
+              com.hearlers.api.proto.v1.service.FindCounselsResponse>(
+                service, METHODID_FIND_COUNSELS)))
+        .addMethod(
+          getFindCounselByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselByIdRequest,
+              com.hearlers.api.proto.v1.service.FindCounselByIdResponse>(
+                service, METHODID_FIND_COUNSEL_BY_ID)))
         .addMethod(
           getCreateMessageMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -938,12 +2723,12 @@ public final class CounselServiceGrpc {
               com.hearlers.api.proto.v1.service.CreateMessageResponse>(
                 service, METHODID_CREATE_MESSAGE)))
         .addMethod(
-          getGetMessageListMethod(),
+          getFindMessagesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.hearlers.api.proto.v1.service.GetMessageListRequest,
-              com.hearlers.api.proto.v1.service.GetMessageListResponse>(
-                service, METHODID_GET_MESSAGE_LIST)))
+              com.hearlers.api.proto.v1.service.FindMessagesRequest,
+              com.hearlers.api.proto.v1.service.FindMessagesResponse>(
+                service, METHODID_FIND_MESSAGES)))
         .addMethod(
           getReactMessageMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -952,27 +2737,6 @@ public final class CounselServiceGrpc {
               com.hearlers.api.proto.v1.service.ReactMessageResponse>(
                 service, METHODID_REACT_MESSAGE)))
         .addMethod(
-          getCreatePromptMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.hearlers.api.proto.v1.service.CreatePromptRequest,
-              com.hearlers.api.proto.v1.service.CreatePromptResponse>(
-                service, METHODID_CREATE_PROMPT)))
-        .addMethod(
-          getGetPromptListMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.hearlers.api.proto.v1.service.GetPromptListRequest,
-              com.hearlers.api.proto.v1.service.GetPromptListResponse>(
-                service, METHODID_GET_PROMPT_LIST)))
-        .addMethod(
-          getUpdatePromptMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.hearlers.api.proto.v1.service.UpdatePromptRequest,
-              com.hearlers.api.proto.v1.service.UpdatePromptResponse>(
-                service, METHODID_UPDATE_PROMPT)))
-        .addMethod(
           getCreateCounselorMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -980,12 +2744,19 @@ public final class CounselServiceGrpc {
               com.hearlers.api.proto.v1.service.CreateCounselorResponse>(
                 service, METHODID_CREATE_COUNSELOR)))
         .addMethod(
-          getGetCounselorListMethod(),
+          getFindCounselorsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.hearlers.api.proto.v1.service.GetCounselorListRequest,
-              com.hearlers.api.proto.v1.service.GetCounselorListResponse>(
-                service, METHODID_GET_COUNSELOR_LIST)))
+              com.hearlers.api.proto.v1.service.FindCounselorsRequest,
+              com.hearlers.api.proto.v1.service.FindCounselorsResponse>(
+                service, METHODID_FIND_COUNSELORS)))
+        .addMethod(
+          getFindCounselorByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselorByIdRequest,
+              com.hearlers.api.proto.v1.service.FindCounselorByIdResponse>(
+                service, METHODID_FIND_COUNSELOR_BY_ID)))
         .addMethod(
           getUpdateCounselorMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -993,6 +2764,188 @@ public final class CounselServiceGrpc {
               com.hearlers.api.proto.v1.service.UpdateCounselorRequest,
               com.hearlers.api.proto.v1.service.UpdateCounselorResponse>(
                 service, METHODID_UPDATE_COUNSELOR)))
+        .addMethod(
+          getFindCounselorUserRelationshipsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest,
+              com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse>(
+                service, METHODID_FIND_COUNSELOR_USER_RELATIONSHIPS)))
+        .addMethod(
+          getCreateCounselTechniqueMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest,
+              com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse>(
+                service, METHODID_CREATE_COUNSEL_TECHNIQUE)))
+        .addMethod(
+          getFindCounselTechniquesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest,
+              com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse>(
+                service, METHODID_FIND_COUNSEL_TECHNIQUES)))
+        .addMethod(
+          getFindCounselTechniqueByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest,
+              com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse>(
+                service, METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID)))
+        .addMethod(
+          getUpdateCounselTechniqueMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest,
+              com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse>(
+                service, METHODID_UPDATE_COUNSEL_TECHNIQUE)))
+        .addMethod(
+          getSaveCounselTechniqueSequenceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest,
+              com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>(
+                service, METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE)))
+        .addMethod(
+          getCreatePersonaMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreatePersonaRequest,
+              com.hearlers.api.proto.v1.service.CreatePersonaResponse>(
+                service, METHODID_CREATE_PERSONA)))
+        .addMethod(
+          getFindPersonasMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindPersonasRequest,
+              com.hearlers.api.proto.v1.service.FindPersonasResponse>(
+                service, METHODID_FIND_PERSONAS)))
+        .addMethod(
+          getFindPersonaByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindPersonaByIdRequest,
+              com.hearlers.api.proto.v1.service.FindPersonaByIdResponse>(
+                service, METHODID_FIND_PERSONA_BY_ID)))
+        .addMethod(
+          getUpdatePersonaMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdatePersonaRequest,
+              com.hearlers.api.proto.v1.service.UpdatePersonaResponse>(
+                service, METHODID_UPDATE_PERSONA)))
+        .addMethod(
+          getCreateContextMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateContextRequest,
+              com.hearlers.api.proto.v1.service.CreateContextResponse>(
+                service, METHODID_CREATE_CONTEXT)))
+        .addMethod(
+          getFindContextsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindContextsRequest,
+              com.hearlers.api.proto.v1.service.FindContextsResponse>(
+                service, METHODID_FIND_CONTEXTS)))
+        .addMethod(
+          getFindContextByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindContextByIdRequest,
+              com.hearlers.api.proto.v1.service.FindContextByIdResponse>(
+                service, METHODID_FIND_CONTEXT_BY_ID)))
+        .addMethod(
+          getUpdateContextMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateContextRequest,
+              com.hearlers.api.proto.v1.service.UpdateContextResponse>(
+                service, METHODID_UPDATE_CONTEXT)))
+        .addMethod(
+          getCreateInstructionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateInstructionRequest,
+              com.hearlers.api.proto.v1.service.CreateInstructionResponse>(
+                service, METHODID_CREATE_INSTRUCTION)))
+        .addMethod(
+          getFindInstructionsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindInstructionsRequest,
+              com.hearlers.api.proto.v1.service.FindInstructionsResponse>(
+                service, METHODID_FIND_INSTRUCTIONS)))
+        .addMethod(
+          getFindInstructionByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindInstructionByIdRequest,
+              com.hearlers.api.proto.v1.service.FindInstructionByIdResponse>(
+                service, METHODID_FIND_INSTRUCTION_BY_ID)))
+        .addMethod(
+          getUpdateInstructionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateInstructionRequest,
+              com.hearlers.api.proto.v1.service.UpdateInstructionResponse>(
+                service, METHODID_UPDATE_INSTRUCTION)))
+        .addMethod(
+          getCreateInstructionItemMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateInstructionItemRequest,
+              com.hearlers.api.proto.v1.service.CreateInstructionItemResponse>(
+                service, METHODID_CREATE_INSTRUCTION_ITEM)))
+        .addMethod(
+          getFindInstructionItemsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindInstructionItemsRequest,
+              com.hearlers.api.proto.v1.service.FindInstructionItemsResponse>(
+                service, METHODID_FIND_INSTRUCTION_ITEMS)))
+        .addMethod(
+          getFindInstructionItemByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest,
+              com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse>(
+                service, METHODID_FIND_INSTRUCTION_ITEM_BY_ID)))
+        .addMethod(
+          getUpdateInstructionItemMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest,
+              com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse>(
+                service, METHODID_UPDATE_INSTRUCTION_ITEM)))
+        .addMethod(
+          getCreateToneMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateToneRequest,
+              com.hearlers.api.proto.v1.service.CreateToneResponse>(
+                service, METHODID_CREATE_TONE)))
+        .addMethod(
+          getFindTonesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindTonesRequest,
+              com.hearlers.api.proto.v1.service.FindTonesResponse>(
+                service, METHODID_FIND_TONES)))
+        .addMethod(
+          getFindToneByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindToneByIdRequest,
+              com.hearlers.api.proto.v1.service.FindToneByIdResponse>(
+                service, METHODID_FIND_TONE_BY_ID)))
+        .addMethod(
+          getUpdateToneMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateToneRequest,
+              com.hearlers.api.proto.v1.service.UpdateToneResponse>(
+                service, METHODID_UPDATE_TONE)))
         .build();
   }
 
@@ -1042,16 +2995,41 @@ public final class CounselServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new CounselServiceFileDescriptorSupplier())
               .addMethod(getCreateCounselMethod())
-              .addMethod(getGetCounselListMethod())
+              .addMethod(getFindCounselsMethod())
+              .addMethod(getFindCounselByIdMethod())
               .addMethod(getCreateMessageMethod())
-              .addMethod(getGetMessageListMethod())
+              .addMethod(getFindMessagesMethod())
               .addMethod(getReactMessageMethod())
-              .addMethod(getCreatePromptMethod())
-              .addMethod(getGetPromptListMethod())
-              .addMethod(getUpdatePromptMethod())
               .addMethod(getCreateCounselorMethod())
-              .addMethod(getGetCounselorListMethod())
+              .addMethod(getFindCounselorsMethod())
+              .addMethod(getFindCounselorByIdMethod())
               .addMethod(getUpdateCounselorMethod())
+              .addMethod(getFindCounselorUserRelationshipsMethod())
+              .addMethod(getCreateCounselTechniqueMethod())
+              .addMethod(getFindCounselTechniquesMethod())
+              .addMethod(getFindCounselTechniqueByIdMethod())
+              .addMethod(getUpdateCounselTechniqueMethod())
+              .addMethod(getSaveCounselTechniqueSequenceMethod())
+              .addMethod(getCreatePersonaMethod())
+              .addMethod(getFindPersonasMethod())
+              .addMethod(getFindPersonaByIdMethod())
+              .addMethod(getUpdatePersonaMethod())
+              .addMethod(getCreateContextMethod())
+              .addMethod(getFindContextsMethod())
+              .addMethod(getFindContextByIdMethod())
+              .addMethod(getUpdateContextMethod())
+              .addMethod(getCreateInstructionMethod())
+              .addMethod(getFindInstructionsMethod())
+              .addMethod(getFindInstructionByIdMethod())
+              .addMethod(getUpdateInstructionMethod())
+              .addMethod(getCreateInstructionItemMethod())
+              .addMethod(getFindInstructionItemsMethod())
+              .addMethod(getFindInstructionItemByIdMethod())
+              .addMethod(getUpdateInstructionItemMethod())
+              .addMethod(getCreateToneMethod())
+              .addMethod(getFindTonesMethod())
+              .addMethod(getFindToneByIdMethod())
+              .addMethod(getUpdateToneMethod())
               .build();
         }
       }

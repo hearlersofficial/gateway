@@ -10,17 +10,32 @@ public interface CreateMessageResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
-   * @return Whether the counselMessage field is set.
+   * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
+   * @return Whether the createdCounselMessage field is set.
    */
-  boolean hasCounselMessage();
+  boolean hasCreatedCounselMessage();
   /**
-   * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
-   * @return The counselMessage.
+   * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
+   * @return The createdCounselMessage.
    */
-  com.hearlers.api.proto.v1.model.CounselMessage getCounselMessage();
+  com.hearlers.api.proto.v1.model.CounselMessage getCreatedCounselMessage();
   /**
-   * <code>.com.hearlers.v1.model.CounselMessage counsel_message = 1 [json_name = "counselMessage"];</code>
+   * <code>.com.hearlers.v1.model.CounselMessage created_counsel_message = 1 [json_name = "createdCounselMessage"];</code>
    */
-  com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCounselMessageOrBuilder();
+  com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCreatedCounselMessageOrBuilder();
+
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+   * @return Whether the counselorResponseMessage field is set.
+   */
+  boolean hasCounselorResponseMessage();
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+   * @return The counselorResponseMessage.
+   */
+  com.hearlers.api.proto.v1.model.CounselMessage getCounselorResponseMessage();
+  /**
+   * <code>.com.hearlers.v1.model.CounselMessage counselor_response_message = 2 [json_name = "counselorResponseMessage"];</code>
+   */
+  com.hearlers.api.proto.v1.model.CounselMessageOrBuilder getCounselorResponseMessageOrBuilder();
 }

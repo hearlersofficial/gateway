@@ -36,15 +36,25 @@ public final class Counsel {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_CreateCounselResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetCounselListRequest_descriptor;
+    internal_static_com_hearlers_v1_service_FindCounselsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetCounselListRequest_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindCounselsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetCounselListResponse_descriptor;
+    internal_static_com_hearlers_v1_service_FindCounselsResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetCounselListResponse_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindCounselsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselByIdResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_CreateMessageRequest_descriptor;
   static final 
@@ -56,15 +66,15 @@ public final class Counsel {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_CreateMessageResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetMessageListRequest_descriptor;
+    internal_static_com_hearlers_v1_service_FindMessagesRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetMessageListRequest_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindMessagesRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetMessageListResponse_descriptor;
+    internal_static_com_hearlers_v1_service_FindMessagesResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetMessageListResponse_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindMessagesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_ReactMessageRequest_descriptor;
   static final 
@@ -76,36 +86,6 @@ public final class Counsel {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_ReactMessageResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_CreatePromptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_CreatePromptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_CreatePromptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_CreatePromptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetPromptListRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetPromptListRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetPromptListResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetPromptListResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_UpdatePromptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_UpdatePromptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_UpdatePromptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_UpdatePromptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_CreateCounselorRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -116,15 +96,25 @@ public final class Counsel {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_CreateCounselorResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetCounselorListRequest_descriptor;
+    internal_static_com_hearlers_v1_service_FindCounselorsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetCounselorListRequest_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindCounselorsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_GetCounselorListResponse_descriptor;
+    internal_static_com_hearlers_v1_service_FindCounselorsResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_GetCounselorListResponse_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindCounselorsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselorByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselorByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselorByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselorByIdResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_UpdateCounselorRequest_descriptor;
   static final 
@@ -135,6 +125,266 @@ public final class Counsel {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_UpdateCounselorResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreatePersonaRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreatePersonaRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreatePersonaResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreatePersonaResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindPersonasRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindPersonasRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindPersonasResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindPersonasResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindPersonaByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindPersonaByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindPersonaByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindPersonaByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdatePersonaRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdatePersonaRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdatePersonaResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdatePersonaResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateContextRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateContextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateContextResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateContextResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindContextsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindContextsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindContextsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindContextsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindContextByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindContextByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindContextByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindContextByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateContextRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateContextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateContextResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateContextResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateInstructionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateInstructionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateInstructionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateInstructionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateInstructionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateInstructionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateInstructionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateInstructionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateInstructionItemRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateInstructionItemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateInstructionItemResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateInstructionItemResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionItemsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionItemsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionItemByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionItemByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindInstructionItemByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindInstructionItemByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateInstructionItemRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateInstructionItemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateInstructionItemResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateInstructionItemResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateToneRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateToneResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateToneResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindTonesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindTonesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindTonesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindTonesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindToneByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindToneByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindToneByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindToneByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateToneRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateToneRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateToneResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateToneResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -146,113 +396,323 @@ public final class Counsel {
     java.lang.String[] descriptorData = {
       "\n%com/hearlers/v1/service/counsel.proto\022" +
       "\027com.hearlers.v1.service\032#com/hearlers/v" +
-      "1/model/counsel.proto\"\242\001\n\024CreateCounselR" +
+      "1/model/counsel.proto\"\323\001\n\024CreateCounselR" +
       "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022!\n\014couns" +
-      "elor_id\030\002 \001(\tR\013counselorId\022#\n\rintro_mess" +
-      "age\030\003 \001(\tR\014introMessage\022)\n\020response_mess" +
-      "age\030\004 \001(\tR\017responseMessage\"\243\001\n\025CreateCou" +
-      "nselResponse\0228\n\007counsel\030\001 \001(\0132\036.com.hear" +
-      "lers.v1.model.CounselR\007counsel\022P\n\020counse" +
-      "l_messages\030\002 \003(\0132%.com.hearlers.v1.model" +
-      ".CounselMessageR\017counselMessages\"S\n\025GetC" +
-      "ounselListRequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
-      "Id\022!\n\014counselor_id\030\002 \001(\tR\013counselorId\"[\n" +
-      "\026GetCounselListResponse\022A\n\014counsel_list\030" +
-      "\001 \003(\0132\036.com.hearlers.v1.model.CounselR\013c" +
-      "ounselList\"O\n\024CreateMessageRequest\022\035\n\nco" +
-      "unsel_id\030\001 \001(\tR\tcounselId\022\030\n\007message\030\002 \001" +
-      "(\tR\007message\"g\n\025CreateMessageResponse\022N\n\017" +
-      "counsel_message\030\001 \001(\0132%.com.hearlers.v1." +
-      "model.CounselMessageR\016counselMessage\"6\n\025" +
-      "GetMessageListRequest\022\035\n\ncounsel_id\030\001 \001(" +
-      "\tR\tcounselId\"b\n\026GetMessageListResponse\022H" +
-      "\n\014message_list\030\001 \003(\0132%.com.hearlers.v1.m" +
-      "odel.CounselMessageR\013messageList\"\177\n\023Reac" +
-      "tMessageRequest\022\035\n\nmessage_id\030\001 \001(\tR\tmes" +
-      "sageId\022I\n\010reaction\030\002 \001(\0162-.com.hearlers." +
-      "v1.model.CounselMessageReactionR\010reactio" +
-      "n\"f\n\024ReactMessageResponse\022N\n\017counsel_mes" +
-      "sage\030\001 \001(\0132%.com.hearlers.v1.model.Couns" +
-      "elMessageR\016counselMessage\"\263\002\n\023CreateProm" +
-      "ptRequest\022\030\n\007persona\030\001 \001(\tR\007persona\022\030\n\007c" +
-      "ontext\030\002 \001(\tR\007context\022 \n\013instruction\030\003 \001" +
-      "(\tR\013instruction\022\022\n\004tone\030\004 \001(\tR\004tone\022+\n\021a" +
-      "dditional_prompt\030\005 \001(\tR\020additionalPrompt" +
-      "\022I\n\013prompt_type\030\006 \001(\0162(.com.hearlers.v1." +
-      "model.CounselPromptTypeR\npromptType\022 \n\013d" +
-      "escription\030\007 \001(\tR\013description\022\030\n\007version" +
-      "\030\010 \001(\tR\007version\"T\n\024CreatePromptResponse\022" +
-      "<\n\006prompt\030\001 \001(\0132$.com.hearlers.v1.model." +
-      "CounselPromptR\006prompt\"a\n\024GetPromptListRe" +
-      "quest\022I\n\013prompt_type\030\001 \001(\0162(.com.hearler" +
-      "s.v1.model.CounselPromptTypeR\npromptType" +
-      "\"^\n\025GetPromptListResponse\022E\n\013prompt_list" +
-      "\030\001 \003(\0132$.com.hearlers.v1.model.CounselPr" +
-      "omptR\npromptList\"\205\002\n\023UpdatePromptRequest" +
-      "\022\033\n\tprompt_id\030\001 \001(\tR\010promptId\022\030\n\007persona" +
-      "\030\002 \001(\tR\007persona\022\030\n\007context\030\003 \001(\tR\007contex" +
-      "t\022 \n\013instruction\030\004 \001(\tR\013instruction\022\022\n\004t" +
-      "one\030\005 \001(\tR\004tone\022+\n\021additional_prompt\030\006 \001" +
-      "(\tR\020additionalPrompt\022 \n\013description\030\007 \001(" +
-      "\tR\013description\022\030\n\007version\030\010 \001(\tR\007version" +
-      "\"T\n\024UpdatePromptResponse\022<\n\006prompt\030\001 \001(\013" +
-      "2$.com.hearlers.v1.model.CounselPromptR\006" +
-      "prompt\"\356\001\n\026CreateCounselorRequest\022K\n\016cou" +
-      "nselor_type\030\001 \001(\0162$.com.hearlers.v1.mode" +
-      "l.CounselorTypeR\rcounselorType\022\022\n\004name\030\002" +
-      " \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013descrip" +
-      "tion\022Q\n\020counselor_gender\030\004 \001(\0162&.com.hea" +
-      "rlers.v1.model.CounselorGenderR\017counselo" +
-      "rGender\"Y\n\027CreateCounselorResponse\022>\n\tco" +
-      "unselor\030\001 \001(\0132 .com.hearlers.v1.model.Co" +
-      "unselorR\tcounselor\"f\n\027GetCounselorListRe" +
-      "quest\022K\n\016counselor_type\030\001 \001(\0162$.com.hear" +
-      "lers.v1.model.CounselorTypeR\rcounselorTy" +
-      "pe\"c\n\030GetCounselorListResponse\022G\n\016counse" +
-      "lor_list\030\001 \003(\0132 .com.hearlers.v1.model.C" +
-      "ounselorR\rcounselorList\"\221\002\n\026UpdateCounse" +
+      "elor_id\030\002 \001(\tR\013counselorId\022(\n\rintro_mess" +
+      "age\030\003 \001(\tH\000R\014introMessage\210\001\001\022.\n\020response" +
+      "_message\030\004 \001(\tH\001R\017responseMessage\210\001\001B\020\n\016" +
+      "_intro_messageB\023\n\021_response_message\"\243\001\n\025" +
+      "CreateCounselResponse\0228\n\007counsel\030\001 \001(\0132\036" +
+      ".com.hearlers.v1.model.CounselR\007counsel\022" +
+      "P\n\020counsel_messages\030\002 \003(\0132%.com.hearlers" +
+      ".v1.model.CounselMessageR\017counselMessage" +
+      "s\"g\n\023FindCounselsRequest\022\027\n\007user_id\030\001 \001(" +
+      "\tR\006userId\022&\n\014counselor_id\030\002 \001(\tH\000R\013couns" +
+      "elorId\210\001\001B\017\n\r_counselor_id\"R\n\024FindCounse" +
+      "lsResponse\022:\n\010counsels\030\001 \003(\0132\036.com.hearl" +
+      "ers.v1.model.CounselR\010counsels\"7\n\026FindCo" +
+      "unselByIdRequest\022\035\n\ncounsel_id\030\001 \001(\tR\tco" +
+      "unselId\"S\n\027FindCounselByIdResponse\0228\n\007co" +
+      "unsel\030\001 \001(\0132\036.com.hearlers.v1.model.Coun" +
+      "selR\007counsel\"O\n\024CreateMessageRequest\022\035\n\n" +
+      "counsel_id\030\001 \001(\tR\tcounselId\022\030\n\007message\030\002" +
+      " \001(\tR\007message\"\333\001\n\025CreateMessageResponse\022" +
+      "]\n\027created_counsel_message\030\001 \001(\0132%.com.h" +
+      "earlers.v1.model.CounselMessageR\025created" +
+      "CounselMessage\022c\n\032counselor_response_mes" +
+      "sage\030\002 \001(\0132%.com.hearlers.v1.model.Couns" +
+      "elMessageR\030counselorResponseMessage\"4\n\023F" +
+      "indMessagesRequest\022\035\n\ncounsel_id\030\001 \001(\tR\t" +
+      "counselId\"h\n\024FindMessagesResponse\022P\n\020cou" +
+      "nsel_messages\030\001 \003(\0132%.com.hearlers.v1.mo" +
+      "del.CounselMessageR\017counselMessages\"\177\n\023R" +
+      "eactMessageRequest\022\035\n\nmessage_id\030\001 \001(\tR\t" +
+      "messageId\022I\n\010reaction\030\002 \001(\0162-.com.hearle" +
+      "rs.v1.model.CounselMessageReactionR\010reac" +
+      "tion\"f\n\024ReactMessageResponse\022N\n\017counsel_" +
+      "message\030\001 \001(\0132%.com.hearlers.v1.model.Co" +
+      "unselMessageR\016counselMessage\"\272\001\n\026CreateC" +
+      "ounselorRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId" +
+      "\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(" +
+      "\tR\013description\022Q\n\020counselor_gender\030\004 \001(\016" +
+      "2&.com.hearlers.v1.model.CounselorGender" +
+      "R\017counselorGender\"Y\n\027CreateCounselorResp" +
+      "onse\022>\n\tcounselor\030\001 \001(\0132 .com.hearlers.v" +
+      "1.model.CounselorR\tcounselor\"A\n\025FindCoun" +
+      "selorsRequest\022\034\n\007tone_id\030\001 \001(\tH\000R\006toneId" +
+      "\210\001\001B\n\n\010_tone_id\"Z\n\026FindCounselorsRespons" +
+      "e\022@\n\ncounselors\030\001 \003(\0132 .com.hearlers.v1." +
+      "model.CounselorR\ncounselors\"=\n\030FindCouns" +
+      "elorByIdRequest\022!\n\014counselor_id\030\001 \001(\tR\013c" +
+      "ounselorId\"[\n\031FindCounselorByIdResponse\022" +
+      ">\n\tcounselor\030\001 \001(\0132 .com.hearlers.v1.mod" +
+      "el.CounselorR\tcounselor\"\253\002\n\026UpdateCounse" +
       "lorRequest\022!\n\014counselor_id\030\001 \001(\tR\013counse" +
-      "lorId\022K\n\016counselor_type\030\002 \001(\0162$.com.hear" +
-      "lers.v1.model.CounselorTypeR\rcounselorTy" +
-      "pe\022\022\n\004name\030\003 \001(\tR\004name\022 \n\013description\030\004 " +
-      "\001(\tR\013description\022Q\n\020counselor_gender\030\005 \001" +
-      "(\0162&.com.hearlers.v1.model.CounselorGend" +
-      "erR\017counselorGender\"Y\n\027UpdateCounselorRe" +
-      "sponse\022>\n\tcounselor\030\001 \001(\0132 .com.hearlers" +
-      ".v1.model.CounselorR\tcounselor2\362\t\n\016Couns" +
-      "elService\022n\n\rCreateCounsel\022-.com.hearler" +
-      "s.v1.service.CreateCounselRequest\032..com." +
-      "hearlers.v1.service.CreateCounselRespons" +
-      "e\022q\n\016GetCounselList\022..com.hearlers.v1.se" +
-      "rvice.GetCounselListRequest\032/.com.hearle" +
-      "rs.v1.service.GetCounselListResponse\022n\n\r" +
-      "CreateMessage\022-.com.hearlers.v1.service." +
-      "CreateMessageRequest\032..com.hearlers.v1.s" +
-      "ervice.CreateMessageResponse\022q\n\016GetMessa" +
-      "geList\022..com.hearlers.v1.service.GetMess" +
-      "ageListRequest\032/.com.hearlers.v1.service" +
-      ".GetMessageListResponse\022k\n\014ReactMessage\022" +
-      ",.com.hearlers.v1.service.ReactMessageRe" +
-      "quest\032-.com.hearlers.v1.service.ReactMes" +
-      "sageResponse\022k\n\014CreatePrompt\022,.com.hearl" +
-      "ers.v1.service.CreatePromptRequest\032-.com" +
-      ".hearlers.v1.service.CreatePromptRespons" +
-      "e\022n\n\rGetPromptList\022-.com.hearlers.v1.ser" +
-      "vice.GetPromptListRequest\032..com.hearlers" +
-      ".v1.service.GetPromptListResponse\022k\n\014Upd" +
-      "atePrompt\022,.com.hearlers.v1.service.Upda" +
-      "tePromptRequest\032-.com.hearlers.v1.servic" +
-      "e.UpdatePromptResponse\022t\n\017CreateCounselo" +
-      "r\022/.com.hearlers.v1.service.CreateCounse" +
-      "lorRequest\0320.com.hearlers.v1.service.Cre" +
-      "ateCounselorResponse\022w\n\020GetCounselorList" +
-      "\0220.com.hearlers.v1.service.GetCounselorL" +
-      "istRequest\0321.com.hearlers.v1.service.Get" +
-      "CounselorListResponse\022t\n\017UpdateCounselor" +
-      "\022/.com.hearlers.v1.service.UpdateCounsel" +
-      "orRequest\0320.com.hearlers.v1.service.Upda" +
-      "teCounselorResponseB%\n!com.hearlers.api." +
-      "proto.v1.serviceP\001b\006proto3"
+      "lorId\022\034\n\007tone_id\030\002 \001(\tH\000R\006toneId\210\001\001\022\027\n\004n" +
+      "ame\030\003 \001(\tH\001R\004name\210\001\001\022%\n\013description\030\004 \001(" +
+      "\tH\002R\013description\210\001\001\022V\n\020counselor_gender\030" +
+      "\005 \001(\0162&.com.hearlers.v1.model.CounselorG" +
+      "enderH\003R\017counselorGender\210\001\001B\n\n\010_tone_idB" +
+      "\007\n\005_nameB\016\n\014_descriptionB\023\n\021_counselor_g" +
+      "ender\"Y\n\027UpdateCounselorResponse\022>\n\tcoun" +
+      "selor\030\001 \001(\0132 .com.hearlers.v1.model.Coun" +
+      "selorR\tcounselor\"c\n%FindCounselorUserRel" +
+      "ationshipsRequest\022!\n\014counselor_id\030\001 \001(\tR" +
+      "\013counselorId\022\027\n\007user_id\030\002 \001(\tR\006userId\"\234\001" +
+      "\n&FindCounselorUserRelationshipsResponse" +
+      "\022r\n\034counselor_user_relationships\030\001 \003(\01320" +
+      ".com.hearlers.v1.model.CounselorUserRela" +
+      "tionshipR\032counselorUserRelationships\"\347\002\n" +
+      "\035CreateCounselTechniqueRequest\022\022\n\004name\030\001" +
+      " \001(\tR\004name\022\034\n\007tone_id\030\002 \001(\tH\000R\006toneId\210\001\001" +
+      "\022\035\n\ncontext_id\030\003 \001(\tR\tcontextId\022%\n\016instr" +
+      "uction_id\030\004 \001(\tR\rinstructionId\022d\n\027counse" +
+      "l_technique_stage\030\005 \001(\0162,.com.hearlers.v" +
+      "1.model.CounselTechniqueStageR\025counselTe" +
+      "chniqueStage\022>\n\031next_counsel_technique_i" +
+      "d\030\006 \001(\tH\001R\026nextCounselTechniqueId\210\001\001B\n\n\010" +
+      "_tone_idB\034\n\032_next_counsel_technique_id\"v" +
+      "\n\036CreateCounselTechniqueResponse\022T\n\021coun" +
+      "sel_technique\030\001 \001(\0132\'.com.hearlers.v1.mo" +
+      "del.CounselTechniqueR\020counselTechnique\"\361" +
+      "\001\n\034FindCounselTechniquesRequest\022\027\n\004name\030" +
+      "\001 \001(\tH\000R\004name\210\001\001\022\034\n\007tone_id\030\002 \001(\tH\001R\006ton" +
+      "eId\210\001\001\022i\n\027counsel_technique_stage\030\003 \001(\0162" +
+      ",.com.hearlers.v1.model.CounselTechnique" +
+      "StageH\002R\025counselTechniqueStage\210\001\001B\007\n\005_na" +
+      "meB\n\n\010_tone_idB\032\n\030_counsel_technique_sta" +
+      "ge\"w\n\035FindCounselTechniquesResponse\022V\n\022c" +
+      "ounsel_techniques\030\001 \003(\0132\'.com.hearlers.v" +
+      "1.model.CounselTechniqueR\021counselTechniq" +
+      "ues\"S\n\037FindCounselTechniqueByIdRequest\0220" +
+      "\n\024counsel_technique_id\030\001 \001(\tR\022counselTec" +
+      "hniqueId\"x\n FindCounselTechniqueByIdResp" +
+      "onse\022T\n\021counsel_technique\030\001 \001(\0132\'.com.he" +
+      "arlers.v1.model.CounselTechniqueR\020counse" +
+      "lTechnique\"\364\003\n\035UpdateCounselTechniqueReq" +
+      "uest\0220\n\024counsel_technique_id\030\001 \001(\tR\022coun" +
+      "selTechniqueId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022" +
+      "\034\n\007tone_id\030\003 \001(\tH\001R\006toneId\210\001\001\022\"\n\ncontext" +
+      "_id\030\004 \001(\tH\002R\tcontextId\210\001\001\022*\n\016instruction" +
+      "_id\030\005 \001(\tH\003R\rinstructionId\210\001\001\022i\n\027counsel" +
+      "_technique_stage\030\006 \001(\0162,.com.hearlers.v1" +
+      ".model.CounselTechniqueStageH\004R\025counselT" +
+      "echniqueStage\210\001\001\022>\n\031next_counsel_techniq" +
+      "ue_id\030\007 \001(\tH\005R\026nextCounselTechniqueId\210\001\001" +
+      "B\007\n\005_nameB\n\n\010_tone_idB\r\n\013_context_idB\021\n\017" +
+      "_instruction_idB\032\n\030_counsel_technique_st" +
+      "ageB\034\n\032_next_counsel_technique_id\"v\n\036Upd" +
+      "ateCounselTechniqueResponse\022T\n\021counsel_t" +
+      "echnique\030\001 \001(\0132\'.com.hearlers.v1.model.C" +
+      "ounselTechniqueR\020counselTechnique\"Y\n#Sav" +
+      "eCounselTechniqueSequenceRequest\0222\n\025coun" +
+      "sel_technique_ids\030\001 \003(\tR\023counselTechniqu" +
+      "eIds\"~\n$SaveCounselTechniqueSequenceResp" +
+      "onse\022V\n\022counsel_techniques\030\001 \003(\0132\'.com.h" +
+      "earlers.v1.model.CounselTechniqueR\021couns" +
+      "elTechniques\"M\n\024CreatePersonaRequest\022!\n\014" +
+      "counselor_id\030\001 \001(\tR\013counselorId\022\022\n\004body\030" +
+      "\002 \001(\tR\004body\"Q\n\025CreatePersonaResponse\0228\n\007" +
+      "persona\030\001 \001(\0132\036.com.hearlers.v1.model.Pe" +
+      "rsonaR\007persona\"N\n\023FindPersonasRequest\022&\n" +
+      "\014counselor_id\030\001 \001(\tH\000R\013counselorId\210\001\001B\017\n" +
+      "\r_counselor_id\"R\n\024FindPersonasResponse\022:" +
+      "\n\010personas\030\001 \003(\0132\036.com.hearlers.v1.model" +
+      ".PersonaR\010personas\"7\n\026FindPersonaByIdReq" +
+      "uest\022\035\n\npersona_id\030\001 \001(\tR\tpersonaId\"S\n\027F" +
+      "indPersonaByIdResponse\0228\n\007persona\030\001 \001(\0132" +
+      "\036.com.hearlers.v1.model.PersonaR\007persona" +
+      "\"W\n\024UpdatePersonaRequest\022\035\n\npersona_id\030\001" +
+      " \001(\tR\tpersonaId\022\027\n\004body\030\002 \001(\tH\000R\004body\210\001\001" +
+      "B\007\n\005_body\"Q\n\025UpdatePersonaResponse\0228\n\007pe" +
+      "rsona\030\001 \001(\0132\036.com.hearlers.v1.model.Pers" +
+      "onaR\007persona\"b\n\024CreateContextRequest\022\022\n\004" +
+      "name\030\001 \001(\tR\004name\022\022\n\004body\030\002 \001(\tR\004body\022\"\n\014" +
+      "placeholders\030\003 \003(\tR\014placeholders\"Q\n\025Crea" +
+      "teContextResponse\0228\n\007context\030\001 \001(\0132\036.com" +
+      ".hearlers.v1.model.ContextR\007context\"7\n\023F" +
+      "indContextsRequest\022\027\n\004name\030\001 \001(\tH\000R\004name" +
+      "\210\001\001B\007\n\005_name\"R\n\024FindContextsResponse\022:\n\010" +
+      "contexts\030\001 \003(\0132\036.com.hearlers.v1.model.C" +
+      "ontextR\010contexts\"7\n\026FindContextByIdReque" +
+      "st\022\035\n\ncontext_id\030\001 \001(\tR\tcontextId\"S\n\027Fin" +
+      "dContextByIdResponse\0228\n\007context\030\001 \001(\0132\036." +
+      "com.hearlers.v1.model.ContextR\007context\"\235" +
+      "\001\n\024UpdateContextRequest\022\035\n\ncontext_id\030\001 " +
+      "\001(\tR\tcontextId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022" +
+      "\027\n\004body\030\003 \001(\tH\001R\004body\210\001\001\022\"\n\014placeholders" +
+      "\030\004 \003(\tR\014placeholdersB\007\n\005_nameB\007\n\005_body\"Q" +
+      "\n\025UpdateContextResponse\0228\n\007context\030\001 \001(\013" +
+      "2\036.com.hearlers.v1.model.ContextR\007contex" +
+      "t\"\245\001\n\030CreateInstructionRequest\022\022\n\004name\030\001" +
+      " \001(\tR\004name\022.\n\020initial_sentence\030\002 \001(\tH\000R\017" +
+      "initialSentence\210\001\001\0220\n\024instruction_item_i" +
+      "ds\030\003 \003(\tR\022instructionItemIdsB\023\n\021_initial" +
+      "_sentence\"a\n\031CreateInstructionResponse\022D" +
+      "\n\013instruction\030\001 \001(\0132\".com.hearlers.v1.mo" +
+      "del.InstructionR\013instruction\";\n\027FindInst" +
+      "ructionsRequest\022\027\n\004name\030\001 \001(\tH\000R\004name\210\001\001" +
+      "B\007\n\005_name\"b\n\030FindInstructionsResponse\022F\n" +
+      "\014instructions\030\001 \003(\0132\".com.hearlers.v1.mo" +
+      "del.InstructionR\014instructions\"C\n\032FindIns" +
+      "tructionByIdRequest\022%\n\016instruction_id\030\001 " +
+      "\001(\tR\rinstructionId\"c\n\033FindInstructionByI" +
+      "dResponse\022D\n\013instruction\030\001 \001(\0132\".com.hea" +
+      "rlers.v1.model.InstructionR\013instruction\"" +
+      "\332\001\n\030UpdateInstructionRequest\022%\n\016instruct" +
+      "ion_id\030\001 \001(\tR\rinstructionId\022\027\n\004name\030\002 \001(" +
+      "\tH\000R\004name\210\001\001\022.\n\020initial_sentence\030\003 \001(\tH\001" +
+      "R\017initialSentence\210\001\001\0220\n\024instruction_item" +
+      "_ids\030\004 \003(\tR\022instructionItemIdsB\007\n\005_nameB" +
+      "\023\n\021_initial_sentence\"a\n\031UpdateInstructio" +
+      "nResponse\022D\n\013instruction\030\001 \001(\0132\".com.hea" +
+      "rlers.v1.model.InstructionR\013instruction\"" +
+      "2\n\034CreateInstructionItemRequest\022\022\n\004body\030" +
+      "\001 \001(\tR\004body\"r\n\035CreateInstructionItemResp" +
+      "onse\022Q\n\020instruction_item\030\001 \001(\0132&.com.hea" +
+      "rlers.v1.model.InstructionItemR\017instruct" +
+      "ionItem\"H\n\033FindInstructionItemsRequest\022\035" +
+      "\n\007keyword\030\001 \001(\tH\000R\007keyword\210\001\001B\n\n\010_keywor" +
+      "d\"s\n\034FindInstructionItemsResponse\022S\n\021ins" +
+      "truction_items\030\001 \003(\0132&.com.hearlers.v1.m" +
+      "odel.InstructionItemR\020instructionItems\"P" +
+      "\n\036FindInstructionItemByIdRequest\022.\n\023inst" +
+      "ruction_item_id\030\001 \001(\tR\021instructionItemId" +
+      "\"t\n\037FindInstructionItemByIdResponse\022Q\n\020i" +
+      "nstruction_item\030\001 \001(\0132&.com.hearlers.v1." +
+      "model.InstructionItemR\017instructionItem\"p" +
+      "\n\034UpdateInstructionItemRequest\022.\n\023instru" +
+      "ction_item_id\030\001 \001(\tR\021instructionItemId\022\027" +
+      "\n\004body\030\002 \001(\tH\000R\004body\210\001\001B\007\n\005_body\"r\n\035Upda" +
+      "teInstructionItemResponse\022Q\n\020instruction" +
+      "_item\030\001 \001(\0132&.com.hearlers.v1.model.Inst" +
+      "ructionItemR\017instructionItem\";\n\021CreateTo" +
+      "neRequest\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004body\030\002 " +
+      "\001(\tR\004body\"E\n\022CreateToneResponse\022/\n\004tone\030" +
+      "\001 \001(\0132\033.com.hearlers.v1.model.ToneR\004tone" +
+      "\"4\n\020FindTonesRequest\022\027\n\004name\030\001 \001(\tH\000R\004na" +
+      "me\210\001\001B\007\n\005_name\"F\n\021FindTonesResponse\0221\n\005t" +
+      "ones\030\001 \003(\0132\033.com.hearlers.v1.model.ToneR" +
+      "\005tones\".\n\023FindToneByIdRequest\022\027\n\007tone_id" +
+      "\030\001 \001(\tR\006toneId\"G\n\024FindToneByIdResponse\022/" +
+      "\n\004tone\030\001 \001(\0132\033.com.hearlers.v1.model.Ton" +
+      "eR\004tone\"p\n\021UpdateToneRequest\022\027\n\007tone_id\030" +
+      "\001 \001(\tR\006toneId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022\027" +
+      "\n\004body\030\003 \001(\tH\001R\004body\210\001\001B\007\n\005_nameB\007\n\005_bod" +
+      "y\"E\n\022UpdateToneResponse\022/\n\004tone\030\001 \001(\0132\033." +
+      "com.hearlers.v1.model.ToneR\004tone2\275\"\n\016Cou" +
+      "nselService\022n\n\rCreateCounsel\022-.com.hearl" +
+      "ers.v1.service.CreateCounselRequest\032..co" +
+      "m.hearlers.v1.service.CreateCounselRespo" +
+      "nse\022k\n\014FindCounsels\022,.com.hearlers.v1.se" +
+      "rvice.FindCounselsRequest\032-.com.hearlers" +
+      ".v1.service.FindCounselsResponse\022t\n\017Find" +
+      "CounselById\022/.com.hearlers.v1.service.Fi" +
+      "ndCounselByIdRequest\0320.com.hearlers.v1.s" +
+      "ervice.FindCounselByIdResponse\022n\n\rCreate" +
+      "Message\022-.com.hearlers.v1.service.Create" +
+      "MessageRequest\032..com.hearlers.v1.service" +
+      ".CreateMessageResponse\022k\n\014FindMessages\022," +
+      ".com.hearlers.v1.service.FindMessagesReq" +
+      "uest\032-.com.hearlers.v1.service.FindMessa" +
+      "gesResponse\022k\n\014ReactMessage\022,.com.hearle" +
+      "rs.v1.service.ReactMessageRequest\032-.com." +
+      "hearlers.v1.service.ReactMessageResponse" +
+      "\022t\n\017CreateCounselor\022/.com.hearlers.v1.se" +
+      "rvice.CreateCounselorRequest\0320.com.hearl" +
+      "ers.v1.service.CreateCounselorResponse\022q" +
+      "\n\016FindCounselors\022..com.hearlers.v1.servi" +
+      "ce.FindCounselorsRequest\032/.com.hearlers." +
+      "v1.service.FindCounselorsResponse\022z\n\021Fin" +
+      "dCounselorById\0221.com.hearlers.v1.service" +
+      ".FindCounselorByIdRequest\0322.com.hearlers" +
+      ".v1.service.FindCounselorByIdResponse\022t\n" +
+      "\017UpdateCounselor\022/.com.hearlers.v1.servi" +
+      "ce.UpdateCounselorRequest\0320.com.hearlers" +
+      ".v1.service.UpdateCounselorResponse\022\241\001\n\036" +
+      "FindCounselorUserRelationships\022>.com.hea" +
+      "rlers.v1.service.FindCounselorUserRelati" +
+      "onshipsRequest\032?.com.hearlers.v1.service" +
+      ".FindCounselorUserRelationshipsResponse\022" +
+      "\211\001\n\026CreateCounselTechnique\0226.com.hearler" +
+      "s.v1.service.CreateCounselTechniqueReque" +
+      "st\0327.com.hearlers.v1.service.CreateCouns" +
+      "elTechniqueResponse\022\206\001\n\025FindCounselTechn" +
+      "iques\0225.com.hearlers.v1.service.FindCoun" +
+      "selTechniquesRequest\0326.com.hearlers.v1.s" +
+      "ervice.FindCounselTechniquesResponse\022\217\001\n" +
+      "\030FindCounselTechniqueById\0228.com.hearlers" +
+      ".v1.service.FindCounselTechniqueByIdRequ" +
+      "est\0329.com.hearlers.v1.service.FindCounse" +
+      "lTechniqueByIdResponse\022\211\001\n\026UpdateCounsel" +
+      "Technique\0226.com.hearlers.v1.service.Upda" +
+      "teCounselTechniqueRequest\0327.com.hearlers" +
+      ".v1.service.UpdateCounselTechniqueRespon" +
+      "se\022\233\001\n\034SaveCounselTechniqueSequence\022<.co" +
+      "m.hearlers.v1.service.SaveCounselTechniq" +
+      "ueSequenceRequest\032=.com.hearlers.v1.serv" +
+      "ice.SaveCounselTechniqueSequenceResponse" +
+      "\022n\n\rCreatePersona\022-.com.hearlers.v1.serv" +
+      "ice.CreatePersonaRequest\032..com.hearlers." +
+      "v1.service.CreatePersonaResponse\022k\n\014Find" +
+      "Personas\022,.com.hearlers.v1.service.FindP" +
+      "ersonasRequest\032-.com.hearlers.v1.service" +
+      ".FindPersonasResponse\022t\n\017FindPersonaById" +
+      "\022/.com.hearlers.v1.service.FindPersonaBy" +
+      "IdRequest\0320.com.hearlers.v1.service.Find" +
+      "PersonaByIdResponse\022n\n\rUpdatePersona\022-.c" +
+      "om.hearlers.v1.service.UpdatePersonaRequ" +
+      "est\032..com.hearlers.v1.service.UpdatePers" +
+      "onaResponse\022n\n\rCreateContext\022-.com.hearl" +
+      "ers.v1.service.CreateContextRequest\032..co" +
+      "m.hearlers.v1.service.CreateContextRespo" +
+      "nse\022k\n\014FindContexts\022,.com.hearlers.v1.se" +
+      "rvice.FindContextsRequest\032-.com.hearlers" +
+      ".v1.service.FindContextsResponse\022t\n\017Find" +
+      "ContextById\022/.com.hearlers.v1.service.Fi" +
+      "ndContextByIdRequest\0320.com.hearlers.v1.s" +
+      "ervice.FindContextByIdResponse\022n\n\rUpdate" +
+      "Context\022-.com.hearlers.v1.service.Update" +
+      "ContextRequest\032..com.hearlers.v1.service" +
+      ".UpdateContextResponse\022z\n\021CreateInstruct" +
+      "ion\0221.com.hearlers.v1.service.CreateInst" +
+      "ructionRequest\0322.com.hearlers.v1.service" +
+      ".CreateInstructionResponse\022w\n\020FindInstru" +
+      "ctions\0220.com.hearlers.v1.service.FindIns" +
+      "tructionsRequest\0321.com.hearlers.v1.servi" +
+      "ce.FindInstructionsResponse\022\200\001\n\023FindInst" +
+      "ructionById\0223.com.hearlers.v1.service.Fi" +
+      "ndInstructionByIdRequest\0324.com.hearlers." +
+      "v1.service.FindInstructionByIdResponse\022z" +
+      "\n\021UpdateInstruction\0221.com.hearlers.v1.se" +
+      "rvice.UpdateInstructionRequest\0322.com.hea" +
+      "rlers.v1.service.UpdateInstructionRespon" +
+      "se\022\206\001\n\025CreateInstructionItem\0225.com.hearl" +
+      "ers.v1.service.CreateInstructionItemRequ" +
+      "est\0326.com.hearlers.v1.service.CreateInst" +
+      "ructionItemResponse\022\203\001\n\024FindInstructionI" +
+      "tems\0224.com.hearlers.v1.service.FindInstr" +
+      "uctionItemsRequest\0325.com.hearlers.v1.ser" +
+      "vice.FindInstructionItemsResponse\022\214\001\n\027Fi" +
+      "ndInstructionItemById\0227.com.hearlers.v1." +
+      "service.FindInstructionItemByIdRequest\0328" +
+      ".com.hearlers.v1.service.FindInstruction" +
+      "ItemByIdResponse\022\206\001\n\025UpdateInstructionIt" +
+      "em\0225.com.hearlers.v1.service.UpdateInstr" +
+      "uctionItemRequest\0326.com.hearlers.v1.serv" +
+      "ice.UpdateInstructionItemResponse\022e\n\nCre" +
+      "ateTone\022*.com.hearlers.v1.service.Create" +
+      "ToneRequest\032+.com.hearlers.v1.service.Cr" +
+      "eateToneResponse\022b\n\tFindTones\022).com.hear" +
+      "lers.v1.service.FindTonesRequest\032*.com.h" +
+      "earlers.v1.service.FindTonesResponse\022k\n\014" +
+      "FindToneById\022,.com.hearlers.v1.service.F" +
+      "indToneByIdRequest\032-.com.hearlers.v1.ser" +
+      "vice.FindToneByIdResponse\022e\n\nUpdateTone\022" +
+      "*.com.hearlers.v1.service.UpdateToneRequ" +
+      "est\032+.com.hearlers.v1.service.UpdateTone" +
+      "ResponseB%\n!com.hearlers.api.proto.v1.se" +
+      "rviceP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -271,126 +731,426 @@ public final class Counsel {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselResponse_descriptor,
         new java.lang.String[] { "Counsel", "CounselMessages", });
-    internal_static_com_hearlers_v1_service_GetCounselListRequest_descriptor =
+    internal_static_com_hearlers_v1_service_FindCounselsRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_com_hearlers_v1_service_GetCounselListRequest_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_service_FindCounselsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetCounselListRequest_descriptor,
+        internal_static_com_hearlers_v1_service_FindCounselsRequest_descriptor,
         new java.lang.String[] { "UserId", "CounselorId", });
-    internal_static_com_hearlers_v1_service_GetCounselListResponse_descriptor =
+    internal_static_com_hearlers_v1_service_FindCounselsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_com_hearlers_v1_service_GetCounselListResponse_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_service_FindCounselsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetCounselListResponse_descriptor,
-        new java.lang.String[] { "CounselList", });
-    internal_static_com_hearlers_v1_service_CreateMessageRequest_descriptor =
+        internal_static_com_hearlers_v1_service_FindCounselsResponse_descriptor,
+        new java.lang.String[] { "Counsels", });
+    internal_static_com_hearlers_v1_service_FindCounselByIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_com_hearlers_v1_service_FindCounselByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselByIdRequest_descriptor,
+        new java.lang.String[] { "CounselId", });
+    internal_static_com_hearlers_v1_service_FindCounselByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_hearlers_v1_service_FindCounselByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselByIdResponse_descriptor,
+        new java.lang.String[] { "Counsel", });
+    internal_static_com_hearlers_v1_service_CreateMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_com_hearlers_v1_service_CreateMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateMessageRequest_descriptor,
         new java.lang.String[] { "CounselId", "Message", });
     internal_static_com_hearlers_v1_service_CreateMessageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_com_hearlers_v1_service_CreateMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateMessageResponse_descriptor,
-        new java.lang.String[] { "CounselMessage", });
-    internal_static_com_hearlers_v1_service_GetMessageListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_com_hearlers_v1_service_GetMessageListRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetMessageListRequest_descriptor,
-        new java.lang.String[] { "CounselId", });
-    internal_static_com_hearlers_v1_service_GetMessageListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_com_hearlers_v1_service_GetMessageListResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetMessageListResponse_descriptor,
-        new java.lang.String[] { "MessageList", });
-    internal_static_com_hearlers_v1_service_ReactMessageRequest_descriptor =
+        new java.lang.String[] { "CreatedCounselMessage", "CounselorResponseMessage", });
+    internal_static_com_hearlers_v1_service_FindMessagesRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_com_hearlers_v1_service_FindMessagesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindMessagesRequest_descriptor,
+        new java.lang.String[] { "CounselId", });
+    internal_static_com_hearlers_v1_service_FindMessagesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_hearlers_v1_service_FindMessagesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindMessagesResponse_descriptor,
+        new java.lang.String[] { "CounselMessages", });
+    internal_static_com_hearlers_v1_service_ReactMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_hearlers_v1_service_ReactMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_ReactMessageRequest_descriptor,
         new java.lang.String[] { "MessageId", "Reaction", });
     internal_static_com_hearlers_v1_service_ReactMessageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_hearlers_v1_service_ReactMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_ReactMessageResponse_descriptor,
         new java.lang.String[] { "CounselMessage", });
-    internal_static_com_hearlers_v1_service_CreatePromptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_com_hearlers_v1_service_CreatePromptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_CreatePromptRequest_descriptor,
-        new java.lang.String[] { "Persona", "Context", "Instruction", "Tone", "AdditionalPrompt", "PromptType", "Description", "Version", });
-    internal_static_com_hearlers_v1_service_CreatePromptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_com_hearlers_v1_service_CreatePromptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_CreatePromptResponse_descriptor,
-        new java.lang.String[] { "Prompt", });
-    internal_static_com_hearlers_v1_service_GetPromptListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_com_hearlers_v1_service_GetPromptListRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetPromptListRequest_descriptor,
-        new java.lang.String[] { "PromptType", });
-    internal_static_com_hearlers_v1_service_GetPromptListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_com_hearlers_v1_service_GetPromptListResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetPromptListResponse_descriptor,
-        new java.lang.String[] { "PromptList", });
-    internal_static_com_hearlers_v1_service_UpdatePromptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_com_hearlers_v1_service_UpdatePromptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_UpdatePromptRequest_descriptor,
-        new java.lang.String[] { "PromptId", "Persona", "Context", "Instruction", "Tone", "AdditionalPrompt", "Description", "Version", });
-    internal_static_com_hearlers_v1_service_UpdatePromptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
-    internal_static_com_hearlers_v1_service_UpdatePromptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_UpdatePromptResponse_descriptor,
-        new java.lang.String[] { "Prompt", });
     internal_static_com_hearlers_v1_service_CreateCounselorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_hearlers_v1_service_CreateCounselorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselorRequest_descriptor,
-        new java.lang.String[] { "CounselorType", "Name", "Description", "CounselorGender", });
+        new java.lang.String[] { "ToneId", "Name", "Description", "CounselorGender", });
     internal_static_com_hearlers_v1_service_CreateCounselorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_hearlers_v1_service_CreateCounselorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselorResponse_descriptor,
         new java.lang.String[] { "Counselor", });
-    internal_static_com_hearlers_v1_service_GetCounselorListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
-    internal_static_com_hearlers_v1_service_GetCounselorListRequest_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_service_FindCounselorsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_com_hearlers_v1_service_FindCounselorsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetCounselorListRequest_descriptor,
-        new java.lang.String[] { "CounselorType", });
-    internal_static_com_hearlers_v1_service_GetCounselorListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
-    internal_static_com_hearlers_v1_service_GetCounselorListResponse_fieldAccessorTable = new
+        internal_static_com_hearlers_v1_service_FindCounselorsRequest_descriptor,
+        new java.lang.String[] { "ToneId", });
+    internal_static_com_hearlers_v1_service_FindCounselorsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_com_hearlers_v1_service_FindCounselorsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_GetCounselorListResponse_descriptor,
-        new java.lang.String[] { "CounselorList", });
+        internal_static_com_hearlers_v1_service_FindCounselorsResponse_descriptor,
+        new java.lang.String[] { "Counselors", });
+    internal_static_com_hearlers_v1_service_FindCounselorByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_com_hearlers_v1_service_FindCounselorByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselorByIdRequest_descriptor,
+        new java.lang.String[] { "CounselorId", });
+    internal_static_com_hearlers_v1_service_FindCounselorByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_com_hearlers_v1_service_FindCounselorByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselorByIdResponse_descriptor,
+        new java.lang.String[] { "Counselor", });
     internal_static_com_hearlers_v1_service_UpdateCounselorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_com_hearlers_v1_service_UpdateCounselorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselorRequest_descriptor,
-        new java.lang.String[] { "CounselorId", "CounselorType", "Name", "Description", "CounselorGender", });
+        new java.lang.String[] { "CounselorId", "ToneId", "Name", "Description", "CounselorGender", });
     internal_static_com_hearlers_v1_service_UpdateCounselorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_com_hearlers_v1_service_UpdateCounselorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselorResponse_descriptor,
         new java.lang.String[] { "Counselor", });
+    internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsRequest_descriptor,
+        new java.lang.String[] { "CounselorId", "UserId", });
+    internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselorUserRelationshipsResponse_descriptor,
+        new java.lang.String[] { "CounselorUserRelationships", });
+    internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_descriptor,
+        new java.lang.String[] { "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", "NextCounselTechniqueId", });
+    internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_descriptor,
+        new java.lang.String[] { "CounselTechnique", });
+    internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_descriptor,
+        new java.lang.String[] { "Name", "ToneId", "CounselTechniqueStage", });
+    internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_descriptor,
+        new java.lang.String[] { "CounselTechniques", });
+    internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_descriptor,
+        new java.lang.String[] { "CounselTechniqueId", });
+    internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_descriptor,
+        new java.lang.String[] { "CounselTechnique", });
+    internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_descriptor,
+        new java.lang.String[] { "CounselTechniqueId", "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", "NextCounselTechniqueId", });
+    internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_descriptor,
+        new java.lang.String[] { "CounselTechnique", });
+    internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_descriptor,
+        new java.lang.String[] { "CounselTechniqueIds", });
+    internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_descriptor,
+        new java.lang.String[] { "CounselTechniques", });
+    internal_static_com_hearlers_v1_service_CreatePersonaRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_com_hearlers_v1_service_CreatePersonaRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreatePersonaRequest_descriptor,
+        new java.lang.String[] { "CounselorId", "Body", });
+    internal_static_com_hearlers_v1_service_CreatePersonaResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_com_hearlers_v1_service_CreatePersonaResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreatePersonaResponse_descriptor,
+        new java.lang.String[] { "Persona", });
+    internal_static_com_hearlers_v1_service_FindPersonasRequest_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_com_hearlers_v1_service_FindPersonasRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindPersonasRequest_descriptor,
+        new java.lang.String[] { "CounselorId", });
+    internal_static_com_hearlers_v1_service_FindPersonasResponse_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_com_hearlers_v1_service_FindPersonasResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindPersonasResponse_descriptor,
+        new java.lang.String[] { "Personas", });
+    internal_static_com_hearlers_v1_service_FindPersonaByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_com_hearlers_v1_service_FindPersonaByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindPersonaByIdRequest_descriptor,
+        new java.lang.String[] { "PersonaId", });
+    internal_static_com_hearlers_v1_service_FindPersonaByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_com_hearlers_v1_service_FindPersonaByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindPersonaByIdResponse_descriptor,
+        new java.lang.String[] { "Persona", });
+    internal_static_com_hearlers_v1_service_UpdatePersonaRequest_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_com_hearlers_v1_service_UpdatePersonaRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdatePersonaRequest_descriptor,
+        new java.lang.String[] { "PersonaId", "Body", });
+    internal_static_com_hearlers_v1_service_UpdatePersonaResponse_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_com_hearlers_v1_service_UpdatePersonaResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdatePersonaResponse_descriptor,
+        new java.lang.String[] { "Persona", });
+    internal_static_com_hearlers_v1_service_CreateContextRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_com_hearlers_v1_service_CreateContextRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateContextRequest_descriptor,
+        new java.lang.String[] { "Name", "Body", "Placeholders", });
+    internal_static_com_hearlers_v1_service_CreateContextResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_com_hearlers_v1_service_CreateContextResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateContextResponse_descriptor,
+        new java.lang.String[] { "Context", });
+    internal_static_com_hearlers_v1_service_FindContextsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_com_hearlers_v1_service_FindContextsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindContextsRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_com_hearlers_v1_service_FindContextsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_com_hearlers_v1_service_FindContextsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindContextsResponse_descriptor,
+        new java.lang.String[] { "Contexts", });
+    internal_static_com_hearlers_v1_service_FindContextByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_com_hearlers_v1_service_FindContextByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindContextByIdRequest_descriptor,
+        new java.lang.String[] { "ContextId", });
+    internal_static_com_hearlers_v1_service_FindContextByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_com_hearlers_v1_service_FindContextByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindContextByIdResponse_descriptor,
+        new java.lang.String[] { "Context", });
+    internal_static_com_hearlers_v1_service_UpdateContextRequest_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_com_hearlers_v1_service_UpdateContextRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateContextRequest_descriptor,
+        new java.lang.String[] { "ContextId", "Name", "Body", "Placeholders", });
+    internal_static_com_hearlers_v1_service_UpdateContextResponse_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_com_hearlers_v1_service_UpdateContextResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateContextResponse_descriptor,
+        new java.lang.String[] { "Context", });
+    internal_static_com_hearlers_v1_service_CreateInstructionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_com_hearlers_v1_service_CreateInstructionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateInstructionRequest_descriptor,
+        new java.lang.String[] { "Name", "InitialSentence", "InstructionItemIds", });
+    internal_static_com_hearlers_v1_service_CreateInstructionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_com_hearlers_v1_service_CreateInstructionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateInstructionResponse_descriptor,
+        new java.lang.String[] { "Instruction", });
+    internal_static_com_hearlers_v1_service_FindInstructionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(50);
+    internal_static_com_hearlers_v1_service_FindInstructionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionsRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_com_hearlers_v1_service_FindInstructionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(51);
+    internal_static_com_hearlers_v1_service_FindInstructionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionsResponse_descriptor,
+        new java.lang.String[] { "Instructions", });
+    internal_static_com_hearlers_v1_service_FindInstructionByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(52);
+    internal_static_com_hearlers_v1_service_FindInstructionByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionByIdRequest_descriptor,
+        new java.lang.String[] { "InstructionId", });
+    internal_static_com_hearlers_v1_service_FindInstructionByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(53);
+    internal_static_com_hearlers_v1_service_FindInstructionByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionByIdResponse_descriptor,
+        new java.lang.String[] { "Instruction", });
+    internal_static_com_hearlers_v1_service_UpdateInstructionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(54);
+    internal_static_com_hearlers_v1_service_UpdateInstructionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateInstructionRequest_descriptor,
+        new java.lang.String[] { "InstructionId", "Name", "InitialSentence", "InstructionItemIds", });
+    internal_static_com_hearlers_v1_service_UpdateInstructionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(55);
+    internal_static_com_hearlers_v1_service_UpdateInstructionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateInstructionResponse_descriptor,
+        new java.lang.String[] { "Instruction", });
+    internal_static_com_hearlers_v1_service_CreateInstructionItemRequest_descriptor =
+      getDescriptor().getMessageTypes().get(56);
+    internal_static_com_hearlers_v1_service_CreateInstructionItemRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateInstructionItemRequest_descriptor,
+        new java.lang.String[] { "Body", });
+    internal_static_com_hearlers_v1_service_CreateInstructionItemResponse_descriptor =
+      getDescriptor().getMessageTypes().get(57);
+    internal_static_com_hearlers_v1_service_CreateInstructionItemResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateInstructionItemResponse_descriptor,
+        new java.lang.String[] { "InstructionItem", });
+    internal_static_com_hearlers_v1_service_FindInstructionItemsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(58);
+    internal_static_com_hearlers_v1_service_FindInstructionItemsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionItemsRequest_descriptor,
+        new java.lang.String[] { "Keyword", });
+    internal_static_com_hearlers_v1_service_FindInstructionItemsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(59);
+    internal_static_com_hearlers_v1_service_FindInstructionItemsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionItemsResponse_descriptor,
+        new java.lang.String[] { "InstructionItems", });
+    internal_static_com_hearlers_v1_service_FindInstructionItemByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(60);
+    internal_static_com_hearlers_v1_service_FindInstructionItemByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionItemByIdRequest_descriptor,
+        new java.lang.String[] { "InstructionItemId", });
+    internal_static_com_hearlers_v1_service_FindInstructionItemByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(61);
+    internal_static_com_hearlers_v1_service_FindInstructionItemByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindInstructionItemByIdResponse_descriptor,
+        new java.lang.String[] { "InstructionItem", });
+    internal_static_com_hearlers_v1_service_UpdateInstructionItemRequest_descriptor =
+      getDescriptor().getMessageTypes().get(62);
+    internal_static_com_hearlers_v1_service_UpdateInstructionItemRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateInstructionItemRequest_descriptor,
+        new java.lang.String[] { "InstructionItemId", "Body", });
+    internal_static_com_hearlers_v1_service_UpdateInstructionItemResponse_descriptor =
+      getDescriptor().getMessageTypes().get(63);
+    internal_static_com_hearlers_v1_service_UpdateInstructionItemResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateInstructionItemResponse_descriptor,
+        new java.lang.String[] { "InstructionItem", });
+    internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(64);
+    internal_static_com_hearlers_v1_service_CreateToneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor,
+        new java.lang.String[] { "Name", "Body", });
+    internal_static_com_hearlers_v1_service_CreateToneResponse_descriptor =
+      getDescriptor().getMessageTypes().get(65);
+    internal_static_com_hearlers_v1_service_CreateToneResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateToneResponse_descriptor,
+        new java.lang.String[] { "Tone", });
+    internal_static_com_hearlers_v1_service_FindTonesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(66);
+    internal_static_com_hearlers_v1_service_FindTonesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindTonesRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_com_hearlers_v1_service_FindTonesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(67);
+    internal_static_com_hearlers_v1_service_FindTonesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindTonesResponse_descriptor,
+        new java.lang.String[] { "Tones", });
+    internal_static_com_hearlers_v1_service_FindToneByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(68);
+    internal_static_com_hearlers_v1_service_FindToneByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindToneByIdRequest_descriptor,
+        new java.lang.String[] { "ToneId", });
+    internal_static_com_hearlers_v1_service_FindToneByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(69);
+    internal_static_com_hearlers_v1_service_FindToneByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindToneByIdResponse_descriptor,
+        new java.lang.String[] { "Tone", });
+    internal_static_com_hearlers_v1_service_UpdateToneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(70);
+    internal_static_com_hearlers_v1_service_UpdateToneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateToneRequest_descriptor,
+        new java.lang.String[] { "ToneId", "Name", "Body", });
+    internal_static_com_hearlers_v1_service_UpdateToneResponse_descriptor =
+      getDescriptor().getMessageTypes().get(71);
+    internal_static_com_hearlers_v1_service_UpdateToneResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateToneResponse_descriptor,
+        new java.lang.String[] { "Tone", });
     descriptor.resolveAllFeaturesImmutable();
     com.hearlers.api.proto.v1.model.CounselOuterClass.getDescriptor();
   }

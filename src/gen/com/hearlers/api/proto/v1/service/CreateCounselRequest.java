@@ -6,6 +6,10 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * 상담
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.CreateCounselRequest}
  */
 public final class CreateCounselRequest extends
@@ -46,6 +50,7 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.service.CreateCounselRequest.class, com.hearlers.api.proto.v1.service.CreateCounselRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int USER_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
@@ -128,7 +133,15 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object introMessage_ = "";
   /**
-   * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
+   * @return Whether the introMessage field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntroMessage() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
    * @return The introMessage.
    */
   @java.lang.Override
@@ -145,7 +158,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
    * @return The bytes for introMessage.
    */
   @java.lang.Override
@@ -167,7 +180,15 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseMessage_ = "";
   /**
-   * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
+   * @return Whether the responseMessage field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponseMessage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
    * @return The responseMessage.
    */
   @java.lang.Override
@@ -184,7 +205,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
    * @return The bytes for responseMessage.
    */
   @java.lang.Override
@@ -222,10 +243,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, counselorId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(introMessage_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, introMessage_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(responseMessage_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, responseMessage_);
     }
     getUnknownFields().writeTo(output);
@@ -243,10 +264,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, counselorId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(introMessage_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, introMessage_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(responseMessage_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, responseMessage_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -268,10 +289,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getCounselorId()
         .equals(other.getCounselorId())) return false;
-    if (!getIntroMessage()
-        .equals(other.getIntroMessage())) return false;
-    if (!getResponseMessage()
-        .equals(other.getResponseMessage())) return false;
+    if (hasIntroMessage() != other.hasIntroMessage()) return false;
+    if (hasIntroMessage()) {
+      if (!getIntroMessage()
+          .equals(other.getIntroMessage())) return false;
+    }
+    if (hasResponseMessage() != other.hasResponseMessage()) return false;
+    if (hasResponseMessage()) {
+      if (!getResponseMessage()
+          .equals(other.getResponseMessage())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -287,10 +314,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCounselorId().hashCode();
-    hash = (37 * hash) + INTRO_MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getIntroMessage().hashCode();
-    hash = (37 * hash) + RESPONSE_MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getResponseMessage().hashCode();
+    if (hasIntroMessage()) {
+      hash = (37 * hash) + INTRO_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIntroMessage().hashCode();
+    }
+    if (hasResponseMessage()) {
+      hash = (37 * hash) + RESPONSE_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseMessage().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -389,6 +420,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 상담
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.CreateCounselRequest}
    */
   public static final class Builder extends
@@ -465,12 +500,16 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.counselorId_ = counselorId_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.introMessage_ = introMessage_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.responseMessage_ = responseMessage_;
+        to_bitField0_ |= 0x00000002;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -495,12 +534,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getIntroMessage().isEmpty()) {
+      if (other.hasIntroMessage()) {
         introMessage_ = other.introMessage_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getResponseMessage().isEmpty()) {
+      if (other.hasResponseMessage()) {
         responseMessage_ = other.responseMessage_;
         bitField0_ |= 0x00000008;
         onChanged();
@@ -714,7 +753,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object introMessage_ = "";
     /**
-     * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
+     * @return Whether the introMessage field is set.
+     */
+    public boolean hasIntroMessage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
      * @return The introMessage.
      */
     public java.lang.String getIntroMessage() {
@@ -730,7 +776,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
      * @return The bytes for introMessage.
      */
     public com.google.protobuf.ByteString
@@ -747,7 +793,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
      * @param value The introMessage to set.
      * @return This builder for chaining.
      */
@@ -760,7 +806,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIntroMessage() {
@@ -770,7 +816,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
      * @param value The bytes for introMessage to set.
      * @return This builder for chaining.
      */
@@ -786,7 +832,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object responseMessage_ = "";
     /**
-     * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
+     * @return Whether the responseMessage field is set.
+     */
+    public boolean hasResponseMessage() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
      * @return The responseMessage.
      */
     public java.lang.String getResponseMessage() {
@@ -802,7 +855,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
      * @return The bytes for responseMessage.
      */
     public com.google.protobuf.ByteString
@@ -819,7 +872,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
      * @param value The responseMessage to set.
      * @return This builder for chaining.
      */
@@ -832,7 +885,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
      * @return This builder for chaining.
      */
     public Builder clearResponseMessage() {
@@ -842,7 +895,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
      * @param value The bytes for responseMessage to set.
      * @return This builder for chaining.
      */

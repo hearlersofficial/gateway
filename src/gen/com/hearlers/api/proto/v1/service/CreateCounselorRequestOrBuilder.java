@@ -10,15 +10,16 @@ public interface CreateCounselorRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.CounselorType counselor_type = 1 [json_name = "counselorType"];</code>
-   * @return The enum numeric value on the wire for counselorType.
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
+   * @return The toneId.
    */
-  int getCounselorTypeValue();
+  java.lang.String getToneId();
   /**
-   * <code>.com.hearlers.v1.model.CounselorType counselor_type = 1 [json_name = "counselorType"];</code>
-   * @return The counselorType.
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
+   * @return The bytes for toneId.
    */
-  com.hearlers.api.proto.v1.model.CounselorType getCounselorType();
+  com.google.protobuf.ByteString
+      getToneIdBytes();
 
   /**
    * <code>string name = 2 [json_name = "name"];</code>

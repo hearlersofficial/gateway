@@ -34,24 +34,34 @@ public interface CreateCounselRequestOrBuilder extends
       getCounselorIdBytes();
 
   /**
-   * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
+   * @return Whether the introMessage field is set.
+   */
+  boolean hasIntroMessage();
+  /**
+   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
    * @return The introMessage.
    */
   java.lang.String getIntroMessage();
   /**
-   * <code>string intro_message = 3 [json_name = "introMessage"];</code>
+   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
    * @return The bytes for introMessage.
    */
   com.google.protobuf.ByteString
       getIntroMessageBytes();
 
   /**
-   * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
+   * @return Whether the responseMessage field is set.
+   */
+  boolean hasResponseMessage();
+  /**
+   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
    * @return The responseMessage.
    */
   java.lang.String getResponseMessage();
   /**
-   * <code>string response_message = 4 [json_name = "responseMessage"];</code>
+   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
    * @return The bytes for responseMessage.
    */
   com.google.protobuf.ByteString

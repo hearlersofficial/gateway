@@ -58,19 +58,11 @@ public interface CounselOrBuilder extends
       getLastMessageBytes();
 
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
    * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
    * @return The lastChatedAt.
    */
   java.lang.String getLastChatedAt();
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
    * <code>string last_chated_at = 5 [json_name = "lastChatedAt"];</code>
    * @return The bytes for lastChatedAt.
    */
@@ -78,60 +70,60 @@ public interface CounselOrBuilder extends
       getLastChatedAtBytes();
 
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string created_at = 6 [json_name = "createdAt"];</code>
+   * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+   * @return The counselTechniqueId.
+   */
+  java.lang.String getCounselTechniqueId();
+  /**
+   * <code>string counsel_technique_id = 6 [json_name = "counselTechniqueId"];</code>
+   * @return The bytes for counselTechniqueId.
+   */
+  com.google.protobuf.ByteString
+      getCounselTechniqueIdBytes();
+
+  /**
+   * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+   * @return The counselorUserRelationshipId.
+   */
+  java.lang.String getCounselorUserRelationshipId();
+  /**
+   * <code>string counselor_user_relationship_id = 7 [json_name = "counselorUserRelationshipId"];</code>
+   * @return The bytes for counselorUserRelationshipId.
+   */
+  com.google.protobuf.ByteString
+      getCounselorUserRelationshipIdBytes();
+
+  /**
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string created_at = 6 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
 
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
   /**
-   * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
-   * </pre>
-   *
-   * <code>string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString
