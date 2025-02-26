@@ -9,7 +9,6 @@ import com.hearlers.gateway.presentations.rest.users.dto.CreateUserActivityReque
 import com.hearlers.gateway.presentations.rest.users.dto.GetMyAllCounselsResponseDto;
 import com.hearlers.gateway.presentations.rest.users.dto.UpdateUserInfoRequestDto;
 import com.hearlers.gateway.presentations.rest.users.dto.UpdateUserInfoResponseDto;
-import com.hearlers.gateway.shared.guard.security.AuthGuard;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -84,7 +83,6 @@ public class UsersController {
             @ApiResponse(responseCode = "400", description = "User 정보 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PutMapping("/me")
-    @AuthGuard
     public ResponseEntity<ResponseDto.Success<UpdateUserInfoResponseDto>> updateUserInfo(
             @RequestAttribute("userId") String userId, @RequestBody UpdateUserInfoRequestDto request) {
 

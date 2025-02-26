@@ -13,7 +13,6 @@ import com.hearlers.gateway.config.KakaoProperties;
 import com.hearlers.gateway.presentations.common.dto.ResponseDto;
 import com.hearlers.gateway.presentations.rest.auth.dto.CreateTokenRequestDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
-import com.hearlers.gateway.shared.guard.security.AuthGuard;
 import com.hearlers.gateway.shared.guard.security.JwtUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -91,7 +90,6 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/login/kakao")
-    @AuthGuard
     public void kakao(@RequestAttribute("userId") String userId, HttpServletResponse response) throws IOException {
         StringBuffer url = new StringBuffer();
         url.append("https://kauth.kakao.com/oauth/authorize?");
@@ -151,7 +149,6 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PostMapping("/refresh")
-    @AuthGuard
     public void refreshToken(HttpServletRequest request) {
         // TODO : refreshToken을 바탕으로 새로운 accessToken 발급
     }
