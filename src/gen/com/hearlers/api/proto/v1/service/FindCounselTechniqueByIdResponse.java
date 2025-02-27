@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int COUNSEL_TECHNIQUE_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.CounselTechnique counselTechnique_;
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    * @return Whether the counselTechnique field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    * @return The counselTechnique.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return counselTechnique_ == null ? com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance() : counselTechnique_;
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniqueOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.CounselTechnique, com.hearlers.api.proto.v1.model.CounselTechnique.Builder, com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> counselTechniqueBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      * @return Whether the counselTechnique field is set.
      */
     public boolean hasCounselTechnique() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      * @return The counselTechnique.
      */
     public com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechnique() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     public Builder setCounselTechnique(com.hearlers.api.proto.v1.model.CounselTechnique value) {
       if (counselTechniqueBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     public Builder setCounselTechnique(
         com.hearlers.api.proto.v1.model.CounselTechnique.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     public Builder mergeCounselTechnique(com.hearlers.api.proto.v1.model.CounselTechnique value) {
       if (counselTechniqueBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     public Builder clearCounselTechnique() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselTechnique.Builder getCounselTechniqueBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getCounselTechniqueFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniqueOrBuilder() {
       if (counselTechniqueBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.CounselTechnique, com.hearlers.api.proto.v1.model.CounselTechnique.Builder, com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> 

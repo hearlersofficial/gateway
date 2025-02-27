@@ -10,17 +10,17 @@ public interface FindPersonaByIdResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+   * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
    * @return Whether the persona field is set.
    */
   boolean hasPersona();
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+   * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
    * @return The persona.
    */
   com.hearlers.api.proto.v1.model.Persona getPersona();
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+   * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
    */
   com.hearlers.api.proto.v1.model.PersonaOrBuilder getPersonaOrBuilder();
 }

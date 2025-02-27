@@ -10,17 +10,17 @@ public interface FindContextByIdResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+   * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
    * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
-   * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+   * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
    * @return The context.
    */
   com.hearlers.api.proto.v1.model.Context getContext();
   /**
-   * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+   * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
    */
   com.hearlers.api.proto.v1.model.ContextOrBuilder getContextOrBuilder();
 }

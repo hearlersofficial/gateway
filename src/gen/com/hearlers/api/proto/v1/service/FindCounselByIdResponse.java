@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int COUNSEL_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.Counsel counsel_;
   /**
-   * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+   * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
    * @return Whether the counsel field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+   * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
    * @return The counsel.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return counsel_ == null ? com.hearlers.api.proto.v1.model.Counsel.getDefaultInstance() : counsel_;
   }
   /**
-   * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+   * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.CounselOrBuilder getCounselOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Counsel, com.hearlers.api.proto.v1.model.Counsel.Builder, com.hearlers.api.proto.v1.model.CounselOrBuilder> counselBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      * @return Whether the counsel field is set.
      */
     public boolean hasCounsel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      * @return The counsel.
      */
     public com.hearlers.api.proto.v1.model.Counsel getCounsel() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     public Builder setCounsel(com.hearlers.api.proto.v1.model.Counsel value) {
       if (counselBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     public Builder setCounsel(
         com.hearlers.api.proto.v1.model.Counsel.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     public Builder mergeCounsel(com.hearlers.api.proto.v1.model.Counsel value) {
       if (counselBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     public Builder clearCounsel() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     public com.hearlers.api.proto.v1.model.Counsel.Builder getCounselBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getCounselFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselOrBuilder getCounselOrBuilder() {
       if (counselBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+     * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Counsel, com.hearlers.api.proto.v1.model.Counsel.Builder, com.hearlers.api.proto.v1.model.CounselOrBuilder> 

@@ -10,17 +10,17 @@ public interface FindToneByIdResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.Tone tone = 1 [json_name = "tone"];</code>
+   * <code>optional .com.hearlers.v1.model.Tone tone = 1 [json_name = "tone"];</code>
    * @return Whether the tone field is set.
    */
   boolean hasTone();
   /**
-   * <code>.com.hearlers.v1.model.Tone tone = 1 [json_name = "tone"];</code>
+   * <code>optional .com.hearlers.v1.model.Tone tone = 1 [json_name = "tone"];</code>
    * @return The tone.
    */
   com.hearlers.api.proto.v1.model.Tone getTone();
   /**
-   * <code>.com.hearlers.v1.model.Tone tone = 1 [json_name = "tone"];</code>
+   * <code>optional .com.hearlers.v1.model.Tone tone = 1 [json_name = "tone"];</code>
    */
   com.hearlers.api.proto.v1.model.ToneOrBuilder getToneOrBuilder();
 }

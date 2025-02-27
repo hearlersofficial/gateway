@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int COUNSELOR_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.Counselor counselor_;
   /**
-   * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+   * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
    * @return Whether the counselor field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+   * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
    * @return The counselor.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return counselor_ == null ? com.hearlers.api.proto.v1.model.Counselor.getDefaultInstance() : counselor_;
   }
   /**
-   * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+   * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.CounselorOrBuilder getCounselorOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Counselor, com.hearlers.api.proto.v1.model.Counselor.Builder, com.hearlers.api.proto.v1.model.CounselorOrBuilder> counselorBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      * @return Whether the counselor field is set.
      */
     public boolean hasCounselor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      * @return The counselor.
      */
     public com.hearlers.api.proto.v1.model.Counselor getCounselor() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     public Builder setCounselor(com.hearlers.api.proto.v1.model.Counselor value) {
       if (counselorBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     public Builder setCounselor(
         com.hearlers.api.proto.v1.model.Counselor.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     public Builder mergeCounselor(com.hearlers.api.proto.v1.model.Counselor value) {
       if (counselorBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     public Builder clearCounselor() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     public com.hearlers.api.proto.v1.model.Counselor.Builder getCounselorBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getCounselorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselorOrBuilder getCounselorOrBuilder() {
       if (counselorBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
+     * <code>optional .com.hearlers.v1.model.Counselor counselor = 1 [json_name = "counselor"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Counselor, com.hearlers.api.proto.v1.model.Counselor.Builder, com.hearlers.api.proto.v1.model.CounselorOrBuilder> 

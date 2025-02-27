@@ -10,17 +10,17 @@ public interface FindOneAuthUserResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+   * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
    * @return Whether the authUser field is set.
    */
   boolean hasAuthUser();
   /**
-   * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+   * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
    * @return The authUser.
    */
   com.hearlers.api.proto.v1.model.AuthUser getAuthUser();
   /**
-   * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+   * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
    */
   com.hearlers.api.proto.v1.model.AuthUserOrBuilder getAuthUserOrBuilder();
 }

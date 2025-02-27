@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int PERSONA_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.Persona persona_;
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+   * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
    * @return Whether the persona field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+   * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
    * @return The persona.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return persona_ == null ? com.hearlers.api.proto.v1.model.Persona.getDefaultInstance() : persona_;
   }
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+   * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.PersonaOrBuilder getPersonaOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Persona, com.hearlers.api.proto.v1.model.Persona.Builder, com.hearlers.api.proto.v1.model.PersonaOrBuilder> personaBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      * @return Whether the persona field is set.
      */
     public boolean hasPersona() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      * @return The persona.
      */
     public com.hearlers.api.proto.v1.model.Persona getPersona() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     public Builder setPersona(com.hearlers.api.proto.v1.model.Persona value) {
       if (personaBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     public Builder setPersona(
         com.hearlers.api.proto.v1.model.Persona.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     public Builder mergePersona(com.hearlers.api.proto.v1.model.Persona value) {
       if (personaBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     public Builder clearPersona() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     public com.hearlers.api.proto.v1.model.Persona.Builder getPersonaBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getPersonaFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     public com.hearlers.api.proto.v1.model.PersonaOrBuilder getPersonaOrBuilder() {
       if (personaBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
+     * <code>optional .com.hearlers.v1.model.Persona persona = 1 [json_name = "persona"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Persona, com.hearlers.api.proto.v1.model.Persona.Builder, com.hearlers.api.proto.v1.model.PersonaOrBuilder> 

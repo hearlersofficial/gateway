@@ -169,87 +169,88 @@ public final class User {
       "\022\030\n\007success\030\001 \001(\010R\007success\"l\n\022FindOneUse" +
       "rRequest\022\034\n\007user_id\030\001 \001(\tH\000R\006userId\210\001\001\022\037" +
       "\n\010nickname\030\002 \001(\tH\001R\010nickname\210\001\001B\n\n\010_user" +
-      "_idB\013\n\t_nickname\"F\n\023FindOneUserResponse\022" +
-      "/\n\004user\030\001 \001(\0132\033.com.hearlers.v1.model.Us" +
-      "erR\004user\"Y\n\023FindManyUserRequest\022B\n\npagin" +
-      "ation\030\001 \001(\0132\".com.hearlers.v1.common.Pag" +
-      "inationR\npagination\"G\n\022FindManyUserResul" +
-      "t\0221\n\005users\030\001 \003(\0132\033.com.hearlers.v1.model" +
-      ".UserR\005users\"\207\002\n\026FindOneAuthUserRequest\022" +
-      "%\n\014auth_user_id\030\001 \001(\tH\000R\nauthUserId\210\001\001\022\034" +
-      "\n\007user_id\030\002 \001(\tH\001R\006userId\210\001\001\022J\n\014auth_cha" +
-      "nnel\030\003 \001(\0162\".com.hearlers.v1.model.AuthC" +
-      "hannelH\002R\013authChannel\210\001\001\022 \n\tunique_id\030\004 " +
-      "\001(\tH\003R\010uniqueId\210\001\001B\017\n\r_auth_user_idB\n\n\010_" +
-      "user_idB\017\n\r_auth_channelB\014\n\n_unique_id\"W" +
-      "\n\027FindOneAuthUserResponse\022<\n\tauth_user\030\001" +
-      " \001(\0132\037.com.hearlers.v1.model.AuthUserR\010a" +
-      "uthUser\"6\n\033CheckRemainingTokensRequest\022\027" +
-      "\n\007user_id\030\001 \001(\tR\006userId\"\257\001\n\034CheckRemaini" +
-      "ngTokensResponse\022)\n\020remaining_tokens\030\001 \001" +
-      "(\005R\017remainingTokens\022\035\n\nmax_tokens\030\002 \001(\005R" +
-      "\tmaxTokens\022\032\n\010reserved\030\003 \001(\010R\010reserved\022)" +
-      "\n\020reserved_timeout\030\004 \001(\tR\017reservedTimeou" +
-      "t\"/\n\024ReserveTokensRequest\022\027\n\007user_id\030\001 \001" +
-      "(\tR\006userId\"}\n\025ReserveTokensResponse\022)\n\020r" +
-      "emaining_tokens\030\001 \001(\005R\017remainingTokens\022\035" +
-      "\n\nmax_tokens\030\002 \001(\005R\tmaxTokens\022\032\n\010reserve" +
-      "d\030\003 \001(\010R\010reserved\"\275\003\n\021UpdateUserRequest\022" +
-      "\027\n\007user_id\030\001 \001(\tR\006userId\022\037\n\010nickname\030\002 \001" +
-      "(\tH\000R\010nickname\210\001\001\022(\n\rprofile_image\030\003 \001(\t" +
-      "H\001R\014profileImage\210\001\001\022&\n\014phone_number\030\004 \001(" +
-      "\tH\002R\013phoneNumber\210\001\001\022:\n\006gender\030\005 \001(\0162\035.co" +
-      "m.hearlers.v1.model.GenderH\003R\006gender\210\001\001\022" +
-      "\037\n\010birthday\030\006 \001(\tH\004R\010birthday\210\001\001\022\'\n\014intr" +
-      "oduction\030\007 \001(\tH\005R\014introduction\210\001\001\0224\n\004mbt" +
-      "i\030\010 \001(\0162\033.com.hearlers.v1.model.MbtiH\006R\004" +
-      "mbti\210\001\001B\013\n\t_nicknameB\020\n\016_profile_imageB\017" +
-      "\n\r_phone_numberB\t\n\007_genderB\013\n\t_birthdayB" +
-      "\017\n\r_introductionB\007\n\005_mbti\"E\n\022UpdateUserR" +
-      "esponse\022/\n\004user\030\001 \001(\0132\033.com.hearlers.v1." +
-      "model.UserR\004user\"\313\002\n\025CreateActivityReque" +
-      "st\022H\n\ractivity_type\030\001 \001(\0162#.com.hearlers" +
-      ".v1.model.ActivityTypeR\014activityType\022<\n\r" +
-      "activity_data\030\002 \001(\0132\027.google.protobuf.St" +
-      "ructR\014activityData\022A\n\010platform\030\003 \001(\0162%.c" +
-      "om.hearlers.v1.model.DevicePlatformR\010pla" +
-      "tform\022\035\n\nip_address\030\004 \001(\tR\tipAddress\022\035\n\n" +
-      "user_agent\030\005 \001(\tR\tuserAgent\022)\n\020duration_" +
-      "seconds\030\006 \001(\005R\017durationSeconds\"b\n\026Create" +
-      "ActivityResponse\022H\n\ruser_activity\030\001 \001(\0132" +
-      "#.com.hearlers.v1.model.UserActivityR\014us" +
-      "erActivity2\247\t\n\013UserService\022q\n\016Initialize" +
-      "User\022..com.hearlers.v1.service.Initializ" +
-      "eUserRequest\032/.com.hearlers.v1.service.I" +
-      "nitializeUserResponse\022}\n\022ConnectAuthChan" +
-      "nel\0222.com.hearlers.v1.service.ConnectAut" +
-      "hChannelRequest\0323.com.hearlers.v1.servic" +
-      "e.ConnectAuthChannelResponse\022w\n\020SaveRefr" +
-      "eshToken\0220.com.hearlers.v1.service.SaveR" +
-      "efreshTokenRequest\0321.com.hearlers.v1.ser" +
-      "vice.SaveRefreshTokenResponse\022}\n\022VerifyR" +
-      "efreshToken\0222.com.hearlers.v1.service.Ve" +
-      "rifyRefreshTokenRequest\0323.com.hearlers.v" +
-      "1.service.VerifyRefreshTokenResponse\022h\n\013" +
-      "FindOneUser\022+.com.hearlers.v1.service.Fi" +
-      "ndOneUserRequest\032,.com.hearlers.v1.servi" +
-      "ce.FindOneUserResponse\022t\n\017FindOneAuthUse" +
-      "r\022/.com.hearlers.v1.service.FindOneAuthU" +
-      "serRequest\0320.com.hearlers.v1.service.Fin" +
-      "dOneAuthUserResponse\022\203\001\n\024CheckRemainingT" +
-      "okens\0224.com.hearlers.v1.service.CheckRem" +
-      "ainingTokensRequest\0325.com.hearlers.v1.se" +
-      "rvice.CheckRemainingTokensResponse\022n\n\rRe" +
-      "serveTokens\022-.com.hearlers.v1.service.Re" +
-      "serveTokensRequest\032..com.hearlers.v1.ser" +
-      "vice.ReserveTokensResponse\022e\n\nUpdateUser" +
-      "\022*.com.hearlers.v1.service.UpdateUserReq" +
-      "uest\032+.com.hearlers.v1.service.UpdateUse" +
-      "rResponse\022q\n\016CreateActivity\022..com.hearle" +
-      "rs.v1.service.CreateActivityRequest\032/.co" +
-      "m.hearlers.v1.service.CreateActivityResp" +
-      "onseB%\n!com.hearlers.api.proto.v1.servic" +
-      "eP\001b\006proto3"
+      "_idB\013\n\t_nickname\"T\n\023FindOneUserResponse\022" +
+      "4\n\004user\030\001 \001(\0132\033.com.hearlers.v1.model.Us" +
+      "erH\000R\004user\210\001\001B\007\n\005_user\"Y\n\023FindManyUserRe" +
+      "quest\022B\n\npagination\030\001 \001(\0132\".com.hearlers" +
+      ".v1.common.PaginationR\npagination\"G\n\022Fin" +
+      "dManyUserResult\0221\n\005users\030\001 \003(\0132\033.com.hea" +
+      "rlers.v1.model.UserR\005users\"\207\002\n\026FindOneAu" +
+      "thUserRequest\022%\n\014auth_user_id\030\001 \001(\tH\000R\na" +
+      "uthUserId\210\001\001\022\034\n\007user_id\030\002 \001(\tH\001R\006userId\210" +
+      "\001\001\022J\n\014auth_channel\030\003 \001(\0162\".com.hearlers." +
+      "v1.model.AuthChannelH\002R\013authChannel\210\001\001\022 " +
+      "\n\tunique_id\030\004 \001(\tH\003R\010uniqueId\210\001\001B\017\n\r_aut" +
+      "h_user_idB\n\n\010_user_idB\017\n\r_auth_channelB\014" +
+      "\n\n_unique_id\"j\n\027FindOneAuthUserResponse\022" +
+      "A\n\tauth_user\030\001 \001(\0132\037.com.hearlers.v1.mod" +
+      "el.AuthUserH\000R\010authUser\210\001\001B\014\n\n_auth_user" +
+      "\"6\n\033CheckRemainingTokensRequest\022\027\n\007user_" +
+      "id\030\001 \001(\tR\006userId\"\257\001\n\034CheckRemainingToken" +
+      "sResponse\022)\n\020remaining_tokens\030\001 \001(\005R\017rem" +
+      "ainingTokens\022\035\n\nmax_tokens\030\002 \001(\005R\tmaxTok" +
+      "ens\022\032\n\010reserved\030\003 \001(\010R\010reserved\022)\n\020reser" +
+      "ved_timeout\030\004 \001(\tR\017reservedTimeout\"/\n\024Re" +
+      "serveTokensRequest\022\027\n\007user_id\030\001 \001(\tR\006use" +
+      "rId\"}\n\025ReserveTokensResponse\022)\n\020remainin" +
+      "g_tokens\030\001 \001(\005R\017remainingTokens\022\035\n\nmax_t" +
+      "okens\030\002 \001(\005R\tmaxTokens\022\032\n\010reserved\030\003 \001(\010" +
+      "R\010reserved\"\275\003\n\021UpdateUserRequest\022\027\n\007user" +
+      "_id\030\001 \001(\tR\006userId\022\037\n\010nickname\030\002 \001(\tH\000R\010n" +
+      "ickname\210\001\001\022(\n\rprofile_image\030\003 \001(\tH\001R\014pro" +
+      "fileImage\210\001\001\022&\n\014phone_number\030\004 \001(\tH\002R\013ph" +
+      "oneNumber\210\001\001\022:\n\006gender\030\005 \001(\0162\035.com.hearl" +
+      "ers.v1.model.GenderH\003R\006gender\210\001\001\022\037\n\010birt" +
+      "hday\030\006 \001(\tH\004R\010birthday\210\001\001\022\'\n\014introductio" +
+      "n\030\007 \001(\tH\005R\014introduction\210\001\001\0224\n\004mbti\030\010 \001(\016" +
+      "2\033.com.hearlers.v1.model.MbtiH\006R\004mbti\210\001\001" +
+      "B\013\n\t_nicknameB\020\n\016_profile_imageB\017\n\r_phon" +
+      "e_numberB\t\n\007_genderB\013\n\t_birthdayB\017\n\r_int" +
+      "roductionB\007\n\005_mbti\"E\n\022UpdateUserResponse" +
+      "\022/\n\004user\030\001 \001(\0132\033.com.hearlers.v1.model.U" +
+      "serR\004user\"\313\002\n\025CreateActivityRequest\022H\n\ra" +
+      "ctivity_type\030\001 \001(\0162#.com.hearlers.v1.mod" +
+      "el.ActivityTypeR\014activityType\022<\n\ractivit" +
+      "y_data\030\002 \001(\0132\027.google.protobuf.StructR\014a" +
+      "ctivityData\022A\n\010platform\030\003 \001(\0162%.com.hear" +
+      "lers.v1.model.DevicePlatformR\010platform\022\035" +
+      "\n\nip_address\030\004 \001(\tR\tipAddress\022\035\n\nuser_ag" +
+      "ent\030\005 \001(\tR\tuserAgent\022)\n\020duration_seconds" +
+      "\030\006 \001(\005R\017durationSeconds\"b\n\026CreateActivit" +
+      "yResponse\022H\n\ruser_activity\030\001 \001(\0132#.com.h" +
+      "earlers.v1.model.UserActivityR\014userActiv" +
+      "ity2\247\t\n\013UserService\022q\n\016InitializeUser\022.." +
+      "com.hearlers.v1.service.InitializeUserRe" +
+      "quest\032/.com.hearlers.v1.service.Initiali" +
+      "zeUserResponse\022}\n\022ConnectAuthChannel\0222.c" +
+      "om.hearlers.v1.service.ConnectAuthChanne" +
+      "lRequest\0323.com.hearlers.v1.service.Conne" +
+      "ctAuthChannelResponse\022w\n\020SaveRefreshToke" +
+      "n\0220.com.hearlers.v1.service.SaveRefreshT" +
+      "okenRequest\0321.com.hearlers.v1.service.Sa" +
+      "veRefreshTokenResponse\022}\n\022VerifyRefreshT" +
+      "oken\0222.com.hearlers.v1.service.VerifyRef" +
+      "reshTokenRequest\0323.com.hearlers.v1.servi" +
+      "ce.VerifyRefreshTokenResponse\022h\n\013FindOne" +
+      "User\022+.com.hearlers.v1.service.FindOneUs" +
+      "erRequest\032,.com.hearlers.v1.service.Find" +
+      "OneUserResponse\022t\n\017FindOneAuthUser\022/.com" +
+      ".hearlers.v1.service.FindOneAuthUserRequ" +
+      "est\0320.com.hearlers.v1.service.FindOneAut" +
+      "hUserResponse\022\203\001\n\024CheckRemainingTokens\0224" +
+      ".com.hearlers.v1.service.CheckRemainingT" +
+      "okensRequest\0325.com.hearlers.v1.service.C" +
+      "heckRemainingTokensResponse\022n\n\rReserveTo" +
+      "kens\022-.com.hearlers.v1.service.ReserveTo" +
+      "kensRequest\032..com.hearlers.v1.service.Re" +
+      "serveTokensResponse\022e\n\nUpdateUser\022*.com." +
+      "hearlers.v1.service.UpdateUserRequest\032+." +
+      "com.hearlers.v1.service.UpdateUserRespon" +
+      "se\022q\n\016CreateActivity\022..com.hearlers.v1.s" +
+      "ervice.CreateActivityRequest\032/.com.hearl" +
+      "ers.v1.service.CreateActivityResponseB%\n" +
+      "!com.hearlers.api.proto.v1.serviceP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

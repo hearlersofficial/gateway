@@ -10,17 +10,17 @@ public interface FindCounselByIdResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+   * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
    * @return Whether the counsel field is set.
    */
   boolean hasCounsel();
   /**
-   * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+   * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
    * @return The counsel.
    */
   com.hearlers.api.proto.v1.model.Counsel getCounsel();
   /**
-   * <code>.com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
+   * <code>optional .com.hearlers.v1.model.Counsel counsel = 1 [json_name = "counsel"];</code>
    */
   com.hearlers.api.proto.v1.model.CounselOrBuilder getCounselOrBuilder();
 }

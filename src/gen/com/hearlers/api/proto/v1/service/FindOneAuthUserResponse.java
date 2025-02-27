@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int AUTH_USER_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.AuthUser authUser_;
   /**
-   * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+   * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
    * @return Whether the authUser field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+   * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
    * @return The authUser.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return authUser_ == null ? com.hearlers.api.proto.v1.model.AuthUser.getDefaultInstance() : authUser_;
   }
   /**
-   * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+   * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.AuthUserOrBuilder getAuthUserOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.AuthUser, com.hearlers.api.proto.v1.model.AuthUser.Builder, com.hearlers.api.proto.v1.model.AuthUserOrBuilder> authUserBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      * @return Whether the authUser field is set.
      */
     public boolean hasAuthUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      * @return The authUser.
      */
     public com.hearlers.api.proto.v1.model.AuthUser getAuthUser() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     public Builder setAuthUser(com.hearlers.api.proto.v1.model.AuthUser value) {
       if (authUserBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     public Builder setAuthUser(
         com.hearlers.api.proto.v1.model.AuthUser.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     public Builder mergeAuthUser(com.hearlers.api.proto.v1.model.AuthUser value) {
       if (authUserBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     public Builder clearAuthUser() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     public com.hearlers.api.proto.v1.model.AuthUser.Builder getAuthUserBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getAuthUserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     public com.hearlers.api.proto.v1.model.AuthUserOrBuilder getAuthUserOrBuilder() {
       if (authUserBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
+     * <code>optional .com.hearlers.v1.model.AuthUser auth_user = 1 [json_name = "authUser"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.AuthUser, com.hearlers.api.proto.v1.model.AuthUser.Builder, com.hearlers.api.proto.v1.model.AuthUserOrBuilder> 

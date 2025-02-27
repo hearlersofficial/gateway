@@ -10,17 +10,17 @@ public interface FindInstructionItemByIdResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+   * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
    * @return Whether the instructionItem field is set.
    */
   boolean hasInstructionItem();
   /**
-   * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+   * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
    * @return The instructionItem.
    */
   com.hearlers.api.proto.v1.model.InstructionItem getInstructionItem();
   /**
-   * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+   * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
    */
   com.hearlers.api.proto.v1.model.InstructionItemOrBuilder getInstructionItemOrBuilder();
 }

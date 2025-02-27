@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONTEXT_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.Context context_;
   /**
-   * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+   * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
    * @return Whether the context field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+   * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
    * @return The context.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return context_ == null ? com.hearlers.api.proto.v1.model.Context.getDefaultInstance() : context_;
   }
   /**
-   * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+   * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.ContextOrBuilder getContextOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Context, com.hearlers.api.proto.v1.model.Context.Builder, com.hearlers.api.proto.v1.model.ContextOrBuilder> contextBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      * @return The context.
      */
     public com.hearlers.api.proto.v1.model.Context getContext() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     public Builder setContext(com.hearlers.api.proto.v1.model.Context value) {
       if (contextBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     public Builder setContext(
         com.hearlers.api.proto.v1.model.Context.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     public Builder mergeContext(com.hearlers.api.proto.v1.model.Context value) {
       if (contextBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     public Builder clearContext() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     public com.hearlers.api.proto.v1.model.Context.Builder getContextBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getContextFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     public com.hearlers.api.proto.v1.model.ContextOrBuilder getContextOrBuilder() {
       if (contextBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
+     * <code>optional .com.hearlers.v1.model.Context context = 1 [json_name = "context"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.Context, com.hearlers.api.proto.v1.model.Context.Builder, com.hearlers.api.proto.v1.model.ContextOrBuilder> 

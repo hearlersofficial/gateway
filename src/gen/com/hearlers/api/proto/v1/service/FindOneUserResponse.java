@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int USER_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.User user_;
   /**
-   * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+   * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
    * @return Whether the user field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+   * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
    * @return The user.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return user_ == null ? com.hearlers.api.proto.v1.model.User.getDefaultInstance() : user_;
   }
   /**
-   * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+   * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.UserOrBuilder getUserOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.User, com.hearlers.api.proto.v1.model.User.Builder, com.hearlers.api.proto.v1.model.UserOrBuilder> userBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      * @return The user.
      */
     public com.hearlers.api.proto.v1.model.User getUser() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     public Builder setUser(com.hearlers.api.proto.v1.model.User value) {
       if (userBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     public Builder setUser(
         com.hearlers.api.proto.v1.model.User.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     public Builder mergeUser(com.hearlers.api.proto.v1.model.User value) {
       if (userBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     public Builder clearUser() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     public com.hearlers.api.proto.v1.model.User.Builder getUserBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getUserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     public com.hearlers.api.proto.v1.model.UserOrBuilder getUserOrBuilder() {
       if (userBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
+     * <code>optional .com.hearlers.v1.model.User user = 1 [json_name = "user"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.User, com.hearlers.api.proto.v1.model.User.Builder, com.hearlers.api.proto.v1.model.UserOrBuilder> 

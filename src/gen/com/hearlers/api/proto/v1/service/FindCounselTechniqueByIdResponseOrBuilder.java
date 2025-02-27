@@ -10,17 +10,17 @@ public interface FindCounselTechniqueByIdResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    * @return Whether the counselTechnique field is set.
    */
   boolean hasCounselTechnique();
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    * @return The counselTechnique.
    */
   com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechnique();
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    */
   com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniqueOrBuilder();
 }

@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   public static final int INSTRUCTION_ITEM_FIELD_NUMBER = 1;
   private com.hearlers.api.proto.v1.model.InstructionItem instructionItem_;
   /**
-   * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+   * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
    * @return Whether the instructionItem field is set.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+   * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
    * @return The instructionItem.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     return instructionItem_ == null ? com.hearlers.api.proto.v1.model.InstructionItem.getDefaultInstance() : instructionItem_;
   }
   /**
-   * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+   * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.InstructionItemOrBuilder getInstructionItemOrBuilder() {
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.InstructionItem, com.hearlers.api.proto.v1.model.InstructionItem.Builder, com.hearlers.api.proto.v1.model.InstructionItemOrBuilder> instructionItemBuilder_;
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      * @return Whether the instructionItem field is set.
      */
     public boolean hasInstructionItem() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      * @return The instructionItem.
      */
     public com.hearlers.api.proto.v1.model.InstructionItem getInstructionItem() {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     public Builder setInstructionItem(com.hearlers.api.proto.v1.model.InstructionItem value) {
       if (instructionItemBuilder_ == null) {
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     public Builder setInstructionItem(
         com.hearlers.api.proto.v1.model.InstructionItem.Builder builderForValue) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     public Builder mergeInstructionItem(com.hearlers.api.proto.v1.model.InstructionItem value) {
       if (instructionItemBuilder_ == null) {
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     public Builder clearInstructionItem() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     public com.hearlers.api.proto.v1.model.InstructionItem.Builder getInstructionItemBuilder() {
       bitField0_ |= 0x00000001;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return getInstructionItemFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     public com.hearlers.api.proto.v1.model.InstructionItemOrBuilder getInstructionItemOrBuilder() {
       if (instructionItemBuilder_ != null) {
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
+     * <code>optional .com.hearlers.v1.model.InstructionItem instruction_item = 1 [json_name = "instructionItem"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.InstructionItem, com.hearlers.api.proto.v1.model.InstructionItem.Builder, com.hearlers.api.proto.v1.model.InstructionItemOrBuilder> 
