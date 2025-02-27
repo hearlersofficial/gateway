@@ -1,36 +1,39 @@
 package com.hearlers.gateway.security;
 
+import static com.hearlers.gateway.presentations.rest.response.HttpResultCode.SERVER_SYSTEM_ERROR;
+import static com.hearlers.gateway.presentations.rest.response.HttpResultCode.UNAUTHORIZED;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hearlers.gateway.config.VersionProperties;
-import com.hearlers.gateway.presentations.common.dto.ResponseDto;
+import com.hearlers.gateway.presentations.rest.dto.ResponseDto;
+import com.hearlers.gateway.presentations.rest.exception.HttpException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.nio.charset.StandardCharsets;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
-
-    @Autowired
-    private VersionProperties versionProperties;
-
-    private ObjectMapper objectMapper = new ObjectMapper();
-
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
                          AuthenticationException authException) throws IOException, ServletException {
-        ResponseDto.Error<Void> dto = ResponseDto.Error.<Void>builder()
-                .code("401")
-                .message("Unauthorized")
+        ObjectMapper objectMapper = new ObjectMapper();
+        ResponseDto.Error dto = ResponseDto.Error.builder()
+                .status(UNAUTHORIZED.getStatus())
+                .code(UNAUTHORIZED.getCode())
+                .message(UNAUTHORIZED.getMessage())
                 .data(null)
-                .version(versionProperties.getVersion())
                 .build();
 
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(objectMapper.writeValueAsString(dto));
-        response.getWriter().flush();
+        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        try {
+            response.getWriter().write(objectMapper.writeValueAsString(dto));
+            response.getWriter().flush();
+        } catch (IOException e) {
+            throw new HttpException(SERVER_SYSTEM_ERROR);
+        }
     }
 }
