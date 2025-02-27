@@ -1,9 +1,9 @@
 package com.hearlers.gateway.presentations.rest.counselors;
 
-import com.hearlers.gateway.presentations.common.dto.ResponseDto;
 import com.hearlers.gateway.presentations.rest.counselors.dto.CreateCounselMessageRequestDto;
 import com.hearlers.gateway.presentations.rest.counselors.dto.CreateCounselRequestDto;
 import com.hearlers.gateway.presentations.rest.counselors.dto.GetCounselorsResponseDto;
+import com.hearlers.gateway.presentations.rest.dto.ResponseDto;
 import com.hearlers.gateway.shared.enums.CounselorName;
 import com.hearlers.gateway.shared.enums.CounselorType;
 import io.swagger.v3.oas.annotations.Operation;
@@ -83,7 +83,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "400", description = "모든 상담사 정보 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping
-    public ResponseEntity<ResponseDto.Success<List<GetCounselorsResponseDto>>> getCounselors() {
+    public ResponseEntity<ResponseDto.Success> getCounselors() {
         // TODO : 내부 서버와 통신하여 모든 상담사 정보 조회
 
         List<GetCounselorsResponseDto> counselors = new ArrayList<>();
@@ -100,7 +100,7 @@ public class CounselorsController {
 
         return ResponseEntity.status(HttpStatus.OK)
                 .body(
-                        ResponseDto.Success.<List<GetCounselorsResponseDto>>builder()
+                        ResponseDto.Success.builder()
                                 .message("비로그인 유저 생성 성공")
                                 .data(counselors)
                                 .build()

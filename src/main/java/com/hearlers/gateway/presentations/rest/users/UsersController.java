@@ -4,7 +4,7 @@ import com.hearlers.api.proto.v1.service.UpdateUserRequest;
 import com.hearlers.api.proto.v1.service.UpdateUserResponse;
 import com.hearlers.api.proto.v1.service.UserServiceGrpc;
 import com.hearlers.gateway.applications.counsel.model.Counsel;
-import com.hearlers.gateway.presentations.common.dto.ResponseDto;
+import com.hearlers.gateway.presentations.rest.dto.ResponseDto;
 import com.hearlers.gateway.presentations.rest.users.dto.CreateUserActivityRequestDto;
 import com.hearlers.gateway.presentations.rest.users.dto.GetMyAllCounselsResponseDto;
 import com.hearlers.gateway.presentations.rest.users.dto.UpdateUserInfoRequestDto;
@@ -55,7 +55,7 @@ public class UsersController {
             @ApiResponse(responseCode = "400", description = "내 모든 상담 채팅 목록 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/me/counselors/all/counsels")
-    public ResponseEntity<ResponseDto.Success<GetMyAllCounselsResponseDto>> getMyAllCounsels() {
+    public ResponseEntity<ResponseDto.Success> getMyAllCounsels() {
         // TODO : 내부 서버와 통신하여 내 모든 상담 채팅 목록 조회
         Counsel counsel1 = new Counsel("1", "1", "안녕", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
                 LocalDate.now().minusDays(5), null);
@@ -69,7 +69,7 @@ public class UsersController {
         GetMyAllCounselsResponseDto responseDto = new GetMyAllCounselsResponseDto(counsels);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(
-                        ResponseDto.Success.<GetMyAllCounselsResponseDto>builder()
+                        ResponseDto.Success.builder()
                                 .message("비로그인 유저 생성 성공")
                                 .data(responseDto)
                                 .build()
@@ -83,7 +83,7 @@ public class UsersController {
             @ApiResponse(responseCode = "400", description = "User 정보 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PutMapping("/me")
-    public ResponseEntity<ResponseDto.Success<UpdateUserInfoResponseDto>> updateUserInfo(
+    public ResponseEntity<ResponseDto.Success> updateUserInfo(
             @RequestAttribute("userId") String userId, @RequestBody UpdateUserInfoRequestDto request) {
 
         UpdateUserRequest.Builder updateUserRequestBuilder = UpdateUserRequest.newBuilder()
@@ -117,7 +117,7 @@ public class UsersController {
         ;
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
-                        ResponseDto.Success.<UpdateUserInfoResponseDto>builder()
+                        ResponseDto.Success.builder()
                                 .message("User 정보 업데이트 성공")
                                 .data(new UpdateUserInfoResponseDto(userId, true))
                                 .build()

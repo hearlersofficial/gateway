@@ -10,8 +10,8 @@ import com.hearlers.gateway.applications.utils.service.UtilService;
 import com.hearlers.gateway.applications.utils.useCases.CreateCookieUseCase.dto.CreateCookieRequestDto;
 import com.hearlers.gateway.applications.utils.useCases.CreateCookieUseCase.dto.CreateCookieResponseDto;
 import com.hearlers.gateway.config.KakaoProperties;
-import com.hearlers.gateway.presentations.common.dto.ResponseDto;
 import com.hearlers.gateway.presentations.rest.auth.dto.CreateTokenRequestDto;
+import com.hearlers.gateway.presentations.rest.dto.ResponseDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
 import com.hearlers.gateway.shared.guard.security.JwtUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -55,7 +55,7 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "비로그인 유저 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PostMapping("/initiate")
-    public ResponseEntity<ResponseDto.Success<TokenDto>> createUser(HttpServletResponse response) {
+    public ResponseEntity<ResponseDto.Success> createUser(HttpServletResponse response) {
         InitializeUserResponse initializeUserResponse = authService.initializeUser(
                 InitializeUserRequest.newBuilder().build());
 
@@ -76,7 +76,7 @@ public class AuthController {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
-                        ResponseDto.Success.<TokenDto>builder()
+                        ResponseDto.Success.builder()
                                 .message("비로그인 유저 생성 성공")
                                 .data(token)
                                 .build()
