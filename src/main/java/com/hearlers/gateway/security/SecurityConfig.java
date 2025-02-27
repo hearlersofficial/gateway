@@ -19,6 +19,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final VersionProperties versionProperties;
+    private final JwtUtil jwtUtil;
+
+    @Bean
+    public HttpExceptionFilter httpExceptionFilter() {
+        return new HttpExceptionFilter();
+    }
+
+    @Bean
+    public JwtAuthFilter jwtAuthFilter() {
+        return new JwtAuthFilter(jwtUtil);
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, JwtUtil jwtUtil) throws Exception {
@@ -44,10 +55,11 @@ public class SecurityConfig {
         // 인증 인가 관련 예외 처리
         httpSecurity
                 .exceptionHandling((exception) -> exception
-                        .authenticationEntryPoint(customAuthenticationEntryPoint())
-                        .accessDeniedHandler(customAccessDeniedHandler()));
+                        .authenticationEntryPoint(customAuthenticationEntryPoint()) // 인증 실패 시
+                        .accessDeniedHandler(customAccessDeniedHandler())); // 인가 실패 시
 
-        httpSecurity.addFilterBefore(new JwtAuthFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterBefore(jwtAuthFilter(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterBefore(httpExceptionFilter(), JwtAuthFilter.class);
 
         httpSecurity.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return httpSecurity.build();
