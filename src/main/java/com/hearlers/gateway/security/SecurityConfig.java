@@ -1,6 +1,5 @@
 package com.hearlers.gateway.security;
 
-import com.hearlers.gateway.config.VersionProperties;
 import com.hearlers.gateway.shared.guard.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final VersionProperties versionProperties;
     private final JwtUtil jwtUtil;
 
     @Bean
@@ -32,7 +30,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, JwtUtil jwtUtil) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .httpBasic(HttpBasicConfigurer::disable) // HTTP 기본 인증 비활성화
                 .csrf(CsrfConfigurer::disable) // CSRF 보호 비활성화
@@ -42,14 +40,14 @@ public class SecurityConfig {
         httpSecurity
                 .authorizeHttpRequests((requests) -> (requests)
                         // 어드민
-                        .requestMatchers(versionProperties.getVersion() + "/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/admin/v1/**").hasRole("ADMIN")
                         // 비로그인 유저 생성
-                        .requestMatchers(versionProperties.getVersion() + "/auth/initiate").permitAll()
+                        .requestMatchers("/auth/v1/initiate").permitAll()
                         // Swagger UI 관련 모든 리소스 허용
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
                         // 그 외 모든 요청은 인증된 사용자만 접근 가능
-                        .requestMatchers(versionProperties.getVersion() + "/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated());
 
         // 인증 인가 관련 예외 처리

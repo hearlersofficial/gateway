@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/users")
+@RequestMapping("users")
 @RequiredArgsConstructor
 @Tag(name = "UsersController", description = "유저 관련 API")
 public class UsersController {
@@ -43,7 +43,7 @@ public class UsersController {
             @ApiResponse(responseCode = "201", description = "User Activities 정보 업데이트 성공"),
             @ApiResponse(responseCode = "400", description = "User Activities 정보 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/me/activities")
+    @PostMapping("/v1/me/activities")
     public void createUserActivities(@Valid @RequestBody CreateUserActivityRequestDto request) {
         // TODO : request를 바탕으로 내부 서버와 통신하여 User Activities 정보 업데이트
         System.out.println(request);
@@ -54,7 +54,7 @@ public class UsersController {
             @ApiResponse(responseCode = "200", description = "내 모든 상담 채팅 목록 조회 성공"),
             @ApiResponse(responseCode = "400", description = "내 모든 상담 채팅 목록 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/me/counselors/all/counsels")
+    @GetMapping("/v1/me/counselors/all/counsels")
     public ResponseEntity<ResponseDto.Success> getMyAllCounsels() {
         // TODO : 내부 서버와 통신하여 내 모든 상담 채팅 목록 조회
         Counsel counsel1 = new Counsel("1", "1", "안녕", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
@@ -82,7 +82,7 @@ public class UsersController {
             @ApiResponse(responseCode = "201", description = "User 정보 업데이트 성공"),
             @ApiResponse(responseCode = "400", description = "User 정보 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PutMapping("/me")
+    @PutMapping("/v1/me")
     public ResponseEntity<ResponseDto.Success> updateUserInfo(
             @RequestAttribute("userId") String userId, @RequestBody UpdateUserInfoRequestDto request) {
 

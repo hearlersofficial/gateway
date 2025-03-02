@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/counselors")
+@RequestMapping("counselors")
 @Tag(name = "CounselorsController", description = "상담 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
 public class CounselorsController {
 
@@ -35,7 +35,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "404", description = "상담사 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "400", description = "최초 상담 시작 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/{counselorId}/counsels")
+    @PostMapping("/v1/{counselorId}/counsels")
     public void createCounsel(
             @PathVariable("counselorId") String counselorId,
             @Valid @RequestBody(required = false) CreateCounselRequestDto request) {
@@ -52,7 +52,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "404", description = "상담사 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "400", description = "기존 상담 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/{counselorId}/counsels/{counselId}")
+    @GetMapping("/v1/{counselorId}/counsels/{counselId}")
     public void getCounsel(
             @PathVariable("counselorId") String counselorId,
             @PathVariable("counselId") String counselId) {
@@ -67,7 +67,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "400", description = "채팅 전송 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "403", description = "상담 제한 도달", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/{counselorId}/counsels/{counselId}")
+    @PostMapping("/v1/{counselorId}/counsels/{counselId}")
     public void createCounselMessage(
             @PathVariable("counselorId") String counselorId,
             @PathVariable("counselId") String counselId,
@@ -82,7 +82,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "200", description = "모든 상담사 정보 조회 성공"),
             @ApiResponse(responseCode = "400", description = "모든 상담사 정보 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping
+    @GetMapping("/v1")
     public ResponseEntity<ResponseDto.Success> getCounselors() {
         // TODO : 내부 서버와 통신하여 모든 상담사 정보 조회
 
@@ -113,7 +113,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "404", description = "상담사 혹은 상담 정보 혹은 메시지 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "400", description = "상담 채팅 좋아요 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/{counselorId}/counsels/{counselId}/messages/{messageId}/like")
+    @PostMapping("/v1/{counselorId}/counsels/{counselId}/messages/{messageId}/like")
     public void likeCounselMessage(
             @PathVariable("counselorId") String counselorId,
             @PathVariable("counselId") String counselId,
@@ -127,7 +127,7 @@ public class CounselorsController {
             @ApiResponse(responseCode = "404", description = "상담사 혹은 상담 정보 혹은 메시지 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "400", description = "상담 채팅 싫어요 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/{counselorId}/counsels/{counselId}/messages/{messageId}/dislike")
+    @PostMapping("/v1/{counselorId}/counsels/{counselId}/messages/{messageId}/dislike")
     public void dislikeCounselMessage(
             @PathVariable("counselorId") String counselorId,
             @PathVariable("counselId") String counselId,

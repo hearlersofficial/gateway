@@ -68,7 +68,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     // 필터 적용 X 경로 설정
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-        String[] excludePaths = {"/v1/auth/initiate", "/v1/auth/login/kakao", "/v1/auth/login/kakao/callback",
+        String[] excludePaths = {"/auth/v1/initiate", "/auth/login/kakao", "/auth/callback/kakao",
                 "/swagger-ui", "/v3/api-docs"};
 
         String path = request.getRequestURI();

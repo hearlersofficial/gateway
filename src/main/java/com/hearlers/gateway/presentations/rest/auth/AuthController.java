@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/auth")
+@RequestMapping("auth")
 @RequiredArgsConstructor
 @Tag(name = "AuthController", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
@@ -54,7 +54,7 @@ public class AuthController {
             @ApiResponse(responseCode = "201", description = "비로그인 유저 생성 성공, 쿠키에 accessToken과 accessTokenExpiresAt 저장"),
             @ApiResponse(responseCode = "400", description = "비로그인 유저 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/initiate")
+    @PostMapping("/v1/initiate")
     public ResponseEntity<ResponseDto.Success> createUser(HttpServletResponse response) {
         InitializeUserResponse initializeUserResponse = authService.initializeUser(
                 InitializeUserRequest.newBuilder().build());
@@ -148,7 +148,7 @@ public class AuthController {
             @ApiResponse(responseCode = "201", description = "액세스 토큰 재발급 성공, 쿠키에 accessToken과 accessTokenExpiresAt 저장"),
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/refresh")
+    @PostMapping("/v1/refresh")
     public void refreshToken(HttpServletRequest request) {
         // TODO : refreshToken을 바탕으로 새로운 accessToken 발급
     }
