@@ -20,16 +20,6 @@ public class SecurityConfig {
     private final JwtUtil jwtUtil;
 
     @Bean
-    public HttpExceptionFilter httpExceptionFilter() {
-        return new HttpExceptionFilter();
-    }
-
-    @Bean
-    public JwtAuthFilter jwtAuthFilter() {
-        return new JwtAuthFilter(jwtUtil);
-    }
-
-    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .httpBasic(HttpBasicConfigurer::disable) // HTTP 기본 인증 비활성화
@@ -43,6 +33,9 @@ public class SecurityConfig {
                         .requestMatchers("/admin/v1/**").hasRole("ADMIN")
                         // 비로그인 유저 생성
                         .requestMatchers("/auth/v1/initiate").permitAll()
+                        // 카카오 로그인
+                        .requestMatchers("/auth/login/kakao").permitAll()
+                        .requestMatchers("/auth/callback/kakao").permitAll()
                         // Swagger UI 관련 모든 리소스 허용
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
@@ -71,5 +64,15 @@ public class SecurityConfig {
     @Bean
     public CustomAccessDeniedHandler customAccessDeniedHandler() {
         return new CustomAccessDeniedHandler();
+    }
+
+    @Bean
+    public HttpExceptionFilter httpExceptionFilter() {
+        return new HttpExceptionFilter();
+    }
+
+    @Bean
+    public JwtAuthFilter jwtAuthFilter() {
+        return new JwtAuthFilter(jwtUtil);
     }
 }

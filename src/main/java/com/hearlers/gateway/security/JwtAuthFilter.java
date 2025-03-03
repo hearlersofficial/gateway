@@ -54,7 +54,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         try {
             Claims claims = jwtUtil.parseClaims(token);
             // 토큰에서 필요한 정보를 request에 저장
-            request.setAttribute("userId", claims.get("id", Integer.class));
+            request.setAttribute("userId", claims.get("id", String.class));
             request.setAttribute("authChannel", claims.get("auth_channel", String.class));
         } catch (Exception e) {
             response.sendError(HttpStatus.UNAUTHORIZED.value(), "Invalid or Expired JWT");
@@ -68,7 +68,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     // 필터 적용 X 경로 설정
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-        String[] excludePaths = {"/auth/v1/initiate", "/auth/login/kakao", "/auth/callback/kakao",
+        String[] excludePaths = {"/auth/v1/initiate", "/auth/callback/kakao",
                 "/swagger-ui", "/v3/api-docs"};
 
         String path = request.getRequestURI();
