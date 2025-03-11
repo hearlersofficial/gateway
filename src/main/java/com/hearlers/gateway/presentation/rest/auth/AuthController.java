@@ -15,6 +15,7 @@ import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import com.hearlers.gateway.application.auth.AuthService;
 import com.hearlers.gateway.application.utils.service.UtilService;
@@ -116,8 +117,13 @@ public class AuthController {
         AuthChannel authChannel = authUser.getAuthChannel();
 
         TokenDto token = jwtUtil.returnToken(new CreateTokenRequestDto(state, authChannel), true);
+        SaveRefreshTokenRequest saveRefreshTokenRequest = SaveRefreshTokenRequest.newBuilder()
+                .setUserId(authUser.getId())
+                .setToken(token.getRefreshToken())
+                .setExpiresAt(token.getRefreshTokenExpiresAt().toString())
+                .build();
 
-        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(state, token);
+        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(saveRefreshTokenRequest);
 
         if (!saveRefreshTokenResponse.getSuccess()) {
             throw new Error("RefreshToken 저장 실패");
