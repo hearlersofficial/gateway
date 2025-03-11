@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.69.0)",
+    value = "by gRPC proto compiler (version 1.71.0)",
     comments = "Source: com/hearlers/v1/service/counsel.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CounselServiceGrpc {
@@ -1146,6 +1146,21 @@ public final class CounselServiceGrpc {
   }
 
   /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static CounselServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CounselServiceBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CounselServiceBlockingV2Stub>() {
+        @java.lang.Override
+        public CounselServiceBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CounselServiceBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return CounselServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
+  /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CounselServiceBlockingStub newBlockingStub(
@@ -1828,6 +1843,314 @@ public final class CounselServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CounselService.
+   */
+  public static final class CounselServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CounselServiceBlockingV2Stub> {
+    private CounselServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CounselServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CounselServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * 상담 (한 사이클)
+     * TODO: 한 사이클의 끝을 어떻게 지정할 지 결정
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselResponse createCounsel(com.hearlers.api.proto.v1.service.CreateCounselRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * TODO: 상담사 별로 조회
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselsResponse findCounsels(com.hearlers.api.proto.v1.service.FindCounselsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselByIdResponse findCounselById(com.hearlers.api.proto.v1.service.FindCounselByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 상담 메시지 (상담 중 하나의 채팅팅)
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateMessageResponse createMessage(com.hearlers.api.proto.v1.service.CreateMessageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindMessagesResponse findMessages(com.hearlers.api.proto.v1.service.FindMessagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.ReactMessageResponse reactMessage(com.hearlers.api.proto.v1.service.ReactMessageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReactMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 상담사
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselorResponse createCounselor(com.hearlers.api.proto.v1.service.CreateCounselorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselorsResponse findCounselors(com.hearlers.api.proto.v1.service.FindCounselorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselorByIdResponse findCounselorById(com.hearlers.api.proto.v1.service.FindCounselorByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselorByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateCounselorResponse updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCounselorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 상담사와 유저의 관계
+     * TODO: CQRS 패턴으로 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * Relationship은 읽을 시 싱딤시와, 상담사의 모든 Counsels를 다 가지고 오는게 의미있는 단위
+     * Relationship 뷰 테이블에 이미 상담사와 모든 유저의 대화 내용을 미리 조인해둔 뷰 테이블을 만들어 놓고 그냥 꺼내서 준다.
+     * DDD를 안함
+     * 별도의 모듈
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsResponse findCounselorUserRelationships(com.hearlers.api.proto.v1.service.FindCounselorUserRelationshipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselorUserRelationshipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 상담 기법
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse createCounselTechnique(com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselTechniqueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniquesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdResponse findCounselTechniqueById(com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniqueByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse updateCounselTechnique(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCounselTechniqueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSaveCounselTechniqueSequenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Persona
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreatePersonaResponse createPersona(com.hearlers.api.proto.v1.service.CreatePersonaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePersonaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindPersonasResponse findPersonas(com.hearlers.api.proto.v1.service.FindPersonasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindPersonasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindPersonaByIdResponse findPersonaById(com.hearlers.api.proto.v1.service.FindPersonaByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindPersonaByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdatePersonaResponse updatePersona(com.hearlers.api.proto.v1.service.UpdatePersonaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePersonaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Context
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateContextResponse createContext(com.hearlers.api.proto.v1.service.CreateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindContextsResponse findContexts(com.hearlers.api.proto.v1.service.FindContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindContextByIdResponse findContextById(com.hearlers.api.proto.v1.service.FindContextByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindContextByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateContextResponse updateContext(com.hearlers.api.proto.v1.service.UpdateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Instruction
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateInstructionResponse createInstruction(com.hearlers.api.proto.v1.service.CreateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionsResponse findInstructions(com.hearlers.api.proto.v1.service.FindInstructionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionByIdResponse findInstructionById(com.hearlers.api.proto.v1.service.FindInstructionByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateInstructionResponse updateInstruction(com.hearlers.api.proto.v1.service.UpdateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * InstructionItem
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateInstructionItemResponse createInstructionItem(com.hearlers.api.proto.v1.service.CreateInstructionItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstructionItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionItemsResponse findInstructionItems(com.hearlers.api.proto.v1.service.FindInstructionItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindInstructionItemByIdResponse findInstructionItemById(com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindInstructionItemByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateInstructionItemResponse updateInstructionItem(com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstructionItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Tone
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateToneResponse createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateToneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindTonesResponse findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindToneByIdResponse findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindToneByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateToneResponse updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateToneMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CounselService.
    */
   public static final class CounselServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CounselServiceBlockingStub> {

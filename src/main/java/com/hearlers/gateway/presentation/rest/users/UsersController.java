@@ -1,12 +1,7 @@
 package com.hearlers.gateway.presentation.rest.users;
 
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -17,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hearlers.api.proto.v1.service.UpdateUserRequest;
 import com.hearlers.api.proto.v1.service.UpdateUserResponse;
 import com.hearlers.api.proto.v1.service.UserServiceGrpc;
-import com.hearlers.gateway.application.counsel.model.Counsel;
 import com.hearlers.gateway.presentation.rest.dto.ResponseDto;
 import com.hearlers.gateway.presentation.rest.users.dto.CreateUserActivityRequestDto;
-import com.hearlers.gateway.presentation.rest.users.dto.GetMyAllCounselsResponseDto;
 import com.hearlers.gateway.presentation.rest.users.dto.UpdateUserInfoRequestDto;
 import com.hearlers.gateway.presentation.rest.users.dto.UpdateUserInfoResponseDto;
 
@@ -52,33 +45,33 @@ public class UsersController {
         System.out.println(request);
     }
 
-    @Operation(summary = "내 모든 상담 채팅 목록 조회")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "내 모든 상담 채팅 목록 조회 성공"),
-            @ApiResponse(responseCode = "400", description = "내 모든 상담 채팅 목록 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
-    })
-    @GetMapping("/v1/me/counselors/all/counsels")
-    public ResponseEntity<ResponseDto.Success> getMyAllCounsels() {
-        // TODO : 내부 서버와 통신하여 내 모든 상담 채팅 목록 조회
-        Counsel counsel1 = new Counsel("1", "1", "안녕", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
-                LocalDate.now().minusDays(5), null);
-        Counsel counsel2 = new Counsel("2", "2", "잘가", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
-                LocalDate.now().minusDays(10), null);
+    // @Operation(summary = "내 모든 상담 채팅 목록 조회")
+    // @ApiResponses(value = {
+    //         @ApiResponse(responseCode = "200", description = "내 모든 상담 채팅 목록 조회 성공"),
+    //         @ApiResponse(responseCode = "400", description = "내 모든 상담 채팅 목록 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    // })
+    // @GetMapping("/v1/me/counselors/all/counsels")
+    // public ResponseEntity<ResponseDto.Success> getMyAllCounsels() {
+    //     // TODO : 내부 서버와 통신하여 내 모든 상담 채팅 목록 조회
+    //     Counsel counsel1 = new Counsel("1", "1", "안녕", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
+    //             LocalDate.now().minusDays(5), null);
+    //     Counsel counsel2 = new Counsel("2", "2", "잘가", LocalDate.of(2024, 12, 1), LocalDate.of(2024, 1, 1),
+    //             LocalDate.now().minusDays(10), null);
 
-        // Counsel 리스트 생성
-        List<Counsel> counsels = Arrays.asList(counsel1, counsel2);
+    //     // Counsel 리스트 생성
+    //     List<Counsel> counsels = Arrays.asList(counsel1, counsel2);
 
-        // GetMyAllCounselsResponseDto 인스턴스 생성
-        GetMyAllCounselsResponseDto responseDto = new GetMyAllCounselsResponseDto(counsels);
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(
-                        ResponseDto.Success.builder()
-                                .message("비로그인 유저 생성 성공")
-                                .data(responseDto)
-                                .build()
-                );
+    //     // GetMyAllCounselsResponseDto 인스턴스 생성
+    //     GetMyAllCounselsResponseDto responseDto = new GetMyAllCounselsResponseDto(counsels);
+    //     return ResponseEntity.status(HttpStatus.OK)
+    //             .body(
+    //                     ResponseDto.Success.builder()
+    //                             .message("비로그인 유저 생성 성공")
+    //                             .data(responseDto)
+    //                             .build()
+    //             );
 
-    }
+    // }
 
     @Operation(summary = "유저 정보 업데이트")
     @ApiResponses(value = {

@@ -59,7 +59,7 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "비로그인 유저 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PostMapping("/v1/initiate")
-    public ResponseEntity<ResponseDto.Success> createUser(HttpServletResponse response) {
+    public ResponseEntity<ResponseDto.Success<TokenDto>> createUser(HttpServletResponse response) {
         InitializeUserResponse initializeUserResponse = authService.initializeUser(
                 InitializeUserRequest.newBuilder().build());
 
@@ -77,14 +77,13 @@ public class AuthController {
                 .toString();
 
         addCookieToResponse(response, accessTokenExpiresAt, "accessTokenExpiresAt", ACCESS_TOKEN_MAX_AGE);
-
+        
+        ResponseDto.Success<TokenDto> responseDto = ResponseDto.Success.<TokenDto>builder()
+                .message("비로그인 유저 생성 성공")
+                .data(token)
+                .build();
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(
-                        ResponseDto.Success.builder()
-                                .message("비로그인 유저 생성 성공")
-                                .data(token)
-                                .build()
-                );
+                .body(responseDto);
     }
 
     @SecurityRequirements

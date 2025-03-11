@@ -1,4 +1,4 @@
-package com.hearlers.gateway.application.counsel.model;
+package com.hearlers.gateway.application.counseling.model;
 
 import java.time.LocalDate;
 
