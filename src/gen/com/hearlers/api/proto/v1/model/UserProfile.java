@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object birthday_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD 00:00:00
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD 00:00:00
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object createdAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object updatedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -324,7 +324,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -350,7 +350,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object deletedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -371,7 +371,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object birthday_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD 00:00:00
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -1094,7 +1094,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD 00:00:00
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD 00:00:00
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -1132,7 +1132,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD 00:00:00
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -1146,7 +1146,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD 00:00:00
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string birthday = 4 [json_name = "birthday"];</code>
@@ -1291,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1311,7 +1311,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1332,7 +1332,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1349,7 +1349,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1363,7 +1363,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1383,7 +1383,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object updatedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1403,7 +1403,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1424,7 +1424,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1441,7 +1441,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1455,7 +1455,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1475,7 +1475,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object deletedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -1495,7 +1495,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -1516,7 +1516,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -1533,7 +1533,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -1547,7 +1547,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:MM:SS
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>

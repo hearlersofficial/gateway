@@ -33,7 +33,7 @@ public interface UserProgressOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string last_updated = 3 [json_name = "lastUpdated"];</code>
@@ -42,7 +42,7 @@ public interface UserProgressOrBuilder extends
   java.lang.String getLastUpdated();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string last_updated = 3 [json_name = "lastUpdated"];</code>
@@ -53,7 +53,7 @@ public interface UserProgressOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 4 [json_name = "createdAt"];</code>
@@ -62,7 +62,7 @@ public interface UserProgressOrBuilder extends
   java.lang.String getCreatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 4 [json_name = "createdAt"];</code>
@@ -73,7 +73,7 @@ public interface UserProgressOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 5 [json_name = "updatedAt"];</code>
@@ -82,7 +82,7 @@ public interface UserProgressOrBuilder extends
   java.lang.String getUpdatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 5 [json_name = "updatedAt"];</code>
@@ -93,7 +93,7 @@ public interface UserProgressOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string deleted_at = 6 [json_name = "deletedAt"];</code>
@@ -102,7 +102,7 @@ public interface UserProgressOrBuilder extends
   java.lang.String getDeletedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string deleted_at = 6 [json_name = "deletedAt"];</code>

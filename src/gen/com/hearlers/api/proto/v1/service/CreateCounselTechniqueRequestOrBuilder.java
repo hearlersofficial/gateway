@@ -72,21 +72,4 @@ public interface CreateCounselTechniqueRequestOrBuilder extends
    * @return The counselTechniqueStage.
    */
   com.hearlers.api.proto.v1.model.CounselTechniqueStage getCounselTechniqueStage();
-
-  /**
-   * <code>optional string next_counsel_technique_id = 6 [json_name = "nextCounselTechniqueId"];</code>
-   * @return Whether the nextCounselTechniqueId field is set.
-   */
-  boolean hasNextCounselTechniqueId();
-  /**
-   * <code>optional string next_counsel_technique_id = 6 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The nextCounselTechniqueId.
-   */
-  java.lang.String getNextCounselTechniqueId();
-  /**
-   * <code>optional string next_counsel_technique_id = 6 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The bytes for nextCounselTechniqueId.
-   */
-  com.google.protobuf.ByteString
-      getNextCounselTechniqueIdBytes();
 }

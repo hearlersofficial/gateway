@@ -33,7 +33,6 @@ private static final long serialVersionUID = 0L;
     contextId_ = "";
     instructionId_ = "";
     counselTechniqueStage_ = 0;
-    nextCounselTechniqueId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -302,53 +301,6 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.hearlers.api.proto.v1.model.CounselTechniqueStage.UNRECOGNIZED : result;
   }
 
-  public static final int NEXT_COUNSEL_TECHNIQUE_ID_FIELD_NUMBER = 7;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object nextCounselTechniqueId_ = "";
-  /**
-   * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-   * @return Whether the nextCounselTechniqueId field is set.
-   */
-  @java.lang.Override
-  public boolean hasNextCounselTechniqueId() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The nextCounselTechniqueId.
-   */
-  @java.lang.Override
-  public java.lang.String getNextCounselTechniqueId() {
-    java.lang.Object ref = nextCounselTechniqueId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      nextCounselTechniqueId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The bytes for nextCounselTechniqueId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNextCounselTechniqueIdBytes() {
-    java.lang.Object ref = nextCounselTechniqueId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      nextCounselTechniqueId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -381,9 +333,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(6, counselTechniqueStage_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, nextCounselTechniqueId_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -411,9 +360,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, counselTechniqueStage_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, nextCounselTechniqueId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -456,11 +402,6 @@ private static final long serialVersionUID = 0L;
     if (hasCounselTechniqueStage()) {
       if (counselTechniqueStage_ != other.counselTechniqueStage_) return false;
     }
-    if (hasNextCounselTechniqueId() != other.hasNextCounselTechniqueId()) return false;
-    if (hasNextCounselTechniqueId()) {
-      if (!getNextCounselTechniqueId()
-          .equals(other.getNextCounselTechniqueId())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -493,10 +434,6 @@ private static final long serialVersionUID = 0L;
     if (hasCounselTechniqueStage()) {
       hash = (37 * hash) + COUNSEL_TECHNIQUE_STAGE_FIELD_NUMBER;
       hash = (53 * hash) + counselTechniqueStage_;
-    }
-    if (hasNextCounselTechniqueId()) {
-      hash = (37 * hash) + NEXT_COUNSEL_TECHNIQUE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNextCounselTechniqueId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -635,7 +572,6 @@ private static final long serialVersionUID = 0L;
       contextId_ = "";
       instructionId_ = "";
       counselTechniqueStage_ = 0;
-      nextCounselTechniqueId_ = "";
       return this;
     }
 
@@ -693,10 +629,6 @@ private static final long serialVersionUID = 0L;
         result.counselTechniqueStage_ = counselTechniqueStage_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.nextCounselTechniqueId_ = nextCounselTechniqueId_;
-        to_bitField0_ |= 0x00000020;
-      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -739,11 +671,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCounselTechniqueStage()) {
         setCounselTechniqueStage(other.getCounselTechniqueStage());
-      }
-      if (other.hasNextCounselTechniqueId()) {
-        nextCounselTechniqueId_ = other.nextCounselTechniqueId_;
-        bitField0_ |= 0x00000040;
-        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -801,11 +728,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 48
-            case 58: {
-              nextCounselTechniqueId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1267,85 +1189,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearCounselTechniqueStage() {
       bitField0_ = (bitField0_ & ~0x00000020);
       counselTechniqueStage_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object nextCounselTechniqueId_ = "";
-    /**
-     * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-     * @return Whether the nextCounselTechniqueId field is set.
-     */
-    public boolean hasNextCounselTechniqueId() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-     * @return The nextCounselTechniqueId.
-     */
-    public java.lang.String getNextCounselTechniqueId() {
-      java.lang.Object ref = nextCounselTechniqueId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nextCounselTechniqueId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-     * @return The bytes for nextCounselTechniqueId.
-     */
-    public com.google.protobuf.ByteString
-        getNextCounselTechniqueIdBytes() {
-      java.lang.Object ref = nextCounselTechniqueId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextCounselTechniqueId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-     * @param value The nextCounselTechniqueId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextCounselTechniqueId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      nextCounselTechniqueId_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNextCounselTechniqueId() {
-      nextCounselTechniqueId_ = getDefaultInstance().getNextCounselTechniqueId();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 7 [json_name = "nextCounselTechniqueId"];</code>
-     * @param value The bytes for nextCounselTechniqueId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextCounselTechniqueIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      nextCounselTechniqueId_ = value;
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

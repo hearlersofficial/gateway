@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.69.0)",
+    value = "by gRPC proto compiler (version 1.71.0)",
     comments = "Source: com/hearlers/v1/service/user.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UserServiceGrpc {
@@ -325,6 +325,37 @@ public final class UserServiceGrpc {
     return getCreateActivityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateAuthorityRequest,
+      com.hearlers.api.proto.v1.service.UpdateAuthorityResponse> getUpdateAuthorityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAuthority",
+      requestType = com.hearlers.api.proto.v1.service.UpdateAuthorityRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateAuthorityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateAuthorityRequest,
+      com.hearlers.api.proto.v1.service.UpdateAuthorityResponse> getUpdateAuthorityMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateAuthorityRequest, com.hearlers.api.proto.v1.service.UpdateAuthorityResponse> getUpdateAuthorityMethod;
+    if ((getUpdateAuthorityMethod = UserServiceGrpc.getUpdateAuthorityMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdateAuthorityMethod = UserServiceGrpc.getUpdateAuthorityMethod) == null) {
+          UserServiceGrpc.getUpdateAuthorityMethod = getUpdateAuthorityMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateAuthorityRequest, com.hearlers.api.proto.v1.service.UpdateAuthorityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAuthority"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateAuthorityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateAuthorityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdateAuthority"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAuthorityMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -337,6 +368,21 @@ public final class UserServiceGrpc {
         }
       };
     return UserServiceStub.newStub(factory, channel);
+  }
+
+  /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static UserServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<UserServiceBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<UserServiceBlockingV2Stub>() {
+        @java.lang.Override
+        public UserServiceBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new UserServiceBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return UserServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -473,6 +519,16 @@ public final class UserServiceGrpc {
     default void createActivity(com.hearlers.api.proto.v1.service.CreateActivityRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateActivityResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateActivityMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 권한 변경
+     * </pre>
+     */
+    default void updateAuthority(com.hearlers.api.proto.v1.service.UpdateAuthorityRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateAuthorityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAuthorityMethod(), responseObserver);
     }
   }
 
@@ -614,10 +670,150 @@ public final class UserServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateActivityMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 권한 변경
+     * </pre>
+     */
+    public void updateAuthority(com.hearlers.api.proto.v1.service.UpdateAuthorityRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateAuthorityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAuthorityMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service UserService.
+   */
+  public static final class UserServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<UserServiceBlockingV2Stub> {
+    private UserServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected UserServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new UserServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * 최초 접속 시 user &amp; authUser 생성
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.InitializeUserResponse initializeUser(com.hearlers.api.proto.v1.service.InitializeUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitializeUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 인증 채널 연결
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.ConnectAuthChannelResponse connectAuthChannel(com.hearlers.api.proto.v1.service.ConnectAuthChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getConnectAuthChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 리프레시 토큰 저장
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse saveRefreshToken(com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSaveRefreshTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 리프레시 토큰 인증
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.VerifyRefreshTokenResponse verifyRefreshToken(com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyRefreshTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 유저 조회
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindOneUserResponse findOneUser(com.hearlers.api.proto.v1.service.FindOneUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindOneUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 유저 목록 조회
+     * rpc FindManyUser (FindManyUserRequest) returns (FindManyUserResult);
+     * 인증 유저 조회
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindOneAuthUserResponse findOneAuthUser(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindOneAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 잔여 토큰 체크
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CheckRemainingTokensResponse checkRemainingTokens(com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckRemainingTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 토큰 예약 (잔여 토큰 없을 시 에러)
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.ReserveTokensResponse reserveTokens(com.hearlers.api.proto.v1.service.ReserveTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReserveTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 유저 업데이트
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.UpdateUserResponse updateUser(com.hearlers.api.proto.v1.service.UpdateUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 활동 생성
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateActivityResponse createActivity(com.hearlers.api.proto.v1.service.CreateActivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 권한 변경
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.UpdateAuthorityResponse updateAuthority(com.hearlers.api.proto.v1.service.UpdateAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuthorityMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service UserService.
    */
   public static final class UserServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<UserServiceBlockingStub> {
@@ -732,6 +928,16 @@ public final class UserServiceGrpc {
     public com.hearlers.api.proto.v1.service.CreateActivityResponse createActivity(com.hearlers.api.proto.v1.service.CreateActivityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 권한 변경
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.UpdateAuthorityResponse updateAuthority(com.hearlers.api.proto.v1.service.UpdateAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuthorityMethod(), getCallOptions(), request);
     }
   }
 
@@ -862,6 +1068,17 @@ public final class UserServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateActivityMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 권한 변경
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateAuthorityResponse> updateAuthority(
+        com.hearlers.api.proto.v1.service.UpdateAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAuthorityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_INITIALIZE_USER = 0;
@@ -874,6 +1091,7 @@ public final class UserServiceGrpc {
   private static final int METHODID_RESERVE_TOKENS = 7;
   private static final int METHODID_UPDATE_USER = 8;
   private static final int METHODID_CREATE_ACTIVITY = 9;
+  private static final int METHODID_UPDATE_AUTHORITY = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -931,6 +1149,10 @@ public final class UserServiceGrpc {
         case METHODID_CREATE_ACTIVITY:
           serviceImpl.createActivity((com.hearlers.api.proto.v1.service.CreateActivityRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateActivityResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_AUTHORITY:
+          serviceImpl.updateAuthority((com.hearlers.api.proto.v1.service.UpdateAuthorityRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateAuthorityResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1020,6 +1242,13 @@ public final class UserServiceGrpc {
               com.hearlers.api.proto.v1.service.CreateActivityRequest,
               com.hearlers.api.proto.v1.service.CreateActivityResponse>(
                 service, METHODID_CREATE_ACTIVITY)))
+        .addMethod(
+          getUpdateAuthorityMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateAuthorityRequest,
+              com.hearlers.api.proto.v1.service.UpdateAuthorityResponse>(
+                service, METHODID_UPDATE_AUTHORITY)))
         .build();
   }
 
@@ -1078,6 +1307,7 @@ public final class UserServiceGrpc {
               .addMethod(getReserveTokensMethod())
               .addMethod(getUpdateUserMethod())
               .addMethod(getCreateActivityMethod())
+              .addMethod(getUpdateAuthorityMethod())
               .build();
         }
       }

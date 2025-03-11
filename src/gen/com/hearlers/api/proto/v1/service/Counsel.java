@@ -463,260 +463,255 @@ public final class Counsel {
       "ndCounselorUserRelationshipsResponse\022r\n\034" +
       "counselor_user_relationships\030\001 \003(\01320.com" +
       ".hearlers.v1.model.CounselorUserRelation" +
-      "shipR\032counselorUserRelationships\"\347\002\n\035Cre" +
+      "shipR\032counselorUserRelationships\"\211\002\n\035Cre" +
       "ateCounselTechniqueRequest\022\022\n\004name\030\001 \001(\t" +
       "R\004name\022\034\n\007tone_id\030\002 \001(\tH\000R\006toneId\210\001\001\022\035\n\n" +
       "context_id\030\003 \001(\tR\tcontextId\022%\n\016instructi" +
       "on_id\030\004 \001(\tR\rinstructionId\022d\n\027counsel_te" +
       "chnique_stage\030\005 \001(\0162,.com.hearlers.v1.mo" +
       "del.CounselTechniqueStageR\025counselTechni" +
-      "queStage\022>\n\031next_counsel_technique_id\030\006 " +
-      "\001(\tH\001R\026nextCounselTechniqueId\210\001\001B\n\n\010_ton" +
-      "e_idB\034\n\032_next_counsel_technique_id\"v\n\036Cr" +
-      "eateCounselTechniqueResponse\022T\n\021counsel_" +
-      "technique\030\001 \001(\0132\'.com.hearlers.v1.model." +
-      "CounselTechniqueR\020counselTechnique\"\361\001\n\034F" +
-      "indCounselTechniquesRequest\022\027\n\004name\030\001 \001(" +
-      "\tH\000R\004name\210\001\001\022\034\n\007tone_id\030\002 \001(\tH\001R\006toneId\210" +
-      "\001\001\022i\n\027counsel_technique_stage\030\003 \001(\0162,.co" +
-      "m.hearlers.v1.model.CounselTechniqueStag" +
-      "eH\002R\025counselTechniqueStage\210\001\001B\007\n\005_nameB\n" +
-      "\n\010_tone_idB\032\n\030_counsel_technique_stage\"w" +
-      "\n\035FindCounselTechniquesResponse\022V\n\022couns" +
-      "el_techniques\030\001 \003(\0132\'.com.hearlers.v1.mo" +
-      "del.CounselTechniqueR\021counselTechniques\"" +
-      "S\n\037FindCounselTechniqueByIdRequest\0220\n\024co" +
-      "unsel_technique_id\030\001 \001(\tR\022counselTechniq" +
-      "ueId\"\223\001\n FindCounselTechniqueByIdRespons" +
-      "e\022Y\n\021counsel_technique\030\001 \001(\0132\'.com.hearl" +
-      "ers.v1.model.CounselTechniqueH\000R\020counsel" +
-      "Technique\210\001\001B\024\n\022_counsel_technique\"\364\003\n\035U" +
-      "pdateCounselTechniqueRequest\0220\n\024counsel_" +
-      "technique_id\030\001 \001(\tR\022counselTechniqueId\022\027" +
-      "\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022\034\n\007tone_id\030\003 \001(\t" +
-      "H\001R\006toneId\210\001\001\022\"\n\ncontext_id\030\004 \001(\tH\002R\tcon" +
-      "textId\210\001\001\022*\n\016instruction_id\030\005 \001(\tH\003R\rins" +
-      "tructionId\210\001\001\022i\n\027counsel_technique_stage" +
-      "\030\006 \001(\0162,.com.hearlers.v1.model.CounselTe" +
-      "chniqueStageH\004R\025counselTechniqueStage\210\001\001" +
-      "\022>\n\031next_counsel_technique_id\030\007 \001(\tH\005R\026n" +
-      "extCounselTechniqueId\210\001\001B\007\n\005_nameB\n\n\010_to" +
-      "ne_idB\r\n\013_context_idB\021\n\017_instruction_idB" +
-      "\032\n\030_counsel_technique_stageB\034\n\032_next_cou" +
-      "nsel_technique_id\"v\n\036UpdateCounselTechni" +
-      "queResponse\022T\n\021counsel_technique\030\001 \001(\0132\'" +
-      ".com.hearlers.v1.model.CounselTechniqueR" +
-      "\020counselTechnique\"Y\n#SaveCounselTechniqu" +
-      "eSequenceRequest\0222\n\025counsel_technique_id" +
-      "s\030\001 \003(\tR\023counselTechniqueIds\"~\n$SaveCoun" +
-      "selTechniqueSequenceResponse\022V\n\022counsel_" +
-      "techniques\030\001 \003(\0132\'.com.hearlers.v1.model" +
-      ".CounselTechniqueR\021counselTechniques\"M\n\024" +
-      "CreatePersonaRequest\022!\n\014counselor_id\030\001 \001" +
-      "(\tR\013counselorId\022\022\n\004body\030\002 \001(\tR\004body\"Q\n\025C" +
-      "reatePersonaResponse\0228\n\007persona\030\001 \001(\0132\036." +
-      "com.hearlers.v1.model.PersonaR\007persona\"N" +
-      "\n\023FindPersonasRequest\022&\n\014counselor_id\030\001 " +
-      "\001(\tH\000R\013counselorId\210\001\001B\017\n\r_counselor_id\"R" +
-      "\n\024FindPersonasResponse\022:\n\010personas\030\001 \003(\013" +
-      "2\036.com.hearlers.v1.model.PersonaR\010person" +
-      "as\"7\n\026FindPersonaByIdRequest\022\035\n\npersona_" +
-      "id\030\001 \001(\tR\tpersonaId\"d\n\027FindPersonaByIdRe" +
-      "sponse\022=\n\007persona\030\001 \001(\0132\036.com.hearlers.v" +
-      "1.model.PersonaH\000R\007persona\210\001\001B\n\n\010_person" +
-      "a\"W\n\024UpdatePersonaRequest\022\035\n\npersona_id\030" +
-      "\001 \001(\tR\tpersonaId\022\027\n\004body\030\002 \001(\tH\000R\004body\210\001" +
-      "\001B\007\n\005_body\"Q\n\025UpdatePersonaResponse\0228\n\007p" +
-      "ersona\030\001 \001(\0132\036.com.hearlers.v1.model.Per" +
-      "sonaR\007persona\"b\n\024CreateContextRequest\022\022\n" +
-      "\004name\030\001 \001(\tR\004name\022\022\n\004body\030\002 \001(\tR\004body\022\"\n" +
-      "\014placeholders\030\003 \003(\tR\014placeholders\"Q\n\025Cre" +
-      "ateContextResponse\0228\n\007context\030\001 \001(\0132\036.co" +
-      "m.hearlers.v1.model.ContextR\007context\"7\n\023" +
-      "FindContextsRequest\022\027\n\004name\030\001 \001(\tH\000R\004nam" +
-      "e\210\001\001B\007\n\005_name\"R\n\024FindContextsResponse\022:\n" +
-      "\010contexts\030\001 \003(\0132\036.com.hearlers.v1.model." +
-      "ContextR\010contexts\"7\n\026FindContextByIdRequ" +
-      "est\022\035\n\ncontext_id\030\001 \001(\tR\tcontextId\"d\n\027Fi" +
-      "ndContextByIdResponse\022=\n\007context\030\001 \001(\0132\036" +
-      ".com.hearlers.v1.model.ContextH\000R\007contex" +
-      "t\210\001\001B\n\n\010_context\"\235\001\n\024UpdateContextReques" +
-      "t\022\035\n\ncontext_id\030\001 \001(\tR\tcontextId\022\027\n\004name" +
-      "\030\002 \001(\tH\000R\004name\210\001\001\022\027\n\004body\030\003 \001(\tH\001R\004body\210" +
-      "\001\001\022\"\n\014placeholders\030\004 \003(\tR\014placeholdersB\007" +
-      "\n\005_nameB\007\n\005_body\"Q\n\025UpdateContextRespons" +
-      "e\0228\n\007context\030\001 \001(\0132\036.com.hearlers.v1.mod" +
-      "el.ContextR\007context\"\245\001\n\030CreateInstructio" +
-      "nRequest\022\022\n\004name\030\001 \001(\tR\004name\022.\n\020initial_" +
-      "sentence\030\002 \001(\tH\000R\017initialSentence\210\001\001\0220\n\024" +
-      "instruction_item_ids\030\003 \003(\tR\022instructionI" +
-      "temIdsB\023\n\021_initial_sentence\"a\n\031CreateIns" +
-      "tructionResponse\022D\n\013instruction\030\001 \001(\0132\"." +
-      "com.hearlers.v1.model.InstructionR\013instr" +
-      "uction\";\n\027FindInstructionsRequest\022\027\n\004nam" +
-      "e\030\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name\"b\n\030FindInstr" +
-      "uctionsResponse\022F\n\014instructions\030\001 \003(\0132\"." +
-      "com.hearlers.v1.model.InstructionR\014instr" +
-      "uctions\"C\n\032FindInstructionByIdRequest\022%\n" +
-      "\016instruction_id\030\001 \001(\tR\rinstructionId\"x\n\033" +
-      "FindInstructionByIdResponse\022I\n\013instructi" +
-      "on\030\001 \001(\0132\".com.hearlers.v1.model.Instruc" +
-      "tionH\000R\013instruction\210\001\001B\016\n\014_instruction\"\332" +
-      "\001\n\030UpdateInstructionRequest\022%\n\016instructi" +
-      "on_id\030\001 \001(\tR\rinstructionId\022\027\n\004name\030\002 \001(\t" +
-      "H\000R\004name\210\001\001\022.\n\020initial_sentence\030\003 \001(\tH\001R" +
-      "\017initialSentence\210\001\001\0220\n\024instruction_item_" +
-      "ids\030\004 \003(\tR\022instructionItemIdsB\007\n\005_nameB\023" +
-      "\n\021_initial_sentence\"a\n\031UpdateInstruction" +
-      "Response\022D\n\013instruction\030\001 \001(\0132\".com.hear" +
-      "lers.v1.model.InstructionR\013instruction\"2" +
-      "\n\034CreateInstructionItemRequest\022\022\n\004body\030\001" +
-      " \001(\tR\004body\"r\n\035CreateInstructionItemRespo" +
-      "nse\022Q\n\020instruction_item\030\001 \001(\0132&.com.hear" +
-      "lers.v1.model.InstructionItemR\017instructi" +
-      "onItem\"H\n\033FindInstructionItemsRequest\022\035\n" +
-      "\007keyword\030\001 \001(\tH\000R\007keyword\210\001\001B\n\n\010_keyword" +
-      "\"s\n\034FindInstructionItemsResponse\022S\n\021inst" +
-      "ruction_items\030\001 \003(\0132&.com.hearlers.v1.mo" +
-      "del.InstructionItemR\020instructionItems\"P\n" +
-      "\036FindInstructionItemByIdRequest\022.\n\023instr" +
-      "uction_item_id\030\001 \001(\tR\021instructionItemId\"" +
-      "\216\001\n\037FindInstructionItemByIdResponse\022V\n\020i" +
-      "nstruction_item\030\001 \001(\0132&.com.hearlers.v1." +
-      "model.InstructionItemH\000R\017instructionItem" +
-      "\210\001\001B\023\n\021_instruction_item\"p\n\034UpdateInstru" +
-      "ctionItemRequest\022.\n\023instruction_item_id\030" +
-      "\001 \001(\tR\021instructionItemId\022\027\n\004body\030\002 \001(\tH\000" +
-      "R\004body\210\001\001B\007\n\005_body\"r\n\035UpdateInstructionI" +
-      "temResponse\022Q\n\020instruction_item\030\001 \001(\0132&." +
-      "com.hearlers.v1.model.InstructionItemR\017i" +
-      "nstructionItem\";\n\021CreateToneRequest\022\022\n\004n" +
-      "ame\030\001 \001(\tR\004name\022\022\n\004body\030\002 \001(\tR\004body\"E\n\022C" +
-      "reateToneResponse\022/\n\004tone\030\001 \001(\0132\033.com.he" +
-      "arlers.v1.model.ToneR\004tone\"4\n\020FindTonesR" +
-      "equest\022\027\n\004name\030\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name" +
-      "\"F\n\021FindTonesResponse\0221\n\005tones\030\001 \003(\0132\033.c" +
-      "om.hearlers.v1.model.ToneR\005tones\".\n\023Find" +
-      "ToneByIdRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId" +
-      "\"U\n\024FindToneByIdResponse\0224\n\004tone\030\001 \001(\0132\033" +
-      ".com.hearlers.v1.model.ToneH\000R\004tone\210\001\001B\007" +
-      "\n\005_tone\"p\n\021UpdateToneRequest\022\027\n\007tone_id\030" +
-      "\001 \001(\tR\006toneId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022\027" +
-      "\n\004body\030\003 \001(\tH\001R\004body\210\001\001B\007\n\005_nameB\007\n\005_bod" +
-      "y\"E\n\022UpdateToneResponse\022/\n\004tone\030\001 \001(\0132\033." +
-      "com.hearlers.v1.model.ToneR\004tone2\275\"\n\016Cou" +
-      "nselService\022n\n\rCreateCounsel\022-.com.hearl" +
-      "ers.v1.service.CreateCounselRequest\032..co" +
-      "m.hearlers.v1.service.CreateCounselRespo" +
-      "nse\022k\n\014FindCounsels\022,.com.hearlers.v1.se" +
-      "rvice.FindCounselsRequest\032-.com.hearlers" +
-      ".v1.service.FindCounselsResponse\022t\n\017Find" +
-      "CounselById\022/.com.hearlers.v1.service.Fi" +
-      "ndCounselByIdRequest\0320.com.hearlers.v1.s" +
-      "ervice.FindCounselByIdResponse\022n\n\rCreate" +
-      "Message\022-.com.hearlers.v1.service.Create" +
-      "MessageRequest\032..com.hearlers.v1.service" +
-      ".CreateMessageResponse\022k\n\014FindMessages\022," +
-      ".com.hearlers.v1.service.FindMessagesReq" +
-      "uest\032-.com.hearlers.v1.service.FindMessa" +
-      "gesResponse\022k\n\014ReactMessage\022,.com.hearle" +
-      "rs.v1.service.ReactMessageRequest\032-.com." +
-      "hearlers.v1.service.ReactMessageResponse" +
-      "\022t\n\017CreateCounselor\022/.com.hearlers.v1.se" +
-      "rvice.CreateCounselorRequest\0320.com.hearl" +
-      "ers.v1.service.CreateCounselorResponse\022q" +
-      "\n\016FindCounselors\022..com.hearlers.v1.servi" +
-      "ce.FindCounselorsRequest\032/.com.hearlers." +
-      "v1.service.FindCounselorsResponse\022z\n\021Fin" +
-      "dCounselorById\0221.com.hearlers.v1.service" +
-      ".FindCounselorByIdRequest\0322.com.hearlers" +
-      ".v1.service.FindCounselorByIdResponse\022t\n" +
-      "\017UpdateCounselor\022/.com.hearlers.v1.servi" +
-      "ce.UpdateCounselorRequest\0320.com.hearlers" +
-      ".v1.service.UpdateCounselorResponse\022\241\001\n\036" +
-      "FindCounselorUserRelationships\022>.com.hea" +
-      "rlers.v1.service.FindCounselorUserRelati" +
-      "onshipsRequest\032?.com.hearlers.v1.service" +
-      ".FindCounselorUserRelationshipsResponse\022" +
-      "\211\001\n\026CreateCounselTechnique\0226.com.hearler" +
-      "s.v1.service.CreateCounselTechniqueReque" +
-      "st\0327.com.hearlers.v1.service.CreateCouns" +
-      "elTechniqueResponse\022\206\001\n\025FindCounselTechn" +
-      "iques\0225.com.hearlers.v1.service.FindCoun" +
-      "selTechniquesRequest\0326.com.hearlers.v1.s" +
-      "ervice.FindCounselTechniquesResponse\022\217\001\n" +
-      "\030FindCounselTechniqueById\0228.com.hearlers" +
-      ".v1.service.FindCounselTechniqueByIdRequ" +
-      "est\0329.com.hearlers.v1.service.FindCounse" +
-      "lTechniqueByIdResponse\022\211\001\n\026UpdateCounsel" +
-      "Technique\0226.com.hearlers.v1.service.Upda" +
-      "teCounselTechniqueRequest\0327.com.hearlers" +
-      ".v1.service.UpdateCounselTechniqueRespon" +
-      "se\022\233\001\n\034SaveCounselTechniqueSequence\022<.co" +
-      "m.hearlers.v1.service.SaveCounselTechniq" +
-      "ueSequenceRequest\032=.com.hearlers.v1.serv" +
-      "ice.SaveCounselTechniqueSequenceResponse" +
-      "\022n\n\rCreatePersona\022-.com.hearlers.v1.serv" +
-      "ice.CreatePersonaRequest\032..com.hearlers." +
-      "v1.service.CreatePersonaResponse\022k\n\014Find" +
-      "Personas\022,.com.hearlers.v1.service.FindP" +
-      "ersonasRequest\032-.com.hearlers.v1.service" +
-      ".FindPersonasResponse\022t\n\017FindPersonaById" +
-      "\022/.com.hearlers.v1.service.FindPersonaBy" +
-      "IdRequest\0320.com.hearlers.v1.service.Find" +
-      "PersonaByIdResponse\022n\n\rUpdatePersona\022-.c" +
-      "om.hearlers.v1.service.UpdatePersonaRequ" +
-      "est\032..com.hearlers.v1.service.UpdatePers" +
-      "onaResponse\022n\n\rCreateContext\022-.com.hearl" +
-      "ers.v1.service.CreateContextRequest\032..co" +
-      "m.hearlers.v1.service.CreateContextRespo" +
-      "nse\022k\n\014FindContexts\022,.com.hearlers.v1.se" +
-      "rvice.FindContextsRequest\032-.com.hearlers" +
-      ".v1.service.FindContextsResponse\022t\n\017Find" +
-      "ContextById\022/.com.hearlers.v1.service.Fi" +
-      "ndContextByIdRequest\0320.com.hearlers.v1.s" +
-      "ervice.FindContextByIdResponse\022n\n\rUpdate" +
-      "Context\022-.com.hearlers.v1.service.Update" +
-      "ContextRequest\032..com.hearlers.v1.service" +
-      ".UpdateContextResponse\022z\n\021CreateInstruct" +
-      "ion\0221.com.hearlers.v1.service.CreateInst" +
-      "ructionRequest\0322.com.hearlers.v1.service" +
-      ".CreateInstructionResponse\022w\n\020FindInstru" +
-      "ctions\0220.com.hearlers.v1.service.FindIns" +
-      "tructionsRequest\0321.com.hearlers.v1.servi" +
-      "ce.FindInstructionsResponse\022\200\001\n\023FindInst" +
-      "ructionById\0223.com.hearlers.v1.service.Fi" +
-      "ndInstructionByIdRequest\0324.com.hearlers." +
-      "v1.service.FindInstructionByIdResponse\022z" +
-      "\n\021UpdateInstruction\0221.com.hearlers.v1.se" +
-      "rvice.UpdateInstructionRequest\0322.com.hea" +
-      "rlers.v1.service.UpdateInstructionRespon" +
-      "se\022\206\001\n\025CreateInstructionItem\0225.com.hearl" +
-      "ers.v1.service.CreateInstructionItemRequ" +
-      "est\0326.com.hearlers.v1.service.CreateInst" +
-      "ructionItemResponse\022\203\001\n\024FindInstructionI" +
-      "tems\0224.com.hearlers.v1.service.FindInstr" +
-      "uctionItemsRequest\0325.com.hearlers.v1.ser" +
-      "vice.FindInstructionItemsResponse\022\214\001\n\027Fi" +
-      "ndInstructionItemById\0227.com.hearlers.v1." +
-      "service.FindInstructionItemByIdRequest\0328" +
-      ".com.hearlers.v1.service.FindInstruction" +
-      "ItemByIdResponse\022\206\001\n\025UpdateInstructionIt" +
-      "em\0225.com.hearlers.v1.service.UpdateInstr" +
-      "uctionItemRequest\0326.com.hearlers.v1.serv" +
-      "ice.UpdateInstructionItemResponse\022e\n\nCre" +
-      "ateTone\022*.com.hearlers.v1.service.Create" +
-      "ToneRequest\032+.com.hearlers.v1.service.Cr" +
-      "eateToneResponse\022b\n\tFindTones\022).com.hear" +
-      "lers.v1.service.FindTonesRequest\032*.com.h" +
-      "earlers.v1.service.FindTonesResponse\022k\n\014" +
-      "FindToneById\022,.com.hearlers.v1.service.F" +
-      "indToneByIdRequest\032-.com.hearlers.v1.ser" +
-      "vice.FindToneByIdResponse\022e\n\nUpdateTone\022" +
-      "*.com.hearlers.v1.service.UpdateToneRequ" +
-      "est\032+.com.hearlers.v1.service.UpdateTone" +
-      "ResponseB%\n!com.hearlers.api.proto.v1.se" +
-      "rviceP\001b\006proto3"
+      "queStageB\n\n\010_tone_id\"v\n\036CreateCounselTec" +
+      "hniqueResponse\022T\n\021counsel_technique\030\001 \001(" +
+      "\0132\'.com.hearlers.v1.model.CounselTechniq" +
+      "ueR\020counselTechnique\"\361\001\n\034FindCounselTech" +
+      "niquesRequest\022\027\n\004name\030\001 \001(\tH\000R\004name\210\001\001\022\034" +
+      "\n\007tone_id\030\002 \001(\tH\001R\006toneId\210\001\001\022i\n\027counsel_" +
+      "technique_stage\030\003 \001(\0162,.com.hearlers.v1." +
+      "model.CounselTechniqueStageH\002R\025counselTe" +
+      "chniqueStage\210\001\001B\007\n\005_nameB\n\n\010_tone_idB\032\n\030" +
+      "_counsel_technique_stage\"w\n\035FindCounselT" +
+      "echniquesResponse\022V\n\022counsel_techniques\030" +
+      "\001 \003(\0132\'.com.hearlers.v1.model.CounselTec" +
+      "hniqueR\021counselTechniques\"S\n\037FindCounsel" +
+      "TechniqueByIdRequest\0220\n\024counsel_techniqu" +
+      "e_id\030\001 \001(\tR\022counselTechniqueId\"\223\001\n FindC" +
+      "ounselTechniqueByIdResponse\022Y\n\021counsel_t" +
+      "echnique\030\001 \001(\0132\'.com.hearlers.v1.model.C" +
+      "ounselTechniqueH\000R\020counselTechnique\210\001\001B\024" +
+      "\n\022_counsel_technique\"\226\003\n\035UpdateCounselTe" +
+      "chniqueRequest\0220\n\024counsel_technique_id\030\001" +
+      " \001(\tR\022counselTechniqueId\022\027\n\004name\030\002 \001(\tH\000" +
+      "R\004name\210\001\001\022\034\n\007tone_id\030\003 \001(\tH\001R\006toneId\210\001\001\022" +
+      "\"\n\ncontext_id\030\004 \001(\tH\002R\tcontextId\210\001\001\022*\n\016i" +
+      "nstruction_id\030\005 \001(\tH\003R\rinstructionId\210\001\001\022" +
+      "i\n\027counsel_technique_stage\030\006 \001(\0162,.com.h" +
+      "earlers.v1.model.CounselTechniqueStageH\004" +
+      "R\025counselTechniqueStage\210\001\001B\007\n\005_nameB\n\n\010_" +
+      "tone_idB\r\n\013_context_idB\021\n\017_instruction_i" +
+      "dB\032\n\030_counsel_technique_stage\"v\n\036UpdateC" +
+      "ounselTechniqueResponse\022T\n\021counsel_techn" +
+      "ique\030\001 \001(\0132\'.com.hearlers.v1.model.Couns" +
+      "elTechniqueR\020counselTechnique\"Y\n#SaveCou" +
+      "nselTechniqueSequenceRequest\0222\n\025counsel_" +
+      "technique_ids\030\001 \003(\tR\023counselTechniqueIds" +
+      "\"~\n$SaveCounselTechniqueSequenceResponse" +
+      "\022V\n\022counsel_techniques\030\001 \003(\0132\'.com.hearl" +
+      "ers.v1.model.CounselTechniqueR\021counselTe" +
+      "chniques\"M\n\024CreatePersonaRequest\022!\n\014coun" +
+      "selor_id\030\001 \001(\tR\013counselorId\022\022\n\004body\030\002 \001(" +
+      "\tR\004body\"Q\n\025CreatePersonaResponse\0228\n\007pers" +
+      "ona\030\001 \001(\0132\036.com.hearlers.v1.model.Person" +
+      "aR\007persona\"N\n\023FindPersonasRequest\022&\n\014cou" +
+      "nselor_id\030\001 \001(\tH\000R\013counselorId\210\001\001B\017\n\r_co" +
+      "unselor_id\"R\n\024FindPersonasResponse\022:\n\010pe" +
+      "rsonas\030\001 \003(\0132\036.com.hearlers.v1.model.Per" +
+      "sonaR\010personas\"7\n\026FindPersonaByIdRequest" +
+      "\022\035\n\npersona_id\030\001 \001(\tR\tpersonaId\"d\n\027FindP" +
+      "ersonaByIdResponse\022=\n\007persona\030\001 \001(\0132\036.co" +
+      "m.hearlers.v1.model.PersonaH\000R\007persona\210\001" +
+      "\001B\n\n\010_persona\"W\n\024UpdatePersonaRequest\022\035\n" +
+      "\npersona_id\030\001 \001(\tR\tpersonaId\022\027\n\004body\030\002 \001" +
+      "(\tH\000R\004body\210\001\001B\007\n\005_body\"Q\n\025UpdatePersonaR" +
+      "esponse\0228\n\007persona\030\001 \001(\0132\036.com.hearlers." +
+      "v1.model.PersonaR\007persona\"b\n\024CreateConte" +
+      "xtRequest\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004body\030\002 " +
+      "\001(\tR\004body\022\"\n\014placeholders\030\003 \003(\tR\014placeho" +
+      "lders\"Q\n\025CreateContextResponse\0228\n\007contex" +
+      "t\030\001 \001(\0132\036.com.hearlers.v1.model.ContextR" +
+      "\007context\"7\n\023FindContextsRequest\022\027\n\004name\030" +
+      "\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name\"R\n\024FindContext" +
+      "sResponse\022:\n\010contexts\030\001 \003(\0132\036.com.hearle" +
+      "rs.v1.model.ContextR\010contexts\"7\n\026FindCon" +
+      "textByIdRequest\022\035\n\ncontext_id\030\001 \001(\tR\tcon" +
+      "textId\"d\n\027FindContextByIdResponse\022=\n\007con" +
+      "text\030\001 \001(\0132\036.com.hearlers.v1.model.Conte" +
+      "xtH\000R\007context\210\001\001B\n\n\010_context\"\235\001\n\024UpdateC" +
+      "ontextRequest\022\035\n\ncontext_id\030\001 \001(\tR\tconte" +
+      "xtId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022\027\n\004body\030\003 " +
+      "\001(\tH\001R\004body\210\001\001\022\"\n\014placeholders\030\004 \003(\tR\014pl" +
+      "aceholdersB\007\n\005_nameB\007\n\005_body\"Q\n\025UpdateCo" +
+      "ntextResponse\0228\n\007context\030\001 \001(\0132\036.com.hea" +
+      "rlers.v1.model.ContextR\007context\"\245\001\n\030Crea" +
+      "teInstructionRequest\022\022\n\004name\030\001 \001(\tR\004name" +
+      "\022.\n\020initial_sentence\030\002 \001(\tH\000R\017initialSen" +
+      "tence\210\001\001\0220\n\024instruction_item_ids\030\003 \003(\tR\022" +
+      "instructionItemIdsB\023\n\021_initial_sentence\"" +
+      "a\n\031CreateInstructionResponse\022D\n\013instruct" +
+      "ion\030\001 \001(\0132\".com.hearlers.v1.model.Instru" +
+      "ctionR\013instruction\";\n\027FindInstructionsRe" +
+      "quest\022\027\n\004name\030\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name\"" +
+      "b\n\030FindInstructionsResponse\022F\n\014instructi" +
+      "ons\030\001 \003(\0132\".com.hearlers.v1.model.Instru" +
+      "ctionR\014instructions\"C\n\032FindInstructionBy" +
+      "IdRequest\022%\n\016instruction_id\030\001 \001(\tR\rinstr" +
+      "uctionId\"x\n\033FindInstructionByIdResponse\022" +
+      "I\n\013instruction\030\001 \001(\0132\".com.hearlers.v1.m" +
+      "odel.InstructionH\000R\013instruction\210\001\001B\016\n\014_i" +
+      "nstruction\"\332\001\n\030UpdateInstructionRequest\022" +
+      "%\n\016instruction_id\030\001 \001(\tR\rinstructionId\022\027" +
+      "\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022.\n\020initial_sente" +
+      "nce\030\003 \001(\tH\001R\017initialSentence\210\001\001\0220\n\024instr" +
+      "uction_item_ids\030\004 \003(\tR\022instructionItemId" +
+      "sB\007\n\005_nameB\023\n\021_initial_sentence\"a\n\031Updat" +
+      "eInstructionResponse\022D\n\013instruction\030\001 \001(" +
+      "\0132\".com.hearlers.v1.model.InstructionR\013i" +
+      "nstruction\"2\n\034CreateInstructionItemReque" +
+      "st\022\022\n\004body\030\001 \001(\tR\004body\"r\n\035CreateInstruct" +
+      "ionItemResponse\022Q\n\020instruction_item\030\001 \001(" +
+      "\0132&.com.hearlers.v1.model.InstructionIte" +
+      "mR\017instructionItem\"H\n\033FindInstructionIte" +
+      "msRequest\022\035\n\007keyword\030\001 \001(\tH\000R\007keyword\210\001\001" +
+      "B\n\n\010_keyword\"s\n\034FindInstructionItemsResp" +
+      "onse\022S\n\021instruction_items\030\001 \003(\0132&.com.he" +
+      "arlers.v1.model.InstructionItemR\020instruc" +
+      "tionItems\"P\n\036FindInstructionItemByIdRequ" +
+      "est\022.\n\023instruction_item_id\030\001 \001(\tR\021instru" +
+      "ctionItemId\"\216\001\n\037FindInstructionItemByIdR" +
+      "esponse\022V\n\020instruction_item\030\001 \001(\0132&.com." +
+      "hearlers.v1.model.InstructionItemH\000R\017ins" +
+      "tructionItem\210\001\001B\023\n\021_instruction_item\"p\n\034" +
+      "UpdateInstructionItemRequest\022.\n\023instruct" +
+      "ion_item_id\030\001 \001(\tR\021instructionItemId\022\027\n\004" +
+      "body\030\002 \001(\tH\000R\004body\210\001\001B\007\n\005_body\"r\n\035Update" +
+      "InstructionItemResponse\022Q\n\020instruction_i" +
+      "tem\030\001 \001(\0132&.com.hearlers.v1.model.Instru" +
+      "ctionItemR\017instructionItem\";\n\021CreateTone" +
+      "Request\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004body\030\002 \001(" +
+      "\tR\004body\"E\n\022CreateToneResponse\022/\n\004tone\030\001 " +
+      "\001(\0132\033.com.hearlers.v1.model.ToneR\004tone\"4" +
+      "\n\020FindTonesRequest\022\027\n\004name\030\001 \001(\tH\000R\004name" +
+      "\210\001\001B\007\n\005_name\"F\n\021FindTonesResponse\0221\n\005ton" +
+      "es\030\001 \003(\0132\033.com.hearlers.v1.model.ToneR\005t" +
+      "ones\".\n\023FindToneByIdRequest\022\027\n\007tone_id\030\001" +
+      " \001(\tR\006toneId\"U\n\024FindToneByIdResponse\0224\n\004" +
+      "tone\030\001 \001(\0132\033.com.hearlers.v1.model.ToneH" +
+      "\000R\004tone\210\001\001B\007\n\005_tone\"p\n\021UpdateToneRequest" +
+      "\022\027\n\007tone_id\030\001 \001(\tR\006toneId\022\027\n\004name\030\002 \001(\tH" +
+      "\000R\004name\210\001\001\022\027\n\004body\030\003 \001(\tH\001R\004body\210\001\001B\007\n\005_" +
+      "nameB\007\n\005_body\"E\n\022UpdateToneResponse\022/\n\004t" +
+      "one\030\001 \001(\0132\033.com.hearlers.v1.model.ToneR\004" +
+      "tone2\275\"\n\016CounselService\022n\n\rCreateCounsel" +
+      "\022-.com.hearlers.v1.service.CreateCounsel" +
+      "Request\032..com.hearlers.v1.service.Create" +
+      "CounselResponse\022k\n\014FindCounsels\022,.com.he" +
+      "arlers.v1.service.FindCounselsRequest\032-." +
+      "com.hearlers.v1.service.FindCounselsResp" +
+      "onse\022t\n\017FindCounselById\022/.com.hearlers.v" +
+      "1.service.FindCounselByIdRequest\0320.com.h" +
+      "earlers.v1.service.FindCounselByIdRespon" +
+      "se\022n\n\rCreateMessage\022-.com.hearlers.v1.se" +
+      "rvice.CreateMessageRequest\032..com.hearler" +
+      "s.v1.service.CreateMessageResponse\022k\n\014Fi" +
+      "ndMessages\022,.com.hearlers.v1.service.Fin" +
+      "dMessagesRequest\032-.com.hearlers.v1.servi" +
+      "ce.FindMessagesResponse\022k\n\014ReactMessage\022" +
+      ",.com.hearlers.v1.service.ReactMessageRe" +
+      "quest\032-.com.hearlers.v1.service.ReactMes" +
+      "sageResponse\022t\n\017CreateCounselor\022/.com.he" +
+      "arlers.v1.service.CreateCounselorRequest" +
+      "\0320.com.hearlers.v1.service.CreateCounsel" +
+      "orResponse\022q\n\016FindCounselors\022..com.hearl" +
+      "ers.v1.service.FindCounselorsRequest\032/.c" +
+      "om.hearlers.v1.service.FindCounselorsRes" +
+      "ponse\022z\n\021FindCounselorById\0221.com.hearler" +
+      "s.v1.service.FindCounselorByIdRequest\0322." +
+      "com.hearlers.v1.service.FindCounselorByI" +
+      "dResponse\022t\n\017UpdateCounselor\022/.com.hearl" +
+      "ers.v1.service.UpdateCounselorRequest\0320." +
+      "com.hearlers.v1.service.UpdateCounselorR" +
+      "esponse\022\241\001\n\036FindCounselorUserRelationshi" +
+      "ps\022>.com.hearlers.v1.service.FindCounsel" +
+      "orUserRelationshipsRequest\032?.com.hearler" +
+      "s.v1.service.FindCounselorUserRelationsh" +
+      "ipsResponse\022\211\001\n\026CreateCounselTechnique\0226" +
+      ".com.hearlers.v1.service.CreateCounselTe" +
+      "chniqueRequest\0327.com.hearlers.v1.service" +
+      ".CreateCounselTechniqueResponse\022\206\001\n\025Find" +
+      "CounselTechniques\0225.com.hearlers.v1.serv" +
+      "ice.FindCounselTechniquesRequest\0326.com.h" +
+      "earlers.v1.service.FindCounselTechniques" +
+      "Response\022\217\001\n\030FindCounselTechniqueById\0228." +
+      "com.hearlers.v1.service.FindCounselTechn" +
+      "iqueByIdRequest\0329.com.hearlers.v1.servic" +
+      "e.FindCounselTechniqueByIdResponse\022\211\001\n\026U" +
+      "pdateCounselTechnique\0226.com.hearlers.v1." +
+      "service.UpdateCounselTechniqueRequest\0327." +
+      "com.hearlers.v1.service.UpdateCounselTec" +
+      "hniqueResponse\022\233\001\n\034SaveCounselTechniqueS" +
+      "equence\022<.com.hearlers.v1.service.SaveCo" +
+      "unselTechniqueSequenceRequest\032=.com.hear" +
+      "lers.v1.service.SaveCounselTechniqueSequ" +
+      "enceResponse\022n\n\rCreatePersona\022-.com.hear" +
+      "lers.v1.service.CreatePersonaRequest\032..c" +
+      "om.hearlers.v1.service.CreatePersonaResp" +
+      "onse\022k\n\014FindPersonas\022,.com.hearlers.v1.s" +
+      "ervice.FindPersonasRequest\032-.com.hearler" +
+      "s.v1.service.FindPersonasResponse\022t\n\017Fin" +
+      "dPersonaById\022/.com.hearlers.v1.service.F" +
+      "indPersonaByIdRequest\0320.com.hearlers.v1." +
+      "service.FindPersonaByIdResponse\022n\n\rUpdat" +
+      "ePersona\022-.com.hearlers.v1.service.Updat" +
+      "ePersonaRequest\032..com.hearlers.v1.servic" +
+      "e.UpdatePersonaResponse\022n\n\rCreateContext" +
+      "\022-.com.hearlers.v1.service.CreateContext" +
+      "Request\032..com.hearlers.v1.service.Create" +
+      "ContextResponse\022k\n\014FindContexts\022,.com.he" +
+      "arlers.v1.service.FindContextsRequest\032-." +
+      "com.hearlers.v1.service.FindContextsResp" +
+      "onse\022t\n\017FindContextById\022/.com.hearlers.v" +
+      "1.service.FindContextByIdRequest\0320.com.h" +
+      "earlers.v1.service.FindContextByIdRespon" +
+      "se\022n\n\rUpdateContext\022-.com.hearlers.v1.se" +
+      "rvice.UpdateContextRequest\032..com.hearler" +
+      "s.v1.service.UpdateContextResponse\022z\n\021Cr" +
+      "eateInstruction\0221.com.hearlers.v1.servic" +
+      "e.CreateInstructionRequest\0322.com.hearler" +
+      "s.v1.service.CreateInstructionResponse\022w" +
+      "\n\020FindInstructions\0220.com.hearlers.v1.ser" +
+      "vice.FindInstructionsRequest\0321.com.hearl" +
+      "ers.v1.service.FindInstructionsResponse\022" +
+      "\200\001\n\023FindInstructionById\0223.com.hearlers.v" +
+      "1.service.FindInstructionByIdRequest\0324.c" +
+      "om.hearlers.v1.service.FindInstructionBy" +
+      "IdResponse\022z\n\021UpdateInstruction\0221.com.he" +
+      "arlers.v1.service.UpdateInstructionReque" +
+      "st\0322.com.hearlers.v1.service.UpdateInstr" +
+      "uctionResponse\022\206\001\n\025CreateInstructionItem" +
+      "\0225.com.hearlers.v1.service.CreateInstruc" +
+      "tionItemRequest\0326.com.hearlers.v1.servic" +
+      "e.CreateInstructionItemResponse\022\203\001\n\024Find" +
+      "InstructionItems\0224.com.hearlers.v1.servi" +
+      "ce.FindInstructionItemsRequest\0325.com.hea" +
+      "rlers.v1.service.FindInstructionItemsRes" +
+      "ponse\022\214\001\n\027FindInstructionItemById\0227.com." +
+      "hearlers.v1.service.FindInstructionItemB" +
+      "yIdRequest\0328.com.hearlers.v1.service.Fin" +
+      "dInstructionItemByIdResponse\022\206\001\n\025UpdateI" +
+      "nstructionItem\0225.com.hearlers.v1.service" +
+      ".UpdateInstructionItemRequest\0326.com.hear" +
+      "lers.v1.service.UpdateInstructionItemRes" +
+      "ponse\022e\n\nCreateTone\022*.com.hearlers.v1.se" +
+      "rvice.CreateToneRequest\032+.com.hearlers.v" +
+      "1.service.CreateToneResponse\022b\n\tFindTone" +
+      "s\022).com.hearlers.v1.service.FindTonesReq" +
+      "uest\032*.com.hearlers.v1.service.FindTones" +
+      "Response\022k\n\014FindToneById\022,.com.hearlers." +
+      "v1.service.FindToneByIdRequest\032-.com.hea" +
+      "rlers.v1.service.FindToneByIdResponse\022e\n" +
+      "\nUpdateTone\022*.com.hearlers.v1.service.Up" +
+      "dateToneRequest\032+.com.hearlers.v1.servic" +
+      "e.UpdateToneResponseB%\n!com.hearlers.api" +
+      ".proto.v1.serviceP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -860,7 +855,7 @@ public final class Counsel {
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_descriptor,
-        new java.lang.String[] { "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", "NextCounselTechniqueId", });
+        new java.lang.String[] { "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", });
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_fieldAccessorTable = new
@@ -896,7 +891,7 @@ public final class Counsel {
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_descriptor,
-        new java.lang.String[] { "CounselTechniqueId", "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", "NextCounselTechniqueId", });
+        new java.lang.String[] { "CounselTechniqueId", "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", });
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_fieldAccessorTable = new
