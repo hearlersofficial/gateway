@@ -1,8 +1,15 @@
 package com.hearlers.gateway.shared.guard.security;
 
+import java.security.Key;
+import java.time.ZonedDateTime;
+import java.util.Date;
+
+import org.springframework.stereotype.Component;
+
 import com.hearlers.gateway.config.JwtProperties;
-import com.hearlers.gateway.presentations.rest.auth.dto.CreateTokenRequestDto;
+import com.hearlers.gateway.presentation.rest.auth.dto.CreateTokenRequestDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -11,13 +18,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import java.security.Key;
-import java.time.ZonedDateTime;
-import java.util.Date;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
