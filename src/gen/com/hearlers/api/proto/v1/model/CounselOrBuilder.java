@@ -118,12 +118,17 @@ public interface CounselOrBuilder extends
       getUpdatedAtBytes();
 
   /**
-   * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  boolean hasDeletedAt();
+  /**
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
   /**
-   * <code>string deleted_at = 10 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

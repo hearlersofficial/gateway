@@ -85,7 +85,7 @@ public final class CounselOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#com/hearlers/v1/model/counsel.proto\022\025c" +
-      "om.hearlers.v1.model\"\362\002\n\007Counsel\022\016\n\002id\030\001" +
+      "om.hearlers.v1.model\"\206\003\n\007Counsel\022\016\n\002id\030\001" +
       " \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013counselo" +
       "rId\022\027\n\007user_id\030\003 \001(\tR\006userId\022!\n\014last_mes" +
       "sage\030\004 \001(\tR\013lastMessage\022$\n\016last_chated_a" +
@@ -94,78 +94,84 @@ public final class CounselOuterClass {
       "elor_user_relationship_id\030\007 \001(\tR\033counsel" +
       "orUserRelationshipId\022\035\n\ncreated_at\030\010 \001(\t" +
       "R\tcreatedAt\022\035\n\nupdated_at\030\t \001(\tR\tupdated" +
-      "At\022\035\n\ndeleted_at\030\n \001(\tR\tdeletedAt\"\310\002\n\016Co" +
-      "unselMessage\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ncounsel_" +
-      "id\030\002 \001(\tR\tcounselId\022\030\n\007message\030\003 \001(\tR\007me" +
-      "ssage\022&\n\017is_user_message\030\004 \001(\010R\risUserMe" +
-      "ssage\022\035\n\nreacted_at\030\005 \001(\tR\treactedAt\022I\n\010" +
-      "reaction\030\006 \001(\0162-.com.hearlers.v1.model.C" +
-      "ounselMessageReactionR\010reaction\022\035\n\ncreat" +
-      "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001" +
-      "(\tR\tupdatedAt\022\035\n\ndeleted_at\030\t \001(\tR\tdelet" +
-      "edAt\"\202\003\n\tCounselor\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007to" +
-      "ne_id\030\002 \001(\tR\006toneId\022\022\n\004name\030\003 \001(\tR\004name\022" +
-      " \n\013description\030\004 \001(\tR\013description\022>\n\006gen" +
-      "der\030\005 \001(\0162&.com.hearlers.v1.model.Counse" +
-      "lorGenderR\006gender\022#\n\rintro_message\030\006 \001(\t" +
-      "R\014introMessage\022)\n\020response_option1\030\007 \001(\t" +
-      "R\017responseOption1\022)\n\020response_option2\030\010 " +
-      "\001(\tR\017responseOption2\022\035\n\ncreated_at\030\t \001(\t" +
-      "R\tcreatedAt\022\035\n\nupdated_at\030\n \001(\tR\tupdated" +
-      "At\022\035\n\ndeleted_at\030\013 \001(\tR\tdeletedAt\"\307\003\n\020Co" +
-      "unselTechnique\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002" +
-      " \001(\tR\004name\022\034\n\007tone_id\030\003 \001(\tH\000R\006toneId\210\001\001" +
-      "\022\035\n\ncontext_id\030\004 \001(\tR\tcontextId\022%\n\016instr" +
-      "uction_id\030\005 \001(\tR\rinstructionId\022d\n\027counse" +
-      "l_technique_stage\030\006 \001(\0162,.com.hearlers.v" +
-      "1.model.CounselTechniqueStageR\025counselTe" +
-      "chniqueStage\022>\n\031next_counsel_technique_i" +
-      "d\030\007 \001(\tH\001R\026nextCounselTechniqueId\210\001\001\022\035\n\n" +
-      "created_at\030\010 \001(\tR\tcreatedAt\022\035\n\nupdated_a" +
-      "t\030\t \001(\tR\tupdatedAt\022\035\n\ndeleted_at\030\n \001(\tR\t" +
-      "deletedAtB\n\n\010_tone_idB\034\n\032_next_counsel_t" +
-      "echnique_id\"\336\001\n\031CounselorUserRelationshi" +
-      "p\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR" +
-      "\013counselorId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030\n" +
-      "\007rapport\030\004 \001(\005R\007rapport\022\035\n\ncreated_at\030\005 " +
-      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupda" +
-      "tedAt\022\035\n\ndeleted_at\030\007 \001(\tR\tdeletedAt\"\255\001\n" +
-      "\007Persona\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002 \001(\tR\004" +
-      "body\022!\n\014counselor_id\030\003 \001(\tR\013counselorId\022" +
-      "\035\n\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdate" +
-      "d_at\030\005 \001(\tR\tupdatedAt\022\035\n\ndeleted_at\030\006 \001(" +
-      "\tR\tdeletedAt\"\302\001\n\007Context\022\016\n\002id\030\001 \001(\tR\002id" +
-      "\022\022\n\004name\030\002 \001(\tR\004name\022\"\n\014placeholders\030\003 \003" +
-      "(\tR\014placeholders\022\022\n\004body\030\004 \001(\tR\004body\022\035\n\n" +
-      "created_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_a" +
-      "t\030\006 \001(\tR\tupdatedAt\022\035\n\ndeleted_at\030\007 \001(\tR\t" +
-      "deletedAt\"\250\002\n\013Instruction\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\022\n\004name\030\002 \001(\tR\004name\022.\n\020initial_sentenc" +
-      "e\030\003 \001(\tH\000R\017initialSentence\210\001\001\022S\n\021instruc" +
-      "tion_items\030\004 \003(\0132&.com.hearlers.v1.model" +
-      ".InstructionItemR\020instructionItems\022\035\n\ncr" +
+      "At\022\"\n\ndeleted_at\030\n \001(\tH\000R\tdeletedAt\210\001\001B\r" +
+      "\n\013_deleted_at\"\202\003\n\016CounselMessage\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\035\n\ncounsel_id\030\002 \001(\tR\tcounselId\022" +
+      "\030\n\007message\030\003 \001(\tR\007message\022&\n\017is_user_mes" +
+      "sage\030\004 \001(\010R\risUserMessage\022\"\n\nreacted_at\030" +
+      "\005 \001(\tH\000R\treactedAt\210\001\001\022N\n\010reaction\030\006 \001(\0162" +
+      "-.com.hearlers.v1.model.CounselMessageRe" +
+      "actionH\001R\010reaction\210\001\001\022\035\n\ncreated_at\030\007 \001(" +
+      "\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdate" +
+      "dAt\022\"\n\ndeleted_at\030\t \001(\tH\002R\tdeletedAt\210\001\001B" +
+      "\r\n\013_reacted_atB\013\n\t_reactionB\r\n\013_deleted_" +
+      "at\"\226\003\n\tCounselor\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007tone" +
+      "_id\030\002 \001(\tR\006toneId\022\022\n\004name\030\003 \001(\tR\004name\022 \n" +
+      "\013description\030\004 \001(\tR\013description\022>\n\006gende" +
+      "r\030\005 \001(\0162&.com.hearlers.v1.model.Counselo" +
+      "rGenderR\006gender\022#\n\rintro_message\030\006 \001(\tR\014" +
+      "introMessage\022)\n\020response_option1\030\007 \001(\tR\017" +
+      "responseOption1\022)\n\020response_option2\030\010 \001(" +
+      "\tR\017responseOption2\022\035\n\ncreated_at\030\t \001(\tR\t" +
+      "createdAt\022\035\n\nupdated_at\030\n \001(\tR\tupdatedAt" +
+      "\022\"\n\ndeleted_at\030\013 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013" +
+      "_deleted_at\"\333\003\n\020CounselTechnique\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034\n\007tone_id\030" +
+      "\003 \001(\tH\000R\006toneId\210\001\001\022\035\n\ncontext_id\030\004 \001(\tR\t" +
+      "contextId\022%\n\016instruction_id\030\005 \001(\tR\rinstr" +
+      "uctionId\022d\n\027counsel_technique_stage\030\006 \001(" +
+      "\0162,.com.hearlers.v1.model.CounselTechniq" +
+      "ueStageR\025counselTechniqueStage\022>\n\031next_c" +
+      "ounsel_technique_id\030\007 \001(\tH\001R\026nextCounsel" +
+      "TechniqueId\210\001\001\022\035\n\ncreated_at\030\010 \001(\tR\tcrea" +
+      "tedAt\022\035\n\nupdated_at\030\t \001(\tR\tupdatedAt\022\"\n\n" +
+      "deleted_at\030\n \001(\tH\002R\tdeletedAt\210\001\001B\n\n\010_ton" +
+      "e_idB\034\n\032_next_counsel_technique_idB\r\n\013_d" +
+      "eleted_at\"\362\001\n\031CounselorUserRelationship\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013c" +
+      "ounselorId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030\n\007r" +
+      "apport\030\004 \001(\005R\007rapport\022\035\n\ncreated_at\030\005 \001(" +
+      "\tR\tcreatedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdate" +
+      "dAt\022\"\n\ndeleted_at\030\007 \001(\tH\000R\tdeletedAt\210\001\001B" +
+      "\r\n\013_deleted_at\"\301\001\n\007Persona\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022\022\n\004body\030\002 \001(\tR\004body\022!\n\014counselor_id\030\003" +
+      " \001(\tR\013counselorId\022\035\n\ncreated_at\030\004 \001(\tR\tc" +
+      "reatedAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022" +
+      "\"\n\ndeleted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_" +
+      "deleted_at\"\326\001\n\007Context\022\016\n\002id\030\001 \001(\tR\002id\022\022" +
+      "\n\004name\030\002 \001(\tR\004name\022\"\n\014placeholders\030\003 \003(\t" +
+      "R\014placeholders\022\022\n\004body\030\004 \001(\tR\004body\022\035\n\ncr" +
       "eated_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030" +
-      "\006 \001(\tR\tupdatedAt\022\035\n\ndeleted_at\030\007 \001(\tR\tde" +
-      "letedAtB\023\n\021_initial_sentence\"\222\001\n\017Instruc" +
-      "tionItem\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002 \001(\tR\004" +
-      "body\022\035\n\ncreated_at\030\003 \001(\tR\tcreatedAt\022\035\n\nu" +
-      "pdated_at\030\004 \001(\tR\tupdatedAt\022\035\n\ndeleted_at" +
-      "\030\005 \001(\tR\tdeletedAt\"\233\001\n\004Tone\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004body\030\003 \001(\tR\004bo" +
-      "dy\022\035\n\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupd" +
-      "ated_at\030\005 \001(\tR\tupdatedAt\022\035\n\ndeleted_at\030\006" +
-      " \001(\tR\tdeletedAt*\213\001\n\026CounselMessageReacti" +
-      "on\022(\n$COUNSEL_MESSAGE_REACTION_UNSPECIFI" +
-      "ED\020\000\022!\n\035COUNSEL_MESSAGE_REACTION_LIKE\020\001\022" +
-      "$\n COUNSEL_MESSAGE_REACTION_DISLIKE\020\002*\206\001" +
-      "\n\017CounselorGender\022 \n\034COUNSELOR_GENDER_UN" +
-      "SPECIFIED\020\000\022\031\n\025COUNSELOR_GENDER_MALE\020\001\022\033" +
-      "\n\027COUNSELOR_GENDER_FEMALE\020\002\022\031\n\025COUNSELOR" +
-      "_GENDER_NONE\020\003*\211\001\n\025CounselTechniqueStage" +
-      "\022\'\n#COUNSEL_TECHNIQUE_STAGE_UNSPECIFIED\020" +
-      "\000\022#\n\037COUNSEL_TECHNIQUE_STAGE_INITIAL\020\001\022\"" +
-      "\n\036COUNSEL_TECHNIQUE_STAGE_MIDDLE\020\002B#\n\037co" +
-      "m.hearlers.api.proto.v1.modelP\001b\006proto3"
+      "\006 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\007 \001(\tH\000R\t" +
+      "deletedAt\210\001\001B\r\n\013_deleted_at\"\274\002\n\013Instruct" +
+      "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      ".\n\020initial_sentence\030\003 \001(\tH\000R\017initialSent" +
+      "ence\210\001\001\022S\n\021instruction_items\030\004 \003(\0132&.com" +
+      ".hearlers.v1.model.InstructionItemR\020inst" +
+      "ructionItems\022\035\n\ncreated_at\030\005 \001(\tR\tcreate" +
+      "dAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\022\"\n\nde" +
+      "leted_at\030\007 \001(\tH\001R\tdeletedAt\210\001\001B\023\n\021_initi" +
+      "al_sentenceB\r\n\013_deleted_at\"\246\001\n\017Instructi" +
+      "onItem\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002 \001(\tR\004bo" +
+      "dy\022\035\n\ncreated_at\030\003 \001(\tR\tcreatedAt\022\035\n\nupd" +
+      "ated_at\030\004 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\005" +
+      " \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\257\001\n\004" +
+      "Tone\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name" +
+      "\022\022\n\004body\030\003 \001(\tR\004body\022\035\n\ncreated_at\030\004 \001(\t" +
+      "R\tcreatedAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdated" +
+      "At\022\"\n\ndeleted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r" +
+      "\n\013_deleted_at*\213\001\n\026CounselMessageReaction" +
+      "\022(\n$COUNSEL_MESSAGE_REACTION_UNSPECIFIED" +
+      "\020\000\022!\n\035COUNSEL_MESSAGE_REACTION_LIKE\020\001\022$\n" +
+      " COUNSEL_MESSAGE_REACTION_DISLIKE\020\002*\206\001\n\017" +
+      "CounselorGender\022 \n\034COUNSELOR_GENDER_UNSP" +
+      "ECIFIED\020\000\022\031\n\025COUNSELOR_GENDER_MALE\020\001\022\033\n\027" +
+      "COUNSELOR_GENDER_FEMALE\020\002\022\031\n\025COUNSELOR_G" +
+      "ENDER_NONE\020\003*\211\001\n\025CounselTechniqueStage\022\'" +
+      "\n#COUNSEL_TECHNIQUE_STAGE_UNSPECIFIED\020\000\022" +
+      "#\n\037COUNSEL_TECHNIQUE_STAGE_INITIAL\020\001\022\"\n\036" +
+      "COUNSEL_TECHNIQUE_STAGE_MIDDLE\020\002B#\n\037com." +
+      "hearlers.api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

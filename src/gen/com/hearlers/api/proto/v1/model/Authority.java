@@ -6,26 +6,22 @@
 package com.hearlers.api.proto.v1.model;
 
 /**
- * Protobuf enum {@code com.hearlers.v1.model.AuthChannel}
+ * Protobuf enum {@code com.hearlers.v1.model.Authority}
  */
-public enum AuthChannel
+public enum Authority
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>AUTH_CHANNEL_UNSPECIFIED = 0;</code>
+   * <code>AUTHORITY_UNSPECIFIED = 0;</code>
    */
-  AUTH_CHANNEL_UNSPECIFIED(0),
+  AUTHORITY_UNSPECIFIED(0),
   /**
-   * <code>AUTH_CHANNEL_UNLINKED = 1;</code>
+   * <code>AUTHORITY_USER = 1;</code>
    */
-  AUTH_CHANNEL_UNLINKED(1),
+  AUTHORITY_USER(1),
   /**
-   * <code>AUTH_CHANNEL_KAKAO = 2;</code>
+   * <code>AUTHORITY_ADMIN = 2;</code>
    */
-  AUTH_CHANNEL_KAKAO(2),
-  /**
-   * <code>AUTH_CHANNEL_NAVER = 3;</code>
-   */
-  AUTH_CHANNEL_NAVER(3),
+  AUTHORITY_ADMIN(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -36,24 +32,20 @@ public enum AuthChannel
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      AuthChannel.class.getName());
+      Authority.class.getName());
   }
   /**
-   * <code>AUTH_CHANNEL_UNSPECIFIED = 0;</code>
+   * <code>AUTHORITY_UNSPECIFIED = 0;</code>
    */
-  public static final int AUTH_CHANNEL_UNSPECIFIED_VALUE = 0;
+  public static final int AUTHORITY_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>AUTH_CHANNEL_UNLINKED = 1;</code>
+   * <code>AUTHORITY_USER = 1;</code>
    */
-  public static final int AUTH_CHANNEL_UNLINKED_VALUE = 1;
+  public static final int AUTHORITY_USER_VALUE = 1;
   /**
-   * <code>AUTH_CHANNEL_KAKAO = 2;</code>
+   * <code>AUTHORITY_ADMIN = 2;</code>
    */
-  public static final int AUTH_CHANNEL_KAKAO_VALUE = 2;
-  /**
-   * <code>AUTH_CHANNEL_NAVER = 3;</code>
-   */
-  public static final int AUTH_CHANNEL_NAVER_VALUE = 3;
+  public static final int AUTHORITY_ADMIN_VALUE = 2;
 
 
   public final int getNumber() {
@@ -70,7 +62,7 @@ public enum AuthChannel
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AuthChannel valueOf(int value) {
+  public static Authority valueOf(int value) {
     return forNumber(value);
   }
 
@@ -78,25 +70,24 @@ public enum AuthChannel
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AuthChannel forNumber(int value) {
+  public static Authority forNumber(int value) {
     switch (value) {
-      case 0: return AUTH_CHANNEL_UNSPECIFIED;
-      case 1: return AUTH_CHANNEL_UNLINKED;
-      case 2: return AUTH_CHANNEL_KAKAO;
-      case 3: return AUTH_CHANNEL_NAVER;
+      case 0: return AUTHORITY_UNSPECIFIED;
+      case 1: return AUTHORITY_USER;
+      case 2: return AUTHORITY_ADMIN;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AuthChannel>
+  public static com.google.protobuf.Internal.EnumLiteMap<Authority>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      AuthChannel> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AuthChannel>() {
-          public AuthChannel findValueByNumber(int number) {
-            return AuthChannel.forNumber(number);
+      Authority> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Authority>() {
+          public Authority findValueByNumber(int number) {
+            return Authority.forNumber(number);
           }
         };
 
@@ -114,12 +105,12 @@ public enum AuthChannel
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.AuthUserOuterClass.getDescriptor().getEnumTypes().get(1);
+    return com.hearlers.api.proto.v1.model.AuthUserOuterClass.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final AuthChannel[] VALUES = values();
+  private static final Authority[] VALUES = values();
 
-  public static AuthChannel valueOf(
+  public static Authority valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -133,10 +124,10 @@ public enum AuthChannel
 
   private final int value;
 
-  private AuthChannel(int value) {
+  private Authority(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:com.hearlers.v1.model.AuthChannel)
+  // @@protoc_insertion_point(enum_scope:com.hearlers.v1.model.Authority)
 }
 

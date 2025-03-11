@@ -50,31 +50,35 @@ public final class AuthUserOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%com/hearlers/v1/model/auth_user.proto\022" +
-      "\025com.hearlers.v1.model\"\236\003\n\010AuthUser\022\016\n\002i" +
+      "\025com.hearlers.v1.model\"\362\003\n\010AuthUser\022\016\n\002i" +
       "d\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022E\n\014" +
       "auth_channel\030\003 \001(\0162\".com.hearlers.v1.mod" +
       "el.AuthChannelR\013authChannel\022U\n\022oauth_cha" +
       "nnel_info\030\004 \001(\0132\'.com.hearlers.v1.model." +
       "OAuthChannelInfoR\020oauthChannelInfo\022J\n\016re" +
       "fresh_tokens\030\005 \003(\0132#.com.hearlers.v1.mod" +
-      "el.RefreshTokenR\rrefreshTokens\022\"\n\rlast_l" +
-      "ogin_at\030\006 \001(\tR\013lastLoginAt\022\035\n\ncreated_at" +
-      "\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tu" +
-      "pdatedAt\022\035\n\ndeleted_at\030\t \001(\tR\tdeletedAt\"" +
-      "\343\001\n\020OAuthChannelInfo\022\016\n\002id\030\001 \001(\tR\002id\022E\n\014" +
-      "auth_channel\030\002 \001(\0162\".com.hearlers.v1.mod" +
-      "el.AuthChannelR\013authChannel\022\033\n\tunique_id" +
-      "\030\003 \001(\tR\010uniqueId\022\035\n\ncreated_at\030\004 \001(\tR\tcr" +
-      "eatedAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\035" +
-      "\n\ndeleted_at\030\006 \001(\tR\tdeletedAt\"\201\001\n\014Refres" +
-      "hToken\022\024\n\005token\030\001 \001(\tR\005token\022\035\n\nexpires_" +
-      "at\030\002 \001(\tR\texpiresAt\022\035\n\ncreated_at\030\003 \001(\tR" +
-      "\tcreatedAt\022\035\n\nupdated_at\030\004 \001(\tR\tupdatedA" +
-      "t*v\n\013AuthChannel\022\034\n\030AUTH_CHANNEL_UNSPECI" +
-      "FIED\020\000\022\031\n\025AUTH_CHANNEL_UNLINKED\020\001\022\026\n\022AUT" +
-      "H_CHANNEL_KAKAO\020\002\022\026\n\022AUTH_CHANNEL_NAVER\020" +
-      "\003B#\n\037com.hearlers.api.proto.v1.modelP\001b\006" +
-      "proto3"
+      "el.RefreshTokenR\rrefreshTokens\022>\n\tauthor" +
+      "ity\030\006 \001(\0162 .com.hearlers.v1.model.Author" +
+      "ityR\tauthority\022\"\n\rlast_login_at\030\007 \001(\tR\013l" +
+      "astLoginAt\022\035\n\ncreated_at\030\010 \001(\tR\tcreatedA" +
+      "t\022\035\n\nupdated_at\030\t \001(\tR\tupdatedAt\022\"\n\ndele" +
+      "ted_at\030\n \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted" +
+      "_at\"\367\001\n\020OAuthChannelInfo\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\022E\n\014auth_channel\030\002 \001(\0162\".com.hearlers.v1" +
+      ".model.AuthChannelR\013authChannel\022\033\n\tuniqu" +
+      "e_id\030\003 \001(\tR\010uniqueId\022\035\n\ncreated_at\030\004 \001(\t" +
+      "R\tcreatedAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdated" +
+      "At\022\"\n\ndeleted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r" +
+      "\n\013_deleted_at\"\201\001\n\014RefreshToken\022\024\n\005token\030" +
+      "\001 \001(\tR\005token\022\035\n\nexpires_at\030\002 \001(\tR\texpire" +
+      "sAt\022\035\n\ncreated_at\030\003 \001(\tR\tcreatedAt\022\035\n\nup" +
+      "dated_at\030\004 \001(\tR\tupdatedAt*O\n\tAuthority\022\031" +
+      "\n\025AUTHORITY_UNSPECIFIED\020\000\022\022\n\016AUTHORITY_U" +
+      "SER\020\001\022\023\n\017AUTHORITY_ADMIN\020\002*v\n\013AuthChanne" +
+      "l\022\034\n\030AUTH_CHANNEL_UNSPECIFIED\020\000\022\031\n\025AUTH_" +
+      "CHANNEL_UNLINKED\020\001\022\026\n\022AUTH_CHANNEL_KAKAO" +
+      "\020\002\022\026\n\022AUTH_CHANNEL_NAVER\020\003B#\n\037com.hearle" +
+      "rs.api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -85,7 +89,7 @@ public final class AuthUserOuterClass {
     internal_static_com_hearlers_v1_model_AuthUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_AuthUser_descriptor,
-        new java.lang.String[] { "Id", "UserId", "AuthChannel", "OauthChannelInfo", "RefreshTokens", "LastLoginAt", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "UserId", "AuthChannel", "OauthChannelInfo", "RefreshTokens", "Authority", "LastLoginAt", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_OAuthChannelInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_model_OAuthChannelInfo_fieldAccessorTable = new

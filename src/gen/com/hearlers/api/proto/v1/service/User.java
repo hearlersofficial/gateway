@@ -135,6 +135,16 @@ public final class User {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_CreateActivityResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -219,38 +229,46 @@ public final class User {
       "\030\006 \001(\005R\017durationSeconds\"b\n\026CreateActivit" +
       "yResponse\022H\n\ruser_activity\030\001 \001(\0132#.com.h" +
       "earlers.v1.model.UserActivityR\014userActiv" +
-      "ity2\247\t\n\013UserService\022q\n\016InitializeUser\022.." +
-      "com.hearlers.v1.service.InitializeUserRe" +
-      "quest\032/.com.hearlers.v1.service.Initiali" +
-      "zeUserResponse\022}\n\022ConnectAuthChannel\0222.c" +
-      "om.hearlers.v1.service.ConnectAuthChanne" +
-      "lRequest\0323.com.hearlers.v1.service.Conne" +
-      "ctAuthChannelResponse\022w\n\020SaveRefreshToke" +
-      "n\0220.com.hearlers.v1.service.SaveRefreshT" +
-      "okenRequest\0321.com.hearlers.v1.service.Sa" +
-      "veRefreshTokenResponse\022}\n\022VerifyRefreshT" +
-      "oken\0222.com.hearlers.v1.service.VerifyRef" +
-      "reshTokenRequest\0323.com.hearlers.v1.servi" +
-      "ce.VerifyRefreshTokenResponse\022h\n\013FindOne" +
-      "User\022+.com.hearlers.v1.service.FindOneUs" +
-      "erRequest\032,.com.hearlers.v1.service.Find" +
-      "OneUserResponse\022t\n\017FindOneAuthUser\022/.com" +
-      ".hearlers.v1.service.FindOneAuthUserRequ" +
-      "est\0320.com.hearlers.v1.service.FindOneAut" +
-      "hUserResponse\022\203\001\n\024CheckRemainingTokens\0224" +
-      ".com.hearlers.v1.service.CheckRemainingT" +
-      "okensRequest\0325.com.hearlers.v1.service.C" +
-      "heckRemainingTokensResponse\022n\n\rReserveTo" +
-      "kens\022-.com.hearlers.v1.service.ReserveTo" +
-      "kensRequest\032..com.hearlers.v1.service.Re" +
-      "serveTokensResponse\022e\n\nUpdateUser\022*.com." +
-      "hearlers.v1.service.UpdateUserRequest\032+." +
-      "com.hearlers.v1.service.UpdateUserRespon" +
-      "se\022q\n\016CreateActivity\022..com.hearlers.v1.s" +
-      "ervice.CreateActivityRequest\032/.com.hearl" +
-      "ers.v1.service.CreateActivityResponseB%\n" +
-      "!com.hearlers.api.proto.v1.serviceP\001b\006pr" +
-      "oto3"
+      "ity\"z\n\026UpdateAuthorityRequest\022 \n\014auth_us" +
+      "er_id\030\001 \001(\tR\nauthUserId\022>\n\tauthority\030\002 \001" +
+      "(\0162 .com.hearlers.v1.model.AuthorityR\tau" +
+      "thority\"W\n\027UpdateAuthorityResponse\022<\n\tau" +
+      "th_user\030\001 \001(\0132\037.com.hearlers.v1.model.Au" +
+      "thUserR\010authUser2\235\n\n\013UserService\022q\n\016Init" +
+      "ializeUser\022..com.hearlers.v1.service.Ini" +
+      "tializeUserRequest\032/.com.hearlers.v1.ser" +
+      "vice.InitializeUserResponse\022}\n\022ConnectAu" +
+      "thChannel\0222.com.hearlers.v1.service.Conn" +
+      "ectAuthChannelRequest\0323.com.hearlers.v1." +
+      "service.ConnectAuthChannelResponse\022w\n\020Sa" +
+      "veRefreshToken\0220.com.hearlers.v1.service" +
+      ".SaveRefreshTokenRequest\0321.com.hearlers." +
+      "v1.service.SaveRefreshTokenResponse\022}\n\022V" +
+      "erifyRefreshToken\0222.com.hearlers.v1.serv" +
+      "ice.VerifyRefreshTokenRequest\0323.com.hear" +
+      "lers.v1.service.VerifyRefreshTokenRespon" +
+      "se\022h\n\013FindOneUser\022+.com.hearlers.v1.serv" +
+      "ice.FindOneUserRequest\032,.com.hearlers.v1" +
+      ".service.FindOneUserResponse\022t\n\017FindOneA" +
+      "uthUser\022/.com.hearlers.v1.service.FindOn" +
+      "eAuthUserRequest\0320.com.hearlers.v1.servi" +
+      "ce.FindOneAuthUserResponse\022\203\001\n\024CheckRema" +
+      "iningTokens\0224.com.hearlers.v1.service.Ch" +
+      "eckRemainingTokensRequest\0325.com.hearlers" +
+      ".v1.service.CheckRemainingTokensResponse" +
+      "\022n\n\rReserveTokens\022-.com.hearlers.v1.serv" +
+      "ice.ReserveTokensRequest\032..com.hearlers." +
+      "v1.service.ReserveTokensResponse\022e\n\nUpda" +
+      "teUser\022*.com.hearlers.v1.service.UpdateU" +
+      "serRequest\032+.com.hearlers.v1.service.Upd" +
+      "ateUserResponse\022q\n\016CreateActivity\022..com." +
+      "hearlers.v1.service.CreateActivityReques" +
+      "t\032/.com.hearlers.v1.service.CreateActivi" +
+      "tyResponse\022t\n\017UpdateAuthority\022/.com.hear" +
+      "lers.v1.service.UpdateAuthorityRequest\0320" +
+      ".com.hearlers.v1.service.UpdateAuthority" +
+      "ResponseB%\n!com.hearlers.api.proto.v1.se" +
+      "rviceP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -392,6 +410,18 @@ public final class User {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateActivityResponse_descriptor,
         new java.lang.String[] { "UserActivity", });
+    internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_descriptor,
+        new java.lang.String[] { "AuthUserId", "Authority", });
+    internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_descriptor,
+        new java.lang.String[] { "AuthUser", });
     descriptor.resolveAllFeaturesImmutable();
     com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor();
     com.hearlers.api.proto.v1.model.AuthUserOuterClass.getDescriptor();

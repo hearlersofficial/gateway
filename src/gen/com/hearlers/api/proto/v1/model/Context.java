@@ -50,6 +50,7 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.model.Context.class, com.hearlers.api.proto.v1.model.Context.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
@@ -209,7 +210,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object createdAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -230,7 +231,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -256,7 +257,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object updatedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -277,7 +278,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -303,10 +304,22 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object deletedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletedAt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -324,10 +337,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -377,7 +390,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, deletedAt_);
     }
     getUnknownFields().writeTo(output);
@@ -412,7 +425,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -442,8 +455,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
         .equals(other.getUpdatedAt())) return false;
-    if (!getDeletedAt()
-        .equals(other.getDeletedAt())) return false;
+    if (hasDeletedAt() != other.hasDeletedAt()) return false;
+    if (hasDeletedAt()) {
+      if (!getDeletedAt()
+          .equals(other.getDeletedAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -469,8 +485,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getDeletedAt().hashCode();
+    if (hasDeletedAt()) {
+      hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getDeletedAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -662,9 +680,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.updatedAt_ = updatedAt_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.deletedAt_ = deletedAt_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -714,7 +735,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000020;
         onChanged();
       }
-      if (!other.getDeletedAt().isEmpty()) {
+      if (other.hasDeletedAt()) {
         deletedAt_ = other.deletedAt_;
         bitField0_ |= 0x00000040;
         onChanged();
@@ -1128,7 +1149,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -1148,7 +1169,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -1169,7 +1190,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -1186,7 +1207,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -1200,7 +1221,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 5 [json_name = "createdAt"];</code>
@@ -1220,7 +1241,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object updatedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -1240,7 +1261,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -1261,7 +1282,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -1278,7 +1299,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -1292,7 +1313,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
@@ -1312,10 +1333,21 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object deletedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * @return Whether the deletedAt field is set.
+     */
+    public boolean hasDeletedAt() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -1332,10 +1364,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -1353,10 +1385,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1370,10 +1402,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
@@ -1384,10 +1416,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */

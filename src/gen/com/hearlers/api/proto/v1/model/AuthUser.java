@@ -31,6 +31,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     authChannel_ = 0;
     refreshTokens_ = java.util.Collections.emptyList();
+    authority_ = 0;
     lastLoginAt_ = "";
     createdAt_ = "";
     updatedAt_ = "";
@@ -214,15 +215,33 @@ private static final long serialVersionUID = 0L;
     return refreshTokens_.get(index);
   }
 
-  public static final int LAST_LOGIN_AT_FIELD_NUMBER = 6;
+  public static final int AUTHORITY_FIELD_NUMBER = 6;
+  private int authority_ = 0;
+  /**
+   * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+   * @return The enum numeric value on the wire for authority.
+   */
+  @java.lang.Override public int getAuthorityValue() {
+    return authority_;
+  }
+  /**
+   * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+   * @return The authority.
+   */
+  @java.lang.Override public com.hearlers.api.proto.v1.model.Authority getAuthority() {
+    com.hearlers.api.proto.v1.model.Authority result = com.hearlers.api.proto.v1.model.Authority.forNumber(authority_);
+    return result == null ? com.hearlers.api.proto.v1.model.Authority.UNRECOGNIZED : result;
+  }
+
+  public static final int LAST_LOGIN_AT_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastLoginAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+   * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
    * @return The lastLoginAt.
    */
   @java.lang.Override
@@ -240,10 +259,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+   * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
    * @return The bytes for lastLoginAt.
    */
   @java.lang.Override
@@ -261,15 +280,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 7;
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 7 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -287,10 +306,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 7 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -308,15 +327,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 8;
+  public static final int UPDATED_AT_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -334,10 +353,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -355,15 +374,27 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DELETED_AT_FIELD_NUMBER = 9;
+  public static final int DELETED_AT_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deletedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletedAt() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -381,10 +412,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -431,17 +462,20 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < refreshTokens_.size(); i++) {
       output.writeMessage(5, refreshTokens_.get(i));
     }
+    if (authority_ != com.hearlers.api.proto.v1.model.Authority.AUTHORITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, authority_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastLoginAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, lastLoginAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, lastLoginAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, createdAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, updatedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 9, deletedAt_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, deletedAt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -470,17 +504,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, refreshTokens_.get(i));
     }
+    if (authority_ != com.hearlers.api.proto.v1.model.Authority.AUTHORITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, authority_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastLoginAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, lastLoginAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, lastLoginAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, createdAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, updatedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, deletedAt_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -509,14 +547,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRefreshTokensList()
         .equals(other.getRefreshTokensList())) return false;
+    if (authority_ != other.authority_) return false;
     if (!getLastLoginAt()
         .equals(other.getLastLoginAt())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
         .equals(other.getUpdatedAt())) return false;
-    if (!getDeletedAt()
-        .equals(other.getDeletedAt())) return false;
+    if (hasDeletedAt() != other.hasDeletedAt()) return false;
+    if (hasDeletedAt()) {
+      if (!getDeletedAt()
+          .equals(other.getDeletedAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -542,14 +584,18 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REFRESH_TOKENS_FIELD_NUMBER;
       hash = (53 * hash) + getRefreshTokensList().hashCode();
     }
+    hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+    hash = (53 * hash) + authority_;
     hash = (37 * hash) + LAST_LOGIN_AT_FIELD_NUMBER;
     hash = (53 * hash) + getLastLoginAt().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getDeletedAt().hashCode();
+    if (hasDeletedAt()) {
+      hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getDeletedAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -703,6 +749,7 @@ private static final long serialVersionUID = 0L;
         refreshTokensBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      authority_ = 0;
       lastLoginAt_ = "";
       createdAt_ = "";
       updatedAt_ = "";
@@ -770,16 +817,20 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.lastLoginAt_ = lastLoginAt_;
+        result.authority_ = authority_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.createdAt_ = createdAt_;
+        result.lastLoginAt_ = lastLoginAt_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.updatedAt_ = updatedAt_;
+        result.createdAt_ = createdAt_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updatedAt_ = updatedAt_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.deletedAt_ = deletedAt_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -838,24 +889,27 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.authority_ != 0) {
+        setAuthorityValue(other.getAuthorityValue());
+      }
       if (!other.getLastLoginAt().isEmpty()) {
         lastLoginAt_ = other.lastLoginAt_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getUpdatedAt().isEmpty()) {
         updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
-      if (!other.getDeletedAt().isEmpty()) {
+      if (other.hasDeletedAt()) {
         deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -919,26 +973,31 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 42
-            case 50: {
-              lastLoginAt_ = input.readStringRequireUtf8();
+            case 48: {
+              authority_ = input.readEnum();
               bitField0_ |= 0x00000020;
               break;
-            } // case 50
+            } // case 48
             case 58: {
-              createdAt_ = input.readStringRequireUtf8();
+              lastLoginAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
             case 66: {
-              updatedAt_ = input.readStringRequireUtf8();
+              createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
               break;
             } // case 66
             case 74: {
-              deletedAt_ = input.readStringRequireUtf8();
+              updatedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
               break;
             } // case 74
+            case 82: {
+              deletedAt_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1514,13 +1573,66 @@ private static final long serialVersionUID = 0L;
       return refreshTokensBuilder_;
     }
 
+    private int authority_ = 0;
+    /**
+     * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+     * @return The enum numeric value on the wire for authority.
+     */
+    @java.lang.Override public int getAuthorityValue() {
+      return authority_;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+     * @param value The enum numeric value on the wire for authority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorityValue(int value) {
+      authority_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public com.hearlers.api.proto.v1.model.Authority getAuthority() {
+      com.hearlers.api.proto.v1.model.Authority result = com.hearlers.api.proto.v1.model.Authority.forNumber(authority_);
+      return result == null ? com.hearlers.api.proto.v1.model.Authority.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+     * @param value The authority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthority(com.hearlers.api.proto.v1.model.Authority value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      authority_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.Authority authority = 6 [json_name = "authority"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthority() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      authority_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object lastLoginAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+     * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
      * @return The lastLoginAt.
      */
     public java.lang.String getLastLoginAt() {
@@ -1537,10 +1649,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+     * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
      * @return The bytes for lastLoginAt.
      */
     public com.google.protobuf.ByteString
@@ -1558,10 +1670,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+     * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
      * @param value The lastLoginAt to set.
      * @return This builder for chaining.
      */
@@ -1569,30 +1681,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       lastLoginAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+     * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearLastLoginAt() {
       lastLoginAt_ = getDefaultInstance().getLastLoginAt();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string last_login_at = 6 [json_name = "lastLoginAt"];</code>
+     * <code>string last_login_at = 7 [json_name = "lastLoginAt"];</code>
      * @param value The bytes for lastLoginAt to set.
      * @return This builder for chaining.
      */
@@ -1601,7 +1713,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       lastLoginAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1609,10 +1721,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1629,10 +1741,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1650,10 +1762,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1661,30 +1773,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       createdAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
       createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -1693,7 +1805,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       createdAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1701,10 +1813,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object updatedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -1721,10 +1833,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -1742,10 +1854,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1753,30 +1865,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       updatedAt_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
       updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1785,7 +1897,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       updatedAt_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1793,10 +1905,21 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object deletedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
+     * @return Whether the deletedAt field is set.
+     */
+    public boolean hasDeletedAt() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
+     * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -1813,10 +1936,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -1834,10 +1957,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1845,30 +1968,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deletedAt_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
       deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1877,7 +2000,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deletedAt_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

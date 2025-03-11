@@ -50,6 +50,7 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.model.CounselMessage.class, com.hearlers.api.proto.v1.model.CounselMessage.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
@@ -183,10 +184,22 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object reactedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * @return Whether the reactedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasReactedAt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
    * @return The reactedAt.
    */
   @java.lang.Override
@@ -204,10 +217,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
    * @return The bytes for reactedAt.
    */
   @java.lang.Override
@@ -228,14 +241,21 @@ private static final long serialVersionUID = 0L;
   public static final int REACTION_FIELD_NUMBER = 6;
   private int reaction_ = 0;
   /**
-   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * @return Whether the reaction field is set.
+   */
+  @java.lang.Override public boolean hasReaction() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
    * @return The enum numeric value on the wire for reaction.
    */
   @java.lang.Override public int getReactionValue() {
     return reaction_;
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
    * @return The reaction.
    */
   @java.lang.Override public com.hearlers.api.proto.v1.model.CounselMessageReaction getReaction() {
@@ -248,7 +268,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object createdAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -269,7 +289,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -295,7 +315,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object updatedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -316,7 +336,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -342,10 +362,22 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object deletedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletedAt() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -363,10 +395,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -410,10 +442,10 @@ private static final long serialVersionUID = 0L;
     if (isUserMessage_ != false) {
       output.writeBool(4, isUserMessage_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reactedAt_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, reactedAt_);
     }
-    if (reaction_ != com.hearlers.api.proto.v1.model.CounselMessageReaction.COUNSEL_MESSAGE_REACTION_UNSPECIFIED.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(6, reaction_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
@@ -422,7 +454,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, deletedAt_);
     }
     getUnknownFields().writeTo(output);
@@ -447,10 +479,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, isUserMessage_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reactedAt_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, reactedAt_);
     }
-    if (reaction_ != com.hearlers.api.proto.v1.model.CounselMessageReaction.COUNSEL_MESSAGE_REACTION_UNSPECIFIED.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, reaction_);
     }
@@ -460,7 +492,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -486,15 +518,24 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMessage())) return false;
     if (getIsUserMessage()
         != other.getIsUserMessage()) return false;
-    if (!getReactedAt()
-        .equals(other.getReactedAt())) return false;
-    if (reaction_ != other.reaction_) return false;
+    if (hasReactedAt() != other.hasReactedAt()) return false;
+    if (hasReactedAt()) {
+      if (!getReactedAt()
+          .equals(other.getReactedAt())) return false;
+    }
+    if (hasReaction() != other.hasReaction()) return false;
+    if (hasReaction()) {
+      if (reaction_ != other.reaction_) return false;
+    }
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
         .equals(other.getUpdatedAt())) return false;
-    if (!getDeletedAt()
-        .equals(other.getDeletedAt())) return false;
+    if (hasDeletedAt() != other.hasDeletedAt()) return false;
+    if (hasDeletedAt()) {
+      if (!getDeletedAt()
+          .equals(other.getDeletedAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -515,16 +556,22 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_USER_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsUserMessage());
-    hash = (37 * hash) + REACTED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getReactedAt().hashCode();
-    hash = (37 * hash) + REACTION_FIELD_NUMBER;
-    hash = (53 * hash) + reaction_;
+    if (hasReactedAt()) {
+      hash = (37 * hash) + REACTED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getReactedAt().hashCode();
+    }
+    if (hasReaction()) {
+      hash = (37 * hash) + REACTION_FIELD_NUMBER;
+      hash = (53 * hash) + reaction_;
+    }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getDeletedAt().hashCode();
+    if (hasDeletedAt()) {
+      hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getDeletedAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -710,11 +757,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.isUserMessage_ = isUserMessage_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.reactedAt_ = reactedAt_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.reaction_ = reaction_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createdAt_ = createdAt_;
@@ -724,7 +774,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.deletedAt_ = deletedAt_;
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -757,13 +809,13 @@ private static final long serialVersionUID = 0L;
       if (other.getIsUserMessage() != false) {
         setIsUserMessage(other.getIsUserMessage());
       }
-      if (!other.getReactedAt().isEmpty()) {
+      if (other.hasReactedAt()) {
         reactedAt_ = other.reactedAt_;
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (other.reaction_ != 0) {
-        setReactionValue(other.getReactionValue());
+      if (other.hasReaction()) {
+        setReaction(other.getReaction());
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
@@ -775,7 +827,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000080;
         onChanged();
       }
-      if (!other.getDeletedAt().isEmpty()) {
+      if (other.hasDeletedAt()) {
         deletedAt_ = other.deletedAt_;
         bitField0_ |= 0x00000100;
         onChanged();
@@ -1119,10 +1171,21 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object reactedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * @return Whether the reactedAt field is set.
+     */
+    public boolean hasReactedAt() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
+     * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
      * @return The reactedAt.
      */
     public java.lang.String getReactedAt() {
@@ -1139,10 +1202,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
      * @return The bytes for reactedAt.
      */
     public com.google.protobuf.ByteString
@@ -1160,10 +1223,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
      * @param value The reactedAt to set.
      * @return This builder for chaining.
      */
@@ -1177,10 +1240,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearReactedAt() {
@@ -1191,10 +1254,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+     * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
      * @param value The bytes for reactedAt to set.
      * @return This builder for chaining.
      */
@@ -1210,14 +1273,21 @@ private static final long serialVersionUID = 0L;
 
     private int reaction_ = 0;
     /**
-     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * @return Whether the reaction field is set.
+     */
+    @java.lang.Override public boolean hasReaction() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
      * @return The enum numeric value on the wire for reaction.
      */
     @java.lang.Override public int getReactionValue() {
       return reaction_;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
      * @param value The enum numeric value on the wire for reaction to set.
      * @return This builder for chaining.
      */
@@ -1228,7 +1298,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
      * @return The reaction.
      */
     @java.lang.Override
@@ -1237,7 +1307,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.hearlers.api.proto.v1.model.CounselMessageReaction.UNRECOGNIZED : result;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
      * @param value The reaction to set.
      * @return This builder for chaining.
      */
@@ -1251,7 +1321,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
      * @return This builder for chaining.
      */
     public Builder clearReaction() {
@@ -1264,7 +1334,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1284,7 +1354,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1305,7 +1375,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1322,7 +1392,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1336,7 +1406,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -1356,7 +1426,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object updatedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1376,7 +1446,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1397,7 +1467,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1414,7 +1484,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1428,7 +1498,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -1448,10 +1518,21 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object deletedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * @return Whether the deletedAt field is set.
+     */
+    public boolean hasDeletedAt() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
+     * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -1468,10 +1549,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -1489,10 +1570,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1506,10 +1587,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
@@ -1520,10 +1601,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */
