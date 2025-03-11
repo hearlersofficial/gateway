@@ -11,7 +11,7 @@ public class ResponseDto {
     @Builder
     @Getter
     @Schema(description = "응답 성공 시 반환되는 DTO")
-    public static class Success {
+    public static class Success<T> {
         @Builder.Default
         @Schema(description = "응답 상태", example = "SUCCESS")
         private String status = "SUCCESS";
@@ -20,13 +20,13 @@ public class ResponseDto {
         private String message;
 
         @Schema(description = "데이터")
-        private Object data;
+        private T data;
     }
 
     @Builder
     @Getter
     @Schema(description = "응답 실패 시 반환되는 DTO")
-    public static class Error {
+    public static class Error<T> {
         @Schema(description = "응답 상태", example = "ERROR")
         private HttpStatus status;
 
@@ -37,6 +37,6 @@ public class ResponseDto {
         private String message;
 
         @Schema(description = "데이터")
-        private Object data;
+        private T data;
     }
 }

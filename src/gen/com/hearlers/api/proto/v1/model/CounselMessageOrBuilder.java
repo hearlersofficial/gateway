@@ -53,38 +53,52 @@ public interface CounselMessageOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * @return Whether the reactedAt field is set.
+   */
+  boolean hasReactedAt();
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
    * @return The reactedAt.
    */
   java.lang.String getReactedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string reacted_at = 5 [json_name = "reactedAt"];</code>
+   * <code>optional string reacted_at = 5 [json_name = "reactedAt"];</code>
    * @return The bytes for reactedAt.
    */
   com.google.protobuf.ByteString
       getReactedAtBytes();
 
   /**
-   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * @return Whether the reaction field is set.
+   */
+  boolean hasReaction();
+  /**
+   * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
    * @return The enum numeric value on the wire for reaction.
    */
   int getReactionValue();
   /**
-   * <code>.com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselMessageReaction reaction = 6 [json_name = "reaction"];</code>
    * @return The reaction.
    */
   com.hearlers.api.proto.v1.model.CounselMessageReaction getReaction();
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -93,7 +107,7 @@ public interface CounselMessageOrBuilder extends
   java.lang.String getCreatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -104,7 +118,7 @@ public interface CounselMessageOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -113,7 +127,7 @@ public interface CounselMessageOrBuilder extends
   java.lang.String getUpdatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -124,19 +138,28 @@ public interface CounselMessageOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  boolean hasDeletedAt();
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

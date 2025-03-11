@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object expiresAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object createdAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object updatedAt_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object expiresAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -687,7 +687,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -800,7 +800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object updatedAt_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -909,7 +909,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -923,7 +923,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
      * <code>string updated_at = 4 [json_name = "updatedAt"];</code>

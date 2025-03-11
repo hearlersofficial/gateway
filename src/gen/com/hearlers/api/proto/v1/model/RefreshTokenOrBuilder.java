@@ -23,7 +23,7 @@ public interface RefreshTokenOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -32,7 +32,7 @@ public interface RefreshTokenOrBuilder extends
   java.lang.String getExpiresAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string expires_at = 2 [json_name = "expiresAt"];</code>
@@ -43,7 +43,7 @@ public interface RefreshTokenOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -52,7 +52,7 @@ public interface RefreshTokenOrBuilder extends
   java.lang.String getCreatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 3 [json_name = "createdAt"];</code>
@@ -63,7 +63,7 @@ public interface RefreshTokenOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 4 [json_name = "updatedAt"];</code>
@@ -72,7 +72,7 @@ public interface RefreshTokenOrBuilder extends
   java.lang.String getUpdatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:mm:ss (2024-12-29 12:34:56)
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 4 [json_name = "updatedAt"];</code>

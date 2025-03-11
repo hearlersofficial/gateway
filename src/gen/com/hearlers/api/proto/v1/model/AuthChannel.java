@@ -114,7 +114,7 @@ public enum AuthChannel
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.AuthUserOuterClass.getDescriptor().getEnumTypes().get(0);
+    return com.hearlers.api.proto.v1.model.AuthUserOuterClass.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final AuthChannel[] VALUES = values();

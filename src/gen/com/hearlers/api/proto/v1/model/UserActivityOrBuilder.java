@@ -78,7 +78,7 @@ public interface UserActivityOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -87,7 +87,7 @@ public interface UserActivityOrBuilder extends
   java.lang.String getCreatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
@@ -98,7 +98,7 @@ public interface UserActivityOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -107,7 +107,7 @@ public interface UserActivityOrBuilder extends
   java.lang.String getUpdatedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
@@ -118,7 +118,7 @@ public interface UserActivityOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
@@ -127,7 +127,7 @@ public interface UserActivityOrBuilder extends
   java.lang.String getDeletedAt();
   /**
    * <pre>
-   * YYYY-MM-DD HH:MM:SS
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
    * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>

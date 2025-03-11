@@ -15,6 +15,7 @@ import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import com.hearlers.gateway.application.auth.AuthService;
 import com.hearlers.gateway.application.utils.service.UtilService;
@@ -58,7 +59,7 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "비로그인 유저 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PostMapping("/v1/initiate")
-    public ResponseEntity<ResponseDto.Success> createUser(HttpServletResponse response) {
+    public ResponseEntity<ResponseDto.Success<TokenDto>> createUser(HttpServletResponse response) {
         InitializeUserResponse initializeUserResponse = authService.initializeUser(
                 InitializeUserRequest.newBuilder().build());
 
@@ -76,14 +77,13 @@ public class AuthController {
                 .toString();
 
         addCookieToResponse(response, accessTokenExpiresAt, "accessTokenExpiresAt", ACCESS_TOKEN_MAX_AGE);
-
+        
+        ResponseDto.Success<TokenDto> responseDto = ResponseDto.Success.<TokenDto>builder()
+                .message("비로그인 유저 생성 성공")
+                .data(token)
+                .build();
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(
-                        ResponseDto.Success.builder()
-                                .message("비로그인 유저 생성 성공")
-                                .data(token)
-                                .build()
-                );
+                .body(responseDto);
     }
 
     @SecurityRequirements
@@ -116,8 +116,13 @@ public class AuthController {
         AuthChannel authChannel = authUser.getAuthChannel();
 
         TokenDto token = jwtUtil.returnToken(new CreateTokenRequestDto(state, authChannel), true);
+        SaveRefreshTokenRequest saveRefreshTokenRequest = SaveRefreshTokenRequest.newBuilder()
+                .setUserId(authUser.getId())
+                .setToken(token.getRefreshToken())
+                .setExpiresAt(token.getRefreshTokenExpiresAt().toString())
+                .build();
 
-        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(state, token);
+        SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(saveRefreshTokenRequest);
 
         if (!saveRefreshTokenResponse.getSuccess()) {
             throw new Error("RefreshToken 저장 실패");
