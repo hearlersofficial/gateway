@@ -56,51 +56,57 @@ public interface UpdateCounselTechniqueRequestOrBuilder extends
       getToneIdBytes();
 
   /**
-   * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+   * <code>bool has_tone = 4 [json_name = "hasTone"];</code>
+   * @return The hasTone.
+   */
+  boolean getHasTone();
+
+  /**
+   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
    * @return Whether the contextId field is set.
    */
   boolean hasContextId();
   /**
-   * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
    * @return The contextId.
    */
   java.lang.String getContextId();
   /**
-   * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
    * @return The bytes for contextId.
    */
   com.google.protobuf.ByteString
       getContextIdBytes();
 
   /**
-   * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
    * @return Whether the instructionId field is set.
    */
   boolean hasInstructionId();
   /**
-   * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
    * @return The instructionId.
    */
   java.lang.String getInstructionId();
   /**
-   * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
    * @return The bytes for instructionId.
    */
   com.google.protobuf.ByteString
       getInstructionIdBytes();
 
   /**
-   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
    * @return Whether the counselTechniqueStage field is set.
    */
   boolean hasCounselTechniqueStage();
   /**
-   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
    * @return The enum numeric value on the wire for counselTechniqueStage.
    */
   int getCounselTechniqueStageValue();
   /**
-   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
    * @return The counselTechniqueStage.
    */
   com.hearlers.api.proto.v1.model.CounselTechniqueStage getCounselTechniqueStage();

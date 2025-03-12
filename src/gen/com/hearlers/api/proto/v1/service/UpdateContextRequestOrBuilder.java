@@ -79,4 +79,10 @@ public interface UpdateContextRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPlaceholdersBytes(int index);
+
+  /**
+   * <code>bool has_placeholders = 5 [json_name = "hasPlaceholders"];</code>
+   * @return The hasPlaceholders.
+   */
+  boolean getHasPlaceholders();
 }

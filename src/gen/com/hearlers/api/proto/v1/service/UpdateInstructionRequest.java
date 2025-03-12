@@ -6,6 +6,13 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * initial sentence 의 경우 nullable field
+ * initial sentence 의 변경이 없을 경우 has_initial_sentence = false
+ * initial sentence 를 null 로 변경할 경우 has_initial_sentence = true, initial_sentence = null
+ * initial sentence 를 다른 값으로 변경할 경우 has_initial_sentence = true, initial_sentence = "new_initial_sentence"
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.UpdateInstructionRequest}
  */
 public final class UpdateInstructionRequest extends
@@ -181,12 +188,23 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INSTRUCTION_ITEM_IDS_FIELD_NUMBER = 4;
+  public static final int HAS_INITIAL_SENTENCE_FIELD_NUMBER = 4;
+  private boolean hasInitialSentence_ = false;
+  /**
+   * <code>bool has_initial_sentence = 4 [json_name = "hasInitialSentence"];</code>
+   * @return The hasInitialSentence.
+   */
+  @java.lang.Override
+  public boolean getHasInitialSentence() {
+    return hasInitialSentence_;
+  }
+
+  public static final int INSTRUCTION_ITEM_IDS_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instructionItemIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @return A list containing the instructionItemIds.
    */
   public com.google.protobuf.ProtocolStringList
@@ -194,14 +212,14 @@ private static final long serialVersionUID = 0L;
     return instructionItemIds_;
   }
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @return The count of instructionItemIds.
    */
   public int getInstructionItemIdsCount() {
     return instructionItemIds_.size();
   }
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @param index The index of the element to return.
    * @return The instructionItemIds at the given index.
    */
@@ -209,13 +227,24 @@ private static final long serialVersionUID = 0L;
     return instructionItemIds_.get(index);
   }
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the instructionItemIds at the given index.
    */
   public com.google.protobuf.ByteString
       getInstructionItemIdsBytes(int index) {
     return instructionItemIds_.getByteString(index);
+  }
+
+  public static final int HAS_INSTRUCTION_ITEM_IDS_FIELD_NUMBER = 6;
+  private boolean hasInstructionItemIds_ = false;
+  /**
+   * <code>bool has_instruction_item_ids = 6 [json_name = "hasInstructionItemIds"];</code>
+   * @return The hasInstructionItemIds.
+   */
+  @java.lang.Override
+  public boolean getHasInstructionItemIds() {
+    return hasInstructionItemIds_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -241,8 +270,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, initialSentence_);
     }
+    if (hasInitialSentence_ != false) {
+      output.writeBool(4, hasInitialSentence_);
+    }
     for (int i = 0; i < instructionItemIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, instructionItemIds_.getRaw(i));
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, instructionItemIds_.getRaw(i));
+    }
+    if (hasInstructionItemIds_ != false) {
+      output.writeBool(6, hasInstructionItemIds_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -262,6 +297,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, initialSentence_);
     }
+    if (hasInitialSentence_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, hasInitialSentence_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < instructionItemIds_.size(); i++) {
@@ -269,6 +308,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getInstructionItemIdsList().size();
+    }
+    if (hasInstructionItemIds_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, hasInstructionItemIds_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -297,8 +340,12 @@ private static final long serialVersionUID = 0L;
       if (!getInitialSentence()
           .equals(other.getInitialSentence())) return false;
     }
+    if (getHasInitialSentence()
+        != other.getHasInitialSentence()) return false;
     if (!getInstructionItemIdsList()
         .equals(other.getInstructionItemIdsList())) return false;
+    if (getHasInstructionItemIds()
+        != other.getHasInstructionItemIds()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -320,10 +367,16 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INITIAL_SENTENCE_FIELD_NUMBER;
       hash = (53 * hash) + getInitialSentence().hashCode();
     }
+    hash = (37 * hash) + HAS_INITIAL_SENTENCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getHasInitialSentence());
     if (getInstructionItemIdsCount() > 0) {
       hash = (37 * hash) + INSTRUCTION_ITEM_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getInstructionItemIdsList().hashCode();
     }
+    hash = (37 * hash) + HAS_INSTRUCTION_ITEM_IDS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getHasInstructionItemIds());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +475,13 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * initial sentence 의 경우 nullable field
+   * initial sentence 의 변경이 없을 경우 has_initial_sentence = false
+   * initial sentence 를 null 로 변경할 경우 has_initial_sentence = true, initial_sentence = null
+   * initial sentence 를 다른 값으로 변경할 경우 has_initial_sentence = true, initial_sentence = "new_initial_sentence"
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.UpdateInstructionRequest}
    */
   public static final class Builder extends
@@ -458,8 +518,10 @@ private static final long serialVersionUID = 0L;
       instructionId_ = "";
       name_ = "";
       initialSentence_ = "";
+      hasInitialSentence_ = false;
       instructionItemIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      hasInstructionItemIds_ = false;
       return this;
     }
 
@@ -506,8 +568,14 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.hasInitialSentence_ = hasInitialSentence_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         instructionItemIds_.makeImmutable();
         result.instructionItemIds_ = instructionItemIds_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.hasInstructionItemIds_ = hasInstructionItemIds_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -539,15 +607,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getHasInitialSentence() != false) {
+        setHasInitialSentence(other.getHasInitialSentence());
+      }
       if (!other.instructionItemIds_.isEmpty()) {
         if (instructionItemIds_.isEmpty()) {
           instructionItemIds_ = other.instructionItemIds_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         } else {
           ensureInstructionItemIdsIsMutable();
           instructionItemIds_.addAll(other.instructionItemIds_);
         }
         onChanged();
+      }
+      if (other.getHasInstructionItemIds() != false) {
+        setHasInstructionItemIds(other.getHasInstructionItemIds());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -590,12 +664,22 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
+            case 32: {
+              hasInitialSentence_ = input.readBool();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureInstructionItemIdsIsMutable();
               instructionItemIds_.add(s);
               break;
-            } // case 34
+            } // case 42
+            case 48: {
+              hasInstructionItemIds_ = input.readBool();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -843,16 +927,48 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean hasInitialSentence_ ;
+    /**
+     * <code>bool has_initial_sentence = 4 [json_name = "hasInitialSentence"];</code>
+     * @return The hasInitialSentence.
+     */
+    @java.lang.Override
+    public boolean getHasInitialSentence() {
+      return hasInitialSentence_;
+    }
+    /**
+     * <code>bool has_initial_sentence = 4 [json_name = "hasInitialSentence"];</code>
+     * @param value The hasInitialSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasInitialSentence(boolean value) {
+
+      hasInitialSentence_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool has_initial_sentence = 4 [json_name = "hasInitialSentence"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHasInitialSentence() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      hasInitialSentence_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList instructionItemIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureInstructionItemIdsIsMutable() {
       if (!instructionItemIds_.isModifiable()) {
         instructionItemIds_ = new com.google.protobuf.LazyStringArrayList(instructionItemIds_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @return A list containing the instructionItemIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -861,14 +977,14 @@ private static final long serialVersionUID = 0L;
       return instructionItemIds_;
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @return The count of instructionItemIds.
      */
     public int getInstructionItemIdsCount() {
       return instructionItemIds_.size();
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @param index The index of the element to return.
      * @return The instructionItemIds at the given index.
      */
@@ -876,7 +992,7 @@ private static final long serialVersionUID = 0L;
       return instructionItemIds_.get(index);
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the instructionItemIds at the given index.
      */
@@ -885,7 +1001,7 @@ private static final long serialVersionUID = 0L;
       return instructionItemIds_.getByteString(index);
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @param index The index to set the value at.
      * @param value The instructionItemIds to set.
      * @return This builder for chaining.
@@ -895,12 +1011,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureInstructionItemIdsIsMutable();
       instructionItemIds_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @param value The instructionItemIds to add.
      * @return This builder for chaining.
      */
@@ -909,12 +1025,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureInstructionItemIdsIsMutable();
       instructionItemIds_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @param values The instructionItemIds to add.
      * @return This builder for chaining.
      */
@@ -923,23 +1039,23 @@ private static final long serialVersionUID = 0L;
       ensureInstructionItemIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, instructionItemIds_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @return This builder for chaining.
      */
     public Builder clearInstructionItemIds() {
       instructionItemIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);;
+      bitField0_ = (bitField0_ & ~0x00000010);;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+     * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
      * @param value The bytes of the instructionItemIds to add.
      * @return This builder for chaining.
      */
@@ -949,7 +1065,39 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureInstructionItemIdsIsMutable();
       instructionItemIds_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean hasInstructionItemIds_ ;
+    /**
+     * <code>bool has_instruction_item_ids = 6 [json_name = "hasInstructionItemIds"];</code>
+     * @return The hasInstructionItemIds.
+     */
+    @java.lang.Override
+    public boolean getHasInstructionItemIds() {
+      return hasInstructionItemIds_;
+    }
+    /**
+     * <code>bool has_instruction_item_ids = 6 [json_name = "hasInstructionItemIds"];</code>
+     * @param value The hasInstructionItemIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasInstructionItemIds(boolean value) {
+
+      hasInstructionItemIds_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool has_instruction_item_ids = 6 [json_name = "hasInstructionItemIds"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHasInstructionItemIds() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      hasInstructionItemIds_ = false;
       onChanged();
       return this;
     }
