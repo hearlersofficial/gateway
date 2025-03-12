@@ -24,6 +24,11 @@ import com.hearlers.api.proto.v1.service.UpdateInstructionRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionsRequest;
 import com.hearlers.api.proto.v1.model.Instruction;
+import com.hearlers.api.proto.v1.model.Persona;
+import com.hearlers.api.proto.v1.service.CreatePersonaRequest;
+import com.hearlers.api.proto.v1.service.FindPersonaByIdRequest;
+import com.hearlers.api.proto.v1.service.FindPersonasRequest;
+import com.hearlers.api.proto.v1.service.UpdatePersonaRequest;
 
 import lombok.RequiredArgsConstructor;
 
@@ -113,6 +118,26 @@ public class CounselingServiceImpl implements CounselingService {
     @Override
     public List<Instruction> findInstructions(FindInstructionsRequest request) {
         return reader.findInstructions(request);
+    }
+
+    @Override
+    public Persona createPersona(CreatePersonaRequest request) {
+        return persistor.createPersona(request);
+    }
+
+    @Override
+    public Persona updatePersona(UpdatePersonaRequest request) {
+        return persistor.updatePersona(request);
+    }
+
+    @Override
+    public Persona findPersonaById(FindPersonaByIdRequest request) {
+        return reader.findPersonaById(request);
+    }
+
+    @Override
+    public List<Persona> findPersonas(FindPersonasRequest request) {
+        return reader.findPersonas(request);
     }
     
 }
