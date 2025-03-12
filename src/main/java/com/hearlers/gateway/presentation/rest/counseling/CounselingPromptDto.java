@@ -106,4 +106,91 @@ public class CounselingPromptDto {
         @Schema(description = "Context 응답 DTO")
         private ContextResponseDto context;
     } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 응답 DTO")
+    public static class ToneResponseDto {
+        @Schema(description = "Tone ID", example = "tn_123456")
+        private String id;
+
+        @Schema(description = "Tone 이름", example = "공감적 상담 톤")
+        private String name;
+
+        @Schema(description = "Tone 내용", example = "내담자의 감정에 공감하고 따뜻한 어조로 응답합니다.")
+        private String body;
+
+        @Schema(description = "Tone 생성 시간", example = "2024-12-29T12:34:56.000Z")
+        private String createdAt;
+
+        @Schema(description = "Tone 수정 시간", example = "2024-12-29T12:34:56.000Z")
+        private String updatedAt;
+        
+        @Schema(description = "Tone 삭제 시간", example = "2024-12-29T12:34:56.000Z")
+        private String deletedAt;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 생성 요청 DTO")
+    public static class CreateToneRequestDto {
+        @NotBlank(message = "Tone 이름은 필수 입력 항목입니다.")
+        @Schema(description = "Tone 이름", example = "공감적 상담 톤")
+        private String name;
+
+        @NotBlank(message = "Tone 내용은 필수 입력 항목입니다.")
+        @Schema(description = "Tone 내용", example = "내담자의 감정에 공감하고 따뜻한 어조로 응답합니다.")
+        private String body;
+    } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 생성 응답 DTO")
+    public static class CreateToneResponseDto {
+        @Schema(description = "Tone 응답 DTO")
+        private ToneResponseDto tone;
+    } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 조회 응답 DTO")
+    public static class GetToneByIdResponseDto {
+        @Schema(description = "Tone 응답 DTO")
+        private ToneResponseDto tone;
+    } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 목록 조회 요청 DTO")
+    public static class GetTonesRequestDto {
+        @Schema(description = "조회할 Tone 이름 (선택사항)", example = "공감적 상담")
+        private String name;
+    } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 목록 조회 응답 DTO")
+    public static class GetTonesResponseDto {
+        @Schema(description = "Tone 목록")
+        private List<ToneResponseDto> tones;
+    } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 업데이트 요청 DTO")
+    public static class UpdateToneRequestDto {
+        @Schema(description = "Tone 이름 (선택사항)", example = "수정된 공감적 상담 톤")
+        private String name;
+        
+        @Schema(description = "Tone 내용 (선택사항)", example = "내담자의 감정에 더욱 깊이 공감하고 더 따뜻한 어조로 응답합니다.")
+        private String body;
+    } 
+
+    @Getter
+    @Setter
+    @Schema(description = "Tone 업데이트 응답 DTO")  
+    public static class UpdateToneResponseDto {
+        @Schema(description = "Tone 응답 DTO")
+        private ToneResponseDto tone;
+    } 
 }
