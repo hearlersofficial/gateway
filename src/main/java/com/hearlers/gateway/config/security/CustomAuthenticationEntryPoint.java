@@ -8,10 +8,10 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hearlers.gateway.presentation.rest.dto.ResponseDto;
 import com.hearlers.gateway.presentation.rest.exception.HttpException;
 import static com.hearlers.gateway.presentation.rest.response.HttpResultCode.SERVER_SYSTEM_ERROR;
 import static com.hearlers.gateway.presentation.rest.response.HttpResultCode.UNAUTHORIZED;
+import com.hearlers.gateway.shared.presentation.ResponseDto;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

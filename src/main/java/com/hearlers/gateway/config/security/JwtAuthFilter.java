@@ -1,9 +1,16 @@
 package com.hearlers.gateway.config.security;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.hearlers.gateway.shared.guard.security.JwtUtil;
@@ -56,9 +63,29 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         try {
             Claims claims = jwtUtil.parseClaims(token);
+            String userId = claims.get("id", String.class);
+            String authChannel = claims.get("auth_channel", String.class);
+            
+            // 여기서 Spring Security 인증 객체 생성 필요
+            List<GrantedAuthority> authorities = new ArrayList<>();
+            // 기본적으로 USER 권한 부여
+            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+            
+            // 어드민 사용자라면 ADMIN 권한도 부여 (실제 구현에 맞게 조정 필요)
+            if (claims.get("is_admin", Boolean.class) != null && claims.get("is_admin", Boolean.class)) {
+                authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+            }
+            
+            // 인증 객체 생성 및 SecurityContext에 설정
+            UsernamePasswordAuthenticationToken authentication = 
+                    new UsernamePasswordAuthenticationToken(userId, null, authorities);
+                    
+            authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            
             // 토큰에서 필요한 정보를 request에 저장
-            request.setAttribute("userId", claims.get("id", String.class));
-            request.setAttribute("authChannel", claims.get("auth_channel", String.class));
+            request.setAttribute("userId", userId);
+            request.setAttribute("authChannel", authChannel);
         } catch (Exception e) {
             response.sendError(HttpStatus.UNAUTHORIZED.value(), "Invalid or Expired JWT");
             return;

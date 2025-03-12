@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hearlers.api.proto.v1.service.UpdateUserRequest;
 import com.hearlers.api.proto.v1.service.UpdateUserResponse;
 import com.hearlers.api.proto.v1.service.UserServiceGrpc;
-import com.hearlers.gateway.presentation.rest.dto.ResponseDto;
 import com.hearlers.gateway.presentation.rest.users.dto.CreateUserActivityRequestDto;
 import com.hearlers.gateway.presentation.rest.users.dto.UpdateUserInfoRequestDto;
 import com.hearlers.gateway.presentation.rest.users.dto.UpdateUserInfoResponseDto;
+import com.hearlers.gateway.shared.presentation.ResponseDto;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

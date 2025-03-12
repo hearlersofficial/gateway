@@ -7,9 +7,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hearlers.gateway.presentation.rest.dto.ResponseDto;
 import com.hearlers.gateway.presentation.rest.exception.HttpException;
 import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+import com.hearlers.gateway.shared.presentation.ResponseDto;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

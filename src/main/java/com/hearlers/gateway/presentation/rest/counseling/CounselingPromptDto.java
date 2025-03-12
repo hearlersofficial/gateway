@@ -89,10 +89,6 @@ public class CounselingPromptDto {
     @Setter
     @Schema(description = "Context 업데이트 요청 DTO")
     public static class UpdateContextRequestDto {
-        @NotBlank(message = "Context ID는 필수 입력 항목입니다.")
-        @Schema(description = "Context ID", example = "ctx_123456")
-        private String contextId;
-        
         @Schema(description = "Context 이름 (선택사항)", example = "수정된 우울증 상담 컨텍스트")
         private String name;
         
