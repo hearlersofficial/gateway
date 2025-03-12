@@ -328,4 +328,78 @@ public class CounselingPromptsController {
         
         return ResponseDtoUtil.okResponse(response, "Instruction 업데이트 성공");
     }
+
+    @SecurityRequirements
+    @Operation(summary = "Persona 목록 조회", description = "Persona 목록을 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Persona 목록 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "Persona 목록 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/personas")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetPersonasResponseDto>> getPersonas(
+            @Valid CounselingPromptDto.GetPersonasRequestDto request) {
+        var findPersonasRequest = counselingPromptDtoMapper.ofPersonas(request);
+        var personas = counselingService.findPersonas(findPersonasRequest);
+        var response = counselingPromptDtoMapper.ofPersonas(personas);
+        
+        return ResponseDtoUtil.okResponse(response, "Persona 목록 조회 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Persona 조회", description = "ID로 Persona를 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Persona 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "Persona 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "Persona를 찾을 수 없음", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/personas/{personaId}")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetPersonaByIdResponseDto>> getPersona(
+            @PathVariable String personaId) {
+        var findPersonaByIdRequest = counselingPromptDtoMapper.ofPersonaId(personaId);
+        var persona = counselingService.findPersonaById(findPersonaByIdRequest);
+        var response = counselingPromptDtoMapper.ofPersonaById(persona);
+        
+        return ResponseDtoUtil.okResponse(response, "Persona 조회 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Persona 생성", description = "새로운 Persona를 생성합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Persona 생성 성공"),
+            @ApiResponse(responseCode = "400", description = "Persona 생성 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PostMapping("/v1/personas")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.CreatePersonaResponseDto>> createPersona(
+            @Valid @RequestBody CounselingPromptDto.CreatePersonaRequestDto request) {
+        var createPersonaRequest = counselingPromptDtoMapper.ofPersona(request);
+        var createdPersona = counselingService.createPersona(createPersonaRequest);
+        var response = counselingPromptDtoMapper.ofPersonaCreate(createdPersona);
+        
+        return ResponseDtoUtil.createdResponse(response, "Persona 생성 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Persona 업데이트", description = "기존 Persona를 업데이트합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Persona 업데이트 성공"),
+            @ApiResponse(responseCode = "400", description = "Persona 업데이트 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "Persona를 찾을 수 없음", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PutMapping("/v1/personas/{personaId}")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.UpdatePersonaResponseDto>> updatePersona(
+            @PathVariable String personaId,
+            @Valid @RequestBody CounselingPromptDto.UpdatePersonaRequestDto request) {
+        
+        var updatePersonaRequest = counselingPromptDtoMapper.ofPersonaUpdate(request, personaId);
+        var updatedPersona = counselingService.updatePersona(updatePersonaRequest);
+        var response = counselingPromptDtoMapper.ofPersonaUpdate(updatedPersona);
+        
+        return ResponseDtoUtil.okResponse(response, "Persona 업데이트 성공");
+    }
 }
