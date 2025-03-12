@@ -10,10 +10,12 @@ import org.mapstruct.ReportingPolicy;
 import com.hearlers.api.proto.v1.model.Context;
 import com.hearlers.api.proto.v1.model.Instruction;
 import com.hearlers.api.proto.v1.model.InstructionItem;
+import com.hearlers.api.proto.v1.model.Persona;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CreateContextRequest;
 import com.hearlers.api.proto.v1.service.CreateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.CreateInstructionRequest;
+import com.hearlers.api.proto.v1.service.CreatePersonaRequest;
 import com.hearlers.api.proto.v1.service.CreateToneRequest;
 import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
@@ -21,13 +23,15 @@ import com.hearlers.api.proto.v1.service.FindInstructionByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemsRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionsRequest;
+import com.hearlers.api.proto.v1.service.FindPersonaByIdRequest;
+import com.hearlers.api.proto.v1.service.FindPersonasRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
 import com.hearlers.api.proto.v1.service.UpdateContextRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionRequest;
+import com.hearlers.api.proto.v1.service.UpdatePersonaRequest;
 import com.hearlers.api.proto.v1.service.UpdateToneRequest;
-
 @Mapper(
         componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE
@@ -387,6 +391,85 @@ public interface CounselingPromptDtoMapper {
         
         CounselingPromptDto.GetInstructionsResponseDto responseDto = new CounselingPromptDto.GetInstructionsResponseDto();
         responseDto.setInstructions(dtos);
+        return responseDto;
+    }
+
+    // Persona → PersonaResponseDto
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "body", target = "body")
+    @Mapping(source = "counselorId", target = "counselorId")
+    @Mapping(source = "createdAt", target = "createdAt")
+    @Mapping(source = "updatedAt", target = "updatedAt")
+    @Mapping(source = "deletedAt", target = "deletedAt")
+    CounselingPromptDto.PersonaResponseDto ofPersona(Persona persona);
+
+    // CreatePersonaRequestDto → CreatePersonaRequest
+    default CreatePersonaRequest ofPersona(CounselingPromptDto.CreatePersonaRequestDto requestDto) {
+        return CreatePersonaRequest.newBuilder()
+                .setCounselorId(requestDto.getCounselorId())
+                .setBody(requestDto.getBody())
+                .build();
+    }
+
+    // GetPersonasRequestDto → FindPersonasRequest
+    default FindPersonasRequest ofPersonas(CounselingPromptDto.GetPersonasRequestDto requestDto) {
+        FindPersonasRequest.Builder builder = FindPersonasRequest.newBuilder();
+        
+        if (requestDto.getCounselorId() != null) {
+            builder.setCounselorId(requestDto.getCounselorId());
+        }
+        
+        return builder.build();
+    }
+
+    // String(personaId) → FindPersonaByIdRequest
+    default FindPersonaByIdRequest ofPersonaId(String personaId) {
+        return FindPersonaByIdRequest.newBuilder()
+                .setPersonaId(personaId)
+                .build();
+    }
+
+    // UpdatePersonaRequestDto → UpdatePersonaRequest
+    default UpdatePersonaRequest ofPersonaUpdate(CounselingPromptDto.UpdatePersonaRequestDto requestDto, String personaId) {
+        UpdatePersonaRequest.Builder builder = UpdatePersonaRequest.newBuilder()
+                .setPersonaId(personaId);
+        
+        if (requestDto.getBody() != null) {
+            builder.setBody(requestDto.getBody());
+        }
+        
+        return builder.build();
+    }
+
+    // Persona → CreatePersonaResponseDto
+    default CounselingPromptDto.CreatePersonaResponseDto ofPersonaCreate(Persona persona) {
+        CounselingPromptDto.CreatePersonaResponseDto responseDto = new CounselingPromptDto.CreatePersonaResponseDto();
+        responseDto.setPersona(ofPersona(persona));
+        return responseDto;
+    }
+
+    // Persona → UpdatePersonaResponseDto
+    default CounselingPromptDto.UpdatePersonaResponseDto ofPersonaUpdate(Persona persona) {
+        CounselingPromptDto.UpdatePersonaResponseDto responseDto = new CounselingPromptDto.UpdatePersonaResponseDto();
+        responseDto.setPersona(ofPersona(persona));
+        return responseDto;
+    }
+
+    // Persona → GetPersonaByIdResponseDto
+    default CounselingPromptDto.GetPersonaByIdResponseDto ofPersonaById(Persona persona) {
+        CounselingPromptDto.GetPersonaByIdResponseDto responseDto = new CounselingPromptDto.GetPersonaByIdResponseDto();
+        responseDto.setPersona(ofPersona(persona));
+        return responseDto;
+    }
+
+    // List<Persona> → GetPersonasResponseDto
+    default CounselingPromptDto.GetPersonasResponseDto ofPersonas(List<Persona> personas) {
+        List<CounselingPromptDto.PersonaResponseDto> dtos = personas.stream()
+                .map(this::ofPersona)
+                .collect(Collectors.toList());
+        
+        CounselingPromptDto.GetPersonasResponseDto responseDto = new CounselingPromptDto.GetPersonasResponseDto();
+        responseDto.setPersonas(dtos);
         return responseDto;
     }
 }
