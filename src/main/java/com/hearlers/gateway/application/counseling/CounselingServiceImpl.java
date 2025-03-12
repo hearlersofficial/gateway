@@ -5,14 +5,19 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.hearlers.api.proto.v1.model.Context;
+import com.hearlers.api.proto.v1.model.InstructionItem;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CreateContextRequest;
+import com.hearlers.api.proto.v1.service.CreateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.CreateToneRequest;
 import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionItemsRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
 import com.hearlers.api.proto.v1.service.UpdateContextRequest;
+import com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.UpdateToneRequest;
 
 import lombok.RequiredArgsConstructor;
@@ -65,4 +70,23 @@ public class CounselingServiceImpl implements CounselingService {
         return reader.findContexts(request);
     }
 
+    @Override
+    public InstructionItem createInstructionItem(CreateInstructionItemRequest request) {
+        return persistor.createInstructionItem(request);
+    }
+
+    @Override
+    public InstructionItem updateInstructionItem(UpdateInstructionItemRequest request) {
+        return persistor.updateInstructionItem(request);
+    }
+
+    @Override
+    public InstructionItem findInstructionItemById(FindInstructionItemByIdRequest request) {
+        return reader.findInstructionItemById(request);
+    }
+
+    @Override
+    public List<InstructionItem> findInstructionItems(FindInstructionItemsRequest request) {
+        return reader.findInstructionItems(request);
+    }
 }
