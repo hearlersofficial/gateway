@@ -8,17 +8,21 @@ import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 import com.hearlers.api.proto.v1.model.Context;
+import com.hearlers.api.proto.v1.model.CounselTechnique;
 import com.hearlers.api.proto.v1.model.Instruction;
 import com.hearlers.api.proto.v1.model.InstructionItem;
 import com.hearlers.api.proto.v1.model.Persona;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CreateContextRequest;
+import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest;
 import com.hearlers.api.proto.v1.service.CreateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.CreateInstructionRequest;
 import com.hearlers.api.proto.v1.service.CreatePersonaRequest;
 import com.hearlers.api.proto.v1.service.CreateToneRequest;
 import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
+import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest;
+import com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemsRequest;
@@ -27,11 +31,16 @@ import com.hearlers.api.proto.v1.service.FindPersonaByIdRequest;
 import com.hearlers.api.proto.v1.service.FindPersonasRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
+import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
 import com.hearlers.api.proto.v1.service.UpdateContextRequest;
+import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionRequest;
 import com.hearlers.api.proto.v1.service.UpdatePersonaRequest;
 import com.hearlers.api.proto.v1.service.UpdateToneRequest;
+import com.hearlers.gateway.infrastructure.mapping.EnumMapper;
+import com.hearlers.gateway.shared.enums.CounselTechniqueStageType;
+
 @Mapper(
         componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE
@@ -470,6 +479,156 @@ public interface CounselingPromptDtoMapper {
         
         CounselingPromptDto.GetPersonasResponseDto responseDto = new CounselingPromptDto.GetPersonasResponseDto();
         responseDto.setPersonas(dtos);
+        return responseDto;
+    }
+
+    // CounselTechnique → CounselTechniqueResponseDto
+    default CounselingPromptDto.CounselTechniqueResponseDto ofCounselTechnique(CounselTechnique counselTechnique) {
+        if (counselTechnique == null) {
+            return null;
+        }
+
+        CounselingPromptDto.CounselTechniqueResponseDto dto = new CounselingPromptDto.CounselTechniqueResponseDto();
+        dto.setId(counselTechnique.getId());
+        dto.setName(counselTechnique.getName());
+        dto.setToneId(counselTechnique.getToneId());
+        dto.setContextId(counselTechnique.getContextId());
+        dto.setInstructionId(counselTechnique.getInstructionId());
+        
+        // Proto enum을 도메인 enum으로 변환 후 문자열로 변환
+        CounselTechniqueStageType domainStage = EnumMapper.toDomainStageType(counselTechnique.getCounselTechniqueStage());
+        dto.setCounselTechniqueStage(domainStage);
+        
+        dto.setNextCounselTechniqueId(counselTechnique.getNextCounselTechniqueId());
+        dto.setCreatedAt(counselTechnique.getCreatedAt());
+        dto.setUpdatedAt(counselTechnique.getUpdatedAt());
+        dto.setDeletedAt(counselTechnique.getDeletedAt());
+        
+        return dto;
+    }
+
+    // CreateCounselTechniqueRequestDto → CreateCounselTechniqueRequest
+    default CreateCounselTechniqueRequest ofCounselTechnique(CounselingPromptDto.CreateCounselTechniqueRequestDto requestDto) {
+        CreateCounselTechniqueRequest.Builder builder = CreateCounselTechniqueRequest.newBuilder()
+                .setName(requestDto.getName())
+                .setContextId(requestDto.getContextId())
+                .setInstructionId(requestDto.getInstructionId())
+                .setCounselTechniqueStage(EnumMapper.toProtoStage(requestDto.getCounselTechniqueStage()));
+        
+        if (requestDto.getToneId() != null) {
+            builder.setToneId(requestDto.getToneId());
+        }
+        
+        return builder.build();
+    }
+
+    // GetCounselTechniquesRequestDto → FindCounselTechniquesRequest
+    default FindCounselTechniquesRequest ofCounselTechniques(CounselingPromptDto.GetCounselTechniquesRequestDto requestDto) {
+        FindCounselTechniquesRequest.Builder builder = FindCounselTechniquesRequest.newBuilder();
+        
+        if (requestDto.getName() != null) {
+            builder.setName(requestDto.getName());
+        }
+        
+        if (requestDto.getToneId() != null) {
+            builder.setToneId(requestDto.getToneId());
+        }
+        
+        if (requestDto.getCounselTechniqueStage() != null) {
+            builder.setCounselTechniqueStage(EnumMapper.toProtoStage(requestDto.getCounselTechniqueStage()));
+        }
+        
+        return builder.build();
+    }
+
+    // String(counselTechniqueId) → FindCounselTechniqueByIdRequest
+    default FindCounselTechniqueByIdRequest ofCounselTechniqueId(String counselTechniqueId) {
+        return FindCounselTechniqueByIdRequest.newBuilder()
+                .setCounselTechniqueId(counselTechniqueId)
+                .build();
+    }
+
+    // UpdateCounselTechniqueRequestDto → UpdateCounselTechniqueRequest
+    default UpdateCounselTechniqueRequest ofCounselTechniqueUpdate(
+            CounselingPromptDto.UpdateCounselTechniqueRequestDto requestDto, String counselTechniqueId) {
+        UpdateCounselTechniqueRequest.Builder builder = UpdateCounselTechniqueRequest.newBuilder()
+                .setCounselTechniqueId(counselTechniqueId);
+        
+        if (requestDto.getName() != null) {
+            builder.setName(requestDto.getName());
+        }
+        
+        // Tone ID 처리
+        if (requestDto.getHasTone() != null && requestDto.getHasTone()) {
+            builder.setHasTone(true);
+            if (requestDto.getToneId() != null) {
+                builder.setToneId(requestDto.getToneId());
+            }
+        }
+        
+        if (requestDto.getContextId() != null) {
+            builder.setContextId(requestDto.getContextId());
+        }
+        
+        if (requestDto.getInstructionId() != null) {
+            builder.setInstructionId(requestDto.getInstructionId());
+        }
+        
+        if (requestDto.getCounselTechniqueStage() != null) {
+            builder.setCounselTechniqueStage(EnumMapper.toProtoStage(requestDto.getCounselTechniqueStage()));
+        }
+        
+        return builder.build();
+    }
+
+    // SaveCounselTechniqueSequenceRequestDto → SaveCounselTechniqueSequenceRequest
+    default SaveCounselTechniqueSequenceRequest ofCounselTechniqueSequence(
+            CounselingPromptDto.SaveCounselTechniqueSequenceRequestDto requestDto) {
+        return SaveCounselTechniqueSequenceRequest.newBuilder()
+                .addAllCounselTechniqueIds(requestDto.getCounselTechniqueIds())
+                .build();
+    }
+
+    // CounselTechnique → CreateCounselTechniqueResponseDto
+    default CounselingPromptDto.CreateCounselTechniqueResponseDto ofCounselTechniqueCreate(CounselTechnique counselTechnique) {
+        CounselingPromptDto.CreateCounselTechniqueResponseDto responseDto = new CounselingPromptDto.CreateCounselTechniqueResponseDto();
+        responseDto.setCounselTechnique(ofCounselTechnique(counselTechnique));
+        return responseDto;
+    }
+
+    // CounselTechnique → UpdateCounselTechniqueResponseDto
+    default CounselingPromptDto.UpdateCounselTechniqueResponseDto ofCounselTechniqueUpdate(CounselTechnique counselTechnique) {
+        CounselingPromptDto.UpdateCounselTechniqueResponseDto responseDto = new CounselingPromptDto.UpdateCounselTechniqueResponseDto();
+        responseDto.setCounselTechnique(ofCounselTechnique(counselTechnique));
+        return responseDto;
+    }
+
+    // CounselTechnique → GetCounselTechniqueByIdResponseDto
+    default CounselingPromptDto.GetCounselTechniqueByIdResponseDto ofCounselTechniqueById(CounselTechnique counselTechnique) {
+        CounselingPromptDto.GetCounselTechniqueByIdResponseDto responseDto = new CounselingPromptDto.GetCounselTechniqueByIdResponseDto();
+        responseDto.setCounselTechnique(ofCounselTechnique(counselTechnique));
+        return responseDto;
+    }
+
+    // List<CounselTechnique> → GetCounselTechniquesResponseDto
+    default CounselingPromptDto.GetCounselTechniquesResponseDto ofCounselTechniques(List<CounselTechnique> counselTechniques) {
+        List<CounselingPromptDto.CounselTechniqueResponseDto> dtos = counselTechniques.stream()
+                .map(this::ofCounselTechnique)
+                .collect(Collectors.toList());
+        
+        CounselingPromptDto.GetCounselTechniquesResponseDto responseDto = new CounselingPromptDto.GetCounselTechniquesResponseDto();
+        responseDto.setCounselTechniques(dtos);
+        return responseDto;
+    }
+
+    // List<CounselTechnique> → SaveCounselTechniqueSequenceResponseDto
+    default CounselingPromptDto.SaveCounselTechniqueSequenceResponseDto ofCounselTechniqueSequence(List<CounselTechnique> counselTechniques) {
+        List<CounselingPromptDto.CounselTechniqueResponseDto> dtos = counselTechniques.stream()
+                .map(this::ofCounselTechnique)
+                .collect(Collectors.toList());
+        
+        CounselingPromptDto.SaveCounselTechniqueSequenceResponseDto responseDto = new CounselingPromptDto.SaveCounselTechniqueSequenceResponseDto();
+        responseDto.setCounselTechniques(dtos);
         return responseDto;
     }
 }
