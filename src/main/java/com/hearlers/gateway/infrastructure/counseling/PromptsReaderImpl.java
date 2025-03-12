@@ -5,10 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.hearlers.api.proto.v1.model.Context;
+import com.hearlers.api.proto.v1.model.InstructionItem;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CounselServiceGrpc.CounselServiceBlockingStub;
 import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionItemsRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
 import com.hearlers.gateway.application.counseling.PromptsReader;
@@ -40,4 +43,13 @@ public class PromptsReaderImpl implements PromptsReader {
         return counselServiceBlockingStub.findTones(request).getTonesList();
     }
     
+    @Override
+    public InstructionItem findInstructionItemById(FindInstructionItemByIdRequest request) {
+        return counselServiceBlockingStub.findInstructionItemById(request).getInstructionItem();
+    }
+
+    @Override
+    public List<InstructionItem> findInstructionItems(FindInstructionItemsRequest request) {
+        return counselServiceBlockingStub.findInstructionItems(request).getInstructionItemsList();
+    }
 }
