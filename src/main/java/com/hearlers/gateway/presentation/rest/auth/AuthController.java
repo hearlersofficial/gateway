@@ -23,9 +23,9 @@ import com.hearlers.gateway.application.utils.useCases.CreateCookieUseCase.dto.C
 import com.hearlers.gateway.application.utils.useCases.CreateCookieUseCase.dto.CreateCookieResponseDto;
 import com.hearlers.gateway.config.KakaoProperties;
 import com.hearlers.gateway.presentation.rest.auth.dto.CreateTokenRequestDto;
-import com.hearlers.gateway.presentation.rest.dto.ResponseDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
 import com.hearlers.gateway.shared.guard.security.JwtUtil;
+import com.hearlers.gateway.shared.presentation.ResponseDto;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -52,7 +52,6 @@ public class AuthController {
     private static final int REFRESH_TOKEN_MAX_AGE = 60 * 60 * 24 * 7; // 7일
 
 
-    @SecurityRequirements
     @Operation(summary = "비로그인 유저 생성", description = "비로그인 유저를 생성하고, accessToken 발급")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "비로그인 유저 생성 성공, 쿠키에 accessToken과 accessTokenExpiresAt 저장"),

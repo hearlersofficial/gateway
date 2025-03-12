@@ -1,4 +1,4 @@
-package com.hearlers.gateway.presentation.rest.dto;
+package com.hearlers.gateway.shared.presentation;
 
 import org.springframework.http.HttpStatus;
 
@@ -14,13 +14,13 @@ public class ResponseDto {
     public static class Success<T> {
         @Builder.Default
         @Schema(description = "응답 상태", example = "SUCCESS")
-        private String status = "SUCCESS";
+        private final String status = "SUCCESS";
 
         @Schema(description = "메시지")
-        private String message;
+        private final String message;
 
         @Schema(description = "데이터")
-        private T data;
+        private final T data;
     }
 
     @Builder
@@ -28,15 +28,15 @@ public class ResponseDto {
     @Schema(description = "응답 실패 시 반환되는 DTO")
     public static class Error<T> {
         @Schema(description = "응답 상태", example = "ERROR")
-        private HttpStatus status;
+        private final HttpStatus status;
 
         @Schema(description = "에러 코드")
-        private String code;
+        private final String code;
 
         @Schema(description = "메시지")
-        private String message;
+        private final String message;
 
         @Schema(description = "데이터")
-        private T data;
+        private final T data;
     }
 }
