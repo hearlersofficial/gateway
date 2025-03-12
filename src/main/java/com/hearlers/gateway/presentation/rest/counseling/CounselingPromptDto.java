@@ -270,4 +270,105 @@ public class CounselingPromptDto {
         @Schema(description = "InstructionItem 응답 DTO")
         private InstructionItemResponseDto instructionItem;
     }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 응답 DTO")
+    public static class InstructionResponseDto {
+        @Schema(description = "Instruction ID", example = "instr_123456")
+        private String id;
+
+        @Schema(description = "Instruction 이름", example = "우울증 상담 지침")
+        private String name;
+
+        @Schema(description = "Instruction 초기 문장", example = "안녕하세요, 오늘 어떤 기분이신가요?")
+        private String initialSentence;
+
+        @Schema(description = "Instruction 항목 목록")
+        private List<InstructionItemResponseDto> instructionItems;
+
+        @Schema(description = "Instruction 생성 시간", example = "2024-12-29T12:34:56.000Z")
+        private String createdAt;
+
+        @Schema(description = "Instruction 수정 시간", example = "2024-12-29T12:34:56.000Z")
+        private String updatedAt;
+        
+        @Schema(description = "Instruction 삭제 시간", example = "2024-12-29T12:34:56.000Z")
+        private String deletedAt;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 생성 요청 DTO")
+    public static class CreateInstructionRequestDto {
+        @NotBlank(message = "Instruction 이름은 필수 입력 항목입니다.")
+        @Schema(description = "Instruction 이름", example = "우울증 상담 지침")
+        private String name;
+        
+        @Schema(description = "Instruction 초기 문장", example = "안녕하세요, 오늘 어떤 기분이신가요?")
+        private String initialSentence;
+        
+        @Schema(description = "Instruction 항목 ID 목록", example = "[\"instr_item_123\", \"instr_item_456\"]")
+        private List<String> instructionItemIds;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 생성 응답 DTO")
+    public static class CreateInstructionResponseDto {
+        @Schema(description = "Instruction 응답 DTO")
+        private InstructionResponseDto instruction;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 조회 응답 DTO")
+    public static class GetInstructionByIdResponseDto {
+        @Schema(description = "Instruction 응답 DTO")
+        private InstructionResponseDto instruction;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 목록 조회 요청 DTO")
+    public static class GetInstructionsRequestDto {
+        @Schema(description = "조회할 Instruction 이름 (선택사항)", example = "우울증")
+        private String name;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 목록 조회 응답 DTO")
+    public static class GetInstructionsResponseDto {
+        @Schema(description = "Instruction 목록")
+        private List<InstructionResponseDto> instructions;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 업데이트 요청 DTO")
+    public static class UpdateInstructionRequestDto {
+        @Schema(description = "Instruction 이름 (선택사항)", example = "수정된 우울증 상담 지침")
+        private String name;
+        
+        @Schema(description = "Instruction 초기 문장 (선택사항)", example = "안녕하세요, 오늘은 어떤 일이 있으셨나요?")
+        private String initialSentence;
+        
+        @Schema(description = "초기 문장 필드 존재 여부 (null로 변경하려면 true로 설정)", example = "true")
+        private Boolean hasInitialSentence;
+        
+        @Schema(description = "Instruction 항목 ID 목록 (전체 목록을 대체함)", example = "[\"instr_item_123\", \"instr_item_789\"]")
+        private List<String> instructionItemIds;
+        
+        @Schema(description = "항목 ID 목록 필드 존재 여부 (목록을 비우려면 true로 설정)", example = "true")
+        private Boolean hasInstructionItemIds;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Instruction 업데이트 응답 DTO")
+    public static class UpdateInstructionResponseDto {
+        @Schema(description = "Instruction 응답 DTO")
+        private InstructionResponseDto instruction;
+    }
 }
