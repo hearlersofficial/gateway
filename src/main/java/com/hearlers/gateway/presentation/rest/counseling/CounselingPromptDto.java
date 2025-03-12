@@ -193,4 +193,81 @@ public class CounselingPromptDto {
         @Schema(description = "Tone 응답 DTO")
         private ToneResponseDto tone;
     } 
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 응답 DTO")
+    public static class InstructionItemResponseDto {
+        @Schema(description = "InstructionItem ID", example = "instr_123456")
+        private String id;
+
+        @Schema(description = "InstructionItem 내용", example = "내담자의 감정 상태를 먼저 파악하세요.")
+        private String body;
+
+        @Schema(description = "InstructionItem 생성 시간", example = "2024-12-29T12:34:56.000Z")
+        private String createdAt;
+
+        @Schema(description = "InstructionItem 수정 시간", example = "2024-12-29T12:34:56.000Z")
+        private String updatedAt;
+        
+        @Schema(description = "InstructionItem 삭제 시간", example = "2024-12-29T12:34:56.000Z")
+        private String deletedAt;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 생성 요청 DTO")
+    public static class CreateInstructionItemRequestDto {
+        @NotBlank(message = "InstructionItem 내용은 필수 입력 항목입니다.")
+        @Schema(description = "InstructionItem 내용", example = "내담자의 감정 상태를 먼저 파악하세요.")
+        private String body;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 생성 응답 DTO")
+    public static class CreateInstructionItemResponseDto {
+        @Schema(description = "InstructionItem 응답 DTO")
+        private InstructionItemResponseDto instructionItem;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 조회 응답 DTO")
+    public static class GetInstructionItemByIdResponseDto {
+        @Schema(description = "InstructionItem 응답 DTO")
+        private InstructionItemResponseDto instructionItem;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 목록 조회 요청 DTO")
+    public static class GetInstructionItemsRequestDto {
+        @Schema(description = "조회할 키워드 (선택사항)", example = "감정")
+        private String keyword;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 목록 조회 응답 DTO")
+    public static class GetInstructionItemsResponseDto {
+        @Schema(description = "InstructionItem 목록")
+        private List<InstructionItemResponseDto> instructionItems;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 업데이트 요청 DTO")
+    public static class UpdateInstructionItemRequestDto {
+        @Schema(description = "InstructionItem 내용 (선택사항)", example = "내담자의 감정 상태를 더 자세히 파악하세요.")
+        private String body;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "InstructionItem 업데이트 응답 DTO")
+    public static class UpdateInstructionItemResponseDto {
+        @Schema(description = "InstructionItem 응답 DTO")
+        private InstructionItemResponseDto instructionItem;
+    }
 }
