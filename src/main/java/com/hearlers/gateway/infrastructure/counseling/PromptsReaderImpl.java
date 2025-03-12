@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.hearlers.api.proto.v1.model.Context;
+import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CounselServiceGrpc.CounselServiceBlockingStub;
 import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
+import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
+import com.hearlers.api.proto.v1.service.FindTonesRequest;
 import com.hearlers.gateway.application.counseling.PromptsReader;
 
 import lombok.RequiredArgsConstructor;
@@ -26,6 +29,15 @@ public class PromptsReaderImpl implements PromptsReader {
     public List<Context> findContexts(FindContextsRequest request) {
         return counselServiceBlockingStub.findContexts(request).getContextsList();
     }
+
+    @Override
+    public Tone findToneById(FindToneByIdRequest request) {
+        return counselServiceBlockingStub.findToneById(request).getTone();
+    }
     
+    @Override
+    public List<Tone> findTones(FindTonesRequest request) {
+        return counselServiceBlockingStub.findTones(request).getTonesList();
+    }
     
 }

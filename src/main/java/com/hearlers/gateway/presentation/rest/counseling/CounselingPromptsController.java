@@ -1,6 +1,5 @@
 package com.hearlers.gateway.presentation.rest.counseling;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,10 +43,9 @@ public class CounselingPromptsController {
             @Valid @RequestBody CounselingPromptDto.GetContextsRequestDto request) {
         var findContextsRequest = counselingPromptDtoMapper.of(request);
         var contexts = counselingService.findContexts(findContextsRequest);
+        var response = counselingPromptDtoMapper.of(contexts);
         
-        return ResponseEntity.ok(ResponseDtoUtil.success(
-                counselingPromptDtoMapper.of(contexts),
-                "Context 목록 조회 성공"));
+        return ResponseDtoUtil.okResponse(response, "Context 목록 조회 성공");
     }
 
     @SecurityRequirements
@@ -65,9 +63,9 @@ public class CounselingPromptsController {
         var findContextByIdRequest = counselingPromptDtoMapper.of(contextId);
         var context = counselingService.findContextById(findContextByIdRequest);
         
-        return ResponseEntity.ok(ResponseDtoUtil.success(
+        return ResponseDtoUtil.okResponse(
                 counselingPromptDtoMapper.ofSingle(context),
-                "Context 조회 성공"));
+                "Context 조회 성공");
     }
     
     @SecurityRequirements
@@ -83,11 +81,9 @@ public class CounselingPromptsController {
         var createContextRequest = counselingPromptDtoMapper.of(request);
         var createdContext = counselingService.createContext(createContextRequest);
         
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(ResponseDtoUtil.success(
-                        counselingPromptDtoMapper.of(createdContext, true),
-                        "Context 생성 성공"));
+        return ResponseDtoUtil.createdResponse(
+                counselingPromptDtoMapper.of(createdContext, true),
+                "Context 생성 성공");
     }
     
     @SecurityRequirements
@@ -106,9 +102,82 @@ public class CounselingPromptsController {
         
         var updateContextRequest = counselingPromptDtoMapper.of(request, contextId);
         var updatedContext = counselingService.updateContext(updateContextRequest);
+        var response = counselingPromptDtoMapper.ofUpdate(updatedContext);
+
+        return ResponseDtoUtil.okResponse(response, "Context 업데이트 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Tone 목록 조회", description = "Tone 목록을 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Tone 목록 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "Tone 목록 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/tones")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetTonesResponseDto>> getTones(
+            @Valid CounselingPromptDto.GetTonesRequestDto request) {
+        var findTonesRequest = counselingPromptDtoMapper.ofTones(request);
+        var tones = counselingService.findTones(findTonesRequest);
+        var response = counselingPromptDtoMapper.ofTones(tones);
         
-        return ResponseEntity.ok(ResponseDtoUtil.success(
-                counselingPromptDtoMapper.ofUpdate(updatedContext),
-                "Context 업데이트 성공"));
+        return ResponseDtoUtil.okResponse(response, "Tone 목록 조회 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Tone 조회", description = "ID로 Tone을 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Tone 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "Tone 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "Tone을 찾을 수 없음", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/tones/{toneId}")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetToneByIdResponseDto>> getTone(
+            @PathVariable String toneId) {
+        var findToneByIdRequest = counselingPromptDtoMapper.ofTone(toneId);
+        var tone = counselingService.findToneById(findToneByIdRequest);
+        var response = counselingPromptDtoMapper.ofToneSingle(tone);
+        
+        return ResponseDtoUtil.okResponse(response, "Tone 조회 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Tone 생성", description = "새로운 Tone을 생성합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Tone 생성 성공"),
+            @ApiResponse(responseCode = "400", description = "Tone 생성 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PostMapping("/v1/tones")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.CreateToneResponseDto>> createTone(
+            @Valid @RequestBody CounselingPromptDto.CreateToneRequestDto request) {
+        var createToneRequest = counselingPromptDtoMapper.of(request);
+        var createdTone = counselingService.createTone(createToneRequest);
+        var response = counselingPromptDtoMapper.ofCreate(createdTone);
+        
+        return ResponseDtoUtil.createdResponse(response, "Tone 생성 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Tone 업데이트", description = "기존 Tone을 업데이트합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Tone 업데이트 성공"),
+            @ApiResponse(responseCode = "400", description = "Tone 업데이트 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "Tone을 찾을 수 없음", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PutMapping("/v1/tones/{toneId}")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.UpdateToneResponseDto>> updateTone(
+            @PathVariable String toneId,
+            @Valid @RequestBody CounselingPromptDto.UpdateToneRequestDto request) {
+        
+        var updateToneRequest = counselingPromptDtoMapper.of(request, toneId);
+        var updatedTone = counselingService.updateTone(updateToneRequest);
+        var response = counselingPromptDtoMapper.ofToneUpdate(updatedTone);
+        
+        return ResponseDtoUtil.okResponse(response, "Tone 업데이트 성공");
     }
 }
