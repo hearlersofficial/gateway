@@ -6,6 +6,13 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * Tone Id 의 경우 nullable field
+ * Tone Id 의 변경이 없을 경우 has_tone = false
+ * Tone Id 를 null 로 변경할 경우 has_tone = true, tone_id = null
+ * Tone Id 를 다른 값으로 변경할 경우 has_tone = true, tone_id = "new_tone_id"
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.UpdateCounselTechniqueRequest}
  */
 public final class UpdateCounselTechniqueRequest extends
@@ -182,11 +189,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTEXT_ID_FIELD_NUMBER = 4;
+  public static final int HAS_TONE_FIELD_NUMBER = 4;
+  private boolean hasTone_ = false;
+  /**
+   * <code>bool has_tone = 4 [json_name = "hasTone"];</code>
+   * @return The hasTone.
+   */
+  @java.lang.Override
+  public boolean getHasTone() {
+    return hasTone_;
+  }
+
+  public static final int CONTEXT_ID_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object contextId_ = "";
   /**
-   * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
    * @return Whether the contextId field is set.
    */
   @java.lang.Override
@@ -194,7 +212,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
    * @return The contextId.
    */
   @java.lang.Override
@@ -211,7 +229,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
    * @return The bytes for contextId.
    */
   @java.lang.Override
@@ -229,11 +247,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INSTRUCTION_ID_FIELD_NUMBER = 5;
+  public static final int INSTRUCTION_ID_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object instructionId_ = "";
   /**
-   * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
    * @return Whether the instructionId field is set.
    */
   @java.lang.Override
@@ -241,7 +259,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
    * @return The instructionId.
    */
   @java.lang.Override
@@ -258,7 +276,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
    * @return The bytes for instructionId.
    */
   @java.lang.Override
@@ -276,24 +294,24 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COUNSEL_TECHNIQUE_STAGE_FIELD_NUMBER = 6;
+  public static final int COUNSEL_TECHNIQUE_STAGE_FIELD_NUMBER = 7;
   private int counselTechniqueStage_ = 0;
   /**
-   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
    * @return Whether the counselTechniqueStage field is set.
    */
   @java.lang.Override public boolean hasCounselTechniqueStage() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
    * @return The enum numeric value on the wire for counselTechniqueStage.
    */
   @java.lang.Override public int getCounselTechniqueStageValue() {
     return counselTechniqueStage_;
   }
   /**
-   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+   * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
    * @return The counselTechniqueStage.
    */
   @java.lang.Override public com.hearlers.api.proto.v1.model.CounselTechniqueStage getCounselTechniqueStage() {
@@ -324,14 +342,17 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, toneId_);
     }
+    if (hasTone_ != false) {
+      output.writeBool(4, hasTone_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, contextId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, contextId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, instructionId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, instructionId_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(6, counselTechniqueStage_);
+      output.writeEnum(7, counselTechniqueStage_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -351,15 +372,19 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, toneId_);
     }
+    if (hasTone_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, hasTone_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, contextId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, contextId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, instructionId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, instructionId_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, counselTechniqueStage_);
+        .computeEnumSize(7, counselTechniqueStage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -388,6 +413,8 @@ private static final long serialVersionUID = 0L;
       if (!getToneId()
           .equals(other.getToneId())) return false;
     }
+    if (getHasTone()
+        != other.getHasTone()) return false;
     if (hasContextId() != other.hasContextId()) return false;
     if (hasContextId()) {
       if (!getContextId()
@@ -423,6 +450,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getToneId().hashCode();
     }
+    hash = (37 * hash) + HAS_TONE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getHasTone());
     if (hasContextId()) {
       hash = (37 * hash) + CONTEXT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getContextId().hashCode();
@@ -533,6 +563,13 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Tone Id 의 경우 nullable field
+   * Tone Id 의 변경이 없을 경우 has_tone = false
+   * Tone Id 를 null 로 변경할 경우 has_tone = true, tone_id = null
+   * Tone Id 를 다른 값으로 변경할 경우 has_tone = true, tone_id = "new_tone_id"
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.UpdateCounselTechniqueRequest}
    */
   public static final class Builder extends
@@ -569,6 +606,7 @@ private static final long serialVersionUID = 0L;
       counselTechniqueId_ = "";
       name_ = "";
       toneId_ = "";
+      hasTone_ = false;
       contextId_ = "";
       instructionId_ = "";
       counselTechniqueStage_ = 0;
@@ -618,14 +656,17 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.hasTone_ = hasTone_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.contextId_ = contextId_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.instructionId_ = instructionId_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.counselTechniqueStage_ = counselTechniqueStage_;
         to_bitField0_ |= 0x00000010;
       }
@@ -659,14 +700,17 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getHasTone() != false) {
+        setHasTone(other.getHasTone());
+      }
       if (other.hasContextId()) {
         contextId_ = other.contextId_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasInstructionId()) {
         instructionId_ = other.instructionId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCounselTechniqueStage()) {
@@ -713,21 +757,26 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
-              contextId_ = input.readStringRequireUtf8();
+            case 32: {
+              hasTone_ = input.readBool();
               bitField0_ |= 0x00000008;
               break;
-            } // case 34
+            } // case 32
             case 42: {
-              instructionId_ = input.readStringRequireUtf8();
+              contextId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 48: {
-              counselTechniqueStage_ = input.readEnum();
+            case 50: {
+              instructionId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
-            } // case 48
+            } // case 50
+            case 56: {
+              counselTechniqueStage_ = input.readEnum();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -975,16 +1024,48 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean hasTone_ ;
+    /**
+     * <code>bool has_tone = 4 [json_name = "hasTone"];</code>
+     * @return The hasTone.
+     */
+    @java.lang.Override
+    public boolean getHasTone() {
+      return hasTone_;
+    }
+    /**
+     * <code>bool has_tone = 4 [json_name = "hasTone"];</code>
+     * @param value The hasTone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasTone(boolean value) {
+
+      hasTone_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool has_tone = 4 [json_name = "hasTone"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHasTone() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      hasTone_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object contextId_ = "";
     /**
-     * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+     * <code>optional string context_id = 5 [json_name = "contextId"];</code>
      * @return Whether the contextId field is set.
      */
     public boolean hasContextId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+     * <code>optional string context_id = 5 [json_name = "contextId"];</code>
      * @return The contextId.
      */
     public java.lang.String getContextId() {
@@ -1000,7 +1081,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+     * <code>optional string context_id = 5 [json_name = "contextId"];</code>
      * @return The bytes for contextId.
      */
     public com.google.protobuf.ByteString
@@ -1017,7 +1098,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+     * <code>optional string context_id = 5 [json_name = "contextId"];</code>
      * @param value The contextId to set.
      * @return This builder for chaining.
      */
@@ -1025,22 +1106,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       contextId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+     * <code>optional string context_id = 5 [json_name = "contextId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearContextId() {
       contextId_ = getDefaultInstance().getContextId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string context_id = 4 [json_name = "contextId"];</code>
+     * <code>optional string context_id = 5 [json_name = "contextId"];</code>
      * @param value The bytes for contextId to set.
      * @return This builder for chaining.
      */
@@ -1049,21 +1130,21 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       contextId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private java.lang.Object instructionId_ = "";
     /**
-     * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+     * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
      * @return Whether the instructionId field is set.
      */
     public boolean hasInstructionId() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+     * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
      * @return The instructionId.
      */
     public java.lang.String getInstructionId() {
@@ -1079,7 +1160,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+     * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
      * @return The bytes for instructionId.
      */
     public com.google.protobuf.ByteString
@@ -1096,7 +1177,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+     * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
      * @param value The instructionId to set.
      * @return This builder for chaining.
      */
@@ -1104,22 +1185,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       instructionId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+     * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearInstructionId() {
       instructionId_ = getDefaultInstance().getInstructionId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string instruction_id = 5 [json_name = "instructionId"];</code>
+     * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
      * @param value The bytes for instructionId to set.
      * @return This builder for chaining.
      */
@@ -1128,39 +1209,39 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       instructionId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private int counselTechniqueStage_ = 0;
     /**
-     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
      * @return Whether the counselTechniqueStage field is set.
      */
     @java.lang.Override public boolean hasCounselTechniqueStage() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
      * @return The enum numeric value on the wire for counselTechniqueStage.
      */
     @java.lang.Override public int getCounselTechniqueStageValue() {
       return counselTechniqueStage_;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
      * @param value The enum numeric value on the wire for counselTechniqueStage to set.
      * @return This builder for chaining.
      */
     public Builder setCounselTechniqueStageValue(int value) {
       counselTechniqueStage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
      * @return The counselTechniqueStage.
      */
     @java.lang.Override
@@ -1169,7 +1250,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.hearlers.api.proto.v1.model.CounselTechniqueStage.UNRECOGNIZED : result;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
      * @param value The counselTechniqueStage to set.
      * @return This builder for chaining.
      */
@@ -1177,17 +1258,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       counselTechniqueStage_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 6 [json_name = "counselTechniqueStage"];</code>
+     * <code>optional .com.hearlers.v1.model.CounselTechniqueStage counsel_technique_stage = 7 [json_name = "counselTechniqueStage"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselTechniqueStage() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       counselTechniqueStage_ = 0;
       onChanged();
       return this;

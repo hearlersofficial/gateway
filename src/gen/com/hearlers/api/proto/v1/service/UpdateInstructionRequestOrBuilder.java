@@ -56,27 +56,39 @@ public interface UpdateInstructionRequestOrBuilder extends
       getInitialSentenceBytes();
 
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>bool has_initial_sentence = 4 [json_name = "hasInitialSentence"];</code>
+   * @return The hasInitialSentence.
+   */
+  boolean getHasInitialSentence();
+
+  /**
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @return A list containing the instructionItemIds.
    */
   java.util.List<java.lang.String>
       getInstructionItemIdsList();
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @return The count of instructionItemIds.
    */
   int getInstructionItemIdsCount();
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @param index The index of the element to return.
    * @return The instructionItemIds at the given index.
    */
   java.lang.String getInstructionItemIds(int index);
   /**
-   * <code>repeated string instruction_item_ids = 4 [json_name = "instructionItemIds"];</code>
+   * <code>repeated string instruction_item_ids = 5 [json_name = "instructionItemIds"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the instructionItemIds at the given index.
    */
   com.google.protobuf.ByteString
       getInstructionItemIdsBytes(int index);
+
+  /**
+   * <code>bool has_instruction_item_ids = 6 [json_name = "hasInstructionItemIds"];</code>
+   * @return The hasInstructionItemIds.
+   */
+  boolean getHasInstructionItemIds();
 }

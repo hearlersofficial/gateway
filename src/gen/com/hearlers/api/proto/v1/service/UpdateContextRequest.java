@@ -218,6 +218,17 @@ private static final long serialVersionUID = 0L;
     return placeholders_.getByteString(index);
   }
 
+  public static final int HAS_PLACEHOLDERS_FIELD_NUMBER = 5;
+  private boolean hasPlaceholders_ = false;
+  /**
+   * <code>bool has_placeholders = 5 [json_name = "hasPlaceholders"];</code>
+   * @return The hasPlaceholders.
+   */
+  @java.lang.Override
+  public boolean getHasPlaceholders() {
+    return hasPlaceholders_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -244,6 +255,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < placeholders_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, placeholders_.getRaw(i));
     }
+    if (hasPlaceholders_ != false) {
+      output.writeBool(5, hasPlaceholders_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -269,6 +283,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getPlaceholdersList().size();
+    }
+    if (hasPlaceholders_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, hasPlaceholders_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -299,6 +317,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPlaceholdersList()
         .equals(other.getPlaceholdersList())) return false;
+    if (getHasPlaceholders()
+        != other.getHasPlaceholders()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -324,6 +344,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PLACEHOLDERS_FIELD_NUMBER;
       hash = (53 * hash) + getPlaceholdersList().hashCode();
     }
+    hash = (37 * hash) + HAS_PLACEHOLDERS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getHasPlaceholders());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -460,6 +483,7 @@ private static final long serialVersionUID = 0L;
       body_ = "";
       placeholders_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      hasPlaceholders_ = false;
       return this;
     }
 
@@ -509,6 +533,9 @@ private static final long serialVersionUID = 0L;
         placeholders_.makeImmutable();
         result.placeholders_ = placeholders_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.hasPlaceholders_ = hasPlaceholders_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -548,6 +575,9 @@ private static final long serialVersionUID = 0L;
           placeholders_.addAll(other.placeholders_);
         }
         onChanged();
+      }
+      if (other.getHasPlaceholders() != false) {
+        setHasPlaceholders(other.getHasPlaceholders());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -596,6 +626,11 @@ private static final long serialVersionUID = 0L;
               placeholders_.add(s);
               break;
             } // case 34
+            case 40: {
+              hasPlaceholders_ = input.readBool();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -950,6 +985,38 @@ private static final long serialVersionUID = 0L;
       ensurePlaceholdersIsMutable();
       placeholders_.add(value);
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean hasPlaceholders_ ;
+    /**
+     * <code>bool has_placeholders = 5 [json_name = "hasPlaceholders"];</code>
+     * @return The hasPlaceholders.
+     */
+    @java.lang.Override
+    public boolean getHasPlaceholders() {
+      return hasPlaceholders_;
+    }
+    /**
+     * <code>bool has_placeholders = 5 [json_name = "hasPlaceholders"];</code>
+     * @param value The hasPlaceholders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasPlaceholders(boolean value) {
+
+      hasPlaceholders_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool has_placeholders = 5 [json_name = "hasPlaceholders"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHasPlaceholders() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      hasPlaceholders_ = false;
       onChanged();
       return this;
     }
