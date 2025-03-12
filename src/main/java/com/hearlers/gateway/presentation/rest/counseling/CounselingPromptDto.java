@@ -2,8 +2,12 @@ package com.hearlers.gateway.presentation.rest.counseling;
 
 import java.util.List;
 
+import com.hearlers.gateway.shared.enums.CounselTechniqueStageType;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -454,5 +458,150 @@ public class CounselingPromptDto {
     public static class UpdatePersonaResponseDto {
         @Schema(description = "Persona 응답 DTO")
         private PersonaResponseDto persona;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 응답 DTO")
+    public static class CounselTechniqueResponseDto {
+        @Schema(description = "CounselTechnique ID", example = "ct_123456")
+        private String id;
+
+        @Schema(description = "CounselTechnique 이름", example = "공감 반응 기법")
+        private String name;
+
+        @Schema(description = "Tone ID", example = "tone_789012")
+        private String toneId;
+
+        @Schema(description = "Context ID", example = "ctx_345678")
+        private String contextId;
+
+        @Schema(description = "Instruction ID", example = "instr_901234")
+        private String instructionId;
+
+        @Schema(description = "CounselTechnique 단계")
+        private CounselTechniqueStageType counselTechniqueStage;
+
+        @Schema(description = "다음 CounselTechnique ID", example = "ct_567890")
+        private String nextCounselTechniqueId;
+
+        @Schema(description = "CounselTechnique 생성 시간", example = "2024-12-29T12:34:56.000Z")
+        private String createdAt;
+
+        @Schema(description = "CounselTechnique 수정 시간", example = "2024-12-29T12:34:56.000Z")
+        private String updatedAt;
+        
+        @Schema(description = "CounselTechnique 삭제 시간", example = "2024-12-29T12:34:56.000Z")
+        private String deletedAt;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 생성 요청 DTO")
+    public static class CreateCounselTechniqueRequestDto {
+        @NotBlank(message = "CounselTechnique 이름은 필수 입력 항목입니다.")
+        @Schema(description = "CounselTechnique 이름", example = "공감 반응 기법")
+        private String name;
+        
+        @Schema(description = "Tone ID (선택사항)", example = "tone_789012")
+        private String toneId;
+        
+        @NotBlank(message = "Context ID는 필수 입력 항목입니다.")
+        @Schema(description = "Context ID", example = "ctx_345678")
+        private String contextId;
+        
+        @NotBlank(message = "Instruction ID는 필수 입력 항목입니다.")
+        @Schema(description = "Instruction ID", example = "instr_901234")
+        private String instructionId;
+        
+        @NotNull(message = "CounselTechnique 단계는 필수 입력 항목입니다.")
+        @Schema(description = "CounselTechnique 단계")
+        private CounselTechniqueStageType counselTechniqueStage;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 생성 응답 DTO")
+    public static class CreateCounselTechniqueResponseDto {
+        @Schema(description = "CounselTechnique 응답 DTO")
+        private CounselTechniqueResponseDto counselTechnique;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 조회 응답 DTO")
+    public static class GetCounselTechniqueByIdResponseDto {
+        @Schema(description = "CounselTechnique 응답 DTO")
+        private CounselTechniqueResponseDto counselTechnique;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 목록 조회 요청 DTO")
+    public static class GetCounselTechniquesRequestDto {
+        @Schema(description = "조회할 CounselTechnique 이름 (선택사항)", example = "공감")
+        private String name;
+        
+        @Schema(description = "조회할 Tone ID (선택사항)", example = "tone_789012")
+        private String toneId;
+        
+        @Schema(description = "조회할 CounselTechnique 단계 (선택사항)", example = "EXPLORATION")
+        private CounselTechniqueStageType counselTechniqueStage;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 목록 조회 응답 DTO")
+    public static class GetCounselTechniquesResponseDto {
+        @Schema(description = "CounselTechnique 목록")
+        private List<CounselTechniqueResponseDto> counselTechniques;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 업데이트 요청 DTO")
+    public static class UpdateCounselTechniqueRequestDto {
+        @Schema(description = "CounselTechnique 이름 (선택사항)", example = "개선된 공감 반응 기법")
+        private String name;
+        
+        @Schema(description = "Tone ID (선택사항)", example = "tone_567890")
+        private String toneId;
+        
+        @Schema(description = "Tone 필드 존재 여부 (null로 변경하려면 true로 설정)", example = "true")
+        private Boolean hasTone;
+        
+        @Schema(description = "Context ID (선택사항)", example = "ctx_123456")
+        private String contextId;
+        
+        @Schema(description = "Instruction ID (선택사항)", example = "instr_789012")
+        private String instructionId;
+        
+        @Schema(description = "CounselTechnique 단계 (선택사항)")
+        private CounselTechniqueStageType counselTechniqueStage;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 업데이트 응답 DTO")
+    public static class UpdateCounselTechniqueResponseDto {
+        @Schema(description = "CounselTechnique 응답 DTO")
+        private CounselTechniqueResponseDto counselTechnique;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 시퀀스 저장 요청 DTO")
+    public static class SaveCounselTechniqueSequenceRequestDto {
+        @NotEmpty(message = "CounselTechnique ID 목록은 필수 입력 항목입니다.")
+        @Schema(description = "순서대로 정렬된 CounselTechnique ID 목록", example = "[\"ct_123\", \"ct_456\", \"ct_789\"]")
+        private List<String> counselTechniqueIds;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "CounselTechnique 시퀀스 저장 응답 DTO")
+    public static class SaveCounselTechniqueSequenceResponseDto {
+        @Schema(description = "업데이트된 CounselTechnique 목록")
+        private List<CounselTechniqueResponseDto> counselTechniques;
     }
 }
