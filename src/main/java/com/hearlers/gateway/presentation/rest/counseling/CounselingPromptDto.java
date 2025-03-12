@@ -371,4 +371,88 @@ public class CounselingPromptDto {
         @Schema(description = "Instruction 응답 DTO")
         private InstructionResponseDto instruction;
     }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 응답 DTO")
+    public static class PersonaResponseDto {
+        @Schema(description = "Persona ID", example = "persona_123456")
+        private String id;
+
+        @Schema(description = "Persona 내용", example = "저는 10년 경력의 심리상담사로, 우울증과 불안장애 분야를 전문으로 다룹니다.")
+        private String body;
+        
+        @Schema(description = "상담사 ID", example = "counselor_789012")
+        private String counselorId;
+
+        @Schema(description = "Persona 생성 시간", example = "2024-12-29T12:34:56.000Z")
+        private String createdAt;
+
+        @Schema(description = "Persona 수정 시간", example = "2024-12-29T12:34:56.000Z")
+        private String updatedAt;
+        
+        @Schema(description = "Persona 삭제 시간", example = "2024-12-29T12:34:56.000Z")
+        private String deletedAt;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 생성 요청 DTO")
+    public static class CreatePersonaRequestDto {
+        @NotBlank(message = "상담사 ID는 필수 입력 항목입니다.")
+        @Schema(description = "상담사 ID", example = "counselor_789012")
+        private String counselorId;
+        
+        @NotBlank(message = "Persona 내용은 필수 입력 항목입니다.")
+        @Schema(description = "Persona 내용", example = "저는 10년 경력의 심리상담사로, 우울증과 불안장애 분야를 전문으로 다룹니다.")
+        private String body;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 생성 응답 DTO")
+    public static class CreatePersonaResponseDto {
+        @Schema(description = "Persona 응답 DTO")
+        private PersonaResponseDto persona;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 조회 응답 DTO")
+    public static class GetPersonaByIdResponseDto {
+        @Schema(description = "Persona 응답 DTO")
+        private PersonaResponseDto persona;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 목록 조회 요청 DTO")
+    public static class GetPersonasRequestDto {
+        @Schema(description = "조회할 상담사 ID (선택사항)", example = "counselor_789012")
+        private String counselorId;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 목록 조회 응답 DTO")
+    public static class GetPersonasResponseDto {
+        @Schema(description = "Persona 목록")
+        private List<PersonaResponseDto> personas;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 업데이트 요청 DTO")
+    public static class UpdatePersonaRequestDto {
+        @Schema(description = "Persona 내용", example = "저는 12년 경력의 심리상담사로, 우울증, 불안장애, 트라우마 분야를 전문으로 다룹니다.")
+        private String body;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "Persona 업데이트 응답 DTO")
+    public static class UpdatePersonaResponseDto {
+        @Schema(description = "Persona 응답 DTO")
+        private PersonaResponseDto persona;
+    }
 }
