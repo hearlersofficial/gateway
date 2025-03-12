@@ -8,19 +8,24 @@ import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 import com.hearlers.api.proto.v1.model.Context;
+import com.hearlers.api.proto.v1.model.Instruction;
 import com.hearlers.api.proto.v1.model.InstructionItem;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CreateContextRequest;
 import com.hearlers.api.proto.v1.service.CreateInstructionItemRequest;
+import com.hearlers.api.proto.v1.service.CreateInstructionRequest;
 import com.hearlers.api.proto.v1.service.CreateToneRequest;
 import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemsRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionsRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
 import com.hearlers.api.proto.v1.service.UpdateContextRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest;
+import com.hearlers.api.proto.v1.service.UpdateInstructionRequest;
 import com.hearlers.api.proto.v1.service.UpdateToneRequest;
 
 @Mapper(
@@ -259,6 +264,129 @@ public interface CounselingPromptDtoMapper {
         
         CounselingPromptDto.GetInstructionItemsResponseDto responseDto = new CounselingPromptDto.GetInstructionItemsResponseDto();
         responseDto.setInstructionItems(dtos);
+        return responseDto;
+    }
+
+    // InstructionItem을 매핑하기 위한 메서드 (id만 추출)
+    default String mapInstructionItemToId(InstructionItem item) {
+        return item != null ? item.getId() : null;
+    }
+
+    // Instruction → InstructionResponseDto
+    default CounselingPromptDto.InstructionResponseDto of(Instruction instruction) {
+        if (instruction == null) {
+            return null;
+        }
+
+        CounselingPromptDto.InstructionResponseDto dto = new CounselingPromptDto.InstructionResponseDto();
+        dto.setId(instruction.getId());
+        dto.setName(instruction.getName());
+        dto.setInitialSentence(instruction.getInitialSentence());
+        
+        List<CounselingPromptDto.InstructionItemResponseDto> itemDtos = instruction.getInstructionItemsList()
+                .stream()
+                .map(this::ofInstruction)
+                .collect(Collectors.toList());
+        dto.setInstructionItems(itemDtos);
+        
+        dto.setCreatedAt(instruction.getCreatedAt());
+        dto.setUpdatedAt(instruction.getUpdatedAt());
+        dto.setDeletedAt(instruction.getDeletedAt());
+        
+        return dto;
+    }
+
+    // CreateInstructionRequestDto → CreateInstructionRequest
+    default CreateInstructionRequest of(CounselingPromptDto.CreateInstructionRequestDto requestDto) {
+        CreateInstructionRequest.Builder builder = CreateInstructionRequest.newBuilder()
+                .setName(requestDto.getName());
+        
+        if (requestDto.getInitialSentence() != null) {
+            builder.setInitialSentence(requestDto.getInitialSentence());
+        }
+        
+        if (requestDto.getInstructionItemIds() != null && !requestDto.getInstructionItemIds().isEmpty()) {
+            builder.addAllInstructionItemIds(requestDto.getInstructionItemIds());
+        }
+        
+        return builder.build();
+    }
+
+    // GetInstructionsRequestDto → FindInstructionsRequest
+    default FindInstructionsRequest ofInstructions(CounselingPromptDto.GetInstructionsRequestDto requestDto) {
+        FindInstructionsRequest.Builder builder = FindInstructionsRequest.newBuilder();
+        
+        if (requestDto.getName() != null) {
+            builder.setName(requestDto.getName());
+        }
+        
+        return builder.build();
+    }
+
+    // String(instructionId) → FindInstructionByIdRequest
+    default FindInstructionByIdRequest ofInstructionId(String instructionId) {
+        return FindInstructionByIdRequest.newBuilder()
+                .setInstructionId(instructionId)
+                .build();
+    }
+
+    // UpdateInstructionRequestDto → UpdateInstructionRequest
+    default UpdateInstructionRequest ofInstructionUpdate(CounselingPromptDto.UpdateInstructionRequestDto requestDto, String instructionId) {
+        UpdateInstructionRequest.Builder builder = UpdateInstructionRequest.newBuilder()
+                .setInstructionId(instructionId);
+        
+        if (requestDto.getName() != null) {
+            builder.setName(requestDto.getName());
+        }
+        
+        // 초기 문장 처리
+        if (requestDto.getHasInitialSentence() != null && requestDto.getHasInitialSentence()) {
+            builder.setHasInitialSentence(true);
+            if (requestDto.getInitialSentence() != null) {
+                builder.setInitialSentence(requestDto.getInitialSentence());
+            }
+        }
+        
+        // 항목 ID 목록 처리
+        if (requestDto.getHasInstructionItemIds() != null && requestDto.getHasInstructionItemIds()) {
+            builder.setHasInstructionItemIds(true);
+            if (requestDto.getInstructionItemIds() != null) {
+                builder.addAllInstructionItemIds(requestDto.getInstructionItemIds());
+            }
+        }
+        
+        return builder.build();
+    }
+
+    // Instruction → CreateInstructionResponseDto
+    default CounselingPromptDto.CreateInstructionResponseDto ofInstructionCreate(Instruction instruction) {
+        CounselingPromptDto.CreateInstructionResponseDto responseDto = new CounselingPromptDto.CreateInstructionResponseDto();
+        responseDto.setInstruction(of(instruction));
+        return responseDto;
+    }
+
+    // Instruction → UpdateInstructionResponseDto
+    default CounselingPromptDto.UpdateInstructionResponseDto ofInstructionUpdate(Instruction instruction) {
+        CounselingPromptDto.UpdateInstructionResponseDto responseDto = new CounselingPromptDto.UpdateInstructionResponseDto();
+        responseDto.setInstruction(of(instruction));
+        return responseDto;
+    }
+
+    // Instruction → GetInstructionByIdResponseDto
+    default CounselingPromptDto.GetInstructionByIdResponseDto ofInstructionById(Instruction instruction) {
+        CounselingPromptDto.GetInstructionByIdResponseDto responseDto = new CounselingPromptDto.GetInstructionByIdResponseDto();
+        responseDto.setInstruction(of(instruction));
+        return responseDto;
+    }
+
+    // List<Instruction> → GetInstructionsResponseDto
+    default CounselingPromptDto.GetInstructionsResponseDto ofInstructionList(List<Instruction> instructions) {
+        List<CounselingPromptDto.InstructionResponseDto> dtos = instructions.stream()
+                .map(this::of)
+                .collect(Collectors.toList());
+        
+        CounselingPromptDto.GetInstructionsResponseDto responseDto = new CounselingPromptDto.GetInstructionsResponseDto();
+        responseDto.setInstructions(dtos);
         return responseDto;
     }
 }

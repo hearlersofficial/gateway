@@ -19,6 +19,11 @@ import com.hearlers.api.proto.v1.service.FindTonesRequest;
 import com.hearlers.api.proto.v1.service.UpdateContextRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.UpdateToneRequest;
+import com.hearlers.api.proto.v1.service.CreateInstructionRequest;
+import com.hearlers.api.proto.v1.service.UpdateInstructionRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionByIdRequest;
+import com.hearlers.api.proto.v1.service.FindInstructionsRequest;
+import com.hearlers.api.proto.v1.model.Instruction;
 
 import lombok.RequiredArgsConstructor;
 
@@ -89,4 +94,25 @@ public class CounselingServiceImpl implements CounselingService {
     public List<InstructionItem> findInstructionItems(FindInstructionItemsRequest request) {
         return reader.findInstructionItems(request);
     }
+
+    @Override
+    public Instruction createInstruction(CreateInstructionRequest request) {
+        return persistor.createInstruction(request);
+    }
+
+    @Override
+    public Instruction updateInstruction(UpdateInstructionRequest request) {
+        return persistor.updateInstruction(request);
+    }
+
+    @Override
+    public Instruction findInstructionById(FindInstructionByIdRequest request) {
+        return reader.findInstructionById(request);
+    }
+
+    @Override
+    public List<Instruction> findInstructions(FindInstructionsRequest request) {
+        return reader.findInstructions(request);
+    }
+    
 }

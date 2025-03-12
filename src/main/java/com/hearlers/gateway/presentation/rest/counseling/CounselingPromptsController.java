@@ -254,4 +254,78 @@ public class CounselingPromptsController {
         
         return ResponseDtoUtil.okResponse(response, "InstructionItem 업데이트 성공");
     }
+
+    @SecurityRequirements
+    @Operation(summary = "Instruction 목록 조회", description = "Instruction 목록을 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Instruction 목록 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "Instruction 목록 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/instructions")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetInstructionsResponseDto>> getInstructions(
+            @Valid CounselingPromptDto.GetInstructionsRequestDto request) {
+        var findInstructionsRequest = counselingPromptDtoMapper.ofInstructions(request);
+        var instructions = counselingService.findInstructions(findInstructionsRequest);
+        var response = counselingPromptDtoMapper.ofInstructionList(instructions);
+        
+        return ResponseDtoUtil.okResponse(response, "Instruction 목록 조회 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Instruction 조회", description = "ID로 Instruction을 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Instruction 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "Instruction 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "Instruction을 찾을 수 없음", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/instructions/{instructionId}")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetInstructionByIdResponseDto>> getInstruction(
+            @PathVariable String instructionId) {
+        var findInstructionByIdRequest = counselingPromptDtoMapper.ofInstructionId(instructionId);
+        var instruction = counselingService.findInstructionById(findInstructionByIdRequest);
+        var response = counselingPromptDtoMapper.ofInstructionById(instruction);
+        
+        return ResponseDtoUtil.okResponse(response, "Instruction 조회 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Instruction 생성", description = "새로운 Instruction을 생성합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Instruction 생성 성공"),
+            @ApiResponse(responseCode = "400", description = "Instruction 생성 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PostMapping("/v1/instructions")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.CreateInstructionResponseDto>> createInstruction(
+            @Valid @RequestBody CounselingPromptDto.CreateInstructionRequestDto request) {
+        var createInstructionRequest = counselingPromptDtoMapper.of(request);
+        var createdInstruction = counselingService.createInstruction(createInstructionRequest);
+        var response = counselingPromptDtoMapper.ofInstructionCreate(createdInstruction);
+        
+        return ResponseDtoUtil.createdResponse(response, "Instruction 생성 성공");
+    }
+
+    @SecurityRequirements
+    @Operation(summary = "Instruction 업데이트", description = "기존 Instruction을 업데이트합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Instruction 업데이트 성공"),
+            @ApiResponse(responseCode = "400", description = "Instruction 업데이트 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "Instruction을 찾을 수 없음", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PutMapping("/v1/instructions/{instructionId}")
+    public ResponseEntity<ResponseDto.Success<CounselingPromptDto.UpdateInstructionResponseDto>> updateInstruction(
+            @PathVariable String instructionId,
+            @Valid @RequestBody CounselingPromptDto.UpdateInstructionRequestDto request) {
+        
+        var updateInstructionRequest = counselingPromptDtoMapper.ofInstructionUpdate(request, instructionId);
+        var updatedInstruction = counselingService.updateInstruction(updateInstructionRequest);
+        var response = counselingPromptDtoMapper.ofInstructionUpdate(updatedInstruction);
+        
+        return ResponseDtoUtil.okResponse(response, "Instruction 업데이트 성공");
+    }
 }
