@@ -41,7 +41,7 @@ public class CounselingPromptsController {
     })
     @GetMapping("/v1/contexts")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetContextsResponseDto>> getContexts(
-            @Valid CounselingPromptDto.GetContextsRequestDto request) {
+            @Valid @RequestBody CounselingPromptDto.GetContextsRequestDto request) {
         var findContextsRequest = counselingPromptDtoMapper.of(request);
         var contexts = counselingService.findContexts(findContextsRequest);
         
