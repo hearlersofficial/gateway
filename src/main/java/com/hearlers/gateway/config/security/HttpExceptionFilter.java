@@ -1,49 +1,35 @@
 package com.hearlers.gateway.config.security;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
-import com.hearlers.gateway.shared.presentation.ResponseDto;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 모든 종류의 예외를 표준화된 응답 형식으로 변환하는 필터
+ * - 원래 상태 코드와 메시지는 유지하되, 응답 형식만 정규화
+ */
+@Slf4j
+@RequiredArgsConstructor
 public class HttpExceptionFilter extends OncePerRequestFilter {
+
+    private final ExceptionHandler exceptionHandler;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         try {
             filterChain.doFilter(request, response);
-        } catch (HttpException e) {
-            setErrorResponse(response, e.getHttpResultCode(), e.getData());
-        }
-    }
-
-    private void setErrorResponse(HttpServletResponse response, HttpResultCode httpResultCode, Object data) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        response.setStatus(httpResultCode.getStatus().value());
-        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        try {
-            ResponseDto.Error dto = ResponseDto.Error.builder()
-                    .status(httpResultCode.getStatus())
-                    .code(httpResultCode.getCode())
-                    .message(httpResultCode.getMessage())
-                    .data(data)
-                    .build();
-
-            response.getWriter().write(objectMapper.writeValueAsString(dto));
-        } catch (IOException e) {
-            throw new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR);
+        } catch (Exception e) {
+            log.debug("필터 체인에서 예외 발생: {}", e.getMessage());
+            // 예외 처리를 전용 핸들러에 위임
+            exceptionHandler.handleException(request, response, e);
         }
     }
 }

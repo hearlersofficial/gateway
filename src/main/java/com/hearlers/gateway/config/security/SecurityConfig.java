@@ -20,7 +20,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final JwtUtil jwtUtil;
-
+    private final ExceptionHandler exceptionHandler;
+    private final ResponseFormatter responseFormatter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
@@ -41,6 +42,8 @@ public class SecurityConfig {
                         // Swagger UI 관련 모든 리소스 허용
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-resources/**").permitAll()
+                        .requestMatchers("/webjars/**").permitAll()
                         // 그 외 모든 요청은 인증된 사용자만 접근 가능
                         .requestMatchers("/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated());
@@ -51,26 +54,32 @@ public class SecurityConfig {
                         .authenticationEntryPoint(customAuthenticationEntryPoint()) // 인증 실패 시
                         .accessDeniedHandler(customAccessDeniedHandler())); // 인가 실패 시
 
-        httpSecurity.addFilterBefore(jwtAuthFilter(), UsernamePasswordAuthenticationFilter.class);
-        httpSecurity.addFilterBefore(httpExceptionFilter(), JwtAuthFilter.class);
-
+        // 필터 설정
+        // 1. 전역 예외 처리 필터 (모든 다른 필터보다 먼저 작동해야 함)
+        httpSecurity.addFilterBefore(httpExceptionFilter(), UsernamePasswordAuthenticationFilter.class);
+        
+        // 2. JWT 인증 필터를 전역 예외 처리 필터 다음에 실행
+        httpSecurity.addFilterBefore(jwtAuthFilter(), HttpExceptionFilter.class);
+        
+        // 세션 관리 설정 (JWT를 사용하므로 세션은 STATELESS로 설정)
         httpSecurity.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        
         return httpSecurity.build();
     }
 
     @Bean
     public CustomAuthenticationEntryPoint customAuthenticationEntryPoint() {
-        return new CustomAuthenticationEntryPoint();
+        return new CustomAuthenticationEntryPoint(responseFormatter);
     }
 
     @Bean
     public CustomAccessDeniedHandler customAccessDeniedHandler() {
-        return new CustomAccessDeniedHandler();
+        return new CustomAccessDeniedHandler(responseFormatter);
     }
 
     @Bean
     public HttpExceptionFilter httpExceptionFilter() {
-        return new HttpExceptionFilter();
+        return new HttpExceptionFilter(exceptionHandler);
     }
 
     @Bean

@@ -43,7 +43,7 @@ public class ResponseDto {
         @Schema(description = "에러 메시지", example = "요청 처리 중 오류가 발생하였습니다.")
         private String message;
         
-        @Schema(description = "상세 에러 정보")
+        @Schema(description = "상세 에러 정보" )
         private List<String> details;
         
         @Schema(description = "추가 데이터")

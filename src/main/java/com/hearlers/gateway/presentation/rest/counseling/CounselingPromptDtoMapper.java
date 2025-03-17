@@ -60,7 +60,7 @@ public interface CounselingPromptDtoMapper {
                 .addAllPlaceholders(requestDto.getPlaceholders() != null ? requestDto.getPlaceholders() : List.of())
                 .build();
     }
-
+    
     // GetContextsRequestDto → FindContextsRequest
     default FindContextsRequest of(CounselingPromptDto.GetContextsRequestDto requestDto) {
         return FindContextsRequest.newBuilder()

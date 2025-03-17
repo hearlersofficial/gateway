@@ -108,7 +108,8 @@ public class CounselorsController {
     public void likeCounselMessage(
             @PathVariable("counselorId") String counselorId,
             @PathVariable("counselId") String counselId,
-            @PathVariable("messageId") String messageId) {
+            @PathVariable("messageId") String messageId) 
+            {
         // TODO : 내부 서버와 통신하여 상담 메시지 좋아요
     }
 
