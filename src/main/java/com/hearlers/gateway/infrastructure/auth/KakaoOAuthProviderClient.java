@@ -1,10 +1,5 @@
 package com.hearlers.gateway.infrastructure.auth;
 
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.client.WebClient;
-
 import com.hearlers.gateway.application.auth.OAuthProviderClient;
 import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenRequest;
 import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenResponse;
@@ -12,8 +7,11 @@ import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoRequest;
 import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoResponse;
 import com.hearlers.gateway.config.KakaoProperties;
 import com.hearlers.gateway.infrastructure.auth.dto.GetKakaoUserInfoResponseDto;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @Component
@@ -22,7 +20,7 @@ public class KakaoOAuthProviderClient implements OAuthProviderClient {
     private final String KAUTH_USER_URL_HOST = "https://kapi.kakao.com";
     private final String KAKAO_TOKEN_URL_HOST = "https://kauth.kakao.com";
     private final KakaoProperties kakaoProperties;
-    
+
 
     @Override
     public GetOAuthAccessTokenResponse execute(
@@ -53,7 +51,7 @@ public class KakaoOAuthProviderClient implements OAuthProviderClient {
                 .get()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
-                        .path("/v2/user/me")
+                        .path("/v1/user/me")
                         .build(true))
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + request.getAccessToken())
                 .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
