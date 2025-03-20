@@ -1,16 +1,5 @@
 package com.hearlers.gateway.presentation.rest.auth;
 
-import java.io.IOException;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
@@ -26,7 +15,6 @@ import com.hearlers.gateway.presentation.rest.auth.dto.CreateTokenRequestDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
 import com.hearlers.gateway.shared.guard.security.JwtUtil;
 import com.hearlers.gateway.shared.presentation.ResponseDto;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -36,7 +24,16 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("auth")
@@ -76,7 +73,7 @@ public class AuthController {
                 .toString();
 
         addCookieToResponse(response, accessTokenExpiresAt, "accessTokenExpiresAt", ACCESS_TOKEN_MAX_AGE);
-        
+
         ResponseDto.Success<TokenDto> responseDto = ResponseDto.Success.<TokenDto>builder()
                 .message("비로그인 유저 생성 성공")
                 .data(token)
@@ -123,8 +120,9 @@ public class AuthController {
 
         SaveRefreshTokenResponse saveRefreshTokenResponse = authService.saveRefreshToken(saveRefreshTokenRequest);
 
+        // gRPC 호출 자체는 성공했지만 false 반환 -> 비즈니스 로직 실패
         if (!saveRefreshTokenResponse.getSuccess()) {
-            throw new Error("RefreshToken 저장 실패");
+            throw new RuntimeException("RefreshToken 저장 실패");
         }
 
         // 발급받은 accessToken 쿠키에 저장

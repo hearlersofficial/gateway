@@ -1,7 +1,5 @@
 package com.hearlers.gateway.application.auth;
 
-import org.springframework.stereotype.Service;
-
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.ConnectAuthChannelRequest;
@@ -14,10 +12,10 @@ import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenRequest;
 import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenResponse;
 import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoRequest;
 import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoResponse;
-
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -41,12 +39,12 @@ public class AuthServiceImpl implements AuthService {
         GetOAuthAccessTokenRequest tokenRequest = new GetOAuthAccessTokenRequest();
         tokenRequest.setCode(code);
 
-        OAuthProviderClient oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(AuthChannel.AUTH_CHANNEL_KAKAO);
+        OAuthProviderClient oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(
+                AuthChannel.AUTH_CHANNEL_KAKAO);
         GetOAuthAccessTokenResponse tokenResponse = oAuthProviderClient.execute(tokenRequest);
 
         // 유저 정보 받아오기
-        GetOAuthUserInfoRequest userInfoRequest = new GetOAuthUserInfoRequest();
-        userInfoRequest.setAccessToken(tokenResponse.getAccessToken());
+        GetOAuthUserInfoRequest userInfoRequest = new GetOAuthUserInfoRequest(tokenResponse.getAccessToken());
         GetOAuthUserInfoResponse result = oAuthProviderClient.getUserInfo(userInfoRequest);
 
         try {
