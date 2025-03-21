@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.hearlers.api.proto.v1.model.Context;
 import com.hearlers.api.proto.v1.model.CounselTechnique;
+import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Instruction;
 import com.hearlers.api.proto.v1.model.InstructionItem;
 import com.hearlers.api.proto.v1.model.Persona;
@@ -20,6 +21,7 @@ import com.hearlers.api.proto.v1.service.FindContextByIdRequest;
 import com.hearlers.api.proto.v1.service.FindContextsRequest;
 import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest;
 import com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest;
+import com.hearlers.api.proto.v1.service.FindCounselorsRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemByIdRequest;
 import com.hearlers.api.proto.v1.service.FindInstructionItemsRequest;
@@ -41,9 +43,14 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class CounselingServiceImpl implements CounselingService {
-    private final PromptsPersistor persistor;
-    private final PromptsReader reader;
+    private final PromptPersistor persistor;
+    private final PromptReader reader;
+    private final CounselorReader counselorReader;
 
+    @Override
+    public List<Counselor> findCounselors(FindCounselorsRequest request) {
+        return counselorReader.findCounselors(request);
+    }
     
 
     @Override

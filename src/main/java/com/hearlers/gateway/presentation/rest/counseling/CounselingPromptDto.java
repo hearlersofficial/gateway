@@ -37,6 +37,7 @@ public class CounselingPromptDto {
         
         @Schema(description = "Context 삭제 시간", example = "2024-12-29T12:34:56.000Z")
         private String deletedAt;
+
     }
     
 
@@ -309,10 +310,10 @@ public class CounselingPromptDto {
         @Schema(description = "Instruction 이름", example = "우울증 상담 지침")
         private String name;
         
-        @Schema(description = "Instruction 초기 문장", example = "안녕하세요, 오늘 어떤 기분이신가요?")
+        @Schema(description = "Instruction 초기 문장 (선택사항)(null로 보낼 시 초기 문장 없음)", nullable = true, example = "안녕하세요, 오늘 어떤 기분이신가요?")
         private String initialSentence;
         
-        @Schema(description = "Instruction 항목 ID 목록", example = "[\"instr_item_123\", \"instr_item_456\"]")
+        @Schema(description = "Instruction 항목 ID 목록 (선택사항)(null로 보낼 시 목록 없음)", nullable = true, example = "[\"instr_item_123\", \"instr_item_456\"]")
         private List<String> instructionItemIds;
     }
 
@@ -355,17 +356,11 @@ public class CounselingPromptDto {
         @Schema(description = "Instruction 이름 (선택사항)", example = "수정된 우울증 상담 지침")
         private String name;
         
-        @Schema(description = "Instruction 초기 문장 (선택사항)", example = "안녕하세요, 오늘은 어떤 일이 있으셨나요?")
+        @Schema(description = "Instruction 초기 문장 (선택사항)(null로 보낼 시 초기 문장 없음)", nullable = true, example = "안녕하세요, 오늘은 어떤 일이 있으셨나요?")
         private String initialSentence;
         
-        @Schema(description = "초기 문장 필드 존재 여부 (null로 변경하려면 true로 설정)", example = "true")
-        private Boolean hasInitialSentence;
-        
-        @Schema(description = "Instruction 항목 ID 목록 (전체 목록을 대체함)", example = "[\"instr_item_123\", \"instr_item_789\"]")
+        @Schema(description = "Instruction 항목 ID 목록 (전체 목록을 대체함) (null로 보낼 시 목록 비우기)", nullable = true, example = "[\"instr_item_123\", \"instr_item_789\"]")
         private List<String> instructionItemIds;
-        
-        @Schema(description = "항목 ID 목록 필드 존재 여부 (목록을 비우려면 true로 설정)", example = "true")
-        private Boolean hasInstructionItemIds;
     }
 
     @Getter
@@ -564,11 +559,8 @@ public class CounselingPromptDto {
         @Schema(description = "CounselTechnique 이름 (선택사항)", example = "개선된 공감 반응 기법")
         private String name;
         
-        @Schema(description = "Tone ID (선택사항)", example = "tone_567890")
+        @Schema(description = "Tone ID (선택사항)(null로 보낼 시 톤 미변경)", nullable = true, example = "tone_567890")
         private String toneId;
-        
-        @Schema(description = "Tone 필드 존재 여부 (null로 변경하려면 true로 설정)", example = "true")
-        private Boolean hasTone;
         
         @Schema(description = "Context ID (선택사항)", example = "ctx_123456")
         private String contextId;

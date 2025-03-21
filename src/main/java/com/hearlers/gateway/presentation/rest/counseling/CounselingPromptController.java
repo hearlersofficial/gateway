@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping()
 @RequiredArgsConstructor
 @Tag(name = "상담 프롬프트", description = "상담 프롬프트 관련 API")
-public class CounselingPromptsController {
+public class CounselingPromptController {
     private final CounselingService counselingService;
     private final CounselingPromptDtoMapper counselingPromptDtoMapper;
 

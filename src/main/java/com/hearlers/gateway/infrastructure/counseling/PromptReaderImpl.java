@@ -23,7 +23,7 @@ import com.hearlers.api.proto.v1.service.FindPersonaByIdRequest;
 import com.hearlers.api.proto.v1.service.FindPersonasRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
-import com.hearlers.gateway.application.counseling.PromptsReader;
+import com.hearlers.gateway.application.counseling.PromptReader;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PromptsReaderImpl implements PromptsReader {
+public class PromptReaderImpl implements PromptReader {
     private final CounselServiceBlockingStub counselServiceBlockingStub;
     
     @Override

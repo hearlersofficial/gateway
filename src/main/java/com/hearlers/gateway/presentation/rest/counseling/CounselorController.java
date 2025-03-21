@@ -1,56 +1,47 @@
 package com.hearlers.gateway.presentation.rest.counseling;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hearlers.gateway.application.counseling.CounselingService;
 import com.hearlers.gateway.shared.presentation.ResponseDto;
+import com.hearlers.gateway.shared.presentation.ResponseDtoUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("counselors")
-@Tag(name = "CounselorsController", description = "상담 관련 API, 추후 gRPC 서버에서 데이터 받아온 것 return 값으로 변경")
-public class CounselorsController {
+@RequestMapping()
+@RequiredArgsConstructor
+@Tag(name = "상담사", description = "상담사 관련 API")
+public class CounselorController {
 
-//     @Operation(summary = "최초 상담 시작", description = "최초 상담 시작 API로 버블을 통해 입장 or 일반 입장 두 가지 케이스가 가능합니다.")
-//     @ApiResponses(value = {
-//             @ApiResponse(responseCode = "201", description = "최초 상담 시작 성공"),
-//             @ApiResponse(responseCode = "404", description = "상담사 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
-//             @ApiResponse(responseCode = "400", description = "최초 상담 시작 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
-//     })
-//     @PostMapping("/v1/{counselorId}/counsels")
-//     public void createCounsel(
-//             @PathVariable("counselorId") String counselorId,
-//             @Valid @RequestBody(required = false) CreateCounselRequestDto request) {
-//         // TODO : 내부 서버와 통신하여 최초 상담 시작
-//         // CounselorId를 바탕으로 조회
-
-//         // TODO return 타입 변경 -> ResponseEntity<List<CreateCounselResponseDto>>
-
-//     }
-
-    @Operation(summary = "기존 진행중인 상담 입장", description = "기존에 진행중인 상담에 입장합니다.")
+    private final CounselingService counselingService;
+    private final CounselorDtoMapper counselorDtoMapper;
+    @Operation(summary = "상담사 조회", description = "상담사를 조회합니다.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "기존 상담 조회 성공"),
-            @ApiResponse(responseCode = "404", description = "상담사 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
-            @ApiResponse(responseCode = "400", description = "기존 상담 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+            @ApiResponse(responseCode = "200", description = "상담사 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "상담사 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/{counselorId}/counsels/{counselId}")
-    public void getCounsel(
-            @PathVariable("counselorId") String counselorId,
-            @PathVariable("counselId") String counselId) {
-        // TODO : 내부 서버와 통신하여 상담 재개 (counselorId와 counselId로 조회해서)
-        // TODO return 타입 변경 -> ResponseEntity<List<GetCounselResponseDto>>
-    }
+    @GetMapping("/v1/counselors")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorsResponse>> getCounselors(@Valid @RequestBody CounselorDto.FindCounselorsRequest request) {
+        var findCounselorsRequest = counselorDtoMapper.of(request);
+        var counselors = counselingService.findCounselors(findCounselorsRequest);
+        var response = counselorDtoMapper.ofGetCounselors(counselors);
 
+        return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
+    }
 //     @Operation(summary = "채팅 전송", description = "상담 채팅방에서 채팅을 전송합니다.")
 //     @ApiResponses(value = {
 //             @ApiResponse(responseCode = "201", description = "채팅 전송 성공"),

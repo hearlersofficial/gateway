@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.ReportingPolicy;
 
 import com.hearlers.api.proto.v1.model.Context;
@@ -43,7 +44,8 @@ import com.hearlers.gateway.shared.enums.CounselTechniqueStageType;
 
 @Mapper(
         componentModel = "spring",
-        unmappedTargetPolicy = ReportingPolicy.IGNORE
+        unmappedTargetPolicy = ReportingPolicy.IGNORE,
+        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS
 )
 public interface CounselingPromptDtoMapper {
     
@@ -353,19 +355,21 @@ public interface CounselingPromptDtoMapper {
         }
         
         // 초기 문장 처리
-        if (requestDto.getHasInitialSentence() != null && requestDto.getHasInitialSentence()) {
+        if (requestDto.getInitialSentence() != null) {
+            builder.setInitialSentence(requestDto.getInitialSentence());
             builder.setHasInitialSentence(true);
-            if (requestDto.getInitialSentence() != null) {
-                builder.setInitialSentence(requestDto.getInitialSentence());
-            }
+        } else {
+            builder.clearInitialSentence();
+            builder.setHasInitialSentence(false);
         }
         
         // 항목 ID 목록 처리
-        if (requestDto.getHasInstructionItemIds() != null && requestDto.getHasInstructionItemIds()) {
+        if (requestDto.getInstructionItemIds() != null) {
+            builder.addAllInstructionItemIds(requestDto.getInstructionItemIds());
             builder.setHasInstructionItemIds(true);
-            if (requestDto.getInstructionItemIds() != null) {
-                builder.addAllInstructionItemIds(requestDto.getInstructionItemIds());
-            }
+        } else {
+            builder.clearInstructionItemIds();
+            builder.setHasInstructionItemIds(false);
         }
         
         return builder.build();
@@ -558,12 +562,12 @@ public interface CounselingPromptDtoMapper {
             builder.setName(requestDto.getName());
         }
         
-        // Tone ID 처리
-        if (requestDto.getHasTone() != null && requestDto.getHasTone()) {
+        if (requestDto.getToneId() != null) {
+            builder.setToneId(requestDto.getToneId());
             builder.setHasTone(true);
-            if (requestDto.getToneId() != null) {
-                builder.setToneId(requestDto.getToneId());
-            }
+        } else {
+            builder.clearToneId();
+            builder.setHasTone(false);
         }
         
         if (requestDto.getContextId() != null) {

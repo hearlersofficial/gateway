@@ -21,7 +21,7 @@ import com.hearlers.api.proto.v1.service.FindPersonasRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
 
-public interface PromptsReader {
+public interface PromptReader {
     Context findContextById(FindContextByIdRequest request);
     List<Context> findContexts(FindContextsRequest request);
     Tone findToneById(FindToneByIdRequest request);

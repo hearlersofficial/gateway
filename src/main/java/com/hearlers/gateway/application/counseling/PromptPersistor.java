@@ -1,5 +1,7 @@
 package com.hearlers.gateway.application.counseling;
 
+import java.util.List;
+
 import com.hearlers.api.proto.v1.model.Context;
 import com.hearlers.api.proto.v1.model.CounselTechnique;
 import com.hearlers.api.proto.v1.model.Instruction;
@@ -12,16 +14,15 @@ import com.hearlers.api.proto.v1.service.CreateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.CreateInstructionRequest;
 import com.hearlers.api.proto.v1.service.CreatePersonaRequest;
 import com.hearlers.api.proto.v1.service.CreateToneRequest;
+import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
 import com.hearlers.api.proto.v1.service.UpdateContextRequest;
 import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionItemRequest;
 import com.hearlers.api.proto.v1.service.UpdateInstructionRequest;
 import com.hearlers.api.proto.v1.service.UpdatePersonaRequest;
 import com.hearlers.api.proto.v1.service.UpdateToneRequest;
-import java.util.List;
-import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
 
-public interface PromptsPersistor {
+public interface PromptPersistor {
     Context createContext(CreateContextRequest request);
     Context updateContext(UpdateContextRequest request);
     Tone createTone(CreateToneRequest request);
