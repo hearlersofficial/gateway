@@ -29,7 +29,6 @@ private static final long serialVersionUID = 0L;
   private User() {
     id_ = "";
     nickname_ = "";
-    userProgresses_ = java.util.Collections.emptyList();
     createdAt_ = "";
     updatedAt_ = "";
     deletedAt_ = "";
@@ -153,47 +152,6 @@ private static final long serialVersionUID = 0L;
     return userProfile_ == null ? com.hearlers.api.proto.v1.model.UserProfile.getDefaultInstance() : userProfile_;
   }
 
-  public static final int USER_PROGRESSES_FIELD_NUMBER = 4;
-  @SuppressWarnings("serial")
-  private java.util.List<com.hearlers.api.proto.v1.model.UserProgress> userProgresses_;
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.hearlers.api.proto.v1.model.UserProgress> getUserProgressesList() {
-    return userProgresses_;
-  }
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.hearlers.api.proto.v1.model.UserProgressOrBuilder> 
-      getUserProgressesOrBuilderList() {
-    return userProgresses_;
-  }
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  @java.lang.Override
-  public int getUserProgressesCount() {
-    return userProgresses_.size();
-  }
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  @java.lang.Override
-  public com.hearlers.api.proto.v1.model.UserProgress getUserProgresses(int index) {
-    return userProgresses_.get(index);
-  }
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  @java.lang.Override
-  public com.hearlers.api.proto.v1.model.UserProgressOrBuilder getUserProgressesOrBuilder(
-      int index) {
-    return userProgresses_.get(index);
-  }
-
   public static final int CREATED_AT_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
@@ -296,7 +254,19 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletedAt() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -317,7 +287,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -358,16 +328,13 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getUserProfile());
     }
-    for (int i = 0; i < userProgresses_.size(); i++) {
-      output.writeMessage(4, userProgresses_.get(i));
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, deletedAt_);
     }
     getUnknownFields().writeTo(output);
@@ -389,17 +356,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getUserProfile());
     }
-    for (int i = 0; i < userProgresses_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, userProgresses_.get(i));
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, updatedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -426,14 +389,15 @@ private static final long serialVersionUID = 0L;
       if (!getUserProfile()
           .equals(other.getUserProfile())) return false;
     }
-    if (!getUserProgressesList()
-        .equals(other.getUserProgressesList())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
         .equals(other.getUpdatedAt())) return false;
-    if (!getDeletedAt()
-        .equals(other.getDeletedAt())) return false;
+    if (hasDeletedAt() != other.hasDeletedAt()) return false;
+    if (hasDeletedAt()) {
+      if (!getDeletedAt()
+          .equals(other.getDeletedAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -453,16 +417,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getUserProfile().hashCode();
     }
-    if (getUserProgressesCount() > 0) {
-      hash = (37 * hash) + USER_PROGRESSES_FIELD_NUMBER;
-      hash = (53 * hash) + getUserProgressesList().hashCode();
-    }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getDeletedAt().hashCode();
+    if (hasDeletedAt()) {
+      hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getDeletedAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -594,7 +556,6 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessage
               .alwaysUseFieldBuilders) {
         getUserProfileFieldBuilder();
-        getUserProgressesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -608,13 +569,6 @@ private static final long serialVersionUID = 0L;
         userProfileBuilder_.dispose();
         userProfileBuilder_ = null;
       }
-      if (userProgressesBuilder_ == null) {
-        userProgresses_ = java.util.Collections.emptyList();
-      } else {
-        userProgresses_ = null;
-        userProgressesBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000008);
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -644,22 +598,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.hearlers.api.proto.v1.model.User buildPartial() {
       com.hearlers.api.proto.v1.model.User result = new com.hearlers.api.proto.v1.model.User(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.model.User result) {
-      if (userProgressesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          userProgresses_ = java.util.Collections.unmodifiableList(userProgresses_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.userProgresses_ = userProgresses_;
-      } else {
-        result.userProgresses_ = userProgressesBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.hearlers.api.proto.v1.model.User result) {
@@ -677,14 +618,15 @@ private static final long serialVersionUID = 0L;
             : userProfileBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createdAt_ = createdAt_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.updatedAt_ = updatedAt_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.deletedAt_ = deletedAt_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -714,45 +656,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasUserProfile()) {
         mergeUserProfile(other.getUserProfile());
       }
-      if (userProgressesBuilder_ == null) {
-        if (!other.userProgresses_.isEmpty()) {
-          if (userProgresses_.isEmpty()) {
-            userProgresses_ = other.userProgresses_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureUserProgressesIsMutable();
-            userProgresses_.addAll(other.userProgresses_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.userProgresses_.isEmpty()) {
-          if (userProgressesBuilder_.isEmpty()) {
-            userProgressesBuilder_.dispose();
-            userProgressesBuilder_ = null;
-            userProgresses_ = other.userProgresses_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            userProgressesBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getUserProgressesFieldBuilder() : null;
-          } else {
-            userProgressesBuilder_.addAllMessages(other.userProgresses_);
-          }
-        }
-      }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getUpdatedAt().isEmpty()) {
         updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (!other.getDeletedAt().isEmpty()) {
+      if (other.hasDeletedAt()) {
         deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -798,32 +714,19 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
-              com.hearlers.api.proto.v1.model.UserProgress m =
-                  input.readMessage(
-                      com.hearlers.api.proto.v1.model.UserProgress.parser(),
-                      extensionRegistry);
-              if (userProgressesBuilder_ == null) {
-                ensureUserProgressesIsMutable();
-                userProgresses_.add(m);
-              } else {
-                userProgressesBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
             case 42: {
               createdAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               break;
             } // case 42
             case 50: {
               updatedAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             } // case 50
             case 58: {
               deletedAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 58
             default: {
@@ -1108,246 +1011,6 @@ private static final long serialVersionUID = 0L;
       return userProfileBuilder_;
     }
 
-    private java.util.List<com.hearlers.api.proto.v1.model.UserProgress> userProgresses_ =
-      java.util.Collections.emptyList();
-    private void ensureUserProgressesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
-        userProgresses_ = new java.util.ArrayList<com.hearlers.api.proto.v1.model.UserProgress>(userProgresses_);
-        bitField0_ |= 0x00000008;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.hearlers.api.proto.v1.model.UserProgress, com.hearlers.api.proto.v1.model.UserProgress.Builder, com.hearlers.api.proto.v1.model.UserProgressOrBuilder> userProgressesBuilder_;
-
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public java.util.List<com.hearlers.api.proto.v1.model.UserProgress> getUserProgressesList() {
-      if (userProgressesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(userProgresses_);
-      } else {
-        return userProgressesBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public int getUserProgressesCount() {
-      if (userProgressesBuilder_ == null) {
-        return userProgresses_.size();
-      } else {
-        return userProgressesBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.UserProgress getUserProgresses(int index) {
-      if (userProgressesBuilder_ == null) {
-        return userProgresses_.get(index);
-      } else {
-        return userProgressesBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder setUserProgresses(
-        int index, com.hearlers.api.proto.v1.model.UserProgress value) {
-      if (userProgressesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureUserProgressesIsMutable();
-        userProgresses_.set(index, value);
-        onChanged();
-      } else {
-        userProgressesBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder setUserProgresses(
-        int index, com.hearlers.api.proto.v1.model.UserProgress.Builder builderForValue) {
-      if (userProgressesBuilder_ == null) {
-        ensureUserProgressesIsMutable();
-        userProgresses_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        userProgressesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder addUserProgresses(com.hearlers.api.proto.v1.model.UserProgress value) {
-      if (userProgressesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureUserProgressesIsMutable();
-        userProgresses_.add(value);
-        onChanged();
-      } else {
-        userProgressesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder addUserProgresses(
-        int index, com.hearlers.api.proto.v1.model.UserProgress value) {
-      if (userProgressesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureUserProgressesIsMutable();
-        userProgresses_.add(index, value);
-        onChanged();
-      } else {
-        userProgressesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder addUserProgresses(
-        com.hearlers.api.proto.v1.model.UserProgress.Builder builderForValue) {
-      if (userProgressesBuilder_ == null) {
-        ensureUserProgressesIsMutable();
-        userProgresses_.add(builderForValue.build());
-        onChanged();
-      } else {
-        userProgressesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder addUserProgresses(
-        int index, com.hearlers.api.proto.v1.model.UserProgress.Builder builderForValue) {
-      if (userProgressesBuilder_ == null) {
-        ensureUserProgressesIsMutable();
-        userProgresses_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        userProgressesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder addAllUserProgresses(
-        java.lang.Iterable<? extends com.hearlers.api.proto.v1.model.UserProgress> values) {
-      if (userProgressesBuilder_ == null) {
-        ensureUserProgressesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, userProgresses_);
-        onChanged();
-      } else {
-        userProgressesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder clearUserProgresses() {
-      if (userProgressesBuilder_ == null) {
-        userProgresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-      } else {
-        userProgressesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public Builder removeUserProgresses(int index) {
-      if (userProgressesBuilder_ == null) {
-        ensureUserProgressesIsMutable();
-        userProgresses_.remove(index);
-        onChanged();
-      } else {
-        userProgressesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.UserProgress.Builder getUserProgressesBuilder(
-        int index) {
-      return getUserProgressesFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.UserProgressOrBuilder getUserProgressesOrBuilder(
-        int index) {
-      if (userProgressesBuilder_ == null) {
-        return userProgresses_.get(index);  } else {
-        return userProgressesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public java.util.List<? extends com.hearlers.api.proto.v1.model.UserProgressOrBuilder> 
-         getUserProgressesOrBuilderList() {
-      if (userProgressesBuilder_ != null) {
-        return userProgressesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(userProgresses_);
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.UserProgress.Builder addUserProgressesBuilder() {
-      return getUserProgressesFieldBuilder().addBuilder(
-          com.hearlers.api.proto.v1.model.UserProgress.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.UserProgress.Builder addUserProgressesBuilder(
-        int index) {
-      return getUserProgressesFieldBuilder().addBuilder(
-          index, com.hearlers.api.proto.v1.model.UserProgress.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-     */
-    public java.util.List<com.hearlers.api.proto.v1.model.UserProgress.Builder> 
-         getUserProgressesBuilderList() {
-      return getUserProgressesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.hearlers.api.proto.v1.model.UserProgress, com.hearlers.api.proto.v1.model.UserProgress.Builder, com.hearlers.api.proto.v1.model.UserProgressOrBuilder> 
-        getUserProgressesFieldBuilder() {
-      if (userProgressesBuilder_ == null) {
-        userProgressesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            com.hearlers.api.proto.v1.model.UserProgress, com.hearlers.api.proto.v1.model.UserProgress.Builder, com.hearlers.api.proto.v1.model.UserProgressOrBuilder>(
-                userProgresses_,
-                ((bitField0_ & 0x00000008) != 0),
-                getParentForChildren(),
-                isClean());
-        userProgresses_ = null;
-      }
-      return userProgressesBuilder_;
-    }
-
     private java.lang.Object createdAt_ = "";
     /**
      * <pre>
@@ -1403,7 +1066,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       createdAt_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1417,7 +1080,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1435,7 +1098,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       createdAt_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1495,7 +1158,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       updatedAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1509,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUpdatedAt() {
       updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1527,7 +1190,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       updatedAt_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1538,7 +1201,18 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * @return Whether the deletedAt field is set.
+     */
+    public boolean hasDeletedAt() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -1558,7 +1232,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -1579,7 +1253,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1587,7 +1261,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deletedAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1596,12 +1270,12 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
       deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1610,7 +1284,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */
@@ -1619,7 +1293,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deletedAt_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

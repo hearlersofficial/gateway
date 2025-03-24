@@ -330,6 +330,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
@@ -347,6 +351,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
@@ -369,6 +377,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
@@ -386,6 +398,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
@@ -408,6 +424,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deletedAt_ = "";
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
@@ -416,6 +436,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
@@ -433,6 +457,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
@@ -1475,6 +1503,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object createdAt_ = "";
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
@@ -1491,6 +1523,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
@@ -1508,6 +1544,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
@@ -1521,6 +1561,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @return This builder for chaining.
      */
@@ -1531,6 +1575,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string created_at = 8 [json_name = "createdAt"];</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
@@ -1547,6 +1595,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updatedAt_ = "";
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
@@ -1563,6 +1615,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The bytes for updatedAt.
      */
@@ -1580,6 +1636,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
@@ -1593,6 +1653,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @return This builder for chaining.
      */
@@ -1603,6 +1667,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
@@ -1619,6 +1687,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object deletedAt_ = "";
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
@@ -1626,6 +1698,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
@@ -1642,6 +1718,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
@@ -1659,6 +1739,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
@@ -1672,6 +1756,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
@@ -1682,6 +1770,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * ISO 8601 (2024-12-29T12:34:56.000Z)
+     * </pre>
+     *
      * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.

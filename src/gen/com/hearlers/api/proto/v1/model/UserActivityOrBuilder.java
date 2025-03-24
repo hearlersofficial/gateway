@@ -121,7 +121,16 @@ public interface UserActivityOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  boolean hasDeletedAt();
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -130,7 +139,7 @@ public interface UserActivityOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

@@ -94,11 +94,19 @@ public interface CounselOrBuilder extends
       getCounselorUserRelationshipIdBytes();
 
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
@@ -106,11 +114,19 @@ public interface CounselOrBuilder extends
       getCreatedAtBytes();
 
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
@@ -118,16 +134,28 @@ public interface CounselOrBuilder extends
       getUpdatedAtBytes();
 
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
   /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
    * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */

@@ -123,7 +123,7 @@ public enum DevicePlatform
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor().getEnumTypes().get(4);
+    return com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DevicePlatform[] VALUES = values();

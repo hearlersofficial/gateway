@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
-import com.hearlers.api.proto.v1.service.FindOneAuthUserRequest;
-import com.hearlers.api.proto.v1.service.FindOneAuthUserResponse;
+import com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest;
+import com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse;
 import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub;
 import com.hearlers.gateway.application.auth.AuthReader;
 
@@ -18,12 +18,12 @@ public class AuthReaderImpl implements AuthReader {
 
     @Override
     public AuthUser getAuthUser(String uniqueId, AuthChannel authChannel) {
-        FindOneAuthUserRequest findOneAuthUserRequest = FindOneAuthUserRequest.newBuilder()
+        FindAuthUserByChannelInfoRequest findAuthUserByChannelInfoRequest = FindAuthUserByChannelInfoRequest.newBuilder()
                 .setUniqueId(uniqueId)
                 .setAuthChannel(authChannel)
                 .build();
-        FindOneAuthUserResponse findOneAuthUserResponse = userServiceBlockingStub.findOneAuthUser(findOneAuthUserRequest);
-        return findOneAuthUserResponse.getAuthUser();
+        FindAuthUserByChannelInfoResponse findAuthUserByChannelInfoResponse = userServiceBlockingStub.findAuthUserByChannelInfo(findAuthUserByChannelInfoRequest);
+        return findAuthUserByChannelInfoResponse.getAuthUser();
     }
     
 }

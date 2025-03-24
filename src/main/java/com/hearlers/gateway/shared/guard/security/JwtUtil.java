@@ -7,7 +7,7 @@ import java.util.Date;
 import org.springframework.stereotype.Component;
 
 import com.hearlers.gateway.config.JwtProperties;
-import com.hearlers.gateway.presentation.rest.auth.dto.CreateTokenRequestDto;
+import com.hearlers.gateway.presentation.rest.v1.auth.dto.CreateTokenRequestDto;
 import com.hearlers.gateway.shared.guard.dto.TokenDto;
 
 import io.jsonwebtoken.Claims;

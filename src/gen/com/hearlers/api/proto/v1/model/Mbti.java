@@ -231,7 +231,7 @@ public enum Mbti
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor().getEnumTypes().get(3);
+    return com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final Mbti[] VALUES = values();

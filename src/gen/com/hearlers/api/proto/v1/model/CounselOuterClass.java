@@ -36,45 +36,10 @@ public final class CounselOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_model_CounselMessage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Counselor_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Counselor_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_CounselTechnique_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_CounselTechnique_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_model_CounselorUserRelationship_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_model_CounselorUserRelationship_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Persona_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Persona_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Context_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Context_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Instruction_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Instruction_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_InstructionItem_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_InstructionItem_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Tone_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Tone_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -105,73 +70,17 @@ public final class CounselOuterClass {
       "\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdate" +
       "dAt\022\"\n\ndeleted_at\030\t \001(\tH\002R\tdeletedAt\210\001\001B" +
       "\r\n\013_reacted_atB\013\n\t_reactionB\r\n\013_deleted_" +
-      "at\"\226\003\n\tCounselor\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007tone" +
-      "_id\030\002 \001(\tR\006toneId\022\022\n\004name\030\003 \001(\tR\004name\022 \n" +
-      "\013description\030\004 \001(\tR\013description\022>\n\006gende" +
-      "r\030\005 \001(\0162&.com.hearlers.v1.model.Counselo" +
-      "rGenderR\006gender\022#\n\rintro_message\030\006 \001(\tR\014" +
-      "introMessage\022)\n\020response_option1\030\007 \001(\tR\017" +
-      "responseOption1\022)\n\020response_option2\030\010 \001(" +
-      "\tR\017responseOption2\022\035\n\ncreated_at\030\t \001(\tR\t" +
-      "createdAt\022\035\n\nupdated_at\030\n \001(\tR\tupdatedAt" +
-      "\022\"\n\ndeleted_at\030\013 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013" +
-      "_deleted_at\"\333\003\n\020CounselTechnique\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034\n\007tone_id\030" +
-      "\003 \001(\tH\000R\006toneId\210\001\001\022\035\n\ncontext_id\030\004 \001(\tR\t" +
-      "contextId\022%\n\016instruction_id\030\005 \001(\tR\rinstr" +
-      "uctionId\022d\n\027counsel_technique_stage\030\006 \001(" +
-      "\0162,.com.hearlers.v1.model.CounselTechniq" +
-      "ueStageR\025counselTechniqueStage\022>\n\031next_c" +
-      "ounsel_technique_id\030\007 \001(\tH\001R\026nextCounsel" +
-      "TechniqueId\210\001\001\022\035\n\ncreated_at\030\010 \001(\tR\tcrea" +
-      "tedAt\022\035\n\nupdated_at\030\t \001(\tR\tupdatedAt\022\"\n\n" +
-      "deleted_at\030\n \001(\tH\002R\tdeletedAt\210\001\001B\n\n\010_ton" +
-      "e_idB\034\n\032_next_counsel_technique_idB\r\n\013_d" +
-      "eleted_at\"\362\001\n\031CounselorUserRelationship\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013c" +
-      "ounselorId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030\n\007r" +
-      "apport\030\004 \001(\005R\007rapport\022\035\n\ncreated_at\030\005 \001(" +
-      "\tR\tcreatedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdate" +
-      "dAt\022\"\n\ndeleted_at\030\007 \001(\tH\000R\tdeletedAt\210\001\001B" +
-      "\r\n\013_deleted_at\"\301\001\n\007Persona\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022\022\n\004body\030\002 \001(\tR\004body\022!\n\014counselor_id\030\003" +
-      " \001(\tR\013counselorId\022\035\n\ncreated_at\030\004 \001(\tR\tc" +
-      "reatedAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022" +
-      "\"\n\ndeleted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_" +
-      "deleted_at\"\326\001\n\007Context\022\016\n\002id\030\001 \001(\tR\002id\022\022" +
-      "\n\004name\030\002 \001(\tR\004name\022\"\n\014placeholders\030\003 \003(\t" +
-      "R\014placeholders\022\022\n\004body\030\004 \001(\tR\004body\022\035\n\ncr" +
-      "eated_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030" +
-      "\006 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\007 \001(\tH\000R\t" +
-      "deletedAt\210\001\001B\r\n\013_deleted_at\"\274\002\n\013Instruct" +
-      "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
-      ".\n\020initial_sentence\030\003 \001(\tH\000R\017initialSent" +
-      "ence\210\001\001\022S\n\021instruction_items\030\004 \003(\0132&.com" +
-      ".hearlers.v1.model.InstructionItemR\020inst" +
-      "ructionItems\022\035\n\ncreated_at\030\005 \001(\tR\tcreate" +
-      "dAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\022\"\n\nde" +
-      "leted_at\030\007 \001(\tH\001R\tdeletedAt\210\001\001B\023\n\021_initi" +
-      "al_sentenceB\r\n\013_deleted_at\"\246\001\n\017Instructi" +
-      "onItem\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002 \001(\tR\004bo" +
-      "dy\022\035\n\ncreated_at\030\003 \001(\tR\tcreatedAt\022\035\n\nupd" +
-      "ated_at\030\004 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\005" +
-      " \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\257\001\n\004" +
-      "Tone\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name" +
-      "\022\022\n\004body\030\003 \001(\tR\004body\022\035\n\ncreated_at\030\004 \001(\t" +
-      "R\tcreatedAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdated" +
-      "At\022\"\n\ndeleted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r" +
-      "\n\013_deleted_at*\213\001\n\026CounselMessageReaction" +
-      "\022(\n$COUNSEL_MESSAGE_REACTION_UNSPECIFIED" +
-      "\020\000\022!\n\035COUNSEL_MESSAGE_REACTION_LIKE\020\001\022$\n" +
-      " COUNSEL_MESSAGE_REACTION_DISLIKE\020\002*\206\001\n\017" +
-      "CounselorGender\022 \n\034COUNSELOR_GENDER_UNSP" +
-      "ECIFIED\020\000\022\031\n\025COUNSELOR_GENDER_MALE\020\001\022\033\n\027" +
-      "COUNSELOR_GENDER_FEMALE\020\002\022\031\n\025COUNSELOR_G" +
-      "ENDER_NONE\020\003*\211\001\n\025CounselTechniqueStage\022\'" +
-      "\n#COUNSEL_TECHNIQUE_STAGE_UNSPECIFIED\020\000\022" +
-      "#\n\037COUNSEL_TECHNIQUE_STAGE_INITIAL\020\001\022\"\n\036" +
-      "COUNSEL_TECHNIQUE_STAGE_MIDDLE\020\002B#\n\037com." +
-      "hearlers.api.proto.v1.modelP\001b\006proto3"
+      "at\"\362\001\n\031CounselorUserRelationship\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013counselo" +
+      "rId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030\n\007rapport\030" +
+      "\004 \001(\005R\007rapport\022\035\n\ncreated_at\030\005 \001(\tR\tcrea" +
+      "tedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\022\"\n\n" +
+      "deleted_at\030\007 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_del" +
+      "eted_at*\213\001\n\026CounselMessageReaction\022(\n$CO" +
+      "UNSEL_MESSAGE_REACTION_UNSPECIFIED\020\000\022!\n\035" +
+      "COUNSEL_MESSAGE_REACTION_LIKE\020\001\022$\n COUNS" +
+      "EL_MESSAGE_REACTION_DISLIKE\020\002B#\n\037com.hea" +
+      "rlers.api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -189,54 +98,12 @@ public final class CounselOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_CounselMessage_descriptor,
         new java.lang.String[] { "Id", "CounselId", "Message", "IsUserMessage", "ReactedAt", "Reaction", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Counselor_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_hearlers_v1_model_Counselor_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Counselor_descriptor,
-        new java.lang.String[] { "Id", "ToneId", "Name", "Description", "Gender", "IntroMessage", "ResponseOption1", "ResponseOption2", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_CounselTechnique_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_hearlers_v1_model_CounselTechnique_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_CounselTechnique_descriptor,
-        new java.lang.String[] { "Id", "Name", "ToneId", "ContextId", "InstructionId", "CounselTechniqueStage", "NextCounselTechniqueId", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_CounselorUserRelationship_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_hearlers_v1_model_CounselorUserRelationship_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_CounselorUserRelationship_descriptor,
         new java.lang.String[] { "Id", "CounselorId", "UserId", "Rapport", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Persona_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_com_hearlers_v1_model_Persona_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Persona_descriptor,
-        new java.lang.String[] { "Id", "Body", "CounselorId", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Context_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_com_hearlers_v1_model_Context_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Context_descriptor,
-        new java.lang.String[] { "Id", "Name", "Placeholders", "Body", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Instruction_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_com_hearlers_v1_model_Instruction_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Instruction_descriptor,
-        new java.lang.String[] { "Id", "Name", "InitialSentence", "InstructionItems", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_InstructionItem_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_com_hearlers_v1_model_InstructionItem_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_InstructionItem_descriptor,
-        new java.lang.String[] { "Id", "Body", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Tone_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_com_hearlers_v1_model_Tone_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Tone_descriptor,
-        new java.lang.String[] { "Id", "Name", "Body", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

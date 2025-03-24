@@ -66,15 +66,25 @@ public final class User {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_VerifyRefreshTokenResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_FindOneUserRequest_descriptor;
+    internal_static_com_hearlers_v1_service_FindUserByUserIdRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_FindOneUserRequest_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindUserByUserIdRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_FindOneUserResponse_descriptor;
+    internal_static_com_hearlers_v1_service_FindUserByUserIdResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_FindOneUserResponse_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindUserByUserIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindUserByNicknameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindUserByNicknameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindUserByNicknameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindUserByNicknameResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_FindManyUserRequest_descriptor;
   static final 
@@ -86,15 +96,35 @@ public final class User {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_FindManyUserResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_FindOneAuthUserRequest_descriptor;
+    internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_FindOneAuthUserRequest_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_service_FindOneAuthUserResponse_descriptor;
+    internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_service_FindOneAuthUserResponse_fieldAccessorTable;
+      internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindAuthUserByUserIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindAuthUserByUserIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindAuthUserByUserIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindAuthUserByUserIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_CheckRemainingTokensRequest_descriptor;
   static final 
@@ -176,99 +206,119 @@ public final class User {
       "\001 \001(\010R\007success\"J\n\031VerifyRefreshTokenRequ" +
       "est\022\027\n\007user_id\030\001 \001(\tR\006userId\022\024\n\005token\030\002 " +
       "\001(\tR\005token\"6\n\032VerifyRefreshTokenResponse" +
-      "\022\030\n\007success\030\001 \001(\010R\007success\"l\n\022FindOneUse" +
-      "rRequest\022\034\n\007user_id\030\001 \001(\tH\000R\006userId\210\001\001\022\037" +
-      "\n\010nickname\030\002 \001(\tH\001R\010nickname\210\001\001B\n\n\010_user" +
-      "_idB\013\n\t_nickname\"T\n\023FindOneUserResponse\022" +
-      "4\n\004user\030\001 \001(\0132\033.com.hearlers.v1.model.Us" +
-      "erH\000R\004user\210\001\001B\007\n\005_user\"Y\n\023FindManyUserRe" +
-      "quest\022B\n\npagination\030\001 \001(\0132\".com.hearlers" +
-      ".v1.common.PaginationR\npagination\"G\n\022Fin" +
-      "dManyUserResult\0221\n\005users\030\001 \003(\0132\033.com.hea" +
-      "rlers.v1.model.UserR\005users\"\207\002\n\026FindOneAu" +
-      "thUserRequest\022%\n\014auth_user_id\030\001 \001(\tH\000R\na" +
-      "uthUserId\210\001\001\022\034\n\007user_id\030\002 \001(\tH\001R\006userId\210" +
-      "\001\001\022J\n\014auth_channel\030\003 \001(\0162\".com.hearlers." +
-      "v1.model.AuthChannelH\002R\013authChannel\210\001\001\022 " +
-      "\n\tunique_id\030\004 \001(\tH\003R\010uniqueId\210\001\001B\017\n\r_aut" +
-      "h_user_idB\n\n\010_user_idB\017\n\r_auth_channelB\014" +
-      "\n\n_unique_id\"j\n\027FindOneAuthUserResponse\022" +
-      "A\n\tauth_user\030\001 \001(\0132\037.com.hearlers.v1.mod" +
-      "el.AuthUserH\000R\010authUser\210\001\001B\014\n\n_auth_user" +
-      "\"6\n\033CheckRemainingTokensRequest\022\027\n\007user_" +
-      "id\030\001 \001(\tR\006userId\"\257\001\n\034CheckRemainingToken" +
-      "sResponse\022)\n\020remaining_tokens\030\001 \001(\005R\017rem" +
-      "ainingTokens\022\035\n\nmax_tokens\030\002 \001(\005R\tmaxTok" +
-      "ens\022\032\n\010reserved\030\003 \001(\010R\010reserved\022)\n\020reser" +
-      "ved_timeout\030\004 \001(\tR\017reservedTimeout\"/\n\024Re" +
-      "serveTokensRequest\022\027\n\007user_id\030\001 \001(\tR\006use" +
-      "rId\"}\n\025ReserveTokensResponse\022)\n\020remainin" +
-      "g_tokens\030\001 \001(\005R\017remainingTokens\022\035\n\nmax_t" +
-      "okens\030\002 \001(\005R\tmaxTokens\022\032\n\010reserved\030\003 \001(\010" +
-      "R\010reserved\"\275\003\n\021UpdateUserRequest\022\027\n\007user" +
-      "_id\030\001 \001(\tR\006userId\022\037\n\010nickname\030\002 \001(\tH\000R\010n" +
-      "ickname\210\001\001\022(\n\rprofile_image\030\003 \001(\tH\001R\014pro" +
-      "fileImage\210\001\001\022&\n\014phone_number\030\004 \001(\tH\002R\013ph" +
-      "oneNumber\210\001\001\022:\n\006gender\030\005 \001(\0162\035.com.hearl" +
-      "ers.v1.model.GenderH\003R\006gender\210\001\001\022\037\n\010birt" +
-      "hday\030\006 \001(\tH\004R\010birthday\210\001\001\022\'\n\014introductio" +
-      "n\030\007 \001(\tH\005R\014introduction\210\001\001\0224\n\004mbti\030\010 \001(\016" +
-      "2\033.com.hearlers.v1.model.MbtiH\006R\004mbti\210\001\001" +
-      "B\013\n\t_nicknameB\020\n\016_profile_imageB\017\n\r_phon" +
-      "e_numberB\t\n\007_genderB\013\n\t_birthdayB\017\n\r_int" +
-      "roductionB\007\n\005_mbti\"E\n\022UpdateUserResponse" +
-      "\022/\n\004user\030\001 \001(\0132\033.com.hearlers.v1.model.U" +
-      "serR\004user\"\313\002\n\025CreateActivityRequest\022H\n\ra" +
-      "ctivity_type\030\001 \001(\0162#.com.hearlers.v1.mod" +
-      "el.ActivityTypeR\014activityType\022<\n\ractivit" +
-      "y_data\030\002 \001(\0132\027.google.protobuf.StructR\014a" +
-      "ctivityData\022A\n\010platform\030\003 \001(\0162%.com.hear" +
-      "lers.v1.model.DevicePlatformR\010platform\022\035" +
-      "\n\nip_address\030\004 \001(\tR\tipAddress\022\035\n\nuser_ag" +
-      "ent\030\005 \001(\tR\tuserAgent\022)\n\020duration_seconds" +
-      "\030\006 \001(\005R\017durationSeconds\"b\n\026CreateActivit" +
-      "yResponse\022H\n\ruser_activity\030\001 \001(\0132#.com.h" +
-      "earlers.v1.model.UserActivityR\014userActiv" +
-      "ity\"z\n\026UpdateAuthorityRequest\022 \n\014auth_us" +
-      "er_id\030\001 \001(\tR\nauthUserId\022>\n\tauthority\030\002 \001" +
-      "(\0162 .com.hearlers.v1.model.AuthorityR\tau" +
-      "thority\"W\n\027UpdateAuthorityResponse\022<\n\tau" +
-      "th_user\030\001 \001(\0132\037.com.hearlers.v1.model.Au" +
-      "thUserR\010authUser2\235\n\n\013UserService\022q\n\016Init" +
-      "ializeUser\022..com.hearlers.v1.service.Ini" +
-      "tializeUserRequest\032/.com.hearlers.v1.ser" +
-      "vice.InitializeUserResponse\022}\n\022ConnectAu" +
-      "thChannel\0222.com.hearlers.v1.service.Conn" +
-      "ectAuthChannelRequest\0323.com.hearlers.v1." +
-      "service.ConnectAuthChannelResponse\022w\n\020Sa" +
-      "veRefreshToken\0220.com.hearlers.v1.service" +
-      ".SaveRefreshTokenRequest\0321.com.hearlers." +
-      "v1.service.SaveRefreshTokenResponse\022}\n\022V" +
-      "erifyRefreshToken\0222.com.hearlers.v1.serv" +
-      "ice.VerifyRefreshTokenRequest\0323.com.hear" +
-      "lers.v1.service.VerifyRefreshTokenRespon" +
-      "se\022h\n\013FindOneUser\022+.com.hearlers.v1.serv" +
-      "ice.FindOneUserRequest\032,.com.hearlers.v1" +
-      ".service.FindOneUserResponse\022t\n\017FindOneA" +
-      "uthUser\022/.com.hearlers.v1.service.FindOn" +
-      "eAuthUserRequest\0320.com.hearlers.v1.servi" +
-      "ce.FindOneAuthUserResponse\022\203\001\n\024CheckRema" +
-      "iningTokens\0224.com.hearlers.v1.service.Ch" +
-      "eckRemainingTokensRequest\0325.com.hearlers" +
-      ".v1.service.CheckRemainingTokensResponse" +
-      "\022n\n\rReserveTokens\022-.com.hearlers.v1.serv" +
-      "ice.ReserveTokensRequest\032..com.hearlers." +
-      "v1.service.ReserveTokensResponse\022e\n\nUpda" +
-      "teUser\022*.com.hearlers.v1.service.UpdateU" +
-      "serRequest\032+.com.hearlers.v1.service.Upd" +
-      "ateUserResponse\022q\n\016CreateActivity\022..com." +
-      "hearlers.v1.service.CreateActivityReques" +
-      "t\032/.com.hearlers.v1.service.CreateActivi" +
-      "tyResponse\022t\n\017UpdateAuthority\022/.com.hear" +
-      "lers.v1.service.UpdateAuthorityRequest\0320" +
-      ".com.hearlers.v1.service.UpdateAuthority" +
-      "ResponseB%\n!com.hearlers.api.proto.v1.se" +
-      "rviceP\001b\006proto3"
+      "\022\030\n\007success\030\001 \001(\010R\007success\"2\n\027FindUserBy" +
+      "UserIdRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"Y" +
+      "\n\030FindUserByUserIdResponse\0224\n\004user\030\001 \001(\013" +
+      "2\033.com.hearlers.v1.model.UserH\000R\004user\210\001\001" +
+      "B\007\n\005_user\"7\n\031FindUserByNicknameRequest\022\032" +
+      "\n\010nickname\030\001 \001(\tR\010nickname\"[\n\032FindUserBy" +
+      "NicknameResponse\0224\n\004user\030\001 \001(\0132\033.com.hea" +
+      "rlers.v1.model.UserH\000R\004user\210\001\001B\007\n\005_user\"" +
+      "Y\n\023FindManyUserRequest\022B\n\npagination\030\001 \001" +
+      "(\0132\".com.hearlers.v1.common.PaginationR\n" +
+      "pagination\"G\n\022FindManyUserResult\0221\n\005user" +
+      "s\030\001 \003(\0132\033.com.hearlers.v1.model.UserR\005us" +
+      "ers\"C\n\037FindAuthUserByAuthUserIdRequest\022 " +
+      "\n\014auth_user_id\030\001 \001(\tR\nauthUserId\"s\n Find" +
+      "AuthUserByAuthUserIdResponse\022A\n\tauth_use" +
+      "r\030\001 \001(\0132\037.com.hearlers.v1.model.AuthUser" +
+      "H\000R\010authUser\210\001\001B\014\n\n_auth_user\"6\n\033FindAut" +
+      "hUserByUserIdRequest\022\027\n\007user_id\030\001 \001(\tR\006u" +
+      "serId\"o\n\034FindAuthUserByUserIdResponse\022A\n" +
+      "\tauth_user\030\001 \001(\0132\037.com.hearlers.v1.model" +
+      ".AuthUserH\000R\010authUser\210\001\001B\014\n\n_auth_user\"\206" +
+      "\001\n FindAuthUserByChannelInfoRequest\022E\n\014a" +
+      "uth_channel\030\001 \001(\0162\".com.hearlers.v1.mode" +
+      "l.AuthChannelR\013authChannel\022\033\n\tunique_id\030" +
+      "\002 \001(\tR\010uniqueId\"t\n!FindAuthUserByChannel" +
+      "InfoResponse\022A\n\tauth_user\030\001 \001(\0132\037.com.he" +
+      "arlers.v1.model.AuthUserH\000R\010authUser\210\001\001B" +
+      "\014\n\n_auth_user\"6\n\033CheckRemainingTokensReq" +
+      "uest\022\027\n\007user_id\030\001 \001(\tR\006userId\"\257\001\n\034CheckR" +
+      "emainingTokensResponse\022)\n\020remaining_toke" +
+      "ns\030\001 \001(\005R\017remainingTokens\022\035\n\nmax_tokens\030" +
+      "\002 \001(\005R\tmaxTokens\022\032\n\010reserved\030\003 \001(\010R\010rese" +
+      "rved\022)\n\020reserved_timeout\030\004 \001(\tR\017reserved" +
+      "Timeout\"/\n\024ReserveTokensRequest\022\027\n\007user_" +
+      "id\030\001 \001(\tR\006userId\"}\n\025ReserveTokensRespons" +
+      "e\022)\n\020remaining_tokens\030\001 \001(\005R\017remainingTo" +
+      "kens\022\035\n\nmax_tokens\030\002 \001(\005R\tmaxTokens\022\032\n\010r" +
+      "eserved\030\003 \001(\010R\010reserved\"\275\003\n\021UpdateUserRe" +
+      "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\037\n\010nickna" +
+      "me\030\002 \001(\tH\000R\010nickname\210\001\001\022(\n\rprofile_image" +
+      "\030\003 \001(\tH\001R\014profileImage\210\001\001\022&\n\014phone_numbe" +
+      "r\030\004 \001(\tH\002R\013phoneNumber\210\001\001\022:\n\006gender\030\005 \001(" +
+      "\0162\035.com.hearlers.v1.model.GenderH\003R\006gend" +
+      "er\210\001\001\022\037\n\010birthday\030\006 \001(\tH\004R\010birthday\210\001\001\022\'" +
+      "\n\014introduction\030\007 \001(\tH\005R\014introduction\210\001\001\022" +
+      "4\n\004mbti\030\010 \001(\0162\033.com.hearlers.v1.model.Mb" +
+      "tiH\006R\004mbti\210\001\001B\013\n\t_nicknameB\020\n\016_profile_i" +
+      "mageB\017\n\r_phone_numberB\t\n\007_genderB\013\n\t_bir" +
+      "thdayB\017\n\r_introductionB\007\n\005_mbti\"E\n\022Updat" +
+      "eUserResponse\022/\n\004user\030\001 \001(\0132\033.com.hearle" +
+      "rs.v1.model.UserR\004user\"\313\002\n\025CreateActivit" +
+      "yRequest\022H\n\ractivity_type\030\001 \001(\0162#.com.he" +
+      "arlers.v1.model.ActivityTypeR\014activityTy" +
+      "pe\022<\n\ractivity_data\030\002 \001(\0132\027.google.proto" +
+      "buf.StructR\014activityData\022A\n\010platform\030\003 \001" +
+      "(\0162%.com.hearlers.v1.model.DevicePlatfor" +
+      "mR\010platform\022\035\n\nip_address\030\004 \001(\tR\tipAddre" +
+      "ss\022\035\n\nuser_agent\030\005 \001(\tR\tuserAgent\022)\n\020dur" +
+      "ation_seconds\030\006 \001(\005R\017durationSeconds\"b\n\026" +
+      "CreateActivityResponse\022H\n\ruser_activity\030" +
+      "\001 \001(\0132#.com.hearlers.v1.model.UserActivi" +
+      "tyR\014userActivity\"z\n\026UpdateAuthorityReque" +
+      "st\022 \n\014auth_user_id\030\001 \001(\tR\nauthUserId\022>\n\t" +
+      "authority\030\002 \001(\0162 .com.hearlers.v1.model." +
+      "AuthorityR\tauthority\"W\n\027UpdateAuthorityR" +
+      "esponse\022<\n\tauth_user\030\001 \001(\0132\037.com.hearler" +
+      "s.v1.model.AuthUserR\010authUser2\342\r\n\013UserSe" +
+      "rvice\022q\n\016InitializeUser\022..com.hearlers.v" +
+      "1.service.InitializeUserRequest\032/.com.he" +
+      "arlers.v1.service.InitializeUserResponse" +
+      "\022}\n\022ConnectAuthChannel\0222.com.hearlers.v1" +
+      ".service.ConnectAuthChannelRequest\0323.com" +
+      ".hearlers.v1.service.ConnectAuthChannelR" +
+      "esponse\022w\n\020SaveRefreshToken\0220.com.hearle" +
+      "rs.v1.service.SaveRefreshTokenRequest\0321." +
+      "com.hearlers.v1.service.SaveRefreshToken" +
+      "Response\022}\n\022VerifyRefreshToken\0222.com.hea" +
+      "rlers.v1.service.VerifyRefreshTokenReque" +
+      "st\0323.com.hearlers.v1.service.VerifyRefre" +
+      "shTokenResponse\022w\n\020FindUserByUserId\0220.co" +
+      "m.hearlers.v1.service.FindUserByUserIdRe" +
+      "quest\0321.com.hearlers.v1.service.FindUser" +
+      "ByUserIdResponse\022}\n\022FindUserByNickname\0222" +
+      ".com.hearlers.v1.service.FindUserByNickn" +
+      "ameRequest\0323.com.hearlers.v1.service.Fin" +
+      "dUserByNicknameResponse\022\217\001\n\030FindAuthUser" +
+      "ByAuthUserId\0228.com.hearlers.v1.service.F" +
+      "indAuthUserByAuthUserIdRequest\0329.com.hea" +
+      "rlers.v1.service.FindAuthUserByAuthUserI" +
+      "dResponse\022\203\001\n\024FindAuthUserByUserId\0224.com" +
+      ".hearlers.v1.service.FindAuthUserByUserI" +
+      "dRequest\0325.com.hearlers.v1.service.FindA" +
+      "uthUserByUserIdResponse\022\222\001\n\031FindAuthUser" +
+      "ByChannelInfo\0229.com.hearlers.v1.service." +
+      "FindAuthUserByChannelInfoRequest\032:.com.h" +
+      "earlers.v1.service.FindAuthUserByChannel" +
+      "InfoResponse\022\203\001\n\024CheckRemainingTokens\0224." +
+      "com.hearlers.v1.service.CheckRemainingTo" +
+      "kensRequest\0325.com.hearlers.v1.service.Ch" +
+      "eckRemainingTokensResponse\022n\n\rReserveTok" +
+      "ens\022-.com.hearlers.v1.service.ReserveTok" +
+      "ensRequest\032..com.hearlers.v1.service.Res" +
+      "erveTokensResponse\022e\n\nUpdateUser\022*.com.h" +
+      "earlers.v1.service.UpdateUserRequest\032+.c" +
+      "om.hearlers.v1.service.UpdateUserRespons" +
+      "e\022q\n\016CreateActivity\022..com.hearlers.v1.se" +
+      "rvice.CreateActivityRequest\032/.com.hearle" +
+      "rs.v1.service.CreateActivityResponse\022t\n\017" +
+      "UpdateAuthority\022/.com.hearlers.v1.servic" +
+      "e.UpdateAuthorityRequest\0320.com.hearlers." +
+      "v1.service.UpdateAuthorityResponseB%\n!co" +
+      "m.hearlers.api.proto.v1.serviceP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -326,98 +376,134 @@ public final class User {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_VerifyRefreshTokenResponse_descriptor,
         new java.lang.String[] { "Success", });
-    internal_static_com_hearlers_v1_service_FindOneUserRequest_descriptor =
+    internal_static_com_hearlers_v1_service_FindUserByUserIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_com_hearlers_v1_service_FindOneUserRequest_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_service_FindUserByUserIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_FindOneUserRequest_descriptor,
-        new java.lang.String[] { "UserId", "Nickname", });
-    internal_static_com_hearlers_v1_service_FindOneUserResponse_descriptor =
+        internal_static_com_hearlers_v1_service_FindUserByUserIdRequest_descriptor,
+        new java.lang.String[] { "UserId", });
+    internal_static_com_hearlers_v1_service_FindUserByUserIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_com_hearlers_v1_service_FindOneUserResponse_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_service_FindUserByUserIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_FindOneUserResponse_descriptor,
+        internal_static_com_hearlers_v1_service_FindUserByUserIdResponse_descriptor,
+        new java.lang.String[] { "User", });
+    internal_static_com_hearlers_v1_service_FindUserByNicknameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_hearlers_v1_service_FindUserByNicknameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindUserByNicknameRequest_descriptor,
+        new java.lang.String[] { "Nickname", });
+    internal_static_com_hearlers_v1_service_FindUserByNicknameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_com_hearlers_v1_service_FindUserByNicknameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindUserByNicknameResponse_descriptor,
         new java.lang.String[] { "User", });
     internal_static_com_hearlers_v1_service_FindManyUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_hearlers_v1_service_FindManyUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindManyUserRequest_descriptor,
         new java.lang.String[] { "Pagination", });
     internal_static_com_hearlers_v1_service_FindManyUserResult_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_hearlers_v1_service_FindManyUserResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindManyUserResult_descriptor,
         new java.lang.String[] { "Users", });
-    internal_static_com_hearlers_v1_service_FindOneAuthUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_com_hearlers_v1_service_FindOneAuthUserRequest_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_FindOneAuthUserRequest_descriptor,
-        new java.lang.String[] { "AuthUserId", "UserId", "AuthChannel", "UniqueId", });
-    internal_static_com_hearlers_v1_service_FindOneAuthUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_com_hearlers_v1_service_FindOneAuthUserResponse_fieldAccessorTable = new
+        internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdRequest_descriptor,
+        new java.lang.String[] { "AuthUserId", });
+    internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_service_FindOneAuthUserResponse_descriptor,
+        internal_static_com_hearlers_v1_service_FindAuthUserByAuthUserIdResponse_descriptor,
+        new java.lang.String[] { "AuthUser", });
+    internal_static_com_hearlers_v1_service_FindAuthUserByUserIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_com_hearlers_v1_service_FindAuthUserByUserIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindAuthUserByUserIdRequest_descriptor,
+        new java.lang.String[] { "UserId", });
+    internal_static_com_hearlers_v1_service_FindAuthUserByUserIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_com_hearlers_v1_service_FindAuthUserByUserIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindAuthUserByUserIdResponse_descriptor,
+        new java.lang.String[] { "AuthUser", });
+    internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoRequest_descriptor,
+        new java.lang.String[] { "AuthChannel", "UniqueId", });
+    internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindAuthUserByChannelInfoResponse_descriptor,
         new java.lang.String[] { "AuthUser", });
     internal_static_com_hearlers_v1_service_CheckRemainingTokensRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_com_hearlers_v1_service_CheckRemainingTokensRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CheckRemainingTokensRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_com_hearlers_v1_service_CheckRemainingTokensResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_com_hearlers_v1_service_CheckRemainingTokensResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CheckRemainingTokensResponse_descriptor,
         new java.lang.String[] { "RemainingTokens", "MaxTokens", "Reserved", "ReservedTimeout", });
     internal_static_com_hearlers_v1_service_ReserveTokensRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_com_hearlers_v1_service_ReserveTokensRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_ReserveTokensRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_com_hearlers_v1_service_ReserveTokensResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_com_hearlers_v1_service_ReserveTokensResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_ReserveTokensResponse_descriptor,
         new java.lang.String[] { "RemainingTokens", "MaxTokens", "Reserved", });
     internal_static_com_hearlers_v1_service_UpdateUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_com_hearlers_v1_service_UpdateUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateUserRequest_descriptor,
         new java.lang.String[] { "UserId", "Nickname", "ProfileImage", "PhoneNumber", "Gender", "Birthday", "Introduction", "Mbti", });
     internal_static_com_hearlers_v1_service_UpdateUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_com_hearlers_v1_service_UpdateUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateUserResponse_descriptor,
         new java.lang.String[] { "User", });
     internal_static_com_hearlers_v1_service_CreateActivityRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_com_hearlers_v1_service_CreateActivityRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateActivityRequest_descriptor,
         new java.lang.String[] { "ActivityType", "ActivityData", "Platform", "IpAddress", "UserAgent", "DurationSeconds", });
     internal_static_com_hearlers_v1_service_CreateActivityResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_com_hearlers_v1_service_CreateActivityResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateActivityResponse_descriptor,
         new java.lang.String[] { "UserActivity", });
     internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateAuthorityRequest_descriptor,
         new java.lang.String[] { "AuthUserId", "Authority", });
     internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateAuthorityResponse_descriptor,

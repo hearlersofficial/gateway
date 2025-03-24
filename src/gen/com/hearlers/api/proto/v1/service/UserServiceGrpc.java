@@ -139,66 +139,159 @@ public final class UserServiceGrpc {
     return getVerifyRefreshTokenMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOneUserRequest,
-      com.hearlers.api.proto.v1.service.FindOneUserResponse> getFindOneUserMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindUserByUserIdRequest,
+      com.hearlers.api.proto.v1.service.FindUserByUserIdResponse> getFindUserByUserIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FindOneUser",
-      requestType = com.hearlers.api.proto.v1.service.FindOneUserRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.FindOneUserResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "FindUserByUserId",
+      requestType = com.hearlers.api.proto.v1.service.FindUserByUserIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindUserByUserIdResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOneUserRequest,
-      com.hearlers.api.proto.v1.service.FindOneUserResponse> getFindOneUserMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOneUserRequest, com.hearlers.api.proto.v1.service.FindOneUserResponse> getFindOneUserMethod;
-    if ((getFindOneUserMethod = UserServiceGrpc.getFindOneUserMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindUserByUserIdRequest,
+      com.hearlers.api.proto.v1.service.FindUserByUserIdResponse> getFindUserByUserIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindUserByUserIdRequest, com.hearlers.api.proto.v1.service.FindUserByUserIdResponse> getFindUserByUserIdMethod;
+    if ((getFindUserByUserIdMethod = UserServiceGrpc.getFindUserByUserIdMethod) == null) {
       synchronized (UserServiceGrpc.class) {
-        if ((getFindOneUserMethod = UserServiceGrpc.getFindOneUserMethod) == null) {
-          UserServiceGrpc.getFindOneUserMethod = getFindOneUserMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindOneUserRequest, com.hearlers.api.proto.v1.service.FindOneUserResponse>newBuilder()
+        if ((getFindUserByUserIdMethod = UserServiceGrpc.getFindUserByUserIdMethod) == null) {
+          UserServiceGrpc.getFindUserByUserIdMethod = getFindUserByUserIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindUserByUserIdRequest, com.hearlers.api.proto.v1.service.FindUserByUserIdResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindOneUser"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindUserByUserId"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.FindOneUserRequest.getDefaultInstance()))
+                  com.hearlers.api.proto.v1.service.FindUserByUserIdRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.FindOneUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindOneUser"))
+                  com.hearlers.api.proto.v1.service.FindUserByUserIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindUserByUserId"))
               .build();
         }
       }
     }
-    return getFindOneUserMethod;
+    return getFindUserByUserIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOneAuthUserRequest,
-      com.hearlers.api.proto.v1.service.FindOneAuthUserResponse> getFindOneAuthUserMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindUserByNicknameRequest,
+      com.hearlers.api.proto.v1.service.FindUserByNicknameResponse> getFindUserByNicknameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FindOneAuthUser",
-      requestType = com.hearlers.api.proto.v1.service.FindOneAuthUserRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.FindOneAuthUserResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "FindUserByNickname",
+      requestType = com.hearlers.api.proto.v1.service.FindUserByNicknameRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindUserByNicknameResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOneAuthUserRequest,
-      com.hearlers.api.proto.v1.service.FindOneAuthUserResponse> getFindOneAuthUserMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOneAuthUserRequest, com.hearlers.api.proto.v1.service.FindOneAuthUserResponse> getFindOneAuthUserMethod;
-    if ((getFindOneAuthUserMethod = UserServiceGrpc.getFindOneAuthUserMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindUserByNicknameRequest,
+      com.hearlers.api.proto.v1.service.FindUserByNicknameResponse> getFindUserByNicknameMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindUserByNicknameRequest, com.hearlers.api.proto.v1.service.FindUserByNicknameResponse> getFindUserByNicknameMethod;
+    if ((getFindUserByNicknameMethod = UserServiceGrpc.getFindUserByNicknameMethod) == null) {
       synchronized (UserServiceGrpc.class) {
-        if ((getFindOneAuthUserMethod = UserServiceGrpc.getFindOneAuthUserMethod) == null) {
-          UserServiceGrpc.getFindOneAuthUserMethod = getFindOneAuthUserMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindOneAuthUserRequest, com.hearlers.api.proto.v1.service.FindOneAuthUserResponse>newBuilder()
+        if ((getFindUserByNicknameMethod = UserServiceGrpc.getFindUserByNicknameMethod) == null) {
+          UserServiceGrpc.getFindUserByNicknameMethod = getFindUserByNicknameMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindUserByNicknameRequest, com.hearlers.api.proto.v1.service.FindUserByNicknameResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindOneAuthUser"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindUserByNickname"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.FindOneAuthUserRequest.getDefaultInstance()))
+                  com.hearlers.api.proto.v1.service.FindUserByNicknameRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.FindOneAuthUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindOneAuthUser"))
+                  com.hearlers.api.proto.v1.service.FindUserByNicknameResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindUserByNickname"))
               .build();
         }
       }
     }
-    return getFindOneAuthUserMethod;
+    return getFindUserByNicknameMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest,
+      com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse> getFindAuthUserByAuthUserIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindAuthUserByAuthUserId",
+      requestType = com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest,
+      com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse> getFindAuthUserByAuthUserIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest, com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse> getFindAuthUserByAuthUserIdMethod;
+    if ((getFindAuthUserByAuthUserIdMethod = UserServiceGrpc.getFindAuthUserByAuthUserIdMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getFindAuthUserByAuthUserIdMethod = UserServiceGrpc.getFindAuthUserByAuthUserIdMethod) == null) {
+          UserServiceGrpc.getFindAuthUserByAuthUserIdMethod = getFindAuthUserByAuthUserIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest, com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindAuthUserByAuthUserId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindAuthUserByAuthUserId"))
+              .build();
+        }
+      }
+    }
+    return getFindAuthUserByAuthUserIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest,
+      com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse> getFindAuthUserByUserIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindAuthUserByUserId",
+      requestType = com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest,
+      com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse> getFindAuthUserByUserIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest, com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse> getFindAuthUserByUserIdMethod;
+    if ((getFindAuthUserByUserIdMethod = UserServiceGrpc.getFindAuthUserByUserIdMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getFindAuthUserByUserIdMethod = UserServiceGrpc.getFindAuthUserByUserIdMethod) == null) {
+          UserServiceGrpc.getFindAuthUserByUserIdMethod = getFindAuthUserByUserIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest, com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindAuthUserByUserId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindAuthUserByUserId"))
+              .build();
+        }
+      }
+    }
+    return getFindAuthUserByUserIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest,
+      com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse> getFindAuthUserByChannelInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindAuthUserByChannelInfo",
+      requestType = com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest,
+      com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse> getFindAuthUserByChannelInfoMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest, com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse> getFindAuthUserByChannelInfoMethod;
+    if ((getFindAuthUserByChannelInfoMethod = UserServiceGrpc.getFindAuthUserByChannelInfoMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getFindAuthUserByChannelInfoMethod = UserServiceGrpc.getFindAuthUserByChannelInfoMethod) == null) {
+          UserServiceGrpc.getFindAuthUserByChannelInfoMethod = getFindAuthUserByChannelInfoMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest, com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindAuthUserByChannelInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("FindAuthUserByChannelInfo"))
+              .build();
+        }
+      }
+    }
+    return getFindAuthUserByChannelInfoMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest,
@@ -464,9 +557,16 @@ public final class UserServiceGrpc {
      * 유저 조회
      * </pre>
      */
-    default void findOneUser(com.hearlers.api.proto.v1.service.FindOneUserRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindOneUserMethod(), responseObserver);
+    default void findUserByUserId(com.hearlers.api.proto.v1.service.FindUserByUserIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindUserByUserIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindUserByUserIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findUserByNickname(com.hearlers.api.proto.v1.service.FindUserByNicknameRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindUserByNicknameResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindUserByNicknameMethod(), responseObserver);
     }
 
     /**
@@ -476,9 +576,23 @@ public final class UserServiceGrpc {
      * 인증 유저 조회
      * </pre>
      */
-    default void findOneAuthUser(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneAuthUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindOneAuthUserMethod(), responseObserver);
+    default void findAuthUserByAuthUserId(com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAuthUserByAuthUserIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findAuthUserByUserId(com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAuthUserByUserIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findAuthUserByChannelInfo(com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAuthUserByChannelInfoMethod(), responseObserver);
     }
 
     /**
@@ -608,10 +722,18 @@ public final class UserServiceGrpc {
      * 유저 조회
      * </pre>
      */
-    public void findOneUser(com.hearlers.api.proto.v1.service.FindOneUserRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneUserResponse> responseObserver) {
+    public void findUserByUserId(com.hearlers.api.proto.v1.service.FindUserByUserIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindUserByUserIdResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFindOneUserMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getFindUserByUserIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findUserByNickname(com.hearlers.api.proto.v1.service.FindUserByNicknameRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindUserByNicknameResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindUserByNicknameMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -621,10 +743,26 @@ public final class UserServiceGrpc {
      * 인증 유저 조회
      * </pre>
      */
-    public void findOneAuthUser(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneAuthUserResponse> responseObserver) {
+    public void findAuthUserByAuthUserId(com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFindOneAuthUserMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getFindAuthUserByAuthUserIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findAuthUserByUserId(com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindAuthUserByUserIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findAuthUserByChannelInfo(com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindAuthUserByChannelInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -744,9 +882,16 @@ public final class UserServiceGrpc {
      * 유저 조회
      * </pre>
      */
-    public com.hearlers.api.proto.v1.service.FindOneUserResponse findOneUser(com.hearlers.api.proto.v1.service.FindOneUserRequest request) {
+    public com.hearlers.api.proto.v1.service.FindUserByUserIdResponse findUserByUserId(com.hearlers.api.proto.v1.service.FindUserByUserIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindOneUserMethod(), getCallOptions(), request);
+          getChannel(), getFindUserByUserIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindUserByNicknameResponse findUserByNickname(com.hearlers.api.proto.v1.service.FindUserByNicknameRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindUserByNicknameMethod(), getCallOptions(), request);
     }
 
     /**
@@ -756,9 +901,23 @@ public final class UserServiceGrpc {
      * 인증 유저 조회
      * </pre>
      */
-    public com.hearlers.api.proto.v1.service.FindOneAuthUserResponse findOneAuthUser(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request) {
+    public com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse findAuthUserByAuthUserId(com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindOneAuthUserMethod(), getCallOptions(), request);
+          getChannel(), getFindAuthUserByAuthUserIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse findAuthUserByUserId(com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindAuthUserByUserIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse findAuthUserByChannelInfo(com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindAuthUserByChannelInfoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -873,9 +1032,16 @@ public final class UserServiceGrpc {
      * 유저 조회
      * </pre>
      */
-    public com.hearlers.api.proto.v1.service.FindOneUserResponse findOneUser(com.hearlers.api.proto.v1.service.FindOneUserRequest request) {
+    public com.hearlers.api.proto.v1.service.FindUserByUserIdResponse findUserByUserId(com.hearlers.api.proto.v1.service.FindUserByUserIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindOneUserMethod(), getCallOptions(), request);
+          getChannel(), getFindUserByUserIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindUserByNicknameResponse findUserByNickname(com.hearlers.api.proto.v1.service.FindUserByNicknameRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindUserByNicknameMethod(), getCallOptions(), request);
     }
 
     /**
@@ -885,9 +1051,23 @@ public final class UserServiceGrpc {
      * 인증 유저 조회
      * </pre>
      */
-    public com.hearlers.api.proto.v1.service.FindOneAuthUserResponse findOneAuthUser(com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request) {
+    public com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse findAuthUserByAuthUserId(com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindOneAuthUserMethod(), getCallOptions(), request);
+          getChannel(), getFindAuthUserByAuthUserIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse findAuthUserByUserId(com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindAuthUserByUserIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse findAuthUserByChannelInfo(com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindAuthUserByChannelInfoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1006,10 +1186,18 @@ public final class UserServiceGrpc {
      * 유저 조회
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindOneUserResponse> findOneUser(
-        com.hearlers.api.proto.v1.service.FindOneUserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindUserByUserIdResponse> findUserByUserId(
+        com.hearlers.api.proto.v1.service.FindUserByUserIdRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindOneUserMethod(), getCallOptions()), request);
+          getChannel().newCall(getFindUserByUserIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindUserByNicknameResponse> findUserByNickname(
+        com.hearlers.api.proto.v1.service.FindUserByNicknameRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindUserByNicknameMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1019,10 +1207,26 @@ public final class UserServiceGrpc {
      * 인증 유저 조회
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindOneAuthUserResponse> findOneAuthUser(
-        com.hearlers.api.proto.v1.service.FindOneAuthUserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse> findAuthUserByAuthUserId(
+        com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindOneAuthUserMethod(), getCallOptions()), request);
+          getChannel().newCall(getFindAuthUserByAuthUserIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse> findAuthUserByUserId(
+        com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindAuthUserByUserIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse> findAuthUserByChannelInfo(
+        com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindAuthUserByChannelInfoMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1085,13 +1289,16 @@ public final class UserServiceGrpc {
   private static final int METHODID_CONNECT_AUTH_CHANNEL = 1;
   private static final int METHODID_SAVE_REFRESH_TOKEN = 2;
   private static final int METHODID_VERIFY_REFRESH_TOKEN = 3;
-  private static final int METHODID_FIND_ONE_USER = 4;
-  private static final int METHODID_FIND_ONE_AUTH_USER = 5;
-  private static final int METHODID_CHECK_REMAINING_TOKENS = 6;
-  private static final int METHODID_RESERVE_TOKENS = 7;
-  private static final int METHODID_UPDATE_USER = 8;
-  private static final int METHODID_CREATE_ACTIVITY = 9;
-  private static final int METHODID_UPDATE_AUTHORITY = 10;
+  private static final int METHODID_FIND_USER_BY_USER_ID = 4;
+  private static final int METHODID_FIND_USER_BY_NICKNAME = 5;
+  private static final int METHODID_FIND_AUTH_USER_BY_AUTH_USER_ID = 6;
+  private static final int METHODID_FIND_AUTH_USER_BY_USER_ID = 7;
+  private static final int METHODID_FIND_AUTH_USER_BY_CHANNEL_INFO = 8;
+  private static final int METHODID_CHECK_REMAINING_TOKENS = 9;
+  private static final int METHODID_RESERVE_TOKENS = 10;
+  private static final int METHODID_UPDATE_USER = 11;
+  private static final int METHODID_CREATE_ACTIVITY = 12;
+  private static final int METHODID_UPDATE_AUTHORITY = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1126,13 +1333,25 @@ public final class UserServiceGrpc {
           serviceImpl.verifyRefreshToken((com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.VerifyRefreshTokenResponse>) responseObserver);
           break;
-        case METHODID_FIND_ONE_USER:
-          serviceImpl.findOneUser((com.hearlers.api.proto.v1.service.FindOneUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneUserResponse>) responseObserver);
+        case METHODID_FIND_USER_BY_USER_ID:
+          serviceImpl.findUserByUserId((com.hearlers.api.proto.v1.service.FindUserByUserIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindUserByUserIdResponse>) responseObserver);
           break;
-        case METHODID_FIND_ONE_AUTH_USER:
-          serviceImpl.findOneAuthUser((com.hearlers.api.proto.v1.service.FindOneAuthUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOneAuthUserResponse>) responseObserver);
+        case METHODID_FIND_USER_BY_NICKNAME:
+          serviceImpl.findUserByNickname((com.hearlers.api.proto.v1.service.FindUserByNicknameRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindUserByNicknameResponse>) responseObserver);
+          break;
+        case METHODID_FIND_AUTH_USER_BY_AUTH_USER_ID:
+          serviceImpl.findAuthUserByAuthUserId((com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse>) responseObserver);
+          break;
+        case METHODID_FIND_AUTH_USER_BY_USER_ID:
+          serviceImpl.findAuthUserByUserId((com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse>) responseObserver);
+          break;
+        case METHODID_FIND_AUTH_USER_BY_CHANNEL_INFO:
+          serviceImpl.findAuthUserByChannelInfo((com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse>) responseObserver);
           break;
         case METHODID_CHECK_REMAINING_TOKENS:
           serviceImpl.checkRemainingTokens((com.hearlers.api.proto.v1.service.CheckRemainingTokensRequest) request,
@@ -1201,19 +1420,40 @@ public final class UserServiceGrpc {
               com.hearlers.api.proto.v1.service.VerifyRefreshTokenResponse>(
                 service, METHODID_VERIFY_REFRESH_TOKEN)))
         .addMethod(
-          getFindOneUserMethod(),
+          getFindUserByUserIdMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.hearlers.api.proto.v1.service.FindOneUserRequest,
-              com.hearlers.api.proto.v1.service.FindOneUserResponse>(
-                service, METHODID_FIND_ONE_USER)))
+              com.hearlers.api.proto.v1.service.FindUserByUserIdRequest,
+              com.hearlers.api.proto.v1.service.FindUserByUserIdResponse>(
+                service, METHODID_FIND_USER_BY_USER_ID)))
         .addMethod(
-          getFindOneAuthUserMethod(),
+          getFindUserByNicknameMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.hearlers.api.proto.v1.service.FindOneAuthUserRequest,
-              com.hearlers.api.proto.v1.service.FindOneAuthUserResponse>(
-                service, METHODID_FIND_ONE_AUTH_USER)))
+              com.hearlers.api.proto.v1.service.FindUserByNicknameRequest,
+              com.hearlers.api.proto.v1.service.FindUserByNicknameResponse>(
+                service, METHODID_FIND_USER_BY_NICKNAME)))
+        .addMethod(
+          getFindAuthUserByAuthUserIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdRequest,
+              com.hearlers.api.proto.v1.service.FindAuthUserByAuthUserIdResponse>(
+                service, METHODID_FIND_AUTH_USER_BY_AUTH_USER_ID)))
+        .addMethod(
+          getFindAuthUserByUserIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindAuthUserByUserIdRequest,
+              com.hearlers.api.proto.v1.service.FindAuthUserByUserIdResponse>(
+                service, METHODID_FIND_AUTH_USER_BY_USER_ID)))
+        .addMethod(
+          getFindAuthUserByChannelInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoRequest,
+              com.hearlers.api.proto.v1.service.FindAuthUserByChannelInfoResponse>(
+                service, METHODID_FIND_AUTH_USER_BY_CHANNEL_INFO)))
         .addMethod(
           getCheckRemainingTokensMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1301,8 +1541,11 @@ public final class UserServiceGrpc {
               .addMethod(getConnectAuthChannelMethod())
               .addMethod(getSaveRefreshTokenMethod())
               .addMethod(getVerifyRefreshTokenMethod())
-              .addMethod(getFindOneUserMethod())
-              .addMethod(getFindOneAuthUserMethod())
+              .addMethod(getFindUserByUserIdMethod())
+              .addMethod(getFindUserByNicknameMethod())
+              .addMethod(getFindAuthUserByAuthUserIdMethod())
+              .addMethod(getFindAuthUserByUserIdMethod())
+              .addMethod(getFindAuthUserByChannelInfoMethod())
               .addMethod(getCheckRemainingTokensMethod())
               .addMethod(getReserveTokensMethod())
               .addMethod(getUpdateUserMethod())

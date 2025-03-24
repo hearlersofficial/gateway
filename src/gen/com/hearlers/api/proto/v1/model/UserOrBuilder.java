@@ -49,30 +49,6 @@ public interface UserOrBuilder extends
   com.hearlers.api.proto.v1.model.UserProfileOrBuilder getUserProfileOrBuilder();
 
   /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  java.util.List<com.hearlers.api.proto.v1.model.UserProgress> 
-      getUserProgressesList();
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  com.hearlers.api.proto.v1.model.UserProgress getUserProgresses(int index);
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  int getUserProgressesCount();
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  java.util.List<? extends com.hearlers.api.proto.v1.model.UserProgressOrBuilder> 
-      getUserProgressesOrBuilderList();
-  /**
-   * <code>repeated .com.hearlers.v1.model.UserProgress user_progresses = 4 [json_name = "userProgresses"];</code>
-   */
-  com.hearlers.api.proto.v1.model.UserProgressOrBuilder getUserProgressesOrBuilder(
-      int index);
-
-  /**
    * <pre>
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
@@ -117,7 +93,16 @@ public interface UserOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  boolean hasDeletedAt();
+  /**
+   * <pre>
+   * ISO 8601 (2024-12-29T12:34:56.000Z)
+   * </pre>
+   *
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -126,7 +111,7 @@ public interface UserOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

@@ -222,7 +222,7 @@ public enum ActivityType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor().getEnumTypes().get(5);
+    return com.hearlers.api.proto.v1.model.UserOuterClass.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final ActivityType[] VALUES = values();
