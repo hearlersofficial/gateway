@@ -27,9 +27,9 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @RequiredArgsConstructor
 public class ResponseFormatter {
-    
+
     private final ObjectMapper objectMapper;
-    
+
     /**
      * HttpResultCode 기반으로 표준화된 에러 응답 설정
      */
@@ -38,58 +38,55 @@ public class ResponseFormatter {
             response.setStatus(resultCode.getStatus().value());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-            
+
             // ResponseDtoUtil 활용하여 중복 코드 제거
-            ResponseDto.Error errorDto = ResponseDtoUtil.error(
-                resultCode.getStatus(),
-                resultCode.getCode(),
-                resultCode.getMessage(),
-                data
-            );
-            
+            ResponseDto.Error<Object> errorDto = ResponseDtoUtil.error(
+                    resultCode.getStatus(),
+                    resultCode.getCode(),
+                    resultCode.getMessage(),
+                    data);
+
             response.getWriter().write(objectMapper.writeValueAsString(errorDto));
             response.getWriter().flush();
         } catch (IOException e) {
             log.error("에러 응답 생성 중 오류 발생: {}", e.getMessage(), e);
         }
     }
-    
+
     /**
      * 표준화된 에러 응답 설정 (직접 값 지정)
      */
-    public void formatErrorResponse(HttpServletResponse response, HttpStatus status, String code, 
-                                  String message, String detail, Object data) {
+    public void formatErrorResponse(HttpServletResponse response, HttpStatus status, String code,
+            String message, String detail, Object data) {
         try {
             response.setStatus(status.value());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-            
+
             // ResponseDtoUtil 활용하여 중복 코드 제거
-            ResponseDto.Error errorDto;
+            ResponseDto.Error<Object> errorDto;
             if (detail != null) {
                 errorDto = ResponseDtoUtil.errorWithDetails(
-                    status,
-                    code,
-                    message,
-                    data,
-                    Collections.singletonList(detail)
-                );
+                        status,
+                        code,
+                        message,
+                        data,
+                        Collections.singletonList(detail));
             } else {
                 errorDto = ResponseDtoUtil.error(
-                    status,
-                    code,
-                    message,
-                    data
-                );
+                        status,
+                        code,
+                        message,
+                        data);
             }
-            
+
             response.getWriter().write(objectMapper.writeValueAsString(errorDto));
             response.getWriter().flush();
         } catch (IOException e) {
             log.error("에러 응답 생성 중 오류 발생: {}", e.getMessage(), e);
         }
     }
-    
+
     /**
      * gRPC 성공 응답 처리
      */
@@ -99,7 +96,7 @@ public class ResponseFormatter {
             sendNoContentResponse(response);
             return;
         }
-        
+
         // 일반적인 성공 응답은 그대로 전달
         try {
             response.setStatus(HttpStatus.OK.value());
@@ -110,7 +107,7 @@ public class ResponseFormatter {
             log.error("응답 처리 중 오류: {}", e.getMessage(), e);
         }
     }
-    
+
     /**
      * 204 No Content 응답 설정 (바디 없음)
      */
@@ -118,4 +115,4 @@ public class ResponseFormatter {
         response.setStatus(HttpStatus.NO_CONTENT.value());
         // 204 응답은 바디를 갖지 않음
     }
-} 
+}
