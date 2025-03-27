@@ -56,36 +56,36 @@ public interface UpdateCounselTechniqueRequestOrBuilder extends
       getToneIdBytes();
 
   /**
-   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
-   * @return Whether the contextId field is set.
+   * <code>optional string context = 4 [json_name = "context"];</code>
+   * @return Whether the context field is set.
    */
-  boolean hasContextId();
+  boolean hasContext();
   /**
-   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
-   * @return The contextId.
+   * <code>optional string context = 4 [json_name = "context"];</code>
+   * @return The context.
    */
-  java.lang.String getContextId();
+  java.lang.String getContext();
   /**
-   * <code>optional string context_id = 5 [json_name = "contextId"];</code>
-   * @return The bytes for contextId.
+   * <code>optional string context = 4 [json_name = "context"];</code>
+   * @return The bytes for context.
    */
   com.google.protobuf.ByteString
-      getContextIdBytes();
+      getContextBytes();
 
   /**
-   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
-   * @return Whether the instructionId field is set.
+   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * @return Whether the instruction field is set.
    */
-  boolean hasInstructionId();
+  boolean hasInstruction();
   /**
-   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
-   * @return The instructionId.
+   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * @return The instruction.
    */
-  java.lang.String getInstructionId();
+  java.lang.String getInstruction();
   /**
-   * <code>optional string instruction_id = 6 [json_name = "instructionId"];</code>
-   * @return The bytes for instructionId.
+   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * @return The bytes for instruction.
    */
   com.google.protobuf.ByteString
-      getInstructionIdBytes();
+      getInstructionBytes();
 }

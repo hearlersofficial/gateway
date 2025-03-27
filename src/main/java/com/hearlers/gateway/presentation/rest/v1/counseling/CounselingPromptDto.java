@@ -466,10 +466,10 @@ public class CounselingPromptDto {
         private String toneId;
 
         @Schema(description = "Context ID", example = "ctx_345678")
-        private String contextId;
+        private String context;
 
         @Schema(description = "Instruction ID", example = "instr_901234")
-        private String instructionId;
+        private String instruction;
 
         @Schema(description = "다음 CounselTechnique ID", example = "ct_567890")
         private String nextCounselTechniqueId;
@@ -495,13 +495,13 @@ public class CounselingPromptDto {
         @Schema(description = "Tone ID (선택사항)", example = "tone_789012")
         private String toneId;
         
-        @NotBlank(message = "Context ID는 필수 입력 항목입니다.")
-        @Schema(description = "Context ID", example = "ctx_345678")
-        private String contextId;
+        @NotBlank(message = "Context는 필수 입력 항목입니다.")
+        @Schema(description = "Context", example = "ctx_345678")
+        private String context;
         
-        @NotBlank(message = "Instruction ID는 필수 입력 항목입니다.")
-        @Schema(description = "Instruction ID", example = "instr_901234")
-        private String instructionId;
+        @NotBlank(message = "Instruction은 필수 입력 항목입니다.")
+        @Schema(description = "Instruction", example = "instr_901234")
+        private String instruction;
         
     }
 
@@ -551,11 +551,11 @@ public class CounselingPromptDto {
         @Schema(description = "Tone ID (선택사항)(null로 보낼 시 톤 미변경)", nullable = true, example = "tone_567890")
         private String toneId;
         
-        @Schema(description = "Context ID (선택사항)", example = "ctx_123456")
-        private String contextId;
+        @Schema(description = "Context (선택사항)", example = "ctx_123456")
+        private String context;
         
-        @Schema(description = "Instruction ID (선택사항)", example = "instr_789012")
-        private String instructionId;
+        @Schema(description = "Instruction (선택사항)", example = "instr_789012")
+        private String instruction;
         
     }
 

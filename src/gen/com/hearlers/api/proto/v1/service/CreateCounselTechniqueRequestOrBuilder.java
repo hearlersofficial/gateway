@@ -34,26 +34,26 @@ public interface CreateCounselTechniqueRequestOrBuilder extends
       getToneIdBytes();
 
   /**
-   * <code>string context_id = 3 [json_name = "contextId"];</code>
-   * @return The contextId.
+   * <code>string context = 3 [json_name = "context"];</code>
+   * @return The context.
    */
-  java.lang.String getContextId();
+  java.lang.String getContext();
   /**
-   * <code>string context_id = 3 [json_name = "contextId"];</code>
-   * @return The bytes for contextId.
+   * <code>string context = 3 [json_name = "context"];</code>
+   * @return The bytes for context.
    */
   com.google.protobuf.ByteString
-      getContextIdBytes();
+      getContextBytes();
 
   /**
-   * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-   * @return The instructionId.
+   * <code>string instruction = 4 [json_name = "instruction"];</code>
+   * @return The instruction.
    */
-  java.lang.String getInstructionId();
+  java.lang.String getInstruction();
   /**
-   * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-   * @return The bytes for instructionId.
+   * <code>string instruction = 4 [json_name = "instruction"];</code>
+   * @return The bytes for instruction.
    */
   com.google.protobuf.ByteString
-      getInstructionIdBytes();
+      getInstructionBytes();
 }

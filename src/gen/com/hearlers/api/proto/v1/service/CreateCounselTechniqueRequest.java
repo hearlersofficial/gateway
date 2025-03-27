@@ -33,8 +33,8 @@ private static final long serialVersionUID = 0L;
   private CreateCounselTechniqueRequest() {
     name_ = "";
     toneId_ = "";
-    contextId_ = "";
-    instructionId_ = "";
+    context_ = "";
+    instruction_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -128,78 +128,78 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTEXT_ID_FIELD_NUMBER = 3;
+  public static final int CONTEXT_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object contextId_ = "";
+  private volatile java.lang.Object context_ = "";
   /**
-   * <code>string context_id = 3 [json_name = "contextId"];</code>
-   * @return The contextId.
+   * <code>string context = 3 [json_name = "context"];</code>
+   * @return The context.
    */
   @java.lang.Override
-  public java.lang.String getContextId() {
-    java.lang.Object ref = contextId_;
+  public java.lang.String getContext() {
+    java.lang.Object ref = context_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      contextId_ = s;
+      context_ = s;
       return s;
     }
   }
   /**
-   * <code>string context_id = 3 [json_name = "contextId"];</code>
-   * @return The bytes for contextId.
+   * <code>string context = 3 [json_name = "context"];</code>
+   * @return The bytes for context.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getContextIdBytes() {
-    java.lang.Object ref = contextId_;
+      getContextBytes() {
+    java.lang.Object ref = context_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      contextId_ = b;
+      context_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int INSTRUCTION_ID_FIELD_NUMBER = 4;
+  public static final int INSTRUCTION_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object instructionId_ = "";
+  private volatile java.lang.Object instruction_ = "";
   /**
-   * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-   * @return The instructionId.
+   * <code>string instruction = 4 [json_name = "instruction"];</code>
+   * @return The instruction.
    */
   @java.lang.Override
-  public java.lang.String getInstructionId() {
-    java.lang.Object ref = instructionId_;
+  public java.lang.String getInstruction() {
+    java.lang.Object ref = instruction_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      instructionId_ = s;
+      instruction_ = s;
       return s;
     }
   }
   /**
-   * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-   * @return The bytes for instructionId.
+   * <code>string instruction = 4 [json_name = "instruction"];</code>
+   * @return The bytes for instruction.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getInstructionIdBytes() {
-    java.lang.Object ref = instructionId_;
+      getInstructionBytes() {
+    java.lang.Object ref = instruction_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      instructionId_ = b;
+      instruction_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -226,11 +226,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, toneId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contextId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, contextId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(context_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, context_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instructionId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, instructionId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instruction_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, instruction_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -247,11 +247,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, toneId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contextId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, contextId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(context_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, context_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instructionId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, instructionId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instruction_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, instruction_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -272,10 +272,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getToneId()
         .equals(other.getToneId())) return false;
-    if (!getContextId()
-        .equals(other.getContextId())) return false;
-    if (!getInstructionId()
-        .equals(other.getInstructionId())) return false;
+    if (!getContext()
+        .equals(other.getContext())) return false;
+    if (!getInstruction()
+        .equals(other.getInstruction())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -291,10 +291,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getToneId().hashCode();
-    hash = (37 * hash) + CONTEXT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getContextId().hashCode();
-    hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getInstructionId().hashCode();
+    hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getContext().hashCode();
+    hash = (37 * hash) + INSTRUCTION_FIELD_NUMBER;
+    hash = (53 * hash) + getInstruction().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -432,8 +432,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       name_ = "";
       toneId_ = "";
-      contextId_ = "";
-      instructionId_ = "";
+      context_ = "";
+      instruction_ = "";
       return this;
     }
 
@@ -474,10 +474,10 @@ private static final long serialVersionUID = 0L;
         result.toneId_ = toneId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.contextId_ = contextId_;
+        result.context_ = context_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.instructionId_ = instructionId_;
+        result.instruction_ = instruction_;
       }
     }
 
@@ -503,13 +503,13 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getContextId().isEmpty()) {
-        contextId_ = other.contextId_;
+      if (!other.getContext().isEmpty()) {
+        context_ = other.context_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getInstructionId().isEmpty()) {
-        instructionId_ = other.instructionId_;
+      if (!other.getInstruction().isEmpty()) {
+        instruction_ = other.instruction_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
@@ -550,12 +550,12 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              contextId_ = input.readStringRequireUtf8();
+              context_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              instructionId_ = input.readStringRequireUtf8();
+              instruction_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
@@ -720,145 +720,145 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object contextId_ = "";
+    private java.lang.Object context_ = "";
     /**
-     * <code>string context_id = 3 [json_name = "contextId"];</code>
-     * @return The contextId.
+     * <code>string context = 3 [json_name = "context"];</code>
+     * @return The context.
      */
-    public java.lang.String getContextId() {
-      java.lang.Object ref = contextId_;
+    public java.lang.String getContext() {
+      java.lang.Object ref = context_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        contextId_ = s;
+        context_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string context_id = 3 [json_name = "contextId"];</code>
-     * @return The bytes for contextId.
+     * <code>string context = 3 [json_name = "context"];</code>
+     * @return The bytes for context.
      */
     public com.google.protobuf.ByteString
-        getContextIdBytes() {
-      java.lang.Object ref = contextId_;
+        getContextBytes() {
+      java.lang.Object ref = context_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        contextId_ = b;
+        context_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string context_id = 3 [json_name = "contextId"];</code>
-     * @param value The contextId to set.
+     * <code>string context = 3 [json_name = "context"];</code>
+     * @param value The context to set.
      * @return This builder for chaining.
      */
-    public Builder setContextId(
+    public Builder setContext(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      contextId_ = value;
+      context_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string context_id = 3 [json_name = "contextId"];</code>
+     * <code>string context = 3 [json_name = "context"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearContextId() {
-      contextId_ = getDefaultInstance().getContextId();
+    public Builder clearContext() {
+      context_ = getDefaultInstance().getContext();
       bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string context_id = 3 [json_name = "contextId"];</code>
-     * @param value The bytes for contextId to set.
+     * <code>string context = 3 [json_name = "context"];</code>
+     * @param value The bytes for context to set.
      * @return This builder for chaining.
      */
-    public Builder setContextIdBytes(
+    public Builder setContextBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      contextId_ = value;
+      context_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private java.lang.Object instructionId_ = "";
+    private java.lang.Object instruction_ = "";
     /**
-     * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-     * @return The instructionId.
+     * <code>string instruction = 4 [json_name = "instruction"];</code>
+     * @return The instruction.
      */
-    public java.lang.String getInstructionId() {
-      java.lang.Object ref = instructionId_;
+    public java.lang.String getInstruction() {
+      java.lang.Object ref = instruction_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        instructionId_ = s;
+        instruction_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-     * @return The bytes for instructionId.
+     * <code>string instruction = 4 [json_name = "instruction"];</code>
+     * @return The bytes for instruction.
      */
     public com.google.protobuf.ByteString
-        getInstructionIdBytes() {
-      java.lang.Object ref = instructionId_;
+        getInstructionBytes() {
+      java.lang.Object ref = instruction_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        instructionId_ = b;
+        instruction_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-     * @param value The instructionId to set.
+     * <code>string instruction = 4 [json_name = "instruction"];</code>
+     * @param value The instruction to set.
      * @return This builder for chaining.
      */
-    public Builder setInstructionId(
+    public Builder setInstruction(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      instructionId_ = value;
+      instruction_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
+     * <code>string instruction = 4 [json_name = "instruction"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearInstructionId() {
-      instructionId_ = getDefaultInstance().getInstructionId();
+    public Builder clearInstruction() {
+      instruction_ = getDefaultInstance().getInstruction();
       bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string instruction_id = 4 [json_name = "instructionId"];</code>
-     * @param value The bytes for instructionId to set.
+     * <code>string instruction = 4 [json_name = "instruction"];</code>
+     * @param value The bytes for instruction to set.
      * @return This builder for chaining.
      */
-    public Builder setInstructionIdBytes(
+    public Builder setInstructionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      instructionId_ = value;
+      instruction_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;

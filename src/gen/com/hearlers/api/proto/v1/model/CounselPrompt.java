@@ -26,21 +26,6 @@ public final class CounselPrompt {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Context_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Context_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Instruction_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Instruction_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_InstructionItem_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_InstructionItem_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_model_Tone_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -60,74 +45,38 @@ public final class CounselPrompt {
   static {
     java.lang.String[] descriptorData = {
       "\n*com/hearlers/v1/model/counsel_prompt.p" +
-      "roto\022\025com.hearlers.v1.model\"\326\001\n\007Context\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\"\n\014p" +
-      "laceholders\030\003 \003(\tR\014placeholders\022\022\n\004body\030" +
-      "\004 \001(\tR\004body\022\035\n\ncreated_at\030\005 \001(\tR\tcreated" +
-      "At\022\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\022\"\n\ndel" +
-      "eted_at\030\007 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delete" +
-      "d_at\"\274\002\n\013Instruction\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
-      "name\030\002 \001(\tR\004name\022.\n\020initial_sentence\030\003 \001" +
-      "(\tH\000R\017initialSentence\210\001\001\022S\n\021instruction_" +
-      "items\030\004 \003(\0132&.com.hearlers.v1.model.Inst" +
-      "ructionItemR\020instructionItems\022\035\n\ncreated" +
-      "_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 \001(\t" +
-      "R\tupdatedAt\022\"\n\ndeleted_at\030\007 \001(\tH\001R\tdelet" +
-      "edAt\210\001\001B\023\n\021_initial_sentenceB\r\n\013_deleted" +
-      "_at\"\246\001\n\017InstructionItem\022\016\n\002id\030\001 \001(\tR\002id\022" +
-      "\022\n\004body\030\002 \001(\tR\004body\022\035\n\ncreated_at\030\003 \001(\tR" +
-      "\tcreatedAt\022\035\n\nupdated_at\030\004 \001(\tR\tupdatedA" +
-      "t\022\"\n\ndeleted_at\030\005 \001(\tH\000R\tdeletedAt\210\001\001B\r\n" +
-      "\013_deleted_at\"\257\001\n\004Tone\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
-      "\004name\030\002 \001(\tR\004name\022\022\n\004body\030\003 \001(\tR\004body\022\035\n" +
-      "\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated_" +
-      "at\030\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\tH" +
-      "\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\344\002\n\020Couns" +
-      "elTechnique\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(" +
-      "\tR\004name\022\027\n\007tone_id\030\003 \001(\tR\006toneId\022\035\n\ncont" +
-      "ext_id\030\004 \001(\tR\tcontextId\022%\n\016instruction_i" +
-      "d\030\005 \001(\tR\rinstructionId\022>\n\031next_counsel_t" +
-      "echnique_id\030\007 \001(\tH\000R\026nextCounselTechniqu" +
-      "eId\210\001\001\022\035\n\ncreated_at\030\010 \001(\tR\tcreatedAt\022\035\n" +
-      "\nupdated_at\030\t \001(\tR\tupdatedAt\022\"\n\ndeleted_" +
-      "at\030\n \001(\tH\001R\tdeletedAt\210\001\001B\034\n\032_next_counse" +
-      "l_technique_idB\r\n\013_deleted_atB#\n\037com.hea" +
-      "rlers.api.proto.v1.modelP\001b\006proto3"
+      "roto\022\025com.hearlers.v1.model\"\257\001\n\004Tone\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004body" +
+      "\030\003 \001(\tR\004body\022\035\n\ncreated_at\030\004 \001(\tR\tcreate" +
+      "dAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\nde" +
+      "leted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delet" +
+      "ed_at\"\332\002\n\020CounselTechnique\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022\022\n\004name\030\002 \001(\tR\004name\022\027\n\007tone_id\030\003 \001(\tR" +
+      "\006toneId\022\030\n\007context\030\004 \001(\tR\007context\022 \n\013ins" +
+      "truction\030\005 \001(\tR\013instruction\022>\n\031next_coun" +
+      "sel_technique_id\030\007 \001(\tH\000R\026nextCounselTec" +
+      "hniqueId\210\001\001\022\035\n\ncreated_at\030\010 \001(\tR\tcreated" +
+      "At\022\035\n\nupdated_at\030\t \001(\tR\tupdatedAt\022\"\n\ndel" +
+      "eted_at\030\n \001(\tH\001R\tdeletedAt\210\001\001B\034\n\032_next_c" +
+      "ounsel_technique_idB\r\n\013_deleted_atB#\n\037co" +
+      "m.hearlers.api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_com_hearlers_v1_model_Context_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_hearlers_v1_model_Context_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Context_descriptor,
-        new java.lang.String[] { "Id", "Name", "Placeholders", "Body", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Instruction_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_hearlers_v1_model_Instruction_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Instruction_descriptor,
-        new java.lang.String[] { "Id", "Name", "InitialSentence", "InstructionItems", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_InstructionItem_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_hearlers_v1_model_InstructionItem_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_InstructionItem_descriptor,
-        new java.lang.String[] { "Id", "Body", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_Tone_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_com_hearlers_v1_model_Tone_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_Tone_descriptor,
         new java.lang.String[] { "Id", "Name", "Body", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_CounselTechnique_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_model_CounselTechnique_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_CounselTechnique_descriptor,
-        new java.lang.String[] { "Id", "Name", "ToneId", "ContextId", "InstructionId", "NextCounselTechniqueId", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Name", "ToneId", "Context", "Instruction", "NextCounselTechniqueId", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
   }
 
