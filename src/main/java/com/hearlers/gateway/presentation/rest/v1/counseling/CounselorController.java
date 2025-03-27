@@ -2,8 +2,6 @@ package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +27,9 @@ public class CounselorController {
 
     private final CounselingService counselingService;
     private final CounselorDtoMapper counselorDtoMapper;
+    
+
+
     @Operation(summary = "상담사 조회", description = "상담사를 조회합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "상담사 조회 성공"),
@@ -89,32 +90,5 @@ public class CounselorController {
 //                 );
 //     }
 
-    @Operation(summary = "상담 채팅 좋아요", description = "상담사의 채팅에 좋아요를 누릅니다.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "상담 채팅 좋아요 성공"),
-            @ApiResponse(responseCode = "404", description = "상담사 혹은 상담 정보 혹은 메시지 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
-            @ApiResponse(responseCode = "400", description = "상담 채팅 좋아요 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
-    })
-    @PostMapping("/v1/{counselorId}/counsels/{counselId}/messages/{messageId}/like")
-    public void likeCounselMessage(
-            @PathVariable("counselorId") String counselorId,
-            @PathVariable("counselId") String counselId,
-            @PathVariable("messageId") String messageId) 
-            {
-        // TODO : 내부 서버와 통신하여 상담 메시지 좋아요
-    }
-
-    @Operation(summary = "상담 채팅 싫어요", description = "상담사의 채팅에 싫어요를 누릅니다.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "상담 채팅 싫어요 성공"),
-            @ApiResponse(responseCode = "404", description = "상담사 혹은 상담 정보 혹은 메시지 정보 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
-            @ApiResponse(responseCode = "400", description = "상담 채팅 싫어요 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
-    })
-    @PostMapping("/v1/{counselorId}/counsels/{counselId}/messages/{messageId}/dislike")
-    public void dislikeCounselMessage(
-            @PathVariable("counselorId") String counselorId,
-            @PathVariable("counselId") String counselId,
-            @PathVariable("messageId") String messageId) {
-        // TODO : 내부 서버와 통신하여 상담 메시지 싫어요
-    }
+   
 }

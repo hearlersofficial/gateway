@@ -1,4 +1,4 @@
-package com.hearlers.gateway.shared.guard.security;
+package com.hearlers.gateway.infrastructure.auth;
 
 import java.security.Key;
 import java.time.ZonedDateTime;
@@ -6,9 +6,10 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+import com.hearlers.gateway.application.auth.AuthCommand;
+import com.hearlers.gateway.application.auth.AuthInfo;
+import com.hearlers.gateway.application.auth.JwtTokenManager;
 import com.hearlers.gateway.config.JwtProperties;
-import com.hearlers.gateway.presentation.rest.v1.auth.dto.CreateTokenRequestDto;
-import com.hearlers.gateway.shared.guard.dto.TokenDto;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -22,12 +23,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class JwtUtil {
+public class JwtTokenManagerImpl implements JwtTokenManager {
     private final Key key;
     private final long accessTokenExpTime;
     private final long refreshTokenExpTime;
 
-    public JwtUtil(
+    public JwtTokenManagerImpl(
             JwtProperties jwtProperties
     ) {
         byte[] keyBytes = Decoders.BASE64.decode(jwtProperties.getSecret());
@@ -37,53 +38,14 @@ public class JwtUtil {
     }
 
     // accessToken 생성 및 반환
-    public TokenDto returnToken(CreateTokenRequestDto dto, boolean rememberMe) {
-        return createToken(dto, accessTokenExpTime, refreshTokenExpTime, rememberMe);
+    @Override
+    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean rememberMe) {
+        return createToken(command, accessTokenExpTime, refreshTokenExpTime, rememberMe);
     }
 
-    // accessToken 생성
-    private TokenDto createToken(CreateTokenRequestDto dto, long accessTokenExpTime, long refreshTokenExpTime,
-                                 boolean rememberMe) {
-        Claims claims = Jwts.claims();
-        claims.put("id", dto.getId());
-        claims.put("auth_channel", dto.getAuthChannel());
-
-        ZonedDateTime now = ZonedDateTime.now();
-        ZonedDateTime accessTokenValidity = now.plusSeconds(accessTokenExpTime);
-        ZonedDateTime refreshTokenValidity = now.plusSeconds(refreshTokenExpTime);
-
-        // access token
-        String accessToken = Jwts.builder()
-                .setClaims(claims)
-                .setIssuedAt(Date.from(now.toInstant()))
-                .setExpiration(Date.from(accessTokenValidity.toInstant()))
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
-
-        if (!rememberMe) {
-            return TokenDto.builder()
-                    .accessToken(accessToken)
-                    .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
-                    .build();
-        } else {
-            // refresh token
-            String refreshToken = Jwts.builder()
-                    .setClaims(claims)
-                    .setIssuedAt(Date.from(now.toInstant()))
-                    .setExpiration(Date.from(refreshTokenValidity.toInstant()))
-                    .signWith(key, SignatureAlgorithm.HS256)
-                    .compact();
-
-            return TokenDto.builder()
-                    .accessToken(accessToken)
-                    .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
-                    .refreshToken(refreshToken)
-                    .refreshTokenExpiresAt(refreshTokenValidity.toLocalDateTime())
-                    .build();
-        }
-    }
 
     // JWT claim 추출
+    @Override
     public Claims parseClaims(String token) {
         try {
             return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
@@ -94,11 +56,13 @@ public class JwtUtil {
 
 
     // token에서 user_id 추출
+    @Override
     public int getUserId(String token) {
         return parseClaims(token).get("id", Integer.class);
     }
 
     // JWT가 만료되었는지 확인하는 메서드
+    @Override
     public boolean isTokenExpired(String token) {
         try {
             Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
@@ -117,6 +81,7 @@ public class JwtUtil {
     }
 
     // JWT 검증
+    @Override
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
@@ -132,5 +97,47 @@ public class JwtUtil {
         }
 
         return false;
+    }
+
+    // accessToken 생성
+    private AuthInfo.TokenInfo createToken(AuthCommand.GenerateTokenCommand command, long accessTokenExpTime, long refreshTokenExpTime,
+                                 boolean rememberMe) {
+        Claims claims = Jwts.claims();
+        claims.put("id", command.getId());
+        claims.put("auth_channel", command.getAuthChannel());
+
+        ZonedDateTime now = ZonedDateTime.now();
+        ZonedDateTime accessTokenValidity = now.plusSeconds(accessTokenExpTime);
+        ZonedDateTime refreshTokenValidity = now.plusSeconds(refreshTokenExpTime);
+
+        // access token
+        String accessToken = Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(Date.from(now.toInstant()))
+                .setExpiration(Date.from(accessTokenValidity.toInstant()))
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+
+        if (!rememberMe) {
+            return AuthInfo.TokenInfo.builder()
+                    .accessToken(accessToken)
+                    .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
+                    .build();
+        } else {
+            // refresh token
+            String refreshToken = Jwts.builder()
+                    .setClaims(claims)
+                    .setIssuedAt(Date.from(now.toInstant()))
+                    .setExpiration(Date.from(refreshTokenValidity.toInstant()))
+                    .signWith(key, SignatureAlgorithm.HS256)
+                    .compact();
+
+            return AuthInfo.TokenInfo.builder()
+                    .accessToken(accessToken)
+                    .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
+                    .refreshToken(refreshToken)
+                    .refreshTokenExpiresAt(refreshTokenValidity.toLocalDateTime())
+                    .build();
+        }
     }
 }
