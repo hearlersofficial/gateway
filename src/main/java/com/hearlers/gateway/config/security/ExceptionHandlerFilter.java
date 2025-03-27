@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 public class ExceptionHandlerFilter extends OncePerRequestFilter {
 
@@ -24,6 +26,7 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(request, response);
         } catch (HttpException e) {
+            log.debug("ExceptionHandlerFilter에서 HttpException 발생 : {}", e.getMessage());
             responseFormatter.formatErrorResponse(response, e.getHttpResultCode(), e.getData());
         }
     }
