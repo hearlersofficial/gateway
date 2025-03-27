@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.hearlers.gateway.shared.guard.security.JwtUtil;
+import com.hearlers.gateway.application.auth.JwtTokenManager;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final JwtUtil jwtUtil;
+    private final JwtTokenManager jwtUtil;
     private final ExceptionHandler exceptionHandler;
     private final ResponseFormatter responseFormatter;
     @Bean
@@ -33,12 +33,12 @@ public class SecurityConfig {
         httpSecurity
                 .authorizeHttpRequests((requests) -> (requests)
                         // 어드민
-                        .requestMatchers("/admin/v1/**").hasRole("ADMIN")
+                        .requestMatchers("/v1/admin/**").hasRole("ADMIN")
                         // 비로그인 유저 생성
-                        .requestMatchers("/auth/v1/initiate").permitAll()
+                        .requestMatchers("/v1/auth/initiate").permitAll()
                         // 카카오 로그인
-                        .requestMatchers("/auth/login/kakao").permitAll()
-                        .requestMatchers("/auth/callback/kakao").permitAll()
+                        .requestMatchers("/v1/auth/login/kakao").permitAll()
+                        .requestMatchers("/v1/auth/callback/kakao").permitAll()
                         // Swagger UI 관련 모든 리소스 허용
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()

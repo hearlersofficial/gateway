@@ -1,5 +1,7 @@
 package com.hearlers.gateway.application.auth;
 
+import org.springframework.stereotype.Service;
+
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.ConnectAuthChannelRequest;
@@ -12,10 +14,10 @@ import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenRequest;
 import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenResponse;
 import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoRequest;
 import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoResponse;
+
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +25,7 @@ public class AuthServiceImpl implements AuthService {
     private final OAuthProviderFactory oAuthProviderFactory;
     private final AuthPersistor authPersistor;
     private final AuthReader authReader;
-
+    private final JwtTokenManager jwtTokenManager;
     @Override
     public InitializeUserResponse initializeUser(InitializeUserRequest request) {
         return authPersistor.initializeUser(request);
@@ -32,6 +34,11 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public SaveRefreshTokenResponse saveRefreshToken(SaveRefreshTokenRequest request) {
         return authPersistor.saveRefreshToken(request);
+    }
+
+    @Override
+    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean rememberMe) {
+        return jwtTokenManager.generateToken(command, rememberMe);
     }
 
     @Override
