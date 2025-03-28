@@ -23,7 +23,10 @@ public enum HttpResultCode {
     ACCESS_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED, "ACCESS_TOKEN_EXPIRED", "액세스 토큰이 만료되었습니다."),
     ACCESS_TOKEN_INVALID(HttpStatus.UNAUTHORIZED, "ACCESS_TOKEN_INVALID", "액세스 토큰이 유효하지 않습니다."),
     REFRESH_TOKEN_INVALID(HttpStatus.UNAUTHORIZED, "REFRESH_TOKEN_INVALID", "Refresh Token이 유효하지 않습니다."),
-    FORBIDDEN(HttpStatus.FORBIDDEN, "FORBIDDEN", "권한이 없습니다.");
+    FORBIDDEN(HttpStatus.FORBIDDEN, "FORBIDDEN", "권한이 없습니다."),
+
+    // 카카오 에러
+    KAKAO_PROCESSING_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "KAKAO_PROCESSING_ERROR", "카카오 처리 중 오류가 발생했습니다.");
 
 
     private final HttpStatus status;

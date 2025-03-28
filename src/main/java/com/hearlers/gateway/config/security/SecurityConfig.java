@@ -30,23 +30,9 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable); // 폼 로그인 비활성화
 
         // 경로별 권한 설정
-        httpSecurity
-                .authorizeHttpRequests((requests) -> (requests)
-                        // 어드민
-                        .requestMatchers("/v1/admin/**").hasRole("ADMIN")
-                        // 비로그인 유저 생성
-                        .requestMatchers("/v1/auth/initiate").permitAll()
-                        // 카카오 로그인
-                        .requestMatchers("/v1/auth/login/kakao").permitAll()
-                        .requestMatchers("/v1/auth/callback/kakao").permitAll()
-                        // Swagger UI 관련 모든 리소스 허용
-                        .requestMatchers("/swagger-ui/**").permitAll()
-                        .requestMatchers("/v3/api-docs/**").permitAll()
-                        .requestMatchers("/swagger-resources/**").permitAll()
-                        .requestMatchers("/webjars/**").permitAll()
-                        // 그 외 모든 요청은 인증된 사용자만 접근 가능
-                        .requestMatchers("/**").hasAnyRole("USER", "ADMIN")
-                        .anyRequest().authenticated());
+        httpSecurity.authorizeHttpRequests(requests -> {
+            SecurityPolicy.configure(requests);
+        });
 
         // 인증 인가 관련 예외 처리
         httpSecurity
