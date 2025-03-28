@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -37,32 +38,31 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-
-        // 비인증 경로는 토큰 검사하지 않음
-        if (shouldNotFilter(request)) {
-            filterChain.doFilter(request, response);
-            return;
-        }
-
-        Cookie[] cookies = request.getCookies();
-
-        if (cookies == null) {
-            log.debug("쿠키가 없습니다: {}", request.getRequestURI());
-            throw new HttpException(HttpResultCode.COOKIE_NOT_FOUND);
-        }
-
-        String token = Arrays.stream(cookies)
-                .filter(cookie -> "accessToken".equals(cookie.getName()))
-                .map(Cookie::getValue)
-                .findFirst()
-                .orElse(null);
-
-        if (token == null) {
-            log.debug("액세스 토큰 쿠키가 없습니다: {}", request.getRequestURI());
-            throw new HttpException(HttpResultCode.ACCESS_TOKEN_EXPIRED);
-        }
-
         try {
+            // 비인증 경로는 토큰 검사하지 않음
+            if (shouldNotFilter(request)) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
+            Cookie[] cookies = request.getCookies();
+
+            if (cookies == null) {
+                log.debug("쿠키가 없습니다: {}", request.getRequestURI());
+                throw new HttpException(HttpResultCode.COOKIE_NOT_FOUND);
+            }
+
+            String token = Arrays.stream(cookies)
+                    .filter(cookie -> "accessToken".equals(cookie.getName()))
+                    .map(Cookie::getValue)
+                    .findFirst()
+                    .orElse(null);
+
+            if (token == null) {
+                log.debug("액세스 토큰 쿠키가 없습니다: {}", request.getRequestURI());
+                throw new HttpException(HttpResultCode.COOKIE_NOT_FOUND);
+            }
+
             // 토큰 유효성 및 만료 검사는 jwtUtil 내부에서 처리
             if (!jwtUtil.validateToken(token)) {
                 throw new HttpException(HttpResultCode.ACCESS_TOKEN_INVALID);
@@ -97,25 +97,30 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         } catch (ExpiredJwtException e) {
             log.debug("토큰이 만료되었습니다: {}", e.getMessage());
-            throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED);
+            HttpException httpEx = new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED);
+            request.setAttribute("custom.exception", httpEx);
+            throw new BadCredentialsException(httpEx.getMessage(), httpEx);
         } catch (MalformedJwtException | UnsupportedJwtException | SignatureException e) {
             log.debug("잘못된 형식의 토큰입니다: {}", e.getMessage());
-            throw new HttpException(HttpResultCode.INVALID_TOKEN);
+            HttpException httpEx = new HttpException(HttpResultCode.INVALID_TOKEN);
+            request.setAttribute("custom.exception", httpEx);
+            throw new BadCredentialsException(httpEx.getMessage(), httpEx);
+        } catch (HttpException httpEx) {
+            log.error("HttpException 발생: {}", httpEx.getMessage());
+            request.setAttribute("custom.exception", httpEx);
+            throw new BadCredentialsException(httpEx.getMessage(), httpEx);
         } catch (Exception e) {
             log.error("예외 발생: {}", e.getMessage());
             log.error("예외 타입: {}", e.getClass().getName());
-            throw new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR);
+            HttpException httpEx = new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR);
+            request.setAttribute("custom.exception", httpEx);
+            throw new BadCredentialsException(httpEx.getMessage(), httpEx);
         }
     }
 
-    // 필터 적용 X 경로 설정
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-        String[] excludePaths = {"/auth/v1/initiate", "/auth/login/kakao", "/auth/callback/kakao",
-                "/swagger-ui", "/v3/api-docs"};
-
         String path = request.getRequestURI();
-
-        return Arrays.stream(excludePaths).anyMatch(path::startsWith);
-    }
+        return SecurityPolicy.isPermitAllPath(path);
+    }   
 }
