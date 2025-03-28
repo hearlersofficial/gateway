@@ -10,10 +10,6 @@ import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
-import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenRequest;
-import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenResponse;
-import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoRequest;
-import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoResponse;
 
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -43,16 +39,11 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthUser kakaoLogin(String code, String userId) {
-        GetOAuthAccessTokenRequest tokenRequest = new GetOAuthAccessTokenRequest();
-        tokenRequest.setCode(code);
-
-        OAuthProviderClient oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(
+        var tokenRequest = AuthCommand.GetOAuthAccessTokenRequest.from(code, userId, null);
+        var oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(
                 AuthChannel.AUTH_CHANNEL_KAKAO);
-        GetOAuthAccessTokenResponse tokenResponse = oAuthProviderClient.execute(tokenRequest);
-
-        // 유저 정보 받아오기
-        GetOAuthUserInfoRequest userInfoRequest = new GetOAuthUserInfoRequest(tokenResponse.getAccessToken());
-        GetOAuthUserInfoResponse result = oAuthProviderClient.getUserInfo(userInfoRequest);
+        var tokenResponse = oAuthProviderClient.getToken(tokenRequest);
+        var result = oAuthProviderClient.getOAuthUser(AuthCommand.GetOAuthUserInfoRequest.from(tokenResponse.getAccessToken()));
 
         try {
             // gRPC 호출: 사용자 조회

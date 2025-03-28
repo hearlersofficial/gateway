@@ -1,6 +1,7 @@
 kakao:
   client_id: ${KAKAO_CLIENT_ID}
-  redirect_uri: http://localhost:8080/auth/callback/kakao
+  admin_key: ${KAKAO_ADMIN_KEY}
+  redirect_uri: ${SERVER_URL}/v1/auth/callback/kakao
 
 jwt:
   secret: ${JWT_SECRET}

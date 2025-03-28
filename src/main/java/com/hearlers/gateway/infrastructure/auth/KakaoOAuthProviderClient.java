@@ -1,19 +1,22 @@
 package com.hearlers.gateway.infrastructure.auth;
 
-import com.hearlers.gateway.application.auth.OAuthProviderClient;
-import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenRequest;
-import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenResponse;
-import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoRequest;
-import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoResponse;
-import com.hearlers.gateway.config.KakaoProperties;
-import com.hearlers.gateway.infrastructure.auth.dto.GetKakaoUserInfoResponseDto;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.hearlers.gateway.application.auth.AuthCommand;
+import com.hearlers.gateway.application.auth.AuthInfo;
+import com.hearlers.gateway.application.auth.OAuthProviderClient;
+import com.hearlers.gateway.config.KakaoProperties;
+import com.hearlers.gateway.presentation.rest.exception.HttpException;
+import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class KakaoOAuthProviderClient implements OAuthProviderClient {
@@ -23,9 +26,9 @@ public class KakaoOAuthProviderClient implements OAuthProviderClient {
 
 
     @Override
-    public GetOAuthAccessTokenResponse execute(
-            GetOAuthAccessTokenRequest request) {
-        GetOAuthAccessTokenResponse response = WebClient.create(KAKAO_TOKEN_URL_HOST).post()
+    public AuthInfo.TokenInfo getToken(
+            AuthCommand.GetOAuthAccessTokenRequest request) {
+        KakaoDto.KakaoTokenResponse response = WebClient.create(KAKAO_TOKEN_URL_HOST).post()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
                         .path("/oauth/token")
@@ -35,37 +38,47 @@ public class KakaoOAuthProviderClient implements OAuthProviderClient {
                         .build(true))
                 .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
                 .retrieve()
-                //TODO: 커스텀 예외 처리
-                .onStatus(HttpStatusCode::is4xxClientError,
-                        clientResponse -> Mono.error(new RuntimeException("Invalid Parameter")))
-                .onStatus(HttpStatusCode::is5xxServerError,
-                        clientResponse -> Mono.error(new RuntimeException("Internal Server Error")))
-                .bodyToMono(GetOAuthAccessTokenResponse.class)
+                .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> 
+                clientResponse.bodyToMono(String.class)
+                        .flatMap(body -> Mono.error(new HttpException(HttpResultCode.KAKAO_PROCESSING_ERROR, body)))
+                )
+                .onStatus(HttpStatusCode::is5xxServerError, clientResponse -> 
+                clientResponse.bodyToMono(String.class)
+                        .flatMap(body -> Mono.error(new HttpException(HttpResultCode.KAKAO_PROCESSING_ERROR, body)))
+                )
+                .bodyToMono(KakaoDto.KakaoTokenResponse.class)
                 .block();
-        return response;
+
+        log.info("tokenResponse: {}", response);
+        return response.toTokenInfo();
     }
 
     @Override
-    public GetOAuthUserInfoResponse getUserInfo(GetOAuthUserInfoRequest request) {
-        GetKakaoUserInfoResponseDto response = WebClient.create(KAUTH_USER_URL_HOST)
+    public AuthInfo.OAuthUserInfo getOAuthUser(AuthCommand.GetOAuthUserInfoRequest request) {
+
+        KakaoDto.KakaoAccountInformation response = WebClient.create(KAUTH_USER_URL_HOST)
                 .get()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
-                        .path("/v1/user/me")
+                        .path("/v2/user/me")
                         .build(true))
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + request.getAccessToken())
                 .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
                 .retrieve()
-                // TODO: 커스텀 예외 처리
-                .onStatus(HttpStatusCode::is4xxClientError,
-                        clientResponse -> Mono.error(new RuntimeException("Invalid Parameter")))
-                .onStatus(HttpStatusCode::is5xxServerError,
-                        clientResponse -> Mono.error(new RuntimeException("Internal Server Error")))
-                .bodyToMono(GetKakaoUserInfoResponseDto.class)
+                .onStatus(HttpStatusCode::is4xxClientError, clientResponse ->
+                clientResponse.bodyToMono(String.class)
+                        .flatMap(body -> Mono.error(new HttpException(HttpResultCode.KAKAO_PROCESSING_ERROR, body)))
+                )
+                .onStatus(HttpStatusCode::is5xxServerError, clientResponse ->
+                clientResponse.bodyToMono(String.class)
+                        .flatMap(body -> Mono.error(new HttpException(HttpResultCode.KAKAO_PROCESSING_ERROR, body)))
+                )
+                .bodyToMono(KakaoDto.KakaoAccountInformation.class)
                 .block();
-        GetOAuthUserInfoResponse result = new GetOAuthUserInfoResponse();
-        result.setId(response.getId().toString());
-        result.setNickname(response.getKakaoAccount().getProfile().getNickname());
+        if(response == null) {
+            throw new HttpException(HttpResultCode.KAKAO_PROCESSING_ERROR);
+        }
+        AuthInfo.OAuthUserInfo result = response.toOAuthUserInfo();
         return result;
     }
 }

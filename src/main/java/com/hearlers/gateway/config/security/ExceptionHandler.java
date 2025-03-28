@@ -36,6 +36,7 @@ public class ExceptionHandler {
             responseFormatter.formatErrorResponse(response, httpEx.getHttpResultCode(), httpEx.getData());
         } else if (exception instanceof AuthenticationException) {
             // Spring Security 인증 예외
+            log.error("인증 예외 발생: {}", exception.getMessage());
             responseFormatter.formatErrorResponse(response, 
                 HttpStatus.UNAUTHORIZED, 
                 "E40101", 
