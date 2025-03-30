@@ -20,7 +20,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final JwtTokenManager jwtUtil;
-    private final ExceptionHandler exceptionHandler;
     private final ResponseFormatter responseFormatter;
 
     @Bean
