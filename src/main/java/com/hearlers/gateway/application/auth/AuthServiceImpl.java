@@ -1,5 +1,7 @@
 package com.hearlers.gateway.application.auth;
 
+import org.springframework.stereotype.Service;
+
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.ConnectAuthChannelRequest;
@@ -8,14 +10,10 @@ import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
-import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenRequest;
-import com.hearlers.gateway.application.auth.dto.GetOAuthAccessTokenResponse;
-import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoRequest;
-import com.hearlers.gateway.application.auth.dto.GetOAuthUserInfoResponse;
+
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +21,7 @@ public class AuthServiceImpl implements AuthService {
     private final OAuthProviderFactory oAuthProviderFactory;
     private final AuthPersistor authPersistor;
     private final AuthReader authReader;
-
+    private final JwtTokenManager jwtTokenManager;
     @Override
     public InitializeUserResponse initializeUser(InitializeUserRequest request) {
         return authPersistor.initializeUser(request);
@@ -35,17 +33,17 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
+    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean rememberMe) {
+        return jwtTokenManager.generateToken(command, rememberMe);
+    }
+
+    @Override
     public AuthUser kakaoLogin(String code, String userId) {
-        GetOAuthAccessTokenRequest tokenRequest = new GetOAuthAccessTokenRequest();
-        tokenRequest.setCode(code);
-
-        OAuthProviderClient oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(
+        var tokenRequest = AuthCommand.GetOAuthAccessTokenRequest.from(code, userId, null);
+        var oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(
                 AuthChannel.AUTH_CHANNEL_KAKAO);
-        GetOAuthAccessTokenResponse tokenResponse = oAuthProviderClient.execute(tokenRequest);
-
-        // 유저 정보 받아오기
-        GetOAuthUserInfoRequest userInfoRequest = new GetOAuthUserInfoRequest(tokenResponse.getAccessToken());
-        GetOAuthUserInfoResponse result = oAuthProviderClient.getUserInfo(userInfoRequest);
+        var tokenResponse = oAuthProviderClient.getToken(tokenRequest);
+        var result = oAuthProviderClient.getOAuthUser(AuthCommand.GetOAuthUserInfoRequest.from(tokenResponse.getAccessToken()));
 
         try {
             // gRPC 호출: 사용자 조회

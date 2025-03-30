@@ -18,7 +18,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -31,14 +30,13 @@ public class CounselingPromptController {
     private final CounselingService counselingService;
     private final CounselingPromptDtoMapper counselingPromptDtoMapper;
 
-    @SecurityRequirements
     @Operation(summary = "Tone 목록 조회", description = "Tone 목록을 조회합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Tone 목록 조회 성공"),
             @ApiResponse(responseCode = "400", description = "Tone 목록 조회 실패", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/tones")
+    @GetMapping("/v1/admin/tones")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetTonesResponseDto>> getTones(
             @Valid CounselingPromptDto.GetTonesRequestDto request) {
         var findTonesRequest = counselingPromptDtoMapper.ofTones(request);
@@ -48,7 +46,6 @@ public class CounselingPromptController {
         return ResponseDtoUtil.okResponse(response, "Tone 목록 조회 성공");
     }
 
-    @SecurityRequirements
     @Operation(summary = "Tone 조회", description = "ID로 Tone을 조회합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Tone 조회 성공"),
@@ -57,7 +54,7 @@ public class CounselingPromptController {
             @ApiResponse(responseCode = "404", description = "Tone을 찾을 수 없음", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/tones/{toneId}")
+    @GetMapping("/v1/admin/tones/{toneId}")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetToneByIdResponseDto>> getTone(
             @PathVariable String toneId) {
         var findToneByIdRequest = counselingPromptDtoMapper.ofTone(toneId);
@@ -67,14 +64,13 @@ public class CounselingPromptController {
         return ResponseDtoUtil.okResponse(response, "Tone 조회 성공");
     }
 
-    @SecurityRequirements
     @Operation(summary = "Tone 생성", description = "새로운 Tone을 생성합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Tone 생성 성공"),
             @ApiResponse(responseCode = "400", description = "Tone 생성 실패", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/v1/tones")
+    @PostMapping("/v1/admin/tones")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.CreateToneResponseDto>> createTone(
             @Valid @RequestBody CounselingPromptDto.CreateToneRequestDto request) {
         var createToneRequest = counselingPromptDtoMapper.of(request);
@@ -84,7 +80,6 @@ public class CounselingPromptController {
         return ResponseDtoUtil.createdResponse(response, "Tone 생성 성공");
     }
 
-    @SecurityRequirements
     @Operation(summary = "Tone 업데이트", description = "기존 Tone을 업데이트합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Tone 업데이트 성공"),
@@ -93,7 +88,7 @@ public class CounselingPromptController {
             @ApiResponse(responseCode = "404", description = "Tone을 찾을 수 없음", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PutMapping("/v1/tones/{toneId}")
+    @PutMapping("/v1/admin/tones/{toneId}")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.UpdateToneResponseDto>> updateTone(
             @PathVariable String toneId,
             @Valid @RequestBody CounselingPromptDto.UpdateToneRequestDto request) {
@@ -106,14 +101,13 @@ public class CounselingPromptController {
     }
 
 
-    @SecurityRequirements
     @Operation(summary = "CounselTechnique 목록 조회", description = "CounselTechnique 목록을 조회합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "CounselTechnique 목록 조회 성공"),
             @ApiResponse(responseCode = "400", description = "CounselTechnique 목록 조회 실패", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/counsel-techniques")
+    @GetMapping("/v1/admin/counsel-techniques")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetCounselTechniquesResponseDto>> getCounselTechniques(
             @Valid CounselingPromptDto.GetCounselTechniquesRequestDto request) {
         var findCounselTechniquesRequest = counselingPromptDtoMapper.ofCounselTechniques(request);
@@ -123,7 +117,6 @@ public class CounselingPromptController {
         return ResponseDtoUtil.okResponse(response, "CounselTechnique 목록 조회 성공");
     }
 
-    @SecurityRequirements
     @Operation(summary = "CounselTechnique 조회", description = "ID로 CounselTechnique를 조회합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "CounselTechnique 조회 성공"),
@@ -132,7 +125,7 @@ public class CounselingPromptController {
             @ApiResponse(responseCode = "404", description = "CounselTechnique를 찾을 수 없음", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/counsel-techniques/{counselTechniqueId}")
+    @GetMapping("/v1/admin/counsel-techniques/{counselTechniqueId}")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.GetCounselTechniqueByIdResponseDto>> getCounselTechnique(
             @PathVariable String counselTechniqueId) {
         var findCounselTechniqueByIdRequest = counselingPromptDtoMapper.ofCounselTechniqueId(counselTechniqueId);
@@ -142,14 +135,13 @@ public class CounselingPromptController {
         return ResponseDtoUtil.okResponse(response, "CounselTechnique 조회 성공");
     }
 
-    @SecurityRequirements
     @Operation(summary = "CounselTechnique 생성", description = "새로운 CounselTechnique를 생성합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "CounselTechnique 생성 성공"),
             @ApiResponse(responseCode = "400", description = "CounselTechnique 생성 실패", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/v1/counsel-techniques")
+    @PostMapping("/v1/admin/counsel-techniques")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.CreateCounselTechniqueResponseDto>> createCounselTechnique(
             @Valid @RequestBody CounselingPromptDto.CreateCounselTechniqueRequestDto request) {
         var createCounselTechniqueRequest = counselingPromptDtoMapper.ofCounselTechnique(request);
@@ -159,7 +151,6 @@ public class CounselingPromptController {
         return ResponseDtoUtil.createdResponse(response, "CounselTechnique 생성 성공");
     }
 
-    @SecurityRequirements
     @Operation(summary = "CounselTechnique 업데이트", description = "기존 CounselTechnique를 업데이트합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "CounselTechnique 업데이트 성공"),
@@ -168,7 +159,8 @@ public class CounselingPromptController {
             @ApiResponse(responseCode = "404", description = "CounselTechnique를 찾을 수 없음", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PutMapping("/v1/counsel-techniques/{counselTechniqueId}")
+    
+    @PutMapping("/v1/admin/counsel-techniques/{counselTechniqueId}")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.UpdateCounselTechniqueResponseDto>> updateCounselTechnique(
             @PathVariable String counselTechniqueId,
             @Valid @RequestBody CounselingPromptDto.UpdateCounselTechniqueRequestDto request) {
@@ -179,15 +171,14 @@ public class CounselingPromptController {
         
         return ResponseDtoUtil.okResponse(response, "CounselTechnique 업데이트 성공");
     }
-
-    @SecurityRequirements
+    
     @Operation(summary = "CounselTechnique 시퀀스 저장", description = "CounselTechnique 시퀀스를 저장합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "CounselTechnique 시퀀스 저장 성공"),
             @ApiResponse(responseCode = "400", description = "CounselTechnique 시퀀스 저장 실패", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/v1/counsel-techniques/sequence")
+    @PostMapping("/v1/admin/counsel-techniques/sequence")
     public ResponseEntity<ResponseDto.Success<CounselingPromptDto.SaveCounselTechniqueSequenceResponseDto>> saveCounselTechniqueSequence(
             @Valid @RequestBody CounselingPromptDto.SaveCounselTechniqueSequenceRequestDto request) {
         
