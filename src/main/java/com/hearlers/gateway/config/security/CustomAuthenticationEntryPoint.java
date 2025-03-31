@@ -1,6 +1,7 @@
 package com.hearlers.gateway.config.security;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
@@ -35,7 +36,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
                 HttpStatus.UNAUTHORIZED,
                 httpEx.getHttpResultCode().getCode(),
                 httpEx.getMessage(),
-                authException.getStackTrace().toString(),
+                Arrays.toString(authException.getStackTrace()),
                 null
             );
             return;
@@ -45,7 +46,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
             HttpStatus.UNAUTHORIZED, 
             "E40101", 
             "인증이 필요합니다.", 
-            authException.getStackTrace().toString(),
+            Arrays.toString(authException.getStackTrace()),
             null
         );
     }
