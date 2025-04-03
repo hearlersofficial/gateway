@@ -30,7 +30,7 @@ public interface AuthDtoMapper {
     // AuthUser -> SaveRefreshTokenRequest
     default SaveRefreshTokenRequest ofAuthUserAndToken(AuthUser authUser, AuthInfo.TokenInfo token) {
         return SaveRefreshTokenRequest.newBuilder()
-                .setUserId(authUser.getId())
+                .setUserId(authUser.getUserId())
                 .setToken(token.getRefreshToken())
                 .setExpiresAt(token.getRefreshTokenExpiresAt().toString())
                 .build();
