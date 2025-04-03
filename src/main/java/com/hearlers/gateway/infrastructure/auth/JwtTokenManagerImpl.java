@@ -39,8 +39,8 @@ public class JwtTokenManagerImpl implements JwtTokenManager {
 
     // accessToken 생성 및 반환
     @Override
-    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean rememberMe) {
-        return createToken(command, accessTokenExpTime, refreshTokenExpTime, rememberMe);
+    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean withRefreshToken, boolean withAdminClaim) {
+        return createToken(command, accessTokenExpTime, refreshTokenExpTime, withRefreshToken, withAdminClaim);
     }
 
 
@@ -98,46 +98,43 @@ public class JwtTokenManagerImpl implements JwtTokenManager {
 
         return false;
     }
-
-    // accessToken 생성
     private AuthInfo.TokenInfo createToken(AuthCommand.GenerateTokenCommand command, long accessTokenExpTime, long refreshTokenExpTime,
-                                 boolean rememberMe) {
+                                 boolean withRefreshToken, boolean withAdminClaim) {
         Claims claims = Jwts.claims();
         claims.put("id", command.getId());
         claims.put("auth_channel", command.getAuthChannel());
+        if (withAdminClaim) {
+            claims.put("is_admin", true);
+        }
 
         ZonedDateTime now = ZonedDateTime.now();
         ZonedDateTime accessTokenValidity = now.plusSeconds(accessTokenExpTime);
         ZonedDateTime refreshTokenValidity = now.plusSeconds(refreshTokenExpTime);
 
-        // access token
-        String accessToken = Jwts.builder()
-                .setClaims(claims)
-                .setIssuedAt(Date.from(now.toInstant()))
-                .setExpiration(Date.from(accessTokenValidity.toInstant()))
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
-
-        if (!rememberMe) {
+        String accessToken = createJwtToken(claims, now, accessTokenValidity);
+        
+        if (!withRefreshToken) {
             return AuthInfo.TokenInfo.builder()
                     .accessToken(accessToken)
                     .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
-                    .build();
-        } else {
-            // refresh token
-            String refreshToken = Jwts.builder()
-                    .setClaims(claims)
-                    .setIssuedAt(Date.from(now.toInstant()))
-                    .setExpiration(Date.from(refreshTokenValidity.toInstant()))
-                    .signWith(key, SignatureAlgorithm.HS256)
-                    .compact();
-
-            return AuthInfo.TokenInfo.builder()
-                    .accessToken(accessToken)
-                    .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
-                    .refreshToken(refreshToken)
-                    .refreshTokenExpiresAt(refreshTokenValidity.toLocalDateTime())
                     .build();
         }
+
+        String refreshToken = createJwtToken(claims, now, refreshTokenValidity);
+        return AuthInfo.TokenInfo.builder()
+                .accessToken(accessToken)
+                .accessTokenExpiresAt(accessTokenValidity.toLocalDateTime())
+                .refreshToken(refreshToken)
+                .refreshTokenExpiresAt(refreshTokenValidity.toLocalDateTime())
+                .build();
+    }
+
+    private String createJwtToken(Claims claims, ZonedDateTime now, ZonedDateTime validity) {
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(Date.from(now.toInstant()))
+                .setExpiration(Date.from(validity.toInstant()))
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
     }
 }

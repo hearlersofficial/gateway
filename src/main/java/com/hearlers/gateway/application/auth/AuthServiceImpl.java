@@ -35,8 +35,8 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean rememberMe) {
-        return jwtTokenManager.generateToken(command, rememberMe);
+    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean withRefreshToken, boolean withAdminClaim) {
+        return jwtTokenManager.generateToken(command, withRefreshToken, withAdminClaim);
     }
 
     @Override

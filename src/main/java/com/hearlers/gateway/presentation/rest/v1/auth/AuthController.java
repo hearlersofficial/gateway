@@ -55,7 +55,8 @@ public class AuthController {
         var initializeUserResponse = authService.initializeUser(
                 InitializeUserRequest.newBuilder().build());
         var generateTokenCommand = authDtoMapper.of(initializeUserResponse);
-        var token = jwtUtil.generateToken(generateTokenCommand, false);
+        // TODO: 어드민 권한 분기로 부여
+        var token = jwtUtil.generateToken(generateTokenCommand, false, true);
 
         // 발급받은 accessToken 쿠키에 저장
         addCookieToResponse(response, token.getAccessToken(), "accessToken", ACCESS_TOKEN_MAX_AGE);
@@ -93,7 +94,8 @@ public class AuthController {
         var authUser = authService.kakaoLogin(code, state);
         var authChannel = authUser.getAuthChannel();
         var generateTokenCommand = authDtoMapper.of(state, authChannel);
-        var token = authService.generateToken(generateTokenCommand, true);
+        // TODO: 어드민 권한 분기로 부여
+        var token = authService.generateToken(generateTokenCommand, true, true);
         var saveRefreshTokenRequest = authDtoMapper.ofAuthUserAndToken(authUser, token);
         var saveRefreshTokenResponse = authService.saveRefreshToken(saveRefreshTokenRequest);
 

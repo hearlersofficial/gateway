@@ -10,5 +10,5 @@ public interface AuthService {
     InitializeUserResponse initializeUser(InitializeUserRequest request);
     SaveRefreshTokenResponse saveRefreshToken(SaveRefreshTokenRequest request);
     AuthUser kakaoLogin(String code, String userId);
-    AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean rememberMe);
+    AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean withRefreshToken, boolean withAdminClaim);
 }
