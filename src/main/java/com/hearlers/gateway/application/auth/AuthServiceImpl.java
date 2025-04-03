@@ -14,7 +14,9 @@ import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
@@ -53,8 +55,11 @@ public class AuthServiceImpl implements AuthService {
 
         } catch (StatusRuntimeException e) {
             // NOT_FOUND 상태일 경우 connectAuthChannel 로직 수행
+            log.error("Kakao login failed", e);
+            log.error(e.getStatus().getCode().toString());
             if (e.getStatus().getCode() == Status.Code.NOT_FOUND) {
                 // ConnectAuthChannelRequest 빌드
+                log.info("ConnectAuthChannelRequest 빌드");
                 ConnectAuthChannelRequest connectAuthChannelRequest = ConnectAuthChannelRequest.newBuilder()
                         .setUserId(userId)
                         .setAuthChannel(AuthChannel.AUTH_CHANNEL_KAKAO)
@@ -66,6 +71,7 @@ public class AuthServiceImpl implements AuthService {
                         connectAuthChannelRequest);
 
                 // 새로 생성된 사용자 반환
+                log.info("새로 생성된 사용자 반환");
                 return connectAuthChannelResponse.getAuthUser();
             } else {
                 // 다른 에러는 그대로 던짐
