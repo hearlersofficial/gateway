@@ -63,7 +63,10 @@ jobs:
 
       - name: setup .env
         run: |
-          export $(grep -v '^#' .env | xargs)
+          echo "KAKAO_CLIENT_ID=${{ secrets.KAKAO_CLIENT_ID }}" >> .env
+          echo "KAKAO_ADMIN_KEY=${{ secrets.KAKAO_ADMIN_KEY }}" >> .env
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
+          echo "SERVER_URL=${{ secrets.SERVER_URL }}" >> .env
 
       - name: Run Docker Container
         run: |
