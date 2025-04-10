@@ -23,16 +23,14 @@ public class SecurityPolicy {
         "/swagger-resources/**",
         "/webjars/**",
         "/favicon.ico",
-        "/robots.txt",
-        "/sitemap.xml",
-        "/robots.txt",
         "/sitemap.xml",
         "/robots.txt",
     };
 
     public static final String[] LOGIN_PATHS = {
-        "/v1/auth/initiate",
-        "/v1/auth/callback/kakao"
+            "/v1/auth/initiate",
+            "/v1/auth/login/kakao",
+            "/v1/auth/callback/kakao"
     };
 
     public static final String ADMIN_PATH = "/v1/admin/**";

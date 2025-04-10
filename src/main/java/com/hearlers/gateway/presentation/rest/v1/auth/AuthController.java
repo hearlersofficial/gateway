@@ -71,7 +71,7 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/auth/login/kakao")
-    public void kakao(@RequestAttribute("userId") String userId, HttpServletResponse response) throws IOException {
+    public void kakao(@RequestAttribute(value = "userId" , required = false) String userId, HttpServletResponse response) throws IOException {
         StringBuilder url = new StringBuilder();
         url.append("https://kauth.kakao.com/oauth/authorize?");
         url.append("client_id=").append(kakaoProperties.getClientId());
@@ -88,7 +88,7 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/auth/callback/kakao")
-    public void kakaoCallback(@RequestParam("code") String code, @RequestParam("state") String state,
+    public void kakaoCallback(@RequestParam(value = "code", required = false) String code, @RequestParam("state") String state,
                               HttpServletResponse response) throws IOException {
 
         var authUser = authService.kakaoLogin(code, state);
