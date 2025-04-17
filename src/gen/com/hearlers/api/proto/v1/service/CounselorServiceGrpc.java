@@ -139,6 +139,130 @@ public final class CounselorServiceGrpc {
     return getUpdateCounselorMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateToneRequest,
+      com.hearlers.api.proto.v1.service.CreateToneResponse> getCreateToneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTone",
+      requestType = com.hearlers.api.proto.v1.service.CreateToneRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateToneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateToneRequest,
+      com.hearlers.api.proto.v1.service.CreateToneResponse> getCreateToneMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateToneRequest, com.hearlers.api.proto.v1.service.CreateToneResponse> getCreateToneMethod;
+    if ((getCreateToneMethod = CounselorServiceGrpc.getCreateToneMethod) == null) {
+      synchronized (CounselorServiceGrpc.class) {
+        if ((getCreateToneMethod = CounselorServiceGrpc.getCreateToneMethod) == null) {
+          CounselorServiceGrpc.getCreateToneMethod = getCreateToneMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateToneRequest, com.hearlers.api.proto.v1.service.CreateToneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTone"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateToneRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateToneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselorServiceMethodDescriptorSupplier("CreateTone"))
+              .build();
+        }
+      }
+    }
+    return getCreateToneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonesRequest,
+      com.hearlers.api.proto.v1.service.FindTonesResponse> getFindTonesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindTones",
+      requestType = com.hearlers.api.proto.v1.service.FindTonesRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindTonesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonesRequest,
+      com.hearlers.api.proto.v1.service.FindTonesResponse> getFindTonesMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonesRequest, com.hearlers.api.proto.v1.service.FindTonesResponse> getFindTonesMethod;
+    if ((getFindTonesMethod = CounselorServiceGrpc.getFindTonesMethod) == null) {
+      synchronized (CounselorServiceGrpc.class) {
+        if ((getFindTonesMethod = CounselorServiceGrpc.getFindTonesMethod) == null) {
+          CounselorServiceGrpc.getFindTonesMethod = getFindTonesMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindTonesRequest, com.hearlers.api.proto.v1.service.FindTonesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindTones"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindTonesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindTonesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselorServiceMethodDescriptorSupplier("FindTones"))
+              .build();
+        }
+      }
+    }
+    return getFindTonesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindToneByIdRequest,
+      com.hearlers.api.proto.v1.service.FindToneByIdResponse> getFindToneByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindToneById",
+      requestType = com.hearlers.api.proto.v1.service.FindToneByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindToneByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindToneByIdRequest,
+      com.hearlers.api.proto.v1.service.FindToneByIdResponse> getFindToneByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindToneByIdRequest, com.hearlers.api.proto.v1.service.FindToneByIdResponse> getFindToneByIdMethod;
+    if ((getFindToneByIdMethod = CounselorServiceGrpc.getFindToneByIdMethod) == null) {
+      synchronized (CounselorServiceGrpc.class) {
+        if ((getFindToneByIdMethod = CounselorServiceGrpc.getFindToneByIdMethod) == null) {
+          CounselorServiceGrpc.getFindToneByIdMethod = getFindToneByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindToneByIdRequest, com.hearlers.api.proto.v1.service.FindToneByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindToneById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindToneByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindToneByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselorServiceMethodDescriptorSupplier("FindToneById"))
+              .build();
+        }
+      }
+    }
+    return getFindToneByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateToneRequest,
+      com.hearlers.api.proto.v1.service.UpdateToneResponse> getUpdateToneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTone",
+      requestType = com.hearlers.api.proto.v1.service.UpdateToneRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateToneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateToneRequest,
+      com.hearlers.api.proto.v1.service.UpdateToneResponse> getUpdateToneMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateToneRequest, com.hearlers.api.proto.v1.service.UpdateToneResponse> getUpdateToneMethod;
+    if ((getUpdateToneMethod = CounselorServiceGrpc.getUpdateToneMethod) == null) {
+      synchronized (CounselorServiceGrpc.class) {
+        if ((getUpdateToneMethod = CounselorServiceGrpc.getUpdateToneMethod) == null) {
+          CounselorServiceGrpc.getUpdateToneMethod = getUpdateToneMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateToneRequest, com.hearlers.api.proto.v1.service.UpdateToneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTone"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateToneRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateToneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselorServiceMethodDescriptorSupplier("UpdateTone"))
+              .build();
+        }
+      }
+    }
+    return getUpdateToneMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -232,6 +356,37 @@ public final class CounselorServiceGrpc {
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCounselorMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * 톤
+     * </pre>
+     */
+    default void createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateToneResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateToneMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindTonesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindToneByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindToneByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateToneResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateToneMethod(), responseObserver);
+    }
   }
 
   /**
@@ -295,6 +450,41 @@ public final class CounselorServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCounselorMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 톤
+     * </pre>
+     */
+    public void createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateToneResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateToneMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindTonesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindToneByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindToneByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateToneResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateToneMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -343,6 +533,37 @@ public final class CounselorServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCounselorMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * 톤
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateToneResponse createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateToneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindTonesResponse findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindToneByIdResponse findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindToneByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateToneResponse updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateToneMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -390,6 +611,37 @@ public final class CounselorServiceGrpc {
     public com.hearlers.api.proto.v1.service.UpdateCounselorResponse updateCounselor(com.hearlers.api.proto.v1.service.UpdateCounselorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCounselorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 톤
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateToneResponse createTone(com.hearlers.api.proto.v1.service.CreateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateToneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindTonesResponse findTones(com.hearlers.api.proto.v1.service.FindTonesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindToneByIdResponse findToneById(com.hearlers.api.proto.v1.service.FindToneByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindToneByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateToneResponse updateTone(com.hearlers.api.proto.v1.service.UpdateToneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateToneMethod(), getCallOptions(), request);
     }
   }
 
@@ -443,12 +695,51 @@ public final class CounselorServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCounselorMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 톤
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateToneResponse> createTone(
+        com.hearlers.api.proto.v1.service.CreateToneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateToneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindTonesResponse> findTones(
+        com.hearlers.api.proto.v1.service.FindTonesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindTonesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindToneByIdResponse> findToneById(
+        com.hearlers.api.proto.v1.service.FindToneByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindToneByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateToneResponse> updateTone(
+        com.hearlers.api.proto.v1.service.UpdateToneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateToneMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_COUNSELOR = 0;
   private static final int METHODID_FIND_COUNSELORS = 1;
   private static final int METHODID_FIND_COUNSELOR_BY_ID = 2;
   private static final int METHODID_UPDATE_COUNSELOR = 3;
+  private static final int METHODID_CREATE_TONE = 4;
+  private static final int METHODID_FIND_TONES = 5;
+  private static final int METHODID_FIND_TONE_BY_ID = 6;
+  private static final int METHODID_UPDATE_TONE = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -482,6 +773,22 @@ public final class CounselorServiceGrpc {
         case METHODID_UPDATE_COUNSELOR:
           serviceImpl.updateCounselor((com.hearlers.api.proto.v1.service.UpdateCounselorRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselorResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_TONE:
+          serviceImpl.createTone((com.hearlers.api.proto.v1.service.CreateToneRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateToneResponse>) responseObserver);
+          break;
+        case METHODID_FIND_TONES:
+          serviceImpl.findTones((com.hearlers.api.proto.v1.service.FindTonesRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonesResponse>) responseObserver);
+          break;
+        case METHODID_FIND_TONE_BY_ID:
+          serviceImpl.findToneById((com.hearlers.api.proto.v1.service.FindToneByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindToneByIdResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TONE:
+          serviceImpl.updateTone((com.hearlers.api.proto.v1.service.UpdateToneRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateToneResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -529,6 +836,34 @@ public final class CounselorServiceGrpc {
               com.hearlers.api.proto.v1.service.UpdateCounselorRequest,
               com.hearlers.api.proto.v1.service.UpdateCounselorResponse>(
                 service, METHODID_UPDATE_COUNSELOR)))
+        .addMethod(
+          getCreateToneMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateToneRequest,
+              com.hearlers.api.proto.v1.service.CreateToneResponse>(
+                service, METHODID_CREATE_TONE)))
+        .addMethod(
+          getFindTonesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindTonesRequest,
+              com.hearlers.api.proto.v1.service.FindTonesResponse>(
+                service, METHODID_FIND_TONES)))
+        .addMethod(
+          getFindToneByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindToneByIdRequest,
+              com.hearlers.api.proto.v1.service.FindToneByIdResponse>(
+                service, METHODID_FIND_TONE_BY_ID)))
+        .addMethod(
+          getUpdateToneMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateToneRequest,
+              com.hearlers.api.proto.v1.service.UpdateToneResponse>(
+                service, METHODID_UPDATE_TONE)))
         .build();
   }
 
@@ -581,6 +916,10 @@ public final class CounselorServiceGrpc {
               .addMethod(getFindCounselorsMethod())
               .addMethod(getFindCounselorByIdMethod())
               .addMethod(getUpdateCounselorMethod())
+              .addMethod(getCreateToneMethod())
+              .addMethod(getFindTonesMethod())
+              .addMethod(getFindToneByIdMethod())
+              .addMethod(getUpdateToneMethod())
               .build();
         }
       }

@@ -6,6 +6,12 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * 임시버전에서 수정
+ * 기존 기법 및 임시기법들을 연결
+ * 연결된 최종 기법 리스트 반환
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.SaveCounselTechniqueSequenceRequest}
  */
 public final class SaveCounselTechniqueSequenceRequest extends
@@ -27,6 +33,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SaveCounselTechniqueSequenceRequest() {
+    toneId_ = "";
     counselTechniqueIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
   }
@@ -44,12 +51,51 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.class, com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.Builder.class);
   }
 
-  public static final int COUNSEL_TECHNIQUE_IDS_FIELD_NUMBER = 1;
+  public static final int TONE_ID_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object toneId_ = "";
+  /**
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
+   * @return The toneId.
+   */
+  @java.lang.Override
+  public java.lang.String getToneId() {
+    java.lang.Object ref = toneId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      toneId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
+   * @return The bytes for toneId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getToneIdBytes() {
+    java.lang.Object ref = toneId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      toneId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COUNSEL_TECHNIQUE_IDS_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList counselTechniqueIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @return A list containing the counselTechniqueIds.
    */
   public com.google.protobuf.ProtocolStringList
@@ -57,14 +103,14 @@ private static final long serialVersionUID = 0L;
     return counselTechniqueIds_;
   }
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @return The count of counselTechniqueIds.
    */
   public int getCounselTechniqueIdsCount() {
     return counselTechniqueIds_.size();
   }
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @param index The index of the element to return.
    * @return The counselTechniqueIds at the given index.
    */
@@ -72,7 +118,7 @@ private static final long serialVersionUID = 0L;
     return counselTechniqueIds_.get(index);
   }
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the counselTechniqueIds at the given index.
    */
@@ -95,8 +141,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, toneId_);
+    }
     for (int i = 0; i < counselTechniqueIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, counselTechniqueIds_.getRaw(i));
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, counselTechniqueIds_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -107,6 +156,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, toneId_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < counselTechniqueIds_.size(); i++) {
@@ -130,6 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest other = (com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest) obj;
 
+    if (!getToneId()
+        .equals(other.getToneId())) return false;
     if (!getCounselTechniqueIdsList()
         .equals(other.getCounselTechniqueIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -143,6 +197,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getToneId().hashCode();
     if (getCounselTechniqueIdsCount() > 0) {
       hash = (37 * hash) + COUNSEL_TECHNIQUE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getCounselTechniqueIdsList().hashCode();
@@ -245,6 +301,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 임시버전에서 수정
+   * 기존 기법 및 임시기법들을 연결
+   * 연결된 최종 기법 리스트 반환
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.SaveCounselTechniqueSequenceRequest}
    */
   public static final class Builder extends
@@ -278,6 +340,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      toneId_ = "";
       counselTechniqueIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
@@ -314,6 +377,9 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.toneId_ = toneId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         counselTechniqueIds_.makeImmutable();
         result.counselTechniqueIds_ = counselTechniqueIds_;
       }
@@ -331,10 +397,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest other) {
       if (other == com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.getDefaultInstance()) return this;
+      if (!other.getToneId().isEmpty()) {
+        toneId_ = other.toneId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.counselTechniqueIds_.isEmpty()) {
         if (counselTechniqueIds_.isEmpty()) {
           counselTechniqueIds_ = other.counselTechniqueIds_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         } else {
           ensureCounselTechniqueIdsIsMutable();
           counselTechniqueIds_.addAll(other.counselTechniqueIds_);
@@ -368,11 +439,16 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
+              toneId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureCounselTechniqueIdsIsMutable();
               counselTechniqueIds_.add(s);
               break;
-            } // case 10
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -390,16 +466,88 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private java.lang.Object toneId_ = "";
+    /**
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
+     * @return The toneId.
+     */
+    public java.lang.String getToneId() {
+      java.lang.Object ref = toneId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        toneId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
+     * @return The bytes for toneId.
+     */
+    public com.google.protobuf.ByteString
+        getToneIdBytes() {
+      java.lang.Object ref = toneId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toneId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
+     * @param value The toneId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToneId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      toneId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearToneId() {
+      toneId_ = getDefaultInstance().getToneId();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
+     * @param value The bytes for toneId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToneIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      toneId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList counselTechniqueIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureCounselTechniqueIdsIsMutable() {
       if (!counselTechniqueIds_.isModifiable()) {
         counselTechniqueIds_ = new com.google.protobuf.LazyStringArrayList(counselTechniqueIds_);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @return A list containing the counselTechniqueIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -408,14 +556,14 @@ private static final long serialVersionUID = 0L;
       return counselTechniqueIds_;
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @return The count of counselTechniqueIds.
      */
     public int getCounselTechniqueIdsCount() {
       return counselTechniqueIds_.size();
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @param index The index of the element to return.
      * @return The counselTechniqueIds at the given index.
      */
@@ -423,7 +571,7 @@ private static final long serialVersionUID = 0L;
       return counselTechniqueIds_.get(index);
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the counselTechniqueIds at the given index.
      */
@@ -432,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return counselTechniqueIds_.getByteString(index);
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @param index The index to set the value at.
      * @param value The counselTechniqueIds to set.
      * @return This builder for chaining.
@@ -442,12 +590,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureCounselTechniqueIdsIsMutable();
       counselTechniqueIds_.set(index, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @param value The counselTechniqueIds to add.
      * @return This builder for chaining.
      */
@@ -456,12 +604,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureCounselTechniqueIdsIsMutable();
       counselTechniqueIds_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @param values The counselTechniqueIds to add.
      * @return This builder for chaining.
      */
@@ -470,23 +618,23 @@ private static final long serialVersionUID = 0L;
       ensureCounselTechniqueIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, counselTechniqueIds_);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselTechniqueIds() {
       counselTechniqueIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);;
+      bitField0_ = (bitField0_ & ~0x00000002);;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+     * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
      * @param value The bytes of the counselTechniqueIds to add.
      * @return This builder for chaining.
      */
@@ -496,7 +644,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureCounselTechniqueIdsIsMutable();
       counselTechniqueIds_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

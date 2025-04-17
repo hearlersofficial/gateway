@@ -10,17 +10,26 @@ public interface UpdateCounselTechniqueResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
-   * @return Whether the counselTechnique field is set.
+   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
    */
-  boolean hasCounselTechnique();
+  java.util.List<com.hearlers.api.proto.v1.model.CounselTechnique> 
+      getCounselTechniquesList();
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
-   * @return The counselTechnique.
+   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
    */
-  com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechnique();
+  com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechniques(int index);
   /**
-   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
    */
-  com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniqueOrBuilder();
+  int getCounselTechniquesCount();
+  /**
+   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+   */
+  java.util.List<? extends com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> 
+      getCounselTechniquesOrBuilderList();
+  /**
+   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+   */
+  com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniquesOrBuilder(
+      int index);
 }

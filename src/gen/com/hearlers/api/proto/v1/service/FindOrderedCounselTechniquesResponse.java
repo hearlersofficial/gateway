@@ -6,12 +6,12 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
- * Protobuf type {@code com.hearlers.v1.service.FindCounselTechniquesResponse}
+ * Protobuf type {@code com.hearlers.v1.service.FindOrderedCounselTechniquesResponse}
  */
-public final class FindCounselTechniquesResponse extends
+public final class FindOrderedCounselTechniquesResponse extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.FindCounselTechniquesResponse)
-    FindCounselTechniquesResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.FindOrderedCounselTechniquesResponse)
+    FindOrderedCounselTechniquesResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,27 +20,27 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      FindCounselTechniquesResponse.class.getName());
+      FindOrderedCounselTechniquesResponse.class.getName());
   }
-  // Use FindCounselTechniquesResponse.newBuilder() to construct.
-  private FindCounselTechniquesResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use FindOrderedCounselTechniquesResponse.newBuilder() to construct.
+  private FindOrderedCounselTechniquesResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private FindCounselTechniquesResponse() {
+  private FindOrderedCounselTechniquesResponse() {
     counselTechniques_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_descriptor;
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_fieldAccessorTable
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.class, com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.Builder.class);
+            com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.class, com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.Builder.class);
   }
 
   public static final int COUNSEL_TECHNIQUES_FIELD_NUMBER = 1;
@@ -124,10 +124,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse)) {
+    if (!(obj instanceof com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse)) {
       return super.equals(obj);
     }
-    com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse other = (com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse) obj;
+    com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse other = (com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse) obj;
 
     if (!getCounselTechniquesList()
         .equals(other.getCounselTechniquesList())) return false;
@@ -151,44 +151,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(byte[] data)
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -196,26 +196,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseDelimitedFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse prototype) {
+  public static Builder newBuilder(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -244,26 +244,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.hearlers.v1.service.FindCounselTechniquesResponse}
+   * Protobuf type {@code com.hearlers.v1.service.FindOrderedCounselTechniquesResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.FindCounselTechniquesResponse)
-      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.FindOrderedCounselTechniquesResponse)
+      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_fieldAccessorTable
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.class, com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.Builder.class);
+              com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.class, com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.Builder.class);
     }
 
-    // Construct using com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.newBuilder()
+    // Construct using com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.newBuilder()
     private Builder() {
 
     }
@@ -290,17 +290,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesResponse_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse getDefaultInstanceForType() {
-      return com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.getDefaultInstance();
+    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse getDefaultInstanceForType() {
+      return com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse build() {
-      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse result = buildPartial();
+    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse build() {
+      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -308,15 +308,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse buildPartial() {
-      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse result = new com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse(this);
+    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse buildPartial() {
+      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse result = new com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse result) {
+    private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse result) {
       if (counselTechniquesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           counselTechniques_ = java.util.Collections.unmodifiableList(counselTechniques_);
@@ -328,22 +328,22 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse result) {
+    private void buildPartial0(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse result) {
       int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse) {
-        return mergeFrom((com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse)other);
+      if (other instanceof com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse) {
+        return mergeFrom((com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse other) {
-      if (other == com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse other) {
+      if (other == com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.getDefaultInstance()) return this;
       if (counselTechniquesBuilder_ == null) {
         if (!other.counselTechniques_.isEmpty()) {
           if (counselTechniques_.isEmpty()) {
@@ -666,23 +666,23 @@ private static final long serialVersionUID = 0L;
       return counselTechniquesBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.FindCounselTechniquesResponse)
+    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.FindOrderedCounselTechniquesResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.FindCounselTechniquesResponse)
-  private static final com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.FindOrderedCounselTechniquesResponse)
+  private static final com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse();
+    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse();
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse getDefaultInstance() {
+  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FindCounselTechniquesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<FindCounselTechniquesResponse>() {
+  private static final com.google.protobuf.Parser<FindOrderedCounselTechniquesResponse>
+      PARSER = new com.google.protobuf.AbstractParser<FindOrderedCounselTechniquesResponse>() {
     @java.lang.Override
-    public FindCounselTechniquesResponse parsePartialFrom(
+    public FindOrderedCounselTechniquesResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -701,17 +701,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<FindCounselTechniquesResponse> parser() {
+  public static com.google.protobuf.Parser<FindOrderedCounselTechniquesResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FindCounselTechniquesResponse> getParserForType() {
+  public com.google.protobuf.Parser<FindOrderedCounselTechniquesResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse getDefaultInstanceForType() {
+  public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

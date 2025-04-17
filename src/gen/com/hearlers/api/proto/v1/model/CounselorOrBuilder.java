@@ -69,51 +69,36 @@ public interface CounselorOrBuilder extends
   com.hearlers.api.proto.v1.model.CounselorGender getGender();
 
   /**
-   * <code>.com.hearlers.v1.model.Persona persona = 6 [json_name = "persona"];</code>
-   * @return Whether the persona field is set.
-   */
-  boolean hasPersona();
-  /**
-   * <code>.com.hearlers.v1.model.Persona persona = 6 [json_name = "persona"];</code>
-   * @return The persona.
-   */
-  com.hearlers.api.proto.v1.model.Persona getPersona();
-  /**
-   * <code>.com.hearlers.v1.model.Persona persona = 6 [json_name = "persona"];</code>
-   */
-  com.hearlers.api.proto.v1.model.PersonaOrBuilder getPersonaOrBuilder();
-
-  /**
-   * <code>string intro_message = 7 [json_name = "introMessage"];</code>
+   * <code>string intro_message = 6 [json_name = "introMessage"];</code>
    * @return The introMessage.
    */
   java.lang.String getIntroMessage();
   /**
-   * <code>string intro_message = 7 [json_name = "introMessage"];</code>
+   * <code>string intro_message = 6 [json_name = "introMessage"];</code>
    * @return The bytes for introMessage.
    */
   com.google.protobuf.ByteString
       getIntroMessageBytes();
 
   /**
-   * <code>string response_option1 = 8 [json_name = "responseOption1"];</code>
+   * <code>string response_option1 = 7 [json_name = "responseOption1"];</code>
    * @return The responseOption1.
    */
   java.lang.String getResponseOption1();
   /**
-   * <code>string response_option1 = 8 [json_name = "responseOption1"];</code>
+   * <code>string response_option1 = 7 [json_name = "responseOption1"];</code>
    * @return The bytes for responseOption1.
    */
   com.google.protobuf.ByteString
       getResponseOption1Bytes();
 
   /**
-   * <code>string response_option2 = 9 [json_name = "responseOption2"];</code>
+   * <code>string response_option2 = 8 [json_name = "responseOption2"];</code>
    * @return The responseOption2.
    */
   java.lang.String getResponseOption2();
   /**
-   * <code>string response_option2 = 9 [json_name = "responseOption2"];</code>
+   * <code>string response_option2 = 8 [json_name = "responseOption2"];</code>
    * @return The bytes for responseOption2.
    */
   com.google.protobuf.ByteString
@@ -124,7 +109,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 10 [json_name = "createdAt"];</code>
+   * <code>string created_at = 9 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -133,7 +118,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 10 [json_name = "createdAt"];</code>
+   * <code>string created_at = 9 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -144,7 +129,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
@@ -153,7 +138,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
@@ -164,7 +149,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
@@ -173,7 +158,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -182,7 +167,7 @@ public interface CounselorOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

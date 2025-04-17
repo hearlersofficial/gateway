@@ -5,8 +5,8 @@
 
 package com.hearlers.api.proto.v1.service;
 
-public interface FindCounselTechniquesRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.hearlers.v1.service.FindCounselTechniquesRequest)
+public interface FindPromptVersionsRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:com.hearlers.v1.service.FindPromptVersionsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -25,21 +25,4 @@ public interface FindCounselTechniquesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
-
-  /**
-   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
-   * @return Whether the toneId field is set.
-   */
-  boolean hasToneId();
-  /**
-   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
-   * @return The toneId.
-   */
-  java.lang.String getToneId();
-  /**
-   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
-   * @return The bytes for toneId.
-   */
-  com.google.protobuf.ByteString
-      getToneIdBytes();
 }

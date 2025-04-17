@@ -50,37 +50,40 @@ public final class CounselOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#com/hearlers/v1/model/counsel.proto\022\025c" +
-      "om.hearlers.v1.model\"\206\003\n\007Counsel\022\016\n\002id\030\001" +
+      "om.hearlers.v1.model\"\340\003\n\007Counsel\022\016\n\002id\030\001" +
       " \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013counselo" +
-      "rId\022\027\n\007user_id\030\003 \001(\tR\006userId\022!\n\014last_mes" +
-      "sage\030\004 \001(\tR\013lastMessage\022$\n\016last_chated_a" +
-      "t\030\005 \001(\tR\014lastChatedAt\0220\n\024counsel_techniq" +
-      "ue_id\030\006 \001(\tR\022counselTechniqueId\022C\n\036couns" +
-      "elor_user_relationship_id\030\007 \001(\tR\033counsel" +
-      "orUserRelationshipId\022\035\n\ncreated_at\030\010 \001(\t" +
-      "R\tcreatedAt\022\035\n\nupdated_at\030\t \001(\tR\tupdated" +
-      "At\022\"\n\ndeleted_at\030\n \001(\tH\000R\tdeletedAt\210\001\001B\r" +
-      "\n\013_deleted_at\"\202\003\n\016CounselMessage\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\035\n\ncounsel_id\030\002 \001(\tR\tcounselId\022" +
-      "\030\n\007message\030\003 \001(\tR\007message\022&\n\017is_user_mes" +
-      "sage\030\004 \001(\010R\risUserMessage\022\"\n\nreacted_at\030" +
-      "\005 \001(\tH\000R\treactedAt\210\001\001\022N\n\010reaction\030\006 \001(\0162" +
-      "-.com.hearlers.v1.model.CounselMessageRe" +
-      "actionH\001R\010reaction\210\001\001\022\035\n\ncreated_at\030\007 \001(" +
-      "\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdate" +
-      "dAt\022\"\n\ndeleted_at\030\t \001(\tH\002R\tdeletedAt\210\001\001B" +
-      "\r\n\013_reacted_atB\013\n\t_reactionB\r\n\013_deleted_" +
-      "at\"\362\001\n\031CounselorUserRelationship\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013counselo" +
-      "rId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030\n\007rapport\030" +
-      "\004 \001(\005R\007rapport\022\035\n\ncreated_at\030\005 \001(\tR\tcrea" +
-      "tedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\022\"\n\n" +
-      "deleted_at\030\007 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_del" +
-      "eted_at*\213\001\n\026CounselMessageReaction\022(\n$CO" +
-      "UNSEL_MESSAGE_REACTION_UNSPECIFIED\020\000\022!\n\035" +
-      "COUNSEL_MESSAGE_REACTION_LIKE\020\001\022$\n COUNS" +
-      "EL_MESSAGE_REACTION_DISLIKE\020\002B#\n\037com.hea" +
-      "rlers.api.proto.v1.modelP\001b\006proto3"
+      "rId\022\027\n\007user_id\030\003 \001(\tR\006userId\022&\n\014last_mes" +
+      "sage\030\004 \001(\tH\000R\013lastMessage\210\001\001\022)\n\016last_cha" +
+      "ted_at\030\005 \001(\tH\001R\014lastChatedAt\210\001\001\022*\n\021promp" +
+      "t_version_id\030\006 \001(\tR\017promptVersionId\0220\n\024c" +
+      "ounsel_technique_id\030\007 \001(\tR\022counselTechni" +
+      "queId\022C\n\036counselor_user_relationship_id\030" +
+      "\010 \001(\tR\033counselorUserRelationshipId\022\035\n\ncr" +
+      "eated_at\030\t \001(\tR\tcreatedAt\022\035\n\nupdated_at\030" +
+      "\n \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\013 \001(\tH\002R\t" +
+      "deletedAt\210\001\001B\017\n\r_last_messageB\021\n\017_last_c" +
+      "hated_atB\r\n\013_deleted_at\"\202\003\n\016CounselMessa" +
+      "ge\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ncounsel_id\030\002 \001(\tR\t" +
+      "counselId\022\030\n\007message\030\003 \001(\tR\007message\022&\n\017i" +
+      "s_user_message\030\004 \001(\010R\risUserMessage\022\"\n\nr" +
+      "eacted_at\030\005 \001(\tH\000R\treactedAt\210\001\001\022N\n\010react" +
+      "ion\030\006 \001(\0162-.com.hearlers.v1.model.Counse" +
+      "lMessageReactionH\001R\010reaction\210\001\001\022\035\n\ncreat" +
+      "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001" +
+      "(\tR\tupdatedAt\022\"\n\ndeleted_at\030\t \001(\tH\002R\tdel" +
+      "etedAt\210\001\001B\r\n\013_reacted_atB\013\n\t_reactionB\r\n" +
+      "\013_deleted_at\"\362\001\n\031CounselorUserRelationsh" +
+      "ip\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\t" +
+      "R\013counselorId\022\027\n\007user_id\030\003 \001(\tR\006userId\022\030" +
+      "\n\007rapport\030\004 \001(\005R\007rapport\022\035\n\ncreated_at\030\005" +
+      " \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupd" +
+      "atedAt\022\"\n\ndeleted_at\030\007 \001(\tH\000R\tdeletedAt\210" +
+      "\001\001B\r\n\013_deleted_at*\213\001\n\026CounselMessageReac" +
+      "tion\022(\n$COUNSEL_MESSAGE_REACTION_UNSPECI" +
+      "FIED\020\000\022!\n\035COUNSEL_MESSAGE_REACTION_LIKE\020" +
+      "\001\022$\n COUNSEL_MESSAGE_REACTION_DISLIKE\020\002B" +
+      "#\n\037com.hearlers.api.proto.v1.modelP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -91,7 +94,7 @@ public final class CounselOuterClass {
     internal_static_com_hearlers_v1_model_Counsel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_Counsel_descriptor,
-        new java.lang.String[] { "Id", "CounselorId", "UserId", "LastMessage", "LastChatedAt", "CounselTechniqueId", "CounselorUserRelationshipId", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "CounselorId", "UserId", "LastMessage", "LastChatedAt", "PromptVersionId", "CounselTechniqueId", "CounselorUserRelationshipId", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_CounselMessage_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_model_CounselMessage_fieldAccessorTable = new

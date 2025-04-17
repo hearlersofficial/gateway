@@ -10,24 +10,36 @@ public interface SaveCounselTechniqueSequenceRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
+   * @return The toneId.
+   */
+  java.lang.String getToneId();
+  /**
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
+   * @return The bytes for toneId.
+   */
+  com.google.protobuf.ByteString
+      getToneIdBytes();
+
+  /**
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @return A list containing the counselTechniqueIds.
    */
   java.util.List<java.lang.String>
       getCounselTechniqueIdsList();
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @return The count of counselTechniqueIds.
    */
   int getCounselTechniqueIdsCount();
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @param index The index of the element to return.
    * @return The counselTechniqueIds at the given index.
    */
   java.lang.String getCounselTechniqueIds(int index);
   /**
-   * <code>repeated string counsel_technique_ids = 1 [json_name = "counselTechniqueIds"];</code>
+   * <code>repeated string counsel_technique_ids = 2 [json_name = "counselTechniqueIds"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the counselTechniqueIds at the given index.
    */

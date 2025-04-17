@@ -31,10 +31,10 @@ public final class CounselorOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_model_Counselor_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hearlers_v1_model_Persona_descriptor;
+    internal_static_com_hearlers_v1_model_Tone_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_hearlers_v1_model_Persona_fieldAccessorTable;
+      internal_static_com_hearlers_v1_model_Tone_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -45,28 +45,27 @@ public final class CounselorOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%com/hearlers/v1/model/counselor.proto\022" +
-      "\025com.hearlers.v1.model\"\320\003\n\tCounselor\022\016\n\002" +
+      "\025com.hearlers.v1.model\"\226\003\n\tCounselor\022\016\n\002" +
       "id\030\001 \001(\tR\002id\022\027\n\007tone_id\030\002 \001(\tR\006toneId\022\022\n" +
       "\004name\030\003 \001(\tR\004name\022 \n\013description\030\004 \001(\tR\013" +
       "description\022>\n\006gender\030\005 \001(\0162&.com.hearle" +
-      "rs.v1.model.CounselorGenderR\006gender\0228\n\007p" +
-      "ersona\030\006 \001(\0132\036.com.hearlers.v1.model.Per" +
-      "sonaR\007persona\022#\n\rintro_message\030\007 \001(\tR\014in" +
-      "troMessage\022)\n\020response_option1\030\010 \001(\tR\017re" +
-      "sponseOption1\022)\n\020response_option2\030\t \001(\tR" +
-      "\017responseOption2\022\035\n\ncreated_at\030\n \001(\tR\tcr" +
-      "eatedAt\022\035\n\nupdated_at\030\013 \001(\tR\tupdatedAt\022\"" +
-      "\n\ndeleted_at\030\014 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_d" +
-      "eleted_at\"\301\001\n\007Persona\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
-      "\004body\030\002 \001(\tR\004body\022!\n\014counselor_id\030\003 \001(\tR" +
-      "\013counselorId\022\035\n\ncreated_at\030\004 \001(\tR\tcreate" +
-      "dAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\nde" +
-      "leted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delet" +
-      "ed_at*\206\001\n\017CounselorGender\022 \n\034COUNSELOR_G" +
-      "ENDER_UNSPECIFIED\020\000\022\031\n\025COUNSELOR_GENDER_" +
-      "MALE\020\001\022\033\n\027COUNSELOR_GENDER_FEMALE\020\002\022\031\n\025C" +
-      "OUNSELOR_GENDER_NONE\020\003B#\n\037com.hearlers.a" +
-      "pi.proto.v1.modelP\001b\006proto3"
+      "rs.v1.model.CounselorGenderR\006gender\022#\n\ri" +
+      "ntro_message\030\006 \001(\tR\014introMessage\022)\n\020resp" +
+      "onse_option1\030\007 \001(\tR\017responseOption1\022)\n\020r" +
+      "esponse_option2\030\010 \001(\tR\017responseOption2\022\035" +
+      "\n\ncreated_at\030\t \001(\tR\tcreatedAt\022\035\n\nupdated" +
+      "_at\030\n \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\013 \001(\t" +
+      "H\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\275\001\n\004Tone" +
+      "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013" +
+      "description\030\003 \001(\tR\013description\022\035\n\ncreate" +
+      "d_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\005 \001(" +
+      "\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\tH\000R\tdele" +
+      "tedAt\210\001\001B\r\n\013_deleted_at*\206\001\n\017CounselorGen" +
+      "der\022 \n\034COUNSELOR_GENDER_UNSPECIFIED\020\000\022\031\n" +
+      "\025COUNSELOR_GENDER_MALE\020\001\022\033\n\027COUNSELOR_GE" +
+      "NDER_FEMALE\020\002\022\031\n\025COUNSELOR_GENDER_NONE\020\003" +
+      "B#\n\037com.hearlers.api.proto.v1.modelP\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -77,13 +76,13 @@ public final class CounselorOuterClass {
     internal_static_com_hearlers_v1_model_Counselor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_Counselor_descriptor,
-        new java.lang.String[] { "Id", "ToneId", "Name", "Description", "Gender", "Persona", "IntroMessage", "ResponseOption1", "ResponseOption2", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_com_hearlers_v1_model_Persona_descriptor =
+        new java.lang.String[] { "Id", "ToneId", "Name", "Description", "Gender", "IntroMessage", "ResponseOption1", "ResponseOption2", "CreatedAt", "UpdatedAt", "DeletedAt", });
+    internal_static_com_hearlers_v1_model_Tone_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_hearlers_v1_model_Persona_fieldAccessorTable = new
+    internal_static_com_hearlers_v1_model_Tone_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_hearlers_v1_model_Persona_descriptor,
-        new java.lang.String[] { "Id", "Body", "CounselorId", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        internal_static_com_hearlers_v1_model_Tone_descriptor,
+        new java.lang.String[] { "Id", "Name", "Description", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

@@ -8,6 +8,7 @@ package com.hearlers.api.proto.v1.service;
 /**
  * <pre>
  * 상담
+ * 현재 활성화된 프롬프트 버전 적용
  * </pre>
  *
  * Protobuf type {@code com.hearlers.v1.service.CreateCounselRequest}
@@ -422,6 +423,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * 상담
+   * 현재 활성화된 프롬프트 버전 적용
    * </pre>
    *
    * Protobuf type {@code com.hearlers.v1.service.CreateCounselRequest}

@@ -32,7 +32,6 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     description_ = "";
     counselorGender_ = 0;
-    persona_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -254,53 +253,6 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.hearlers.api.proto.v1.model.CounselorGender.UNRECOGNIZED : result;
   }
 
-  public static final int PERSONA_FIELD_NUMBER = 6;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object persona_ = "";
-  /**
-   * <code>optional string persona = 6 [json_name = "persona"];</code>
-   * @return Whether the persona field is set.
-   */
-  @java.lang.Override
-  public boolean hasPersona() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <code>optional string persona = 6 [json_name = "persona"];</code>
-   * @return The persona.
-   */
-  @java.lang.Override
-  public java.lang.String getPersona() {
-    java.lang.Object ref = persona_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      persona_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string persona = 6 [json_name = "persona"];</code>
-   * @return The bytes for persona.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPersonaBytes() {
-    java.lang.Object ref = persona_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      persona_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -330,9 +282,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(5, counselorGender_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, persona_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -357,9 +306,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, counselorGender_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, persona_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -397,11 +343,6 @@ private static final long serialVersionUID = 0L;
     if (hasCounselorGender()) {
       if (counselorGender_ != other.counselorGender_) return false;
     }
-    if (hasPersona() != other.hasPersona()) return false;
-    if (hasPersona()) {
-      if (!getPersona()
-          .equals(other.getPersona())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -430,10 +371,6 @@ private static final long serialVersionUID = 0L;
     if (hasCounselorGender()) {
       hash = (37 * hash) + COUNSELOR_GENDER_FIELD_NUMBER;
       hash = (53 * hash) + counselorGender_;
-    }
-    if (hasPersona()) {
-      hash = (37 * hash) + PERSONA_FIELD_NUMBER;
-      hash = (53 * hash) + getPersona().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -571,7 +508,6 @@ private static final long serialVersionUID = 0L;
       name_ = "";
       description_ = "";
       counselorGender_ = 0;
-      persona_ = "";
       return this;
     }
 
@@ -625,10 +561,6 @@ private static final long serialVersionUID = 0L;
         result.counselorGender_ = counselorGender_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.persona_ = persona_;
-        to_bitField0_ |= 0x00000010;
-      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -666,11 +598,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCounselorGender()) {
         setCounselorGender(other.getCounselorGender());
-      }
-      if (other.hasPersona()) {
-        persona_ = other.persona_;
-        bitField0_ |= 0x00000020;
-        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -723,11 +650,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
-            case 50: {
-              persona_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1110,85 +1032,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearCounselorGender() {
       bitField0_ = (bitField0_ & ~0x00000010);
       counselorGender_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object persona_ = "";
-    /**
-     * <code>optional string persona = 6 [json_name = "persona"];</code>
-     * @return Whether the persona field is set.
-     */
-    public boolean hasPersona() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional string persona = 6 [json_name = "persona"];</code>
-     * @return The persona.
-     */
-    public java.lang.String getPersona() {
-      java.lang.Object ref = persona_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        persona_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string persona = 6 [json_name = "persona"];</code>
-     * @return The bytes for persona.
-     */
-    public com.google.protobuf.ByteString
-        getPersonaBytes() {
-      java.lang.Object ref = persona_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        persona_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string persona = 6 [json_name = "persona"];</code>
-     * @param value The persona to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPersona(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      persona_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string persona = 6 [json_name = "persona"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPersona() {
-      persona_ = getDefaultInstance().getPersona();
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string persona = 6 [json_name = "persona"];</code>
-     * @param value The bytes for persona to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPersonaBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      persona_ = value;
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
