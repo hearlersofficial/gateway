@@ -39,53 +39,47 @@ public interface UpdateCounselTechniqueRequestOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-   * @return Whether the toneId field is set.
-   */
-  boolean hasToneId();
-  /**
-   * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-   * @return The toneId.
-   */
-  java.lang.String getToneId();
-  /**
-   * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-   * @return The bytes for toneId.
-   */
-  com.google.protobuf.ByteString
-      getToneIdBytes();
-
-  /**
-   * <code>optional string context = 4 [json_name = "context"];</code>
+   * <code>optional string context = 3 [json_name = "context"];</code>
    * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
-   * <code>optional string context = 4 [json_name = "context"];</code>
+   * <code>optional string context = 3 [json_name = "context"];</code>
    * @return The context.
    */
   java.lang.String getContext();
   /**
-   * <code>optional string context = 4 [json_name = "context"];</code>
+   * <code>optional string context = 3 [json_name = "context"];</code>
    * @return The bytes for context.
    */
   com.google.protobuf.ByteString
       getContextBytes();
 
   /**
-   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * <code>optional string instruction = 4 [json_name = "instruction"];</code>
    * @return Whether the instruction field is set.
    */
   boolean hasInstruction();
   /**
-   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * <code>optional string instruction = 4 [json_name = "instruction"];</code>
    * @return The instruction.
    */
   java.lang.String getInstruction();
   /**
-   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * <code>optional string instruction = 4 [json_name = "instruction"];</code>
    * @return The bytes for instruction.
    */
   com.google.protobuf.ByteString
       getInstructionBytes();
+
+  /**
+   * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+   * @return Whether the messageThreshold field is set.
+   */
+  boolean hasMessageThreshold();
+  /**
+   * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+   * @return The messageThreshold.
+   */
+  int getMessageThreshold();
 }

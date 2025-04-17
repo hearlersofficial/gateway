@@ -6,12 +6,16 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
- * Protobuf type {@code com.hearlers.v1.service.FindCounselTechniquesRequest}
+ * <pre>
+ * 임시버전에서 수정
+ * </pre>
+ *
+ * Protobuf type {@code com.hearlers.v1.service.UpdateTonePromptRequest}
  */
-public final class FindCounselTechniquesRequest extends
+public final class UpdateTonePromptRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.FindCounselTechniquesRequest)
-    FindCounselTechniquesRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.UpdateTonePromptRequest)
+    UpdateTonePromptRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,91 +24,35 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      FindCounselTechniquesRequest.class.getName());
+      UpdateTonePromptRequest.class.getName());
   }
-  // Use FindCounselTechniquesRequest.newBuilder() to construct.
-  private FindCounselTechniquesRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use UpdateTonePromptRequest.newBuilder() to construct.
+  private UpdateTonePromptRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private FindCounselTechniquesRequest() {
-    name_ = "";
+  private UpdateTonePromptRequest() {
     toneId_ = "";
+    body_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_descriptor;
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_fieldAccessorTable
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.class, com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.Builder.class);
+            com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.class, com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int NAME_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object name_ = "";
-  /**
-   * <code>optional string name = 1 [json_name = "name"];</code>
-   * @return Whether the name field is set.
-   */
-  @java.lang.Override
-  public boolean hasName() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>optional string name = 1 [json_name = "name"];</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string name = 1 [json_name = "name"];</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TONE_ID_FIELD_NUMBER = 2;
+  public static final int TONE_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object toneId_ = "";
   /**
-   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
-   * @return Whether the toneId field is set.
-   */
-  @java.lang.Override
-  public boolean hasToneId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
    * @return The toneId.
    */
   @java.lang.Override
@@ -121,7 +69,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+   * <code>string tone_id = 1 [json_name = "toneId"];</code>
    * @return The bytes for toneId.
    */
   @java.lang.Override
@@ -133,6 +81,45 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       toneId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BODY_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object body_ = "";
+  /**
+   * <code>string body = 2 [json_name = "body"];</code>
+   * @return The body.
+   */
+  @java.lang.Override
+  public java.lang.String getBody() {
+    java.lang.Object ref = body_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      body_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string body = 2 [json_name = "body"];</code>
+   * @return The bytes for body.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBodyBytes() {
+    java.lang.Object ref = body_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      body_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -153,11 +140,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, toneId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, toneId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(body_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, body_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -168,11 +155,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, toneId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, toneId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(body_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, body_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -184,21 +171,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest)) {
+    if (!(obj instanceof com.hearlers.api.proto.v1.service.UpdateTonePromptRequest)) {
       return super.equals(obj);
     }
-    com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest other = (com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest) obj;
+    com.hearlers.api.proto.v1.service.UpdateTonePromptRequest other = (com.hearlers.api.proto.v1.service.UpdateTonePromptRequest) obj;
 
-    if (hasName() != other.hasName()) return false;
-    if (hasName()) {
-      if (!getName()
-          .equals(other.getName())) return false;
-    }
-    if (hasToneId() != other.hasToneId()) return false;
-    if (hasToneId()) {
-      if (!getToneId()
-          .equals(other.getToneId())) return false;
-    }
+    if (!getToneId()
+        .equals(other.getToneId())) return false;
+    if (!getBody()
+        .equals(other.getBody())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -210,57 +191,53 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasName()) {
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-    }
-    if (hasToneId()) {
-      hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getToneId().hashCode();
-    }
+    hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getToneId().hashCode();
+    hash = (37 * hash) + BODY_FIELD_NUMBER;
+    hash = (53 * hash) + getBody().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(byte[] data)
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -268,26 +245,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseDelimitedFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -300,7 +277,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest prototype) {
+  public static Builder newBuilder(com.hearlers.api.proto.v1.service.UpdateTonePromptRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -316,26 +293,30 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.hearlers.v1.service.FindCounselTechniquesRequest}
+   * <pre>
+   * 임시버전에서 수정
+   * </pre>
+   *
+   * Protobuf type {@code com.hearlers.v1.service.UpdateTonePromptRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.FindCounselTechniquesRequest)
-      com.hearlers.api.proto.v1.service.FindCounselTechniquesRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.UpdateTonePromptRequest)
+      com.hearlers.api.proto.v1.service.UpdateTonePromptRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_fieldAccessorTable
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.class, com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.Builder.class);
+              com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.class, com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.Builder.class);
     }
 
-    // Construct using com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.newBuilder()
+    // Construct using com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.newBuilder()
     private Builder() {
 
     }
@@ -349,25 +330,25 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      name_ = "";
       toneId_ = "";
+      body_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindCounselTechniquesRequest_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest getDefaultInstanceForType() {
-      return com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.getDefaultInstance();
+    public com.hearlers.api.proto.v1.service.UpdateTonePromptRequest getDefaultInstanceForType() {
+      return com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest build() {
-      com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest result = buildPartial();
+    public com.hearlers.api.proto.v1.service.UpdateTonePromptRequest build() {
+      com.hearlers.api.proto.v1.service.UpdateTonePromptRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -375,46 +356,42 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest buildPartial() {
-      com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest result = new com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest(this);
+    public com.hearlers.api.proto.v1.service.UpdateTonePromptRequest buildPartial() {
+      com.hearlers.api.proto.v1.service.UpdateTonePromptRequest result = new com.hearlers.api.proto.v1.service.UpdateTonePromptRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest result) {
+    private void buildPartial0(com.hearlers.api.proto.v1.service.UpdateTonePromptRequest result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
-        to_bitField0_ |= 0x00000001;
+        result.toneId_ = toneId_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.toneId_ = toneId_;
-        to_bitField0_ |= 0x00000002;
+        result.body_ = body_;
       }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest) {
-        return mergeFrom((com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest)other);
+      if (other instanceof com.hearlers.api.proto.v1.service.UpdateTonePromptRequest) {
+        return mergeFrom((com.hearlers.api.proto.v1.service.UpdateTonePromptRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest other) {
-      if (other == com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.getDefaultInstance()) return this;
-      if (other.hasName()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.hearlers.api.proto.v1.service.UpdateTonePromptRequest other) {
+      if (other == com.hearlers.api.proto.v1.service.UpdateTonePromptRequest.getDefaultInstance()) return this;
+      if (!other.getToneId().isEmpty()) {
+        toneId_ = other.toneId_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.hasToneId()) {
-        toneId_ = other.toneId_;
+      if (!other.getBody().isEmpty()) {
+        body_ = other.body_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
@@ -445,12 +422,12 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              name_ = input.readStringRequireUtf8();
+              toneId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              toneId_ = input.readStringRequireUtf8();
+              body_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
@@ -471,95 +448,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
-    /**
-     * <code>optional string name = 1 [json_name = "name"];</code>
-     * @return Whether the name field is set.
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string name = 1 [json_name = "name"];</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string name = 1 [json_name = "name"];</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      name_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string name = 1 [json_name = "name"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string name = 1 [json_name = "name"];</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      name_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object toneId_ = "";
     /**
-     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
-     * @return Whether the toneId field is set.
-     */
-    public boolean hasToneId() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
      * @return The toneId.
      */
     public java.lang.String getToneId() {
@@ -575,7 +466,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
      * @return The bytes for toneId.
      */
     public com.google.protobuf.ByteString
@@ -592,7 +483,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
      * @param value The toneId to set.
      * @return This builder for chaining.
      */
@@ -600,22 +491,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       toneId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearToneId() {
       toneId_ = getDefaultInstance().getToneId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string tone_id = 2 [json_name = "toneId"];</code>
+     * <code>string tone_id = 1 [json_name = "toneId"];</code>
      * @param value The bytes for toneId to set.
      * @return This builder for chaining.
      */
@@ -624,28 +515,100 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       toneId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object body_ = "";
+    /**
+     * <code>string body = 2 [json_name = "body"];</code>
+     * @return The body.
+     */
+    public java.lang.String getBody() {
+      java.lang.Object ref = body_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        body_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string body = 2 [json_name = "body"];</code>
+     * @return The bytes for body.
+     */
+    public com.google.protobuf.ByteString
+        getBodyBytes() {
+      java.lang.Object ref = body_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        body_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string body = 2 [json_name = "body"];</code>
+     * @param value The body to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBody(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      body_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string body = 2 [json_name = "body"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBody() {
+      body_ = getDefaultInstance().getBody();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string body = 2 [json_name = "body"];</code>
+     * @param value The bytes for body to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBodyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      body_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.FindCounselTechniquesRequest)
+    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.UpdateTonePromptRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.FindCounselTechniquesRequest)
-  private static final com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.UpdateTonePromptRequest)
+  private static final com.hearlers.api.proto.v1.service.UpdateTonePromptRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest();
+    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.UpdateTonePromptRequest();
   }
 
-  public static com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest getDefaultInstance() {
+  public static com.hearlers.api.proto.v1.service.UpdateTonePromptRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FindCounselTechniquesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<FindCounselTechniquesRequest>() {
+  private static final com.google.protobuf.Parser<UpdateTonePromptRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateTonePromptRequest>() {
     @java.lang.Override
-    public FindCounselTechniquesRequest parsePartialFrom(
+    public UpdateTonePromptRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -664,17 +627,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<FindCounselTechniquesRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateTonePromptRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FindCounselTechniquesRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateTonePromptRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest getDefaultInstanceForType() {
+  public com.hearlers.api.proto.v1.service.UpdateTonePromptRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

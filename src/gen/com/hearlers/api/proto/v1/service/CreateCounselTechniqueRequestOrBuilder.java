@@ -56,4 +56,10 @@ public interface CreateCounselTechniqueRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInstructionBytes();
+
+  /**
+   * <code>int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+   * @return The messageThreshold.
+   */
+  int getMessageThreshold();
 }
