@@ -55,16 +55,4 @@ public interface CreateCounselorRequestOrBuilder extends
    * @return The counselorGender.
    */
   com.hearlers.api.proto.v1.model.CounselorGender getCounselorGender();
-
-  /**
-   * <code>string persona = 5 [json_name = "persona"];</code>
-   * @return The persona.
-   */
-  java.lang.String getPersona();
-  /**
-   * <code>string persona = 5 [json_name = "persona"];</code>
-   * @return The bytes for persona.
-   */
-  com.google.protobuf.ByteString
-      getPersonaBytes();
 }

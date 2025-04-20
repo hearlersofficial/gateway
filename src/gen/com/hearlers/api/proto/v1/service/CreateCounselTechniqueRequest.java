@@ -7,7 +7,10 @@ package com.hearlers.api.proto.v1.service;
 
 /**
  * <pre>
- * 상담 기법
+ * counsel technique
+ * 불변객체(수정 시 새로운 객체 생성)
+ * 임시기법(다른 기법들과 링크x)으로 생성
+ * 추후 순서지정 필요
  * </pre>
  *
  * Protobuf type {@code com.hearlers.v1.service.CreateCounselTechniqueRequest}
@@ -206,6 +209,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MESSAGE_THRESHOLD_FIELD_NUMBER = 5;
+  private int messageThreshold_ = 0;
+  /**
+   * <code>int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+   * @return The messageThreshold.
+   */
+  @java.lang.Override
+  public int getMessageThreshold() {
+    return messageThreshold_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -232,6 +246,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instruction_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, instruction_);
     }
+    if (messageThreshold_ != 0) {
+      output.writeInt32(5, messageThreshold_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -252,6 +269,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instruction_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, instruction_);
+    }
+    if (messageThreshold_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, messageThreshold_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -276,6 +297,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContext())) return false;
     if (!getInstruction()
         .equals(other.getInstruction())) return false;
+    if (getMessageThreshold()
+        != other.getMessageThreshold()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -295,6 +318,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContext().hashCode();
     hash = (37 * hash) + INSTRUCTION_FIELD_NUMBER;
     hash = (53 * hash) + getInstruction().hashCode();
+    hash = (37 * hash) + MESSAGE_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getMessageThreshold();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -394,7 +419,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 상담 기법
+   * counsel technique
+   * 불변객체(수정 시 새로운 객체 생성)
+   * 임시기법(다른 기법들과 링크x)으로 생성
+   * 추후 순서지정 필요
    * </pre>
    *
    * Protobuf type {@code com.hearlers.v1.service.CreateCounselTechniqueRequest}
@@ -434,6 +462,7 @@ private static final long serialVersionUID = 0L;
       toneId_ = "";
       context_ = "";
       instruction_ = "";
+      messageThreshold_ = 0;
       return this;
     }
 
@@ -479,6 +508,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.instruction_ = instruction_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.messageThreshold_ = messageThreshold_;
+      }
     }
 
     @java.lang.Override
@@ -512,6 +544,9 @@ private static final long serialVersionUID = 0L;
         instruction_ = other.instruction_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getMessageThreshold() != 0) {
+        setMessageThreshold(other.getMessageThreshold());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -559,6 +594,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 40: {
+              messageThreshold_ = input.readInt32();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -860,6 +900,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       instruction_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int messageThreshold_ ;
+    /**
+     * <code>int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @return The messageThreshold.
+     */
+    @java.lang.Override
+    public int getMessageThreshold() {
+      return messageThreshold_;
+    }
+    /**
+     * <code>int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @param value The messageThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageThreshold(int value) {
+
+      messageThreshold_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessageThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      messageThreshold_ = 0;
       onChanged();
       return this;
     }

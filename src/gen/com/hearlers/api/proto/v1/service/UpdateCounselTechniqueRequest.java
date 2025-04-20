@@ -6,6 +6,12 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * 임시버전에서 수정
+ * 아직 링크되지 않은 임시기법은 수정 불가
+ * 수정 후 해당 기법이 포함된 기법리스트 반환
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.UpdateCounselTechniqueRequest}
  */
 public final class UpdateCounselTechniqueRequest extends
@@ -29,7 +35,6 @@ private static final long serialVersionUID = 0L;
   private UpdateCounselTechniqueRequest() {
     counselTechniqueId_ = "";
     name_ = "";
-    toneId_ = "";
     context_ = "";
     instruction_ = "";
   }
@@ -134,66 +139,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TONE_ID_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object toneId_ = "";
-  /**
-   * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-   * @return Whether the toneId field is set.
-   */
-  @java.lang.Override
-  public boolean hasToneId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-   * @return The toneId.
-   */
-  @java.lang.Override
-  public java.lang.String getToneId() {
-    java.lang.Object ref = toneId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      toneId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-   * @return The bytes for toneId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getToneIdBytes() {
-    java.lang.Object ref = toneId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      toneId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CONTEXT_FIELD_NUMBER = 4;
+  public static final int CONTEXT_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
   /**
-   * <code>optional string context = 4 [json_name = "context"];</code>
+   * <code>optional string context = 3 [json_name = "context"];</code>
    * @return Whether the context field is set.
    */
   @java.lang.Override
   public boolean hasContext() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional string context = 4 [json_name = "context"];</code>
+   * <code>optional string context = 3 [json_name = "context"];</code>
    * @return The context.
    */
   @java.lang.Override
@@ -210,7 +168,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string context = 4 [json_name = "context"];</code>
+   * <code>optional string context = 3 [json_name = "context"];</code>
    * @return The bytes for context.
    */
   @java.lang.Override
@@ -228,19 +186,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INSTRUCTION_FIELD_NUMBER = 5;
+  public static final int INSTRUCTION_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
   /**
-   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * <code>optional string instruction = 4 [json_name = "instruction"];</code>
    * @return Whether the instruction field is set.
    */
   @java.lang.Override
   public boolean hasInstruction() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * <code>optional string instruction = 4 [json_name = "instruction"];</code>
    * @return The instruction.
    */
   @java.lang.Override
@@ -257,7 +215,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+   * <code>optional string instruction = 4 [json_name = "instruction"];</code>
    * @return The bytes for instruction.
    */
   @java.lang.Override
@@ -273,6 +231,25 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int MESSAGE_THRESHOLD_FIELD_NUMBER = 5;
+  private int messageThreshold_ = 0;
+  /**
+   * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+   * @return Whether the messageThreshold field is set.
+   */
+  @java.lang.Override
+  public boolean hasMessageThreshold() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+   * @return The messageThreshold.
+   */
+  @java.lang.Override
+  public int getMessageThreshold() {
+    return messageThreshold_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -296,13 +273,13 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, toneId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, context_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, context_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, instruction_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, instruction_);
+      output.writeInt32(5, messageThreshold_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -320,13 +297,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, toneId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, context_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, context_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, instruction_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, instruction_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, messageThreshold_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -350,11 +328,6 @@ private static final long serialVersionUID = 0L;
       if (!getName()
           .equals(other.getName())) return false;
     }
-    if (hasToneId() != other.hasToneId()) return false;
-    if (hasToneId()) {
-      if (!getToneId()
-          .equals(other.getToneId())) return false;
-    }
     if (hasContext() != other.hasContext()) return false;
     if (hasContext()) {
       if (!getContext()
@@ -364,6 +337,11 @@ private static final long serialVersionUID = 0L;
     if (hasInstruction()) {
       if (!getInstruction()
           .equals(other.getInstruction())) return false;
+    }
+    if (hasMessageThreshold() != other.hasMessageThreshold()) return false;
+    if (hasMessageThreshold()) {
+      if (getMessageThreshold()
+          != other.getMessageThreshold()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -382,10 +360,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
-    if (hasToneId()) {
-      hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getToneId().hashCode();
-    }
     if (hasContext()) {
       hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getContext().hashCode();
@@ -393,6 +367,10 @@ private static final long serialVersionUID = 0L;
     if (hasInstruction()) {
       hash = (37 * hash) + INSTRUCTION_FIELD_NUMBER;
       hash = (53 * hash) + getInstruction().hashCode();
+    }
+    if (hasMessageThreshold()) {
+      hash = (37 * hash) + MESSAGE_THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageThreshold();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -492,6 +470,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 임시버전에서 수정
+   * 아직 링크되지 않은 임시기법은 수정 불가
+   * 수정 후 해당 기법이 포함된 기법리스트 반환
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.UpdateCounselTechniqueRequest}
    */
   public static final class Builder extends
@@ -527,9 +511,9 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       counselTechniqueId_ = "";
       name_ = "";
-      toneId_ = "";
       context_ = "";
       instruction_ = "";
+      messageThreshold_ = 0;
       return this;
     }
 
@@ -572,15 +556,15 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.toneId_ = toneId_;
+        result.context_ = context_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.context_ = context_;
+        result.instruction_ = instruction_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.instruction_ = instruction_;
+        result.messageThreshold_ = messageThreshold_;
         to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
@@ -608,20 +592,18 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasToneId()) {
-        toneId_ = other.toneId_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
       if (other.hasContext()) {
         context_ = other.context_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasInstruction()) {
         instruction_ = other.instruction_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasMessageThreshold()) {
+        setMessageThreshold(other.getMessageThreshold());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -660,20 +642,20 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              toneId_ = input.readStringRequireUtf8();
+              context_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              context_ = input.readStringRequireUtf8();
+              instruction_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 42: {
-              instruction_ = input.readStringRequireUtf8();
+            case 40: {
+              messageThreshold_ = input.readInt32();
               bitField0_ |= 0x00000010;
               break;
-            } // case 42
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -842,95 +824,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object toneId_ = "";
-    /**
-     * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-     * @return Whether the toneId field is set.
-     */
-    public boolean hasToneId() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-     * @return The toneId.
-     */
-    public java.lang.String getToneId() {
-      java.lang.Object ref = toneId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        toneId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-     * @return The bytes for toneId.
-     */
-    public com.google.protobuf.ByteString
-        getToneIdBytes() {
-      java.lang.Object ref = toneId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        toneId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-     * @param value The toneId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setToneId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      toneId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearToneId() {
-      toneId_ = getDefaultInstance().getToneId();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string tone_id = 3 [json_name = "toneId"];</code>
-     * @param value The bytes for toneId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setToneIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      toneId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object context_ = "";
     /**
-     * <code>optional string context = 4 [json_name = "context"];</code>
+     * <code>optional string context = 3 [json_name = "context"];</code>
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string context = 4 [json_name = "context"];</code>
+     * <code>optional string context = 3 [json_name = "context"];</code>
      * @return The context.
      */
     public java.lang.String getContext() {
@@ -946,7 +849,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string context = 4 [json_name = "context"];</code>
+     * <code>optional string context = 3 [json_name = "context"];</code>
      * @return The bytes for context.
      */
     public com.google.protobuf.ByteString
@@ -963,7 +866,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string context = 4 [json_name = "context"];</code>
+     * <code>optional string context = 3 [json_name = "context"];</code>
      * @param value The context to set.
      * @return This builder for chaining.
      */
@@ -971,22 +874,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       context_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string context = 4 [json_name = "context"];</code>
+     * <code>optional string context = 3 [json_name = "context"];</code>
      * @return This builder for chaining.
      */
     public Builder clearContext() {
       context_ = getDefaultInstance().getContext();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string context = 4 [json_name = "context"];</code>
+     * <code>optional string context = 3 [json_name = "context"];</code>
      * @param value The bytes for context to set.
      * @return This builder for chaining.
      */
@@ -995,21 +898,21 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       context_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private java.lang.Object instruction_ = "";
     /**
-     * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+     * <code>optional string instruction = 4 [json_name = "instruction"];</code>
      * @return Whether the instruction field is set.
      */
     public boolean hasInstruction() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+     * <code>optional string instruction = 4 [json_name = "instruction"];</code>
      * @return The instruction.
      */
     public java.lang.String getInstruction() {
@@ -1025,7 +928,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+     * <code>optional string instruction = 4 [json_name = "instruction"];</code>
      * @return The bytes for instruction.
      */
     public com.google.protobuf.ByteString
@@ -1042,7 +945,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+     * <code>optional string instruction = 4 [json_name = "instruction"];</code>
      * @param value The instruction to set.
      * @return This builder for chaining.
      */
@@ -1050,22 +953,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       instruction_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+     * <code>optional string instruction = 4 [json_name = "instruction"];</code>
      * @return This builder for chaining.
      */
     public Builder clearInstruction() {
       instruction_ = getDefaultInstance().getInstruction();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string instruction = 5 [json_name = "instruction"];</code>
+     * <code>optional string instruction = 4 [json_name = "instruction"];</code>
      * @param value The bytes for instruction to set.
      * @return This builder for chaining.
      */
@@ -1074,7 +977,47 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       instruction_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int messageThreshold_ ;
+    /**
+     * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @return Whether the messageThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageThreshold() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @return The messageThreshold.
+     */
+    @java.lang.Override
+    public int getMessageThreshold() {
+      return messageThreshold_;
+    }
+    /**
+     * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @param value The messageThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageThreshold(int value) {
+
+      messageThreshold_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional int32 message_threshold = 5 [json_name = "messageThreshold"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessageThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      messageThreshold_ = 0;
       onChanged();
       return this;
     }
