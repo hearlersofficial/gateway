@@ -36,9 +36,7 @@ import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
 import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
 import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
 
-public interface CounselingService {
-    // Counselor
-    List<Counselor> findCounselors(FindCounselorsRequest request);
+public interface CounselPromptService {
 
     // PromptVersion
     PromptVersion findPromptVersionById(FindPromptVersionByIdRequest request);

@@ -42,100 +42,94 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class CounselingServiceImpl implements CounselingService {
-    private final PromptPersistor persistor;
-    private final PromptReader reader;
-    private final CounselorReader counselorReader;
-    // TODO: 새로운 서비스 필드 주입 필요 (CounselService, MessageService 등)
+public class CounselPromptServiceImpl implements CounselPromptService {
+    private final PromptPersistor promptPersistor;
+    private final PromptReader promptReader;
 
-    @Override
-    public List<Counselor> findCounselors(FindCounselorsRequest request) {
-        return counselorReader.findCounselors(request);
-    }
-    
+
     // PromptVersion 관련 메서드
     @Override
     public PromptVersion findPromptVersionById(FindPromptVersionByIdRequest request) {
-        return reader.findPromptVersionById(request);
+        return promptReader.findPromptVersionById(request);
     }
 
     @Override
     public List<PromptVersion> findPromptVersions(FindPromptVersionsRequest request) {
-        return reader.findPromptVersions(request);
+        return promptReader.findPromptVersions(request);
     }
 
     @Override
     public PromptVersion findTemporaryVersion(FindTemporaryVersionRequest request) {
-        return reader.findTemporaryVersion(request);
+        return promptReader.findTemporaryVersion(request);
     }
 
     @Override
     public PromptVersion loadExistingPromptVersion(LoadExistingPromptVersionRequest request) {
-        return reader.loadExistingPromptVersion(request);
+        return promptReader.loadExistingPromptVersion(request);
     }
 
     @Override
     public PromptVersion saveTemporaryVersion(SaveTemporaryVersionRequest request) {
-        return persistor.saveTemporaryVersion(request);
+        return promptPersistor.saveTemporaryVersion(request);
     }
 
     @Override
     public PromptVersion activatePromptVersion(ActivatePromptVersionRequest request) {
-        return persistor.activatePromptVersion(request);
+        return promptPersistor.activatePromptVersion(request);
     }
     
     // PromptActivateHistory 관련 메서드
     @Override
     public List<PromptActivateHistory> findPromptActivateHistories(FindPromptActivateHistoriesRequest request) {
-        return reader.findPromptActivateHistories(request);
+        return promptReader.findPromptActivateHistories(request);
     }
 
     // TonePrompt 관련 메서드
     @Override
     public TonePrompt updateTonePrompt(UpdateTonePromptRequest request) {
-        return persistor.updateTonePrompt(request);
+        return promptPersistor.updateTonePrompt(request);
     }
 
     @Override
     public TonePrompt findTonePromptById(FindTonePromptByIdRequest request) {
-        return reader.findTonePromptById(request);
+        return promptReader.findTonePromptById(request);
     }
 
     // PersonaPrompt 관련 메서드
     @Override
     public PersonaPrompt updatePersonaPrompt(UpdatePersonaPromptRequest request) {
-        return persistor.updatePersonaPrompt(request);
+        return promptPersistor.updatePersonaPrompt(request);
     }
 
     @Override
     public PersonaPrompt findPersonaPromptById(FindPersonaPromptByIdRequest request) {
-        return reader.findPersonaPromptById(request);
+        return promptReader.findPersonaPromptById(request);
     }
 
     // CounselTechnique 관련 메서드
     @Override
     public CounselTechnique createCounselTechnique(CreateCounselTechniqueRequest request) {
-        return persistor.createCounselTechnique(request);
+        return promptPersistor.createCounselTechnique(request);
     }
 
     @Override
     public CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request) {
-        return persistor.updateCounselTechnique(request);
+        return promptPersistor.updateCounselTechnique(request);
     }
 
     @Override
     public List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request) {
-        return persistor.saveCounselTechniqueSequence(request);
+        return promptPersistor.saveCounselTechniqueSequence(request);
     }
 
     @Override
     public CounselTechnique findCounselTechniqueById(FindCounselTechniqueByIdRequest request) {
-        return reader.findCounselTechniqueById(request);
+        return promptReader.findCounselTechniqueById(request);
     }
 
     @Override
     public List<CounselTechnique> findOrderedCounselTechniques(FindOrderedCounselTechniquesRequest request) {
-        return reader.findOrderedCounselTechniques(request);
+        return promptReader.findOrderedCounselTechniques(request);
     }
     
     // Counsel 관련 메서드

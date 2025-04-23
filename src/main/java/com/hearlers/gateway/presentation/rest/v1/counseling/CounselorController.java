@@ -1,11 +1,12 @@
 package com.hearlers.gateway.presentation.rest.v1.counseling;
 
+import com.hearlers.gateway.application.counseling.CounselorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hearlers.gateway.application.counseling.CounselingService;
+import com.hearlers.gateway.application.counseling.CounselPromptService;
 import com.hearlers.gateway.shared.presentation.ResponseDto;
 import com.hearlers.gateway.shared.presentation.ResponseDtoUtil;
 
@@ -25,7 +26,8 @@ import lombok.RequiredArgsConstructor;
 @Tag(name = "상담사", description = "상담사 관련 API")
 public class CounselorController {
 
-    private final CounselingService counselingService;
+    private final CounselPromptService counselPromptService;
+    private final CounselorService counselorService;
     private final CounselorDtoMapper counselorDtoMapper;
     
 
@@ -38,7 +40,7 @@ public class CounselorController {
     @GetMapping("/v1/counselors")
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorsResponse>> getCounselors(@Valid @RequestBody CounselorDto.FindCounselorsRequest request) {
         var findCounselorsRequest = counselorDtoMapper.of(request);
-        var counselors = counselingService.findCounselors(findCounselorsRequest);
+        var counselors = counselorService.findCounselors(findCounselorsRequest);
         var response = counselorDtoMapper.ofGetCounselors(counselors);
 
         return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
