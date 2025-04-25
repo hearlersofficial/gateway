@@ -5,6 +5,7 @@ import java.util.List;
 import com.hearlers.api.proto.v1.model.CounselorGender;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +13,7 @@ import lombok.Setter;
 public class CounselorDto {
 
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담사")
     public static class Counselor {
         @Schema(description = "상담사 ID")
@@ -35,13 +36,39 @@ public class CounselorDto {
         private String createdAt;
         @Schema(description = "상담사 수정 시간")
         private String updatedAt;
-        @Schema(description = "상담사 삭제 시간")
+        @Schema(description = "상담사 삭제 시간", nullable = true)
+        private String deletedAt;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "톤")
+    public static class Tone {
+        @Schema(description = "톤 ID")
+        private String id;
+        @Schema(description = "톤 이름", example = "공감")
+        private String name;
+        @Schema(description = "톤 설명")
+        private String description;
+        @Schema(description = "톤 생성 시간")
+        private String createdAt;
+        @Schema(description = "톤 수정 시간")
+        private String updatedAt;
+        @Schema(description = "톤 삭제 시간", nullable = true)
         private String deletedAt;
     }
 
 
     @Getter
-    @Setter
+    @Builder
+    @Schema(description = "상담사 단일 조회 응답")
+    public static class FindCounselorResponse {
+        @Schema(description = "상담사")
+        private Counselor counselor;
+    }
+
+    @Getter
+    @Builder
     @Schema(description = "상담사 조회 요청")
     public static class FindCounselorsRequest {
         @Schema(description = "톤 ID (선택)", example = "tone_123456", nullable = true)
@@ -49,10 +76,35 @@ public class CounselorDto {
     }
 
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담사 조회 응답")
     public static class FindCounselorsResponse {
         @Schema(description = "상담사 목록")
         private List<Counselor> counselors;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "톤 ID로 조회 응답")
+    public static class FindToneResponse {
+        @Schema(description = "톤 정보")
+        private Tone tone;
+    }
+
+
+    @Getter
+    @Builder
+    @Schema(description = "톤 목록 조회 요청")
+    public static class FindTonesRequest {
+        @Schema(description = "톤 이름 (선택)", example = "공감", nullable = true)
+        private String name;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "톤 목록 조회 응답")
+    public static class FindTonesResponse {
+        @Schema(description = "톤 목록")
+        private List<Tone> tones;
     }
 }

@@ -9,7 +9,7 @@ import com.hearlers.api.proto.v1.service.FindCounselorsRequest;
 import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
 import com.hearlers.api.proto.v1.service.FindTonesRequest;
 
-public interface CounselorReader {
+public interface CounselorService {
     // Counselor
     Counselor findCounselorById(FindCounselorByIdRequest request);
     List<Counselor> findCounselors(FindCounselorsRequest request);

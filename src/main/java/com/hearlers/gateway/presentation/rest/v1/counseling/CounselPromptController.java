@@ -18,7 +18,7 @@ import com.hearlers.api.proto.v1.model.PromptActivateHistory;
 import com.hearlers.api.proto.v1.model.PromptVersion;
 import com.hearlers.api.proto.v1.model.TonePrompt;
 import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest;
-import com.hearlers.gateway.application.counseling.CounselingService;
+import com.hearlers.gateway.application.counseling.CounselPromptService;
 import com.hearlers.gateway.shared.presentation.ResponseDto;
 import com.hearlers.gateway.shared.presentation.ResponseDtoUtil;
 
@@ -36,7 +36,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Tag(name = "상담 프롬프트", description = "상담 프롬프트 관련 API")
 public class CounselPromptController {
-    private final CounselingService counselingService;
+    private final CounselPromptService counselPromptService;
     private final CounselPromptDtoMapper counselPromptDtoMapper;
 
     //----------------------
@@ -53,7 +53,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindPromptVersionsResponseDto>> getPromptVersions(
             @Valid CounselPromptDto.FindPromptVersionsRequestDto request) {
         var findPromptVersionsRequest = counselPromptDtoMapper.toFindPromptVersionsRequest(request);
-        List<PromptVersion> promptVersions = counselingService.findPromptVersions(findPromptVersionsRequest);
+        List<PromptVersion> promptVersions = counselPromptService.findPromptVersions(findPromptVersionsRequest);
         var response = counselPromptDtoMapper.toFindPromptVersionsResponseDto(promptVersions);
         
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 목록 조회 성공");
@@ -71,7 +71,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindPromptVersionByIdResponseDto>> getPromptVersionById(
             @PathVariable(name = "prompt-version-id", required = true) String promptVersionId) {
         var findPromptVersionByIdRequest = counselPromptDtoMapper.toFindPromptVersionByIdRequest(promptVersionId);
-        PromptVersion promptVersion = counselingService.findPromptVersionById(findPromptVersionByIdRequest);
+        PromptVersion promptVersion = counselPromptService.findPromptVersionById(findPromptVersionByIdRequest);
         var response = counselPromptDtoMapper.toFindPromptVersionByIdResponseDto(promptVersion);
         
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 조회 성공");
@@ -111,7 +111,7 @@ public class CounselPromptController {
     })
     @GetMapping("/prompt-versions/temporary-version")
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindTemporaryVersionResponseDto>> getTemporaryVersion() {
-        PromptVersion promptVersion = counselingService.findTemporaryVersion(null);
+        PromptVersion promptVersion = counselPromptService.findTemporaryVersion(null);
         var response = counselPromptDtoMapper.toFindTemporaryVersionResponseDto(promptVersion);
         
         return ResponseDtoUtil.okResponse(response, "임시 프롬프트 버전 조회 성공");
@@ -132,7 +132,7 @@ public class CounselPromptController {
         LoadExistingPromptVersionRequest request = LoadExistingPromptVersionRequest.newBuilder()
                 .setPromptVersionId(promptVersionId)
                 .build();
-        PromptVersion promptVersion = counselingService.loadExistingPromptVersion(request);
+        PromptVersion promptVersion = counselPromptService.loadExistingPromptVersion(request);
         var response = counselPromptDtoMapper.toLoadExistingPromptVersionResponseDto(promptVersion);
         
         return ResponseDtoUtil.okResponse(response, "기존 프롬프트 버전 로드 성공");
@@ -153,7 +153,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.SaveTemporaryVersionResponseDto>> saveVersion(
             @Valid @RequestBody CounselPromptDto.SaveTemporaryVersionRequestDto request) {
         var saveTemporaryVersionRequest = counselPromptDtoMapper.toSaveTemporaryVersionRequest(request);
-        PromptVersion promptVersion = counselingService.saveTemporaryVersion(saveTemporaryVersionRequest);
+        PromptVersion promptVersion = counselPromptService.saveTemporaryVersion(saveTemporaryVersionRequest);
         var response = counselPromptDtoMapper.toSaveTemporaryVersionResponseDto(promptVersion);
         
         return ResponseDtoUtil.okResponse(response, "임시 버전 저장 성공");
@@ -172,7 +172,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.ActivatePromptVersionResponseDto>> activatePromptVersion(
             @PathVariable(name = "prompt-version-id", required = true) String promptVersionId) {
         var activatePromptVersionRequest = counselPromptDtoMapper.toActivatePromptVersionRequest(promptVersionId);
-        PromptVersion promptVersion = counselingService.activatePromptVersion(activatePromptVersionRequest);
+        PromptVersion promptVersion = counselPromptService.activatePromptVersion(activatePromptVersionRequest);
         var response = counselPromptDtoMapper.toActivatePromptVersionResponseDto(promptVersion);
         
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 활성화 성공");
@@ -195,7 +195,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindPersonaPromptByIdResponseDto>> getPersonaPromptById(
             @PathVariable(name = "persona-prompt-id", required = true) String personaPromptId) {
         var findPersonaPromptByIdRequest = counselPromptDtoMapper.toFindPersonaPromptByIdRequest(personaPromptId);
-        PersonaPrompt personaPrompt = counselingService.findPersonaPromptById(findPersonaPromptByIdRequest);
+        PersonaPrompt personaPrompt = counselPromptService.findPersonaPromptById(findPersonaPromptByIdRequest);
         var response = counselPromptDtoMapper.toFindPersonaPromptByIdResponseDto(personaPrompt);
         
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 조회 성공");
@@ -212,7 +212,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.UpdatePersonaPromptResponseDto>> updatePersonaPrompt(
             @Valid @RequestBody CounselPromptDto.UpdatePersonaPromptRequestDto request) {
         var updatePersonaPromptRequest = counselPromptDtoMapper.toUpdatePersonaPromptRequest(request);
-        PersonaPrompt personaPrompt = counselingService.updatePersonaPrompt(updatePersonaPromptRequest);
+        PersonaPrompt personaPrompt = counselPromptService.updatePersonaPrompt(updatePersonaPromptRequest);
         var response = counselPromptDtoMapper.toUpdatePersonaPromptResponseDto(personaPrompt);
         
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 업데이트 성공");
@@ -235,7 +235,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindTonePromptByIdResponseDto>> getTonePromptById(
             @PathVariable(name = "tone-prompt-id", required = true) String tonePromptId) {
         var findTonePromptByIdRequest = counselPromptDtoMapper.toFindTonePromptByIdRequest(tonePromptId);
-        TonePrompt tonePrompt = counselingService.findTonePromptById(findTonePromptByIdRequest);
+        TonePrompt tonePrompt = counselPromptService.findTonePromptById(findTonePromptByIdRequest);
         var response = counselPromptDtoMapper.toFindTonePromptByIdResponseDto(tonePrompt);
         
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 조회 성공");
@@ -252,7 +252,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.UpdateTonePromptResponseDto>> updateTonePrompt(
             @Valid @RequestBody CounselPromptDto.UpdateTonePromptRequestDto request) {
         var updateTonePromptRequest = counselPromptDtoMapper.toUpdateTonePromptRequest(request);
-        TonePrompt tonePrompt = counselingService.updateTonePrompt(updateTonePromptRequest);
+        TonePrompt tonePrompt = counselPromptService.updateTonePrompt(updateTonePromptRequest);
         var response = counselPromptDtoMapper.toUpdateTonePromptResponseDto(tonePrompt);
         
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 업데이트 성공");
@@ -275,7 +275,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindCounselTechniqueByIdResponseDto>> getCounselTechniqueById(
             @PathVariable(name = "counsel-technique-id") String counselTechniqueId) {
         var findCounselTechniqueByIdRequest = counselPromptDtoMapper.toFindCounselTechniqueByIdRequest(counselTechniqueId);
-        CounselTechnique counselTechnique = counselingService.findCounselTechniqueById(findCounselTechniqueByIdRequest);
+        CounselTechnique counselTechnique = counselPromptService.findCounselTechniqueById(findCounselTechniqueByIdRequest);
         var response = counselPromptDtoMapper.toFindCounselTechniqueByIdResponseDto(counselTechnique);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 조회 성공");
@@ -298,7 +298,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindOrderedCounselTechniquesResponseDto>> getOrderedCounselTechniques(
             @RequestParam(required = true, name = "first-counsel-technique-id") String firstCounselTechniqueId) {
         var findOrderedCounselTechniquesRequest = counselPromptDtoMapper.toFindOrderedCounselTechniquesRequest(firstCounselTechniqueId);
-        List<CounselTechnique> counselTechniques = counselingService.findOrderedCounselTechniques(findOrderedCounselTechniquesRequest);
+        List<CounselTechnique> counselTechniques = counselPromptService.findOrderedCounselTechniques(findOrderedCounselTechniquesRequest);
         var response = counselPromptDtoMapper.toFindOrderedCounselTechniquesResponseDto(counselTechniques);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 목록 조회 성공");
@@ -315,7 +315,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.CreateCounselTechniqueResponseDto>> createCounselTechnique(
             @Valid @RequestBody CounselPromptDto.CreateCounselTechniqueRequestDto request) {
         var createCounselTechniqueRequest = counselPromptDtoMapper.toCreateCounselTechniqueRequest(request);
-        CounselTechnique counselTechnique = counselingService.createCounselTechnique(createCounselTechniqueRequest);
+        CounselTechnique counselTechnique = counselPromptService.createCounselTechnique(createCounselTechniqueRequest);
         var response = counselPromptDtoMapper.toCreateCounselTechniqueResponseDto(counselTechnique);
         
         return ResponseDtoUtil.createdResponse(response, "상담 기법 생성 성공");
@@ -336,7 +336,7 @@ public class CounselPromptController {
             @Valid @RequestBody CounselPromptDto.UpdateCounselTechniqueRequestDto request) {
         request.setCounselTechniqueId(counselTechniqueId);
         var updateCounselTechniqueRequest = counselPromptDtoMapper.toUpdateCounselTechniqueRequest(request);
-        CounselTechnique counselTechnique = counselingService.updateCounselTechnique(updateCounselTechniqueRequest);
+        CounselTechnique counselTechnique = counselPromptService.updateCounselTechnique(updateCounselTechniqueRequest);
         var response = counselPromptDtoMapper.toUpdateCounselTechniqueResponseDto(counselTechnique);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 업데이트 성공");
@@ -353,7 +353,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.SaveCounselTechniqueSequenceResponseDto>> saveCounselTechniqueSequence(
             @Valid @RequestBody CounselPromptDto.SaveCounselTechniqueSequenceRequestDto request) {
         var saveCounselTechniqueSequenceRequest = counselPromptDtoMapper.toSaveCounselTechniqueSequenceRequest(request);
-        List<CounselTechnique> counselTechniques = counselingService.saveCounselTechniqueSequence(saveCounselTechniqueSequenceRequest);
+        List<CounselTechnique> counselTechniques = counselPromptService.saveCounselTechniqueSequence(saveCounselTechniqueSequenceRequest);
         var response = counselPromptDtoMapper.toSaveCounselTechniqueSequenceResponseDto(counselTechniques);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 시퀀스 저장 성공");
@@ -374,7 +374,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindPromptActivateHistoriesResponseDto>> getPromptActivateHistories(
             @RequestParam(required = false, name = "prompt-version-id") String promptVersionId) {
         var findPromptActivateHistoriesRequest = counselPromptDtoMapper.toFindPromptActivateHistoriesRequest(promptVersionId);
-        List<PromptActivateHistory> promptActivateHistories = counselingService.findPromptActivateHistories(findPromptActivateHistoriesRequest);
+        List<PromptActivateHistory> promptActivateHistories = counselPromptService.findPromptActivateHistories(findPromptActivateHistoriesRequest);
         var response = counselPromptDtoMapper.toFindPromptActivateHistoriesResponseDto(promptActivateHistories);
         
         return ResponseDtoUtil.okResponse(response, "프롬프트 활성화 히스토리 목록 조회 성공");
