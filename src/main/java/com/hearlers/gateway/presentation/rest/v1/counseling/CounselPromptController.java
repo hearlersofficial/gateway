@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import java.util.List;
 
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,7 +52,7 @@ public class CounselPromptController {
     })
     @GetMapping("/prompt-versions")
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindPromptVersionsResponseDto>> getPromptVersions(
-            @Valid CounselPromptDto.FindPromptVersionsRequestDto request) {
+            @Valid @ParameterObject CounselPromptDto.FindPromptVersionsRequestDto request) {
         var findPromptVersionsRequest = counselPromptDtoMapper.toFindPromptVersionsRequest(request);
         List<PromptVersion> promptVersions = counselPromptService.findPromptVersions(findPromptVersionsRequest);
         var response = counselPromptDtoMapper.toFindPromptVersionsResponseDto(promptVersions);

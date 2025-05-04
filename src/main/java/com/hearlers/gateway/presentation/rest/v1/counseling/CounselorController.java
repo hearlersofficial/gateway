@@ -1,8 +1,11 @@
 package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import com.hearlers.gateway.application.counseling.CounselorService;
+
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,8 +40,8 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "상담사 조회 성공"),
             @ApiResponse(responseCode = "400", description = "상담사 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/counselors/{counselorId}")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorResponse>> getCounselor(@PathVariable String counselorId) {
+    @GetMapping("/v1/counselors/{counselor-id}")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorResponse>> getCounselor(@PathVariable("counselor-id") String counselorId) {
         var findCounselorByIdRequest = counselorDtoMapper.toFindCounselorRequest(counselorId);
         var counselor = counselorService.findCounselorById(findCounselorByIdRequest);
         var response = counselorDtoMapper.toFindCounselorResponse(counselor);
@@ -53,7 +56,7 @@ public class CounselorController {
             @ApiResponse(responseCode = "400", description = "상담사 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/counselors")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorsResponse>> getCounselors(@Valid @RequestBody CounselorDto.FindCounselorsRequest request) {
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorsResponse>> getCounselors(@Valid @ParameterObject CounselorDto.FindCounselorsRequest request) {
         var findCounselorsRequest = counselorDtoMapper.toFindCounselorsRequest(request);
         var counselors = counselorService.findCounselors(findCounselorsRequest);
         var response = counselorDtoMapper.toFindCounselorsResponse(counselors);
@@ -66,8 +69,8 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "톤 조회 성공"),
             @ApiResponse(responseCode = "400", description = "톤 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/tones/{toneId}")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindToneResponse>> getTone(@PathVariable String toneId) {
+    @GetMapping("/v1/tones/{tone-id}")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindToneResponse>> getTone(@PathVariable("tone-id") String toneId) {
         var findToneByIdRequest = counselorDtoMapper.toFindToneRequest(toneId);
         var tone = counselorService.findToneById(findToneByIdRequest);
         var response = counselorDtoMapper.toFindToneResponse(tone);
@@ -80,7 +83,7 @@ public class CounselorController {
             @ApiResponse(responseCode = "400", description = "톤 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/tones")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindTonesResponse>> getTones(@Valid @RequestBody CounselorDto.FindTonesRequest request) {
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindTonesResponse>> getTones(@Valid @ParameterObject CounselorDto.FindTonesRequest request) {
         var findTonesRequest = counselorDtoMapper.toFindTonesRequest(request);
         var tones = counselorService.findTones(findTonesRequest);
         var response = counselorDtoMapper.toFindTonesResponse(tones);
