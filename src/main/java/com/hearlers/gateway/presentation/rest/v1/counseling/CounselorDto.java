@@ -107,4 +107,104 @@ public class CounselorDto {
         @Schema(description = "톤 목록")
         private List<Tone> tones;
     }
+    
+    // 상담사 생성 요청
+    @Getter
+    @Setter
+    @Builder
+    @Schema(description = "상담사 생성 요청")
+    public static class CreateCounselorRequest {
+        @Schema(description = "톤 ID", required = true)
+        private String toneId;
+        
+        @Schema(description = "상담사 이름", required = true)
+        private String name;
+        
+        @Schema(description = "상담사 설명", required = true)
+        private String description;
+        
+        @Schema(description = "상담사 성별", required = true)
+        private CounselorGender gender;
+    }
+    
+    // 상담사 생성 응답
+    @Getter
+    @Builder
+    @Schema(description = "상담사 생성 응답")
+    public static class CreateCounselorResponse {
+        @Schema(description = "생성된 상담사")
+        private Counselor counselor;
+    }
+    
+    // 상담사 업데이트 요청
+    @Getter
+    @Setter
+    @Builder
+    @Schema(description = "상담사 업데이트 요청")
+    public static class UpdateCounselorRequest {
+        @Schema(description = "톤 ID", nullable = true)
+        private String toneId;
+        
+        @Schema(description = "상담사 이름", nullable = true)
+        private String name;
+        
+        @Schema(description = "상담사 설명", nullable = true)
+        private String description;
+        
+        @Schema(description = "상담사 성별", nullable = true)
+        private CounselorGender gender;
+    }
+    
+    // 상담사 업데이트 응답
+    @Getter
+    @Builder
+    @Schema(description = "상담사 업데이트 응답")
+    public static class UpdateCounselorResponse {
+        @Schema(description = "업데이트된 상담사")
+        private Counselor counselor;
+    }
+    
+    // 톤 생성 요청
+    @Getter
+    @Setter
+    @Builder
+    @Schema(description = "톤 생성 요청")
+    public static class CreateToneRequest {
+        @Schema(description = "톤 이름", required = true)
+        private String name;
+        
+        @Schema(description = "톤 설명", required = true)
+        private String description;
+    }
+    
+    // 톤 생성 응답
+    @Getter
+    @Builder
+    @Schema(description = "톤 생성 응답")
+    public static class CreateToneResponse {
+        @Schema(description = "생성된 톤")
+        private Tone tone;
+    }
+    
+    // 톤 업데이트 요청
+    @Getter
+    @Setter
+    @Builder
+    @Schema(description = "톤 업데이트 요청")
+    public static class UpdateToneRequest {
+        @Schema(description = "톤 이름", nullable = true)
+        private String name;
+        
+        @Schema(description = "톤 설명", nullable = true)
+        private String description;
+    }
+    
+    // 톤 업데이트 응답
+    @Getter
+    @Builder
+    @Schema(description = "톤 업데이트 응답")
+    public static class UpdateToneResponse {
+        @Schema(description = "업데이트된 톤")
+        private Tone tone;
+    }
 }
