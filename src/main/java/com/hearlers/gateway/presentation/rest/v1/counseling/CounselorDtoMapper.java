@@ -71,4 +71,90 @@ public interface CounselorDtoMapper {
                         .toList())
                 .build();
     }
+    
+    // Counselor Create
+    default CreateCounselorRequest toCreateCounselorRequest(CounselorDto.CreateCounselorRequest request) {
+        return CreateCounselorRequest.newBuilder()
+                .setToneId(request.getToneId())
+                .setName(request.getName())
+                .setDescription(request.getDescription())
+                .setCounselorGender(request.getGender())
+                .build();
+    }
+    
+    default CounselorDto.CreateCounselorResponse toCreateCounselorResponse(Counselor counselor) {
+        CounselorDto.Counselor counselorDto = of(counselor);
+        return CounselorDto.CreateCounselorResponse.builder()
+                .counselor(counselorDto)
+                .build();
+    }
+    
+    // Counselor Update
+    default UpdateCounselorRequest toUpdateCounselorRequest(String counselorId, CounselorDto.UpdateCounselorRequest request) {
+        UpdateCounselorRequest.Builder builder = UpdateCounselorRequest.newBuilder()
+                .setCounselorId(counselorId);
+        
+        if (request.getToneId() != null) {
+            builder.setToneId(request.getToneId());
+        }
+        
+        if (request.getName() != null) {
+            builder.setName(request.getName());
+        }
+        
+        if (request.getDescription() != null) {
+            builder.setDescription(request.getDescription());
+        }
+        
+        if (request.getGender() != null) {
+            builder.setCounselorGender(request.getGender());
+        }
+        
+        return builder.build();
+    }
+    
+    default CounselorDto.UpdateCounselorResponse toUpdateCounselorResponse(Counselor counselor) {
+        CounselorDto.Counselor counselorDto = of(counselor);
+        return CounselorDto.UpdateCounselorResponse.builder()
+                .counselor(counselorDto)
+                .build();
+    }
+    
+    // Tone Create
+    default CreateToneRequest toCreateToneRequest(CounselorDto.CreateToneRequest request) {
+        return CreateToneRequest.newBuilder()
+                .setName(request.getName())
+                .setDescription(request.getDescription())
+                .build();
+    }
+    
+    default CounselorDto.CreateToneResponse toCreateToneResponse(Tone tone) {
+        CounselorDto.Tone toneDto = of(tone);
+        return CounselorDto.CreateToneResponse.builder()
+                .tone(toneDto)
+                .build();
+    }
+    
+    // Tone Update
+    default UpdateToneRequest toUpdateToneRequest(String toneId, CounselorDto.UpdateToneRequest request) {
+        UpdateToneRequest.Builder builder = UpdateToneRequest.newBuilder()
+                .setToneId(toneId);
+                
+        if (request.getName() != null) {
+            builder.setName(request.getName());
+        }
+        
+        if (request.getDescription() != null) {
+            builder.setDescription(request.getDescription());
+        }
+        
+        return builder.build();
+    }
+    
+    default CounselorDto.UpdateToneResponse toUpdateToneResponse(Tone tone) {
+        CounselorDto.Tone toneDto = of(tone);
+        return CounselorDto.UpdateToneResponse.builder()
+                .tone(toneDto)
+                .build();
+    }
 }
