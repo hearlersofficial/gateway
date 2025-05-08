@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.rest.v1.auth;
 
 import java.io.IOException;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 
 @RestController
+@Slf4j
 @RequiredArgsConstructor
 @Tag(name = "인증", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
@@ -89,6 +91,7 @@ public class AuthController {
     public void kakaoCallback(@RequestParam(value = "code", required = false) String code, @RequestParam("state") String state,
                               HttpServletResponse response) throws IOException {
         // 퍼사드를 통해 카카오 로그인 콜백 처리
+
         AuthInfo.TokenInfo tokenInfo = authFacade.handleKakaoCallback(code, state);
 
         // 발급받은 토큰 쿠키에 저장

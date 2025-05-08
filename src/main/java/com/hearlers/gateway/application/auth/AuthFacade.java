@@ -6,12 +6,14 @@ import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import com.hearlers.gateway.config.KakaoProperties;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Component
+@Slf4j
 @RequiredArgsConstructor
 public class AuthFacade {
     private final KakaoProperties kakaoProperties;
@@ -35,13 +37,12 @@ public class AuthFacade {
      * 카카오 로그인 URL 생성
      */
     public String generateKakaoLoginUrl(String userId) {
-        StringBuilder url = new StringBuilder();
-        url.append("https://kauth.kakao.com/oauth/authorize?");
-        url.append("client_id=").append(kakaoProperties.getClientId());
-        url.append("&redirect_uri=").append(kakaoProperties.getRedirectUri());
-        url.append("&response_type=code");
-        url.append("&state=").append(userId);
-        return url.toString();
+
+        return "https://kauth.kakao.com/oauth/authorize?" +
+                "client_id=" + kakaoProperties.getClientId() +
+                "&redirect_uri=" + kakaoProperties.getRedirectUri() +
+                "&response_type=code" +
+                "&state=" + userId;
     }
 
     /**
