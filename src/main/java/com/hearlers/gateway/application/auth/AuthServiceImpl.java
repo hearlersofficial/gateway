@@ -1,15 +1,13 @@
 package com.hearlers.gateway.application.auth;
 
+import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.gateway.presentation.rest.exception.HttpException;
+import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+import lombok.val;
 import org.springframework.stereotype.Service;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
-import com.hearlers.api.proto.v1.service.ConnectAuthChannelRequest;
-import com.hearlers.api.proto.v1.service.ConnectAuthChannelResponse;
-import com.hearlers.api.proto.v1.service.InitializeUserRequest;
-import com.hearlers.api.proto.v1.service.InitializeUserResponse;
-import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
-import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -35,12 +33,56 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
+    public AuthInfo.TokenInfo rotateRefreshToken(String userId, AuthChannel authChannel, String refreshToken) {
+        // 입력 로그
+        log.info("rotateRefreshToken - userId: {}, authChannel: {}, refreshToken: {}", userId, authChannel, refreshToken);
+        boolean isTokenExist = authPersistor.verifyRefreshToken(
+                VerifyRefreshTokenRequest.newBuilder().setUserId(userId).setToken(refreshToken).build()
+        ).getSuccess();
+        if( !isTokenExist ) {
+            throw new HttpException(HttpResultCode.INVALID_TOKEN, "Refresh token does not exist");
+        }
+        boolean validationResult = jwtTokenManager.validateToken(refreshToken);
+        if( !validationResult ) {
+            throw new HttpException(HttpResultCode.REFRESH_TOKEN_EXPIRED, "Refresh token is expired");
+        }
+        // Refresh token 이 유효한 경우 새로운 Refresh token 발급
+        val tokenInfo = jwtTokenManager.generateToken(
+                AuthCommand.GenerateTokenCommand.builder()
+                        .id(userId)
+                        .authChannel(authChannel)
+                        .build(),
+                true,
+                true
+        );
+        // Refresh token 저장
+        SaveRefreshTokenRequest saveRefreshTokenRequest = SaveRefreshTokenRequest.newBuilder()
+                .setUserId(userId)
+                .setToken(tokenInfo.getRefreshToken())
+                .setExpiresAt(tokenInfo.getRefreshTokenExpiresAt().toString())
+                .build();
+        SaveRefreshTokenResponse saveRefreshTokenResponse = authPersistor.saveRefreshToken(saveRefreshTokenRequest);
+        if( !saveRefreshTokenResponse.getSuccess() ) {
+            throw new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR, "Failed to save refresh token");
+        }
+        return tokenInfo;
+    }
+
+    @Override
     public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean withRefreshToken, boolean withAdminClaim) {
         return jwtTokenManager.generateToken(command, withRefreshToken, withAdminClaim);
     }
 
+
+    /**
+     * 카카오 로그인
+     * @param code 카카오 로그인 인증 코드
+     * @param userId 사용자 ID (비로그인 유저 없이 실행 시 null)
+     * @return 카카오 로그인 인증 코드
+     */
     @Override
     public AuthUser kakaoLogin(String code, String userId) {
+        
         var tokenRequest = AuthCommand.GetOAuthAccessTokenRequest.from(code, userId, null);
         var oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(
                 AuthChannel.AUTH_CHANNEL_KAKAO);
