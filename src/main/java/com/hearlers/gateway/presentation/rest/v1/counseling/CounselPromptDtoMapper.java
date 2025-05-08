@@ -3,9 +3,7 @@ package com.hearlers.gateway.presentation.rest.v1.counseling;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.NullValueCheckStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import com.hearlers.api.proto.v1.model.CounselTechnique;
 import com.hearlers.api.proto.v1.model.CounselorScopedPrompt;
@@ -37,10 +35,16 @@ import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
 public interface CounselPromptDtoMapper {
     
     // PromptVersion 관련 매핑
+
+    @Mappings({
+            @Mapping(source = "counselorScopedPromptsList", target = "counselorScopedPrompts"),
+            @Mapping(source = "toneScopedPromptsList", target = "toneScopedPrompts")
+    })
     CounselPromptDto.PromptVersionResponseDto of(PromptVersion promptVersion);
     CounselPromptDto.CounselorScopedPromptResponseDto of(CounselorScopedPrompt counselorScopedPrompt);
     CounselPromptDto.ToneScopedPromptResponseDto of(ToneScopedPrompt toneScopedPrompt);
-    
+
+
     // PersonaPrompt 관련 매핑
     CounselPromptDto.PersonaPromptResponseDto of(PersonaPrompt personaPrompt);
     
