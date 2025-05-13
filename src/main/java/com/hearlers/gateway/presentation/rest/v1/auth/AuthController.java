@@ -1,8 +1,12 @@
 package com.hearlers.gateway.presentation.rest.v1.auth;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +24,7 @@ import com.hearlers.gateway.shared.presentation.ResponseDto;
 import com.hearlers.gateway.shared.presentation.ResponseDtoUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -30,13 +35,16 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
-@Slf4j
 @RequiredArgsConstructor
 @Tag(name = "인증", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
+    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
     private final AuthFacade authFacade;
+    private final ObjectMapper objectMapper;
     private static final int ACCESS_TOKEN_MAX_AGE = 60 * 60; // 1시간
     private static final int REFRESH_TOKEN_MAX_AGE = 60 * 60 * 24 * 7; // 7일
     private static final String REFRESH_TOKEN_COOKIE = "refreshToken";
@@ -70,29 +78,47 @@ public class AuthController {
         return ResponseDtoUtil.okResponse(tokenResponseDto, "비로그인 유저 생성 성공");
     }
 
-    @Operation(summary = "카카오 로그인 요청", description = "카카오 로그인을 위한 인증 코드 요청, 카카오로 리다이렉트")
+    @Operation(summary = "카카오 로그인 요청", description = "카카오 로그인을 위한 인증 코드 요청, 카카오로 리다이렉트. swagger에서는 사용 불가. a 태그로 접근")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "302", description = "카카오로 리다이렉트"),
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/auth/login/kakao")
-    public void kakao(@RequestAttribute(value = "userId" , required = false) String userId, HttpServletResponse response) throws IOException {
+    public void kakao(
+            @RequestAttribute(value = "userId", required = false) String userId,
+            @RequestParam(value = "redirect-url", required = true)
+            @Parameter(description = "로그인 후 리다이렉트할 클라이언트 URL", required = true) 
+            String redirectUrl,
+            HttpServletResponse response) throws IOException {
+
+        // state 정보 구성 (userId와 redirectUrl)
+        StateInfo stateInfo = new StateInfo(userId, redirectUrl);
+        String encodedState = encodeState(stateInfo);
+        
         // 퍼사드를 통해 카카오 로그인 URL 생성
-        String redirectUrl = authFacade.generateKakaoLoginUrl(userId);
-        response.sendRedirect(redirectUrl);
+        String kakaoAuthUrl = authFacade.generateKakaoLoginUrl(encodedState);
+        response.sendRedirect(kakaoAuthUrl);
     }
 
+    @SecurityRequirements
     @Operation(summary = "카카오 로그인 콜백", description = "카카오 로그인을 통해 받은 인증코드 바탕으로 액세스토큰과 리프레시토큰 발급 후 쿠키에 저장")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "302", description = "카카오 로그인 유저 생성 성공, 쿠키에 accessToken과 accessTokenExpiresAt, refreshToken과 refreshTokenExpiresAt 저장"),
             @ApiResponse(responseCode = "400", description = "카카오 로그인 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/auth/callback/kakao")
-    public void kakaoCallback(@RequestParam(value = "code", required = false) String code, @RequestParam("state") String state,
-                              HttpServletResponse response) throws IOException {
-        // 퍼사드를 통해 카카오 로그인 콜백 처리
+    public void kakaoCallback(
+            @RequestParam(value = "code", required = false) String code, 
+            @RequestParam("state") String encodedState,
+            HttpServletResponse response) throws IOException {
+        
+        // state 디코딩
+        StateInfo stateInfo = decodeState(encodedState);
+        String userId = stateInfo.getUserId();
+        String clientRedirectUrl = stateInfo.getRedirectUrl();
 
-        AuthInfo.TokenInfo tokenInfo = authFacade.handleKakaoCallback(code, state);
+        // 퍼사드를 통해 카카오 로그인 콜백 처리
+        AuthInfo.TokenInfo tokenInfo = authFacade.handleKakaoCallback(code, userId);
 
         // 발급받은 토큰 쿠키에 저장
         addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE);
@@ -100,7 +126,8 @@ public class AuthController {
         addCookieToResponse(response, tokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE);
         addCookieToResponse(response, tokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE);
 
-        response.sendRedirect("/");
+        // 클라이언트로 리다이렉트
+        response.sendRedirect(clientRedirectUrl);
     }
 
     @Operation(summary = "액세스 토큰 재발급", description = "리프레시 토큰으로 액세스 토큰 재발급")
@@ -153,5 +180,64 @@ public class AuthController {
             }
         }
         throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "리프레시 토큰이 없습니다.");
+    }
+    
+    /**
+     * state 정보를 Base64로 인코딩
+     */
+    private String encodeState(StateInfo stateInfo) {
+        try {
+            String stateJson = objectMapper.writeValueAsString(stateInfo);
+            return Base64.getUrlEncoder().encodeToString(stateJson.getBytes(StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            log.error("state 인코딩 실패", e);
+            throw new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR, "state 인코딩 실패");
+        }
+    }
+
+    /**
+     * Base64로 인코딩된 state 정보를 디코딩
+     */
+    private StateInfo decodeState(String encodedState) {
+        try {
+            byte[] decodedBytes = Base64.getUrlDecoder().decode(encodedState);
+            String stateJson = new String(decodedBytes, StandardCharsets.UTF_8);
+            return objectMapper.readValue(stateJson, StateInfo.class);
+        } catch (Exception e) {
+            log.error("state 디코딩 실패", e);
+            throw new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR, "state 디코딩 실패");
+        }
+    }
+
+    /**
+     * state 정보를 담는 내부 클래스
+     */
+    private static class StateInfo {
+        private String userId;
+        private String redirectUrl;
+
+        // Jackson을 위한 기본 생성자
+        public StateInfo() {}
+
+        public StateInfo(String userId, String redirectUrl) {
+            this.userId = userId;
+            this.redirectUrl = redirectUrl;
+        }
+
+        public String getUserId() {
+            return userId;
+        }
+
+        public String getRedirectUrl() {
+            return redirectUrl;
+        }
+
+        public void setUserId(String userId) {
+            this.userId = userId;
+        }
+
+        public void setRedirectUrl(String redirectUrl) {
+            this.redirectUrl = redirectUrl;
+        }
     }
 }

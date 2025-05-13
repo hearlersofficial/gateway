@@ -76,7 +76,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthUser kakaoLogin(String code, String userId) {
         // OAuth 토큰 획득 및 사용자 정보 조회
-        var oAuthUserInfo = getKakaoUserInfo(code, userId);
+        var oAuthUserInfo = getOauthUserInfo(code, userId, AuthChannel.AUTH_CHANNEL_KAKAO);
         
         try {
             // gRPC 호출: 사용자 조회
@@ -113,12 +113,9 @@ public class AuthServiceImpl implements AuthService {
         return response;
     }
     
-    /**
-     * 카카오 사용자 정보 획득
-     */
-    private AuthCommand.GetOAuthUserInfoResponse getKakaoUserInfo(String code, String state) {
+    private AuthCommand.GetOAuthUserInfoResponse getOauthUserInfo(String code, String state, AuthChannel authChannel) {
         val tokenRequest = AuthCommand.GetOAuthAccessTokenRequest.from(code, state, null);
-        val oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(AuthChannel.AUTH_CHANNEL_KAKAO);
+        val oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(authChannel);
         val tokenResponse = oAuthProviderClient.getToken(tokenRequest);
         val oAuthUserInfo = oAuthProviderClient.getOAuthUser(AuthCommand.GetOAuthUserInfoRequest.from(tokenResponse.getAccessToken()));
         return AuthCommand.GetOAuthUserInfoResponse.builder().id(oAuthUserInfo.getId()).nickname(oAuthUserInfo.getName()).profileImageUrl(null).build();

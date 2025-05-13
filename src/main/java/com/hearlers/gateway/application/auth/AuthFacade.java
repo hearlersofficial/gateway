@@ -36,13 +36,13 @@ public class AuthFacade {
     /**
      * 카카오 로그인 URL 생성
      */
-    public String generateKakaoLoginUrl(String userId) {
+    public String generateKakaoLoginUrl(String state) {
 
         return "https://kauth.kakao.com/oauth/authorize?" +
                 "client_id=" + kakaoProperties.getClientId() +
                 "&redirect_uri=" + kakaoProperties.getRedirectUri() +
                 "&response_type=code" +
-                "&state=" + userId;
+                "&state=" + state;
     }
 
     /**
