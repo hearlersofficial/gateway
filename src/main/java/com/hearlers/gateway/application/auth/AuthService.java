@@ -10,6 +10,6 @@ public interface AuthService {
     InitializeUserResponse initializeUser(InitializeUserRequest request);
     SaveRefreshTokenResponse saveRefreshToken(SaveRefreshTokenRequest request);
     AuthInfo.TokenInfo rotateRefreshToken(String userId, AuthChannel authChannel, String refreshToken);
-    AuthUser kakaoLogin(String code, String userId);
+    AuthUser kakaoLogin(String code, String state);
     AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean withRefreshToken, boolean withAdminClaim);
 }
