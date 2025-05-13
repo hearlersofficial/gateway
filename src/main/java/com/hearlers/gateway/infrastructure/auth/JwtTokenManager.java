@@ -4,11 +4,12 @@ import java.security.Key;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+import com.hearlers.api.proto.v1.service.*;
 import org.springframework.stereotype.Component;
 
 import com.hearlers.gateway.application.auth.AuthCommand;
 import com.hearlers.gateway.application.auth.AuthInfo;
-import com.hearlers.gateway.application.auth.JwtTokenManager;
+import com.hearlers.gateway.application.auth.TokenManager;
 import com.hearlers.gateway.config.JwtProperties;
 
 import io.jsonwebtoken.Claims;
@@ -20,17 +21,23 @@ import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
+import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub;
+
 
 @Component
 @Slf4j
-public class JwtTokenManagerImpl implements JwtTokenManager {
+public class JwtTokenManager implements TokenManager {
     private final Key key;
     private final long accessTokenExpTime;
     private final long refreshTokenExpTime;
+    private final UserServiceGrpc.UserServiceBlockingStub userServiceBlockingStub;
 
-    public JwtTokenManagerImpl(
-            JwtProperties jwtProperties
+
+    public JwtTokenManager(
+            JwtProperties jwtProperties, UserServiceBlockingStub userServiceBlockingStub
+
     ) {
+        this.userServiceBlockingStub = userServiceBlockingStub;
         byte[] keyBytes = Decoders.BASE64.decode(jwtProperties.getSecret());
         this.key = Keys.hmacShaKeyFor(keyBytes);
         this.accessTokenExpTime = jwtProperties.getAccessExpirationTime();
@@ -98,6 +105,18 @@ public class JwtTokenManagerImpl implements JwtTokenManager {
 
         return false;
     }
+
+    @Override
+    public SaveRefreshTokenResponse saveRefreshToken(SaveRefreshTokenRequest request) {
+        return userServiceBlockingStub.saveRefreshToken(request);
+    }
+
+    @Override
+    public VerifyRefreshTokenResponse verifyRefreshToken(VerifyRefreshTokenRequest request) {
+        return userServiceBlockingStub.verifyRefreshToken(request);
+    }
+
+
     private AuthInfo.TokenInfo createToken(AuthCommand.GenerateTokenCommand command, long accessTokenExpTime, long refreshTokenExpTime,
                                  boolean withRefreshToken, boolean withAdminClaim) {
         Claims claims = Jwts.claims();
@@ -137,4 +156,6 @@ public class JwtTokenManagerImpl implements JwtTokenManager {
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
+
+
 }

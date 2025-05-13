@@ -1,5 +1,6 @@
-package com.hearlers.gateway.infrastructure.auth;
+package com.hearlers.gateway.infrastructure.auth.kakao;
 
+import com.hearlers.gateway.infrastructure.auth.OAuthProviderClient;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.hearlers.gateway.application.auth.AuthCommand;
 import com.hearlers.gateway.application.auth.AuthInfo;
-import com.hearlers.gateway.application.auth.OAuthProviderClient;
 import com.hearlers.gateway.config.KakaoProperties;
 import com.hearlers.gateway.presentation.rest.exception.HttpException;
 import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
@@ -80,5 +80,28 @@ public class KakaoOAuthProviderClient implements OAuthProviderClient {
         }
         AuthInfo.OAuthUserInfo result = response.toOAuthUserInfo();
         return result;
+    }
+    
+    /**
+     * 인증 코드로부터 직접 사용자 정보 조회 (토큰 발급 및 사용자 정보 조회를 한번에 처리)
+     */
+    public AuthInfo.OAuthUserInfo getOAuthUserInfo(String code) {
+        // 1. OAuth 액세스 토큰 요청 생성
+        AuthCommand.GetOAuthAccessTokenRequest tokenRequest = 
+                AuthCommand.GetOAuthAccessTokenRequest.builder()
+                .code(code)
+                .build();
+        
+        // 2. OAuth 제공자로부터 액세스 토큰 획득
+        AuthInfo.TokenInfo tokenInfo = getToken(tokenRequest);
+        
+        // 3. OAuth 제공자로부터 사용자 정보 조회
+        AuthCommand.GetOAuthUserInfoRequest userInfoRequest = 
+                AuthCommand.GetOAuthUserInfoRequest.builder()
+                .accessToken(tokenInfo.getAccessToken())
+                .build();
+        
+        // 4. 사용자 정보 반환
+        return getOAuthUser(userInfoRequest);
     }
 }

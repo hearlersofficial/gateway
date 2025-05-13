@@ -1,4 +1,4 @@
-package com.hearlers.gateway.infrastructure.auth;
+package com.hearlers.gateway.infrastructure.auth.kakao;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;

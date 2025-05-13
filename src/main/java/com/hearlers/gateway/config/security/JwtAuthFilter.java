@@ -13,7 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.hearlers.gateway.application.auth.JwtTokenManager;
+import com.hearlers.gateway.application.auth.TokenManager;
 import com.hearlers.gateway.presentation.rest.exception.HttpException;
 import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
 
@@ -28,13 +28,12 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
-    private final JwtTokenManager jwtUtil;
+    private final TokenManager jwtUtil;
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthFilter.class);
 
     @Override
