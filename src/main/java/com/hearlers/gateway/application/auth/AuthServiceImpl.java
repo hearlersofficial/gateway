@@ -1,95 +1,68 @@
 package com.hearlers.gateway.application.auth;
 
-import com.hearlers.api.proto.v1.service.*;
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
-import lombok.val;
-import org.springframework.stereotype.Service;
-
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
-
+import com.hearlers.api.proto.v1.model.Authority;
+import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.gateway.config.KakaoProperties;
+import com.hearlers.gateway.presentation.rest.exception.HttpException;
+import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
     private final OAuthProviderFactory oAuthProviderFactory;
-    private final AuthPersistor authPersistor;
+    private final AuthStore authStore;
     private final AuthReader authReader;
-    private final JwtTokenManager jwtTokenManager;
+
     
     @Override
     public InitializeUserResponse initializeUser(InitializeUserRequest request) {
-        return authPersistor.initializeUser(request);
+        return authStore.initializeUser(request);
+    }
+
+
+    @Override
+    public String generateOAuthLoginUrl(AuthChannel authChannel, String state) {
+        OAuthProviderService providerService = oAuthProviderFactory.getOAuthProvider(authChannel);
+        return providerService.generateAuthorizationUrl(state);
     }
 
     @Override
-    public SaveRefreshTokenResponse saveRefreshToken(SaveRefreshTokenRequest request) {
-        return authPersistor.saveRefreshToken(request);
-    }
-
-    @Override
-    public AuthInfo.TokenInfo rotateRefreshToken(String userId, AuthChannel authChannel, String refreshToken) {
-        // 입력 로그
-        log.info("rotateRefreshToken - userId: {}, authChannel: {}, refreshToken: {}", userId, authChannel, refreshToken);
-        boolean isTokenExist = authPersistor.verifyRefreshToken(
-                VerifyRefreshTokenRequest.newBuilder().setUserId(userId).setToken(refreshToken).build()
-        ).getSuccess();
-        if( !isTokenExist ) {
-            throw new HttpException(HttpResultCode.INVALID_TOKEN, "Refresh token does not exist");
-        }
-        boolean validationResult = jwtTokenManager.validateToken(refreshToken);
-        if( !validationResult ) {
-            throw new HttpException(HttpResultCode.REFRESH_TOKEN_EXPIRED, "Refresh token is expired");
-        }
-        // Refresh token 이 유효한 경우 새로운 Refresh token 발급
-        val tokenInfo = jwtTokenManager.generateToken(
-                AuthCommand.GenerateTokenCommand.builder()
-                        .id(userId)
-                        .authChannel(authChannel)
-                        .build(),
-                true,
-                true
-        );
+    public AuthUser oauthLogin(AuthChannel authChannel, String code, String state, String userId) {
+        // OAuth Provider 서비스 가져오기
+        OAuthProviderService providerService = oAuthProviderFactory.getOAuthProvider(authChannel);
         
-        // Refresh token 저장
-        saveUserRefreshToken(userId, tokenInfo.getRefreshToken(), tokenInfo.getRefreshTokenExpiresAt().toString());
-        return tokenInfo;
-    }
-
-    @Override
-    public AuthInfo.TokenInfo generateToken(AuthCommand.GenerateTokenCommand command, boolean withRefreshToken, boolean withAdminClaim) {
-        return jwtTokenManager.generateToken(command, withRefreshToken, withAdminClaim);
-    }
-
-    /**
-     * 카카오 로그인
-     * @param code 카카오 로그인 인증 코드
-     * @param userId 사용자 ID (비로그인 유저 없이 실행 시 null)
-     * @return 카카오 로그인 인증 코드
-     */
-    @Override
-    public AuthUser kakaoLogin(String code, String userId) {
-        // OAuth 토큰 획득 및 사용자 정보 조회
-        var oAuthUserInfo = getOauthUserInfo(code, userId, AuthChannel.AUTH_CHANNEL_KAKAO);
+        // OAuth 사용자 정보 조회
+        AuthInfo.OAuthUserInfo oAuthUserInfo = providerService.getUserInfo(code, state);
+        String uniqueId = oAuthUserInfo.getId();
         
+
         try {
-            // gRPC 호출: 사용자 조회
-            log.info("kakaoLogin - userId: {}", userId);
-            // 기존 카카오 로그인 유저의 경우 해당 정보로 덮어씀
-            return authReader.getAuthUser(oAuthUserInfo.getId(), AuthChannel.AUTH_CHANNEL_KAKAO);
+            // 기존 사용자 조회
+            log.info("oauthLogin - userId: {}, uniqueId: {}, authChannel: {}", userId, uniqueId, authChannel);
+            AuthUser authUser = authReader.getAuthUser(uniqueId, authChannel);
+            
+            // 권한 평가 및 필요시 업데이트
+            return evaluateAndUpdateAuthority(authUser, uniqueId, providerService);
         } catch (StatusRuntimeException e) {
-            // 신규 로그인인 경우 (userId가 null)
+            // 신규 로그인의 경우
             if (userId == null) {
-                return handleNewKakaoLogin(oAuthUserInfo);
+                AuthUser newAuthUser = handleNewOAuthLogin(uniqueId, authChannel);
+                return evaluateAndUpdateAuthority(newAuthUser, uniqueId, providerService);
             }
+            // 임시 사용자 연결의 경우
             if (e.getStatus().getCode() == Status.Code.NOT_FOUND) {
-                return handleTempUserKakaoLogin(userId, oAuthUserInfo.getId());
+                AuthUser connectedAuthUser = handleTempUserOAuthLogin(userId, uniqueId, authChannel);
+                return evaluateAndUpdateAuthority(connectedAuthUser, uniqueId, providerService);
             } else {
                 throw e;
             }
@@ -97,58 +70,59 @@ public class AuthServiceImpl implements AuthService {
     }
     
     /**
-     * 리프레시 토큰 저장
+     * 사용자 권한을 평가하고 필요한 경우 업데이트합니다.
      */
-    private SaveRefreshTokenResponse saveUserRefreshToken(String userId, String token, String expiresAt) {
-        SaveRefreshTokenRequest request = SaveRefreshTokenRequest.newBuilder()
-                .setUserId(userId)
-                .setToken(token)
-                .setExpiresAt(expiresAt)
-                .build();
+    private AuthUser evaluateAndUpdateAuthority(AuthUser authUser, String uniqueId, OAuthProviderService providerService) {
+        // OAuth 제공자로부터 권한 평가 받기
+        Authority expectedAuthority = providerService.evaluateAuthority(authUser, uniqueId);
+        Authority currentAuthority = authUser.getAuthority();
         
-        SaveRefreshTokenResponse response = authPersistor.saveRefreshToken(request);
-        if (!response.getSuccess()) {
-            throw new HttpException(HttpResultCode.SERVER_SYSTEM_ERROR, "Failed to save refresh token");
+        // 현재 권한과 기대 권한이 다르면 업데이트
+        if (currentAuthority != expectedAuthority) {
+            log.info("Updating authority for user: {} from {} to {}", authUser.getUserId(), currentAuthority, expectedAuthority);
+            UpdateAuthorityResponse response = authStore.updateAuthority(
+                UpdateAuthorityRequest.newBuilder()
+                    .setAuthUserId(authUser.getId())
+                    .setAuthority(expectedAuthority)
+                    .build()
+            );
+            return response.getAuthUser();
         }
-        return response;
-    }
-    
-    private AuthCommand.GetOAuthUserInfoResponse getOauthUserInfo(String code, String state, AuthChannel authChannel) {
-        val tokenRequest = AuthCommand.GetOAuthAccessTokenRequest.from(code, state, null);
-        val oAuthProviderClient = oAuthProviderFactory.getOAuthProviderClient(authChannel);
-        val tokenResponse = oAuthProviderClient.getToken(tokenRequest);
-        val oAuthUserInfo = oAuthProviderClient.getOAuthUser(AuthCommand.GetOAuthUserInfoRequest.from(tokenResponse.getAccessToken()));
-        return AuthCommand.GetOAuthUserInfoResponse.builder().id(oAuthUserInfo.getId()).nickname(oAuthUserInfo.getName()).profileImageUrl(null).build();
+        
+        return authUser;
     }
     
     /**
-     * 새로운 카카오 로그인 처리
+     * 새로운 OAuth 로그인 처리
      */
-    private AuthUser handleNewKakaoLogin(AuthCommand.GetOAuthUserInfoResponse oAuthUserInfo) {
-        AuthUser authUser = authPersistor.initializeUser(InitializeUserRequest.newBuilder().build()).getAuthUser();
-        ConnectAuthChannelRequest request = createConnectAuthChannelRequest(authUser.getUserId(), oAuthUserInfo.getId());
-        ConnectAuthChannelResponse response = authPersistor.connectAuthChannel(request);
-        return response.getAuthUser();
-    }
-    
-
-
-    /**
-     * 임시 유저 -> 새 유저
-     */
-    private AuthUser handleTempUserKakaoLogin(String userId, String oAuthUniqueId) {
-        ConnectAuthChannelRequest request = createConnectAuthChannelRequest(userId, oAuthUniqueId);
-        ConnectAuthChannelResponse response = authPersistor.connectAuthChannel(request);
+    private AuthUser handleNewOAuthLogin(String uniqueId, AuthChannel authChannel) {
+        // 새 사용자 생성
+        AuthUser authUser = authStore.initializeUser(InitializeUserRequest.newBuilder().build()).getAuthUser();
+        
+        // OAuth 채널 연결
+        ConnectAuthChannelRequest request = createConnectAuthChannelRequest(authUser.getUserId(), uniqueId, authChannel);
+        ConnectAuthChannelResponse response = authStore.connectAuthChannel(request);
+        
         return response.getAuthUser();
     }
     
     /**
-     * ConnectAuthChannelRequest 생성
+     * 임시 유저를 OAuth 계정과 연결
      */
-    private ConnectAuthChannelRequest createConnectAuthChannelRequest(String userId, String uniqueId) {
+    private AuthUser handleTempUserOAuthLogin(String userId, String oAuthUniqueId, AuthChannel authChannel) {
+        ConnectAuthChannelRequest request = createConnectAuthChannelRequest(userId, oAuthUniqueId, authChannel);
+        ConnectAuthChannelResponse response = authStore.connectAuthChannel(request);
+        return response.getAuthUser();
+    }
+
+
+    /**
+     * OAuth 채널 연결 요청 생성
+     */
+    private ConnectAuthChannelRequest createConnectAuthChannelRequest(String userId, String uniqueId, AuthChannel authChannel) {
         return ConnectAuthChannelRequest.newBuilder()
                 .setUserId(userId)
-                .setAuthChannel(AuthChannel.AUTH_CHANNEL_KAKAO)
+                .setAuthChannel(authChannel)
                 .setUniqueId(uniqueId)
                 .build();
     }

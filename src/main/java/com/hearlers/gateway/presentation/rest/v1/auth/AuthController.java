@@ -96,7 +96,7 @@ public class AuthController {
         String encodedState = encodeState(stateInfo);
         
         // 퍼사드를 통해 카카오 로그인 URL 생성
-        String kakaoAuthUrl = authFacade.generateKakaoLoginUrl(encodedState);
+        String kakaoAuthUrl = authFacade.generateOAuthLoginUrl(AuthChannel.AUTH_CHANNEL_KAKAO ,encodedState);
         response.sendRedirect(kakaoAuthUrl);
     }
 
@@ -118,7 +118,7 @@ public class AuthController {
         String clientRedirectUrl = stateInfo.getRedirectUrl();
 
         // 퍼사드를 통해 카카오 로그인 콜백 처리
-        AuthInfo.TokenInfo tokenInfo = authFacade.handleKakaoCallback(code, encodedState);
+        AuthInfo.TokenInfo tokenInfo = authFacade.handleOAuthCallback(AuthChannel.AUTH_CHANNEL_KAKAO ,code, encodedState, userId);
 
         // 발급받은 토큰 쿠키에 저장
         addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE);

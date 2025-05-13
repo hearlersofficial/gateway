@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.hearlers.gateway.application.auth.JwtTokenManager;
+import com.hearlers.gateway.application.auth.TokenManager;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final JwtTokenManager jwtUtil;
+    private final TokenManager jwtUtil;
     private final ResponseFormatter responseFormatter;
 
     @Bean

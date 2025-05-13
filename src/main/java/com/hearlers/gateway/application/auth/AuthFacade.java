@@ -2,9 +2,13 @@ package com.hearlers.gateway.application.auth;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
+import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
-import com.hearlers.gateway.config.KakaoProperties;
+import com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest;
+import com.hearlers.gateway.presentation.rest.exception.HttpException;
+import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -16,9 +20,8 @@ import java.time.LocalDateTime;
 @Slf4j
 @RequiredArgsConstructor
 public class AuthFacade {
-    private final KakaoProperties kakaoProperties;
     private final AuthService authService;
-    private final JwtTokenManager jwtTokenManager;
+    private final TokenManager tokenManager;
 
     /**
      * 비로그인 유저 생성 및 토큰 발급
@@ -29,32 +32,32 @@ public class AuthFacade {
         var userId = initializeUserResponse.getUser().getId();
         var authChannel = initializeUserResponse.getAuthUser().getAuthChannel();
         
-        AuthCommand.GenerateTokenCommand command = new AuthCommand.GenerateTokenCommand(userId, authChannel);
-        return jwtTokenManager.generateToken(command, false, false);
+        AuthCommand.GenerateTokenCommand command = AuthCommand.GenerateTokenCommand.builder()
+                .id(userId)
+                .authChannel(authChannel)
+                .build();
+        return tokenManager.generateToken(command, false, false);
     }
 
     /**
-     * 카카오 로그인 URL 생성
+     * OAuth 로그인 URL 생성
      */
-    public String generateKakaoLoginUrl(String state) {
-
-        return "https://kauth.kakao.com/oauth/authorize?" +
-                "client_id=" + kakaoProperties.getClientId() +
-                "&redirect_uri=" + kakaoProperties.getRedirectUri() +
-                "&response_type=code" +
-                "&state=" + state;
+    public String generateOAuthLoginUrl(AuthChannel authChannel, String state) {
+        return authService.generateOAuthLoginUrl(authChannel, state);
     }
 
     /**
-     * 카카오 로그인 콜백 처리
+     * OAuth 로그인 콜백 처리
      */
-    public AuthInfo.TokenInfo handleKakaoCallback(String code, String state) {
-        var authUser = authService.kakaoLogin(code, state);
-        var authChannel = authUser.getAuthChannel();
-        var userId = authUser.getUserId();
+    public AuthInfo.TokenInfo handleOAuthCallback(AuthChannel authChannel, String code, String state, String userId) {
+        var authUser = authService.oauthLogin(authChannel, code, state, userId);
+        var isAdmin = authUser.getAuthority() == Authority.AUTHORITY_ADMIN;
         
-        AuthCommand.GenerateTokenCommand command = new AuthCommand.GenerateTokenCommand(userId, authChannel);
-        var token = authService.generateToken(command, true, true);
+        AuthCommand.GenerateTokenCommand command = AuthCommand.GenerateTokenCommand.builder()
+                .id(authUser.getUserId())
+                .authChannel(authChannel)
+                .build();
+        var token = tokenManager.generateToken(command, true, isAdmin);
         
         // RefreshToken 저장
         String refreshToken = token.getRefreshToken();
@@ -73,24 +76,53 @@ public class AuthFacade {
      * RefreshToken 저장
      */
     private SaveRefreshTokenResponse saveRefreshToken(String userId, String token, LocalDateTime expiresAt) {
-        return authService.saveRefreshToken(
-                com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest.newBuilder()
-                        .setUserId(userId)
-                        .setToken(token)
-                        .setExpiresAt(expiresAt.toString())
-                        .build());
+        SaveRefreshTokenRequest request = SaveRefreshTokenRequest.newBuilder()
+                .setUserId(userId)
+                .setToken(token)
+                .setExpiresAt(expiresAt.toString())
+                .build();
+        
+        return tokenManager.saveRefreshToken(request);
     }
     
     /**
      * 액세스 토큰 재발급 및 리프레시 토큰 교체
-     * @param userId 사용자 ID
-     * @param authChannel 인증 채널
-     * @param refreshToken 리프레시 토큰
-     * @return 새로운 액세스 토큰과 교체된 리프레시 토큰 정보
      */
     public AuthInfo.TokenInfo refreshToken(String userId, AuthChannel authChannel, String refreshToken) {
-        // 리프레시 토큰 검증 및 교체
-        return authService.rotateRefreshToken(userId, authChannel, refreshToken);
-    }
+        log.info("refreshToken - userId: {}, authChannel: {}, refreshToken: {}", userId, authChannel, refreshToken);
 
+        // 리프레시 토큰 존재 여부 확인
+        boolean isTokenExist = tokenManager.verifyRefreshToken(
+                VerifyRefreshTokenRequest.newBuilder()
+                        .setUserId(userId)
+                        .setToken(refreshToken)
+                        .build()
+        ).getSuccess();
+        
+        if (!isTokenExist) {
+            throw new HttpException(HttpResultCode.INVALID_TOKEN, "Refresh token does not exist");
+        }
+        
+        // 토큰 유효성 검증
+        boolean validationResult = tokenManager.validateToken(refreshToken);
+        if (!validationResult) {
+            throw new HttpException(HttpResultCode.REFRESH_TOKEN_EXPIRED, "Refresh token is expired");
+        }
+
+        boolean isAdmin = tokenManager.parseClaims(refreshToken).get("is_admin", Boolean.class) != null
+                && tokenManager.parseClaims(refreshToken).get("is_admin", Boolean.class);
+        log.info("refresh - isAdmin: {}", isAdmin);
+        // Refresh token 이 유효한 경우 새로운 토큰 발급
+        AuthCommand.GenerateTokenCommand command = AuthCommand.GenerateTokenCommand.builder()
+                .id(userId)
+                .authChannel(authChannel)
+                .build();
+        
+        AuthInfo.TokenInfo tokenInfo = tokenManager.generateToken(command, true, isAdmin);
+        
+        // Refresh 토큰 저장
+        saveRefreshToken(userId, tokenInfo.getRefreshToken(), tokenInfo.getRefreshTokenExpiresAt());
+        
+        return tokenInfo;
+    }
 }
