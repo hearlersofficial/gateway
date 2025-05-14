@@ -4,20 +4,18 @@ import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
-import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
-import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 
 public interface AuthService {
     /**
      * 사용자 초기화
      */
     InitializeUserResponse initializeUser(InitializeUserRequest request);
-    
+
     /**
      * OAuth 로그인 URL 생성
      */
     String generateOAuthLoginUrl(AuthChannel authChannel, String state);
-    
+
     /**
      * OAuth 로그인 처리
      */
