@@ -2,7 +2,6 @@ package com.hearlers.gateway.application.auth;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import org.springframework.stereotype.Component;
-import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.Map;

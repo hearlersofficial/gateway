@@ -1,7 +1,6 @@
 package com.hearlers.gateway.application.auth;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
-import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
@@ -100,13 +99,13 @@ public class AuthFacade {
         ).getSuccess();
         
         if (!isTokenExist) {
-            throw new HttpException(HttpResultCode.INVALID_TOKEN, "Refresh token does not exist");
+            throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "Refresh token does not exist");
         }
         
         // 토큰 유효성 검증
         boolean validationResult = tokenManager.validateToken(refreshToken);
         if (!validationResult) {
-            throw new HttpException(HttpResultCode.REFRESH_TOKEN_EXPIRED, "Refresh token is expired");
+            throw new HttpException(HttpResultCode.REFRESH_TOKEN_INVALID, "Refresh token is invalid");
         }
 
         boolean isAdmin = tokenManager.parseClaims(refreshToken).get("is_admin", Boolean.class) != null
