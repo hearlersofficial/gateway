@@ -6,12 +6,12 @@
 package com.hearlers.api.proto.v1.model;
 
 /**
- * Protobuf type {@code com.hearlers.v1.model.Counselor}
+ * Protobuf type {@code com.hearlers.v1.model.Episode}
  */
-public final class Counselor extends
+public final class Episode extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:com.hearlers.v1.model.Counselor)
-    CounselorOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.hearlers.v1.model.Episode)
+    EpisodeOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,19 +20,17 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      Counselor.class.getName());
+      Episode.class.getName());
   }
-  // Use Counselor.newBuilder() to construct.
-  private Counselor(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use Episode.newBuilder() to construct.
+  private Episode(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private Counselor() {
+  private Episode() {
     id_ = "";
-    toneId_ = "";
-    name_ = "";
-    description_ = "";
-    profileImage_ = "";
-    gender_ = 0;
+    counselorId_ = "";
+    title_ = "";
+    cutScenes_ = java.util.Collections.emptyList();
     createdAt_ = "";
     updatedAt_ = "";
     deletedAt_ = "";
@@ -40,15 +38,15 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Counselor_descriptor;
+    return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Episode_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Counselor_fieldAccessorTable
+    return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Episode_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hearlers.api.proto.v1.model.Counselor.class, com.hearlers.api.proto.v1.model.Counselor.Builder.class);
+            com.hearlers.api.proto.v1.model.Episode.class, com.hearlers.api.proto.v1.model.Episode.Builder.class);
   }
 
   private int bitField0_;
@@ -91,188 +89,151 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TONE_ID_FIELD_NUMBER = 2;
+  public static final int COUNSELOR_ID_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object toneId_ = "";
+  private volatile java.lang.Object counselorId_ = "";
   /**
-   * <code>string tone_id = 2 [json_name = "toneId"];</code>
-   * @return The toneId.
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The counselorId.
    */
   @java.lang.Override
-  public java.lang.String getToneId() {
-    java.lang.Object ref = toneId_;
+  public java.lang.String getCounselorId() {
+    java.lang.Object ref = counselorId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      toneId_ = s;
+      counselorId_ = s;
       return s;
     }
   }
   /**
-   * <code>string tone_id = 2 [json_name = "toneId"];</code>
-   * @return The bytes for toneId.
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getToneIdBytes() {
-    java.lang.Object ref = toneId_;
+      getCounselorIdBytes() {
+    java.lang.Object ref = counselorId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      toneId_ = b;
+      counselorId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int NAME_FIELD_NUMBER = 3;
+  public static final int TITLE_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object name_ = "";
+  private volatile java.lang.Object title_ = "";
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string title = 3 [json_name = "title"];</code>
+   * @return The title.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      title_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string title = 3 [json_name = "title"];</code>
+   * @return The bytes for title.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getTitleBytes() {
+    java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      title_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+  public static final int REQUIRED_RAPPORT_THRESHOLD_FIELD_NUMBER = 4;
+  private int requiredRapportThreshold_ = 0;
+  /**
+   * <code>int32 required_rapport_threshold = 4 [json_name = "requiredRapportThreshold"];</code>
+   * @return The requiredRapportThreshold.
+   */
+  @java.lang.Override
+  public int getRequiredRapportThreshold() {
+    return requiredRapportThreshold_;
+  }
+
+  public static final int IS_TEMPORARY_FIELD_NUMBER = 5;
+  private boolean isTemporary_ = false;
+  /**
+   * <code>bool is_temporary = 5 [json_name = "isTemporary"];</code>
+   * @return The isTemporary.
+   */
+  @java.lang.Override
+  public boolean getIsTemporary() {
+    return isTemporary_;
+  }
+
+  public static final int CUT_SCENES_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object description_ = "";
+  private java.util.List<com.hearlers.api.proto.v1.model.EpisodeCutScene> cutScenes_;
   /**
-   * <code>string description = 4 [json_name = "description"];</code>
-   * @return The description.
+   * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
    */
   @java.lang.Override
-  public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      description_ = s;
-      return s;
-    }
+  public java.util.List<com.hearlers.api.proto.v1.model.EpisodeCutScene> getCutScenesList() {
+    return cutScenes_;
   }
   /**
-   * <code>string description = 4 [json_name = "description"];</code>
-   * @return The bytes for description.
+   * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      description_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public java.util.List<? extends com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder> 
+      getCutScenesOrBuilderList() {
+    return cutScenes_;
   }
-
-  public static final int PROFILE_IMAGE_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object profileImage_ = "";
   /**
-   * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-   * @return The profileImage.
+   * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
    */
   @java.lang.Override
-  public java.lang.String getProfileImage() {
-    java.lang.Object ref = profileImage_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      profileImage_ = s;
-      return s;
-    }
+  public int getCutScenesCount() {
+    return cutScenes_.size();
   }
   /**
-   * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-   * @return The bytes for profileImage.
+   * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getProfileImageBytes() {
-    java.lang.Object ref = profileImage_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      profileImage_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int GENDER_FIELD_NUMBER = 6;
-  private int gender_ = 0;
-  /**
-   * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-   * @return The enum numeric value on the wire for gender.
-   */
-  @java.lang.Override public int getGenderValue() {
-    return gender_;
+  public com.hearlers.api.proto.v1.model.EpisodeCutScene getCutScenes(int index) {
+    return cutScenes_.get(index);
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-   * @return The gender.
+   * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
    */
-  @java.lang.Override public com.hearlers.api.proto.v1.model.CounselorGender getGender() {
-    com.hearlers.api.proto.v1.model.CounselorGender result = com.hearlers.api.proto.v1.model.CounselorGender.forNumber(gender_);
-    return result == null ? com.hearlers.api.proto.v1.model.CounselorGender.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder getCutScenesOrBuilder(
+      int index) {
+    return cutScenes_.get(index);
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
@@ -290,10 +251,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>string created_at = 7 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
@@ -316,10 +273,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
@@ -337,10 +290,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
@@ -363,10 +312,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deletedAt_ = "";
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
@@ -375,10 +320,6 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
@@ -396,10 +337,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * ISO 8601 (2024-12-29T12:34:56.000Z)
-   * </pre>
-   *
    * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
@@ -435,20 +372,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, toneId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, counselorId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, name_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, title_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, description_);
+    if (requiredRapportThreshold_ != 0) {
+      output.writeInt32(4, requiredRapportThreshold_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileImage_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, profileImage_);
+    if (isTemporary_ != false) {
+      output.writeBool(5, isTemporary_);
     }
-    if (gender_ != com.hearlers.api.proto.v1.model.CounselorGender.COUNSELOR_GENDER_UNSPECIFIED.getNumber()) {
-      output.writeEnum(6, gender_);
+    for (int i = 0; i < cutScenes_.size(); i++) {
+      output.writeMessage(6, cutScenes_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, createdAt_);
@@ -471,21 +408,23 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toneId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, toneId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, counselorId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, name_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, title_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileImage_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, profileImage_);
-    }
-    if (gender_ != com.hearlers.api.proto.v1.model.CounselorGender.COUNSELOR_GENDER_UNSPECIFIED.getNumber()) {
+    if (requiredRapportThreshold_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, gender_);
+        .computeInt32Size(4, requiredRapportThreshold_);
+    }
+    if (isTemporary_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, isTemporary_);
+    }
+    for (int i = 0; i < cutScenes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, cutScenes_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, createdAt_);
@@ -506,22 +445,23 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hearlers.api.proto.v1.model.Counselor)) {
+    if (!(obj instanceof com.hearlers.api.proto.v1.model.Episode)) {
       return super.equals(obj);
     }
-    com.hearlers.api.proto.v1.model.Counselor other = (com.hearlers.api.proto.v1.model.Counselor) obj;
+    com.hearlers.api.proto.v1.model.Episode other = (com.hearlers.api.proto.v1.model.Episode) obj;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getToneId()
-        .equals(other.getToneId())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getDescription()
-        .equals(other.getDescription())) return false;
-    if (!getProfileImage()
-        .equals(other.getProfileImage())) return false;
-    if (gender_ != other.gender_) return false;
+    if (!getCounselorId()
+        .equals(other.getCounselorId())) return false;
+    if (!getTitle()
+        .equals(other.getTitle())) return false;
+    if (getRequiredRapportThreshold()
+        != other.getRequiredRapportThreshold()) return false;
+    if (getIsTemporary()
+        != other.getIsTemporary()) return false;
+    if (!getCutScenesList()
+        .equals(other.getCutScenesList())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -544,16 +484,19 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + TONE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getToneId().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + PROFILE_IMAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getProfileImage().hashCode();
-    hash = (37 * hash) + GENDER_FIELD_NUMBER;
-    hash = (53 * hash) + gender_;
+    hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCounselorId().hashCode();
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
+    hash = (37 * hash) + REQUIRED_RAPPORT_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getRequiredRapportThreshold();
+    hash = (37 * hash) + IS_TEMPORARY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsTemporary());
+    if (getCutScenesCount() > 0) {
+      hash = (37 * hash) + CUT_SCENES_FIELD_NUMBER;
+      hash = (53 * hash) + getCutScenesList().hashCode();
+    }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -567,44 +510,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(byte[] data)
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -612,26 +555,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.hearlers.api.proto.v1.model.Counselor parseDelimitedFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.model.Episode parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.hearlers.api.proto.v1.model.Counselor parseDelimitedFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.model.Counselor parseFrom(
+  public static com.hearlers.api.proto.v1.model.Episode parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -644,7 +587,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hearlers.api.proto.v1.model.Counselor prototype) {
+  public static Builder newBuilder(com.hearlers.api.proto.v1.model.Episode prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -660,26 +603,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.hearlers.v1.model.Counselor}
+   * Protobuf type {@code com.hearlers.v1.model.Episode}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.model.Counselor)
-      com.hearlers.api.proto.v1.model.CounselorOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.model.Episode)
+      com.hearlers.api.proto.v1.model.EpisodeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Counselor_descriptor;
+      return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Episode_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Counselor_fieldAccessorTable
+      return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Episode_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hearlers.api.proto.v1.model.Counselor.class, com.hearlers.api.proto.v1.model.Counselor.Builder.class);
+              com.hearlers.api.proto.v1.model.Episode.class, com.hearlers.api.proto.v1.model.Episode.Builder.class);
     }
 
-    // Construct using com.hearlers.api.proto.v1.model.Counselor.newBuilder()
+    // Construct using com.hearlers.api.proto.v1.model.Episode.newBuilder()
     private Builder() {
 
     }
@@ -694,11 +637,17 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       id_ = "";
-      toneId_ = "";
-      name_ = "";
-      description_ = "";
-      profileImage_ = "";
-      gender_ = 0;
+      counselorId_ = "";
+      title_ = "";
+      requiredRapportThreshold_ = 0;
+      isTemporary_ = false;
+      if (cutScenesBuilder_ == null) {
+        cutScenes_ = java.util.Collections.emptyList();
+      } else {
+        cutScenes_ = null;
+        cutScenesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -708,17 +657,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Counselor_descriptor;
+      return com.hearlers.api.proto.v1.model.CounselorOuterClass.internal_static_com_hearlers_v1_model_Episode_descriptor;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.model.Counselor getDefaultInstanceForType() {
-      return com.hearlers.api.proto.v1.model.Counselor.getDefaultInstance();
+    public com.hearlers.api.proto.v1.model.Episode getDefaultInstanceForType() {
+      return com.hearlers.api.proto.v1.model.Episode.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.model.Counselor build() {
-      com.hearlers.api.proto.v1.model.Counselor result = buildPartial();
+    public com.hearlers.api.proto.v1.model.Episode build() {
+      com.hearlers.api.proto.v1.model.Episode result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -726,32 +675,42 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.model.Counselor buildPartial() {
-      com.hearlers.api.proto.v1.model.Counselor result = new com.hearlers.api.proto.v1.model.Counselor(this);
+    public com.hearlers.api.proto.v1.model.Episode buildPartial() {
+      com.hearlers.api.proto.v1.model.Episode result = new com.hearlers.api.proto.v1.model.Episode(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.hearlers.api.proto.v1.model.Counselor result) {
+    private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.model.Episode result) {
+      if (cutScenesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          cutScenes_ = java.util.Collections.unmodifiableList(cutScenes_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.cutScenes_ = cutScenes_;
+      } else {
+        result.cutScenes_ = cutScenesBuilder_.build();
+      }
+    }
+
+    private void buildPartial0(com.hearlers.api.proto.v1.model.Episode result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.toneId_ = toneId_;
+        result.counselorId_ = counselorId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.name_ = name_;
+        result.title_ = title_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.description_ = description_;
+        result.requiredRapportThreshold_ = requiredRapportThreshold_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.profileImage_ = profileImage_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.gender_ = gender_;
+        result.isTemporary_ = isTemporary_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createdAt_ = createdAt_;
@@ -769,43 +728,62 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hearlers.api.proto.v1.model.Counselor) {
-        return mergeFrom((com.hearlers.api.proto.v1.model.Counselor)other);
+      if (other instanceof com.hearlers.api.proto.v1.model.Episode) {
+        return mergeFrom((com.hearlers.api.proto.v1.model.Episode)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hearlers.api.proto.v1.model.Counselor other) {
-      if (other == com.hearlers.api.proto.v1.model.Counselor.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hearlers.api.proto.v1.model.Episode other) {
+      if (other == com.hearlers.api.proto.v1.model.Episode.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getToneId().isEmpty()) {
-        toneId_ = other.toneId_;
+      if (!other.getCounselorId().isEmpty()) {
+        counselorId_ = other.counselorId_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getTitle().isEmpty()) {
+        title_ = other.title_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
-        description_ = other.description_;
-        bitField0_ |= 0x00000008;
-        onChanged();
+      if (other.getRequiredRapportThreshold() != 0) {
+        setRequiredRapportThreshold(other.getRequiredRapportThreshold());
       }
-      if (!other.getProfileImage().isEmpty()) {
-        profileImage_ = other.profileImage_;
-        bitField0_ |= 0x00000010;
-        onChanged();
+      if (other.getIsTemporary() != false) {
+        setIsTemporary(other.getIsTemporary());
       }
-      if (other.gender_ != 0) {
-        setGenderValue(other.getGenderValue());
+      if (cutScenesBuilder_ == null) {
+        if (!other.cutScenes_.isEmpty()) {
+          if (cutScenes_.isEmpty()) {
+            cutScenes_ = other.cutScenes_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureCutScenesIsMutable();
+            cutScenes_.addAll(other.cutScenes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cutScenes_.isEmpty()) {
+          if (cutScenesBuilder_.isEmpty()) {
+            cutScenesBuilder_.dispose();
+            cutScenesBuilder_ = null;
+            cutScenes_ = other.cutScenes_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            cutScenesBuilder_ = 
+              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                 getCutScenesFieldBuilder() : null;
+          } else {
+            cutScenesBuilder_.addAllMessages(other.cutScenes_);
+          }
+        }
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
@@ -854,30 +832,38 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              toneId_ = input.readStringRequireUtf8();
+              counselorId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              name_ = input.readStringRequireUtf8();
+              title_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
-              description_ = input.readStringRequireUtf8();
+            case 32: {
+              requiredRapportThreshold_ = input.readInt32();
               bitField0_ |= 0x00000008;
               break;
-            } // case 34
-            case 42: {
-              profileImage_ = input.readStringRequireUtf8();
+            } // case 32
+            case 40: {
+              isTemporary_ = input.readBool();
               bitField0_ |= 0x00000010;
               break;
-            } // case 42
-            case 48: {
-              gender_ = input.readEnum();
-              bitField0_ |= 0x00000020;
+            } // case 40
+            case 50: {
+              com.hearlers.api.proto.v1.model.EpisodeCutScene m =
+                  input.readMessage(
+                      com.hearlers.api.proto.v1.model.EpisodeCutScene.parser(),
+                      extensionRegistry);
+              if (cutScenesBuilder_ == null) {
+                ensureCutScenesIsMutable();
+                cutScenes_.add(m);
+              } else {
+                cutScenesBuilder_.addMessage(m);
+              }
               break;
-            } // case 48
+            } // case 50
             case 58: {
               createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
@@ -982,353 +968,456 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object toneId_ = "";
+    private java.lang.Object counselorId_ = "";
     /**
-     * <code>string tone_id = 2 [json_name = "toneId"];</code>
-     * @return The toneId.
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @return The counselorId.
      */
-    public java.lang.String getToneId() {
-      java.lang.Object ref = toneId_;
+    public java.lang.String getCounselorId() {
+      java.lang.Object ref = counselorId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        toneId_ = s;
+        counselorId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string tone_id = 2 [json_name = "toneId"];</code>
-     * @return The bytes for toneId.
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @return The bytes for counselorId.
      */
     public com.google.protobuf.ByteString
-        getToneIdBytes() {
-      java.lang.Object ref = toneId_;
+        getCounselorIdBytes() {
+      java.lang.Object ref = counselorId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        toneId_ = b;
+        counselorId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string tone_id = 2 [json_name = "toneId"];</code>
-     * @param value The toneId to set.
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @param value The counselorId to set.
      * @return This builder for chaining.
      */
-    public Builder setToneId(
+    public Builder setCounselorId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      toneId_ = value;
+      counselorId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string tone_id = 2 [json_name = "toneId"];</code>
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearToneId() {
-      toneId_ = getDefaultInstance().getToneId();
+    public Builder clearCounselorId() {
+      counselorId_ = getDefaultInstance().getCounselorId();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string tone_id = 2 [json_name = "toneId"];</code>
-     * @param value The bytes for toneId to set.
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @param value The bytes for counselorId to set.
      * @return This builder for chaining.
      */
-    public Builder setToneIdBytes(
+    public Builder setCounselorIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      toneId_ = value;
+      counselorId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object title_ = "";
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string title = 3 [json_name = "title"];</code>
+     * @return The title.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        title_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string title = 3 [json_name = "title"];</code>
+     * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getTitleBytes() {
+      java.lang.Object ref = title_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        title_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
-     * @param value The name to set.
+     * <code>string title = 3 [json_name = "title"];</code>
+     * @param value The title to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setTitle(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      name_ = value;
+      title_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>string title = 3 [json_name = "title"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
-      name_ = getDefaultInstance().getName();
+    public Builder clearTitle() {
+      title_ = getDefaultInstance().getTitle();
       bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
-     * @param value The bytes for name to set.
+     * <code>string title = 3 [json_name = "title"];</code>
+     * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setTitleBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      name_ = value;
+      title_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private java.lang.Object description_ = "";
+    private int requiredRapportThreshold_ ;
     /**
-     * <code>string description = 4 [json_name = "description"];</code>
-     * @return The description.
-     */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string description = 4 [json_name = "description"];</code>
-     * @return The bytes for description.
-     */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string description = 4 [json_name = "description"];</code>
-     * @param value The description to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDescription(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      description_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string description = 4 [json_name = "description"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDescription() {
-      description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string description = 4 [json_name = "description"];</code>
-     * @param value The bytes for description to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      description_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object profileImage_ = "";
-    /**
-     * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-     * @return The profileImage.
-     */
-    public java.lang.String getProfileImage() {
-      java.lang.Object ref = profileImage_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        profileImage_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-     * @return The bytes for profileImage.
-     */
-    public com.google.protobuf.ByteString
-        getProfileImageBytes() {
-      java.lang.Object ref = profileImage_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        profileImage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-     * @param value The profileImage to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProfileImage(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      profileImage_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearProfileImage() {
-      profileImage_ = getDefaultInstance().getProfileImage();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string profile_image = 5 [json_name = "profileImage"];</code>
-     * @param value The bytes for profileImage to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProfileImageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      profileImage_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private int gender_ = 0;
-    /**
-     * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-     * @return The enum numeric value on the wire for gender.
-     */
-    @java.lang.Override public int getGenderValue() {
-      return gender_;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-     * @param value The enum numeric value on the wire for gender to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGenderValue(int value) {
-      gender_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-     * @return The gender.
+     * <code>int32 required_rapport_threshold = 4 [json_name = "requiredRapportThreshold"];</code>
+     * @return The requiredRapportThreshold.
      */
     @java.lang.Override
-    public com.hearlers.api.proto.v1.model.CounselorGender getGender() {
-      com.hearlers.api.proto.v1.model.CounselorGender result = com.hearlers.api.proto.v1.model.CounselorGender.forNumber(gender_);
-      return result == null ? com.hearlers.api.proto.v1.model.CounselorGender.UNRECOGNIZED : result;
+    public int getRequiredRapportThreshold() {
+      return requiredRapportThreshold_;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-     * @param value The gender to set.
+     * <code>int32 required_rapport_threshold = 4 [json_name = "requiredRapportThreshold"];</code>
+     * @param value The requiredRapportThreshold to set.
      * @return This builder for chaining.
      */
-    public Builder setGender(com.hearlers.api.proto.v1.model.CounselorGender value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public Builder setRequiredRapportThreshold(int value) {
+
+      requiredRapportThreshold_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 required_rapport_threshold = 4 [json_name = "requiredRapportThreshold"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredRapportThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      requiredRapportThreshold_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isTemporary_ ;
+    /**
+     * <code>bool is_temporary = 5 [json_name = "isTemporary"];</code>
+     * @return The isTemporary.
+     */
+    @java.lang.Override
+    public boolean getIsTemporary() {
+      return isTemporary_;
+    }
+    /**
+     * <code>bool is_temporary = 5 [json_name = "isTemporary"];</code>
+     * @param value The isTemporary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsTemporary(boolean value) {
+
+      isTemporary_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_temporary = 5 [json_name = "isTemporary"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsTemporary() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      isTemporary_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.hearlers.api.proto.v1.model.EpisodeCutScene> cutScenes_ =
+      java.util.Collections.emptyList();
+    private void ensureCutScenesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        cutScenes_ = new java.util.ArrayList<com.hearlers.api.proto.v1.model.EpisodeCutScene>(cutScenes_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+        com.hearlers.api.proto.v1.model.EpisodeCutScene, com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder, com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder> cutScenesBuilder_;
+
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public java.util.List<com.hearlers.api.proto.v1.model.EpisodeCutScene> getCutScenesList() {
+      if (cutScenesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cutScenes_);
+      } else {
+        return cutScenesBuilder_.getMessageList();
       }
-      bitField0_ |= 0x00000020;
-      gender_ = value.getNumber();
-      onChanged();
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public int getCutScenesCount() {
+      if (cutScenesBuilder_ == null) {
+        return cutScenes_.size();
+      } else {
+        return cutScenesBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.EpisodeCutScene getCutScenes(int index) {
+      if (cutScenesBuilder_ == null) {
+        return cutScenes_.get(index);
+      } else {
+        return cutScenesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder setCutScenes(
+        int index, com.hearlers.api.proto.v1.model.EpisodeCutScene value) {
+      if (cutScenesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCutScenesIsMutable();
+        cutScenes_.set(index, value);
+        onChanged();
+      } else {
+        cutScenesBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender gender = 6 [json_name = "gender"];</code>
-     * @return This builder for chaining.
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
      */
-    public Builder clearGender() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      gender_ = 0;
-      onChanged();
+    public Builder setCutScenes(
+        int index, com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder builderForValue) {
+      if (cutScenesBuilder_ == null) {
+        ensureCutScenesIsMutable();
+        cutScenes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cutScenesBuilder_.setMessage(index, builderForValue.build());
+      }
       return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder addCutScenes(com.hearlers.api.proto.v1.model.EpisodeCutScene value) {
+      if (cutScenesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCutScenesIsMutable();
+        cutScenes_.add(value);
+        onChanged();
+      } else {
+        cutScenesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder addCutScenes(
+        int index, com.hearlers.api.proto.v1.model.EpisodeCutScene value) {
+      if (cutScenesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCutScenesIsMutable();
+        cutScenes_.add(index, value);
+        onChanged();
+      } else {
+        cutScenesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder addCutScenes(
+        com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder builderForValue) {
+      if (cutScenesBuilder_ == null) {
+        ensureCutScenesIsMutable();
+        cutScenes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cutScenesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder addCutScenes(
+        int index, com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder builderForValue) {
+      if (cutScenesBuilder_ == null) {
+        ensureCutScenesIsMutable();
+        cutScenes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cutScenesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder addAllCutScenes(
+        java.lang.Iterable<? extends com.hearlers.api.proto.v1.model.EpisodeCutScene> values) {
+      if (cutScenesBuilder_ == null) {
+        ensureCutScenesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cutScenes_);
+        onChanged();
+      } else {
+        cutScenesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder clearCutScenes() {
+      if (cutScenesBuilder_ == null) {
+        cutScenes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        cutScenesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public Builder removeCutScenes(int index) {
+      if (cutScenesBuilder_ == null) {
+        ensureCutScenesIsMutable();
+        cutScenes_.remove(index);
+        onChanged();
+      } else {
+        cutScenesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder getCutScenesBuilder(
+        int index) {
+      return getCutScenesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder getCutScenesOrBuilder(
+        int index) {
+      if (cutScenesBuilder_ == null) {
+        return cutScenes_.get(index);  } else {
+        return cutScenesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public java.util.List<? extends com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder> 
+         getCutScenesOrBuilderList() {
+      if (cutScenesBuilder_ != null) {
+        return cutScenesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cutScenes_);
+      }
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder addCutScenesBuilder() {
+      return getCutScenesFieldBuilder().addBuilder(
+          com.hearlers.api.proto.v1.model.EpisodeCutScene.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder addCutScenesBuilder(
+        int index) {
+      return getCutScenesFieldBuilder().addBuilder(
+          index, com.hearlers.api.proto.v1.model.EpisodeCutScene.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.hearlers.v1.model.EpisodeCutScene cut_scenes = 6 [json_name = "cutScenes"];</code>
+     */
+    public java.util.List<com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder> 
+         getCutScenesBuilderList() {
+      return getCutScenesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilder<
+        com.hearlers.api.proto.v1.model.EpisodeCutScene, com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder, com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder> 
+        getCutScenesFieldBuilder() {
+      if (cutScenesBuilder_ == null) {
+        cutScenesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+            com.hearlers.api.proto.v1.model.EpisodeCutScene, com.hearlers.api.proto.v1.model.EpisodeCutScene.Builder, com.hearlers.api.proto.v1.model.EpisodeCutSceneOrBuilder>(
+                cutScenes_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        cutScenes_ = null;
+      }
+      return cutScenesBuilder_;
     }
 
     private java.lang.Object createdAt_ = "";
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
@@ -1345,10 +1434,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
@@ -1366,10 +1451,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
@@ -1383,10 +1464,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return This builder for chaining.
      */
@@ -1397,10 +1474,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
@@ -1417,10 +1490,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updatedAt_ = "";
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
@@ -1437,10 +1506,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return The bytes for updatedAt.
      */
@@ -1458,10 +1523,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
@@ -1475,10 +1536,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return This builder for chaining.
      */
@@ -1489,10 +1546,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
@@ -1509,10 +1562,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object deletedAt_ = "";
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
@@ -1520,10 +1569,6 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
@@ -1540,10 +1585,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
@@ -1561,10 +1602,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
@@ -1578,10 +1615,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
@@ -1592,10 +1625,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * ISO 8601 (2024-12-29T12:34:56.000Z)
-     * </pre>
-     *
      * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
@@ -1610,23 +1639,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.model.Counselor)
+    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.model.Episode)
   }
 
-  // @@protoc_insertion_point(class_scope:com.hearlers.v1.model.Counselor)
-  private static final com.hearlers.api.proto.v1.model.Counselor DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.hearlers.v1.model.Episode)
+  private static final com.hearlers.api.proto.v1.model.Episode DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.model.Counselor();
+    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.model.Episode();
   }
 
-  public static com.hearlers.api.proto.v1.model.Counselor getDefaultInstance() {
+  public static com.hearlers.api.proto.v1.model.Episode getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Counselor>
-      PARSER = new com.google.protobuf.AbstractParser<Counselor>() {
+  private static final com.google.protobuf.Parser<Episode>
+      PARSER = new com.google.protobuf.AbstractParser<Episode>() {
     @java.lang.Override
-    public Counselor parsePartialFrom(
+    public Episode parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1645,17 +1674,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<Counselor> parser() {
+  public static com.google.protobuf.Parser<Episode> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Counselor> getParserForType() {
+  public com.google.protobuf.Parser<Episode> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hearlers.api.proto.v1.model.Counselor getDefaultInstanceForType() {
+  public com.hearlers.api.proto.v1.model.Episode getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

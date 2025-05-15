@@ -66,6 +66,131 @@ public final class Counselor {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_UpdateCounselorResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateBubbleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateBubbleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateBubbleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateBubbleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindBubblesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindBubblesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindBubblesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindBubblesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindRandomBubbleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindRandomBubbleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindRandomBubbleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindRandomBubbleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateBubbleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateBubbleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateBubbleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateBubbleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_DeleteBubbleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_DeleteBubbleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_DeleteBubbleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_DeleteBubbleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateEpisodeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateEpisodeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_CreateEpisodeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_CreateEpisodeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindEpisodesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindEpisodesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindEpisodesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindEpisodesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindEpisodeByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindEpisodeByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindEpisodeByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindEpisodeByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateEpisodeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateEpisodeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdateEpisodeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdateEpisodeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_SaveEpisodeCutSceneRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_SaveEpisodeCutSceneRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -116,84 +241,195 @@ public final class Counselor {
     java.lang.String[] descriptorData = {
       "\n\'com/hearlers/v1/service/counselor.prot" +
       "o\022\027com.hearlers.v1.service\032%com/hearlers" +
-      "/v1/model/counselor.proto\"\272\001\n\026CreateCoun" +
-      "selorRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId\022\022\n" +
-      "\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013" +
-      "description\022Q\n\020counselor_gender\030\004 \001(\0162&." +
-      "com.hearlers.v1.model.CounselorGenderR\017c" +
-      "ounselorGender\"Y\n\027CreateCounselorRespons" +
-      "e\022>\n\tcounselor\030\001 \001(\0132 .com.hearlers.v1.m" +
-      "odel.CounselorR\tcounselor\"A\n\025FindCounsel" +
-      "orsRequest\022\034\n\007tone_id\030\001 \001(\tH\000R\006toneId\210\001\001" +
-      "B\n\n\010_tone_id\"Z\n\026FindCounselorsResponse\022@" +
-      "\n\ncounselors\030\001 \003(\0132 .com.hearlers.v1.mod" +
-      "el.CounselorR\ncounselors\"=\n\030FindCounselo" +
-      "rByIdRequest\022!\n\014counselor_id\030\001 \001(\tR\013coun" +
-      "selorId\"n\n\031FindCounselorByIdResponse\022C\n\t" +
-      "counselor\030\001 \001(\0132 .com.hearlers.v1.model." +
-      "CounselorH\000R\tcounselor\210\001\001B\014\n\n_counselor\"" +
-      "\253\002\n\026UpdateCounselorRequest\022!\n\014counselor_" +
-      "id\030\001 \001(\tR\013counselorId\022\034\n\007tone_id\030\002 \001(\tH\000" +
-      "R\006toneId\210\001\001\022\027\n\004name\030\003 \001(\tH\001R\004name\210\001\001\022%\n\013" +
-      "description\030\004 \001(\tH\002R\013description\210\001\001\022V\n\020c" +
-      "ounselor_gender\030\005 \001(\0162&.com.hearlers.v1." +
-      "model.CounselorGenderH\003R\017counselorGender" +
-      "\210\001\001B\n\n\010_tone_idB\007\n\005_nameB\016\n\014_description" +
-      "B\023\n\021_counselor_gender\"Y\n\027UpdateCounselor" +
-      "Response\022>\n\tcounselor\030\001 \001(\0132 .com.hearle" +
-      "rs.v1.model.CounselorR\tcounselor\"I\n\021Crea" +
-      "teToneRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013des" +
-      "cription\030\002 \001(\tR\013description\"E\n\022CreateTon" +
-      "eResponse\022/\n\004tone\030\001 \001(\0132\033.com.hearlers.v" +
-      "1.model.ToneR\004tone\"4\n\020FindTonesRequest\022\027" +
-      "\n\004name\030\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name\"F\n\021Find" +
-      "TonesResponse\0221\n\005tones\030\001 \003(\0132\033.com.hearl" +
-      "ers.v1.model.ToneR\005tones\".\n\023FindToneById" +
-      "Request\022\027\n\007tone_id\030\001 \001(\tR\006toneId\"U\n\024Find" +
-      "ToneByIdResponse\0224\n\004tone\030\001 \001(\0132\033.com.hea" +
-      "rlers.v1.model.ToneH\000R\004tone\210\001\001B\007\n\005_tone\"" +
-      "\205\001\n\021UpdateToneRequest\022\027\n\007tone_id\030\001 \001(\tR\006" +
-      "toneId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022%\n\013descr" +
-      "iption\030\003 \001(\tH\001R\013description\210\001\001B\007\n\005_nameB" +
-      "\016\n\014_description\"E\n\022UpdateToneResponse\022/\n" +
-      "\004tone\030\001 \001(\0132\033.com.hearlers.v1.model.Tone" +
-      "R\004tone2\214\007\n\020CounselorService\022t\n\017CreateCou" +
-      "nselor\022/.com.hearlers.v1.service.CreateC" +
-      "ounselorRequest\0320.com.hearlers.v1.servic" +
-      "e.CreateCounselorResponse\022q\n\016FindCounsel" +
-      "ors\022..com.hearlers.v1.service.FindCounse" +
-      "lorsRequest\032/.com.hearlers.v1.service.Fi" +
-      "ndCounselorsResponse\022z\n\021FindCounselorByI" +
-      "d\0221.com.hearlers.v1.service.FindCounselo" +
-      "rByIdRequest\0322.com.hearlers.v1.service.F" +
-      "indCounselorByIdResponse\022t\n\017UpdateCounse" +
-      "lor\022/.com.hearlers.v1.service.UpdateCoun" +
-      "selorRequest\0320.com.hearlers.v1.service.U" +
-      "pdateCounselorResponse\022e\n\nCreateTone\022*.c" +
-      "om.hearlers.v1.service.CreateToneRequest" +
-      "\032+.com.hearlers.v1.service.CreateToneRes" +
-      "ponse\022b\n\tFindTones\022).com.hearlers.v1.ser" +
-      "vice.FindTonesRequest\032*.com.hearlers.v1." +
-      "service.FindTonesResponse\022k\n\014FindToneByI" +
-      "d\022,.com.hearlers.v1.service.FindToneById" +
-      "Request\032-.com.hearlers.v1.service.FindTo" +
-      "neByIdResponse\022e\n\nUpdateTone\022*.com.hearl" +
-      "ers.v1.service.UpdateToneRequest\032+.com.h" +
-      "earlers.v1.service.UpdateToneResponseB%\n" +
-      "!com.hearlers.api.proto.v1.serviceP\001b\006pr" +
-      "oto3"
+      "/v1/model/counselor.proto\032*com/hearlers/" +
+      "v1/common/presigned_url.proto\"\337\001\n\026Create" +
+      "CounselorRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneI" +
+      "d\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001" +
+      "(\tR\013description\022#\n\rprofile_image\030\004 \001(\tR\014" +
+      "profileImage\022Q\n\020counselor_gender\030\005 \001(\0162&" +
+      ".com.hearlers.v1.model.CounselorGenderR\017" +
+      "counselorGender\"Y\n\027CreateCounselorRespon" +
+      "se\022>\n\tcounselor\030\001 \001(\0132 .com.hearlers.v1." +
+      "model.CounselorR\tcounselor\"A\n\025FindCounse" +
+      "lorsRequest\022\034\n\007tone_id\030\001 \001(\tH\000R\006toneId\210\001" +
+      "\001B\n\n\010_tone_id\"Z\n\026FindCounselorsResponse\022" +
+      "@\n\ncounselors\030\001 \003(\0132 .com.hearlers.v1.mo" +
+      "del.CounselorR\ncounselors\"=\n\030FindCounsel" +
+      "orByIdRequest\022!\n\014counselor_id\030\001 \001(\tR\013cou" +
+      "nselorId\"n\n\031FindCounselorByIdResponse\022C\n" +
+      "\tcounselor\030\001 \001(\0132 .com.hearlers.v1.model" +
+      ".CounselorH\000R\tcounselor\210\001\001B\014\n\n_counselor" +
+      "\"\347\002\n\026UpdateCounselorRequest\022!\n\014counselor" +
+      "_id\030\001 \001(\tR\013counselorId\022\034\n\007tone_id\030\002 \001(\tH" +
+      "\000R\006toneId\210\001\001\022\027\n\004name\030\003 \001(\tH\001R\004name\210\001\001\022%\n" +
+      "\013description\030\004 \001(\tH\002R\013description\210\001\001\022(\n\r" +
+      "profile_image\030\005 \001(\tH\003R\014profileImage\210\001\001\022V" +
+      "\n\020counselor_gender\030\006 \001(\0162&.com.hearlers." +
+      "v1.model.CounselorGenderH\004R\017counselorGen" +
+      "der\210\001\001B\n\n\010_tone_idB\007\n\005_nameB\016\n\014_descript" +
+      "ionB\020\n\016_profile_imageB\023\n\021_counselor_gend" +
+      "er\"Y\n\027UpdateCounselorResponse\022>\n\tcounsel" +
+      "or\030\001 \001(\0132 .com.hearlers.v1.model.Counsel" +
+      "orR\tcounselor\"\206\001\n GenerateCounselorImage" +
+      "UrlRequest\022!\n\014counselor_id\030\001 \001(\tR\013counse" +
+      "lorId\022?\n\textension\030\002 \001(\0162!.com.hearlers." +
+      "v1.common.ExtensionR\textension\"n\n!Genera" +
+      "teCounselorImageUrlResponse\022I\n\rpresigned" +
+      "_url\030\001 \001(\0132$.com.hearlers.v1.common.Pres" +
+      "ignedUrlR\014presignedUrl\"\252\001\n\023CreateBubbleR" +
+      "equest\022!\n\014counselor_id\030\001 \001(\tR\013counselorI" +
+      "d\022\032\n\010question\030\002 \001(\tR\010question\022)\n\020respons" +
+      "e_option1\030\003 \001(\tR\017responseOption1\022)\n\020resp" +
+      "onse_option2\030\004 \001(\tR\017responseOption2\"M\n\024C" +
+      "reateBubbleResponse\0225\n\006bubble\030\001 \001(\0132\035.co" +
+      "m.hearlers.v1.model.BubbleR\006bubble\"7\n\022Fi" +
+      "ndBubblesRequest\022!\n\014counselor_id\030\001 \001(\tR\013" +
+      "counselorId\"N\n\023FindBubblesResponse\0227\n\007bu" +
+      "bbles\030\001 \003(\0132\035.com.hearlers.v1.model.Bubb" +
+      "leR\007bubbles\"4\n\025FindBubbleByIdRequest\022\033\n\t" +
+      "bubble_id\030\001 \001(\tR\010bubbleId\"O\n\026FindBubbleB" +
+      "yIdResponse\0225\n\006bubble\030\001 \001(\0132\035.com.hearle" +
+      "rs.v1.model.BubbleR\006bubble\"<\n\027FindRandom" +
+      "BubbleRequest\022!\n\014counselor_id\030\001 \001(\tR\013cou" +
+      "nselorId\"Q\n\030FindRandomBubbleResponse\0225\n\006" +
+      "bubble\030\001 \001(\0132\035.com.hearlers.v1.model.Bub" +
+      "bleR\006bubble\"\352\001\n\023UpdateBubbleRequest\022\033\n\tb" +
+      "ubble_id\030\001 \001(\tR\010bubbleId\022\037\n\010question\030\002 \001" +
+      "(\tH\000R\010question\210\001\001\022.\n\020response_option1\030\003 " +
+      "\001(\tH\001R\017responseOption1\210\001\001\022.\n\020response_op" +
+      "tion2\030\004 \001(\tH\002R\017responseOption2\210\001\001B\013\n\t_qu" +
+      "estionB\023\n\021_response_option1B\023\n\021_response" +
+      "_option2\"M\n\024UpdateBubbleResponse\0225\n\006bubb" +
+      "le\030\001 \001(\0132\035.com.hearlers.v1.model.BubbleR" +
+      "\006bubble\"2\n\023DeleteBubbleRequest\022\033\n\tbubble" +
+      "_id\030\001 \001(\tR\010bubbleId\"0\n\024DeleteBubbleRespo" +
+      "nse\022\030\n\007success\030\001 \001(\010R\007success\"\204\002\n\024Create" +
+      "EpisodeRequest\022!\n\014counselor_id\030\001 \001(\tR\013co" +
+      "unselorId\022\024\n\005title\030\002 \001(\tR\005title\022<\n\032requi" +
+      "red_rapport_threshold\030\003 \001(\005R\030requiredRap" +
+      "portThreshold\022!\n\014is_temporary\030\004 \001(\010R\013isT" +
+      "emporary\022R\n\ncut_scenes\030\005 \003(\01323.com.hearl" +
+      "ers.v1.service.SaveEpisodeCutSceneReques" +
+      "tR\tcutScenes\"Q\n\025CreateEpisodeResponse\0228\n" +
+      "\007episode\030\001 \001(\0132\036.com.hearlers.v1.model.E" +
+      "pisodeR\007episode\"8\n\023FindEpisodesRequest\022!" +
+      "\n\014counselor_id\030\001 \001(\tR\013counselorId\"R\n\024Fin" +
+      "dEpisodesResponse\022:\n\010episodes\030\001 \003(\0132\036.co" +
+      "m.hearlers.v1.model.EpisodeR\010episodes\"7\n" +
+      "\026FindEpisodeByIdRequest\022\035\n\nepisode_id\030\001 " +
+      "\001(\tR\tepisodeId\"S\n\027FindEpisodeByIdRespons" +
+      "e\0228\n\007episode\030\001 \001(\0132\036.com.hearlers.v1.mod" +
+      "el.EpisodeR\007episode\"\364\002\n\024UpdateEpisodeReq" +
+      "uest\022\035\n\nepisode_id\030\001 \001(\tR\tepisodeId\022\031\n\005t" +
+      "itle\030\002 \001(\tH\000R\005title\210\001\001\022\035\n\007content\030\003 \001(\tH" +
+      "\001R\007content\210\001\001\022A\n\032required_rapport_thresh" +
+      "old\030\004 \001(\005H\002R\030requiredRapportThreshold\210\001\001" +
+      "\022&\n\014is_temporary\030\005 \001(\010H\003R\013isTemporary\210\001\001" +
+      "\022R\n\ncut_scenes\030\006 \003(\01323.com.hearlers.v1.s" +
+      "ervice.SaveEpisodeCutSceneRequestR\tcutSc" +
+      "enesB\010\n\006_titleB\n\n\010_contentB\035\n\033_required_" +
+      "rapport_thresholdB\017\n\r_is_temporary\"Q\n\025Up" +
+      "dateEpisodeResponse\0228\n\007episode\030\001 \001(\0132\036.c" +
+      "om.hearlers.v1.model.EpisodeR\007episode\"\302\001" +
+      "\n\032SaveEpisodeCutSceneRequest\022\023\n\002id\030\001 \001(\t" +
+      "H\000R\002id\210\001\001\022\035\n\nepisode_id\030\002 \001(\tR\tepisodeId" +
+      "\022\030\n\007speaker\030\003 \001(\tR\007speaker\022\030\n\007content\030\004 " +
+      "\001(\tR\007content\022\037\n\013order_index\030\005 \001(\005R\norder" +
+      "Index\022\024\n\005image\030\006 \001(\tR\005imageB\005\n\003_id\"\201\001\n\037G" +
+      "enerateCutSceneImageUrlRequest\022\035\n\nepisod" +
+      "e_id\030\001 \001(\tR\tepisodeId\022?\n\textension\030\002 \001(\016" +
+      "2!.com.hearlers.v1.common.ExtensionR\text" +
+      "ension\"m\n GenerateCutSceneImageUrlRespon" +
+      "se\022I\n\rpresigned_url\030\001 \001(\0132$.com.hearlers" +
+      ".v1.common.PresignedUrlR\014presignedUrl\"I\n" +
+      "\021CreateToneRequest\022\022\n\004name\030\001 \001(\tR\004name\022 " +
+      "\n\013description\030\002 \001(\tR\013description\"E\n\022Crea" +
+      "teToneResponse\022/\n\004tone\030\001 \001(\0132\033.com.hearl" +
+      "ers.v1.model.ToneR\004tone\"4\n\020FindTonesRequ" +
+      "est\022\027\n\004name\030\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name\"F\n" +
+      "\021FindTonesResponse\0221\n\005tones\030\001 \003(\0132\033.com." +
+      "hearlers.v1.model.ToneR\005tones\".\n\023FindTon" +
+      "eByIdRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId\"U\n" +
+      "\024FindToneByIdResponse\0224\n\004tone\030\001 \001(\0132\033.co" +
+      "m.hearlers.v1.model.ToneH\000R\004tone\210\001\001B\007\n\005_" +
+      "tone\"\205\001\n\021UpdateToneRequest\022\027\n\007tone_id\030\001 " +
+      "\001(\tR\006toneId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022%\n\013" +
+      "description\030\003 \001(\tH\001R\013description\210\001\001B\007\n\005_" +
+      "nameB\016\n\014_description\"E\n\022UpdateToneRespon" +
+      "se\022/\n\004tone\030\001 \001(\0132\033.com.hearlers.v1.model" +
+      ".ToneR\004tone2\223\022\n\020CounselorService\022t\n\017Crea" +
+      "teCounselor\022/.com.hearlers.v1.service.Cr" +
+      "eateCounselorRequest\0320.com.hearlers.v1.s" +
+      "ervice.CreateCounselorResponse\022q\n\016FindCo" +
+      "unselors\022..com.hearlers.v1.service.FindC" +
+      "ounselorsRequest\032/.com.hearlers.v1.servi" +
+      "ce.FindCounselorsResponse\022z\n\021FindCounsel" +
+      "orById\0221.com.hearlers.v1.service.FindCou" +
+      "nselorByIdRequest\0322.com.hearlers.v1.serv" +
+      "ice.FindCounselorByIdResponse\022t\n\017UpdateC" +
+      "ounselor\022/.com.hearlers.v1.service.Updat" +
+      "eCounselorRequest\0320.com.hearlers.v1.serv" +
+      "ice.UpdateCounselorResponse\022\222\001\n\031Generate" +
+      "CounselorImageUrl\0229.com.hearlers.v1.serv" +
+      "ice.GenerateCounselorImageUrlRequest\032:.c" +
+      "om.hearlers.v1.service.GenerateCounselor" +
+      "ImageUrlResponse\022k\n\014CreateBubble\022,.com.h" +
+      "earlers.v1.service.CreateBubbleRequest\032-" +
+      ".com.hearlers.v1.service.CreateBubbleRes" +
+      "ponse\022h\n\013FindBubbles\022+.com.hearlers.v1.s" +
+      "ervice.FindBubblesRequest\032,.com.hearlers" +
+      ".v1.service.FindBubblesResponse\022q\n\016FindB" +
+      "ubbleById\022..com.hearlers.v1.service.Find" +
+      "BubbleByIdRequest\032/.com.hearlers.v1.serv" +
+      "ice.FindBubbleByIdResponse\022w\n\020FindRandom" +
+      "Bubble\0220.com.hearlers.v1.service.FindRan" +
+      "domBubbleRequest\0321.com.hearlers.v1.servi" +
+      "ce.FindRandomBubbleResponse\022k\n\014UpdateBub" +
+      "ble\022,.com.hearlers.v1.service.UpdateBubb" +
+      "leRequest\032-.com.hearlers.v1.service.Upda" +
+      "teBubbleResponse\022k\n\014DeleteBubble\022,.com.h" +
+      "earlers.v1.service.DeleteBubbleRequest\032-" +
+      ".com.hearlers.v1.service.DeleteBubbleRes" +
+      "ponse\022n\n\rCreateEpisode\022-.com.hearlers.v1" +
+      ".service.CreateEpisodeRequest\032..com.hear" +
+      "lers.v1.service.CreateEpisodeResponse\022k\n" +
+      "\014FindEpisodes\022,.com.hearlers.v1.service." +
+      "FindEpisodesRequest\032-.com.hearlers.v1.se" +
+      "rvice.FindEpisodesResponse\022t\n\017FindEpisod" +
+      "eById\022/.com.hearlers.v1.service.FindEpis" +
+      "odeByIdRequest\0320.com.hearlers.v1.service" +
+      ".FindEpisodeByIdResponse\022n\n\rUpdateEpisod" +
+      "e\022-.com.hearlers.v1.service.UpdateEpisod" +
+      "eRequest\032..com.hearlers.v1.service.Updat" +
+      "eEpisodeResponse\022\217\001\n\030GenerateCutSceneIma" +
+      "geUrl\0228.com.hearlers.v1.service.Generate" +
+      "CutSceneImageUrlRequest\0329.com.hearlers.v" +
+      "1.service.GenerateCutSceneImageUrlRespon" +
+      "se\022e\n\nCreateTone\022*.com.hearlers.v1.servi" +
+      "ce.CreateToneRequest\032+.com.hearlers.v1.s" +
+      "ervice.CreateToneResponse\022b\n\tFindTones\022)" +
+      ".com.hearlers.v1.service.FindTonesReques" +
+      "t\032*.com.hearlers.v1.service.FindTonesRes" +
+      "ponse\022k\n\014FindToneById\022,.com.hearlers.v1." +
+      "service.FindToneByIdRequest\032-.com.hearle" +
+      "rs.v1.service.FindToneByIdResponse\022e\n\nUp" +
+      "dateTone\022*.com.hearlers.v1.service.Updat" +
+      "eToneRequest\032+.com.hearlers.v1.service.U" +
+      "pdateToneResponseB%\n!com.hearlers.api.pr" +
+      "oto.v1.serviceP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.hearlers.api.proto.v1.model.CounselorOuterClass.getDescriptor(),
+          com.hearlers.api.proto.v1.common.PresignedUrlOuterClass.getDescriptor(),
         });
     internal_static_com_hearlers_v1_service_CreateCounselorRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_hearlers_v1_service_CreateCounselorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselorRequest_descriptor,
-        new java.lang.String[] { "ToneId", "Name", "Description", "CounselorGender", });
+        new java.lang.String[] { "ToneId", "Name", "Description", "ProfileImage", "CounselorGender", });
     internal_static_com_hearlers_v1_service_CreateCounselorResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_service_CreateCounselorResponse_fieldAccessorTable = new
@@ -229,63 +465,214 @@ public final class Counselor {
     internal_static_com_hearlers_v1_service_UpdateCounselorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselorRequest_descriptor,
-        new java.lang.String[] { "CounselorId", "ToneId", "Name", "Description", "CounselorGender", });
+        new java.lang.String[] { "CounselorId", "ToneId", "Name", "Description", "ProfileImage", "CounselorGender", });
     internal_static_com_hearlers_v1_service_UpdateCounselorResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_hearlers_v1_service_UpdateCounselorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselorResponse_descriptor,
         new java.lang.String[] { "Counselor", });
-    internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor =
+    internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlRequest_descriptor,
+        new java.lang.String[] { "CounselorId", "Extension", });
+    internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_GenerateCounselorImageUrlResponse_descriptor,
+        new java.lang.String[] { "PresignedUrl", });
+    internal_static_com_hearlers_v1_service_CreateBubbleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_hearlers_v1_service_CreateBubbleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateBubbleRequest_descriptor,
+        new java.lang.String[] { "CounselorId", "Question", "ResponseOption1", "ResponseOption2", });
+    internal_static_com_hearlers_v1_service_CreateBubbleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_com_hearlers_v1_service_CreateBubbleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateBubbleResponse_descriptor,
+        new java.lang.String[] { "Bubble", });
+    internal_static_com_hearlers_v1_service_FindBubblesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_com_hearlers_v1_service_FindBubblesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindBubblesRequest_descriptor,
+        new java.lang.String[] { "CounselorId", });
+    internal_static_com_hearlers_v1_service_FindBubblesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_com_hearlers_v1_service_FindBubblesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindBubblesResponse_descriptor,
+        new java.lang.String[] { "Bubbles", });
+    internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_descriptor,
+        new java.lang.String[] { "BubbleId", });
+    internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_descriptor,
+        new java.lang.String[] { "Bubble", });
+    internal_static_com_hearlers_v1_service_FindRandomBubbleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_com_hearlers_v1_service_FindRandomBubbleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindRandomBubbleRequest_descriptor,
+        new java.lang.String[] { "CounselorId", });
+    internal_static_com_hearlers_v1_service_FindRandomBubbleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_com_hearlers_v1_service_FindRandomBubbleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindRandomBubbleResponse_descriptor,
+        new java.lang.String[] { "Bubble", });
+    internal_static_com_hearlers_v1_service_UpdateBubbleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_com_hearlers_v1_service_UpdateBubbleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateBubbleRequest_descriptor,
+        new java.lang.String[] { "BubbleId", "Question", "ResponseOption1", "ResponseOption2", });
+    internal_static_com_hearlers_v1_service_UpdateBubbleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_com_hearlers_v1_service_UpdateBubbleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateBubbleResponse_descriptor,
+        new java.lang.String[] { "Bubble", });
+    internal_static_com_hearlers_v1_service_DeleteBubbleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_com_hearlers_v1_service_DeleteBubbleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_DeleteBubbleRequest_descriptor,
+        new java.lang.String[] { "BubbleId", });
+    internal_static_com_hearlers_v1_service_DeleteBubbleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_com_hearlers_v1_service_DeleteBubbleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_DeleteBubbleResponse_descriptor,
+        new java.lang.String[] { "Success", });
+    internal_static_com_hearlers_v1_service_CreateEpisodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_com_hearlers_v1_service_CreateEpisodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateEpisodeRequest_descriptor,
+        new java.lang.String[] { "CounselorId", "Title", "RequiredRapportThreshold", "IsTemporary", "CutScenes", });
+    internal_static_com_hearlers_v1_service_CreateEpisodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_com_hearlers_v1_service_CreateEpisodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_CreateEpisodeResponse_descriptor,
+        new java.lang.String[] { "Episode", });
+    internal_static_com_hearlers_v1_service_FindEpisodesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_com_hearlers_v1_service_FindEpisodesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindEpisodesRequest_descriptor,
+        new java.lang.String[] { "CounselorId", });
+    internal_static_com_hearlers_v1_service_FindEpisodesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_com_hearlers_v1_service_FindEpisodesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindEpisodesResponse_descriptor,
+        new java.lang.String[] { "Episodes", });
+    internal_static_com_hearlers_v1_service_FindEpisodeByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_com_hearlers_v1_service_FindEpisodeByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindEpisodeByIdRequest_descriptor,
+        new java.lang.String[] { "EpisodeId", });
+    internal_static_com_hearlers_v1_service_FindEpisodeByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_com_hearlers_v1_service_FindEpisodeByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindEpisodeByIdResponse_descriptor,
+        new java.lang.String[] { "Episode", });
+    internal_static_com_hearlers_v1_service_UpdateEpisodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_com_hearlers_v1_service_UpdateEpisodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateEpisodeRequest_descriptor,
+        new java.lang.String[] { "EpisodeId", "Title", "Content", "RequiredRapportThreshold", "IsTemporary", "CutScenes", });
+    internal_static_com_hearlers_v1_service_UpdateEpisodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_com_hearlers_v1_service_UpdateEpisodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdateEpisodeResponse_descriptor,
+        new java.lang.String[] { "Episode", });
+    internal_static_com_hearlers_v1_service_SaveEpisodeCutSceneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_com_hearlers_v1_service_SaveEpisodeCutSceneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_SaveEpisodeCutSceneRequest_descriptor,
+        new java.lang.String[] { "Id", "EpisodeId", "Speaker", "Content", "OrderIndex", "Image", });
+    internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlRequest_descriptor,
+        new java.lang.String[] { "EpisodeId", "Extension", });
+    internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlResponse_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_GenerateCutSceneImageUrlResponse_descriptor,
+        new java.lang.String[] { "PresignedUrl", });
+    internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
     internal_static_com_hearlers_v1_service_CreateToneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateToneRequest_descriptor,
         new java.lang.String[] { "Name", "Description", });
     internal_static_com_hearlers_v1_service_CreateToneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_com_hearlers_v1_service_CreateToneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateToneResponse_descriptor,
         new java.lang.String[] { "Tone", });
     internal_static_com_hearlers_v1_service_FindTonesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_com_hearlers_v1_service_FindTonesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindTonesRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_com_hearlers_v1_service_FindTonesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_com_hearlers_v1_service_FindTonesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindTonesResponse_descriptor,
         new java.lang.String[] { "Tones", });
     internal_static_com_hearlers_v1_service_FindToneByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_com_hearlers_v1_service_FindToneByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindToneByIdRequest_descriptor,
         new java.lang.String[] { "ToneId", });
     internal_static_com_hearlers_v1_service_FindToneByIdResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_com_hearlers_v1_service_FindToneByIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindToneByIdResponse_descriptor,
         new java.lang.String[] { "Tone", });
     internal_static_com_hearlers_v1_service_UpdateToneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_com_hearlers_v1_service_UpdateToneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateToneRequest_descriptor,
         new java.lang.String[] { "ToneId", "Name", "Description", });
     internal_static_com_hearlers_v1_service_UpdateToneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_com_hearlers_v1_service_UpdateToneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateToneResponse_descriptor,
         new java.lang.String[] { "Tone", });
     descriptor.resolveAllFeaturesImmutable();
     com.hearlers.api.proto.v1.model.CounselorOuterClass.getDescriptor();
+    com.hearlers.api.proto.v1.common.PresignedUrlOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

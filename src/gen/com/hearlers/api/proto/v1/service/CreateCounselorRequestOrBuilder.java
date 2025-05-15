@@ -46,12 +46,24 @@ public interface CreateCounselorRequestOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+   * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+   * @return The profileImage.
+   */
+  java.lang.String getProfileImage();
+  /**
+   * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+   * @return The bytes for profileImage.
+   */
+  com.google.protobuf.ByteString
+      getProfileImageBytes();
+
+  /**
+   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
    * @return The enum numeric value on the wire for counselorGender.
    */
   int getCounselorGenderValue();
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
    * @return The counselorGender.
    */
   com.hearlers.api.proto.v1.model.CounselorGender getCounselorGender();

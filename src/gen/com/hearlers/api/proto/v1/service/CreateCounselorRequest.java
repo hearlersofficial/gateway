@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     toneId_ = "";
     name_ = "";
     description_ = "";
+    profileImage_ = "";
     counselorGender_ = 0;
   }
 
@@ -167,17 +168,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COUNSELOR_GENDER_FIELD_NUMBER = 4;
+  public static final int PROFILE_IMAGE_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object profileImage_ = "";
+  /**
+   * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+   * @return The profileImage.
+   */
+  @java.lang.Override
+  public java.lang.String getProfileImage() {
+    java.lang.Object ref = profileImage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      profileImage_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+   * @return The bytes for profileImage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProfileImageBytes() {
+    java.lang.Object ref = profileImage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      profileImage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COUNSELOR_GENDER_FIELD_NUMBER = 5;
   private int counselorGender_ = 0;
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
    * @return The enum numeric value on the wire for counselorGender.
    */
   @java.lang.Override public int getCounselorGenderValue() {
     return counselorGender_;
   }
   /**
-   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+   * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
    * @return The counselorGender.
    */
   @java.lang.Override public com.hearlers.api.proto.v1.model.CounselorGender getCounselorGender() {
@@ -208,8 +248,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, description_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileImage_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, profileImage_);
+    }
     if (counselorGender_ != com.hearlers.api.proto.v1.model.CounselorGender.COUNSELOR_GENDER_UNSPECIFIED.getNumber()) {
-      output.writeEnum(4, counselorGender_);
+      output.writeEnum(5, counselorGender_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -229,9 +272,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, description_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileImage_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, profileImage_);
+    }
     if (counselorGender_ != com.hearlers.api.proto.v1.model.CounselorGender.COUNSELOR_GENDER_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, counselorGender_);
+        .computeEnumSize(5, counselorGender_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -254,6 +300,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (!getProfileImage()
+        .equals(other.getProfileImage())) return false;
     if (counselorGender_ != other.counselorGender_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -272,6 +320,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + PROFILE_IMAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getProfileImage().hashCode();
     hash = (37 * hash) + COUNSELOR_GENDER_FIELD_NUMBER;
     hash = (53 * hash) + counselorGender_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -412,6 +462,7 @@ private static final long serialVersionUID = 0L;
       toneId_ = "";
       name_ = "";
       description_ = "";
+      profileImage_ = "";
       counselorGender_ = 0;
       return this;
     }
@@ -456,6 +507,9 @@ private static final long serialVersionUID = 0L;
         result.description_ = description_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.profileImage_ = profileImage_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.counselorGender_ = counselorGender_;
       }
     }
@@ -485,6 +539,11 @@ private static final long serialVersionUID = 0L;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getProfileImage().isEmpty()) {
+        profileImage_ = other.profileImage_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.counselorGender_ != 0) {
@@ -531,11 +590,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 32: {
-              counselorGender_ = input.readEnum();
+            case 34: {
+              profileImage_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
-            } // case 32
+            } // case 34
+            case 40: {
+              counselorGender_ = input.readEnum();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -769,27 +833,99 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object profileImage_ = "";
+    /**
+     * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+     * @return The profileImage.
+     */
+    public java.lang.String getProfileImage() {
+      java.lang.Object ref = profileImage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        profileImage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+     * @return The bytes for profileImage.
+     */
+    public com.google.protobuf.ByteString
+        getProfileImageBytes() {
+      java.lang.Object ref = profileImage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        profileImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+     * @param value The profileImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProfileImage(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      profileImage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProfileImage() {
+      profileImage_ = getDefaultInstance().getProfileImage();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string profile_image = 4 [json_name = "profileImage"];</code>
+     * @param value The bytes for profileImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProfileImageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      profileImage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private int counselorGender_ = 0;
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @return The enum numeric value on the wire for counselorGender.
      */
     @java.lang.Override public int getCounselorGenderValue() {
       return counselorGender_;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @param value The enum numeric value on the wire for counselorGender to set.
      * @return This builder for chaining.
      */
     public Builder setCounselorGenderValue(int value) {
       counselorGender_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @return The counselorGender.
      */
     @java.lang.Override
@@ -798,7 +934,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.hearlers.api.proto.v1.model.CounselorGender.UNRECOGNIZED : result;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @param value The counselorGender to set.
      * @return This builder for chaining.
      */
@@ -806,17 +942,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       counselorGender_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 4 [json_name = "counselorGender"];</code>
+     * <code>.com.hearlers.v1.model.CounselorGender counselor_gender = 5 [json_name = "counselorGender"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCounselorGender() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       counselorGender_ = 0;
       onChanged();
       return this;
