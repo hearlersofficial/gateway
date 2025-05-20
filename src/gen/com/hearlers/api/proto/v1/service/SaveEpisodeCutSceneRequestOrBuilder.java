@@ -39,53 +39,41 @@ public interface SaveEpisodeCutSceneRequestOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-   * @return The episodeId.
-   */
-  java.lang.String getEpisodeId();
-  /**
-   * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-   * @return The bytes for episodeId.
-   */
-  com.google.protobuf.ByteString
-      getEpisodeIdBytes();
-
-  /**
-   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
    * @return The enum numeric value on the wire for speaker.
    */
   int getSpeakerValue();
   /**
-   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
    * @return The speaker.
    */
   com.hearlers.api.proto.v1.model.Speaker getSpeaker();
 
   /**
-   * <code>string content = 4 [json_name = "content"];</code>
+   * <code>string content = 3 [json_name = "content"];</code>
    * @return The content.
    */
   java.lang.String getContent();
   /**
-   * <code>string content = 4 [json_name = "content"];</code>
+   * <code>string content = 3 [json_name = "content"];</code>
    * @return The bytes for content.
    */
   com.google.protobuf.ByteString
       getContentBytes();
 
   /**
-   * <code>int32 order_index = 5 [json_name = "orderIndex"];</code>
+   * <code>int32 order_index = 4 [json_name = "orderIndex"];</code>
    * @return The orderIndex.
    */
   int getOrderIndex();
 
   /**
-   * <code>string image = 6 [json_name = "image"];</code>
+   * <code>string image = 5 [json_name = "image"];</code>
    * @return The image.
    */
   java.lang.String getImage();
   /**
-   * <code>string image = 6 [json_name = "image"];</code>
+   * <code>string image = 5 [json_name = "image"];</code>
    * @return The bytes for image.
    */
   com.google.protobuf.ByteString
