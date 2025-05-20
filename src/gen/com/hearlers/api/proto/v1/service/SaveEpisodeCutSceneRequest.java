@@ -33,7 +33,7 @@ private static final long serialVersionUID = 0L;
   private SaveEpisodeCutSceneRequest() {
     id_ = "";
     episodeId_ = "";
-    speaker_ = "";
+    speaker_ = 0;
     content_ = "";
     image_ = "";
   }
@@ -151,42 +151,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SPEAKER_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object speaker_ = "";
+  private int speaker_ = 0;
   /**
-   * <code>string speaker = 3 [json_name = "speaker"];</code>
-   * @return The speaker.
+   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * @return The enum numeric value on the wire for speaker.
    */
-  @java.lang.Override
-  public java.lang.String getSpeaker() {
-    java.lang.Object ref = speaker_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      speaker_ = s;
-      return s;
-    }
+  @java.lang.Override public int getSpeakerValue() {
+    return speaker_;
   }
   /**
-   * <code>string speaker = 3 [json_name = "speaker"];</code>
-   * @return The bytes for speaker.
+   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * @return The speaker.
    */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSpeakerBytes() {
-    java.lang.Object ref = speaker_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      speaker_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  @java.lang.Override public com.hearlers.api.proto.v1.model.Speaker getSpeaker() {
+    com.hearlers.api.proto.v1.model.Speaker result = com.hearlers.api.proto.v1.model.Speaker.forNumber(speaker_);
+    return result == null ? com.hearlers.api.proto.v1.model.Speaker.UNRECOGNIZED : result;
   }
 
   public static final int CONTENT_FIELD_NUMBER = 4;
@@ -298,8 +277,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, episodeId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(speaker_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, speaker_);
+    if (speaker_ != com.hearlers.api.proto.v1.model.Speaker.SPEAKER_UNSPECIFIED.getNumber()) {
+      output.writeEnum(3, speaker_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, content_);
@@ -325,8 +304,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, episodeId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(speaker_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, speaker_);
+    if (speaker_ != com.hearlers.api.proto.v1.model.Speaker.SPEAKER_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(3, speaker_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, content_);
@@ -360,8 +340,7 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEpisodeId()
         .equals(other.getEpisodeId())) return false;
-    if (!getSpeaker()
-        .equals(other.getSpeaker())) return false;
+    if (speaker_ != other.speaker_) return false;
     if (!getContent()
         .equals(other.getContent())) return false;
     if (getOrderIndex()
@@ -386,7 +365,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EPISODE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getEpisodeId().hashCode();
     hash = (37 * hash) + SPEAKER_FIELD_NUMBER;
-    hash = (53 * hash) + getSpeaker().hashCode();
+    hash = (53 * hash) + speaker_;
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + ORDER_INDEX_FIELD_NUMBER;
@@ -530,7 +509,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       id_ = "";
       episodeId_ = "";
-      speaker_ = "";
+      speaker_ = 0;
       content_ = "";
       orderIndex_ = 0;
       image_ = "";
@@ -612,10 +591,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getSpeaker().isEmpty()) {
-        speaker_ = other.speaker_;
-        bitField0_ |= 0x00000004;
-        onChanged();
+      if (other.speaker_ != 0) {
+        setSpeakerValue(other.getSpeakerValue());
       }
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
@@ -666,11 +643,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 26: {
-              speaker_ = input.readStringRequireUtf8();
+            case 24: {
+              speaker_ = input.readEnum();
               bitField0_ |= 0x00000004;
               break;
-            } // case 26
+            } // case 24
             case 34: {
               content_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
@@ -878,74 +855,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object speaker_ = "";
+    private int speaker_ = 0;
     /**
-     * <code>string speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * @return The enum numeric value on the wire for speaker.
+     */
+    @java.lang.Override public int getSpeakerValue() {
+      return speaker_;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * @param value The enum numeric value on the wire for speaker to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpeakerValue(int value) {
+      speaker_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
      * @return The speaker.
      */
-    public java.lang.String getSpeaker() {
-      java.lang.Object ref = speaker_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        speaker_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public com.hearlers.api.proto.v1.model.Speaker getSpeaker() {
+      com.hearlers.api.proto.v1.model.Speaker result = com.hearlers.api.proto.v1.model.Speaker.forNumber(speaker_);
+      return result == null ? com.hearlers.api.proto.v1.model.Speaker.UNRECOGNIZED : result;
     }
     /**
-     * <code>string speaker = 3 [json_name = "speaker"];</code>
-     * @return The bytes for speaker.
-     */
-    public com.google.protobuf.ByteString
-        getSpeakerBytes() {
-      java.lang.Object ref = speaker_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        speaker_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
      * @param value The speaker to set.
      * @return This builder for chaining.
      */
-    public Builder setSpeaker(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      speaker_ = value;
+    public Builder setSpeaker(com.hearlers.api.proto.v1.model.Speaker value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
+      speaker_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>string speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSpeaker() {
-      speaker_ = getDefaultInstance().getSpeaker();
       bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string speaker = 3 [json_name = "speaker"];</code>
-     * @param value The bytes for speaker to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSpeakerBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      speaker_ = value;
-      bitField0_ |= 0x00000004;
+      speaker_ = 0;
       onChanged();
       return this;
     }

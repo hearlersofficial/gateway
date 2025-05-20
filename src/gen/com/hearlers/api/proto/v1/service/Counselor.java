@@ -286,137 +286,141 @@ public final class Counselor {
       "ndBubblesRequest\022!\n\014counselor_id\030\001 \001(\tR\013" +
       "counselorId\"N\n\023FindBubblesResponse\0227\n\007bu" +
       "bbles\030\001 \003(\0132\035.com.hearlers.v1.model.Bubb" +
-      "leR\007bubbles\"4\n\025FindBubbleByIdRequest\022\033\n\t" +
-      "bubble_id\030\001 \001(\tR\010bubbleId\"O\n\026FindBubbleB" +
-      "yIdResponse\0225\n\006bubble\030\001 \001(\0132\035.com.hearle" +
-      "rs.v1.model.BubbleR\006bubble\"<\n\027FindRandom" +
-      "BubbleRequest\022!\n\014counselor_id\030\001 \001(\tR\013cou" +
-      "nselorId\"Q\n\030FindRandomBubbleResponse\0225\n\006" +
-      "bubble\030\001 \001(\0132\035.com.hearlers.v1.model.Bub" +
-      "bleR\006bubble\"\352\001\n\023UpdateBubbleRequest\022\033\n\tb" +
-      "ubble_id\030\001 \001(\tR\010bubbleId\022\037\n\010question\030\002 \001" +
-      "(\tH\000R\010question\210\001\001\022.\n\020response_option1\030\003 " +
-      "\001(\tH\001R\017responseOption1\210\001\001\022.\n\020response_op" +
-      "tion2\030\004 \001(\tH\002R\017responseOption2\210\001\001B\013\n\t_qu" +
-      "estionB\023\n\021_response_option1B\023\n\021_response" +
-      "_option2\"M\n\024UpdateBubbleResponse\0225\n\006bubb" +
-      "le\030\001 \001(\0132\035.com.hearlers.v1.model.BubbleR" +
-      "\006bubble\"2\n\023DeleteBubbleRequest\022\033\n\tbubble" +
-      "_id\030\001 \001(\tR\010bubbleId\"0\n\024DeleteBubbleRespo" +
-      "nse\022\030\n\007success\030\001 \001(\010R\007success\"\204\002\n\024Create" +
-      "EpisodeRequest\022!\n\014counselor_id\030\001 \001(\tR\013co" +
-      "unselorId\022\024\n\005title\030\002 \001(\tR\005title\022<\n\032requi" +
-      "red_rapport_threshold\030\003 \001(\005R\030requiredRap" +
-      "portThreshold\022!\n\014is_temporary\030\004 \001(\010R\013isT" +
-      "emporary\022R\n\ncut_scenes\030\005 \003(\01323.com.hearl" +
-      "ers.v1.service.SaveEpisodeCutSceneReques" +
-      "tR\tcutScenes\"Q\n\025CreateEpisodeResponse\0228\n" +
-      "\007episode\030\001 \001(\0132\036.com.hearlers.v1.model.E" +
-      "pisodeR\007episode\"8\n\023FindEpisodesRequest\022!" +
-      "\n\014counselor_id\030\001 \001(\tR\013counselorId\"R\n\024Fin" +
-      "dEpisodesResponse\022:\n\010episodes\030\001 \003(\0132\036.co" +
-      "m.hearlers.v1.model.EpisodeR\010episodes\"7\n" +
-      "\026FindEpisodeByIdRequest\022\035\n\nepisode_id\030\001 " +
-      "\001(\tR\tepisodeId\"S\n\027FindEpisodeByIdRespons" +
-      "e\0228\n\007episode\030\001 \001(\0132\036.com.hearlers.v1.mod" +
-      "el.EpisodeR\007episode\"\364\002\n\024UpdateEpisodeReq" +
-      "uest\022\035\n\nepisode_id\030\001 \001(\tR\tepisodeId\022\031\n\005t" +
-      "itle\030\002 \001(\tH\000R\005title\210\001\001\022\035\n\007content\030\003 \001(\tH" +
-      "\001R\007content\210\001\001\022A\n\032required_rapport_thresh" +
-      "old\030\004 \001(\005H\002R\030requiredRapportThreshold\210\001\001" +
-      "\022&\n\014is_temporary\030\005 \001(\010H\003R\013isTemporary\210\001\001" +
-      "\022R\n\ncut_scenes\030\006 \003(\01323.com.hearlers.v1.s" +
-      "ervice.SaveEpisodeCutSceneRequestR\tcutSc" +
-      "enesB\010\n\006_titleB\n\n\010_contentB\035\n\033_required_" +
-      "rapport_thresholdB\017\n\r_is_temporary\"Q\n\025Up" +
-      "dateEpisodeResponse\0228\n\007episode\030\001 \001(\0132\036.c" +
-      "om.hearlers.v1.model.EpisodeR\007episode\"\302\001" +
-      "\n\032SaveEpisodeCutSceneRequest\022\023\n\002id\030\001 \001(\t" +
-      "H\000R\002id\210\001\001\022\035\n\nepisode_id\030\002 \001(\tR\tepisodeId" +
-      "\022\030\n\007speaker\030\003 \001(\tR\007speaker\022\030\n\007content\030\004 " +
-      "\001(\tR\007content\022\037\n\013order_index\030\005 \001(\005R\norder" +
-      "Index\022\024\n\005image\030\006 \001(\tR\005imageB\005\n\003_id\"\201\001\n\037G" +
-      "enerateCutSceneImageUrlRequest\022\035\n\nepisod" +
-      "e_id\030\001 \001(\tR\tepisodeId\022?\n\textension\030\002 \001(\016" +
-      "2!.com.hearlers.v1.common.ExtensionR\text" +
-      "ension\"m\n GenerateCutSceneImageUrlRespon" +
-      "se\022I\n\rpresigned_url\030\001 \001(\0132$.com.hearlers" +
-      ".v1.common.PresignedUrlR\014presignedUrl\"I\n" +
-      "\021CreateToneRequest\022\022\n\004name\030\001 \001(\tR\004name\022 " +
-      "\n\013description\030\002 \001(\tR\013description\"E\n\022Crea" +
-      "teToneResponse\022/\n\004tone\030\001 \001(\0132\033.com.hearl" +
-      "ers.v1.model.ToneR\004tone\"4\n\020FindTonesRequ" +
-      "est\022\027\n\004name\030\001 \001(\tH\000R\004name\210\001\001B\007\n\005_name\"F\n" +
-      "\021FindTonesResponse\0221\n\005tones\030\001 \003(\0132\033.com." +
-      "hearlers.v1.model.ToneR\005tones\".\n\023FindTon" +
-      "eByIdRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId\"U\n" +
-      "\024FindToneByIdResponse\0224\n\004tone\030\001 \001(\0132\033.co" +
-      "m.hearlers.v1.model.ToneH\000R\004tone\210\001\001B\007\n\005_" +
-      "tone\"\205\001\n\021UpdateToneRequest\022\027\n\007tone_id\030\001 " +
-      "\001(\tR\006toneId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022%\n\013" +
-      "description\030\003 \001(\tH\001R\013description\210\001\001B\007\n\005_" +
-      "nameB\016\n\014_description\"E\n\022UpdateToneRespon" +
-      "se\022/\n\004tone\030\001 \001(\0132\033.com.hearlers.v1.model" +
-      ".ToneR\004tone2\223\022\n\020CounselorService\022t\n\017Crea" +
-      "teCounselor\022/.com.hearlers.v1.service.Cr" +
-      "eateCounselorRequest\0320.com.hearlers.v1.s" +
-      "ervice.CreateCounselorResponse\022q\n\016FindCo" +
-      "unselors\022..com.hearlers.v1.service.FindC" +
-      "ounselorsRequest\032/.com.hearlers.v1.servi" +
-      "ce.FindCounselorsResponse\022z\n\021FindCounsel" +
-      "orById\0221.com.hearlers.v1.service.FindCou" +
-      "nselorByIdRequest\0322.com.hearlers.v1.serv" +
-      "ice.FindCounselorByIdResponse\022t\n\017UpdateC" +
-      "ounselor\022/.com.hearlers.v1.service.Updat" +
-      "eCounselorRequest\0320.com.hearlers.v1.serv" +
-      "ice.UpdateCounselorResponse\022\222\001\n\031Generate" +
-      "CounselorImageUrl\0229.com.hearlers.v1.serv" +
-      "ice.GenerateCounselorImageUrlRequest\032:.c" +
-      "om.hearlers.v1.service.GenerateCounselor" +
-      "ImageUrlResponse\022k\n\014CreateBubble\022,.com.h" +
-      "earlers.v1.service.CreateBubbleRequest\032-" +
-      ".com.hearlers.v1.service.CreateBubbleRes" +
-      "ponse\022h\n\013FindBubbles\022+.com.hearlers.v1.s" +
-      "ervice.FindBubblesRequest\032,.com.hearlers" +
-      ".v1.service.FindBubblesResponse\022q\n\016FindB" +
-      "ubbleById\022..com.hearlers.v1.service.Find" +
-      "BubbleByIdRequest\032/.com.hearlers.v1.serv" +
-      "ice.FindBubbleByIdResponse\022w\n\020FindRandom" +
-      "Bubble\0220.com.hearlers.v1.service.FindRan" +
-      "domBubbleRequest\0321.com.hearlers.v1.servi" +
-      "ce.FindRandomBubbleResponse\022k\n\014UpdateBub" +
-      "ble\022,.com.hearlers.v1.service.UpdateBubb" +
-      "leRequest\032-.com.hearlers.v1.service.Upda" +
-      "teBubbleResponse\022k\n\014DeleteBubble\022,.com.h" +
-      "earlers.v1.service.DeleteBubbleRequest\032-" +
-      ".com.hearlers.v1.service.DeleteBubbleRes" +
-      "ponse\022n\n\rCreateEpisode\022-.com.hearlers.v1" +
-      ".service.CreateEpisodeRequest\032..com.hear" +
-      "lers.v1.service.CreateEpisodeResponse\022k\n" +
-      "\014FindEpisodes\022,.com.hearlers.v1.service." +
-      "FindEpisodesRequest\032-.com.hearlers.v1.se" +
-      "rvice.FindEpisodesResponse\022t\n\017FindEpisod" +
-      "eById\022/.com.hearlers.v1.service.FindEpis" +
-      "odeByIdRequest\0320.com.hearlers.v1.service" +
-      ".FindEpisodeByIdResponse\022n\n\rUpdateEpisod" +
-      "e\022-.com.hearlers.v1.service.UpdateEpisod" +
-      "eRequest\032..com.hearlers.v1.service.Updat" +
-      "eEpisodeResponse\022\217\001\n\030GenerateCutSceneIma" +
-      "geUrl\0228.com.hearlers.v1.service.Generate" +
-      "CutSceneImageUrlRequest\0329.com.hearlers.v" +
-      "1.service.GenerateCutSceneImageUrlRespon" +
-      "se\022e\n\nCreateTone\022*.com.hearlers.v1.servi" +
-      "ce.CreateToneRequest\032+.com.hearlers.v1.s" +
-      "ervice.CreateToneResponse\022b\n\tFindTones\022)" +
-      ".com.hearlers.v1.service.FindTonesReques" +
-      "t\032*.com.hearlers.v1.service.FindTonesRes" +
-      "ponse\022k\n\014FindToneById\022,.com.hearlers.v1." +
-      "service.FindToneByIdRequest\032-.com.hearle" +
-      "rs.v1.service.FindToneByIdResponse\022e\n\nUp" +
-      "dateTone\022*.com.hearlers.v1.service.Updat" +
-      "eToneRequest\032+.com.hearlers.v1.service.U" +
-      "pdateToneResponseB%\n!com.hearlers.api.pr" +
-      "oto.v1.serviceP\001b\006proto3"
+      "leR\007bubbles\"W\n\025FindBubbleByIdRequest\022\033\n\t" +
+      "bubble_id\030\001 \001(\tR\010bubbleId\022!\n\014counselor_i" +
+      "d\030\002 \001(\tR\013counselorId\"O\n\026FindBubbleByIdRe" +
+      "sponse\0225\n\006bubble\030\001 \001(\0132\035.com.hearlers.v1" +
+      ".model.BubbleR\006bubble\"<\n\027FindRandomBubbl" +
+      "eRequest\022!\n\014counselor_id\030\001 \001(\tR\013counselo" +
+      "rId\"Q\n\030FindRandomBubbleResponse\0225\n\006bubbl" +
+      "e\030\001 \001(\0132\035.com.hearlers.v1.model.BubbleR\006" +
+      "bubble\"\215\002\n\023UpdateBubbleRequest\022\033\n\tbubble" +
+      "_id\030\001 \001(\tR\010bubbleId\022!\n\014counselor_id\030\002 \001(" +
+      "\tR\013counselorId\022\037\n\010question\030\003 \001(\tH\000R\010ques" +
+      "tion\210\001\001\022.\n\020response_option1\030\004 \001(\tH\001R\017res" +
+      "ponseOption1\210\001\001\022.\n\020response_option2\030\005 \001(" +
+      "\tH\002R\017responseOption2\210\001\001B\013\n\t_questionB\023\n\021" +
+      "_response_option1B\023\n\021_response_option2\"M" +
+      "\n\024UpdateBubbleResponse\0225\n\006bubble\030\001 \001(\0132\035" +
+      ".com.hearlers.v1.model.BubbleR\006bubble\"U\n" +
+      "\023DeleteBubbleRequest\022\033\n\tbubble_id\030\001 \001(\tR" +
+      "\010bubbleId\022!\n\014counselor_id\030\002 \001(\tR\013counsel" +
+      "orId\"0\n\024DeleteBubbleResponse\022\030\n\007success\030" +
+      "\001 \001(\010R\007success\"\204\002\n\024CreateEpisodeRequest\022" +
+      "!\n\014counselor_id\030\001 \001(\tR\013counselorId\022\024\n\005ti" +
+      "tle\030\002 \001(\tR\005title\022<\n\032required_rapport_thr" +
+      "eshold\030\003 \001(\005R\030requiredRapportThreshold\022!" +
+      "\n\014is_temporary\030\004 \001(\010R\013isTemporary\022R\n\ncut" +
+      "_scenes\030\005 \003(\01323.com.hearlers.v1.service." +
+      "SaveEpisodeCutSceneRequestR\tcutScenes\"Q\n" +
+      "\025CreateEpisodeResponse\0228\n\007episode\030\001 \001(\0132" +
+      "\036.com.hearlers.v1.model.EpisodeR\007episode" +
+      "\"8\n\023FindEpisodesRequest\022!\n\014counselor_id\030" +
+      "\001 \001(\tR\013counselorId\"R\n\024FindEpisodesRespon" +
+      "se\022:\n\010episodes\030\001 \003(\0132\036.com.hearlers.v1.m" +
+      "odel.EpisodeR\010episodes\"7\n\026FindEpisodeByI" +
+      "dRequest\022\035\n\nepisode_id\030\001 \001(\tR\tepisodeId\"" +
+      "S\n\027FindEpisodeByIdResponse\0228\n\007episode\030\001 " +
+      "\001(\0132\036.com.hearlers.v1.model.EpisodeR\007epi" +
+      "sode\"\364\002\n\024UpdateEpisodeRequest\022\035\n\nepisode" +
+      "_id\030\001 \001(\tR\tepisodeId\022\031\n\005title\030\002 \001(\tH\000R\005t" +
+      "itle\210\001\001\022\035\n\007content\030\003 \001(\tH\001R\007content\210\001\001\022A" +
+      "\n\032required_rapport_threshold\030\004 \001(\005H\002R\030re" +
+      "quiredRapportThreshold\210\001\001\022&\n\014is_temporar" +
+      "y\030\005 \001(\010H\003R\013isTemporary\210\001\001\022R\n\ncut_scenes\030" +
+      "\006 \003(\01323.com.hearlers.v1.service.SaveEpis" +
+      "odeCutSceneRequestR\tcutScenesB\010\n\006_titleB" +
+      "\n\n\010_contentB\035\n\033_required_rapport_thresho" +
+      "ldB\017\n\r_is_temporary\"Q\n\025UpdateEpisodeResp" +
+      "onse\0228\n\007episode\030\001 \001(\0132\036.com.hearlers.v1." +
+      "model.EpisodeR\007episode\"\342\001\n\032SaveEpisodeCu" +
+      "tSceneRequest\022\023\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\035\n\nep" +
+      "isode_id\030\002 \001(\tR\tepisodeId\0228\n\007speaker\030\003 \001" +
+      "(\0162\036.com.hearlers.v1.model.SpeakerR\007spea" +
+      "ker\022\030\n\007content\030\004 \001(\tR\007content\022\037\n\013order_i" +
+      "ndex\030\005 \001(\005R\norderIndex\022\024\n\005image\030\006 \001(\tR\005i" +
+      "mageB\005\n\003_id\"\201\001\n\037GenerateCutSceneImageUrl" +
+      "Request\022\035\n\nepisode_id\030\001 \001(\tR\tepisodeId\022?" +
+      "\n\textension\030\002 \001(\0162!.com.hearlers.v1.comm" +
+      "on.ExtensionR\textension\"m\n GenerateCutSc" +
+      "eneImageUrlResponse\022I\n\rpresigned_url\030\001 \001" +
+      "(\0132$.com.hearlers.v1.common.PresignedUrl" +
+      "R\014presignedUrl\"I\n\021CreateToneRequest\022\022\n\004n" +
+      "ame\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013de" +
+      "scription\"E\n\022CreateToneResponse\022/\n\004tone\030" +
+      "\001 \001(\0132\033.com.hearlers.v1.model.ToneR\004tone" +
+      "\"4\n\020FindTonesRequest\022\027\n\004name\030\001 \001(\tH\000R\004na" +
+      "me\210\001\001B\007\n\005_name\"F\n\021FindTonesResponse\0221\n\005t" +
+      "ones\030\001 \003(\0132\033.com.hearlers.v1.model.ToneR" +
+      "\005tones\".\n\023FindToneByIdRequest\022\027\n\007tone_id" +
+      "\030\001 \001(\tR\006toneId\"U\n\024FindToneByIdResponse\0224" +
+      "\n\004tone\030\001 \001(\0132\033.com.hearlers.v1.model.Ton" +
+      "eH\000R\004tone\210\001\001B\007\n\005_tone\"\205\001\n\021UpdateToneRequ" +
+      "est\022\027\n\007tone_id\030\001 \001(\tR\006toneId\022\027\n\004name\030\002 \001" +
+      "(\tH\000R\004name\210\001\001\022%\n\013description\030\003 \001(\tH\001R\013de" +
+      "scription\210\001\001B\007\n\005_nameB\016\n\014_description\"E\n" +
+      "\022UpdateToneResponse\022/\n\004tone\030\001 \001(\0132\033.com." +
+      "hearlers.v1.model.ToneR\004tone2\223\022\n\020Counsel" +
+      "orService\022t\n\017CreateCounselor\022/.com.hearl" +
+      "ers.v1.service.CreateCounselorRequest\0320." +
+      "com.hearlers.v1.service.CreateCounselorR" +
+      "esponse\022q\n\016FindCounselors\022..com.hearlers" +
+      ".v1.service.FindCounselorsRequest\032/.com." +
+      "hearlers.v1.service.FindCounselorsRespon" +
+      "se\022z\n\021FindCounselorById\0221.com.hearlers.v" +
+      "1.service.FindCounselorByIdRequest\0322.com" +
+      ".hearlers.v1.service.FindCounselorByIdRe" +
+      "sponse\022t\n\017UpdateCounselor\022/.com.hearlers" +
+      ".v1.service.UpdateCounselorRequest\0320.com" +
+      ".hearlers.v1.service.UpdateCounselorResp" +
+      "onse\022\222\001\n\031GenerateCounselorImageUrl\0229.com" +
+      ".hearlers.v1.service.GenerateCounselorIm" +
+      "ageUrlRequest\032:.com.hearlers.v1.service." +
+      "GenerateCounselorImageUrlResponse\022k\n\014Cre" +
+      "ateBubble\022,.com.hearlers.v1.service.Crea" +
+      "teBubbleRequest\032-.com.hearlers.v1.servic" +
+      "e.CreateBubbleResponse\022h\n\013FindBubbles\022+." +
+      "com.hearlers.v1.service.FindBubblesReque" +
+      "st\032,.com.hearlers.v1.service.FindBubbles" +
+      "Response\022q\n\016FindBubbleById\022..com.hearler" +
+      "s.v1.service.FindBubbleByIdRequest\032/.com" +
+      ".hearlers.v1.service.FindBubbleByIdRespo" +
+      "nse\022w\n\020FindRandomBubble\0220.com.hearlers.v" +
+      "1.service.FindRandomBubbleRequest\0321.com." +
+      "hearlers.v1.service.FindRandomBubbleResp" +
+      "onse\022k\n\014UpdateBubble\022,.com.hearlers.v1.s" +
+      "ervice.UpdateBubbleRequest\032-.com.hearler" +
+      "s.v1.service.UpdateBubbleResponse\022k\n\014Del" +
+      "eteBubble\022,.com.hearlers.v1.service.Dele" +
+      "teBubbleRequest\032-.com.hearlers.v1.servic" +
+      "e.DeleteBubbleResponse\022n\n\rCreateEpisode\022" +
+      "-.com.hearlers.v1.service.CreateEpisodeR" +
+      "equest\032..com.hearlers.v1.service.CreateE" +
+      "pisodeResponse\022k\n\014FindEpisodes\022,.com.hea" +
+      "rlers.v1.service.FindEpisodesRequest\032-.c" +
+      "om.hearlers.v1.service.FindEpisodesRespo" +
+      "nse\022t\n\017FindEpisodeById\022/.com.hearlers.v1" +
+      ".service.FindEpisodeByIdRequest\0320.com.he" +
+      "arlers.v1.service.FindEpisodeByIdRespons" +
+      "e\022n\n\rUpdateEpisode\022-.com.hearlers.v1.ser" +
+      "vice.UpdateEpisodeRequest\032..com.hearlers" +
+      ".v1.service.UpdateEpisodeResponse\022\217\001\n\030Ge" +
+      "nerateCutSceneImageUrl\0228.com.hearlers.v1" +
+      ".service.GenerateCutSceneImageUrlRequest" +
+      "\0329.com.hearlers.v1.service.GenerateCutSc" +
+      "eneImageUrlResponse\022e\n\nCreateTone\022*.com." +
+      "hearlers.v1.service.CreateToneRequest\032+." +
+      "com.hearlers.v1.service.CreateToneRespon" +
+      "se\022b\n\tFindTones\022).com.hearlers.v1.servic" +
+      "e.FindTonesRequest\032*.com.hearlers.v1.ser" +
+      "vice.FindTonesResponse\022k\n\014FindToneById\022," +
+      ".com.hearlers.v1.service.FindToneByIdReq" +
+      "uest\032-.com.hearlers.v1.service.FindToneB" +
+      "yIdResponse\022e\n\nUpdateTone\022*.com.hearlers" +
+      ".v1.service.UpdateToneRequest\032+.com.hear" +
+      "lers.v1.service.UpdateToneResponseB%\n!co" +
+      "m.hearlers.api.proto.v1.serviceP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -513,7 +517,7 @@ public final class Counselor {
     internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindBubbleByIdRequest_descriptor,
-        new java.lang.String[] { "BubbleId", });
+        new java.lang.String[] { "BubbleId", "CounselorId", });
     internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_com_hearlers_v1_service_FindBubbleByIdResponse_fieldAccessorTable = new
@@ -537,7 +541,7 @@ public final class Counselor {
     internal_static_com_hearlers_v1_service_UpdateBubbleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateBubbleRequest_descriptor,
-        new java.lang.String[] { "BubbleId", "Question", "ResponseOption1", "ResponseOption2", });
+        new java.lang.String[] { "BubbleId", "CounselorId", "Question", "ResponseOption1", "ResponseOption2", });
     internal_static_com_hearlers_v1_service_UpdateBubbleResponse_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_com_hearlers_v1_service_UpdateBubbleResponse_fieldAccessorTable = new
@@ -549,7 +553,7 @@ public final class Counselor {
     internal_static_com_hearlers_v1_service_DeleteBubbleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_DeleteBubbleRequest_descriptor,
-        new java.lang.String[] { "BubbleId", });
+        new java.lang.String[] { "BubbleId", "CounselorId", });
     internal_static_com_hearlers_v1_service_DeleteBubbleResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_com_hearlers_v1_service_DeleteBubbleResponse_fieldAccessorTable = new

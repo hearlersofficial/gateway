@@ -22,51 +22,63 @@ public interface UpdateBubbleRequestOrBuilder extends
       getBubbleIdBytes();
 
   /**
-   * <code>optional string question = 2 [json_name = "question"];</code>
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The counselorId.
+   */
+  java.lang.String getCounselorId();
+  /**
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  com.google.protobuf.ByteString
+      getCounselorIdBytes();
+
+  /**
+   * <code>optional string question = 3 [json_name = "question"];</code>
    * @return Whether the question field is set.
    */
   boolean hasQuestion();
   /**
-   * <code>optional string question = 2 [json_name = "question"];</code>
+   * <code>optional string question = 3 [json_name = "question"];</code>
    * @return The question.
    */
   java.lang.String getQuestion();
   /**
-   * <code>optional string question = 2 [json_name = "question"];</code>
+   * <code>optional string question = 3 [json_name = "question"];</code>
    * @return The bytes for question.
    */
   com.google.protobuf.ByteString
       getQuestionBytes();
 
   /**
-   * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+   * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
    * @return Whether the responseOption1 field is set.
    */
   boolean hasResponseOption1();
   /**
-   * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+   * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
    * @return The responseOption1.
    */
   java.lang.String getResponseOption1();
   /**
-   * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+   * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
    * @return The bytes for responseOption1.
    */
   com.google.protobuf.ByteString
       getResponseOption1Bytes();
 
   /**
-   * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+   * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
    * @return Whether the responseOption2 field is set.
    */
   boolean hasResponseOption2();
   /**
-   * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+   * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
    * @return The responseOption2.
    */
   java.lang.String getResponseOption2();
   /**
-   * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+   * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
    * @return The bytes for responseOption2.
    */
   com.google.protobuf.ByteString

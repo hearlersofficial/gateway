@@ -56,6 +56,16 @@ public final class CounselPrompt {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_FindTemporaryVersionResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindActiveVersionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindActiveVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_FindActiveVersionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_FindActiveVersionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_LoadExistingPromptVersionRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -76,6 +86,16 @@ public final class CounselPrompt {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_SaveTemporaryVersionResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdatePromptVersionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdatePromptVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_UpdatePromptVersionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_UpdatePromptVersionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_ActivatePromptVersionRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -85,6 +105,16 @@ public final class CounselPrompt {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_hearlers_v1_service_ActivatePromptVersionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_DeletePromptVersionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_DeletePromptVersionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_hearlers_v1_service_DeletePromptVersionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_hearlers_v1_service_DeletePromptVersionsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_hearlers_v1_service_FindPersonaPromptByIdRequest_descriptor;
   static final 
@@ -196,157 +226,185 @@ public final class CounselPrompt {
     java.lang.String[] descriptorData = {
       "\n,com/hearlers/v1/service/counsel_prompt" +
       ".proto\022\027com.hearlers.v1.service\032*com/hea" +
-      "rlers/v1/model/counsel_prompt.proto\"=\n\031F" +
+      "rlers/v1/model/counsel_prompt.proto\"y\n\031F" +
       "indPromptVersionsRequest\022\027\n\004name\030\001 \001(\tH\000" +
-      "R\004name\210\001\001B\007\n\005_name\"k\n\032FindPromptVersions" +
-      "Response\022M\n\017prompt_versions\030\001 \003(\0132$.com." +
-      "hearlers.v1.model.PromptVersionR\016promptV" +
-      "ersions\"J\n\034FindPromptVersionByIdRequest\022" +
-      "*\n\021prompt_version_id\030\001 \001(\tR\017promptVersio" +
-      "nId\"\204\001\n\035FindPromptVersionByIdResponse\022P\n" +
-      "\016prompt_version\030\001 \001(\0132$.com.hearlers.v1." +
-      "model.PromptVersionH\000R\rpromptVersion\210\001\001B" +
-      "\021\n\017_prompt_version\"\035\n\033FindTemporaryVersi" +
-      "onRequest\"\203\001\n\034FindTemporaryVersionRespon" +
-      "se\022P\n\016prompt_version\030\001 \001(\0132$.com.hearler" +
-      "s.v1.model.PromptVersionH\000R\rpromptVersio" +
-      "n\210\001\001B\021\n\017_prompt_version\"N\n LoadExistingP" +
-      "romptVersionRequest\022*\n\021prompt_version_id" +
-      "\030\001 \001(\tR\017promptVersionId\"\210\001\n!LoadExisting" +
-      "PromptVersionResponse\022P\n\016prompt_version\030" +
+      "R\004name\210\001\001\022(\n\ris_bookmarked\030\002 \001(\010H\001R\014isBo" +
+      "okmarked\210\001\001B\007\n\005_nameB\020\n\016_is_bookmarked\"k" +
+      "\n\032FindPromptVersionsResponse\022M\n\017prompt_v" +
+      "ersions\030\001 \003(\0132$.com.hearlers.v1.model.Pr" +
+      "omptVersionR\016promptVersions\"J\n\034FindPromp" +
+      "tVersionByIdRequest\022*\n\021prompt_version_id" +
+      "\030\001 \001(\tR\017promptVersionId\"\204\001\n\035FindPromptVe" +
+      "rsionByIdResponse\022P\n\016prompt_version\030\001 \001(" +
+      "\0132$.com.hearlers.v1.model.PromptVersionH" +
+      "\000R\rpromptVersion\210\001\001B\021\n\017_prompt_version\"\035" +
+      "\n\033FindTemporaryVersionRequest\"\203\001\n\034FindTe" +
+      "mporaryVersionResponse\022P\n\016prompt_version" +
+      "\030\001 \001(\0132$.com.hearlers.v1.model.PromptVer" +
+      "sionH\000R\rpromptVersion\210\001\001B\021\n\017_prompt_vers" +
+      "ion\"\032\n\030FindActiveVersionRequest\"\200\001\n\031Find" +
+      "ActiveVersionResponse\022P\n\016prompt_version\030" +
       "\001 \001(\0132$.com.hearlers.v1.model.PromptVers" +
       "ionH\000R\rpromptVersion\210\001\001B\021\n\017_prompt_versi" +
-      "on\"S\n\033SaveTemporaryVersionRequest\022\022\n\004nam" +
-      "e\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013desc" +
-      "ription\"\203\001\n\034SaveTemporaryVersionResponse" +
+      "on\"N\n LoadExistingPromptVersionRequest\022*" +
+      "\n\021prompt_version_id\030\001 \001(\tR\017promptVersion" +
+      "Id\"\210\001\n!LoadExistingPromptVersionResponse" +
       "\022P\n\016prompt_version\030\001 \001(\0132$.com.hearlers." +
       "v1.model.PromptVersionH\000R\rpromptVersion\210" +
-      "\001\001B\021\n\017_prompt_version\"J\n\034ActivatePromptV" +
-      "ersionRequest\022*\n\021prompt_version_id\030\001 \001(\t" +
-      "R\017promptVersionId\"\204\001\n\035ActivatePromptVers" +
-      "ionResponse\022P\n\016prompt_version\030\001 \001(\0132$.co" +
-      "m.hearlers.v1.model.PromptVersionH\000R\rpro" +
-      "mptVersion\210\001\001B\021\n\017_prompt_version\"J\n\034Find" +
-      "PersonaPromptByIdRequest\022*\n\021persona_prom" +
-      "pt_id\030\001 \001(\tR\017personaPromptId\"\204\001\n\035FindPer" +
-      "sonaPromptByIdResponse\022P\n\016persona_prompt" +
-      "\030\001 \001(\0132$.com.hearlers.v1.model.PersonaPr" +
-      "omptH\000R\rpersonaPrompt\210\001\001B\021\n\017_persona_pro" +
-      "mpt\"S\n\032UpdatePersonaPromptRequest\022!\n\014cou" +
-      "nselor_id\030\001 \001(\tR\013counselorId\022\022\n\004body\030\002 \001" +
-      "(\tR\004body\"\202\001\n\033UpdatePersonaPromptResponse" +
-      "\022P\n\016persona_prompt\030\001 \001(\0132$.com.hearlers." +
-      "v1.model.PersonaPromptH\000R\rpersonaPrompt\210" +
-      "\001\001B\021\n\017_persona_prompt\"A\n\031FindTonePromptB" +
-      "yIdRequest\022$\n\016tone_prompt_id\030\001 \001(\tR\014tone" +
-      "PromptId\"u\n\032FindTonePromptByIdResponse\022G" +
-      "\n\013tone_prompt\030\001 \001(\0132!.com.hearlers.v1.mo" +
-      "del.TonePromptH\000R\ntonePrompt\210\001\001B\016\n\014_tone" +
-      "_prompt\"F\n\027UpdateTonePromptRequest\022\027\n\007to" +
-      "ne_id\030\001 \001(\tR\006toneId\022\022\n\004body\030\002 \001(\tR\004body\"" +
-      "s\n\030UpdateTonePromptResponse\022G\n\013tone_prom" +
-      "pt\030\001 \001(\0132!.com.hearlers.v1.model.TonePro" +
-      "mptH\000R\ntonePrompt\210\001\001B\016\n\014_tone_prompt\"\265\001\n" +
-      "\035CreateCounselTechniqueRequest\022\022\n\004name\030\001" +
-      " \001(\tR\004name\022\027\n\007tone_id\030\002 \001(\tR\006toneId\022\030\n\007c" +
-      "ontext\030\003 \001(\tR\007context\022 \n\013instruction\030\004 \001" +
-      "(\tR\013instruction\022+\n\021message_threshold\030\005 \001" +
-      "(\005R\020messageThreshold\"v\n\036CreateCounselTec" +
-      "hniqueResponse\022T\n\021counsel_technique\030\001 \001(" +
-      "\0132\'.com.hearlers.v1.model.CounselTechniq" +
-      "ueR\020counselTechnique\"b\n#FindOrderedCouns" +
-      "elTechniquesRequest\022;\n\032first_counsel_tec" +
-      "hnique_id\030\001 \001(\tR\027firstCounselTechniqueId" +
-      "\"~\n$FindOrderedCounselTechniquesResponse" +
-      "\022V\n\022counsel_techniques\030\001 \003(\0132\'.com.hearl" +
-      "ers.v1.model.CounselTechniqueR\021counselTe" +
-      "chniques\"S\n\037FindCounselTechniqueByIdRequ" +
-      "est\0220\n\024counsel_technique_id\030\001 \001(\tR\022couns" +
-      "elTechniqueId\"\223\001\n FindCounselTechniqueBy" +
-      "IdResponse\022Y\n\021counsel_technique\030\001 \001(\0132\'." +
-      "com.hearlers.v1.model.CounselTechniqueH\000" +
-      "R\020counselTechnique\210\001\001B\024\n\022_counsel_techni" +
-      "que\"\235\002\n\035UpdateCounselTechniqueRequest\0220\n" +
-      "\024counsel_technique_id\030\001 \001(\tR\022counselTech" +
-      "niqueId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022\035\n\007cont" +
-      "ext\030\003 \001(\tH\001R\007context\210\001\001\022%\n\013instruction\030\004" +
-      " \001(\tH\002R\013instruction\210\001\001\0220\n\021message_thresh" +
-      "old\030\005 \001(\005H\003R\020messageThreshold\210\001\001B\007\n\005_nam" +
-      "eB\n\n\010_contextB\016\n\014_instructionB\024\n\022_messag" +
-      "e_threshold\"x\n\036UpdateCounselTechniqueRes" +
-      "ponse\022V\n\022counsel_techniques\030\001 \003(\0132\'.com." +
-      "hearlers.v1.model.CounselTechniqueR\021coun" +
-      "selTechniques\"r\n#SaveCounselTechniqueSeq" +
-      "uenceRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId\0222\n" +
-      "\025counsel_technique_ids\030\002 \003(\tR\023counselTec" +
-      "hniqueIds\"~\n$SaveCounselTechniqueSequenc" +
-      "eResponse\022V\n\022counsel_techniques\030\001 \003(\0132\'." +
-      "com.hearlers.v1.model.CounselTechniqueR\021" +
-      "counselTechniques\"k\n\"FindPromptActivateH" +
-      "istoriesRequest\022/\n\021prompt_version_id\030\001 \001" +
-      "(\tH\000R\017promptVersionId\210\001\001B\024\n\022_prompt_vers" +
-      "ion_id\"\217\001\n#FindPromptActivateHistoriesRe" +
-      "sponse\022h\n\031prompt_activate_histories\030\001 \003(" +
-      "\0132,.com.hearlers.v1.model.PromptActivate" +
-      "HistoryR\027promptActivateHistories2\315\021\n\024Cou" +
-      "nselPromptService\022}\n\022FindPromptVersions\022" +
-      "2.com.hearlers.v1.service.FindPromptVers" +
-      "ionsRequest\0323.com.hearlers.v1.service.Fi" +
-      "ndPromptVersionsResponse\022\206\001\n\025FindPromptV" +
-      "ersionById\0225.com.hearlers.v1.service.Fin" +
-      "dPromptVersionByIdRequest\0326.com.hearlers" +
-      ".v1.service.FindPromptVersionByIdRespons" +
-      "e\022\203\001\n\024FindTemporaryVersion\0224.com.hearler" +
-      "s.v1.service.FindTemporaryVersionRequest" +
-      "\0325.com.hearlers.v1.service.FindTemporary" +
-      "VersionResponse\022\222\001\n\031LoadExistingPromptVe" +
-      "rsion\0229.com.hearlers.v1.service.LoadExis" +
-      "tingPromptVersionRequest\032:.com.hearlers." +
-      "v1.service.LoadExistingPromptVersionResp" +
-      "onse\022\203\001\n\024SaveTemporaryVersion\0224.com.hear" +
-      "lers.v1.service.SaveTemporaryVersionRequ" +
-      "est\0325.com.hearlers.v1.service.SaveTempor" +
-      "aryVersionResponse\022\206\001\n\025ActivatePromptVer" +
-      "sion\0225.com.hearlers.v1.service.ActivateP" +
-      "romptVersionRequest\0326.com.hearlers.v1.se" +
-      "rvice.ActivatePromptVersionResponse\022\206\001\n\025" +
-      "FindPersonaPromptById\0225.com.hearlers.v1." +
-      "service.FindPersonaPromptByIdRequest\0326.c" +
-      "om.hearlers.v1.service.FindPersonaPrompt" +
-      "ByIdResponse\022\200\001\n\023UpdatePersonaPrompt\0223.c" +
-      "om.hearlers.v1.service.UpdatePersonaProm" +
-      "ptRequest\0324.com.hearlers.v1.service.Upda" +
-      "tePersonaPromptResponse\022}\n\022FindTonePromp" +
-      "tById\0222.com.hearlers.v1.service.FindTone" +
-      "PromptByIdRequest\0323.com.hearlers.v1.serv" +
-      "ice.FindTonePromptByIdResponse\022w\n\020Update" +
-      "TonePrompt\0220.com.hearlers.v1.service.Upd" +
-      "ateTonePromptRequest\0321.com.hearlers.v1.s" +
-      "ervice.UpdateTonePromptResponse\022\211\001\n\026Crea" +
-      "teCounselTechnique\0226.com.hearlers.v1.ser" +
-      "vice.CreateCounselTechniqueRequest\0327.com" +
-      ".hearlers.v1.service.CreateCounselTechni" +
-      "queResponse\022\233\001\n\034FindOrderedCounselTechni" +
-      "ques\022<.com.hearlers.v1.service.FindOrder" +
-      "edCounselTechniquesRequest\032=.com.hearler" +
-      "s.v1.service.FindOrderedCounselTechnique" +
-      "sResponse\022\217\001\n\030FindCounselTechniqueById\0228" +
-      ".com.hearlers.v1.service.FindCounselTech" +
-      "niqueByIdRequest\0329.com.hearlers.v1.servi" +
-      "ce.FindCounselTechniqueByIdResponse\022\211\001\n\026" +
-      "UpdateCounselTechnique\0226.com.hearlers.v1" +
-      ".service.UpdateCounselTechniqueRequest\0327" +
-      ".com.hearlers.v1.service.UpdateCounselTe" +
-      "chniqueResponse\022\233\001\n\034SaveCounselTechnique" +
-      "Sequence\022<.com.hearlers.v1.service.SaveC" +
-      "ounselTechniqueSequenceRequest\032=.com.hea" +
-      "rlers.v1.service.SaveCounselTechniqueSeq" +
-      "uenceResponse\022\230\001\n\033FindPromptActivateHist" +
-      "ories\022;.com.hearlers.v1.service.FindProm" +
-      "ptActivateHistoriesRequest\032<.com.hearler" +
-      "s.v1.service.FindPromptActivateHistories" +
-      "ResponseB%\n!com.hearlers.api.proto.v1.se" +
-      "rviceP\001b\006proto3"
+      "\001\001B\021\n\017_prompt_version\"x\n\033SaveTemporaryVe" +
+      "rsionRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013desc" +
+      "ription\030\002 \001(\tR\013description\022#\n\ris_bookmar" +
+      "ked\030\003 \001(\010R\014isBookmarked\"\203\001\n\034SaveTemporar" +
+      "yVersionResponse\022P\n\016prompt_version\030\001 \001(\013" +
+      "2$.com.hearlers.v1.model.PromptVersionH\000" +
+      "R\rpromptVersion\210\001\001B\021\n\017_prompt_version\"\335\001" +
+      "\n\032UpdatePromptVersionRequest\022*\n\021prompt_v" +
+      "ersion_id\030\001 \001(\tR\017promptVersionId\022\027\n\004name" +
+      "\030\002 \001(\tH\000R\004name\210\001\001\022%\n\013description\030\003 \001(\tH\001" +
+      "R\013description\210\001\001\022(\n\ris_bookmarked\030\004 \001(\010H" +
+      "\002R\014isBookmarked\210\001\001B\007\n\005_nameB\016\n\014_descript" +
+      "ionB\020\n\016_is_bookmarked\"\202\001\n\033UpdatePromptVe" +
+      "rsionResponse\022P\n\016prompt_version\030\001 \001(\0132$." +
+      "com.hearlers.v1.model.PromptVersionH\000R\rp" +
+      "romptVersion\210\001\001B\021\n\017_prompt_version\"J\n\034Ac" +
+      "tivatePromptVersionRequest\022*\n\021prompt_ver" +
+      "sion_id\030\001 \001(\tR\017promptVersionId\"\204\001\n\035Activ" +
+      "atePromptVersionResponse\022P\n\016prompt_versi" +
+      "on\030\001 \001(\0132$.com.hearlers.v1.model.PromptV" +
+      "ersionH\000R\rpromptVersion\210\001\001B\021\n\017_prompt_ve" +
+      "rsion\"K\n\033DeletePromptVersionsRequest\022,\n\022" +
+      "prompt_version_ids\030\001 \003(\tR\020promptVersionI" +
+      "ds\"\036\n\034DeletePromptVersionsResponse\"J\n\034Fi" +
+      "ndPersonaPromptByIdRequest\022*\n\021persona_pr" +
+      "ompt_id\030\001 \001(\tR\017personaPromptId\"\204\001\n\035FindP" +
+      "ersonaPromptByIdResponse\022P\n\016persona_prom" +
+      "pt\030\001 \001(\0132$.com.hearlers.v1.model.Persona" +
+      "PromptH\000R\rpersonaPrompt\210\001\001B\021\n\017_persona_p" +
+      "rompt\"S\n\032UpdatePersonaPromptRequest\022!\n\014c" +
+      "ounselor_id\030\001 \001(\tR\013counselorId\022\022\n\004body\030\002" +
+      " \001(\tR\004body\"\202\001\n\033UpdatePersonaPromptRespon" +
+      "se\022P\n\016persona_prompt\030\001 \001(\0132$.com.hearler" +
+      "s.v1.model.PersonaPromptH\000R\rpersonaPromp" +
+      "t\210\001\001B\021\n\017_persona_prompt\"A\n\031FindTonePromp" +
+      "tByIdRequest\022$\n\016tone_prompt_id\030\001 \001(\tR\014to" +
+      "nePromptId\"u\n\032FindTonePromptByIdResponse" +
+      "\022G\n\013tone_prompt\030\001 \001(\0132!.com.hearlers.v1." +
+      "model.TonePromptH\000R\ntonePrompt\210\001\001B\016\n\014_to" +
+      "ne_prompt\"F\n\027UpdateTonePromptRequest\022\027\n\007" +
+      "tone_id\030\001 \001(\tR\006toneId\022\022\n\004body\030\002 \001(\tR\004bod" +
+      "y\"s\n\030UpdateTonePromptResponse\022G\n\013tone_pr" +
+      "ompt\030\001 \001(\0132!.com.hearlers.v1.model.ToneP" +
+      "romptH\000R\ntonePrompt\210\001\001B\016\n\014_tone_prompt\"\265" +
+      "\001\n\035CreateCounselTechniqueRequest\022\022\n\004name" +
+      "\030\001 \001(\tR\004name\022\027\n\007tone_id\030\002 \001(\tR\006toneId\022\030\n" +
+      "\007context\030\003 \001(\tR\007context\022 \n\013instruction\030\004" +
+      " \001(\tR\013instruction\022+\n\021message_threshold\030\005" +
+      " \001(\005R\020messageThreshold\"v\n\036CreateCounselT" +
+      "echniqueResponse\022T\n\021counsel_technique\030\001 " +
+      "\001(\0132\'.com.hearlers.v1.model.CounselTechn" +
+      "iqueR\020counselTechnique\"b\n#FindOrderedCou" +
+      "nselTechniquesRequest\022;\n\032first_counsel_t" +
+      "echnique_id\030\001 \001(\tR\027firstCounselTechnique" +
+      "Id\"~\n$FindOrderedCounselTechniquesRespon" +
+      "se\022V\n\022counsel_techniques\030\001 \003(\0132\'.com.hea" +
+      "rlers.v1.model.CounselTechniqueR\021counsel" +
+      "Techniques\"S\n\037FindCounselTechniqueByIdRe" +
+      "quest\0220\n\024counsel_technique_id\030\001 \001(\tR\022cou" +
+      "nselTechniqueId\"\223\001\n FindCounselTechnique" +
+      "ByIdResponse\022Y\n\021counsel_technique\030\001 \001(\0132" +
+      "\'.com.hearlers.v1.model.CounselTechnique" +
+      "H\000R\020counselTechnique\210\001\001B\024\n\022_counsel_tech" +
+      "nique\"\235\002\n\035UpdateCounselTechniqueRequest\022" +
+      "0\n\024counsel_technique_id\030\001 \001(\tR\022counselTe" +
+      "chniqueId\022\027\n\004name\030\002 \001(\tH\000R\004name\210\001\001\022\035\n\007co" +
+      "ntext\030\003 \001(\tH\001R\007context\210\001\001\022%\n\013instruction" +
+      "\030\004 \001(\tH\002R\013instruction\210\001\001\0220\n\021message_thre" +
+      "shold\030\005 \001(\005H\003R\020messageThreshold\210\001\001B\007\n\005_n" +
+      "ameB\n\n\010_contextB\016\n\014_instructionB\024\n\022_mess" +
+      "age_threshold\"x\n\036UpdateCounselTechniqueR" +
+      "esponse\022V\n\022counsel_techniques\030\001 \003(\0132\'.co" +
+      "m.hearlers.v1.model.CounselTechniqueR\021co" +
+      "unselTechniques\"r\n#SaveCounselTechniqueS" +
+      "equenceRequest\022\027\n\007tone_id\030\001 \001(\tR\006toneId\022" +
+      "2\n\025counsel_technique_ids\030\002 \003(\tR\023counselT" +
+      "echniqueIds\"~\n$SaveCounselTechniqueSeque" +
+      "nceResponse\022V\n\022counsel_techniques\030\001 \003(\0132" +
+      "\'.com.hearlers.v1.model.CounselTechnique" +
+      "R\021counselTechniques\"k\n\"FindPromptActivat" +
+      "eHistoriesRequest\022/\n\021prompt_version_id\030\001" +
+      " \001(\tH\000R\017promptVersionId\210\001\001B\024\n\022_prompt_ve" +
+      "rsion_id\"\217\001\n#FindPromptActivateHistories" +
+      "Response\022h\n\031prompt_activate_histories\030\001 " +
+      "\003(\0132,.com.hearlers.v1.model.PromptActiva" +
+      "teHistoryR\027promptActivateHistories2\322\024\n\024C" +
+      "ounselPromptService\022}\n\022FindPromptVersion" +
+      "s\0222.com.hearlers.v1.service.FindPromptVe" +
+      "rsionsRequest\0323.com.hearlers.v1.service." +
+      "FindPromptVersionsResponse\022\206\001\n\025FindPromp" +
+      "tVersionById\0225.com.hearlers.v1.service.F" +
+      "indPromptVersionByIdRequest\0326.com.hearle" +
+      "rs.v1.service.FindPromptVersionByIdRespo" +
+      "nse\022\203\001\n\024FindTemporaryVersion\0224.com.hearl" +
+      "ers.v1.service.FindTemporaryVersionReque" +
+      "st\0325.com.hearlers.v1.service.FindTempora" +
+      "ryVersionResponse\022z\n\021FindActiveVersion\0221" +
+      ".com.hearlers.v1.service.FindActiveVersi" +
+      "onRequest\0322.com.hearlers.v1.service.Find" +
+      "ActiveVersionResponse\022\222\001\n\031LoadExistingPr" +
+      "omptVersion\0229.com.hearlers.v1.service.Lo" +
+      "adExistingPromptVersionRequest\032:.com.hea" +
+      "rlers.v1.service.LoadExistingPromptVersi" +
+      "onResponse\022\203\001\n\024SaveTemporaryVersion\0224.co" +
+      "m.hearlers.v1.service.SaveTemporaryVersi" +
+      "onRequest\0325.com.hearlers.v1.service.Save" +
+      "TemporaryVersionResponse\022\200\001\n\023UpdatePromp" +
+      "tVersion\0223.com.hearlers.v1.service.Updat" +
+      "ePromptVersionRequest\0324.com.hearlers.v1." +
+      "service.UpdatePromptVersionResponse\022\206\001\n\025" +
+      "ActivatePromptVersion\0225.com.hearlers.v1." +
+      "service.ActivatePromptVersionRequest\0326.c" +
+      "om.hearlers.v1.service.ActivatePromptVer" +
+      "sionResponse\022\203\001\n\024DeletePromptVersions\0224." +
+      "com.hearlers.v1.service.DeletePromptVers" +
+      "ionsRequest\0325.com.hearlers.v1.service.De" +
+      "letePromptVersionsResponse\022\206\001\n\025FindPerso" +
+      "naPromptById\0225.com.hearlers.v1.service.F" +
+      "indPersonaPromptByIdRequest\0326.com.hearle" +
+      "rs.v1.service.FindPersonaPromptByIdRespo" +
+      "nse\022\200\001\n\023UpdatePersonaPrompt\0223.com.hearle" +
+      "rs.v1.service.UpdatePersonaPromptRequest" +
+      "\0324.com.hearlers.v1.service.UpdatePersona" +
+      "PromptResponse\022}\n\022FindTonePromptById\0222.c" +
+      "om.hearlers.v1.service.FindTonePromptByI" +
+      "dRequest\0323.com.hearlers.v1.service.FindT" +
+      "onePromptByIdResponse\022w\n\020UpdateTonePromp" +
+      "t\0220.com.hearlers.v1.service.UpdateTonePr" +
+      "omptRequest\0321.com.hearlers.v1.service.Up" +
+      "dateTonePromptResponse\022\211\001\n\026CreateCounsel" +
+      "Technique\0226.com.hearlers.v1.service.Crea" +
+      "teCounselTechniqueRequest\0327.com.hearlers" +
+      ".v1.service.CreateCounselTechniqueRespon" +
+      "se\022\233\001\n\034FindOrderedCounselTechniques\022<.co" +
+      "m.hearlers.v1.service.FindOrderedCounsel" +
+      "TechniquesRequest\032=.com.hearlers.v1.serv" +
+      "ice.FindOrderedCounselTechniquesResponse" +
+      "\022\217\001\n\030FindCounselTechniqueById\0228.com.hear" +
+      "lers.v1.service.FindCounselTechniqueById" +
+      "Request\0329.com.hearlers.v1.service.FindCo" +
+      "unselTechniqueByIdResponse\022\211\001\n\026UpdateCou" +
+      "nselTechnique\0226.com.hearlers.v1.service." +
+      "UpdateCounselTechniqueRequest\0327.com.hear" +
+      "lers.v1.service.UpdateCounselTechniqueRe" +
+      "sponse\022\233\001\n\034SaveCounselTechniqueSequence\022" +
+      "<.com.hearlers.v1.service.SaveCounselTec" +
+      "hniqueSequenceRequest\032=.com.hearlers.v1." +
+      "service.SaveCounselTechniqueSequenceResp" +
+      "onse\022\230\001\n\033FindPromptActivateHistories\022;.c" +
+      "om.hearlers.v1.service.FindPromptActivat" +
+      "eHistoriesRequest\032<.com.hearlers.v1.serv" +
+      "ice.FindPromptActivateHistoriesResponseB" +
+      "%\n!com.hearlers.api.proto.v1.serviceP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -358,7 +416,7 @@ public final class CounselPrompt {
     internal_static_com_hearlers_v1_service_FindPromptVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindPromptVersionsRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Name", "IsBookmarked", });
     internal_static_com_hearlers_v1_service_FindPromptVersionsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_service_FindPromptVersionsResponse_fieldAccessorTable = new
@@ -389,158 +447,194 @@ public final class CounselPrompt {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindTemporaryVersionResponse_descriptor,
         new java.lang.String[] { "PromptVersion", });
-    internal_static_com_hearlers_v1_service_LoadExistingPromptVersionRequest_descriptor =
+    internal_static_com_hearlers_v1_service_FindActiveVersionRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_com_hearlers_v1_service_FindActiveVersionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindActiveVersionRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_com_hearlers_v1_service_FindActiveVersionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_hearlers_v1_service_FindActiveVersionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_FindActiveVersionResponse_descriptor,
+        new java.lang.String[] { "PromptVersion", });
+    internal_static_com_hearlers_v1_service_LoadExistingPromptVersionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_com_hearlers_v1_service_LoadExistingPromptVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_LoadExistingPromptVersionRequest_descriptor,
         new java.lang.String[] { "PromptVersionId", });
     internal_static_com_hearlers_v1_service_LoadExistingPromptVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_com_hearlers_v1_service_LoadExistingPromptVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_LoadExistingPromptVersionResponse_descriptor,
         new java.lang.String[] { "PromptVersion", });
     internal_static_com_hearlers_v1_service_SaveTemporaryVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_hearlers_v1_service_SaveTemporaryVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_SaveTemporaryVersionRequest_descriptor,
-        new java.lang.String[] { "Name", "Description", });
+        new java.lang.String[] { "Name", "Description", "IsBookmarked", });
     internal_static_com_hearlers_v1_service_SaveTemporaryVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_hearlers_v1_service_SaveTemporaryVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_SaveTemporaryVersionResponse_descriptor,
         new java.lang.String[] { "PromptVersion", });
+    internal_static_com_hearlers_v1_service_UpdatePromptVersionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_com_hearlers_v1_service_UpdatePromptVersionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdatePromptVersionRequest_descriptor,
+        new java.lang.String[] { "PromptVersionId", "Name", "Description", "IsBookmarked", });
+    internal_static_com_hearlers_v1_service_UpdatePromptVersionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_com_hearlers_v1_service_UpdatePromptVersionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_UpdatePromptVersionResponse_descriptor,
+        new java.lang.String[] { "PromptVersion", });
     internal_static_com_hearlers_v1_service_ActivatePromptVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_com_hearlers_v1_service_ActivatePromptVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_ActivatePromptVersionRequest_descriptor,
         new java.lang.String[] { "PromptVersionId", });
     internal_static_com_hearlers_v1_service_ActivatePromptVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_com_hearlers_v1_service_ActivatePromptVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_ActivatePromptVersionResponse_descriptor,
         new java.lang.String[] { "PromptVersion", });
+    internal_static_com_hearlers_v1_service_DeletePromptVersionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_com_hearlers_v1_service_DeletePromptVersionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_DeletePromptVersionsRequest_descriptor,
+        new java.lang.String[] { "PromptVersionIds", });
+    internal_static_com_hearlers_v1_service_DeletePromptVersionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_com_hearlers_v1_service_DeletePromptVersionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_hearlers_v1_service_DeletePromptVersionsResponse_descriptor,
+        new java.lang.String[] { });
     internal_static_com_hearlers_v1_service_FindPersonaPromptByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_com_hearlers_v1_service_FindPersonaPromptByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindPersonaPromptByIdRequest_descriptor,
         new java.lang.String[] { "PersonaPromptId", });
     internal_static_com_hearlers_v1_service_FindPersonaPromptByIdResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_com_hearlers_v1_service_FindPersonaPromptByIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindPersonaPromptByIdResponse_descriptor,
         new java.lang.String[] { "PersonaPrompt", });
     internal_static_com_hearlers_v1_service_UpdatePersonaPromptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_com_hearlers_v1_service_UpdatePersonaPromptRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdatePersonaPromptRequest_descriptor,
         new java.lang.String[] { "CounselorId", "Body", });
     internal_static_com_hearlers_v1_service_UpdatePersonaPromptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_com_hearlers_v1_service_UpdatePersonaPromptResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdatePersonaPromptResponse_descriptor,
         new java.lang.String[] { "PersonaPrompt", });
     internal_static_com_hearlers_v1_service_FindTonePromptByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_com_hearlers_v1_service_FindTonePromptByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindTonePromptByIdRequest_descriptor,
         new java.lang.String[] { "TonePromptId", });
     internal_static_com_hearlers_v1_service_FindTonePromptByIdResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_com_hearlers_v1_service_FindTonePromptByIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindTonePromptByIdResponse_descriptor,
         new java.lang.String[] { "TonePrompt", });
     internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateTonePromptRequest_descriptor,
         new java.lang.String[] { "ToneId", "Body", });
     internal_static_com_hearlers_v1_service_UpdateTonePromptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_com_hearlers_v1_service_UpdateTonePromptResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateTonePromptResponse_descriptor,
         new java.lang.String[] { "TonePrompt", });
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselTechniqueRequest_descriptor,
         new java.lang.String[] { "Name", "ToneId", "Context", "Instruction", "MessageThreshold", });
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselTechniqueResponse_descriptor,
         new java.lang.String[] { "CounselTechnique", });
     internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_descriptor,
         new java.lang.String[] { "FirstCounselTechniqueId", });
     internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesResponse_descriptor,
         new java.lang.String[] { "CounselTechniques", });
     internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdRequest_descriptor,
         new java.lang.String[] { "CounselTechniqueId", });
     internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindCounselTechniqueByIdResponse_descriptor,
         new java.lang.String[] { "CounselTechnique", });
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselTechniqueRequest_descriptor,
         new java.lang.String[] { "CounselTechniqueId", "Name", "Context", "Instruction", "MessageThreshold", });
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_UpdateCounselTechniqueResponse_descriptor,
         new java.lang.String[] { "CounselTechniques", });
     internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceRequest_descriptor,
         new java.lang.String[] { "ToneId", "CounselTechniqueIds", });
     internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_SaveCounselTechniqueSequenceResponse_descriptor,
         new java.lang.String[] { "CounselTechniques", });
     internal_static_com_hearlers_v1_service_FindPromptActivateHistoriesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_com_hearlers_v1_service_FindPromptActivateHistoriesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindPromptActivateHistoriesRequest_descriptor,
         new java.lang.String[] { "PromptVersionId", });
     internal_static_com_hearlers_v1_service_FindPromptActivateHistoriesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_com_hearlers_v1_service_FindPromptActivateHistoriesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_FindPromptActivateHistoriesResponse_descriptor,

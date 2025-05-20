@@ -108,6 +108,37 @@ public final class CounselPromptServiceGrpc {
     return getFindTemporaryVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindActiveVersionRequest,
+      com.hearlers.api.proto.v1.service.FindActiveVersionResponse> getFindActiveVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindActiveVersion",
+      requestType = com.hearlers.api.proto.v1.service.FindActiveVersionRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindActiveVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindActiveVersionRequest,
+      com.hearlers.api.proto.v1.service.FindActiveVersionResponse> getFindActiveVersionMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindActiveVersionRequest, com.hearlers.api.proto.v1.service.FindActiveVersionResponse> getFindActiveVersionMethod;
+    if ((getFindActiveVersionMethod = CounselPromptServiceGrpc.getFindActiveVersionMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getFindActiveVersionMethod = CounselPromptServiceGrpc.getFindActiveVersionMethod) == null) {
+          CounselPromptServiceGrpc.getFindActiveVersionMethod = getFindActiveVersionMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindActiveVersionRequest, com.hearlers.api.proto.v1.service.FindActiveVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindActiveVersion"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindActiveVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindActiveVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindActiveVersion"))
+              .build();
+        }
+      }
+    }
+    return getFindActiveVersionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest,
       com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse> getLoadExistingPromptVersionMethod;
 
@@ -170,6 +201,37 @@ public final class CounselPromptServiceGrpc {
     return getSaveTemporaryVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest,
+      com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse> getUpdatePromptVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePromptVersion",
+      requestType = com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest,
+      com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse> getUpdatePromptVersionMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest, com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse> getUpdatePromptVersionMethod;
+    if ((getUpdatePromptVersionMethod = CounselPromptServiceGrpc.getUpdatePromptVersionMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getUpdatePromptVersionMethod = CounselPromptServiceGrpc.getUpdatePromptVersionMethod) == null) {
+          CounselPromptServiceGrpc.getUpdatePromptVersionMethod = getUpdatePromptVersionMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest, com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePromptVersion"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("UpdatePromptVersion"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePromptVersionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest,
       com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse> getActivatePromptVersionMethod;
 
@@ -199,6 +261,37 @@ public final class CounselPromptServiceGrpc {
       }
     }
     return getActivatePromptVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest,
+      com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse> getDeletePromptVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePromptVersions",
+      requestType = com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest,
+      com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse> getDeletePromptVersionsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest, com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse> getDeletePromptVersionsMethod;
+    if ((getDeletePromptVersionsMethod = CounselPromptServiceGrpc.getDeletePromptVersionsMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getDeletePromptVersionsMethod = CounselPromptServiceGrpc.getDeletePromptVersionsMethod) == null) {
+          CounselPromptServiceGrpc.getDeletePromptVersionsMethod = getDeletePromptVersionsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest, com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePromptVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("DeletePromptVersions"))
+              .build();
+        }
+      }
+    }
+    return getDeletePromptVersionsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest,
@@ -600,6 +693,13 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    default void findActiveVersion(com.hearlers.api.proto.v1.service.FindActiveVersionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindActiveVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindActiveVersionMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void loadExistingPromptVersion(com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoadExistingPromptVersionMethod(), responseObserver);
@@ -614,9 +714,23 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    default void updatePromptVersion(com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePromptVersionMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void activatePromptVersion(com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getActivatePromptVersionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deletePromptVersions(com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePromptVersionsMethod(), responseObserver);
     }
 
     /**
@@ -758,6 +872,14 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public void findActiveVersion(com.hearlers.api.proto.v1.service.FindActiveVersionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindActiveVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindActiveVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void loadExistingPromptVersion(com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -774,10 +896,26 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public void updatePromptVersion(com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePromptVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void activatePromptVersion(com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getActivatePromptVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deletePromptVersions(com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePromptVersionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -915,6 +1053,13 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.hearlers.api.proto.v1.service.FindActiveVersionResponse findActiveVersion(com.hearlers.api.proto.v1.service.FindActiveVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindActiveVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse loadExistingPromptVersion(com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoadExistingPromptVersionMethod(), getCallOptions(), request);
@@ -929,9 +1074,23 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse updatePromptVersion(com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePromptVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse activatePromptVersion(com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getActivatePromptVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse deletePromptVersions(com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePromptVersionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1059,6 +1218,13 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.hearlers.api.proto.v1.service.FindActiveVersionResponse findActiveVersion(com.hearlers.api.proto.v1.service.FindActiveVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindActiveVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse loadExistingPromptVersion(com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoadExistingPromptVersionMethod(), getCallOptions(), request);
@@ -1073,9 +1239,23 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse updatePromptVersion(com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePromptVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse activatePromptVersion(com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getActivatePromptVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse deletePromptVersions(com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePromptVersionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1206,6 +1386,14 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindActiveVersionResponse> findActiveVersion(
+        com.hearlers.api.proto.v1.service.FindActiveVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindActiveVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse> loadExistingPromptVersion(
         com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1222,10 +1410,26 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse> updatePromptVersion(
+        com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePromptVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse> activatePromptVersion(
         com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getActivatePromptVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse> deletePromptVersions(
+        com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePromptVersionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1324,19 +1528,22 @@ public final class CounselPromptServiceGrpc {
   private static final int METHODID_FIND_PROMPT_VERSIONS = 0;
   private static final int METHODID_FIND_PROMPT_VERSION_BY_ID = 1;
   private static final int METHODID_FIND_TEMPORARY_VERSION = 2;
-  private static final int METHODID_LOAD_EXISTING_PROMPT_VERSION = 3;
-  private static final int METHODID_SAVE_TEMPORARY_VERSION = 4;
-  private static final int METHODID_ACTIVATE_PROMPT_VERSION = 5;
-  private static final int METHODID_FIND_PERSONA_PROMPT_BY_ID = 6;
-  private static final int METHODID_UPDATE_PERSONA_PROMPT = 7;
-  private static final int METHODID_FIND_TONE_PROMPT_BY_ID = 8;
-  private static final int METHODID_UPDATE_TONE_PROMPT = 9;
-  private static final int METHODID_CREATE_COUNSEL_TECHNIQUE = 10;
-  private static final int METHODID_FIND_ORDERED_COUNSEL_TECHNIQUES = 11;
-  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID = 12;
-  private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 13;
-  private static final int METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE = 14;
-  private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 15;
+  private static final int METHODID_FIND_ACTIVE_VERSION = 3;
+  private static final int METHODID_LOAD_EXISTING_PROMPT_VERSION = 4;
+  private static final int METHODID_SAVE_TEMPORARY_VERSION = 5;
+  private static final int METHODID_UPDATE_PROMPT_VERSION = 6;
+  private static final int METHODID_ACTIVATE_PROMPT_VERSION = 7;
+  private static final int METHODID_DELETE_PROMPT_VERSIONS = 8;
+  private static final int METHODID_FIND_PERSONA_PROMPT_BY_ID = 9;
+  private static final int METHODID_UPDATE_PERSONA_PROMPT = 10;
+  private static final int METHODID_FIND_TONE_PROMPT_BY_ID = 11;
+  private static final int METHODID_UPDATE_TONE_PROMPT = 12;
+  private static final int METHODID_CREATE_COUNSEL_TECHNIQUE = 13;
+  private static final int METHODID_FIND_ORDERED_COUNSEL_TECHNIQUES = 14;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID = 15;
+  private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 16;
+  private static final int METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE = 17;
+  private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1367,6 +1574,10 @@ public final class CounselPromptServiceGrpc {
           serviceImpl.findTemporaryVersion((com.hearlers.api.proto.v1.service.FindTemporaryVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTemporaryVersionResponse>) responseObserver);
           break;
+        case METHODID_FIND_ACTIVE_VERSION:
+          serviceImpl.findActiveVersion((com.hearlers.api.proto.v1.service.FindActiveVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindActiveVersionResponse>) responseObserver);
+          break;
         case METHODID_LOAD_EXISTING_PROMPT_VERSION:
           serviceImpl.loadExistingPromptVersion((com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.LoadExistingPromptVersionResponse>) responseObserver);
@@ -1375,9 +1586,17 @@ public final class CounselPromptServiceGrpc {
           serviceImpl.saveTemporaryVersion((com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveTemporaryVersionResponse>) responseObserver);
           break;
+        case METHODID_UPDATE_PROMPT_VERSION:
+          serviceImpl.updatePromptVersion((com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse>) responseObserver);
+          break;
         case METHODID_ACTIVATE_PROMPT_VERSION:
           serviceImpl.activatePromptVersion((com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_PROMPT_VERSIONS:
+          serviceImpl.deletePromptVersions((com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse>) responseObserver);
           break;
         case METHODID_FIND_PERSONA_PROMPT_BY_ID:
           serviceImpl.findPersonaPromptById((com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest) request,
@@ -1459,6 +1678,13 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.FindTemporaryVersionResponse>(
                 service, METHODID_FIND_TEMPORARY_VERSION)))
         .addMethod(
+          getFindActiveVersionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindActiveVersionRequest,
+              com.hearlers.api.proto.v1.service.FindActiveVersionResponse>(
+                service, METHODID_FIND_ACTIVE_VERSION)))
+        .addMethod(
           getLoadExistingPromptVersionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1473,12 +1699,26 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.SaveTemporaryVersionResponse>(
                 service, METHODID_SAVE_TEMPORARY_VERSION)))
         .addMethod(
+          getUpdatePromptVersionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest,
+              com.hearlers.api.proto.v1.service.UpdatePromptVersionResponse>(
+                service, METHODID_UPDATE_PROMPT_VERSION)))
+        .addMethod(
           getActivatePromptVersionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest,
               com.hearlers.api.proto.v1.service.ActivatePromptVersionResponse>(
                 service, METHODID_ACTIVATE_PROMPT_VERSION)))
+        .addMethod(
+          getDeletePromptVersionsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest,
+              com.hearlers.api.proto.v1.service.DeletePromptVersionsResponse>(
+                service, METHODID_DELETE_PROMPT_VERSIONS)))
         .addMethod(
           getFindPersonaPromptByIdMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1600,9 +1840,12 @@ public final class CounselPromptServiceGrpc {
               .addMethod(getFindPromptVersionsMethod())
               .addMethod(getFindPromptVersionByIdMethod())
               .addMethod(getFindTemporaryVersionMethod())
+              .addMethod(getFindActiveVersionMethod())
               .addMethod(getLoadExistingPromptVersionMethod())
               .addMethod(getSaveTemporaryVersionMethod())
+              .addMethod(getUpdatePromptVersionMethod())
               .addMethod(getActivatePromptVersionMethod())
+              .addMethod(getDeletePromptVersionsMethod())
               .addMethod(getFindPersonaPromptByIdMethod())
               .addMethod(getUpdatePersonaPromptMethod())
               .addMethod(getFindTonePromptByIdMethod())

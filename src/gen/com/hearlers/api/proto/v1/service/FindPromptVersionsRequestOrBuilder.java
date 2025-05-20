@@ -25,4 +25,15 @@ public interface FindPromptVersionsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+   * @return Whether the isBookmarked field is set.
+   */
+  boolean hasIsBookmarked();
+  /**
+   * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+   * @return The isBookmarked.
+   */
+  boolean getIsBookmarked();
 }

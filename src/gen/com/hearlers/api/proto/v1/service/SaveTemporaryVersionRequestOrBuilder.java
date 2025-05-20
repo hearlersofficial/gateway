@@ -32,4 +32,10 @@ public interface SaveTemporaryVersionRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <code>bool is_bookmarked = 3 [json_name = "isBookmarked"];</code>
+   * @return The isBookmarked.
+   */
+  boolean getIsBookmarked();
 }

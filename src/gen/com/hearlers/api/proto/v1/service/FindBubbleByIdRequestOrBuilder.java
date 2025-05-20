@@ -20,4 +20,16 @@ public interface FindBubbleByIdRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBubbleIdBytes();
+
+  /**
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The counselorId.
+   */
+  java.lang.String getCounselorId();
+  /**
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  com.google.protobuf.ByteString
+      getCounselorIdBytes();
 }

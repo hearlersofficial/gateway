@@ -51,16 +51,15 @@ public interface SaveEpisodeCutSceneRequestOrBuilder extends
       getEpisodeIdBytes();
 
   /**
-   * <code>string speaker = 3 [json_name = "speaker"];</code>
+   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * @return The enum numeric value on the wire for speaker.
+   */
+  int getSpeakerValue();
+  /**
+   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
    * @return The speaker.
    */
-  java.lang.String getSpeaker();
-  /**
-   * <code>string speaker = 3 [json_name = "speaker"];</code>
-   * @return The bytes for speaker.
-   */
-  com.google.protobuf.ByteString
-      getSpeakerBytes();
+  com.hearlers.api.proto.v1.model.Speaker getSpeaker();
 
   /**
    * <code>string content = 4 [json_name = "content"];</code>

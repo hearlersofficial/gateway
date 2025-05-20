@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
   }
   private UpdateBubbleRequest() {
     bubbleId_ = "";
+    counselorId_ = "";
     question_ = "";
     responseOption1_ = "";
     responseOption2_ = "";
@@ -86,11 +87,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int QUESTION_FIELD_NUMBER = 2;
+  public static final int COUNSELOR_ID_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object counselorId_ = "";
+  /**
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The counselorId.
+   */
+  @java.lang.Override
+  public java.lang.String getCounselorId() {
+    java.lang.Object ref = counselorId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      counselorId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCounselorIdBytes() {
+    java.lang.Object ref = counselorId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      counselorId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUESTION_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object question_ = "";
   /**
-   * <code>optional string question = 2 [json_name = "question"];</code>
+   * <code>optional string question = 3 [json_name = "question"];</code>
    * @return Whether the question field is set.
    */
   @java.lang.Override
@@ -98,7 +138,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string question = 2 [json_name = "question"];</code>
+   * <code>optional string question = 3 [json_name = "question"];</code>
    * @return The question.
    */
   @java.lang.Override
@@ -115,7 +155,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string question = 2 [json_name = "question"];</code>
+   * <code>optional string question = 3 [json_name = "question"];</code>
    * @return The bytes for question.
    */
   @java.lang.Override
@@ -133,11 +173,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RESPONSE_OPTION1_FIELD_NUMBER = 3;
+  public static final int RESPONSE_OPTION1_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseOption1_ = "";
   /**
-   * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+   * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
    * @return Whether the responseOption1 field is set.
    */
   @java.lang.Override
@@ -145,7 +185,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+   * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
    * @return The responseOption1.
    */
   @java.lang.Override
@@ -162,7 +202,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+   * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
    * @return The bytes for responseOption1.
    */
   @java.lang.Override
@@ -180,11 +220,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RESPONSE_OPTION2_FIELD_NUMBER = 4;
+  public static final int RESPONSE_OPTION2_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseOption2_ = "";
   /**
-   * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+   * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
    * @return Whether the responseOption2 field is set.
    */
   @java.lang.Override
@@ -192,7 +232,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+   * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
    * @return The responseOption2.
    */
   @java.lang.Override
@@ -209,7 +249,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+   * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
    * @return The bytes for responseOption2.
    */
   @java.lang.Override
@@ -244,14 +284,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bubbleId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, bubbleId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, counselorId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, question_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, question_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, responseOption1_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, responseOption1_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, responseOption2_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, responseOption2_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -265,14 +308,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bubbleId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, bubbleId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, counselorId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, question_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, question_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, responseOption1_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, responseOption1_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, responseOption2_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, responseOption2_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -291,6 +337,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getBubbleId()
         .equals(other.getBubbleId())) return false;
+    if (!getCounselorId()
+        .equals(other.getCounselorId())) return false;
     if (hasQuestion() != other.hasQuestion()) return false;
     if (hasQuestion()) {
       if (!getQuestion()
@@ -319,6 +367,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + BUBBLE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getBubbleId().hashCode();
+    hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCounselorId().hashCode();
     if (hasQuestion()) {
       hash = (37 * hash) + QUESTION_FIELD_NUMBER;
       hash = (53 * hash) + getQuestion().hashCode();
@@ -463,6 +513,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       bubbleId_ = "";
+      counselorId_ = "";
       question_ = "";
       responseOption1_ = "";
       responseOption2_ = "";
@@ -502,16 +553,19 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.bubbleId_ = bubbleId_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.counselorId_ = counselorId_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.question_ = question_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.responseOption1_ = responseOption1_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.responseOption2_ = responseOption2_;
         to_bitField0_ |= 0x00000004;
       }
@@ -535,19 +589,24 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getCounselorId().isEmpty()) {
+        counselorId_ = other.counselorId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasQuestion()) {
         question_ = other.question_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasResponseOption1()) {
         responseOption1_ = other.responseOption1_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasResponseOption2()) {
         responseOption2_ = other.responseOption2_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -582,20 +641,25 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              question_ = input.readStringRequireUtf8();
+              counselorId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              responseOption1_ = input.readStringRequireUtf8();
+              question_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              responseOption2_ = input.readStringRequireUtf8();
+              responseOption1_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 42: {
+              responseOption2_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -685,16 +749,88 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object counselorId_ = "";
+    /**
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @return The counselorId.
+     */
+    public java.lang.String getCounselorId() {
+      java.lang.Object ref = counselorId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        counselorId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @return The bytes for counselorId.
+     */
+    public com.google.protobuf.ByteString
+        getCounselorIdBytes() {
+      java.lang.Object ref = counselorId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        counselorId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @param value The counselorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselorId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      counselorId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCounselorId() {
+      counselorId_ = getDefaultInstance().getCounselorId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
+     * @param value The bytes for counselorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCounselorIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      counselorId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object question_ = "";
     /**
-     * <code>optional string question = 2 [json_name = "question"];</code>
+     * <code>optional string question = 3 [json_name = "question"];</code>
      * @return Whether the question field is set.
      */
     public boolean hasQuestion() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string question = 2 [json_name = "question"];</code>
+     * <code>optional string question = 3 [json_name = "question"];</code>
      * @return The question.
      */
     public java.lang.String getQuestion() {
@@ -710,7 +846,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string question = 2 [json_name = "question"];</code>
+     * <code>optional string question = 3 [json_name = "question"];</code>
      * @return The bytes for question.
      */
     public com.google.protobuf.ByteString
@@ -727,7 +863,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string question = 2 [json_name = "question"];</code>
+     * <code>optional string question = 3 [json_name = "question"];</code>
      * @param value The question to set.
      * @return This builder for chaining.
      */
@@ -735,22 +871,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       question_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string question = 2 [json_name = "question"];</code>
+     * <code>optional string question = 3 [json_name = "question"];</code>
      * @return This builder for chaining.
      */
     public Builder clearQuestion() {
       question_ = getDefaultInstance().getQuestion();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string question = 2 [json_name = "question"];</code>
+     * <code>optional string question = 3 [json_name = "question"];</code>
      * @param value The bytes for question to set.
      * @return This builder for chaining.
      */
@@ -759,21 +895,21 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       question_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private java.lang.Object responseOption1_ = "";
     /**
-     * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+     * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
      * @return Whether the responseOption1 field is set.
      */
     public boolean hasResponseOption1() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+     * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
      * @return The responseOption1.
      */
     public java.lang.String getResponseOption1() {
@@ -789,7 +925,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+     * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
      * @return The bytes for responseOption1.
      */
     public com.google.protobuf.ByteString
@@ -806,7 +942,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+     * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
      * @param value The responseOption1 to set.
      * @return This builder for chaining.
      */
@@ -814,22 +950,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       responseOption1_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+     * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
      * @return This builder for chaining.
      */
     public Builder clearResponseOption1() {
       responseOption1_ = getDefaultInstance().getResponseOption1();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string response_option1 = 3 [json_name = "responseOption1"];</code>
+     * <code>optional string response_option1 = 4 [json_name = "responseOption1"];</code>
      * @param value The bytes for responseOption1 to set.
      * @return This builder for chaining.
      */
@@ -838,21 +974,21 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       responseOption1_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object responseOption2_ = "";
     /**
-     * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+     * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
      * @return Whether the responseOption2 field is set.
      */
     public boolean hasResponseOption2() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+     * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
      * @return The responseOption2.
      */
     public java.lang.String getResponseOption2() {
@@ -868,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+     * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
      * @return The bytes for responseOption2.
      */
     public com.google.protobuf.ByteString
@@ -885,7 +1021,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+     * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
      * @param value The responseOption2 to set.
      * @return This builder for chaining.
      */
@@ -893,22 +1029,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       responseOption2_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+     * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
      * @return This builder for chaining.
      */
     public Builder clearResponseOption2() {
       responseOption2_ = getDefaultInstance().getResponseOption2();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string response_option2 = 4 [json_name = "responseOption2"];</code>
+     * <code>optional string response_option2 = 5 [json_name = "responseOption2"];</code>
      * @param value The bytes for responseOption2 to set.
      * @return This builder for chaining.
      */
@@ -917,7 +1053,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       responseOption2_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

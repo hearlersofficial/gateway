@@ -95,6 +95,25 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_BOOKMARKED_FIELD_NUMBER = 2;
+  private boolean isBookmarked_ = false;
+  /**
+   * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+   * @return Whether the isBookmarked field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsBookmarked() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+   * @return The isBookmarked.
+   */
+  @java.lang.Override
+  public boolean getIsBookmarked() {
+    return isBookmarked_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -112,6 +131,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(2, isBookmarked_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -123,6 +145,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, isBookmarked_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -144,6 +170,11 @@ private static final long serialVersionUID = 0L;
       if (!getName()
           .equals(other.getName())) return false;
     }
+    if (hasIsBookmarked() != other.hasIsBookmarked()) return false;
+    if (hasIsBookmarked()) {
+      if (getIsBookmarked()
+          != other.getIsBookmarked()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -158,6 +189,11 @@ private static final long serialVersionUID = 0L;
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasIsBookmarked()) {
+      hash = (37 * hash) + IS_BOOKMARKED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsBookmarked());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -295,6 +331,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      isBookmarked_ = false;
       return this;
     }
 
@@ -333,6 +370,10 @@ private static final long serialVersionUID = 0L;
         result.name_ = name_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isBookmarked_ = isBookmarked_;
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -352,6 +393,9 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasIsBookmarked()) {
+        setIsBookmarked(other.getIsBookmarked());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -384,6 +428,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 16: {
+              isBookmarked_ = input.readBool();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -476,6 +525,46 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean isBookmarked_ ;
+    /**
+     * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+     * @return Whether the isBookmarked field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsBookmarked() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+     * @return The isBookmarked.
+     */
+    @java.lang.Override
+    public boolean getIsBookmarked() {
+      return isBookmarked_;
+    }
+    /**
+     * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+     * @param value The isBookmarked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsBookmarked(boolean value) {
+
+      isBookmarked_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool is_bookmarked = 2 [json_name = "isBookmarked"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsBookmarked() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      isBookmarked_ = false;
       onChanged();
       return this;
     }

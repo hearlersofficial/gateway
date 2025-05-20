@@ -126,6 +126,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_BOOKMARKED_FIELD_NUMBER = 3;
+  private boolean isBookmarked_ = false;
+  /**
+   * <code>bool is_bookmarked = 3 [json_name = "isBookmarked"];</code>
+   * @return The isBookmarked.
+   */
+  @java.lang.Override
+  public boolean getIsBookmarked() {
+    return isBookmarked_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -146,6 +157,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, description_);
     }
+    if (isBookmarked_ != false) {
+      output.writeBool(3, isBookmarked_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -160,6 +174,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, description_);
+    }
+    if (isBookmarked_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, isBookmarked_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -180,6 +198,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (getIsBookmarked()
+        != other.getIsBookmarked()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -195,6 +215,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + IS_BOOKMARKED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsBookmarked());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -332,6 +355,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       name_ = "";
       description_ = "";
+      isBookmarked_ = false;
       return this;
     }
 
@@ -371,6 +395,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.description_ = description_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.isBookmarked_ = isBookmarked_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +421,9 @@ private static final long serialVersionUID = 0L;
         description_ = other.description_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.getIsBookmarked() != false) {
+        setIsBookmarked(other.getIsBookmarked());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -431,6 +461,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 24: {
+              isBookmarked_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -588,6 +623,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       description_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean isBookmarked_ ;
+    /**
+     * <code>bool is_bookmarked = 3 [json_name = "isBookmarked"];</code>
+     * @return The isBookmarked.
+     */
+    @java.lang.Override
+    public boolean getIsBookmarked() {
+      return isBookmarked_;
+    }
+    /**
+     * <code>bool is_bookmarked = 3 [json_name = "isBookmarked"];</code>
+     * @param value The isBookmarked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsBookmarked(boolean value) {
+
+      isBookmarked_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_bookmarked = 3 [json_name = "isBookmarked"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsBookmarked() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      isBookmarked_ = false;
       onChanged();
       return this;
     }
