@@ -215,7 +215,7 @@ public interface CounselorDtoMapper {
     }
 
     // FindMany
-    FindEpisodesRequest toFindEpisodesRequest(CounselorDto.FindEpisodesRequest request);
+    FindEpisodesRequest toFindEpisodesRequest(String counselorId);
     default CounselorDto.FindEpisodesResponse toFindEpisodesResponse(List<com.hearlers.api.proto.v1.model.Episode> episodes) {
         return CounselorDto.FindEpisodesResponse.builder()
                 .episodes(episodes.stream()
@@ -225,9 +225,9 @@ public interface CounselorDtoMapper {
     }
 
     // Create
-    default CreateEpisodeRequest toCreateEpisodeRequest(CounselorDto.CreateEpisodeRequest request) {
+    default CreateEpisodeRequest toCreateEpisodeRequest(CounselorDto.CreateEpisodeRequest request, String counselorId) {
         return CreateEpisodeRequest.newBuilder()
-                .setCounselorId(request.getCounselorId())
+                .setCounselorId(counselorId)
                 .setTitle(request.getTitle())
                 .setRequiredRapportThreshold(request.getRequiredRapportThreshold())
                 .setIsTemporary(request.getIsTemporary())

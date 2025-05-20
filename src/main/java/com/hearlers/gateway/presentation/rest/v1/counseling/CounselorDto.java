@@ -337,8 +337,6 @@ public class CounselorDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class CreateEpisodeRequest {
-        @Schema(description = "상담사 ID", required = true)
-        private String counselorId;
         @Schema(description = "에피소드 제목", required = true)
         private String title;
         @Schema(description = "에피소드 해금을 위한 라포 수치", required = true)
@@ -357,13 +355,6 @@ public class CounselorDto {
         private Episode episode;
     }
 
-    @Getter
-    @Builder
-    @Schema(description = "에피소드 조회 요청")
-    public static class FindEpisodesRequest {
-        @Schema(description = "상담사 ID", required = true)
-        private String counselorId;
-    }
 
     @Getter
     @Builder

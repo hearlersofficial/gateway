@@ -175,9 +175,10 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "이미지 URL 생성 성공"),
             @ApiResponse(responseCode = "400", description = "이미지 URL 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/v1/admin/episodes/{episode-id}/image-url")
+    @PostMapping("/v1/admin/counselors/{counselor-id}/episodes/{episode-id}/image-url")
     public ResponseEntity<ResponseDto.Success<CounselorDto.GenerateCutSceneImageUrlResponse>> generateCutSceneImageUrl(
             @PathVariable("episode-id") String episodeId,
+            @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.GenerateCutSceneImageUrlRequest request) {
         var generateCutSceneImageUrlRequest = counselorDtoMapper.toGenerateCutSceneImageUrlRequest(request, episodeId);
         var presignedUrl = counselorService.generateCutSceneImageUrl(generateCutSceneImageUrlRequest);
@@ -191,8 +192,11 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "에피소드 조회 성공"),
             @ApiResponse(responseCode = "400", description = "에피소드 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/admin/episodes/{episode-id}")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindEpisodeByIdResponse>> getEpisode(@PathVariable("episode-id") String episodeId) {
+    @GetMapping("/v1/admin/counselors/{counselor-id}/episodes/{episode-id}")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindEpisodeByIdResponse>> getEpisode(
+            @PathVariable("episode-id") String episodeId,
+            @PathVariable("counselor-id") String counselorId
+    ) {
         var findEpisodeByIdRequest = counselorDtoMapper.toFindEpisodeByIdRequest(episodeId);
         var episode = counselorService.findEpisodeById(findEpisodeByIdRequest);
         var response = counselorDtoMapper.toFindEpisodeByIdResponse(episode);
@@ -205,9 +209,11 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "에피소드 조회 성공"),
             @ApiResponse(responseCode = "400", description = "에피소드 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/admin/episodes")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindEpisodesResponse>> getEpisodes(@Valid @ParameterObject CounselorDto.FindEpisodesRequest request) {
-        var findEpisodesRequest = counselorDtoMapper.toFindEpisodesRequest(request);
+    @GetMapping("/v1/admin/counselors/{counselor-id}/admin/episodes")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindEpisodesResponse>> getEpisodes(
+            @PathVariable("counselor-id") String counselorId
+    ) {
+        var findEpisodesRequest = counselorDtoMapper.toFindEpisodesRequest(counselorId);
         var episodes = counselorService.findEpisodes(findEpisodesRequest);
         var response = counselorDtoMapper.toFindEpisodesResponse(episodes);
 
@@ -219,10 +225,11 @@ public class CounselorController {
             @ApiResponse(responseCode = "201", description = "에피소드 생성 성공"),
             @ApiResponse(responseCode = "400", description = "에피소드 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/v1/admin/episodes")
+    @PostMapping("/v1/admin/counselors/{counselor-id}/episodes")
     public ResponseEntity<ResponseDto.Success<CounselorDto.CreateEpisodeResponse>> createEpisode(
+            @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.CreateEpisodeRequest request) {
-        var createEpisodeRequest = counselorDtoMapper.toCreateEpisodeRequest(request);
+        var createEpisodeRequest = counselorDtoMapper.toCreateEpisodeRequest(request, counselorId);
         var episode = counselorService.createEpisode(createEpisodeRequest);
         var response = counselorDtoMapper.toCreateEpisodeResponse(episode);
 
@@ -235,9 +242,10 @@ public class CounselorController {
             @ApiResponse(responseCode = "400", description = "에피소드 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "404", description = "에피소드를 찾을 수 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PutMapping("/v1/admin/episodes/{episode-id}")
+    @PutMapping("/v1/admin/counselors/{counselor-id}/admin/episodes/{episode-id}")
     public ResponseEntity<ResponseDto.Success<CounselorDto.UpdateEpisodeResponse>> updateEpisode(
             @PathVariable("episode-id") String episodeId,
+            @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.UpdateEpisodeRequest request) {
         var updateEpisodeRequest = counselorDtoMapper.toUpdateEpisodeRequest(episodeId, request);
         var episode = counselorService.updateEpisode(updateEpisodeRequest);
