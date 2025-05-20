@@ -32,7 +32,6 @@ private static final long serialVersionUID = 0L;
   }
   private SaveEpisodeCutSceneRequest() {
     id_ = "";
-    episodeId_ = "";
     speaker_ = 0;
     content_ = "";
     image_ = "";
@@ -111,56 +110,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EPISODE_ID_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object episodeId_ = "";
-  /**
-   * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-   * @return The episodeId.
-   */
-  @java.lang.Override
-  public java.lang.String getEpisodeId() {
-    java.lang.Object ref = episodeId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      episodeId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-   * @return The bytes for episodeId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEpisodeIdBytes() {
-    java.lang.Object ref = episodeId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      episodeId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SPEAKER_FIELD_NUMBER = 3;
+  public static final int SPEAKER_FIELD_NUMBER = 2;
   private int speaker_ = 0;
   /**
-   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
    * @return The enum numeric value on the wire for speaker.
    */
   @java.lang.Override public int getSpeakerValue() {
     return speaker_;
   }
   /**
-   * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+   * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
    * @return The speaker.
    */
   @java.lang.Override public com.hearlers.api.proto.v1.model.Speaker getSpeaker() {
@@ -168,11 +128,11 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.hearlers.api.proto.v1.model.Speaker.UNRECOGNIZED : result;
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 4;
+  public static final int CONTENT_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
   /**
-   * <code>string content = 4 [json_name = "content"];</code>
+   * <code>string content = 3 [json_name = "content"];</code>
    * @return The content.
    */
   @java.lang.Override
@@ -189,7 +149,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string content = 4 [json_name = "content"];</code>
+   * <code>string content = 3 [json_name = "content"];</code>
    * @return The bytes for content.
    */
   @java.lang.Override
@@ -207,10 +167,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ORDER_INDEX_FIELD_NUMBER = 5;
+  public static final int ORDER_INDEX_FIELD_NUMBER = 4;
   private int orderIndex_ = 0;
   /**
-   * <code>int32 order_index = 5 [json_name = "orderIndex"];</code>
+   * <code>int32 order_index = 4 [json_name = "orderIndex"];</code>
    * @return The orderIndex.
    */
   @java.lang.Override
@@ -218,11 +178,11 @@ private static final long serialVersionUID = 0L;
     return orderIndex_;
   }
 
-  public static final int IMAGE_FIELD_NUMBER = 6;
+  public static final int IMAGE_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object image_ = "";
   /**
-   * <code>string image = 6 [json_name = "image"];</code>
+   * <code>string image = 5 [json_name = "image"];</code>
    * @return The image.
    */
   @java.lang.Override
@@ -239,7 +199,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string image = 6 [json_name = "image"];</code>
+   * <code>string image = 5 [json_name = "image"];</code>
    * @return The bytes for image.
    */
   @java.lang.Override
@@ -274,20 +234,17 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, episodeId_);
-    }
     if (speaker_ != com.hearlers.api.proto.v1.model.Speaker.SPEAKER_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, speaker_);
+      output.writeEnum(2, speaker_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, content_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
     }
     if (orderIndex_ != 0) {
-      output.writeInt32(5, orderIndex_);
+      output.writeInt32(4, orderIndex_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, image_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, image_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -301,22 +258,19 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, episodeId_);
-    }
     if (speaker_ != com.hearlers.api.proto.v1.model.Speaker.SPEAKER_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, speaker_);
+        .computeEnumSize(2, speaker_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, content_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
     }
     if (orderIndex_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, orderIndex_);
+        .computeInt32Size(4, orderIndex_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, image_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, image_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -338,8 +292,6 @@ private static final long serialVersionUID = 0L;
       if (!getId()
           .equals(other.getId())) return false;
     }
-    if (!getEpisodeId()
-        .equals(other.getEpisodeId())) return false;
     if (speaker_ != other.speaker_) return false;
     if (!getContent()
         .equals(other.getContent())) return false;
@@ -362,8 +314,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
     }
-    hash = (37 * hash) + EPISODE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEpisodeId().hashCode();
     hash = (37 * hash) + SPEAKER_FIELD_NUMBER;
     hash = (53 * hash) + speaker_;
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
@@ -508,7 +458,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       id_ = "";
-      episodeId_ = "";
       speaker_ = 0;
       content_ = "";
       orderIndex_ = 0;
@@ -552,18 +501,15 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.episodeId_ = episodeId_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.speaker_ = speaker_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.content_ = content_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.orderIndex_ = orderIndex_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.image_ = image_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -586,17 +532,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getEpisodeId().isEmpty()) {
-        episodeId_ = other.episodeId_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
       if (other.speaker_ != 0) {
         setSpeakerValue(other.getSpeakerValue());
       }
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getOrderIndex() != 0) {
@@ -604,7 +545,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -638,31 +579,26 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              episodeId_ = input.readStringRequireUtf8();
+            case 16: {
+              speaker_ = input.readEnum();
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
-            case 24: {
-              speaker_ = input.readEnum();
+            } // case 16
+            case 26: {
+              content_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 24
-            case 34: {
-              content_ = input.readStringRequireUtf8();
+            } // case 26
+            case 32: {
+              orderIndex_ = input.readInt32();
               bitField0_ |= 0x00000008;
               break;
-            } // case 34
-            case 40: {
-              orderIndex_ = input.readInt32();
+            } // case 32
+            case 42: {
+              image_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
-            } // case 40
-            case 50: {
-              image_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -783,99 +719,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object episodeId_ = "";
-    /**
-     * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-     * @return The episodeId.
-     */
-    public java.lang.String getEpisodeId() {
-      java.lang.Object ref = episodeId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        episodeId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-     * @return The bytes for episodeId.
-     */
-    public com.google.protobuf.ByteString
-        getEpisodeIdBytes() {
-      java.lang.Object ref = episodeId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        episodeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-     * @param value The episodeId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEpisodeId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      episodeId_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEpisodeId() {
-      episodeId_ = getDefaultInstance().getEpisodeId();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string episode_id = 2 [json_name = "episodeId"];</code>
-     * @param value The bytes for episodeId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEpisodeIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      episodeId_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
     private int speaker_ = 0;
     /**
-     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
      * @return The enum numeric value on the wire for speaker.
      */
     @java.lang.Override public int getSpeakerValue() {
       return speaker_;
     }
     /**
-     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
      * @param value The enum numeric value on the wire for speaker to set.
      * @return This builder for chaining.
      */
     public Builder setSpeakerValue(int value) {
       speaker_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
      * @return The speaker.
      */
     @java.lang.Override
@@ -884,7 +748,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.hearlers.api.proto.v1.model.Speaker.UNRECOGNIZED : result;
     }
     /**
-     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
      * @param value The speaker to set.
      * @return This builder for chaining.
      */
@@ -892,17 +756,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       speaker_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.Speaker speaker = 3 [json_name = "speaker"];</code>
+     * <code>.com.hearlers.v1.model.Speaker speaker = 2 [json_name = "speaker"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSpeaker() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       speaker_ = 0;
       onChanged();
       return this;
@@ -910,7 +774,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object content_ = "";
     /**
-     * <code>string content = 4 [json_name = "content"];</code>
+     * <code>string content = 3 [json_name = "content"];</code>
      * @return The content.
      */
     public java.lang.String getContent() {
@@ -926,7 +790,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string content = 4 [json_name = "content"];</code>
+     * <code>string content = 3 [json_name = "content"];</code>
      * @return The bytes for content.
      */
     public com.google.protobuf.ByteString
@@ -943,7 +807,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string content = 4 [json_name = "content"];</code>
+     * <code>string content = 3 [json_name = "content"];</code>
      * @param value The content to set.
      * @return This builder for chaining.
      */
@@ -951,22 +815,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       content_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string content = 4 [json_name = "content"];</code>
+     * <code>string content = 3 [json_name = "content"];</code>
      * @return This builder for chaining.
      */
     public Builder clearContent() {
       content_ = getDefaultInstance().getContent();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string content = 4 [json_name = "content"];</code>
+     * <code>string content = 3 [json_name = "content"];</code>
      * @param value The bytes for content to set.
      * @return This builder for chaining.
      */
@@ -975,14 +839,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       content_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private int orderIndex_ ;
     /**
-     * <code>int32 order_index = 5 [json_name = "orderIndex"];</code>
+     * <code>int32 order_index = 4 [json_name = "orderIndex"];</code>
      * @return The orderIndex.
      */
     @java.lang.Override
@@ -990,23 +854,23 @@ private static final long serialVersionUID = 0L;
       return orderIndex_;
     }
     /**
-     * <code>int32 order_index = 5 [json_name = "orderIndex"];</code>
+     * <code>int32 order_index = 4 [json_name = "orderIndex"];</code>
      * @param value The orderIndex to set.
      * @return This builder for chaining.
      */
     public Builder setOrderIndex(int value) {
 
       orderIndex_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 order_index = 5 [json_name = "orderIndex"];</code>
+     * <code>int32 order_index = 4 [json_name = "orderIndex"];</code>
      * @return This builder for chaining.
      */
     public Builder clearOrderIndex() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       orderIndex_ = 0;
       onChanged();
       return this;
@@ -1014,7 +878,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object image_ = "";
     /**
-     * <code>string image = 6 [json_name = "image"];</code>
+     * <code>string image = 5 [json_name = "image"];</code>
      * @return The image.
      */
     public java.lang.String getImage() {
@@ -1030,7 +894,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string image = 6 [json_name = "image"];</code>
+     * <code>string image = 5 [json_name = "image"];</code>
      * @return The bytes for image.
      */
     public com.google.protobuf.ByteString
@@ -1047,7 +911,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string image = 6 [json_name = "image"];</code>
+     * <code>string image = 5 [json_name = "image"];</code>
      * @param value The image to set.
      * @return This builder for chaining.
      */
@@ -1055,22 +919,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       image_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string image = 6 [json_name = "image"];</code>
+     * <code>string image = 5 [json_name = "image"];</code>
      * @return This builder for chaining.
      */
     public Builder clearImage() {
       image_ = getDefaultInstance().getImage();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string image = 6 [json_name = "image"];</code>
+     * <code>string image = 5 [json_name = "image"];</code>
      * @param value The bytes for image to set.
      * @return This builder for chaining.
      */
@@ -1079,7 +943,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       image_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

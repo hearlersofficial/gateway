@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.api.proto.v1.common.Extension;
+import com.hearlers.api.proto.v1.common.PresignedUrl;
+import com.hearlers.gateway.shared.presentation.PresignedUrlResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.NullValueCheckStrategy;
@@ -24,20 +27,21 @@ public interface CounselorDtoMapper {
     // Tone → ToneDto
     CounselorDto.Tone of (Tone tone);
 
-
     // Counselor
     // FindOne
-    default FindCounselorByIdRequest toFindCounselorRequest (String CounselorId) {
+    default FindCounselorByIdRequest toFindCounselorRequest (String counselorId) {
         return FindCounselorByIdRequest.newBuilder()
-                .setCounselorId(CounselorId)
+                .setCounselorId(counselorId)
                 .build();
-    };
-    default CounselorDto.FindCounselorResponse toFindCounselorResponse (Counselor counselor) {
+    }
+
+    default CounselorDto.FindCounselorByIdResponse toFindCounselorResponse (Counselor counselor) {
         CounselorDto.Counselor counselorDto = of(counselor);
-        return CounselorDto.FindCounselorResponse.builder()
+        return CounselorDto.FindCounselorByIdResponse.builder()
                 .counselor(counselorDto)
                 .build();
-    };
+    }
+
     // FindMany
     FindCounselorsRequest toFindCounselorsRequest (CounselorDto.FindCounselorsRequest request);
     default CounselorDto.FindCounselorsResponse toFindCounselorsResponse (List<Counselor> counselors) {
@@ -48,36 +52,13 @@ public interface CounselorDtoMapper {
                 .build();
     }
 
-    // Tone
-    // FindOne
-    default FindToneByIdRequest toFindToneRequest (String toneId) {
-        return FindToneByIdRequest.newBuilder()
-                .setToneId(toneId)
-                .build();
-    };
-    default CounselorDto.FindToneResponse toFindToneResponse (Tone tone) {
-        CounselorDto.Tone toneDto = of(tone);
-        return CounselorDto.FindToneResponse.builder()
-                .tone(toneDto)
-                .build();
-    }
-
-    // FindMany
-    FindTonesRequest toFindTonesRequest (CounselorDto.FindTonesRequest request);
-    default CounselorDto.FindTonesResponse toFindTonesResponse (List<Tone> tones) {
-        return CounselorDto.FindTonesResponse.builder()
-                .tones(tones.stream()
-                        .map(this::of)
-                        .toList())
-                .build();
-    }
-    
-    // Counselor Create
+    // Create
     default CreateCounselorRequest toCreateCounselorRequest(CounselorDto.CreateCounselorRequest request) {
         return CreateCounselorRequest.newBuilder()
                 .setToneId(request.getToneId())
                 .setName(request.getName())
                 .setDescription(request.getDescription())
+                .setProfileImage(request.getProfileImage())
                 .setCounselorGender(request.getGender())
                 .build();
     }
@@ -89,7 +70,7 @@ public interface CounselorDtoMapper {
                 .build();
     }
     
-    // Counselor Update
+    // Update
     default UpdateCounselorRequest toUpdateCounselorRequest(String counselorId, CounselorDto.UpdateCounselorRequest request) {
         UpdateCounselorRequest.Builder builder = UpdateCounselorRequest.newBuilder()
                 .setCounselorId(counselorId);
@@ -106,6 +87,10 @@ public interface CounselorDtoMapper {
             builder.setDescription(request.getDescription());
         }
         
+        if (request.getProfileImage() != null) {
+            builder.setProfileImage(request.getProfileImage());
+        }
+        
         if (request.getGender() != null) {
             builder.setCounselorGender(request.getGender());
         }
@@ -119,8 +104,47 @@ public interface CounselorDtoMapper {
                 .counselor(counselorDto)
                 .build();
     }
+
+    // Generate Image URL
+    default GenerateCounselorImageUrlRequest toGenerateCounselorImageUrlRequest(CounselorDto.GenerateCounselorImageUrlRequest request) {
+        return GenerateCounselorImageUrlRequest.newBuilder()
+                .setCounselorId(request.getCounselorId())
+                .setExtension(Extension.valueOf(request.getExtension()))
+                .build();
+    }
+
+    default CounselorDto.GenerateCounselorImageUrlResponse toGenerateCounselorImageUrlResponse(PresignedUrl presignedUrl) {
+        return CounselorDto.GenerateCounselorImageUrlResponse.builder()
+                .presignedUrl(PresignedUrlResponse.of(presignedUrl))
+                .build();
+    }
+
+    // Tone
+    // FindOne
+    default FindToneByIdRequest toFindToneRequest (String toneId) {
+        return FindToneByIdRequest.newBuilder()
+                .setToneId(toneId)
+                .build();
+    }
+
+    default CounselorDto.FindToneByIdResponse toFindToneResponse (Tone tone) {
+        CounselorDto.Tone toneDto = of(tone);
+        return CounselorDto.FindToneByIdResponse.builder()
+                .tone(toneDto)
+                .build();
+    }
+
+    // FindMany
+    FindTonesRequest toFindTonesRequest (CounselorDto.FindTonesRequest request);
+    default CounselorDto.FindTonesResponse toFindTonesResponse (List<Tone> tones) {
+        return CounselorDto.FindTonesResponse.builder()
+                .tones(tones.stream()
+                        .map(this::of)
+                        .toList())
+                .build();
+    }
     
-    // Tone Create
+    // Create
     default CreateToneRequest toCreateToneRequest(CounselorDto.CreateToneRequest request) {
         return CreateToneRequest.newBuilder()
                 .setName(request.getName())
@@ -135,7 +159,7 @@ public interface CounselorDtoMapper {
                 .build();
     }
     
-    // Tone Update
+    // Update
     default UpdateToneRequest toUpdateToneRequest(String toneId, CounselorDto.UpdateToneRequest request) {
         UpdateToneRequest.Builder builder = UpdateToneRequest.newBuilder()
                 .setToneId(toneId);
@@ -155,6 +179,20 @@ public interface CounselorDtoMapper {
         CounselorDto.Tone toneDto = of(tone);
         return CounselorDto.UpdateToneResponse.builder()
                 .tone(toneDto)
+                .build();
+    }
+
+    // Generate Cut Scene Image URL
+    default GenerateCutSceneImageUrlRequest toGenerateCutSceneImageUrlRequest(CounselorDto.GenerateCutSceneImageUrlRequest request) {
+        return GenerateCutSceneImageUrlRequest.newBuilder()
+                .setEpisodeId(request.getEpisodeId())
+                .setExtension(Extension.valueOf(request.getExtension()))
+                .build();
+    }
+
+    default CounselorDto.GenerateCutSceneImageUrlResponse toGenerateCutSceneImageUrlResponse(PresignedUrl presignedUrl) {
+        return CounselorDto.GenerateCutSceneImageUrlResponse.builder()
+                .presignedUrl(PresignedUrlResponse.of(presignedUrl))
                 .build();
     }
 }

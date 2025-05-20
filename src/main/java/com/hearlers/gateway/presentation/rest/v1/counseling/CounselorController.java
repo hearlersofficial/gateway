@@ -41,7 +41,7 @@ public class CounselorController {
             @ApiResponse(responseCode = "400", description = "상담사 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/counselors/{counselor-id}")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorResponse>> getCounselor(@PathVariable("counselor-id") String counselorId) {
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorByIdResponse>> getCounselor(@PathVariable("counselor-id") String counselorId) {
         var findCounselorByIdRequest = counselorDtoMapper.toFindCounselorRequest(counselorId);
         var counselor = counselorService.findCounselorById(findCounselorByIdRequest);
         var response = counselorDtoMapper.toFindCounselorResponse(counselor);
@@ -102,7 +102,7 @@ public class CounselorController {
             @ApiResponse(responseCode = "400", description = "톤 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/v1/tones/{tone-id}")
-    public ResponseEntity<ResponseDto.Success<CounselorDto.FindToneResponse>> getTone(@PathVariable("tone-id") String toneId) {
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindToneByIdResponse>> getTone(@PathVariable("tone-id") String toneId) {
         var findToneByIdRequest = counselorDtoMapper.toFindToneRequest(toneId);
         var tone = counselorService.findToneById(findToneByIdRequest);
         var response = counselorDtoMapper.toFindToneResponse(tone);
