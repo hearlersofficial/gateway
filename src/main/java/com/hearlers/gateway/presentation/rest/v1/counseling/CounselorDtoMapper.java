@@ -106,10 +106,10 @@ public interface CounselorDtoMapper {
     }
 
     // Generate Image URL
-    default GenerateCounselorImageUrlRequest toGenerateCounselorImageUrlRequest(CounselorDto.GenerateCounselorImageUrlRequest request) {
+    default GenerateCounselorImageUrlRequest toGenerateCounselorImageUrlRequest(CounselorDto.GenerateCounselorImageUrlRequest request, String counselorId) {
         return GenerateCounselorImageUrlRequest.newBuilder()
-                .setCounselorId(request.getCounselorId())
-                .setExtension(Extension.valueOf(request.getExtension()))
+                .setCounselorId(counselorId)
+                .setExtension(request.getExtension())
                 .build();
     }
 
@@ -183,10 +183,10 @@ public interface CounselorDtoMapper {
     }
 
     // Generate Cut Scene Image URL
-    default GenerateCutSceneImageUrlRequest toGenerateCutSceneImageUrlRequest(CounselorDto.GenerateCutSceneImageUrlRequest request) {
+    default GenerateCutSceneImageUrlRequest toGenerateCutSceneImageUrlRequest(CounselorDto.GenerateCutSceneImageUrlRequest request, String episodeId) {
         return GenerateCutSceneImageUrlRequest.newBuilder()
-                .setEpisodeId(request.getEpisodeId())
-                .setExtension(Extension.valueOf(request.getExtension()))
+                .setEpisodeId(episodeId)
+                .setExtension(request.getExtension())
                 .build();
     }
 
@@ -194,5 +194,101 @@ public interface CounselorDtoMapper {
         return CounselorDto.GenerateCutSceneImageUrlResponse.builder()
                 .presignedUrl(PresignedUrlResponse.of(presignedUrl))
                 .build();
+    }
+
+    // Episode → EpisodeDto
+    CounselorDto.Episode of(com.hearlers.api.proto.v1.model.Episode episode);
+
+    // Episode
+    // FindOne
+    default FindEpisodeByIdRequest toFindEpisodeByIdRequest(String episodeId) {
+        return FindEpisodeByIdRequest.newBuilder()
+                .setEpisodeId(episodeId)
+                .build();
+    }
+
+    default CounselorDto.FindEpisodeByIdResponse toFindEpisodeByIdResponse(com.hearlers.api.proto.v1.model.Episode episode) {
+        CounselorDto.Episode episodeDto = of(episode);
+        return CounselorDto.FindEpisodeByIdResponse.builder()
+                .episode(episodeDto)
+                .build();
+    }
+
+    // FindMany
+    FindEpisodesRequest toFindEpisodesRequest(CounselorDto.FindEpisodesRequest request);
+    default CounselorDto.FindEpisodesResponse toFindEpisodesResponse(List<com.hearlers.api.proto.v1.model.Episode> episodes) {
+        return CounselorDto.FindEpisodesResponse.builder()
+                .episodes(episodes.stream()
+                        .map(this::of)
+                        .toList())
+                .build();
+    }
+
+    // Create
+    default CreateEpisodeRequest toCreateEpisodeRequest(CounselorDto.CreateEpisodeRequest request) {
+        return CreateEpisodeRequest.newBuilder()
+                .setCounselorId(request.getCounselorId())
+                .setTitle(request.getTitle())
+                .setRequiredRapportThreshold(request.getRequiredRapportThreshold())
+                .setIsTemporary(request.getIsTemporary())
+                .addAllCutScenes(request.getCutScenes().stream()
+                        .map(this::toSaveEpisodeCutSceneRequest)
+                        .toList())
+                .build();
+    }
+
+    default CounselorDto.CreateEpisodeResponse toCreateEpisodeResponse(com.hearlers.api.proto.v1.model.Episode episode) {
+        CounselorDto.Episode episodeDto = of(episode);
+        return CounselorDto.CreateEpisodeResponse.builder()
+                .episode(episodeDto)
+                .build();
+    }
+
+    // Update
+    default UpdateEpisodeRequest toUpdateEpisodeRequest(String episodeId, CounselorDto.UpdateEpisodeRequest request) {
+        UpdateEpisodeRequest.Builder builder = UpdateEpisodeRequest.newBuilder()
+                .setEpisodeId(episodeId);
+
+        if (request.getTitle() != null) {
+            builder.setTitle(request.getTitle());
+        }
+
+        if (request.getRequiredRapportThreshold() != null) {
+            builder.setRequiredRapportThreshold(request.getRequiredRapportThreshold());
+        }
+
+        if (request.getIsTemporary() != null) {
+            builder.setIsTemporary(request.getIsTemporary());
+        }
+
+        if (request.getCutScenes() != null) {
+            builder.addAllCutScenes(request.getCutScenes().stream()
+                    .map(this::toSaveEpisodeCutSceneRequest)
+                    .toList());
+        }
+
+        return builder.build();
+    }
+
+    default CounselorDto.UpdateEpisodeResponse toUpdateEpisodeResponse(com.hearlers.api.proto.v1.model.Episode episode) {
+        CounselorDto.Episode episodeDto = of(episode);
+        return CounselorDto.UpdateEpisodeResponse.builder()
+                .episode(episodeDto)
+                .build();
+    }
+
+    // Helper methods
+    default SaveEpisodeCutSceneRequest toSaveEpisodeCutSceneRequest(CounselorDto.SaveEpisodeCutSceneRequest request) {
+        SaveEpisodeCutSceneRequest.Builder builder = SaveEpisodeCutSceneRequest.newBuilder()
+                .setSpeaker(request.getSpeaker())
+                .setContent(request.getContent())
+                .setOrderIndex(request.getOrderIndex())
+                .setImage(request.getImage());
+
+        if (request.getId() != null) {
+            builder.setId(request.getId());
+        }
+
+        return builder.build();
     }
 }

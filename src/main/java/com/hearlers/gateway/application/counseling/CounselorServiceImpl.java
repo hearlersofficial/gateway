@@ -1,10 +1,9 @@
 package com.hearlers.gateway.application.counseling;
 
+import com.hearlers.api.proto.v1.common.PresignedUrl;
 import com.hearlers.api.proto.v1.model.Counselor;
-import com.hearlers.api.proto.v1.service.CreateCounselorRequest;
-import com.hearlers.api.proto.v1.service.FindCounselorByIdRequest;
-import com.hearlers.api.proto.v1.service.FindCounselorsRequest;
-import com.hearlers.api.proto.v1.service.UpdateCounselorRequest;
+import com.hearlers.api.proto.v1.model.Episode;
+import com.hearlers.api.proto.v1.service.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,16 +12,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import com.hearlers.api.proto.v1.model.Tone;
-import com.hearlers.api.proto.v1.service.CreateToneRequest;
-import com.hearlers.api.proto.v1.service.FindToneByIdRequest;
-import com.hearlers.api.proto.v1.service.FindTonesRequest;
-import com.hearlers.api.proto.v1.service.UpdateToneRequest;
 
 @Service
 @RequiredArgsConstructor
 public class CounselorServiceImpl implements CounselorService {
     private final CounselorReader counselorReader;
     private final CounselorPersistor counselorPersistor;
+    private final CounselorPresigner counselorPresigner;
 
     // Counselor 조회
     @Override
@@ -44,6 +40,36 @@ public class CounselorServiceImpl implements CounselorService {
     @Override
     public Counselor updateCounselor(UpdateCounselorRequest request) {
         return counselorPersistor.updateCounselor(request);
+    }
+
+    @Override
+    public PresignedUrl generateCounselorImageUrl(GenerateCounselorImageUrlRequest request) {
+        return counselorPresigner.generateCounselorImageUrl(request);
+    }
+
+    @Override
+    public Episode findEpisodeById(FindEpisodeByIdRequest request) {
+        return counselorReader.findEpisodeById(request);
+    }
+
+    @Override
+    public List<Episode> findEpisodes(FindEpisodesRequest request) {
+        return counselorReader.findEpisodes(request);
+    }
+
+    @Override
+    public Episode createEpisode(CreateEpisodeRequest request) {
+        return counselorPersistor.createEpisode(request);
+    }
+
+    @Override
+    public Episode updateEpisode(UpdateEpisodeRequest request) {
+        return counselorPersistor.updateEpisode(request);
+    }
+
+    @Override
+    public PresignedUrl generateCutSceneImageUrl(GenerateCutSceneImageUrlRequest request) {
+        return counselorPresigner.generateCutSceneImageUrl(request);
     }
 
     // Tone 조회

@@ -2,14 +2,13 @@ package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.common.Extension;
 import com.hearlers.api.proto.v1.common.PresignedUrl;
 import com.hearlers.api.proto.v1.model.CounselorGender;
 import com.hearlers.api.proto.v1.model.Speaker;
 import com.hearlers.gateway.shared.presentation.PresignedUrlResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 public class CounselorDto {
 
@@ -127,9 +126,10 @@ public class CounselorDto {
 
     // 상담사 관련 DTO
     @Getter
-    @Setter
     @Builder
     @Schema(description = "상담사 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class CreateCounselorRequest {
         @Schema(description = "톤 ID", required = true)
         private String toneId;
@@ -184,9 +184,10 @@ public class CounselorDto {
     }
 
     @Getter
-    @Setter
     @Builder
     @Schema(description = "상담사 업데이트 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class UpdateCounselorRequest {
         @Schema(description = "상담사 ID", required = true)
         private String counselorId;
@@ -212,9 +213,10 @@ public class CounselorDto {
 
     // 버블 관련 DTO
     @Getter
-    @Setter
     @Builder
     @Schema(description = "버블 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class CreateBubbleRequest {
         @Schema(description = "상담사 ID", required = true)
         private String counselorId;
@@ -285,9 +287,10 @@ public class CounselorDto {
     }
 
     @Getter
-    @Setter
     @Builder
     @Schema(description = "버블 업데이트 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class UpdateBubbleRequest {
         @Schema(description = "버블 ID", required = true)
         private String bubbleId;
@@ -329,9 +332,10 @@ public class CounselorDto {
 
     // 에피소드 관련 DTO
     @Getter
-    @Setter
     @Builder
     @Schema(description = "에피소드 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class CreateEpisodeRequest {
         @Schema(description = "상담사 ID", required = true)
         private String counselorId;
@@ -386,9 +390,10 @@ public class CounselorDto {
     }
 
     @Getter
-    @Setter
     @Builder
     @Schema(description = "에피소드 업데이트 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class UpdateEpisodeRequest {
         @Schema(description = "에피소드 ID", required = true)
         private String episodeId;
@@ -411,9 +416,10 @@ public class CounselorDto {
     }
 
     @Getter
-    @Setter
     @Builder
     @Schema(description = "에피소드 컷신 저장 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class SaveEpisodeCutSceneRequest {
         @Schema(description = "컷신 ID (수정 시 필요)", nullable = true)
         private String id;
@@ -429,9 +435,10 @@ public class CounselorDto {
 
     // 톤 관련 DTO
     @Getter
-    @Setter
     @Builder
     @Schema(description = "톤 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class CreateToneRequest {
         @Schema(description = "톤 이름", required = true)
         private String name;
@@ -480,9 +487,10 @@ public class CounselorDto {
     }
 
     @Getter
-    @Setter
     @Builder
     @Schema(description = "톤 업데이트 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class UpdateToneRequest {
         @Schema(description = "톤 ID", required = true)
         private String toneId;
@@ -501,13 +509,13 @@ public class CounselorDto {
     }
 
     @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
     @Builder
     @Schema(description = "상담사 이미지 URL 생성 요청")
     public static class GenerateCounselorImageUrlRequest {
-        @Schema(description = "상담사 ID", required = true)
-        private String counselorId;
         @Schema(description = "이미지 확장자", required = true)
-        private String extension;
+        private Extension extension;
     }
 
     @Getter
@@ -521,11 +529,11 @@ public class CounselorDto {
     @Getter
     @Builder
     @Schema(description = "컷신 이미지 URL 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class GenerateCutSceneImageUrlRequest {
-        @Schema(description = "에피소드 ID", required = true)
-        private String episodeId;
         @Schema(description = "이미지 확장자", required = true)
-        private String extension;
+        private Extension extension;
     }
 
     @Getter
