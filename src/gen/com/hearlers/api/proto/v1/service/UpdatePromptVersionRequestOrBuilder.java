@@ -65,4 +65,20 @@ public interface UpdatePromptVersionRequestOrBuilder extends
    * @return The isBookmarked.
    */
   boolean getIsBookmarked();
+
+  /**
+   * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 5 [json_name = "gptModel"];</code>
+   * @return Whether the gptModel field is set.
+   */
+  boolean hasGptModel();
+  /**
+   * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 5 [json_name = "gptModel"];</code>
+   * @return The enum numeric value on the wire for gptModel.
+   */
+  int getGptModelValue();
+  /**
+   * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 5 [json_name = "gptModel"];</code>
+   * @return The gptModel.
+   */
+  com.hearlers.api.proto.v1.model.GPTModel getGptModel();
 }

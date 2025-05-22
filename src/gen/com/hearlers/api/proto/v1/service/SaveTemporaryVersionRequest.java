@@ -33,6 +33,7 @@ private static final long serialVersionUID = 0L;
   private SaveTemporaryVersionRequest() {
     name_ = "";
     description_ = "";
+    gptModel_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -137,6 +138,24 @@ private static final long serialVersionUID = 0L;
     return isBookmarked_;
   }
 
+  public static final int GPT_MODEL_FIELD_NUMBER = 4;
+  private int gptModel_ = 0;
+  /**
+   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+   * @return The enum numeric value on the wire for gptModel.
+   */
+  @java.lang.Override public int getGptModelValue() {
+    return gptModel_;
+  }
+  /**
+   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+   * @return The gptModel.
+   */
+  @java.lang.Override public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
+    com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
+    return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -160,6 +179,9 @@ private static final long serialVersionUID = 0L;
     if (isBookmarked_ != false) {
       output.writeBool(3, isBookmarked_);
     }
+    if (gptModel_ != com.hearlers.api.proto.v1.model.GPTModel.GPTMODEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, gptModel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -178,6 +200,10 @@ private static final long serialVersionUID = 0L;
     if (isBookmarked_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, isBookmarked_);
+    }
+    if (gptModel_ != com.hearlers.api.proto.v1.model.GPTModel.GPTMODEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, gptModel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -200,6 +226,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDescription())) return false;
     if (getIsBookmarked()
         != other.getIsBookmarked()) return false;
+    if (gptModel_ != other.gptModel_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -218,6 +245,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_BOOKMARKED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsBookmarked());
+    hash = (37 * hash) + GPT_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + gptModel_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -356,6 +385,7 @@ private static final long serialVersionUID = 0L;
       name_ = "";
       description_ = "";
       isBookmarked_ = false;
+      gptModel_ = 0;
       return this;
     }
 
@@ -398,6 +428,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.isBookmarked_ = isBookmarked_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.gptModel_ = gptModel_;
+      }
     }
 
     @java.lang.Override
@@ -424,6 +457,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsBookmarked() != false) {
         setIsBookmarked(other.getIsBookmarked());
+      }
+      if (other.gptModel_ != 0) {
+        setGptModelValue(other.getGptModelValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -466,6 +502,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 24
+            case 32: {
+              gptModel_ = input.readEnum();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -655,6 +696,59 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsBookmarked() {
       bitField0_ = (bitField0_ & ~0x00000004);
       isBookmarked_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int gptModel_ = 0;
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+     * @return The enum numeric value on the wire for gptModel.
+     */
+    @java.lang.Override public int getGptModelValue() {
+      return gptModel_;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+     * @param value The enum numeric value on the wire for gptModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGptModelValue(int value) {
+      gptModel_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+     * @return The gptModel.
+     */
+    @java.lang.Override
+    public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
+      com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
+      return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+     * @param value The gptModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGptModel(com.hearlers.api.proto.v1.model.GPTModel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      gptModel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGptModel() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      gptModel_ = 0;
       onChanged();
       return this;
     }

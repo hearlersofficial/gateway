@@ -82,6 +82,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int WITH_TEMPORARY_FIELD_NUMBER = 2;
+  private boolean withTemporary_ = false;
+  /**
+   * <code>bool with_temporary = 2 [json_name = "withTemporary"];</code>
+   * @return The withTemporary.
+   */
+  @java.lang.Override
+  public boolean getWithTemporary() {
+    return withTemporary_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -99,6 +110,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, episodeId_);
     }
+    if (withTemporary_ != false) {
+      output.writeBool(2, withTemporary_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -110,6 +124,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, episodeId_);
+    }
+    if (withTemporary_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, withTemporary_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -128,6 +146,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getEpisodeId()
         .equals(other.getEpisodeId())) return false;
+    if (getWithTemporary()
+        != other.getWithTemporary()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -141,6 +161,9 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EPISODE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getEpisodeId().hashCode();
+    hash = (37 * hash) + WITH_TEMPORARY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithTemporary());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -273,6 +296,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       episodeId_ = "";
+      withTemporary_ = false;
       return this;
     }
 
@@ -309,6 +333,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.episodeId_ = episodeId_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.withTemporary_ = withTemporary_;
+      }
     }
 
     @java.lang.Override
@@ -327,6 +354,9 @@ private static final long serialVersionUID = 0L;
         episodeId_ = other.episodeId_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.getWithTemporary() != false) {
+        setWithTemporary(other.getWithTemporary());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -359,6 +389,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 16: {
+              withTemporary_ = input.readBool();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -444,6 +479,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       episodeId_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean withTemporary_ ;
+    /**
+     * <code>bool with_temporary = 2 [json_name = "withTemporary"];</code>
+     * @return The withTemporary.
+     */
+    @java.lang.Override
+    public boolean getWithTemporary() {
+      return withTemporary_;
+    }
+    /**
+     * <code>bool with_temporary = 2 [json_name = "withTemporary"];</code>
+     * @param value The withTemporary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithTemporary(boolean value) {
+
+      withTemporary_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_temporary = 2 [json_name = "withTemporary"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithTemporary() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      withTemporary_ = false;
       onChanged();
       return this;
     }

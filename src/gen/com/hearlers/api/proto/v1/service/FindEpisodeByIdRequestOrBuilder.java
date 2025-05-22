@@ -20,4 +20,10 @@ public interface FindEpisodeByIdRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEpisodeIdBytes();
+
+  /**
+   * <code>bool with_temporary = 2 [json_name = "withTemporary"];</code>
+   * @return The withTemporary.
+   */
+  boolean getWithTemporary();
 }

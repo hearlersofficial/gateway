@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     description_ = "";
+    gptModel_ = 0;
     counselorScopedPrompts_ = java.util.Collections.emptyList();
     toneScopedPrompts_ = java.util.Collections.emptyList();
     createdAt_ = "";
@@ -201,18 +202,36 @@ private static final long serialVersionUID = 0L;
     return isBookmarked_;
   }
 
-  public static final int COUNSELOR_SCOPED_PROMPTS_FIELD_NUMBER = 7;
+  public static final int GPT_MODEL_FIELD_NUMBER = 7;
+  private int gptModel_ = 0;
+  /**
+   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+   * @return The enum numeric value on the wire for gptModel.
+   */
+  @java.lang.Override public int getGptModelValue() {
+    return gptModel_;
+  }
+  /**
+   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+   * @return The gptModel.
+   */
+  @java.lang.Override public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
+    com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
+    return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+  }
+
+  public static final int COUNSELOR_SCOPED_PROMPTS_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private java.util.List<com.hearlers.api.proto.v1.model.CounselorScopedPrompt> counselorScopedPrompts_;
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
    */
   @java.lang.Override
   public java.util.List<com.hearlers.api.proto.v1.model.CounselorScopedPrompt> getCounselorScopedPromptsList() {
     return counselorScopedPrompts_;
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder> 
@@ -220,21 +239,21 @@ private static final long serialVersionUID = 0L;
     return counselorScopedPrompts_;
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
    */
   @java.lang.Override
   public int getCounselorScopedPromptsCount() {
     return counselorScopedPrompts_.size();
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.CounselorScopedPrompt getCounselorScopedPrompts(int index) {
     return counselorScopedPrompts_.get(index);
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder getCounselorScopedPromptsOrBuilder(
@@ -242,18 +261,18 @@ private static final long serialVersionUID = 0L;
     return counselorScopedPrompts_.get(index);
   }
 
-  public static final int TONE_SCOPED_PROMPTS_FIELD_NUMBER = 8;
+  public static final int TONE_SCOPED_PROMPTS_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private java.util.List<com.hearlers.api.proto.v1.model.ToneScopedPrompt> toneScopedPrompts_;
   /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
    */
   @java.lang.Override
   public java.util.List<com.hearlers.api.proto.v1.model.ToneScopedPrompt> getToneScopedPromptsList() {
     return toneScopedPrompts_;
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder> 
@@ -261,21 +280,21 @@ private static final long serialVersionUID = 0L;
     return toneScopedPrompts_;
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
    */
   @java.lang.Override
   public int getToneScopedPromptsCount() {
     return toneScopedPrompts_.size();
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.ToneScopedPrompt getToneScopedPrompts(int index) {
     return toneScopedPrompts_.get(index);
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
    */
   @java.lang.Override
   public com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder getToneScopedPromptsOrBuilder(
@@ -283,7 +302,7 @@ private static final long serialVersionUID = 0L;
     return toneScopedPrompts_.get(index);
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 9;
+  public static final int CREATED_AT_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdAt_ = "";
   /**
@@ -291,7 +310,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 9 [json_name = "createdAt"];</code>
+   * <code>string created_at = 10 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -312,7 +331,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 9 [json_name = "createdAt"];</code>
+   * <code>string created_at = 10 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -330,7 +349,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 10;
+  public static final int UPDATED_AT_FIELD_NUMBER = 11;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
@@ -338,7 +357,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -359,7 +378,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -377,7 +396,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DELETED_AT_FIELD_NUMBER = 11;
+  public static final int DELETED_AT_FIELD_NUMBER = 12;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deletedAt_ = "";
   /**
@@ -385,7 +404,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   @java.lang.Override
@@ -397,7 +416,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -418,7 +437,7 @@ private static final long serialVersionUID = 0L;
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   @java.lang.Override
@@ -468,20 +487,23 @@ private static final long serialVersionUID = 0L;
     if (isBookmarked_ != false) {
       output.writeBool(6, isBookmarked_);
     }
+    if (gptModel_ != com.hearlers.api.proto.v1.model.GPTModel.GPTMODEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, gptModel_);
+    }
     for (int i = 0; i < counselorScopedPrompts_.size(); i++) {
-      output.writeMessage(7, counselorScopedPrompts_.get(i));
+      output.writeMessage(8, counselorScopedPrompts_.get(i));
     }
     for (int i = 0; i < toneScopedPrompts_.size(); i++) {
-      output.writeMessage(8, toneScopedPrompts_.get(i));
+      output.writeMessage(9, toneScopedPrompts_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 9, createdAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 10, updatedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, updatedAt_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 11, deletedAt_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, deletedAt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -513,22 +535,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, isBookmarked_);
     }
+    if (gptModel_ != com.hearlers.api.proto.v1.model.GPTModel.GPTMODEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, gptModel_);
+    }
     for (int i = 0; i < counselorScopedPrompts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, counselorScopedPrompts_.get(i));
+        .computeMessageSize(8, counselorScopedPrompts_.get(i));
     }
     for (int i = 0; i < toneScopedPrompts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, toneScopedPrompts_.get(i));
+        .computeMessageSize(9, toneScopedPrompts_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, createdAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, createdAt_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, updatedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, updatedAt_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, deletedAt_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -557,6 +583,7 @@ private static final long serialVersionUID = 0L;
         != other.getIsTemporary()) return false;
     if (getIsBookmarked()
         != other.getIsBookmarked()) return false;
+    if (gptModel_ != other.gptModel_) return false;
     if (!getCounselorScopedPromptsList()
         .equals(other.getCounselorScopedPromptsList())) return false;
     if (!getToneScopedPromptsList()
@@ -596,6 +623,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_BOOKMARKED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsBookmarked());
+    hash = (37 * hash) + GPT_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + gptModel_;
     if (getCounselorScopedPromptsCount() > 0) {
       hash = (37 * hash) + COUNSELOR_SCOPED_PROMPTS_FIELD_NUMBER;
       hash = (53 * hash) + getCounselorScopedPromptsList().hashCode();
@@ -749,20 +778,21 @@ private static final long serialVersionUID = 0L;
       isActive_ = false;
       isTemporary_ = false;
       isBookmarked_ = false;
+      gptModel_ = 0;
       if (counselorScopedPromptsBuilder_ == null) {
         counselorScopedPrompts_ = java.util.Collections.emptyList();
       } else {
         counselorScopedPrompts_ = null;
         counselorScopedPromptsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (toneScopedPromptsBuilder_ == null) {
         toneScopedPrompts_ = java.util.Collections.emptyList();
       } else {
         toneScopedPrompts_ = null;
         toneScopedPromptsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -800,18 +830,18 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.model.PromptVersion result) {
       if (counselorScopedPromptsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           counselorScopedPrompts_ = java.util.Collections.unmodifiableList(counselorScopedPrompts_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.counselorScopedPrompts_ = counselorScopedPrompts_;
       } else {
         result.counselorScopedPrompts_ = counselorScopedPromptsBuilder_.build();
       }
       if (toneScopedPromptsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           toneScopedPrompts_ = java.util.Collections.unmodifiableList(toneScopedPrompts_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.toneScopedPrompts_ = toneScopedPrompts_;
       } else {
@@ -839,14 +869,17 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.isBookmarked_ = isBookmarked_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.createdAt_ = createdAt_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.gptModel_ = gptModel_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.createdAt_ = createdAt_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updatedAt_ = updatedAt_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.deletedAt_ = deletedAt_;
         to_bitField0_ |= 0x00000001;
       }
@@ -889,11 +922,14 @@ private static final long serialVersionUID = 0L;
       if (other.getIsBookmarked() != false) {
         setIsBookmarked(other.getIsBookmarked());
       }
+      if (other.gptModel_ != 0) {
+        setGptModelValue(other.getGptModelValue());
+      }
       if (counselorScopedPromptsBuilder_ == null) {
         if (!other.counselorScopedPrompts_.isEmpty()) {
           if (counselorScopedPrompts_.isEmpty()) {
             counselorScopedPrompts_ = other.counselorScopedPrompts_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureCounselorScopedPromptsIsMutable();
             counselorScopedPrompts_.addAll(other.counselorScopedPrompts_);
@@ -906,7 +942,7 @@ private static final long serialVersionUID = 0L;
             counselorScopedPromptsBuilder_.dispose();
             counselorScopedPromptsBuilder_ = null;
             counselorScopedPrompts_ = other.counselorScopedPrompts_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             counselorScopedPromptsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  getCounselorScopedPromptsFieldBuilder() : null;
@@ -919,7 +955,7 @@ private static final long serialVersionUID = 0L;
         if (!other.toneScopedPrompts_.isEmpty()) {
           if (toneScopedPrompts_.isEmpty()) {
             toneScopedPrompts_ = other.toneScopedPrompts_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureToneScopedPromptsIsMutable();
             toneScopedPrompts_.addAll(other.toneScopedPrompts_);
@@ -932,7 +968,7 @@ private static final long serialVersionUID = 0L;
             toneScopedPromptsBuilder_.dispose();
             toneScopedPromptsBuilder_ = null;
             toneScopedPrompts_ = other.toneScopedPrompts_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             toneScopedPromptsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  getToneScopedPromptsFieldBuilder() : null;
@@ -943,17 +979,17 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getUpdatedAt().isEmpty()) {
         updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasDeletedAt()) {
         deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1012,7 +1048,12 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 48
-            case 58: {
+            case 56: {
+              gptModel_ = input.readEnum();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
+            case 66: {
               com.hearlers.api.proto.v1.model.CounselorScopedPrompt m =
                   input.readMessage(
                       com.hearlers.api.proto.v1.model.CounselorScopedPrompt.parser(),
@@ -1024,8 +1065,8 @@ private static final long serialVersionUID = 0L;
                 counselorScopedPromptsBuilder_.addMessage(m);
               }
               break;
-            } // case 58
-            case 66: {
+            } // case 66
+            case 74: {
               com.hearlers.api.proto.v1.model.ToneScopedPrompt m =
                   input.readMessage(
                       com.hearlers.api.proto.v1.model.ToneScopedPrompt.parser(),
@@ -1037,22 +1078,22 @@ private static final long serialVersionUID = 0L;
                 toneScopedPromptsBuilder_.addMessage(m);
               }
               break;
-            } // case 66
-            case 74: {
-              createdAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              break;
             } // case 74
             case 82: {
-              updatedAt_ = input.readStringRequireUtf8();
+              createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
               break;
             } // case 82
             case 90: {
-              deletedAt_ = input.readStringRequireUtf8();
+              updatedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
               break;
             } // case 90
+            case 98: {
+              deletedAt_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1382,12 +1423,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int gptModel_ = 0;
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+     * @return The enum numeric value on the wire for gptModel.
+     */
+    @java.lang.Override public int getGptModelValue() {
+      return gptModel_;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+     * @param value The enum numeric value on the wire for gptModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGptModelValue(int value) {
+      gptModel_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+     * @return The gptModel.
+     */
+    @java.lang.Override
+    public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
+      com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
+      return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+     * @param value The gptModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGptModel(com.hearlers.api.proto.v1.model.GPTModel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      gptModel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGptModel() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      gptModel_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.hearlers.api.proto.v1.model.CounselorScopedPrompt> counselorScopedPrompts_ =
       java.util.Collections.emptyList();
     private void ensureCounselorScopedPromptsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         counselorScopedPrompts_ = new java.util.ArrayList<com.hearlers.api.proto.v1.model.CounselorScopedPrompt>(counselorScopedPrompts_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
        }
     }
 
@@ -1395,7 +1489,7 @@ private static final long serialVersionUID = 0L;
         com.hearlers.api.proto.v1.model.CounselorScopedPrompt, com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder, com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder> counselorScopedPromptsBuilder_;
 
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public java.util.List<com.hearlers.api.proto.v1.model.CounselorScopedPrompt> getCounselorScopedPromptsList() {
       if (counselorScopedPromptsBuilder_ == null) {
@@ -1405,7 +1499,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public int getCounselorScopedPromptsCount() {
       if (counselorScopedPromptsBuilder_ == null) {
@@ -1415,7 +1509,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselorScopedPrompt getCounselorScopedPrompts(int index) {
       if (counselorScopedPromptsBuilder_ == null) {
@@ -1425,7 +1519,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder setCounselorScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.CounselorScopedPrompt value) {
@@ -1442,7 +1536,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder setCounselorScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder builderForValue) {
@@ -1456,7 +1550,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder addCounselorScopedPrompts(com.hearlers.api.proto.v1.model.CounselorScopedPrompt value) {
       if (counselorScopedPromptsBuilder_ == null) {
@@ -1472,7 +1566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder addCounselorScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.CounselorScopedPrompt value) {
@@ -1489,7 +1583,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder addCounselorScopedPrompts(
         com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder builderForValue) {
@@ -1503,7 +1597,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder addCounselorScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder builderForValue) {
@@ -1517,7 +1611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder addAllCounselorScopedPrompts(
         java.lang.Iterable<? extends com.hearlers.api.proto.v1.model.CounselorScopedPrompt> values) {
@@ -1532,12 +1626,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder clearCounselorScopedPrompts() {
       if (counselorScopedPromptsBuilder_ == null) {
         counselorScopedPrompts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         counselorScopedPromptsBuilder_.clear();
@@ -1545,7 +1639,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public Builder removeCounselorScopedPrompts(int index) {
       if (counselorScopedPromptsBuilder_ == null) {
@@ -1558,14 +1652,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder getCounselorScopedPromptsBuilder(
         int index) {
       return getCounselorScopedPromptsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder getCounselorScopedPromptsOrBuilder(
         int index) {
@@ -1575,7 +1669,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public java.util.List<? extends com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder> 
          getCounselorScopedPromptsOrBuilderList() {
@@ -1586,14 +1680,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder addCounselorScopedPromptsBuilder() {
       return getCounselorScopedPromptsFieldBuilder().addBuilder(
           com.hearlers.api.proto.v1.model.CounselorScopedPrompt.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder addCounselorScopedPromptsBuilder(
         int index) {
@@ -1601,7 +1695,7 @@ private static final long serialVersionUID = 0L;
           index, com.hearlers.api.proto.v1.model.CounselorScopedPrompt.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 7 [json_name = "counselorScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
      */
     public java.util.List<com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder> 
          getCounselorScopedPromptsBuilderList() {
@@ -1614,7 +1708,7 @@ private static final long serialVersionUID = 0L;
         counselorScopedPromptsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             com.hearlers.api.proto.v1.model.CounselorScopedPrompt, com.hearlers.api.proto.v1.model.CounselorScopedPrompt.Builder, com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder>(
                 counselorScopedPrompts_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         counselorScopedPrompts_ = null;
@@ -1625,9 +1719,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.hearlers.api.proto.v1.model.ToneScopedPrompt> toneScopedPrompts_ =
       java.util.Collections.emptyList();
     private void ensureToneScopedPromptsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         toneScopedPrompts_ = new java.util.ArrayList<com.hearlers.api.proto.v1.model.ToneScopedPrompt>(toneScopedPrompts_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
        }
     }
 
@@ -1635,7 +1729,7 @@ private static final long serialVersionUID = 0L;
         com.hearlers.api.proto.v1.model.ToneScopedPrompt, com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder, com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder> toneScopedPromptsBuilder_;
 
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public java.util.List<com.hearlers.api.proto.v1.model.ToneScopedPrompt> getToneScopedPromptsList() {
       if (toneScopedPromptsBuilder_ == null) {
@@ -1645,7 +1739,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public int getToneScopedPromptsCount() {
       if (toneScopedPromptsBuilder_ == null) {
@@ -1655,7 +1749,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.ToneScopedPrompt getToneScopedPrompts(int index) {
       if (toneScopedPromptsBuilder_ == null) {
@@ -1665,7 +1759,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder setToneScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.ToneScopedPrompt value) {
@@ -1682,7 +1776,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder setToneScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder builderForValue) {
@@ -1696,7 +1790,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder addToneScopedPrompts(com.hearlers.api.proto.v1.model.ToneScopedPrompt value) {
       if (toneScopedPromptsBuilder_ == null) {
@@ -1712,7 +1806,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder addToneScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.ToneScopedPrompt value) {
@@ -1729,7 +1823,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder addToneScopedPrompts(
         com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder builderForValue) {
@@ -1743,7 +1837,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder addToneScopedPrompts(
         int index, com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder builderForValue) {
@@ -1757,7 +1851,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder addAllToneScopedPrompts(
         java.lang.Iterable<? extends com.hearlers.api.proto.v1.model.ToneScopedPrompt> values) {
@@ -1772,12 +1866,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder clearToneScopedPrompts() {
       if (toneScopedPromptsBuilder_ == null) {
         toneScopedPrompts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         toneScopedPromptsBuilder_.clear();
@@ -1785,7 +1879,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public Builder removeToneScopedPrompts(int index) {
       if (toneScopedPromptsBuilder_ == null) {
@@ -1798,14 +1892,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder getToneScopedPromptsBuilder(
         int index) {
       return getToneScopedPromptsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder getToneScopedPromptsOrBuilder(
         int index) {
@@ -1815,7 +1909,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public java.util.List<? extends com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder> 
          getToneScopedPromptsOrBuilderList() {
@@ -1826,14 +1920,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder addToneScopedPromptsBuilder() {
       return getToneScopedPromptsFieldBuilder().addBuilder(
           com.hearlers.api.proto.v1.model.ToneScopedPrompt.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder addToneScopedPromptsBuilder(
         int index) {
@@ -1841,7 +1935,7 @@ private static final long serialVersionUID = 0L;
           index, com.hearlers.api.proto.v1.model.ToneScopedPrompt.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 8 [json_name = "toneScopedPrompts"];</code>
+     * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
      */
     public java.util.List<com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder> 
          getToneScopedPromptsBuilderList() {
@@ -1854,7 +1948,7 @@ private static final long serialVersionUID = 0L;
         toneScopedPromptsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             com.hearlers.api.proto.v1.model.ToneScopedPrompt, com.hearlers.api.proto.v1.model.ToneScopedPrompt.Builder, com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder>(
                 toneScopedPrompts_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         toneScopedPrompts_ = null;
@@ -1868,7 +1962,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1888,7 +1982,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1909,7 +2003,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1917,7 +2011,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       createdAt_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1926,12 +2020,12 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
       createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -1940,7 +2034,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -1949,7 +2043,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       createdAt_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1960,7 +2054,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -1980,7 +2074,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -2001,7 +2095,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -2009,7 +2103,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       updatedAt_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2018,12 +2112,12 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
       updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2032,7 +2126,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -2041,7 +2135,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       updatedAt_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2052,18 +2146,18 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     public boolean hasDeletedAt() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <pre>
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public java.lang.String getDeletedAt() {
@@ -2083,7 +2177,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
      * @return The bytes for deletedAt.
      */
     public com.google.protobuf.ByteString
@@ -2104,7 +2198,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
      * @param value The deletedAt to set.
      * @return This builder for chaining.
      */
@@ -2112,7 +2206,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deletedAt_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2121,12 +2215,12 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeletedAt() {
       deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2135,7 +2229,7 @@ private static final long serialVersionUID = 0L;
      * ISO 8601 (2024-12-29T12:34:56.000Z)
      * </pre>
      *
-     * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+     * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
      * @param value The bytes for deletedAt to set.
      * @return This builder for chaining.
      */
@@ -2144,7 +2238,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deletedAt_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
