@@ -344,7 +344,7 @@ public class CounselorDto {
         @Schema(description = "임시 여부", required = true)
         private Boolean isTemporary;
         @Schema(description = "에피소드 컷신 목록", required = true)
-        private List<SaveEpisodeCutSceneRequest> cutScenes;
+        private List<SaveNewEpisodeCutSceneRequest> cutScenes;
     }
 
     @Getter
@@ -423,6 +423,23 @@ public class CounselorDto {
         @Schema(description = "컷신 이미지 URL", required = true)
         private String image;
     }
+
+    @Getter
+    @Builder
+    @Schema(description = "에피소드 컷신 저장 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class SaveNewEpisodeCutSceneRequest {
+        @Schema(description = "컷신 발화자", required = true)
+        private Speaker speaker;
+        @Schema(description = "컷신 내용", required = true)
+        private String content;
+        @Schema(description = "컷신 순서 인덱스", required = true)
+        private Integer orderIndex;
+        @Schema(description = "컷신 이미지 URL", required = true)
+        private String image;
+    }
+
 
     // 톤 관련 DTO
     @Getter

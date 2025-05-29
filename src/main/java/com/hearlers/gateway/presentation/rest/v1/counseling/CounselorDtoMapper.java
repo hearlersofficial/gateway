@@ -201,7 +201,7 @@ public interface CounselorDtoMapper {
 
     // Episode
     // FindOne
-    default FindEpisodeByIdRequest toFindEpisodeByIdRequest(String episodeId) {
+    default FindEpisodeByIdRequest toFindEpisodeByIdRequest(String episodeId, Boolean withTemporary) {
         return FindEpisodeByIdRequest.newBuilder()
                 .setEpisodeId(episodeId)
                 .build();
@@ -215,7 +215,8 @@ public interface CounselorDtoMapper {
     }
 
     // FindMany
-    FindEpisodesRequest toFindEpisodesRequest(String counselorId);
+    FindEpisodesRequest toFindEpisodesRequest(String counselorId, Boolean withTemporary);
+
     default CounselorDto.FindEpisodesResponse toFindEpisodesResponse(List<com.hearlers.api.proto.v1.model.Episode> episodes) {
         return CounselorDto.FindEpisodesResponse.builder()
                 .episodes(episodes.stream()
@@ -232,7 +233,7 @@ public interface CounselorDtoMapper {
                 .setRequiredRapportThreshold(request.getRequiredRapportThreshold())
                 .setIsTemporary(request.getIsTemporary())
                 .addAllCutScenes(request.getCutScenes().stream()
-                        .map(this::toSaveEpisodeCutSceneRequest)
+                        .map(this::toSaveNewEpisodeCutSceneRequest)
                         .toList())
                 .build();
     }
@@ -288,6 +289,15 @@ public interface CounselorDtoMapper {
         if (request.getId() != null) {
             builder.setId(request.getId());
         }
+
+        return builder.build();
+    }
+    default SaveEpisodeCutSceneRequest toSaveNewEpisodeCutSceneRequest(CounselorDto.SaveNewEpisodeCutSceneRequest request) {
+        SaveEpisodeCutSceneRequest.Builder builder = SaveEpisodeCutSceneRequest.newBuilder()
+                .setSpeaker(request.getSpeaker())
+                .setContent(request.getContent())
+                .setOrderIndex(request.getOrderIndex())
+                .setImage(request.getImage());
 
         return builder.build();
     }

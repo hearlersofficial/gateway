@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import com.hearlers.gateway.application.counseling.CounselorService;
 
+import lombok.val;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -197,7 +198,8 @@ public class CounselorController {
             @PathVariable("episode-id") String episodeId,
             @PathVariable("counselor-id") String counselorId
     ) {
-        var findEpisodeByIdRequest = counselorDtoMapper.toFindEpisodeByIdRequest(episodeId);
+        var withTemporary = true; // Assuming this is a placeholder for any additional parameters needed
+        var findEpisodeByIdRequest = counselorDtoMapper.toFindEpisodeByIdRequest(episodeId, withTemporary);
         var episode = counselorService.findEpisodeById(findEpisodeByIdRequest);
         var response = counselorDtoMapper.toFindEpisodeByIdResponse(episode);
 
@@ -213,7 +215,8 @@ public class CounselorController {
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindEpisodesResponse>> getEpisodes(
             @PathVariable("counselor-id") String counselorId
     ) {
-        var findEpisodesRequest = counselorDtoMapper.toFindEpisodesRequest(counselorId);
+        var withTemporary = true;
+        var findEpisodesRequest = counselorDtoMapper.toFindEpisodesRequest(counselorId, withTemporary);
         var episodes = counselorService.findEpisodes(findEpisodesRequest);
         var response = counselorDtoMapper.toFindEpisodesResponse(episodes);
 
