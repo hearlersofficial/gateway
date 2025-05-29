@@ -1,6 +1,7 @@
 package com.hearlers.gateway.application.counseling;
 
 import com.hearlers.api.proto.v1.common.PresignedUrl;
+import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.service.*;
@@ -70,6 +71,33 @@ public class CounselorServiceImpl implements CounselorService {
     @Override
     public PresignedUrl generateCutSceneImageUrl(GenerateCutSceneImageUrlRequest request) {
         return counselorPresigner.generateCutSceneImageUrl(request);
+    }
+
+    // Bubble 생성/업데이트
+    @Override
+    public Bubble createBubble(CreateBubbleRequest request) {
+        return counselorPersistor.createBubble(request);
+    }
+
+    @Override
+    public Bubble updateBubble(UpdateBubbleRequest request) {
+        return counselorPersistor.updateBubble(request);
+    }
+
+    // Bubble 조회
+    @Override
+    public Bubble findBubbleById(FindBubbleByIdRequest request) {
+        return counselorReader.findBubbleById(request);
+    }
+
+    @Override
+    public List<Bubble> findBubbles(FindBubblesRequest request) {
+        return counselorReader.findBubbles(request);
+    }
+
+    @Override
+    public Bubble findRandomBubble(FindRandomBubbleRequest request) {
+        return counselorReader.findRandomBubble(request);
     }
 
     // Tone 조회

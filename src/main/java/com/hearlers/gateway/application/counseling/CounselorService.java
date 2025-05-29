@@ -3,6 +3,7 @@ package com.hearlers.gateway.application.counseling;
 import java.util.List;
 
 import com.hearlers.api.proto.v1.common.PresignedUrl;
+import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
@@ -24,6 +25,13 @@ public interface CounselorService {
     Episode createEpisode(CreateEpisodeRequest request);
     Episode updateEpisode(UpdateEpisodeRequest request);
     PresignedUrl generateCutSceneImageUrl(GenerateCutSceneImageUrlRequest request);
+
+    // Bubble
+    Bubble createBubble(CreateBubbleRequest request);
+    Bubble updateBubble(UpdateBubbleRequest request);
+    Bubble findBubbleById(FindBubbleByIdRequest request);
+    List<Bubble> findBubbles(FindBubblesRequest request);
+    Bubble findRandomBubble(FindRandomBubbleRequest request);
 
 
 

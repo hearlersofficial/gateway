@@ -2,6 +2,7 @@ package com.hearlers.gateway.infrastructure.counseling;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
@@ -36,6 +37,21 @@ public class CounselorReaderImpl implements CounselorReader {
     @Override
     public List<Episode> findEpisodes(FindEpisodesRequest request) {
         return counselorServiceBlockingStub.findEpisodes(request).getEpisodesList();
+    }
+
+    @Override
+    public Bubble findBubbleById(FindBubbleByIdRequest request) {
+        return counselorServiceBlockingStub.findBubbleById(request).getBubble();
+    }
+
+    @Override
+    public List<Bubble> findBubbles(FindBubblesRequest request) {
+        return counselorServiceBlockingStub.findBubbles(request).getBubblesList();
+    }
+
+    @Override
+    public Bubble findRandomBubble(FindRandomBubbleRequest request) {
+        return counselorServiceBlockingStub.findRandomBubble(request).getBubble();
     }
 
     @Override

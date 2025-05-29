@@ -2,6 +2,7 @@ package com.hearlers.gateway.application.counseling;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
@@ -16,6 +17,10 @@ public interface CounselorReader {
     Episode findEpisodeById(FindEpisodeByIdRequest request);
     List<Episode> findEpisodes(FindEpisodesRequest request);
 
+    // Bubble
+    Bubble findBubbleById(FindBubbleByIdRequest request);
+    List<Bubble> findBubbles(FindBubblesRequest request);
+    Bubble findRandomBubble(FindRandomBubbleRequest request);
 
     // Tone
     Tone findToneById(FindToneByIdRequest request);

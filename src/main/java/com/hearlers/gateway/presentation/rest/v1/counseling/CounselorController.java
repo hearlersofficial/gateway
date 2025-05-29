@@ -64,7 +64,7 @@ public class CounselorController {
 
         return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
     }
-    
+
     @Operation(summary = "상담사 생성", description = "새로운 상담사를 생성합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "상담사 생성 성공"),
@@ -79,7 +79,7 @@ public class CounselorController {
 
         return ResponseDtoUtil.createdResponse(response, "상담사 생성 성공");
     }
-    
+
     @Operation(summary = "상담사 업데이트", description = "기존 상담사 정보를 업데이트합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "상담사 업데이트 성공"),
@@ -122,7 +122,7 @@ public class CounselorController {
         var response = counselorDtoMapper.toFindTonesResponse(tones);
         return ResponseDtoUtil.okResponse(response, "톤 조회 성공");
     }
-    
+
     @Operation(summary = "톤 생성", description = "새로운 톤을 생성합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "톤 생성 성공"),
@@ -137,7 +137,7 @@ public class CounselorController {
 
         return ResponseDtoUtil.createdResponse(response, "톤 생성 성공");
     }
-    
+
     @Operation(summary = "톤 업데이트", description = "기존 톤 정보를 업데이트합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "톤 업데이트 성공"),
@@ -260,5 +260,21 @@ public class CounselorController {
         var response = counselorDtoMapper.toUpdateEpisodeResponse(episode);
 
         return ResponseDtoUtil.okResponse(response, "에피소드 업데이트 성공");
+    }
+
+    @Operation(summary = "버블 생성", description = "새로운 버블을 생성합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "버블 생성 성공"),
+            @ApiResponse(responseCode = "400", description = "버블 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "상담사를 찾을 수 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PostMapping("/v1/admin/counselors/{counselor-id}/bubbles")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.CreateBubbleResponse>> createBubble(
+            @PathVariable("counselor-id") String counselorId,
+            @Valid @RequestBody CounselorDto.CreateBubbleRequest request) {
+        var createBubbleRequest = counselorDtoMapper.toRequest(counselorId, request);
+        var bubble = counselorService.createBubble(createBubbleRequest);
+        var response = counselorDtoMapper.toResponse(bubble);
+        return ResponseDtoUtil.createdResponse(response, "버블 생성 성공");
     }
 }

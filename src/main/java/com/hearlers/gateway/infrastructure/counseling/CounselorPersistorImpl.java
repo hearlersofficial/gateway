@@ -1,5 +1,6 @@
 package com.hearlers.gateway.infrastructure.counseling;
 
+import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.service.*;
 import org.springframework.stereotype.Component;
@@ -34,6 +35,16 @@ public class CounselorPersistorImpl implements CounselorPersistor {
     @Override
     public Episode updateEpisode(UpdateEpisodeRequest request) {
         return counselorServiceBlockingStub.updateEpisode(request).getEpisode();
+    }
+
+    @Override
+    public Bubble createBubble(CreateBubbleRequest request) {
+        return counselorServiceBlockingStub.createBubble(request).getBubble();
+    }
+
+    @Override
+    public Bubble updateBubble(UpdateBubbleRequest request) {
+        return counselorServiceBlockingStub.updateBubble(request).getBubble();
     }
 
     @Override

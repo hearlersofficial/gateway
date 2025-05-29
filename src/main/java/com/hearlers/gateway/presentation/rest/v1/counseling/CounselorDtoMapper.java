@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
 import com.hearlers.api.proto.v1.common.Extension;
@@ -23,6 +24,9 @@ public interface CounselorDtoMapper {
 
     // Tone → ToneDto
     CounselorDto.Tone of (Tone tone);
+
+    // Bubble → BubbleDto
+    CounselorDto.Bubble of (Bubble bubble);
 
     // Counselor
     // FindOne
@@ -206,6 +210,7 @@ public interface CounselorDtoMapper {
     default FindEpisodeByIdRequest toFindEpisodeByIdRequest(String episodeId, Boolean withTemporary) {
         return FindEpisodeByIdRequest.newBuilder()
                 .setEpisodeId(episodeId)
+                .setWithTemporary(withTemporary)
                 .build();
     }
 
@@ -300,6 +305,38 @@ public interface CounselorDtoMapper {
                 .setContent(request.getContent())
                 .setOrderIndex(request.getOrderIndex())
                 .setImage(request.getImage());
+
+        return builder.build();
+    }
+
+    // Bubbles
+    // Create
+    default CreateBubbleRequest toRequest(String counselorId, CounselorDto.CreateBubbleRequest request) {
+        return CreateBubbleRequest.newBuilder()
+                .setCounselorId(counselorId)
+                .setQuestion(request.getQuestion())
+                .setResponseOption1(request.getResponseOption1())
+                .setResponseOption2(request.getResponseOption2())
+                .build();
+    }
+    @Mappings({
+            @Mapping(source = "bubble", target = "bubble")
+    })
+    CounselorDto.CreateBubbleResponse toResponse(Bubble bubble);
+
+    // Update
+    default UpdateBubbleRequest toUpdateBubbleRequest(String bubbleId, CounselorDto.UpdateBubbleRequest request) {
+        UpdateBubbleRequest.Builder builder = UpdateBubbleRequest.newBuilder()
+                .setBubbleId(bubbleId);
+        if (request.getQuestion() != null) {
+            builder.setQuestion(request.getQuestion());
+        }
+        if (request.getResponseOption1() != null) {
+            builder.setResponseOption1(request.getResponseOption1());
+        }
+        if (request.getResponseOption2() != null) {
+            builder.setResponseOption2(request.getResponseOption2());
+        }
 
         return builder.build();
     }

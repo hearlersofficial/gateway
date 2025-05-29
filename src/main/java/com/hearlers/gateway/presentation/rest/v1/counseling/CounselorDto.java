@@ -216,8 +216,6 @@ public class CounselorDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class CreateBubbleRequest {
-        @Schema(description = "상담사 ID", required = true)
-        private String counselorId;
         @Schema(description = "버블 질문", required = true)
         private String question;
         @Schema(description = "버블 응답 1", required = true)
