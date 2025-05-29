@@ -189,8 +189,6 @@ public class CounselorDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class UpdateCounselorRequest {
-        @Schema(description = "상담사 ID", required = true)
-        private String counselorId;
         @Schema(description = "톤 ID", nullable = true)
         private String toneId;
         @Schema(description = "상담사 이름", nullable = true)

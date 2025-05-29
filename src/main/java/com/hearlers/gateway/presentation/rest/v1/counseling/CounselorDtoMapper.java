@@ -7,10 +7,7 @@ import com.hearlers.api.proto.v1.service.*;
 import com.hearlers.api.proto.v1.common.Extension;
 import com.hearlers.api.proto.v1.common.PresignedUrl;
 import com.hearlers.gateway.shared.presentation.PresignedUrlResponse;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.NullValueCheckStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import com.hearlers.api.proto.v1.model.Counselor;
 
@@ -197,7 +194,12 @@ public interface CounselorDtoMapper {
     }
 
     // Episode → EpisodeDto
+    @Mappings({
+            @Mapping(source = "cutScenesList", target = "cutScenes"),
+    })
     CounselorDto.Episode of(com.hearlers.api.proto.v1.model.Episode episode);
+    // EpisodeCutScene → EpisodeCutSceneDto
+    CounselorDto.EpisodeCutScene of(com.hearlers.api.proto.v1.model.EpisodeCutScene episodeCutScene);
 
     // Episode
     // FindOne
