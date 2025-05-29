@@ -386,8 +386,6 @@ public class CounselorDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class UpdateEpisodeRequest {
-        @Schema(description = "에피소드 ID", required = true)
-        private String episodeId;
         @Schema(description = "에피소드 제목", nullable = true)
         private String title;
         @Schema(description = "에피소드 해금을 위한 라포 수치", nullable = true)

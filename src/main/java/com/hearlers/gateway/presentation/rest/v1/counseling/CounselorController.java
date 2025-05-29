@@ -239,7 +239,12 @@ public class CounselorController {
         return ResponseDtoUtil.createdResponse(response, "에피소드 생성 성공");
     }
 
-    @Operation(summary = "에피소드 업데이트", description = "기존 에피소드 정보를 업데이트합니다.")
+    @Operation(
+            summary = "에피소드 업데이트",
+            description = """
+    기존 에피소드 정보를 업데이트합니다. 만약 컷씬을 업데이트하려면, 해당 컷씬의 ID를 포함해야 합니다. ID가 없는 경우, 새로운 컷씬이 생성됩니다.
+    만약 기존에 존재하는 컷씬을 포함하지 않으면, 해당 컷씬은 삭제됩니다.
+    """)
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "에피소드 업데이트 성공"),
             @ApiResponse(responseCode = "400", description = "에피소드 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
