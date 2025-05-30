@@ -7,6 +7,7 @@ import com.hearlers.api.proto.v1.common.PresignedUrl;
 import com.hearlers.api.proto.v1.model.CounselorGender;
 import com.hearlers.api.proto.v1.model.Speaker;
 import com.hearlers.gateway.shared.presentation.PresignedUrlResponse;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
@@ -155,7 +156,7 @@ public class CounselorDto {
     @Builder
     @Schema(description = "상담사 조회 요청")
     public static class FindCounselorsRequest {
-        @Schema(description = "톤 ID (선택)", nullable = true)
+        @Parameter(name = "tone-id", description = "톤 ID (선택)")
         private String toneId;
     }
 

@@ -232,7 +232,7 @@ public class CounselPromptController {
             @ApiResponse(responseCode = "404", description = "톤 프롬프트를 찾을 수 없음", 
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/tone-prompts/{tonePromptId}")
+    @GetMapping("/tone-prompts/{tone-prompt-id}")
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindTonePromptByIdResponseDto>> getTonePromptById(
             @PathVariable(name = "tone-prompt-id", required = true) String tonePromptId) {
         var findTonePromptByIdRequest = counselPromptDtoMapper.toFindTonePromptByIdRequest(tonePromptId);

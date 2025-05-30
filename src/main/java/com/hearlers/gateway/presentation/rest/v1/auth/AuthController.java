@@ -1,10 +1,15 @@
 package com.hearlers.gateway.presentation.rest.v1.auth;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Base64;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.Cookie;
+import lombok.val;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +33,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -59,10 +63,11 @@ public class AuthController {
     public ResponseEntity<ResponseDto.Success<AuthDto.TokenResponseDto>> createUser(HttpServletResponse response) {
         // 퍼사드를 통해 유저 생성 및 토큰 발급
         AuthInfo.TokenInfo tokenInfo = authFacade.createUser();
+        String domain = extractDomainFromOrigin(response.getHeader("Origin"));
         
         // 발급받은 accessToken 쿠키에 저장
-        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE);
-        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE);
+        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
         
         // 응답 매핑
         AuthDto.TokenResponseDto tokenResponseDto = AuthDto.TokenResponseDto.builder()
@@ -117,11 +122,12 @@ public class AuthController {
         // 퍼사드를 통해 카카오 로그인 콜백 처리
         AuthInfo.TokenInfo tokenInfo = authFacade.handleOAuthCallback(AuthChannel.AUTH_CHANNEL_KAKAO ,code, encodedState, userId);
 
+        String domain = extractDomainFromOrigin(response.getHeader("Origin"));
         // 발급받은 토큰 쿠키에 저장
-        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE);
-        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE);
-        addCookieToResponse(response, tokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE);
-        addCookieToResponse(response, tokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE);
+        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain); ;
+        addCookieToResponse(response, tokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, tokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
 
         // 클라이언트로 리다이렉트
         response.sendRedirect(clientRedirectUrl);
@@ -138,10 +144,12 @@ public class AuthController {
         String refreshToken = extractCookieValue(request, REFRESH_TOKEN_COOKIE);
         AuthInfo.TokenInfo newTokenInfo = authFacade.refreshToken(userId, authChannel, refreshToken);
 
-        addCookieToResponse(response, newTokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE);
-        addCookieToResponse(response, newTokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE);
-        addCookieToResponse(response, newTokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE);
-        addCookieToResponse(response, newTokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE);
+        String domain = extractDomainFromOrigin(request.getHeader("Origin"));
+
+        addCookieToResponse(response, newTokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, newTokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, newTokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, newTokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
 
         AuthDto.TokenResponseDto tokenResponseDto = AuthDto.TokenResponseDto.builder()
                 .accessToken(newTokenInfo.getAccessToken())
@@ -156,27 +164,56 @@ public class AuthController {
     /**
      * 쿠키를 응답에 추가
      */
-    private void addCookieToResponse(HttpServletResponse response, String value, String name, int maxAge) {
-        Cookie cookie = new Cookie(name, value);
-        cookie.setMaxAge(maxAge);
-        cookie.setHttpOnly(true);
-        cookie.setPath("/");
-        response.addCookie(cookie);
-    }
-    
-    /**
-     * 쿠키에서 값 추출
-     */
-    private String extractCookieValue(HttpServletRequest request, String cookieName) {
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookieName.equals(cookie.getName())) {
-                    return cookie.getValue();
-                }
-            }
+    private void addCookieToResponse(HttpServletResponse response, String value, String name, int maxAge, String domain) {
+        boolean isLocalhost = domain != null && domain.contains("localhost");
+
+        ResponseCookie.ResponseCookieBuilder builder = ResponseCookie.from(name, value)
+                .maxAge(maxAge)
+                .secure(!isLocalhost)
+                .httpOnly(true)
+                .path("/")
+                .sameSite("Strict"); // 혹은 "Lax", "None" 도입 가능
+
+        if (domain != null && !domain.isBlank()) {
+            builder.domain(domain);
         }
-        throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "리프레시 토큰이 없습니다.");
+
+        ResponseCookie cookie = builder.build();
+
+        response.addHeader("Set-Cookie", cookie.toString());
+    }
+
+    private String extractCookieValue(HttpServletRequest request, String cookieName) {
+        if (request.getCookies() == null) {
+            throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "리프레시 토큰이 없습니다.");
+        }
+
+        return Arrays.stream(request.getCookies())
+                .filter(cookie -> cookieName.equals(cookie.getName()))
+                .map(Cookie::getValue)
+                .findFirst()
+                .orElseThrow(() -> new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "리프레시 토큰이 없습니다."));
+    }
+
+
+
+    private String extractDomainFromOrigin(String origin) {
+        if (origin == null || origin.isBlank()) {
+            return null;
+        }
+
+        try {
+            URI uri = URI.create(origin);
+            String host = uri.getHost();
+
+            if (host == null || host.isBlank()) {
+                return null;
+            }
+
+            return host.contains("localhost") ? "localhost" : host;
+        } catch (Exception e) {
+            return null;
+        }
     }
     
     /**
