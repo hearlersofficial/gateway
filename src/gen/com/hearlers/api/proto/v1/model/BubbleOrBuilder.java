@@ -22,89 +22,77 @@ public interface BubbleOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
-   * @return The counselorId.
-   */
-  java.lang.String getCounselorId();
-  /**
-   * <code>string counselor_id = 2 [json_name = "counselorId"];</code>
-   * @return The bytes for counselorId.
-   */
-  com.google.protobuf.ByteString
-      getCounselorIdBytes();
-
-  /**
-   * <code>string question = 3 [json_name = "question"];</code>
+   * <code>string question = 2 [json_name = "question"];</code>
    * @return The question.
    */
   java.lang.String getQuestion();
   /**
-   * <code>string question = 3 [json_name = "question"];</code>
+   * <code>string question = 2 [json_name = "question"];</code>
    * @return The bytes for question.
    */
   com.google.protobuf.ByteString
       getQuestionBytes();
 
   /**
-   * <code>string response_option1 = 4 [json_name = "responseOption1"];</code>
+   * <code>string response_option1 = 3 [json_name = "responseOption1"];</code>
    * @return The responseOption1.
    */
   java.lang.String getResponseOption1();
   /**
-   * <code>string response_option1 = 4 [json_name = "responseOption1"];</code>
+   * <code>string response_option1 = 3 [json_name = "responseOption1"];</code>
    * @return The bytes for responseOption1.
    */
   com.google.protobuf.ByteString
       getResponseOption1Bytes();
 
   /**
-   * <code>string response_option2 = 5 [json_name = "responseOption2"];</code>
+   * <code>string response_option2 = 4 [json_name = "responseOption2"];</code>
    * @return The responseOption2.
    */
   java.lang.String getResponseOption2();
   /**
-   * <code>string response_option2 = 5 [json_name = "responseOption2"];</code>
+   * <code>string response_option2 = 4 [json_name = "responseOption2"];</code>
    * @return The bytes for responseOption2.
    */
   com.google.protobuf.ByteString
       getResponseOption2Bytes();
 
   /**
-   * <code>string created_at = 6 [json_name = "createdAt"];</code>
+   * <code>string created_at = 5 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 6 [json_name = "createdAt"];</code>
+   * <code>string created_at = 5 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
-   * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
 
   /**
-   * <code>optional string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
   /**
-   * <code>optional string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
   /**
-   * <code>optional string deleted_at = 8 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

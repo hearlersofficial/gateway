@@ -604,6 +604,68 @@ public final class CounselPromptServiceGrpc {
     return getFindPromptActivateHistoriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindGptModelRequest,
+      com.hearlers.api.proto.v1.service.FindGptModelResponse> getFindGptModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindGptModel",
+      requestType = com.hearlers.api.proto.v1.service.FindGptModelRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindGptModelResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindGptModelRequest,
+      com.hearlers.api.proto.v1.service.FindGptModelResponse> getFindGptModelMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindGptModelRequest, com.hearlers.api.proto.v1.service.FindGptModelResponse> getFindGptModelMethod;
+    if ((getFindGptModelMethod = CounselPromptServiceGrpc.getFindGptModelMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getFindGptModelMethod = CounselPromptServiceGrpc.getFindGptModelMethod) == null) {
+          CounselPromptServiceGrpc.getFindGptModelMethod = getFindGptModelMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindGptModelRequest, com.hearlers.api.proto.v1.service.FindGptModelResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindGptModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindGptModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindGptModelResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindGptModel"))
+              .build();
+        }
+      }
+    }
+    return getFindGptModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SetGptModelRequest,
+      com.hearlers.api.proto.v1.service.SetGptModelResponse> getSetGptModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetGptModel",
+      requestType = com.hearlers.api.proto.v1.service.SetGptModelRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.SetGptModelResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SetGptModelRequest,
+      com.hearlers.api.proto.v1.service.SetGptModelResponse> getSetGptModelMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SetGptModelRequest, com.hearlers.api.proto.v1.service.SetGptModelResponse> getSetGptModelMethod;
+    if ((getSetGptModelMethod = CounselPromptServiceGrpc.getSetGptModelMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getSetGptModelMethod = CounselPromptServiceGrpc.getSetGptModelMethod) == null) {
+          CounselPromptServiceGrpc.getSetGptModelMethod = getSetGptModelMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.SetGptModelRequest, com.hearlers.api.proto.v1.service.SetGptModelResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetGptModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.SetGptModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.SetGptModelResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("SetGptModel"))
+              .build();
+        }
+      }
+    }
+    return getSetGptModelMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -814,6 +876,23 @@ public final class CounselPromptServiceGrpc {
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindPromptActivateHistoriesMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * GPT Model
+     * </pre>
+     */
+    default void findGptModel(com.hearlers.api.proto.v1.service.FindGptModelRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindGptModelResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindGptModelMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void setGptModel(com.hearlers.api.proto.v1.service.SetGptModelRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SetGptModelResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetGptModelMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1009,6 +1088,25 @@ public final class CounselPromptServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindPromptActivateHistoriesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * GPT Model
+     * </pre>
+     */
+    public void findGptModel(com.hearlers.api.proto.v1.service.FindGptModelRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindGptModelResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindGptModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void setGptModel(com.hearlers.api.proto.v1.service.SetGptModelRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SetGptModelResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetGptModelMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1174,6 +1272,23 @@ public final class CounselPromptServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindPromptActivateHistoriesMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * GPT Model
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindGptModelResponse findGptModel(com.hearlers.api.proto.v1.service.FindGptModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindGptModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.SetGptModelResponse setGptModel(com.hearlers.api.proto.v1.service.SetGptModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetGptModelMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1338,6 +1453,23 @@ public final class CounselPromptServiceGrpc {
     public com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse findPromptActivateHistories(com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindPromptActivateHistoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GPT Model
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.FindGptModelResponse findGptModel(com.hearlers.api.proto.v1.service.FindGptModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindGptModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.SetGptModelResponse setGptModel(com.hearlers.api.proto.v1.service.SetGptModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetGptModelMethod(), getCallOptions(), request);
     }
   }
 
@@ -1523,6 +1655,25 @@ public final class CounselPromptServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindPromptActivateHistoriesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * GPT Model
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindGptModelResponse> findGptModel(
+        com.hearlers.api.proto.v1.service.FindGptModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindGptModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.SetGptModelResponse> setGptModel(
+        com.hearlers.api.proto.v1.service.SetGptModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetGptModelMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_FIND_PROMPT_VERSIONS = 0;
@@ -1544,6 +1695,8 @@ public final class CounselPromptServiceGrpc {
   private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 16;
   private static final int METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE = 17;
   private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 18;
+  private static final int METHODID_FIND_GPT_MODEL = 19;
+  private static final int METHODID_SET_GPT_MODEL = 20;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1637,6 +1790,14 @@ public final class CounselPromptServiceGrpc {
         case METHODID_FIND_PROMPT_ACTIVATE_HISTORIES:
           serviceImpl.findPromptActivateHistories((com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse>) responseObserver);
+          break;
+        case METHODID_FIND_GPT_MODEL:
+          serviceImpl.findGptModel((com.hearlers.api.proto.v1.service.FindGptModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindGptModelResponse>) responseObserver);
+          break;
+        case METHODID_SET_GPT_MODEL:
+          serviceImpl.setGptModel((com.hearlers.api.proto.v1.service.SetGptModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SetGptModelResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1789,6 +1950,20 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest,
               com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse>(
                 service, METHODID_FIND_PROMPT_ACTIVATE_HISTORIES)))
+        .addMethod(
+          getFindGptModelMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindGptModelRequest,
+              com.hearlers.api.proto.v1.service.FindGptModelResponse>(
+                service, METHODID_FIND_GPT_MODEL)))
+        .addMethod(
+          getSetGptModelMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.SetGptModelRequest,
+              com.hearlers.api.proto.v1.service.SetGptModelResponse>(
+                service, METHODID_SET_GPT_MODEL)))
         .build();
   }
 
@@ -1856,6 +2031,8 @@ public final class CounselPromptServiceGrpc {
               .addMethod(getUpdateCounselTechniqueMethod())
               .addMethod(getSaveCounselTechniqueSequenceMethod())
               .addMethod(getFindPromptActivateHistoriesMethod())
+              .addMethod(getFindGptModelMethod())
+              .addMethod(getSetGptModelMethod())
               .build();
         }
       }

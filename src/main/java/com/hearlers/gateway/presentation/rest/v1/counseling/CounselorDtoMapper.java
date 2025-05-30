@@ -311,17 +311,9 @@ public interface CounselorDtoMapper {
 
     // Bubbles
     // Create
-    default CreateBubbleRequest toRequest(String counselorId, CounselorDto.CreateBubbleRequest request) {
-        return CreateBubbleRequest.newBuilder()
-                .setCounselorId(counselorId)
-                .setQuestion(request.getQuestion())
-                .setResponseOption1(request.getResponseOption1())
-                .setResponseOption2(request.getResponseOption2())
-                .build();
-    }
-    @Mappings({
-            @Mapping(source = "bubble", target = "bubble")
-    })
+    @Mapping(target = "counselorId", source = "counselorId")
+    CreateBubbleRequest toRequest(String counselorId, CounselorDto.CreateBubbleRequest request);
+    @Mapping(source = "bubble", target = "bubble")
     CounselorDto.CreateBubbleResponse toResponse(Bubble bubble);
 
     // Update
@@ -340,4 +332,8 @@ public interface CounselorDtoMapper {
 
         return builder.build();
     }
+
+    // FindOne
+    FindBubbleByIdRequest toFindBubbleByIdRequest (String counselorId, String bubbleId);
+    CounselorDto.FindBubbleByIdResponse toFindBubbleByIdResponse (Bubble bubble);
 }

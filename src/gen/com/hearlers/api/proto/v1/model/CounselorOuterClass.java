@@ -73,49 +73,48 @@ public final class CounselorOuterClass {
       "v1.model.CounselorGenderR\006gender\022\035\n\ncrea" +
       "ted_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 " +
       "\001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\t \001(\tH\000R\tde" +
-      "letedAt\210\001\001B\r\n\013_deleted_at\"\236\002\n\006Bubble\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022!\n\014counselor_id\030\002 \001(\tR\013coun" +
-      "selorId\022\032\n\010question\030\003 \001(\tR\010question\022)\n\020r" +
-      "esponse_option1\030\004 \001(\tR\017responseOption1\022)" +
-      "\n\020response_option2\030\005 \001(\tR\017responseOption" +
-      "2\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\007 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\010 " +
-      "\001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\353\002\n\007E" +
-      "pisode\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014counselor_id\030\002" +
-      " \001(\tR\013counselorId\022\024\n\005title\030\003 \001(\tR\005title\022" +
-      "<\n\032required_rapport_threshold\030\004 \001(\005R\030req" +
-      "uiredRapportThreshold\022!\n\014is_temporary\030\005 " +
-      "\001(\010R\013isTemporary\022E\n\ncut_scenes\030\006 \003(\0132&.c" +
-      "om.hearlers.v1.model.EpisodeCutSceneR\tcu" +
-      "tScenes\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035" +
-      "\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\"\n\ndeleted" +
-      "_at\030\t \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at" +
-      "\"\274\002\n\017EpisodeCutScene\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\n" +
-      "episode_id\030\002 \001(\tR\tepisodeId\0228\n\007speaker\030\003" +
-      " \001(\0162\036.com.hearlers.v1.model.SpeakerR\007sp" +
-      "eaker\022\030\n\007content\030\004 \001(\tR\007content\022\037\n\013order" +
-      "_index\030\005 \001(\005R\norderIndex\022\024\n\005image\030\006 \001(\tR" +
-      "\005image\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n" +
-      "\nupdated_at\030\010 \001(\tR\tupdatedAt\022\"\n\ndeleted_" +
-      "at\030\t \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"" +
-      "\275\001\n\004Tone\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004" +
-      "name\022 \n\013description\030\003 \001(\tR\013description\022\035" +
-      "\n\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated" +
-      "_at\030\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\t" +
-      "H\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\372\001\n\022Coun" +
-      "selorAggregate\022>\n\tcounselor\030\001 \001(\0132 .com." +
-      "hearlers.v1.model.CounselorR\tcounselor\0227" +
-      "\n\007bubbles\030\002 \003(\0132\035.com.hearlers.v1.model." +
-      "BubbleR\007bubbles\022/\n\004tone\030\003 \001(\0132\033.com.hear" +
-      "lers.v1.model.ToneR\004tone\022:\n\010episodes\030\004 \003" +
-      "(\0132\036.com.hearlers.v1.model.EpisodeR\010epis" +
-      "odes*\206\001\n\017CounselorGender\022 \n\034COUNSELOR_GE" +
-      "NDER_UNSPECIFIED\020\000\022\031\n\025COUNSELOR_GENDER_M" +
-      "ALE\020\001\022\033\n\027COUNSELOR_GENDER_FEMALE\020\002\022\031\n\025CO" +
-      "UNSELOR_GENDER_NONE\020\003*K\n\007Speaker\022\027\n\023SPEA" +
-      "KER_UNSPECIFIED\020\000\022\025\n\021SPEAKER_COUNSELOR\020\001" +
-      "\022\020\n\014SPEAKER_USER\020\002B#\n\037com.hearlers.api.p" +
-      "roto.v1.modelP\001b\006proto3"
+      "letedAt\210\001\001B\r\n\013_deleted_at\"\373\001\n\006Bubble\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\032\n\010question\030\002 \001(\tR\010question" +
+      "\022)\n\020response_option1\030\003 \001(\tR\017responseOpti" +
+      "on1\022)\n\020response_option2\030\004 \001(\tR\017responseO" +
+      "ption2\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n" +
+      "\nupdated_at\030\006 \001(\tR\tupdatedAt\022\"\n\ndeleted_" +
+      "at\030\007 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"" +
+      "\353\002\n\007Episode\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014counselor" +
+      "_id\030\002 \001(\tR\013counselorId\022\024\n\005title\030\003 \001(\tR\005t" +
+      "itle\022<\n\032required_rapport_threshold\030\004 \001(\005" +
+      "R\030requiredRapportThreshold\022!\n\014is_tempora" +
+      "ry\030\005 \001(\010R\013isTemporary\022E\n\ncut_scenes\030\006 \003(" +
+      "\0132&.com.hearlers.v1.model.EpisodeCutScen" +
+      "eR\tcutScenes\022\035\n\ncreated_at\030\007 \001(\tR\tcreate" +
+      "dAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\"\n\nde" +
+      "leted_at\030\t \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delet" +
+      "ed_at\"\274\002\n\017EpisodeCutScene\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022\035\n\nepisode_id\030\002 \001(\tR\tepisodeId\0228\n\007spea" +
+      "ker\030\003 \001(\0162\036.com.hearlers.v1.model.Speake" +
+      "rR\007speaker\022\030\n\007content\030\004 \001(\tR\007content\022\037\n\013" +
+      "order_index\030\005 \001(\005R\norderIndex\022\024\n\005image\030\006" +
+      " \001(\tR\005image\022\035\n\ncreated_at\030\007 \001(\tR\tcreated" +
+      "At\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\"\n\ndel" +
+      "eted_at\030\t \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delete" +
+      "d_at\"\275\001\n\004Tone\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 " +
+      "\001(\tR\004name\022 \n\013description\030\003 \001(\tR\013descript" +
+      "ion\022\035\n\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nup" +
+      "dated_at\030\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030" +
+      "\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\372\001\n" +
+      "\022CounselorAggregate\022>\n\tcounselor\030\001 \001(\0132 " +
+      ".com.hearlers.v1.model.CounselorR\tcounse" +
+      "lor\0227\n\007bubbles\030\002 \003(\0132\035.com.hearlers.v1.m" +
+      "odel.BubbleR\007bubbles\022/\n\004tone\030\003 \001(\0132\033.com" +
+      ".hearlers.v1.model.ToneR\004tone\022:\n\010episode" +
+      "s\030\004 \003(\0132\036.com.hearlers.v1.model.EpisodeR" +
+      "\010episodes*\206\001\n\017CounselorGender\022 \n\034COUNSEL" +
+      "OR_GENDER_UNSPECIFIED\020\000\022\031\n\025COUNSELOR_GEN" +
+      "DER_MALE\020\001\022\033\n\027COUNSELOR_GENDER_FEMALE\020\002\022" +
+      "\031\n\025COUNSELOR_GENDER_NONE\020\003*K\n\007Speaker\022\027\n" +
+      "\023SPEAKER_UNSPECIFIED\020\000\022\025\n\021SPEAKER_COUNSE" +
+      "LOR\020\001\022\020\n\014SPEAKER_USER\020\002B#\n\037com.hearlers." +
+      "api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -132,7 +131,7 @@ public final class CounselorOuterClass {
     internal_static_com_hearlers_v1_model_Bubble_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_Bubble_descriptor,
-        new java.lang.String[] { "Id", "CounselorId", "Question", "ResponseOption1", "ResponseOption2", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Question", "ResponseOption1", "ResponseOption2", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_Episode_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_hearlers_v1_model_Episode_fieldAccessorTable = new

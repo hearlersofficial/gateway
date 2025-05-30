@@ -277,4 +277,23 @@ public class CounselorController {
         var response = counselorDtoMapper.toResponse(bubble);
         return ResponseDtoUtil.createdResponse(response, "버블 생성 성공");
     }
+
+    @Operation(summary = "버블 단건 조회", description = "버블을 단건 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "상담사 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "상담사 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/admin/counselors/{counselor-id}/bubbles/{bubble-id}")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindBubbleByIdResponse>> getCounselor(
+            @PathVariable("bubble-id") String bubbleId,
+            @PathVariable("counselor-id") String counselorId
+    ) {
+        var findBubbleByIdRequest = counselorDtoMapper.toFindBubbleByIdRequest(counselorId, bubbleId);
+        var bubble = counselorService.findBubbleById(findBubbleByIdRequest);
+        var response = counselorDtoMapper.toFindBubbleByIdResponse(bubble);
+        return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
+    }
+
+
+
 }
