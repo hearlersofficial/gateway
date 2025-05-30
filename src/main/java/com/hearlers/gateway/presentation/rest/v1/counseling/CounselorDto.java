@@ -43,8 +43,6 @@ public class CounselorDto {
     public static class Bubble {
         @Schema(description = "버블 ID")
         private String id;
-        @Schema(description = "상담사 ID")
-        private String counselorId;
         @Schema(description = "버블 질문")
         private String question;
         @Schema(description = "버블 응답 1")
@@ -289,10 +287,6 @@ public class CounselorDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class UpdateBubbleRequest {
-        @Schema(description = "버블 ID", required = true)
-        private String bubbleId;
-        @Schema(description = "상담사 ID", required = true)
-        private String counselorId;
         @Schema(description = "버블 질문", nullable = true)
         private String question;
         @Schema(description = "버블 응답 1", nullable = true)

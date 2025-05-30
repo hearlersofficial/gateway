@@ -232,7 +232,7 @@ public class CounselorController {
     public ResponseEntity<ResponseDto.Success<CounselorDto.CreateEpisodeResponse>> createEpisode(
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.CreateEpisodeRequest request) {
-        var createEpisodeRequest = counselorDtoMapper.toCreateEpisodeRequest(request, counselorId);
+        var createEpisodeRequest = counselorDtoMapper.toCreateEpisodeRequest(counselorId, request);
         var episode = counselorService.createEpisode(createEpisodeRequest);
         var response = counselorDtoMapper.toCreateEpisodeResponse(episode);
 
@@ -250,7 +250,7 @@ public class CounselorController {
             @ApiResponse(responseCode = "400", description = "에피소드 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
             @ApiResponse(responseCode = "404", description = "에피소드를 찾을 수 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PutMapping("/v1/admin/counselors/{counselor-id}/admin/episodes/{episode-id}")
+    @PutMapping("/v1/admin/counselors/{counselor-id}/episodes/{episode-id}")
     public ResponseEntity<ResponseDto.Success<CounselorDto.UpdateEpisodeResponse>> updateEpisode(
             @PathVariable("episode-id") String episodeId,
             @PathVariable("counselor-id") String counselorId,
@@ -272,11 +272,29 @@ public class CounselorController {
     public ResponseEntity<ResponseDto.Success<CounselorDto.CreateBubbleResponse>> createBubble(
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.CreateBubbleRequest request) {
-        var createBubbleRequest = counselorDtoMapper.toRequest(counselorId, request);
+        var createBubbleRequest = counselorDtoMapper.toCreateBubbleRequest(counselorId, request);
         var bubble = counselorService.createBubble(createBubbleRequest);
-        var response = counselorDtoMapper.toResponse(bubble);
+        var response = counselorDtoMapper.toCreateBubbleResponse(bubble);
         return ResponseDtoUtil.createdResponse(response, "버블 생성 성공");
     }
+
+    @Operation(summary = "버블 업데이트", description = "기존 버블 정보를 업데이트합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "버블 업데이트 성공"),
+            @ApiResponse(responseCode = "400", description = "버블 업데이트 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class))),
+            @ApiResponse(responseCode = "404", description = "버블을 찾을 수 없음", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PutMapping("/v1/admin/counselors/{counselor-id}/bubbles/{bubble-id}")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.UpdateBubbleResponse>> updateBubble(
+            @PathVariable("bubble-id") String bubbleId,
+            @PathVariable("counselor-id") String counselorId,
+            @Valid @RequestBody CounselorDto.UpdateBubbleRequest request) {
+        var updateBubbleRequest = counselorDtoMapper.toUpdateBubbleRequest(counselorId, bubbleId, request);
+        var bubble = counselorService.updateBubble(updateBubbleRequest);
+        var response = counselorDtoMapper.toUpdateBubbleResponse(bubble);
+        return ResponseDtoUtil.okResponse(response, "버블 업데이트 성공");
+    }
+
 
     @Operation(summary = "버블 단건 조회", description = "버블을 단건 조회합니다.")
     @ApiResponses(value = {
@@ -292,6 +310,36 @@ public class CounselorController {
         var bubble = counselorService.findBubbleById(findBubbleByIdRequest);
         var response = counselorDtoMapper.toFindBubbleByIdResponse(bubble);
         return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
+    }
+
+    @Operation(summary = "버블 랜덤 조회", description = "버블을 랜덤으로 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "버블 랜덤 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "버블 랜덤 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/admin/counselors/{counselor-id}/bubbles/random")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindBubbleByIdResponse>> getRandomBubble(
+            @PathVariable("counselor-id") String counselorId
+    ) {
+        var findRandomBubbleRequest = counselorDtoMapper.toFindRandomBubbleRequest(counselorId);
+        var bubble = counselorService.findRandomBubble(findRandomBubbleRequest);
+        var response = counselorDtoMapper.toFindBubbleByIdResponse(bubble);
+        return ResponseDtoUtil.okResponse(response, "버블 랜덤 조회 성공");
+    }
+
+    @Operation(summary = "버블 복수 조회", description = "버블을 복수 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "버블 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "버블 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/v1/admin/counselors/{counselor-id}/bubbles")
+    public ResponseEntity<ResponseDto.Success<CounselorDto.FindBubblesResponse>> getBubbles(
+            @PathVariable("counselor-id") String counselorId
+    ) {
+        var findBubblesRequest = counselorDtoMapper.toFindBubblesRequest(counselorId);
+        var bubbles = counselorService.findBubbles(findBubblesRequest);
+        var response = counselorDtoMapper.toFindBubblesResponse(bubbles);
+        return ResponseDtoUtil.okResponse(response, "버블 조회 성공");
     }
 
 

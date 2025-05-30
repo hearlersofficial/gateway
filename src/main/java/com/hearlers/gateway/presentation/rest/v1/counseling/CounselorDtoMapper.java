@@ -1,8 +1,10 @@
 package com.hearlers.gateway.presentation.rest.v1.counseling;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.hearlers.api.proto.v1.model.Bubble;
+import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
 import com.hearlers.api.proto.v1.common.Extension;
@@ -30,18 +32,8 @@ public interface CounselorDtoMapper {
 
     // Counselor
     // FindOne
-    default FindCounselorByIdRequest toFindCounselorRequest (String counselorId) {
-        return FindCounselorByIdRequest.newBuilder()
-                .setCounselorId(counselorId)
-                .build();
-    }
-
-    default CounselorDto.FindCounselorByIdResponse toFindCounselorResponse (Counselor counselor) {
-        CounselorDto.Counselor counselorDto = of(counselor);
-        return CounselorDto.FindCounselorByIdResponse.builder()
-                .counselor(counselorDto)
-                .build();
-    }
+    FindCounselorByIdRequest toFindCounselorRequest (String counselorId);
+    CounselorDto.FindCounselorByIdResponse toFindCounselorResponse (Counselor counselor);
 
     // FindMany
     FindCounselorsRequest toFindCounselorsRequest (CounselorDto.FindCounselorsRequest request);
@@ -54,23 +46,9 @@ public interface CounselorDtoMapper {
     }
 
     // Create
-    default CreateCounselorRequest toCreateCounselorRequest(CounselorDto.CreateCounselorRequest request) {
-        return CreateCounselorRequest.newBuilder()
-                .setToneId(request.getToneId())
-                .setName(request.getName())
-                .setDescription(request.getDescription())
-                .setProfileImage(request.getProfileImage())
-                .setCounselorGender(request.getGender())
-                .build();
-    }
-    
-    default CounselorDto.CreateCounselorResponse toCreateCounselorResponse(Counselor counselor) {
-        CounselorDto.Counselor counselorDto = of(counselor);
-        return CounselorDto.CreateCounselorResponse.builder()
-                .counselor(counselorDto)
-                .build();
-    }
-    
+    CreateCounselorRequest toCreateCounselorRequest(CounselorDto.CreateCounselorRequest request);
+    CounselorDto.CreateCounselorResponse toCreateCounselorResponse(Counselor counselor);
+
     // Update
     default UpdateCounselorRequest toUpdateCounselorRequest(String counselorId, CounselorDto.UpdateCounselorRequest request) {
         UpdateCounselorRequest.Builder builder = UpdateCounselorRequest.newBuilder()
@@ -99,41 +77,14 @@ public interface CounselorDtoMapper {
         return builder.build();
     }
     
-    default CounselorDto.UpdateCounselorResponse toUpdateCounselorResponse(Counselor counselor) {
-        CounselorDto.Counselor counselorDto = of(counselor);
-        return CounselorDto.UpdateCounselorResponse.builder()
-                .counselor(counselorDto)
-                .build();
-    }
-
-    // Generate Image URL
-    default GenerateCounselorImageUrlRequest toGenerateCounselorImageUrlRequest(CounselorDto.GenerateCounselorImageUrlRequest request, String counselorId) {
-        return GenerateCounselorImageUrlRequest.newBuilder()
-                .setCounselorId(counselorId)
-                .setExtension(request.getExtension())
-                .build();
-    }
-
-    default CounselorDto.GenerateCounselorImageUrlResponse toGenerateCounselorImageUrlResponse(PresignedUrl presignedUrl) {
-        return CounselorDto.GenerateCounselorImageUrlResponse.builder()
-                .presignedUrl(PresignedUrlResponse.of(presignedUrl))
-                .build();
-    }
+    CounselorDto.UpdateCounselorResponse toUpdateCounselorResponse(Counselor counselor);
+    GenerateCounselorImageUrlRequest toGenerateCounselorImageUrlRequest(CounselorDto.GenerateCounselorImageUrlRequest request, String counselorId);
+    CounselorDto.GenerateCounselorImageUrlResponse toGenerateCounselorImageUrlResponse(PresignedUrl presignedUrl);
 
     // Tone
     // FindOne
-    default FindToneByIdRequest toFindToneRequest (String toneId) {
-        return FindToneByIdRequest.newBuilder()
-                .setToneId(toneId)
-                .build();
-    }
-
-    default CounselorDto.FindToneByIdResponse toFindToneResponse (Tone tone) {
-        CounselorDto.Tone toneDto = of(tone);
-        return CounselorDto.FindToneByIdResponse.builder()
-                .tone(toneDto)
-                .build();
-    }
+    FindToneByIdRequest toFindToneRequest (String toneId);
+    CounselorDto.FindToneByIdResponse toFindToneResponse (Tone tone);
 
     // FindMany
     FindTonesRequest toFindTonesRequest (CounselorDto.FindTonesRequest request);
@@ -145,21 +96,9 @@ public interface CounselorDtoMapper {
                 .build();
     }
     
-    // Create
-    default CreateToneRequest toCreateToneRequest(CounselorDto.CreateToneRequest request) {
-        return CreateToneRequest.newBuilder()
-                .setName(request.getName())
-                .setDescription(request.getDescription())
-                .build();
-    }
-    
-    default CounselorDto.CreateToneResponse toCreateToneResponse(Tone tone) {
-        CounselorDto.Tone toneDto = of(tone);
-        return CounselorDto.CreateToneResponse.builder()
-                .tone(toneDto)
-                .build();
-    }
-    
+    CreateToneRequest toCreateToneRequest(CounselorDto.CreateToneRequest request);
+    CounselorDto.CreateToneResponse toCreateToneResponse(Tone tone);
+
     // Update
     default UpdateToneRequest toUpdateToneRequest(String toneId, CounselorDto.UpdateToneRequest request) {
         UpdateToneRequest.Builder builder = UpdateToneRequest.newBuilder()
@@ -176,26 +115,11 @@ public interface CounselorDtoMapper {
         return builder.build();
     }
     
-    default CounselorDto.UpdateToneResponse toUpdateToneResponse(Tone tone) {
-        CounselorDto.Tone toneDto = of(tone);
-        return CounselorDto.UpdateToneResponse.builder()
-                .tone(toneDto)
-                .build();
-    }
+    CounselorDto.UpdateToneResponse toUpdateToneResponse(Tone tone);
 
     // Generate Cut Scene Image URL
-    default GenerateCutSceneImageUrlRequest toGenerateCutSceneImageUrlRequest(CounselorDto.GenerateCutSceneImageUrlRequest request, String episodeId) {
-        return GenerateCutSceneImageUrlRequest.newBuilder()
-                .setEpisodeId(episodeId)
-                .setExtension(request.getExtension())
-                .build();
-    }
-
-    default CounselorDto.GenerateCutSceneImageUrlResponse toGenerateCutSceneImageUrlResponse(PresignedUrl presignedUrl) {
-        return CounselorDto.GenerateCutSceneImageUrlResponse.builder()
-                .presignedUrl(PresignedUrlResponse.of(presignedUrl))
-                .build();
-    }
+    GenerateCutSceneImageUrlRequest toGenerateCutSceneImageUrlRequest(CounselorDto.GenerateCutSceneImageUrlRequest request, String episodeId);
+    CounselorDto.GenerateCutSceneImageUrlResponse toGenerateCutSceneImageUrlResponse(PresignedUrl presignedUrl);
 
     // Episode → EpisodeDto
     @Mappings({
@@ -207,24 +131,12 @@ public interface CounselorDtoMapper {
 
     // Episode
     // FindOne
-    default FindEpisodeByIdRequest toFindEpisodeByIdRequest(String episodeId, Boolean withTemporary) {
-        return FindEpisodeByIdRequest.newBuilder()
-                .setEpisodeId(episodeId)
-                .setWithTemporary(withTemporary)
-                .build();
-    }
-
-    default CounselorDto.FindEpisodeByIdResponse toFindEpisodeByIdResponse(com.hearlers.api.proto.v1.model.Episode episode) {
-        CounselorDto.Episode episodeDto = of(episode);
-        return CounselorDto.FindEpisodeByIdResponse.builder()
-                .episode(episodeDto)
-                .build();
-    }
+    FindEpisodeByIdRequest toFindEpisodeByIdRequest(String episodeId, Boolean withTemporary);
+    CounselorDto.FindEpisodeByIdResponse toFindEpisodeByIdResponse(Episode episode);
 
     // FindMany
     FindEpisodesRequest toFindEpisodesRequest(String counselorId, Boolean withTemporary);
-
-    default CounselorDto.FindEpisodesResponse toFindEpisodesResponse(List<com.hearlers.api.proto.v1.model.Episode> episodes) {
+    default CounselorDto.FindEpisodesResponse toFindEpisodesResponse(List<Episode> episodes) {
         return CounselorDto.FindEpisodesResponse.builder()
                 .episodes(episodes.stream()
                         .map(this::of)
@@ -233,14 +145,12 @@ public interface CounselorDtoMapper {
     }
 
     // Create
-    default CreateEpisodeRequest toCreateEpisodeRequest(CounselorDto.CreateEpisodeRequest request, String counselorId) {
-        return CreateEpisodeRequest.newBuilder()
-                .setCounselorId(counselorId)
-                .setTitle(request.getTitle())
-                .setRequiredRapportThreshold(request.getRequiredRapportThreshold())
-                .setIsTemporary(request.getIsTemporary())
+    @Mapping(target = "cutScenesList", ignore = true)
+    CreateEpisodeRequest toPartialCreateEpisodeRequest(String counselorId, CounselorDto.CreateEpisodeRequest request);
+    default CreateEpisodeRequest toCreateEpisodeRequest(String counselorId, CounselorDto.CreateEpisodeRequest request) {
+        return  toPartialCreateEpisodeRequest(counselorId, request).toBuilder()
                 .addAllCutScenes(request.getCutScenes().stream()
-                        .map(this::toSaveNewEpisodeCutSceneRequest)
+                        .map(this::toSaveEpisodeCutSceneRequest)
                         .toList())
                 .build();
     }
@@ -253,87 +163,46 @@ public interface CounselorDtoMapper {
     }
 
     // Update
+    @Mapping(target = "cutScenesList", ignore = true)
+    UpdateEpisodeRequest toPartialUpdateEpisodeRequest(String episodeId, CounselorDto.UpdateEpisodeRequest request);
     default UpdateEpisodeRequest toUpdateEpisodeRequest(String episodeId, CounselorDto.UpdateEpisodeRequest request) {
-        UpdateEpisodeRequest.Builder builder = UpdateEpisodeRequest.newBuilder()
-                .setEpisodeId(episodeId);
-
-        if (request.getTitle() != null) {
-            builder.setTitle(request.getTitle());
-        }
-
-        if (request.getRequiredRapportThreshold() != null) {
-            builder.setRequiredRapportThreshold(request.getRequiredRapportThreshold());
-        }
-
-        if (request.getIsTemporary() != null) {
-            builder.setIsTemporary(request.getIsTemporary());
-        }
-
-        if (request.getCutScenes() != null) {
-            builder.addAllCutScenes(request.getCutScenes().stream()
-                    .map(this::toSaveEpisodeCutSceneRequest)
-                    .toList());
-        }
-
-        return builder.build();
-    }
-
-    default CounselorDto.UpdateEpisodeResponse toUpdateEpisodeResponse(com.hearlers.api.proto.v1.model.Episode episode) {
-        CounselorDto.Episode episodeDto = of(episode);
-        return CounselorDto.UpdateEpisodeResponse.builder()
-                .episode(episodeDto)
+        return  toPartialUpdateEpisodeRequest(episodeId, request).toBuilder()
+                .addAllCutScenes(request.getCutScenes().stream()
+                        .map(this::toSaveEpisodeCutSceneRequest)
+                        .toList())
                 .build();
     }
+    CounselorDto.UpdateEpisodeResponse toUpdateEpisodeResponse(Episode episode);
 
     // Helper methods
-    default SaveEpisodeCutSceneRequest toSaveEpisodeCutSceneRequest(CounselorDto.SaveEpisodeCutSceneRequest request) {
-        SaveEpisodeCutSceneRequest.Builder builder = SaveEpisodeCutSceneRequest.newBuilder()
-                .setSpeaker(request.getSpeaker())
-                .setContent(request.getContent())
-                .setOrderIndex(request.getOrderIndex())
-                .setImage(request.getImage());
+    SaveEpisodeCutSceneRequest toSaveEpisodeCutSceneRequest(CounselorDto.SaveEpisodeCutSceneRequest request);
+    SaveEpisodeCutSceneRequest toSaveEpisodeCutSceneRequest(CounselorDto.SaveNewEpisodeCutSceneRequest request);
 
-        if (request.getId() != null) {
-            builder.setId(request.getId());
-        }
-
-        return builder.build();
-    }
-    default SaveEpisodeCutSceneRequest toSaveNewEpisodeCutSceneRequest(CounselorDto.SaveNewEpisodeCutSceneRequest request) {
-        SaveEpisodeCutSceneRequest.Builder builder = SaveEpisodeCutSceneRequest.newBuilder()
-                .setSpeaker(request.getSpeaker())
-                .setContent(request.getContent())
-                .setOrderIndex(request.getOrderIndex())
-                .setImage(request.getImage());
-
-        return builder.build();
-    }
 
     // Bubbles
     // Create
-    @Mapping(target = "counselorId", source = "counselorId")
-    CreateBubbleRequest toRequest(String counselorId, CounselorDto.CreateBubbleRequest request);
-    @Mapping(source = "bubble", target = "bubble")
-    CounselorDto.CreateBubbleResponse toResponse(Bubble bubble);
+    CreateBubbleRequest toCreateBubbleRequest(String counselorId, CounselorDto.CreateBubbleRequest request);
+    CounselorDto.CreateBubbleResponse toCreateBubbleResponse(Bubble bubble);
 
     // Update
-    default UpdateBubbleRequest toUpdateBubbleRequest(String bubbleId, CounselorDto.UpdateBubbleRequest request) {
-        UpdateBubbleRequest.Builder builder = UpdateBubbleRequest.newBuilder()
-                .setBubbleId(bubbleId);
-        if (request.getQuestion() != null) {
-            builder.setQuestion(request.getQuestion());
-        }
-        if (request.getResponseOption1() != null) {
-            builder.setResponseOption1(request.getResponseOption1());
-        }
-        if (request.getResponseOption2() != null) {
-            builder.setResponseOption2(request.getResponseOption2());
-        }
-
-        return builder.build();
-    }
+    UpdateBubbleRequest toUpdateBubbleRequest(String counselorId, String bubbleId, CounselorDto.UpdateBubbleRequest request);
+    CounselorDto.UpdateBubbleResponse toUpdateBubbleResponse (Bubble bubble);
 
     // FindOne
     FindBubbleByIdRequest toFindBubbleByIdRequest (String counselorId, String bubbleId);
     CounselorDto.FindBubbleByIdResponse toFindBubbleByIdResponse (Bubble bubble);
+
+    // FindMany
+    FindBubblesRequest toFindBubblesRequest (String counselorId);
+    default CounselorDto.FindBubblesResponse toFindBubblesResponse (List<Bubble> bubbles) {
+        return CounselorDto.FindBubblesResponse.builder()
+                .bubbles(bubbles.stream()
+                        .map(this::of)
+                        .toList())
+                .build();
+    };
+
+    // FindRandomBubble
+    FindRandomBubbleRequest toFindRandomBubbleRequest(String counselorId);
+    CounselorDto.FindRandomBubbleResponse toFindRandomBubbleResponse(Bubble bubble);
 }
