@@ -13,7 +13,11 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true)
                 .allowedOrigins("http://localhost:8080",
-                        "https://dev.api.hearlers.com")
+                        "http://localhost:3000",
+                        "https://dev.api.hearlers.com",
+                        "https://dev.admin.hearlers.com",
+                        "https://dev.hearlers.com"
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS");
     }
 }
