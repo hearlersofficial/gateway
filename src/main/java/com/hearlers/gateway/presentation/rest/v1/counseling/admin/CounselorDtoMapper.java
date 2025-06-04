@@ -1,15 +1,12 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling;
+package com.hearlers.gateway.presentation.rest.v1.counseling.admin;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
-import com.hearlers.api.proto.v1.common.Extension;
 import com.hearlers.api.proto.v1.common.PresignedUrl;
-import com.hearlers.gateway.shared.presentation.PresignedUrlResponse;
 import org.mapstruct.*;
 
 import com.hearlers.api.proto.v1.model.Counselor;

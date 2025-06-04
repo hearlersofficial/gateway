@@ -1,8 +1,7 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling;
+package com.hearlers.gateway.presentation.rest.v1.counseling.admin;
 
 import com.hearlers.gateway.application.counseling.CounselorService;
 
-import lombok.val;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hearlers.gateway.application.counseling.CounselPromptService;
 import com.hearlers.gateway.shared.presentation.ResponseDto;
 import com.hearlers.gateway.shared.presentation.ResponseDtoUtil;
 

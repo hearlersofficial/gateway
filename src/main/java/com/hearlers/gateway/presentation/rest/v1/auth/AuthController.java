@@ -172,7 +172,7 @@ public class AuthController {
                 .secure(!isLocalhost)
                 .httpOnly(true)
                 .path("/")
-                .sameSite("Strict"); // 혹은 "Lax", "None" 도입 가능
+                .sameSite("None");
 
         if (domain != null && !domain.isBlank()) {
             builder.domain(domain);

@@ -1,4 +1,4 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling;
+package com.hearlers.gateway.presentation.rest.v1.counseling.admin;
 
 import java.util.List;
 

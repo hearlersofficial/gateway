@@ -8,8 +8,6 @@ import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
-import com.hearlers.gateway.presentation.rest.v1.counseling.CounselorDto;
-import com.hearlers.gateway.shared.presentation.PresignedUrlResponse;
 
 public interface CounselorService {
     // Counselor
