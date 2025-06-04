@@ -60,10 +60,10 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "비로그인 유저 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @PostMapping("/v1/auth/initiate")
-    public ResponseEntity<ResponseDto.Success<AuthDto.TokenResponseDto>> createUser(HttpServletResponse response) {
+    public ResponseEntity<ResponseDto.Success<AuthDto.TokenResponseDto>> createUser(HttpServletRequest request, HttpServletResponse response) {
         // 퍼사드를 통해 유저 생성 및 토큰 발급
         AuthInfo.TokenInfo tokenInfo = authFacade.createUser();
-        String domain = extractDomainFromOrigin(response.getHeader("Origin"));
+        String domain = extractDomainFromOrigin(request.getHeader("Origin"));
         
         // 발급받은 accessToken 쿠키에 저장
         addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
@@ -112,6 +112,7 @@ public class AuthController {
     public void kakaoCallback(
             @RequestParam(value = "code", required = false) String code, 
             @RequestParam("state") String encodedState,
+            HttpServletRequest request,
             HttpServletResponse response) throws IOException {
         
         // state 디코딩
@@ -122,7 +123,7 @@ public class AuthController {
         // 퍼사드를 통해 카카오 로그인 콜백 처리
         AuthInfo.TokenInfo tokenInfo = authFacade.handleOAuthCallback(AuthChannel.AUTH_CHANNEL_KAKAO ,code, encodedState, userId);
 
-        String domain = extractDomainFromOrigin(response.getHeader("Origin"));
+        String domain = extractDomainFromOrigin(request.getHeader("Origin"));
         // 발급받은 토큰 쿠키에 저장
         addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
         addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain); ;
