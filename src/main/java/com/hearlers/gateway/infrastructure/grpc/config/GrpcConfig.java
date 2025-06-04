@@ -11,7 +11,7 @@ public class GrpcConfig {
 
     @Bean
     public ManagedChannel managedChannel() {
-        return ManagedChannelBuilder.forTarget("dev.rpc.hearlers.com")
+        return ManagedChannelBuilder.forTarget("rpc.dev.hearlers.com")
                 .useTransportSecurity() // TLS 사용
                 .build();
     }

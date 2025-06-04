@@ -210,7 +210,17 @@ public class AuthController {
                 return null;
             }
 
-            return host.contains("localhost") ? "localhost" : host;
+
+            if (host.equals("localhost")) {
+                return "localhost";
+            }
+
+            String[] parts = host.split("\\.");
+            if (parts.length >= 3) {
+                return "." + parts[parts.length - 2] + "." + parts[parts.length - 1];
+            }
+
+            return "." + host;
         } catch (Exception e) {
             return null;
         }
