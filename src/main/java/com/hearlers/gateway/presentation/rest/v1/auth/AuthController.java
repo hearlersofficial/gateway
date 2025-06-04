@@ -216,10 +216,13 @@ public class AuthController {
             }
 
             String[] parts = host.split("\\.");
+            // 3개 이상이어야 와일드카드 처리 가능
             if (parts.length >= 3) {
-                return "." + parts[parts.length - 2] + "." + parts[parts.length - 1];
+                // 예: admin.dev.hearlers.com → parts = [admin, dev, hearlers, com]
+                // .dev.hearlers.com → parts[parts.length-3] ~ 끝까지
+                return "." + String.join(".", java.util.Arrays.copyOfRange(parts, parts.length - 3, parts.length));
             }
-
+            // 2개 이하면 그냥 원본 도메인 앞에 dot
             return "." + host;
         } catch (Exception e) {
             return null;
