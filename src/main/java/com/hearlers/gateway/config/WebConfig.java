@@ -14,8 +14,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowCredentials(true)
                 .allowedOrigins("http://localhost:8080",
                         "http://localhost:3000",
-                        "https://dev.api.hearlers.com",
-                        "https://dev.admin.hearlers.com",
+                        "https://api.dev.hearlers.com",
+                        "https://admin.dev.hearlers.com",
                         "https://dev.hearlers.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS");
