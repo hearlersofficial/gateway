@@ -9,12 +9,12 @@ import java.util.List;
 
 public interface CounselService {
     // Counsel
-    Counsel createCounsel(CreateCounselRequest request);
+    CreateCounselResponse createCounsel(CreateCounselRequest request);
     Counsel findCounselById(FindCounselByIdRequest request);
     List<Counsel> findCounsels(FindCounselsRequest request);
     
     // CounselMessage
-    CounselMessage createMessage(CreateMessageRequest request);
+    CreateMessageResponse createMessage(CreateMessageRequest request);
     List<CounselMessage> findMessages(FindMessagesRequest request);
     CounselMessage reactMessage(ReactMessageRequest request);
     

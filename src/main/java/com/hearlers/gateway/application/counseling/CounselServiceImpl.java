@@ -15,7 +15,7 @@ public class CounselServiceImpl implements CounselService {
 
     // Counsel 관련 메서드
     @Override
-    public Counsel createCounsel(CreateCounselRequest request) {
+    public CreateCounselResponse createCounsel(CreateCounselRequest request) {
         // TODO: CounselService 구현 필요
         throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
     }
@@ -34,7 +34,7 @@ public class CounselServiceImpl implements CounselService {
     
     // CounselMessage 관련 메서드
     @Override
-    public CounselMessage createMessage(CreateMessageRequest request) {
+    public CreateMessageResponse createMessage(CreateMessageRequest request) {
         // TODO: MessageService 구현 필요
         throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
     }
