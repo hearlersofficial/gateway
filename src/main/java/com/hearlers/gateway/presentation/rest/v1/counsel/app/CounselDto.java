@@ -2,8 +2,10 @@ package com.hearlers.gateway.presentation.rest.v1.counsel.app;
 
 import com.hearlers.api.proto.v1.model.CounselMessageReaction;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -85,6 +87,8 @@ public class CounselDto {
     @Getter
     @Builder
     @Schema(description = "상담 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class CreateCounselRequest {
         @Schema(description = "버블 ID", nullable = true)
         private String bubbleId;
@@ -124,6 +128,8 @@ public class CounselDto {
     @Getter
     @Builder
     @Schema(description = "메시지 생성 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class CreateMessageRequest {
         @Schema(description = "메시지 내용", required = true)
         private String message;
@@ -152,6 +158,8 @@ public class CounselDto {
     @Getter
     @Builder
     @Schema(description = "메시지 반응 요청")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class ReactMessageRequest {
         @Schema(description = "메시지 반응", required = true)
         private CounselMessageReaction reaction;

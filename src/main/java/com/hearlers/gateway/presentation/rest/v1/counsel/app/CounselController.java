@@ -57,7 +57,8 @@ public class CounselController {
             )
             @PathVariable("counselor-id") String counselorId,
             @RequestAttribute(value = "userId", required = false) String userId ) {
-        var findCounselsRequest = counselDtoMapper.toFindCounselsRequest(userId, counselorId);
+        String resolvedCounselorId = "all".equalsIgnoreCase(counselorId) ? null : counselorId;
+        var findCounselsRequest = counselDtoMapper.toFindCounselsRequest(userId, resolvedCounselorId);
         var counsels = counselService.findCounsels(findCounselsRequest);
         var response = counselDtoMapper.toFindCounselsResponse(counsels);
 

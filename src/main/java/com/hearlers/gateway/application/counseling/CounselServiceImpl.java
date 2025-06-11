@@ -12,49 +12,44 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CounselServiceImpl implements CounselService {
+    private final CounselReader counselReader;
+    private final CounselStore counselStore;
 
     // Counsel 관련 메서드
     @Override
     public CreateCounselResponse createCounsel(CreateCounselRequest request) {
-        // TODO: CounselService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselStore.createCounsel(request);
     }
 
     @Override
     public Counsel findCounselById(FindCounselByIdRequest request) {
-        // TODO: CounselService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselReader.findCounselById(request);
     }
 
     @Override
     public List<Counsel> findCounsels(FindCounselsRequest request) {
-        // TODO: CounselService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselReader.findCounsels(request);
     }
     
     // CounselMessage 관련 메서드
     @Override
     public CreateMessageResponse createMessage(CreateMessageRequest request) {
-        // TODO: MessageService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselStore.createMessage(request);
     }
 
     @Override
     public List<CounselMessage> findMessages(FindMessagesRequest request) {
-        // TODO: MessageService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselReader.findMessages(request);
     }
 
     @Override
     public CounselMessage reactMessage(ReactMessageRequest request) {
-        // TODO: MessageService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselStore.reactMessage(request);
     }
     
     // CounselorUserRelationship 관련 메서드
     @Override
     public List<CounselorUserRelationship> findCounselorUserRelationships(FindCounselorUserRelationshipsRequest request) {
-        // TODO: RelationshipService 구현 필요
-        throw new UnsupportedOperationException("아직 구현되지 않았습니다.");
+        return counselReader.findCounselorUserRelationships(request);
     }
 }
