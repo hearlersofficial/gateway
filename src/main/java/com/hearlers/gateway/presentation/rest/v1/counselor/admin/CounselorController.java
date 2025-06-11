@@ -1,4 +1,4 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling.admin;
+package com.hearlers.gateway.presentation.rest.v1.counselor.admin;
 
 import com.hearlers.gateway.application.counseling.CounselorService;
 

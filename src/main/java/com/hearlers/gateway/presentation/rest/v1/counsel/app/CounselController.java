@@ -1,4 +1,4 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling.app;
+package com.hearlers.gateway.presentation.rest.v1.counsel.app;
 
 import com.hearlers.gateway.application.counseling.CounselService;
 import com.hearlers.gateway.shared.presentation.ResponseDto;
@@ -13,7 +13,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

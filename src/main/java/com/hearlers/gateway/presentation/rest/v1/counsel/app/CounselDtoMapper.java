@@ -1,4 +1,4 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling.app;
+package com.hearlers.gateway.presentation.rest.v1.counsel.app;
 
 import java.util.List;
 

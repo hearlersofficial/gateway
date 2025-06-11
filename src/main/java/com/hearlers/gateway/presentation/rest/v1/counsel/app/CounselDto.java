@@ -1,4 +1,4 @@
-package com.hearlers.gateway.presentation.rest.v1.counseling.app;
+package com.hearlers.gateway.presentation.rest.v1.counsel.app;
 
 import com.hearlers.api.proto.v1.model.CounselMessageReaction;
 import io.swagger.v3.oas.annotations.media.Schema;
