@@ -174,6 +174,14 @@ public class AuthController {
                 .path("/")
                 .sameSite("None");
 
+        if (isLocalhost) {
+            builder.sameSite("Lax");  // None 대신 Lax 또는 생략
+            builder.secure(false);    // Secure 사용하지 않음
+        } else {
+            builder.sameSite("None"); // 크로스사이트 허용
+            builder.secure(true);     // 반드시 Secure 포함
+        }
+
         if (domain != null && !domain.isBlank()) {
             builder.domain(domain);
         }
