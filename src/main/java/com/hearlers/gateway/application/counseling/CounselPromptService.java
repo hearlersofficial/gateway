@@ -63,17 +63,4 @@ public interface CounselPromptService {
     CounselTechnique findCounselTechniqueById(FindCounselTechniqueByIdRequest request);
     List<CounselTechnique> findOrderedCounselTechniques(FindOrderedCounselTechniquesRequest request);
     List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request);
-    
-    // Counsel
-    Counsel createCounsel(CreateCounselRequest request);
-    Counsel findCounselById(FindCounselByIdRequest request);
-    List<Counsel> findCounsels(FindCounselsRequest request);
-    
-    // CounselMessage
-    CounselMessage createMessage(CreateMessageRequest request);
-    List<CounselMessage> findMessages(FindMessagesRequest request);
-    CounselMessage reactMessage(ReactMessageRequest request);
-    
-    // CounselorUserRelationship
-    List<CounselorUserRelationship> findCounselorUserRelationships(FindCounselorUserRelationshipsRequest request);
 }
