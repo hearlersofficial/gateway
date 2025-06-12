@@ -3,6 +3,7 @@ package com.hearlers.gateway.config.security;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.security.authentication.BadCredentialsException;
@@ -44,15 +45,16 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             boolean isPermitAllPath = SecurityPolicy.isPermitAllPath(request.getRequestURI());
             
             Cookie[] cookies = request.getCookies();
-            String token = null;
-            
-            if (cookies != null) {
-                token = Arrays.stream(cookies)
-                        .filter(cookie -> "accessToken".equals(cookie.getName()))
-                        .map(Cookie::getValue)
-                        .findFirst()
-                        .orElse(null);
-            }
+            String token = cookies == null ? null :
+                    Arrays.stream(cookies)
+                            .filter(c -> "accessToken".equals(c.getName()) || "refreshToken".equals(c.getName()))
+                            .sorted(Comparator.comparingInt(c ->
+                                    "accessToken".equals(c.getName()) ? 0 : 1
+                            ))
+                            .map(Cookie::getValue)
+                            .findFirst()
+                            .orElse(null);
+
             
             // 토큰이 없거나 유효하지 않은 경우
             if (token == null || !jwtUtil.validateToken(token)) {
