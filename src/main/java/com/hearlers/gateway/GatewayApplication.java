@@ -28,10 +28,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
         """
         ),
         servers = {
-                @Server(url = "/", description = "기본 경로"),
-                @Server(url = "http://localhost:8080", description = "로컬 서버"),
-                @Server(url = "https://api.dev.hearlers.com", description = "개발 서버"),
-                @Server(url = "https://api.hearlers.com", description = "운영 서버")
+                @Server(url = "/", description = "ROOT URL"),
         }
 )
 @SpringBootApplication
