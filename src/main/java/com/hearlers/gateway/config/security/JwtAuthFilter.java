@@ -12,7 +12,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.hearlers.gateway.application.auth.TokenManager;
+import com.hearlers.api.proto.v1.model.Authority;
+import com.hearlers.gateway.config.JwtProvider;
 import com.hearlers.gateway.presentation.rest.exception.HttpException;
 import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
 
@@ -32,7 +33,7 @@ import org.slf4j.LoggerFactory;
 
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
-    private final TokenManager jwtUtil;
+    private final JwtProvider jwtProvider;
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthFilter.class);
 
     @Override
@@ -58,7 +59,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             logger.debug("토큰 만료: {}", e.getMessage());
             throw wrap(request, new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED), e);
         } catch (MalformedJwtException | UnsupportedJwtException | SignatureException e) {
-            logger.debug("JWT 파싱 오류: {}", e.getMessage());
+            logger.error("JWT 파싱 오류: {}", e.getMessage());
             throw wrap(request, new HttpException(HttpResultCode.INVALID_TOKEN), e);
         } catch (HttpException e) {
             logger.error("HttpException: {}", e.getMessage());
@@ -91,12 +92,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED);
         }
 
-        if (!jwtUtil.validateToken(tokenInfo.refreshToken)) {
+        if (!jwtProvider.validateToken(tokenInfo.refreshToken)) {
             logger.debug("유효하지 않은 refreshToken: {}", request.getRequestURI());
-            throw new HttpException(HttpResultCode.REFRESH_TOKEN_INVALID);
+            throw new HttpException(HttpResultCode.INVALID_TOKEN);
         }
 
-        Claims claims = jwtUtil.parseClaims(tokenInfo.refreshToken);
+        Claims claims = jwtProvider.parseClaims(tokenInfo.refreshToken);
         setClaimsToRequest(request, claims);
         setAuthenticationContext(request, claims);
     }
@@ -112,8 +113,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             return;
         }
 
-        if (jwtUtil.validateToken(token)) {
-            Claims claims = jwtUtil.parseClaims(token);
+        if (jwtProvider.validateToken(token)) {
+            Claims claims = jwtProvider.parseClaims(token);
             setClaimsToRequest(request, claims);
             setAuthenticationContext(request, claims);
         }
@@ -133,12 +134,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             throw new HttpException(HttpResultCode.ACCESS_TOKEN_REQUIRED);
         }
 
-        if (!jwtUtil.validateToken(tokenInfo.accessToken)) {
+        if (!jwtProvider.validateToken(tokenInfo.accessToken)) {
             logger.debug("유효하지 않은 accessToken: {}", request.getRequestURI());
             throw new HttpException(HttpResultCode.ACCESS_TOKEN_INVALID);
         }
 
-        Claims claims = jwtUtil.parseClaims(tokenInfo.accessToken);
+        Claims claims = jwtProvider.parseClaims(tokenInfo.accessToken);
         setClaimsToRequest(request, claims);
         setAuthenticationContext(request, claims);
     }
@@ -159,12 +160,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
      */
     private void setAuthenticationContext(HttpServletRequest request, Claims claims) {
         String userId = claims.get("id", String.class);
-        
+        Authority authority = Authority.valueOf(claims.get("authority", String.class));
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        if (Boolean.TRUE.equals(claims.get("is_admin", Boolean.class))) {
-            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-        }
+        authorities.add(new SimpleGrantedAuthority(authority.name()));
 
         UsernamePasswordAuthenticationToken authentication =
                 new UsernamePasswordAuthenticationToken(userId, null, authorities);

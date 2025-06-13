@@ -1,5 +1,6 @@
 package com.hearlers.gateway.config.security;
 
+import com.hearlers.gateway.config.JwtProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final TokenManager jwtUtil;
+    private final JwtProvider jwtProvider;
     private final ResponseFormatter responseFormatter;
 
     @Bean
@@ -64,7 +65,7 @@ public class SecurityConfig {
 
     @Bean
     public JwtAuthFilter jwtAuthFilter() {
-        return new JwtAuthFilter(jwtUtil);
+        return new JwtAuthFilter(jwtProvider);
     }
 
     @Bean

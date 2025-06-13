@@ -7,13 +7,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.util.AntPathMatcher;
 
+import com.hearlers.api.proto.v1.model.Authority;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SecurityPolicy {
     private static final AntPathMatcher pathMatcher = new AntPathMatcher();
-    public static final String ROLE_USER = "USER";
-    public static final String ROLE_ADMIN = "ADMIN";
 
   
 
@@ -48,10 +48,10 @@ public class SecurityPolicy {
 
     public static void configure(AuthorizeHttpRequestsConfigurer<?>.AuthorizationManagerRequestMatcherRegistry requests) {
         requests
-            .requestMatchers(ADMIN_PATH).hasRole(ROLE_ADMIN)
+            .requestMatchers(ADMIN_PATH).hasAuthority(Authority.AUTHORITY_ADMIN.name())
             .requestMatchers(HttpMethod.POST, PERMIT_ALL_PATHS).permitAll()
             .requestMatchers(HttpMethod.GET, PERMIT_ALL_PATHS).permitAll()
-            .requestMatchers(CATCH_ALL).hasAnyRole(ROLE_USER, ROLE_ADMIN)
+            .requestMatchers(CATCH_ALL).hasAnyAuthority(Authority.AUTHORITY_USER.name(), Authority.AUTHORITY_ADMIN.name())
             .anyRequest().authenticated();
     }
 

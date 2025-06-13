@@ -8,7 +8,7 @@ import java.util.Base64;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.Cookie;
-import lombok.val;
+import lombok.*;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +35,6 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,6 +67,8 @@ public class AuthController {
         // 발급받은 accessToken 쿠키에 저장
         addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
         addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
+        clearCookie(response, REFRESH_TOKEN_COOKIE, domain); // 비로그인 유저는 리프레시 토큰이 없음
+        clearCookie(response, REFRESH_TOKEN_EXPIRES_AT_COOKIE, domain); // 비로그인 유저는 리프레시 토큰이 없음
         
         // 응답 매핑
         AuthDto.TokenResponseDto tokenResponseDto = AuthDto.TokenResponseDto.builder()
@@ -191,6 +192,17 @@ public class AuthController {
         response.addHeader("Set-Cookie", cookie.toString());
     }
 
+    private void clearCookie(HttpServletResponse response, String cookieName, String domain) {
+        Cookie cookie = new Cookie(cookieName, null);
+        cookie.setMaxAge(0); // 삭제
+        cookie.setPath("/"); // 경로 일치 필요
+        cookie.setHttpOnly(true);
+        cookie.setSecure(true);
+        if (domain != null) cookie.setDomain(domain);
+        response.addCookie(cookie);
+    }
+
+
     private String extractCookieValue(HttpServletRequest request, String cookieName) {
         if (request.getCookies() == null) {
             throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "리프레시 토큰이 없습니다.");
@@ -267,32 +279,11 @@ public class AuthController {
     /**
      * state 정보를 담는 내부 클래스
      */
+    @Getter
+    @AllArgsConstructor
+    @NoArgsConstructor
     private static class StateInfo {
         private String userId;
         private String redirectUrl;
-
-        // Jackson을 위한 기본 생성자
-        public StateInfo() {}
-
-        public StateInfo(String userId, String redirectUrl) {
-            this.userId = userId;
-            this.redirectUrl = redirectUrl;
-        }
-
-        public String getUserId() {
-            return userId;
-        }
-
-        public String getRedirectUrl() {
-            return redirectUrl;
-        }
-
-        public void setUserId(String userId) {
-            this.userId = userId;
-        }
-
-        public void setRedirectUrl(String redirectUrl) {
-            this.redirectUrl = redirectUrl;
-        }
     }
 }

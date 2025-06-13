@@ -35,7 +35,7 @@ public class AuthFacade {
                 .id(userId)
                 .authChannel(authChannel)
                 .build();
-        return tokenManager.generateToken(command, false, false);
+        return tokenManager.generateToken(command, false, Authority.AUTHORITY_USER);
     }
 
     /**
@@ -50,13 +50,13 @@ public class AuthFacade {
      */
     public AuthInfo.TokenInfo handleOAuthCallback(AuthChannel authChannel, String code, String state, String userId) {
         var authUser = authService.oauthLogin(authChannel, code, state, userId);
-        var isAdmin = authUser.getAuthority() == Authority.AUTHORITY_ADMIN;
+        var authority = authUser.getAuthority();
         
         AuthCommand.GenerateTokenCommand command = AuthCommand.GenerateTokenCommand.builder()
                 .id(authUser.getUserId())
                 .authChannel(authChannel)
                 .build();
-        var token = tokenManager.generateToken(command, true, isAdmin);
+        var token = tokenManager.generateToken(command, true, authority);
         
         // RefreshToken 저장
         String refreshToken = token.getRefreshToken();
@@ -108,16 +108,15 @@ public class AuthFacade {
             throw new HttpException(HttpResultCode.REFRESH_TOKEN_INVALID, "Refresh token is invalid");
         }
 
-        boolean isAdmin = tokenManager.parseClaims(refreshToken).get("is_admin", Boolean.class) != null
-                && tokenManager.parseClaims(refreshToken).get("is_admin", Boolean.class);
-        log.info("refresh - isAdmin: {}", isAdmin);
+        Authority authority = tokenManager.getAuthorityFromToken(refreshToken);
+        log.info("refresh - authority: {}", authority);
         // Refresh token 이 유효한 경우 새로운 토큰 발급
         AuthCommand.GenerateTokenCommand command = AuthCommand.GenerateTokenCommand.builder()
                 .id(userId)
                 .authChannel(authChannel)
                 .build();
         
-        AuthInfo.TokenInfo tokenInfo = tokenManager.generateToken(command, true, isAdmin);
+        AuthInfo.TokenInfo tokenInfo = tokenManager.generateToken(command, true, authority);
         
         // Refresh 토큰 저장
         saveRefreshToken(userId, tokenInfo.getRefreshToken(), tokenInfo.getRefreshTokenExpiresAt());
