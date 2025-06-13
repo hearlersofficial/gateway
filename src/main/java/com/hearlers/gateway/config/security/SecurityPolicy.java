@@ -30,7 +30,11 @@ public class SecurityPolicy {
     public static final String[] LOGIN_PATHS = {
             "/v1/auth/initiate",
             "/v1/auth/login/kakao",
-            "/v1/auth/callback/kakao"
+            "/v1/auth/callback/kakao",
+    };
+
+    public static final String[] REFRESH_PATHS = {
+            "/v1/auth/refresh",
     };
 
     public static final String ADMIN_PATH = "/v1/admin/**";
@@ -57,4 +61,11 @@ public class SecurityPolicy {
                 .anyMatch(pattern -> pathMatcher.match(pattern, path));
     }
 
+    /**
+     * Refresh 토큰 경로인지 확인합니다.
+     */
+    public static boolean isRefreshPath(String path) {
+        return Arrays.stream(REFRESH_PATHS)
+                .anyMatch(pattern -> pathMatcher.match(pattern, path));
+    }
 }

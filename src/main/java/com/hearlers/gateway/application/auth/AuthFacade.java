@@ -99,7 +99,7 @@ public class AuthFacade {
         ).getSuccess();
         
         if (!isTokenExist) {
-            throw new HttpException(HttpResultCode.REFRESH_TOKEN_REQUIRED, "Refresh token does not exist");
+            throw new HttpException(HttpResultCode.REFRESH_TOKEN_NOT_FOUND);
         }
         
         // 토큰 유효성 검증
