@@ -34,8 +34,7 @@ private static final long serialVersionUID = 0L;
   private CreateCounselRequest() {
     userId_ = "";
     counselorId_ = "";
-    introMessage_ = "";
-    responseMessage_ = "";
+    bubbleId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -130,98 +129,70 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INTRO_MESSAGE_FIELD_NUMBER = 3;
+  public static final int BUBBLEID_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object introMessage_ = "";
+  private volatile java.lang.Object bubbleId_ = "";
   /**
-   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-   * @return Whether the introMessage field is set.
+   * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+   * @return Whether the bubbleId field is set.
    */
   @java.lang.Override
-  public boolean hasIntroMessage() {
+  public boolean hasBubbleId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-   * @return The introMessage.
+   * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+   * @return The bubbleId.
    */
   @java.lang.Override
-  public java.lang.String getIntroMessage() {
-    java.lang.Object ref = introMessage_;
+  public java.lang.String getBubbleId() {
+    java.lang.Object ref = bubbleId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      introMessage_ = s;
+      bubbleId_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-   * @return The bytes for introMessage.
+   * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+   * @return The bytes for bubbleId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getIntroMessageBytes() {
-    java.lang.Object ref = introMessage_;
+      getBubbleIdBytes() {
+    java.lang.Object ref = bubbleId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      introMessage_ = b;
+      bubbleId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int RESPONSE_MESSAGE_FIELD_NUMBER = 4;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object responseMessage_ = "";
+  public static final int RESPONSEOPTIONNO_FIELD_NUMBER = 4;
+  private int responseOptionNo_ = 0;
   /**
-   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-   * @return Whether the responseMessage field is set.
+   * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+   * @return Whether the responseOptionNo field is set.
    */
   @java.lang.Override
-  public boolean hasResponseMessage() {
+  public boolean hasResponseOptionNo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-   * @return The responseMessage.
+   * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+   * @return The responseOptionNo.
    */
   @java.lang.Override
-  public java.lang.String getResponseMessage() {
-    java.lang.Object ref = responseMessage_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      responseMessage_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-   * @return The bytes for responseMessage.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getResponseMessageBytes() {
-    java.lang.Object ref = responseMessage_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      responseMessage_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getResponseOptionNo() {
+    return responseOptionNo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -245,10 +216,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessage.writeString(output, 2, counselorId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, introMessage_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, bubbleId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, responseMessage_);
+      output.writeInt32(4, responseOptionNo_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -266,10 +237,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, counselorId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, introMessage_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, bubbleId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, responseMessage_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, responseOptionNo_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -290,15 +262,15 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getCounselorId()
         .equals(other.getCounselorId())) return false;
-    if (hasIntroMessage() != other.hasIntroMessage()) return false;
-    if (hasIntroMessage()) {
-      if (!getIntroMessage()
-          .equals(other.getIntroMessage())) return false;
+    if (hasBubbleId() != other.hasBubbleId()) return false;
+    if (hasBubbleId()) {
+      if (!getBubbleId()
+          .equals(other.getBubbleId())) return false;
     }
-    if (hasResponseMessage() != other.hasResponseMessage()) return false;
-    if (hasResponseMessage()) {
-      if (!getResponseMessage()
-          .equals(other.getResponseMessage())) return false;
+    if (hasResponseOptionNo() != other.hasResponseOptionNo()) return false;
+    if (hasResponseOptionNo()) {
+      if (getResponseOptionNo()
+          != other.getResponseOptionNo()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -315,13 +287,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCounselorId().hashCode();
-    if (hasIntroMessage()) {
-      hash = (37 * hash) + INTRO_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getIntroMessage().hashCode();
+    if (hasBubbleId()) {
+      hash = (37 * hash) + BUBBLEID_FIELD_NUMBER;
+      hash = (53 * hash) + getBubbleId().hashCode();
     }
-    if (hasResponseMessage()) {
-      hash = (37 * hash) + RESPONSE_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseMessage().hashCode();
+    if (hasResponseOptionNo()) {
+      hash = (37 * hash) + RESPONSEOPTIONNO_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseOptionNo();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -461,8 +433,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       userId_ = "";
       counselorId_ = "";
-      introMessage_ = "";
-      responseMessage_ = "";
+      bubbleId_ = "";
+      responseOptionNo_ = 0;
       return this;
     }
 
@@ -504,11 +476,11 @@ private static final long serialVersionUID = 0L;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.introMessage_ = introMessage_;
+        result.bubbleId_ = bubbleId_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.responseMessage_ = responseMessage_;
+        result.responseOptionNo_ = responseOptionNo_;
         to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
@@ -536,15 +508,13 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasIntroMessage()) {
-        introMessage_ = other.introMessage_;
+      if (other.hasBubbleId()) {
+        bubbleId_ = other.bubbleId_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.hasResponseMessage()) {
-        responseMessage_ = other.responseMessage_;
-        bitField0_ |= 0x00000008;
-        onChanged();
+      if (other.hasResponseOptionNo()) {
+        setResponseOptionNo(other.getResponseOptionNo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -583,15 +553,15 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              introMessage_ = input.readStringRequireUtf8();
+              bubbleId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
-              responseMessage_ = input.readStringRequireUtf8();
+            case 32: {
+              responseOptionNo_ = input.readInt32();
               bitField0_ |= 0x00000008;
               break;
-            } // case 34
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -753,160 +723,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object introMessage_ = "";
+    private java.lang.Object bubbleId_ = "";
     /**
-     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-     * @return Whether the introMessage field is set.
+     * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+     * @return Whether the bubbleId field is set.
      */
-    public boolean hasIntroMessage() {
+    public boolean hasBubbleId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-     * @return The introMessage.
+     * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+     * @return The bubbleId.
      */
-    public java.lang.String getIntroMessage() {
-      java.lang.Object ref = introMessage_;
+    public java.lang.String getBubbleId() {
+      java.lang.Object ref = bubbleId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        introMessage_ = s;
+        bubbleId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-     * @return The bytes for introMessage.
+     * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+     * @return The bytes for bubbleId.
      */
     public com.google.protobuf.ByteString
-        getIntroMessageBytes() {
-      java.lang.Object ref = introMessage_;
+        getBubbleIdBytes() {
+      java.lang.Object ref = bubbleId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        introMessage_ = b;
+        bubbleId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-     * @param value The introMessage to set.
+     * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+     * @param value The bubbleId to set.
      * @return This builder for chaining.
      */
-    public Builder setIntroMessage(
+    public Builder setBubbleId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      introMessage_ = value;
+      bubbleId_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
+     * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearIntroMessage() {
-      introMessage_ = getDefaultInstance().getIntroMessage();
+    public Builder clearBubbleId() {
+      bubbleId_ = getDefaultInstance().getBubbleId();
       bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-     * @param value The bytes for introMessage to set.
+     * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+     * @param value The bytes for bubbleId to set.
      * @return This builder for chaining.
      */
-    public Builder setIntroMessageBytes(
+    public Builder setBubbleIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      introMessage_ = value;
+      bubbleId_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private java.lang.Object responseMessage_ = "";
+    private int responseOptionNo_ ;
     /**
-     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-     * @return Whether the responseMessage field is set.
+     * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+     * @return Whether the responseOptionNo field is set.
      */
-    public boolean hasResponseMessage() {
+    @java.lang.Override
+    public boolean hasResponseOptionNo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-     * @return The responseMessage.
+     * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+     * @return The responseOptionNo.
      */
-    public java.lang.String getResponseMessage() {
-      java.lang.Object ref = responseMessage_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        responseMessage_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public int getResponseOptionNo() {
+      return responseOptionNo_;
     }
     /**
-     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-     * @return The bytes for responseMessage.
-     */
-    public com.google.protobuf.ByteString
-        getResponseMessageBytes() {
-      java.lang.Object ref = responseMessage_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        responseMessage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-     * @param value The responseMessage to set.
+     * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+     * @param value The responseOptionNo to set.
      * @return This builder for chaining.
      */
-    public Builder setResponseMessage(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      responseMessage_ = value;
+    public Builder setResponseOptionNo(int value) {
+
+      responseOptionNo_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
+     * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearResponseMessage() {
-      responseMessage_ = getDefaultInstance().getResponseMessage();
+    public Builder clearResponseOptionNo() {
       bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-     * @param value The bytes for responseMessage to set.
-     * @return This builder for chaining.
-     */
-    public Builder setResponseMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      responseMessage_ = value;
-      bitField0_ |= 0x00000008;
+      responseOptionNo_ = 0;
       onChanged();
       return this;
     }

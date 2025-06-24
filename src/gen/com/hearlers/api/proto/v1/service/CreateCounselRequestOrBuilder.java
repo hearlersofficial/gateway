@@ -34,36 +34,30 @@ public interface CreateCounselRequestOrBuilder extends
       getCounselorIdBytes();
 
   /**
-   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-   * @return Whether the introMessage field is set.
+   * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+   * @return Whether the bubbleId field is set.
    */
-  boolean hasIntroMessage();
+  boolean hasBubbleId();
   /**
-   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-   * @return The introMessage.
+   * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+   * @return The bubbleId.
    */
-  java.lang.String getIntroMessage();
+  java.lang.String getBubbleId();
   /**
-   * <code>optional string intro_message = 3 [json_name = "introMessage"];</code>
-   * @return The bytes for introMessage.
+   * <code>optional string bubbleId = 3 [json_name = "bubbleId"];</code>
+   * @return The bytes for bubbleId.
    */
   com.google.protobuf.ByteString
-      getIntroMessageBytes();
+      getBubbleIdBytes();
 
   /**
-   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-   * @return Whether the responseMessage field is set.
+   * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+   * @return Whether the responseOptionNo field is set.
    */
-  boolean hasResponseMessage();
+  boolean hasResponseOptionNo();
   /**
-   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-   * @return The responseMessage.
+   * <code>optional int32 responseOptionNo = 4 [json_name = "responseOptionNo"];</code>
+   * @return The responseOptionNo.
    */
-  java.lang.String getResponseMessage();
-  /**
-   * <code>optional string response_message = 4 [json_name = "responseMessage"];</code>
-   * @return The bytes for responseMessage.
-   */
-  com.google.protobuf.ByteString
-      getResponseMessageBytes();
+  int getResponseOptionNo();
 }

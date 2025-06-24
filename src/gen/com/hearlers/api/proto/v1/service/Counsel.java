@@ -106,72 +106,71 @@ public final class Counsel {
     java.lang.String[] descriptorData = {
       "\n%com/hearlers/v1/service/counsel.proto\022" +
       "\027com.hearlers.v1.service\032#com/hearlers/v" +
-      "1/model/counsel.proto\"\323\001\n\024CreateCounselR" +
+      "1/model/counsel.proto\"\306\001\n\024CreateCounselR" +
       "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022!\n\014couns" +
-      "elor_id\030\002 \001(\tR\013counselorId\022(\n\rintro_mess" +
-      "age\030\003 \001(\tH\000R\014introMessage\210\001\001\022.\n\020response" +
-      "_message\030\004 \001(\tH\001R\017responseMessage\210\001\001B\020\n\016" +
-      "_intro_messageB\023\n\021_response_message\"\243\001\n\025" +
-      "CreateCounselResponse\0228\n\007counsel\030\001 \001(\0132\036" +
-      ".com.hearlers.v1.model.CounselR\007counsel\022" +
-      "P\n\020counsel_messages\030\002 \003(\0132%.com.hearlers" +
-      ".v1.model.CounselMessageR\017counselMessage" +
-      "s\"g\n\023FindCounselsRequest\022\027\n\007user_id\030\001 \001(" +
-      "\tR\006userId\022&\n\014counselor_id\030\002 \001(\tH\000R\013couns" +
-      "elorId\210\001\001B\017\n\r_counselor_id\"R\n\024FindCounse" +
-      "lsResponse\022:\n\010counsels\030\001 \003(\0132\036.com.hearl" +
-      "ers.v1.model.CounselR\010counsels\"7\n\026FindCo" +
-      "unselByIdRequest\022\035\n\ncounsel_id\030\001 \001(\tR\tco" +
-      "unselId\"d\n\027FindCounselByIdResponse\022=\n\007co" +
-      "unsel\030\001 \001(\0132\036.com.hearlers.v1.model.Coun" +
-      "selH\000R\007counsel\210\001\001B\n\n\010_counsel\"O\n\024CreateM" +
-      "essageRequest\022\035\n\ncounsel_id\030\001 \001(\tR\tcouns" +
-      "elId\022\030\n\007message\030\002 \001(\tR\007message\"\333\001\n\025Creat" +
-      "eMessageResponse\022]\n\027created_counsel_mess" +
-      "age\030\001 \001(\0132%.com.hearlers.v1.model.Counse" +
-      "lMessageR\025createdCounselMessage\022c\n\032couns" +
-      "elor_response_message\030\002 \001(\0132%.com.hearle" +
-      "rs.v1.model.CounselMessageR\030counselorRes" +
-      "ponseMessage\"4\n\023FindMessagesRequest\022\035\n\nc" +
-      "ounsel_id\030\001 \001(\tR\tcounselId\"h\n\024FindMessag" +
-      "esResponse\022P\n\020counsel_messages\030\001 \003(\0132%.c" +
-      "om.hearlers.v1.model.CounselMessageR\017cou" +
-      "nselMessages\"\177\n\023ReactMessageRequest\022\035\n\nm" +
-      "essage_id\030\001 \001(\tR\tmessageId\022I\n\010reaction\030\002" +
-      " \001(\0162-.com.hearlers.v1.model.CounselMess" +
-      "ageReactionR\010reaction\"f\n\024ReactMessageRes" +
-      "ponse\022N\n\017counsel_message\030\001 \001(\0132%.com.hea" +
-      "rlers.v1.model.CounselMessageR\016counselMe" +
-      "ssage\"c\n%FindCounselorUserRelationshipsR" +
-      "equest\022!\n\014counselor_id\030\001 \001(\tR\013counselorI" +
-      "d\022\027\n\007user_id\030\002 \001(\tR\006userId\"\234\001\n&FindCouns" +
-      "elorUserRelationshipsResponse\022r\n\034counsel" +
-      "or_user_relationships\030\001 \003(\01320.com.hearle" +
-      "rs.v1.model.CounselorUserRelationshipR\032c" +
-      "ounselorUserRelationships2\321\006\n\016CounselSer" +
-      "vice\022n\n\rCreateCounsel\022-.com.hearlers.v1." +
-      "service.CreateCounselRequest\032..com.hearl" +
-      "ers.v1.service.CreateCounselResponse\022k\n\014" +
-      "FindCounsels\022,.com.hearlers.v1.service.F" +
-      "indCounselsRequest\032-.com.hearlers.v1.ser" +
-      "vice.FindCounselsResponse\022t\n\017FindCounsel" +
-      "ById\022/.com.hearlers.v1.service.FindCouns" +
-      "elByIdRequest\0320.com.hearlers.v1.service." +
-      "FindCounselByIdResponse\022n\n\rCreateMessage" +
-      "\022-.com.hearlers.v1.service.CreateMessage" +
-      "Request\032..com.hearlers.v1.service.Create" +
-      "MessageResponse\022k\n\014FindMessages\022,.com.he" +
-      "arlers.v1.service.FindMessagesRequest\032-." +
-      "com.hearlers.v1.service.FindMessagesResp" +
-      "onse\022k\n\014ReactMessage\022,.com.hearlers.v1.s" +
-      "ervice.ReactMessageRequest\032-.com.hearler" +
-      "s.v1.service.ReactMessageResponse\022\241\001\n\036Fi" +
-      "ndCounselorUserRelationships\022>.com.hearl" +
-      "ers.v1.service.FindCounselorUserRelation" +
-      "shipsRequest\032?.com.hearlers.v1.service.F" +
-      "indCounselorUserRelationshipsResponseB%\n" +
-      "!com.hearlers.api.proto.v1.serviceP\001b\006pr" +
-      "oto3"
+      "elor_id\030\002 \001(\tR\013counselorId\022\037\n\010bubbleId\030\003" +
+      " \001(\tH\000R\010bubbleId\210\001\001\022/\n\020responseOptionNo\030" +
+      "\004 \001(\005H\001R\020responseOptionNo\210\001\001B\013\n\t_bubbleI" +
+      "dB\023\n\021_responseOptionNo\"\243\001\n\025CreateCounsel" +
+      "Response\0228\n\007counsel\030\001 \001(\0132\036.com.hearlers" +
+      ".v1.model.CounselR\007counsel\022P\n\020counsel_me" +
+      "ssages\030\002 \003(\0132%.com.hearlers.v1.model.Cou" +
+      "nselMessageR\017counselMessages\"g\n\023FindCoun" +
+      "selsRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022&\n\014" +
+      "counselor_id\030\002 \001(\tH\000R\013counselorId\210\001\001B\017\n\r" +
+      "_counselor_id\"R\n\024FindCounselsResponse\022:\n" +
+      "\010counsels\030\001 \003(\0132\036.com.hearlers.v1.model." +
+      "CounselR\010counsels\"7\n\026FindCounselByIdRequ" +
+      "est\022\035\n\ncounsel_id\030\001 \001(\tR\tcounselId\"d\n\027Fi" +
+      "ndCounselByIdResponse\022=\n\007counsel\030\001 \001(\0132\036" +
+      ".com.hearlers.v1.model.CounselH\000R\007counse" +
+      "l\210\001\001B\n\n\010_counsel\"O\n\024CreateMessageRequest" +
+      "\022\035\n\ncounsel_id\030\001 \001(\tR\tcounselId\022\030\n\007messa" +
+      "ge\030\002 \001(\tR\007message\"\333\001\n\025CreateMessageRespo" +
+      "nse\022]\n\027created_counsel_message\030\001 \001(\0132%.c" +
+      "om.hearlers.v1.model.CounselMessageR\025cre" +
+      "atedCounselMessage\022c\n\032counselor_response" +
+      "_message\030\002 \001(\0132%.com.hearlers.v1.model.C" +
+      "ounselMessageR\030counselorResponseMessage\"" +
+      "4\n\023FindMessagesRequest\022\035\n\ncounsel_id\030\001 \001" +
+      "(\tR\tcounselId\"h\n\024FindMessagesResponse\022P\n" +
+      "\020counsel_messages\030\001 \003(\0132%.com.hearlers.v" +
+      "1.model.CounselMessageR\017counselMessages\"" +
+      "\177\n\023ReactMessageRequest\022\035\n\nmessage_id\030\001 \001" +
+      "(\tR\tmessageId\022I\n\010reaction\030\002 \001(\0162-.com.he" +
+      "arlers.v1.model.CounselMessageReactionR\010" +
+      "reaction\"f\n\024ReactMessageResponse\022N\n\017coun" +
+      "sel_message\030\001 \001(\0132%.com.hearlers.v1.mode" +
+      "l.CounselMessageR\016counselMessage\"c\n%Find" +
+      "CounselorUserRelationshipsRequest\022!\n\014cou" +
+      "nselor_id\030\001 \001(\tR\013counselorId\022\027\n\007user_id\030" +
+      "\002 \001(\tR\006userId\"\234\001\n&FindCounselorUserRelat" +
+      "ionshipsResponse\022r\n\034counselor_user_relat" +
+      "ionships\030\001 \003(\01320.com.hearlers.v1.model.C" +
+      "ounselorUserRelationshipR\032counselorUserR" +
+      "elationships2\321\006\n\016CounselService\022n\n\rCreat" +
+      "eCounsel\022-.com.hearlers.v1.service.Creat" +
+      "eCounselRequest\032..com.hearlers.v1.servic" +
+      "e.CreateCounselResponse\022k\n\014FindCounsels\022" +
+      ",.com.hearlers.v1.service.FindCounselsRe" +
+      "quest\032-.com.hearlers.v1.service.FindCoun" +
+      "selsResponse\022t\n\017FindCounselById\022/.com.he" +
+      "arlers.v1.service.FindCounselByIdRequest" +
+      "\0320.com.hearlers.v1.service.FindCounselBy" +
+      "IdResponse\022n\n\rCreateMessage\022-.com.hearle" +
+      "rs.v1.service.CreateMessageRequest\032..com" +
+      ".hearlers.v1.service.CreateMessageRespon" +
+      "se\022k\n\014FindMessages\022,.com.hearlers.v1.ser" +
+      "vice.FindMessagesRequest\032-.com.hearlers." +
+      "v1.service.FindMessagesResponse\022k\n\014React" +
+      "Message\022,.com.hearlers.v1.service.ReactM" +
+      "essageRequest\032-.com.hearlers.v1.service." +
+      "ReactMessageResponse\022\241\001\n\036FindCounselorUs" +
+      "erRelationships\022>.com.hearlers.v1.servic" +
+      "e.FindCounselorUserRelationshipsRequest\032" +
+      "?.com.hearlers.v1.service.FindCounselorU" +
+      "serRelationshipsResponseB%\n!com.hearlers" +
+      ".api.proto.v1.serviceP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -183,7 +182,7 @@ public final class Counsel {
     internal_static_com_hearlers_v1_service_CreateCounselRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_service_CreateCounselRequest_descriptor,
-        new java.lang.String[] { "UserId", "CounselorId", "IntroMessage", "ResponseMessage", });
+        new java.lang.String[] { "UserId", "CounselorId", "BubbleId", "ResponseOptionNo", });
     internal_static_com_hearlers_v1_service_CreateCounselResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_service_CreateCounselResponse_fieldAccessorTable = new
