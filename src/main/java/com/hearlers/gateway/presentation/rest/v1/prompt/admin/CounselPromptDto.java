@@ -281,9 +281,6 @@ public class CounselPromptDto {
     @Setter
     @Schema(description = "상담 기법 업데이트 요청 DTO")
     public static class UpdateCounselTechniqueRequestDto {
-        @Schema(description = "상담 기법 ID", example = "ct_123456")
-        private String counselTechniqueId;
-        
         @Schema(description = "상담 기법 이름", example = "개선된 공감 반응 기법")
         private String name;
         

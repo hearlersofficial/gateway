@@ -335,8 +335,7 @@ public class CounselPromptController {
     public ResponseEntity<ResponseDto.Success<CounselPromptDto.UpdateCounselTechniqueResponseDto>> updateCounselTechnique(
             @PathVariable(name = "counsel-technique-id", required = true) String counselTechniqueId,
             @Valid @RequestBody CounselPromptDto.UpdateCounselTechniqueRequestDto request) {
-        request.setCounselTechniqueId(counselTechniqueId);
-        var updateCounselTechniqueRequest = counselPromptDtoMapper.toUpdateCounselTechniqueRequest(request);
+        var updateCounselTechniqueRequest = counselPromptDtoMapper.toUpdateCounselTechniqueRequest(request, counselTechniqueId);
         CounselTechnique counselTechnique = counselPromptService.updateCounselTechnique(updateCounselTechniqueRequest);
         var response = counselPromptDtoMapper.toUpdateCounselTechniqueResponseDto(counselTechnique);
         

@@ -97,9 +97,9 @@ public interface CounselPromptDtoMapper {
                 .build();
     }
     
-    default UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto) {
+    default UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto, String counselTechniqueId) {
         UpdateCounselTechniqueRequest.Builder builder = UpdateCounselTechniqueRequest.newBuilder()
-                .setCounselTechniqueId(dto.getCounselTechniqueId());
+                .setCounselTechniqueId(counselTechniqueId);
         
         if (dto.getName() != null) {
             builder.setName(dto.getName());
