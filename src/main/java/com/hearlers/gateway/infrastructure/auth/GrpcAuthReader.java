@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class AuthReaderImpl implements AuthReader {
+public class GrpcAuthReader implements AuthReader {
     private final UserServiceBlockingStub userServiceBlockingStub;
 
     @Override

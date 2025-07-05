@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class CounselPromptServiceImpl implements CounselPromptService {
-    private final PromptPersistor promptPersistor;
+    private final PromptStore promptStore;
     private final PromptReader promptReader;
 
 
@@ -58,12 +58,12 @@ public class CounselPromptServiceImpl implements CounselPromptService {
 
     @Override
     public PromptVersion saveTemporaryVersion(SaveTemporaryVersionRequest request) {
-        return promptPersistor.saveTemporaryVersion(request);
+        return promptStore.saveTemporaryVersion(request);
     }
 
     @Override
     public PromptVersion activatePromptVersion(ActivatePromptVersionRequest request) {
-        return promptPersistor.activatePromptVersion(request);
+        return promptStore.activatePromptVersion(request);
     }
     
     // PromptActivateHistory 관련 메서드
@@ -75,7 +75,7 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     // TonePrompt 관련 메서드
     @Override
     public TonePrompt updateTonePrompt(UpdateTonePromptRequest request) {
-        return promptPersistor.updateTonePrompt(request);
+        return promptStore.updateTonePrompt(request);
     }
 
     @Override
@@ -86,7 +86,7 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     // PersonaPrompt 관련 메서드
     @Override
     public PersonaPrompt updatePersonaPrompt(UpdatePersonaPromptRequest request) {
-        return promptPersistor.updatePersonaPrompt(request);
+        return promptStore.updatePersonaPrompt(request);
     }
 
     @Override
@@ -97,17 +97,17 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     // CounselTechnique 관련 메서드
     @Override
     public CounselTechnique createCounselTechnique(CreateCounselTechniqueRequest request) {
-        return promptPersistor.createCounselTechnique(request);
+        return promptStore.createCounselTechnique(request);
     }
 
     @Override
     public CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request) {
-        return promptPersistor.updateCounselTechnique(request);
+        return promptStore.updateCounselTechnique(request);
     }
 
     @Override
     public List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request) {
-        return promptPersistor.saveCounselTechniqueSequence(request);
+        return promptStore.saveCounselTechniqueSequence(request);
     }
 
     @Override

@@ -16,13 +16,13 @@ import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest;
 import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
 import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
 import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
-import com.hearlers.gateway.application.prompt.PromptPersistor;
+import com.hearlers.gateway.application.prompt.PromptStore;
 
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class PromptPersistorImpl implements PromptPersistor {
+public class GrpcPromptStore implements PromptStore {
     private final CounselPromptServiceBlockingStub counselPromptServiceBlockingStub;
     
     @Override

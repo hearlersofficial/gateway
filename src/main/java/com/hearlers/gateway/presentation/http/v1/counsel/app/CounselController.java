@@ -93,9 +93,10 @@ public class CounselController {
     public ResponseEntity<ResponseDto.Success<CounselDto.CreateMessageResponse>> createMessage(
             @PathVariable("counselor-id") String counselorId,
             @PathVariable("counsel-id") String counselId,
+            @RequestAttribute(value = "userId", required = false) String userId,
             @Valid @RequestBody CounselDto.CreateMessageRequest request) {
         var createMessageRequest = counselDtoMapper.toCreateMessageRequest(counselId, request);
-        var createMessageResponse = counselService.createMessage(createMessageRequest);
+        var createMessageResponse = counselService.createMessage(createMessageRequest, userId);
         var response = counselDtoMapper.toCreateMessageResponse(createMessageResponse);
         return ResponseDtoUtil.createdResponse(response, "메시지 생성 성공");
     }

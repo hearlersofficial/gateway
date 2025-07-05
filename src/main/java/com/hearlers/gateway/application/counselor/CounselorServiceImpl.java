@@ -19,7 +19,7 @@ import com.hearlers.api.proto.v1.model.Tone;
 public class CounselorServiceImpl implements CounselorService {
     private final CounselorReader counselorReader;
     private final CounselorStore counselorPersistor;
-    private final CounselorPresigner counselorPresigner;
+    private final CounselorImagePresigner counselorPresigner;
 
     // Counselor 조회
     @Override

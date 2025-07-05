@@ -14,7 +14,7 @@ import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
 import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
 import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
 
-public interface PromptPersistor {
+public interface PromptStore {
     TonePrompt updateTonePrompt(UpdateTonePromptRequest request);
     PersonaPrompt updatePersonaPrompt(UpdatePersonaPromptRequest request);
 

@@ -13,7 +13,7 @@ public interface CounselService {
     List<Counsel> findCounsels(FindCounselsRequest request);
     
     // CounselMessage
-    CreateMessageResponse createMessage(CreateMessageRequest request);
+    CreateMessageResponse createMessage(CreateMessageRequest request, String userId);
     List<CounselMessage> findMessages(FindMessagesRequest request);
     CounselMessage reactMessage(ReactMessageRequest request);
     

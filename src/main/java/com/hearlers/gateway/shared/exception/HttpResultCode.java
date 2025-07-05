@@ -30,6 +30,9 @@ public enum HttpResultCode {
     REFRESH_TOKEN_INVALID(HttpStatus.UNAUTHORIZED, "REFRESH_TOKEN_INVALID", "Refresh Token이 유효하지 않습니다."),
     FORBIDDEN(HttpStatus.FORBIDDEN, "FORBIDDEN", "권한이 없습니다."),
 
+    // 상담 에러
+    NO_REMAINING_TOKENS(HttpStatus.FORBIDDEN, "NO_REMAINING_TOKENS", "상담에 사용할 수 있는 토큰이 남아있지 않습니다."),
+
     // 카카오 에러
     KAKAO_PROCESSING_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "KAKAO_PROCESSING_ERROR", "카카오 처리 중 오류가 발생했습니다.");
 

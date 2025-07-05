@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class CounselStoreImpl implements CounselStore {
+public class GrpcCounselStore implements CounselStore {
     private final CounselServiceGrpc.CounselServiceBlockingStub counselorServiceBlockingStub;
 
 

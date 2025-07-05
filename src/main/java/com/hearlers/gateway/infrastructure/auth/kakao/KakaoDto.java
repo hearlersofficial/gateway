@@ -15,6 +15,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
+/**
+ * KAKAO HTTP API에서 오는 응답 타입만 정의합니다.
+ */
 public class KakaoDto {
 
     @Getter

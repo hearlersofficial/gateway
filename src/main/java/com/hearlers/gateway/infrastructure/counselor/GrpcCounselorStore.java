@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class CounselorStoreImpl implements CounselorStore {
+public class GrpcCounselorStore implements CounselorStore {
     private final CounselorServiceBlockingStub counselorServiceBlockingStub;
     
     @Override

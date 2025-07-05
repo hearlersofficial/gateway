@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class AuthStoreImpl implements AuthStore {
+public class GrpcAuthStore implements AuthStore {
     private final UserServiceBlockingStub userServiceBlockingStub;
 
     @Override

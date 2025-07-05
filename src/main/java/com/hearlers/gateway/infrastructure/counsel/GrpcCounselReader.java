@@ -13,10 +13,8 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class CounselReaderImpl implements CounselReader {
+public class GrpcCounselReader implements CounselReader {
     private final CounselServiceGrpc.CounselServiceBlockingStub counselorServiceBlockingStub;
-
-
 
     @Override
     public Counsel findCounselById(FindCounselByIdRequest request) {

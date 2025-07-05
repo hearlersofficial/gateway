@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PromptReaderImpl implements PromptReader {
+public class GrpcPromptReader implements PromptReader {
     private final CounselPromptServiceBlockingStub counselPromptServiceBlockingStub;
     
     @Override

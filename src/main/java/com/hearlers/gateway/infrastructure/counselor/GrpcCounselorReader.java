@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class CounselorReaderImpl implements CounselorReader {
+public class GrpcCounselorReader implements CounselorReader {
     private final CounselorServiceBlockingStub counselorServiceBlockingStub;
 
     @Override
