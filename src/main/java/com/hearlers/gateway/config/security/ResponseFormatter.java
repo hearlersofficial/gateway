@@ -9,9 +9,9 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
-import com.hearlers.gateway.shared.presentation.ResponseDto;
-import com.hearlers.gateway.shared.presentation.ResponseDtoUtil;
+import com.hearlers.gateway.shared.exception.HttpResultCode;
+import com.hearlers.gateway.shared.response.ResponseDto;
+import com.hearlers.gateway.shared.response.ResponseDtoUtil;
 
 import io.grpc.Status;
 import jakarta.servlet.http.HttpServletResponse;

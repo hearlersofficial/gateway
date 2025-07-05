@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.hearlers.api.proto.v1.model.Gender;
 import com.hearlers.gateway.application.auth.AuthInfo;
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+import com.hearlers.gateway.shared.exception.HttpException;
+import com.hearlers.gateway.shared.exception.HttpResultCode;
 
 import lombok.Builder;
 import lombok.Getter;

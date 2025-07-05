@@ -6,8 +6,8 @@ import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest;
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+import com.hearlers.gateway.shared.exception.HttpException;
+import com.hearlers.gateway.shared.exception.HttpResultCode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

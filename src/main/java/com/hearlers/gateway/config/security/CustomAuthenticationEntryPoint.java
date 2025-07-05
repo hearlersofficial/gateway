@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
+import com.hearlers.gateway.shared.exception.HttpException;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

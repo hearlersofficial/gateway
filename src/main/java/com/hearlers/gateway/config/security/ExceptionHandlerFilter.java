@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
+import com.hearlers.gateway.shared.exception.HttpException;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

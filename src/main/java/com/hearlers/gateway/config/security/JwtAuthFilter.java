@@ -14,8 +14,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.gateway.config.JwtProvider;
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+import com.hearlers.gateway.shared.exception.HttpException;
+import com.hearlers.gateway.shared.exception.HttpResultCode;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

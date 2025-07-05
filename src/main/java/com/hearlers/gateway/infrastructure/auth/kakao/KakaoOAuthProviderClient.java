@@ -9,8 +9,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.hearlers.gateway.application.auth.AuthCommand;
 import com.hearlers.gateway.application.auth.AuthInfo;
 import com.hearlers.gateway.config.KakaoProperties;
-import com.hearlers.gateway.presentation.rest.exception.HttpException;
-import com.hearlers.gateway.presentation.rest.response.HttpResultCode;
+import com.hearlers.gateway.shared.exception.HttpException;
+import com.hearlers.gateway.shared.exception.HttpResultCode;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
