@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
 import java.util.List;
 
+import org.mapstruct.factory.Mappers;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,14 +33,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-@RestController
+@RestController("v1CounselPromptAdminController")
 @RequestMapping("/v1/admin")
 @RequiredArgsConstructor
-@Tag(name = "상담 프롬프트", description = "상담 프롬프트 관련 API")
+@Tag(name = "어드민/상담 프롬프트", description = "상담 프롬프트 관련 API")
 public class CounselPromptController {
     private final CounselPromptService counselPromptService;
-    private final CounselPromptDtoMapper counselPromptDtoMapper;
-
+    CounselPromptDtoMapper counselPromptDtoMapper = Mappers.getMapper(CounselPromptDtoMapper.class);
     //----------------------
     // 프롬프트 버전 (PromptVersion) API
     //----------------------

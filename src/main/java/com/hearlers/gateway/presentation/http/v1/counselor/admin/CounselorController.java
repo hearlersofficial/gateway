@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.http.v1.counselor.admin;
 
 import com.hearlers.gateway.application.counselor.CounselorService;
 
+import org.mapstruct.factory.Mappers;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,15 +25,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-@RestController
+@RestController("v1CounselorAdminController")
 @RequestMapping()
 @RequiredArgsConstructor
-@Tag(name = "상담사", description = "상담사 관련 API")
+@Tag(name = "어드민/상담사", description = "상담사 관련 API")
 public class CounselorController {
 
     private final CounselorService counselorService;
-    private final CounselorDtoMapper counselorDtoMapper;
-
+    CounselorDtoMapper counselorDtoMapper = Mappers.getMapper(CounselorDtoMapper.class);
 
     @Operation(summary = "상담사 단건 조회", description = "상담사를 단건 조회합니다.")
     @ApiResponses(value = {
@@ -209,7 +209,7 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "에피소드 조회 성공"),
             @ApiResponse(responseCode = "400", description = "에피소드 조회 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @GetMapping("/v1/admin/counselors/{counselor-id}/admin/episodes")
+    @GetMapping("/v1/admin/counselors/{counselor-id}/episodes")
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindEpisodesResponse>> getEpisodes(
             @PathVariable("counselor-id") String counselorId
     ) {

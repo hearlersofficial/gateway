@@ -12,7 +12,6 @@ import org.mapstruct.*;
 import com.hearlers.api.proto.v1.model.Counselor;
 
 @Mapper(
-        componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS
 )

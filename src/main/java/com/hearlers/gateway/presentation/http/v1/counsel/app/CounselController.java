@@ -13,17 +13,18 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.factory.Mappers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController("v1CounselAppController")
 @RequestMapping()
 @RequiredArgsConstructor
-@Tag(name = "상담", description = "상담 관련 API")
+@Tag(name = "앱/상담", description = "상담 관련 API")
 public class CounselController {
 
     private final CounselService counselService;
-    private final CounselDtoMapper counselDtoMapper;
+    CounselDtoMapper counselDtoMapper = Mappers.getMapper(CounselDtoMapper.class);
 
     // 상담 생성
     @Operation(summary = "상담 생성", description = "새로운 상담을 생성합니다.")
