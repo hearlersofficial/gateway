@@ -41,8 +41,8 @@ public class GrpcPromptStore implements PromptStore {
     }
 
     @Override
-    public CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request) {
-        return counselPromptServiceBlockingStub.updateCounselTechnique(request).getCounselTechniques(0);
+    public List<CounselTechnique> updateCounselTechnique(UpdateCounselTechniqueRequest request) {
+        return counselPromptServiceBlockingStub.updateCounselTechnique(request).getCounselTechniquesList();
     }
 
     @Override

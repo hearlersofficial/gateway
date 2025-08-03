@@ -7,28 +7,14 @@ import com.hearlers.api.proto.v1.model.PersonaPrompt;
 import com.hearlers.api.proto.v1.model.PromptActivateHistory;
 import com.hearlers.api.proto.v1.model.PromptVersion;
 import com.hearlers.api.proto.v1.model.TonePrompt;
-import com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest;
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest;
-import com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest;
-import com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionsRequest;
-import com.hearlers.api.proto.v1.service.FindTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest;
-import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest;
-import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
-import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
-import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
+import com.hearlers.api.proto.v1.service.*;
 
 public interface CounselPromptService {
 
     // PromptVersion
     PromptVersion findPromptVersionById(FindPromptVersionByIdRequest request);
     List<PromptVersion> findPromptVersions(FindPromptVersionsRequest request);
+    PromptVersion findActiveVersion(FindActiveVersionRequest request);
     PromptVersion findTemporaryVersion(FindTemporaryVersionRequest request);
     PromptVersion loadExistingPromptVersion(LoadExistingPromptVersionRequest request);
     PromptVersion saveTemporaryVersion(SaveTemporaryVersionRequest request);
@@ -47,7 +33,7 @@ public interface CounselPromptService {
 
     // CounselTechnique
     CounselTechnique createCounselTechnique(CreateCounselTechniqueRequest request);
-    CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request);
+    List<CounselTechnique> updateCounselTechnique(UpdateCounselTechniqueRequest request);
     CounselTechnique findCounselTechniqueById(FindCounselTechniqueByIdRequest request);
     List<CounselTechnique> findOrderedCounselTechniques(FindOrderedCounselTechniquesRequest request);
     List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request);

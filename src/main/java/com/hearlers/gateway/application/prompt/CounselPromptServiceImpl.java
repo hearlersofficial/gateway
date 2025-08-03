@@ -2,6 +2,7 @@ package com.hearlers.gateway.application.prompt;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.service.*;
 import org.springframework.stereotype.Service;
 
 import com.hearlers.api.proto.v1.model.CounselTechnique;
@@ -9,22 +10,6 @@ import com.hearlers.api.proto.v1.model.PersonaPrompt;
 import com.hearlers.api.proto.v1.model.PromptActivateHistory;
 import com.hearlers.api.proto.v1.model.PromptVersion;
 import com.hearlers.api.proto.v1.model.TonePrompt;
-import com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest;
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest;
-import com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest;
-import com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionsRequest;
-import com.hearlers.api.proto.v1.service.FindTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest;
-import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest;
-import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
-import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
-import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
 
 import lombok.RequiredArgsConstructor;
 
@@ -44,6 +29,11 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     @Override
     public List<PromptVersion> findPromptVersions(FindPromptVersionsRequest request) {
         return promptReader.findPromptVersions(request);
+    }
+
+    @Override
+    public PromptVersion findActiveVersion(FindActiveVersionRequest request) {
+        return promptReader.findActiveVersion(request);
     }
 
     @Override
@@ -101,7 +91,7 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     }
 
     @Override
-    public CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request) {
+    public List<CounselTechnique> updateCounselTechnique(UpdateCounselTechniqueRequest request) {
         return promptStore.updateCounselTechnique(request);
     }
 

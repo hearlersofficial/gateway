@@ -2,6 +2,8 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.service.FindActiveVersionRequest;
+import lombok.val;
 import org.mapstruct.factory.Mappers;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
@@ -80,7 +82,7 @@ public class CounselPromptController {
     
 
 
-    @Operation(summary = "현재 활성화된 프롬프트 버전 조회 (TBD)", 
+    @Operation(summary = "현재 활성화된 프롬프트 버전 조회",
                description = """
                현재 활성화된 프롬프트 버전을 조회합니다. 활성화된 버전은 수정이 불가능 합니다.
                """
@@ -91,9 +93,11 @@ public class CounselPromptController {
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/prompt-versions/active-version")
-    public ResponseEntity<ResponseDto.Success<Void>> getActiveVersion() {
-        // TODO: 활성화된 프롬프트 버전 조회
-        return ResponseDtoUtil.okResponse(null, "활성화된 프롬프트 버전 조회 성공");
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindActiveVersionResponseDto>> getActiveVersion() {
+        var findActiveVersionRequest = FindActiveVersionRequest.newBuilder().build();
+        var promptVersion = counselPromptService.findActiveVersion(findActiveVersionRequest);
+        var response = counselPromptDtoMapper.toFindActiveVersionResponseDto(promptVersion);
+        return ResponseDtoUtil.okResponse(response, "활성화된 프롬프트 버전 조회 성공");
     }
     
 
@@ -336,7 +340,7 @@ public class CounselPromptController {
             @PathVariable(name = "counsel-technique-id", required = true) String counselTechniqueId,
             @Valid @RequestBody CounselPromptDto.UpdateCounselTechniqueRequestDto request) {
         var updateCounselTechniqueRequest = counselPromptDtoMapper.toUpdateCounselTechniqueRequest(request, counselTechniqueId);
-        CounselTechnique counselTechnique = counselPromptService.updateCounselTechnique(updateCounselTechniqueRequest);
+        List<CounselTechnique> counselTechnique = counselPromptService.updateCounselTechnique(updateCounselTechniqueRequest);
         var response = counselPromptDtoMapper.toUpdateCounselTechniqueResponseDto(counselTechnique);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 업데이트 성공");

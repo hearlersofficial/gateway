@@ -323,7 +323,15 @@ public class CounselPromptDto {
         @Schema(description = "프롬프트 버전")
         private PromptVersionResponseDto promptVersion;
     }
-    
+
+    @Getter
+    @Setter
+    @Schema(description = "활성 버전 조회 응답 DTO")
+    public static class FindActiveVersionResponseDto {
+        @Schema(description = "프롬프트 버전")
+        private PromptVersionResponseDto promptVersion;
+    }
+
     @Getter
     @Setter
     @Schema(description = "임시 버전 조회 응답 DTO")
@@ -416,8 +424,8 @@ public class CounselPromptDto {
     @Setter
     @Schema(description = "상담 기법 업데이트 응답 DTO")
     public static class UpdateCounselTechniqueResponseDto {
-        @Schema(description = "상담 기법")
-        private CounselTechniqueResponseDto counselTechnique;
+        @Schema(description = "상담 기법 목록")
+        private List<CounselTechniqueResponseDto> counselTechnique;
     }
     
     @Getter

@@ -180,7 +180,10 @@ public interface CounselPromptDtoMapper {
         responseDto.setPromptVersion(of(promptVersion));
         return responseDto;
     }
-    
+
+    CounselPromptDto.FindActiveVersionResponseDto toFindActiveVersionResponseDto(PromptVersion promptVersion);
+
+
     default CounselPromptDto.FindTemporaryVersionResponseDto toFindTemporaryVersionResponseDto(PromptVersion promptVersion) {
         CounselPromptDto.FindTemporaryVersionResponseDto responseDto = new CounselPromptDto.FindTemporaryVersionResponseDto();
         responseDto.setPromptVersion(of(promptVersion));
@@ -247,9 +250,9 @@ public interface CounselPromptDtoMapper {
         return responseDto;
     }
     
-    default CounselPromptDto.UpdateCounselTechniqueResponseDto toUpdateCounselTechniqueResponseDto(CounselTechnique counselTechnique) {
+    default CounselPromptDto.UpdateCounselTechniqueResponseDto toUpdateCounselTechniqueResponseDto(List<CounselTechnique> counselTechniques) {
         CounselPromptDto.UpdateCounselTechniqueResponseDto responseDto = new CounselPromptDto.UpdateCounselTechniqueResponseDto();
-        responseDto.setCounselTechnique(of(counselTechnique));
+        responseDto.setCounselTechnique(counselTechniques.stream().map(this::of).collect(Collectors.toList()));
         return responseDto;
     }
     

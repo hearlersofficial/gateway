@@ -2,6 +2,7 @@ package com.hearlers.gateway.infrastructure.prompt;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.service.*;
 import org.springframework.stereotype.Component;
 
 import com.hearlers.api.proto.v1.model.CounselTechnique;
@@ -10,15 +11,6 @@ import com.hearlers.api.proto.v1.model.PromptActivateHistory;
 import com.hearlers.api.proto.v1.model.PromptVersion;
 import com.hearlers.api.proto.v1.model.TonePrompt;
 import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub;
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest;
-import com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest;
-import com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionsRequest;
-import com.hearlers.api.proto.v1.service.FindTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest;
-import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest;
 import com.hearlers.gateway.application.prompt.PromptReader;
 
 import lombok.RequiredArgsConstructor;
@@ -58,6 +50,11 @@ public class GrpcPromptReader implements PromptReader {
     @Override
     public List<PromptVersion> findPromptVersions(FindPromptVersionsRequest request) {
         return counselPromptServiceBlockingStub.findPromptVersions(request).getPromptVersionsList();
+    }
+
+    @Override
+    public PromptVersion findActiveVersion(FindActiveVersionRequest request) {
+        return counselPromptServiceBlockingStub.findActiveVersion(request).getPromptVersion();
     }
     
     @Override
