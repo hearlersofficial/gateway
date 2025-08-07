@@ -3,6 +3,7 @@ package com.hearlers.gateway.config.security;
 import com.hearlers.gateway.config.JwtProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -28,6 +29,7 @@ public class SecurityConfig {
         httpSecurity
                 .httpBasic(HttpBasicConfigurer::disable) // HTTP 기본 인증 비활성화
                 .csrf(CsrfConfigurer::disable) // CSRF 보호 비활성화
+                .cors(Customizer.withDefaults()) // CORS 설정 추가
                 .formLogin(AbstractHttpConfigurer::disable); // 폼 로그인 비활성화
 
         // 경로별 권한 설정
