@@ -70,77 +70,76 @@ public final class CounselPrompt {
   static {
     java.lang.String[] descriptorData = {
       "\n*com/hearlers/v1/model/counsel_prompt.p" +
-      "roto\022\025com.hearlers.v1.model\032\036google/prot" +
-      "obuf/wrappers.proto\"\252\004\n\rPromptVersion\022\016\n" +
-      "\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013des" +
-      "cription\030\003 \001(\tR\013description\022\033\n\tis_active" +
-      "\030\004 \001(\010R\010isActive\022!\n\014is_temporary\030\005 \001(\010R\013" +
-      "isTemporary\022#\n\ris_bookmarked\030\006 \001(\010R\014isBo" +
-      "okmarked\022<\n\tgpt_model\030\007 \001(\0162\037.com.hearle" +
-      "rs.v1.model.GPTModelR\010gptModel\022f\n\030counse" +
-      "lor_scoped_prompts\030\010 \003(\0132,.com.hearlers." +
-      "v1.model.CounselorScopedPromptR\026counselo" +
-      "rScopedPrompts\022W\n\023tone_scoped_prompts\030\t " +
-      "\003(\0132\'.com.hearlers.v1.model.ToneScopedPr" +
-      "omptR\021toneScopedPrompts\022\035\n\ncreated_at\030\n " +
-      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR\tupda" +
-      "tedAt\022\"\n\ndeleted_at\030\014 \001(\tH\000R\tdeletedAt\210\001" +
-      "\001B\r\n\013_deleted_at\"\327\001\n\025CounselorScopedProm" +
-      "pt\022!\n\014counselor_id\030\001 \001(\tR\013counselorId\022*\n" +
-      "\021persona_prompt_id\030\002 \001(\tR\017personaPromptI" +
-      "d\022\035\n\ncreated_at\030\003 \001(\tR\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\004 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\005 " +
-      "\001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\273\002\n\020T" +
-      "oneScopedPrompt\022\027\n\007tone_id\030\001 \001(\tR\006toneId" +
-      "\022)\n\016tone_prompt_id\030\002 \001(\tH\000R\014tonePromptId" +
-      "\210\001\001\022@\n\032first_counsel_technique_id\030\003 \001(\tH" +
-      "\001R\027firstCounselTechniqueId\210\001\001\022\035\n\ncreated" +
-      "_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\005 \001(\t" +
-      "R\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\tH\002R\tdelet" +
-      "edAt\210\001\001B\021\n\017_tone_prompt_idB\035\n\033_first_cou" +
-      "nsel_technique_idB\r\n\013_deleted_at\"\307\001\n\rPer" +
-      "sonaPrompt\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002 \001(\t" +
-      "R\004body\022!\n\014counselor_id\030\003 \001(\tR\013counselorI" +
-      "d\022\035\n\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 " +
-      "\001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\272\001\n\nT" +
-      "onePrompt\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002 \001(\tR" +
-      "\004body\022\027\n\007tone_id\030\003 \001(\tR\006toneId\022\035\n\ncreate" +
-      "d_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\005 \001(" +
-      "\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\tH\000R\tdele" +
-      "tedAt\210\001\001B\r\n\013_deleted_at\"\252\003\n\020CounselTechn" +
-      "ique\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name" +
-      "\022\027\n\007tone_id\030\003 \001(\tR\006toneId\022\030\n\007context\030\004 \001" +
-      "(\tR\007context\022 \n\013instruction\030\005 \001(\tR\013instru" +
-      "ction\022+\n\021message_threshold\030\006 \001(\005R\020messag" +
-      "eThreshold\022!\n\014is_temporary\030\007 \001(\010R\013isTemp" +
-      "orary\022>\n\031next_counsel_technique_id\030\010 \001(\t" +
-      "H\000R\026nextCounselTechniqueId\210\001\001\022\035\n\ncreated" +
-      "_at\030\t \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\n \001(\t" +
-      "R\tupdatedAt\022\"\n\ndeleted_at\030\013 \001(\tH\001R\tdelet" +
-      "edAt\210\001\001B\034\n\032_next_counsel_technique_idB\r\n" +
-      "\013_deleted_at\"\347\001\n\025PromptActivateHistory\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022*\n\021prompt_version_id\030\002 \001(" +
-      "\tR\017promptVersionId\022!\n\014activated_at\030\003 \001(\t" +
-      "R\013activatedAt\022\035\n\ncreated_at\030\004 \001(\tR\tcreat" +
-      "edAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\nd" +
-      "eleted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_dele" +
-      "ted_at*N\n\010GPTModel\022\030\n\024GPTMODEL_UNSPECIFI" +
-      "ED\020\000\022\021\n\rGPT_3_5_TURBO\020\001\022\t\n\005GPT_4\020\002\022\n\n\006GP" +
-      "T_4O\020\003B#\n\037com.hearlers.api.proto.v1.mode" +
-      "lP\001b\006proto3"
+      "roto\022\025com.hearlers.v1.model\"\247\004\n\rPromptVe" +
+      "rsion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022 \n\013description\030\003 \001(\tR\013description\022\033\n\ti" +
+      "s_active\030\004 \001(\010R\010isActive\022!\n\014is_temporary" +
+      "\030\005 \001(\010R\013isTemporary\022#\n\ris_bookmarked\030\006 \001" +
+      "(\010R\014isBookmarked\0229\n\010ai_model\030\007 \001(\0162\036.com" +
+      ".hearlers.v1.model.AiModelR\007aiModel\022f\n\030c" +
+      "ounselor_scoped_prompts\030\010 \003(\0132,.com.hear" +
+      "lers.v1.model.CounselorScopedPromptR\026cou" +
+      "nselorScopedPrompts\022W\n\023tone_scoped_promp" +
+      "ts\030\t \003(\0132\'.com.hearlers.v1.model.ToneSco" +
+      "pedPromptR\021toneScopedPrompts\022\035\n\ncreated_" +
+      "at\030\n \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR" +
+      "\tupdatedAt\022\"\n\ndeleted_at\030\014 \001(\tH\000R\tdelete" +
+      "dAt\210\001\001B\r\n\013_deleted_at\"\327\001\n\025CounselorScope" +
+      "dPrompt\022!\n\014counselor_id\030\001 \001(\tR\013counselor" +
+      "Id\022*\n\021persona_prompt_id\030\002 \001(\tR\017personaPr" +
+      "omptId\022\035\n\ncreated_at\030\003 \001(\tR\tcreatedAt\022\035\n" +
+      "\nupdated_at\030\004 \001(\tR\tupdatedAt\022\"\n\ndeleted_" +
+      "at\030\005 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"" +
+      "\273\002\n\020ToneScopedPrompt\022\027\n\007tone_id\030\001 \001(\tR\006t" +
+      "oneId\022)\n\016tone_prompt_id\030\002 \001(\tH\000R\014tonePro" +
+      "mptId\210\001\001\022@\n\032first_counsel_technique_id\030\003" +
+      " \001(\tH\001R\027firstCounselTechniqueId\210\001\001\022\035\n\ncr" +
+      "eated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030" +
+      "\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\tH\002R\t" +
+      "deletedAt\210\001\001B\021\n\017_tone_prompt_idB\035\n\033_firs" +
+      "t_counsel_technique_idB\r\n\013_deleted_at\"\307\001" +
+      "\n\rPersonaPrompt\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030" +
+      "\002 \001(\tR\004body\022!\n\014counselor_id\030\003 \001(\tR\013couns" +
+      "elorId\022\035\n\ncreated_at\030\004 \001(\tR\tcreatedAt\022\035\n" +
+      "\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_" +
+      "at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_at\"" +
+      "\272\001\n\nTonePrompt\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004body\030\002" +
+      " \001(\tR\004body\022\027\n\007tone_id\030\003 \001(\tR\006toneId\022\035\n\nc" +
+      "reated_at\030\004 \001(\tR\tcreatedAt\022\035\n\nupdated_at" +
+      "\030\005 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030\006 \001(\tH\000R" +
+      "\tdeletedAt\210\001\001B\r\n\013_deleted_at\"\314\003\n\020Counsel" +
+      "Technique\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR" +
+      "\004name\022\027\n\007tone_id\030\003 \001(\tR\006toneId\022\030\n\007contex" +
+      "t\030\004 \001(\tR\007context\022 \n\013instruction\030\005 \001(\tR\013i" +
+      "nstruction\022+\n\021message_threshold\030\006 \001(\005R\020m" +
+      "essageThreshold\022!\n\014is_temporary\030\007 \001(\010R\013i" +
+      "sTemporary\022>\n\031next_counsel_technique_id\030" +
+      "\010 \001(\tH\000R\026nextCounselTechniqueId\210\001\001\022 \n\013te" +
+      "mperature\030\t \001(\002R\013temperature\022\035\n\ncreated_" +
+      "at\030\n \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR" +
+      "\tupdatedAt\022\"\n\ndeleted_at\030\014 \001(\tH\001R\tdelete" +
+      "dAt\210\001\001B\034\n\032_next_counsel_technique_idB\r\n\013" +
+      "_deleted_at\"\347\001\n\025PromptActivateHistory\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022*\n\021prompt_version_id\030\002 \001(\t" +
+      "R\017promptVersionId\022!\n\014activated_at\030\003 \001(\tR" +
+      "\013activatedAt\022\035\n\ncreated_at\030\004 \001(\tR\tcreate" +
+      "dAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\nde" +
+      "leted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delet" +
+      "ed_at*^\n\007AiModel\022\030\n\024AI_MODEL_UNSPECIFIED" +
+      "\020\000\022\021\n\rGPT_3_5_TURBO\020\001\022\t\n\005GPT_4\020\002\022\n\n\006GPT_" +
+      "4O\020\003\022\017\n\013GPT_4O_MINI\020\004B#\n\037com.hearlers.ap" +
+      "i.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.WrappersProto.getDescriptor(),
         });
     internal_static_com_hearlers_v1_model_PromptVersion_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_hearlers_v1_model_PromptVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_PromptVersion_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "IsActive", "IsTemporary", "IsBookmarked", "GptModel", "CounselorScopedPrompts", "ToneScopedPrompts", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Name", "Description", "IsActive", "IsTemporary", "IsBookmarked", "AiModel", "CounselorScopedPrompts", "ToneScopedPrompts", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_CounselorScopedPrompt_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_hearlers_v1_model_CounselorScopedPrompt_fieldAccessorTable = new
@@ -170,7 +169,7 @@ public final class CounselPrompt {
     internal_static_com_hearlers_v1_model_CounselTechnique_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_CounselTechnique_descriptor,
-        new java.lang.String[] { "Id", "Name", "ToneId", "Context", "Instruction", "MessageThreshold", "IsTemporary", "NextCounselTechniqueId", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Name", "ToneId", "Context", "Instruction", "MessageThreshold", "IsTemporary", "NextCounselTechniqueId", "Temperature", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_com_hearlers_v1_model_PromptActivateHistory_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_hearlers_v1_model_PromptActivateHistory_fieldAccessorTable = new
@@ -178,7 +177,6 @@ public final class CounselPrompt {
         internal_static_com_hearlers_v1_model_PromptActivateHistory_descriptor,
         new java.lang.String[] { "Id", "PromptVersionId", "ActivatedAt", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
-    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

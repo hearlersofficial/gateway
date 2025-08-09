@@ -99,11 +99,17 @@ public interface CounselTechniqueOrBuilder extends
       getNextCounselTechniqueIdBytes();
 
   /**
+   * <code>float temperature = 9 [json_name = "temperature"];</code>
+   * @return The temperature.
+   */
+  float getTemperature();
+
+  /**
    * <pre>
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 9 [json_name = "createdAt"];</code>
+   * <code>string created_at = 10 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -112,7 +118,7 @@ public interface CounselTechniqueOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 9 [json_name = "createdAt"];</code>
+   * <code>string created_at = 10 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -123,7 +129,7 @@ public interface CounselTechniqueOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
@@ -132,7 +138,7 @@ public interface CounselTechniqueOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
@@ -143,7 +149,7 @@ public interface CounselTechniqueOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
@@ -152,7 +158,7 @@ public interface CounselTechniqueOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -161,7 +167,7 @@ public interface CounselTechniqueOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 11 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

@@ -6,15 +6,19 @@
 package com.hearlers.api.proto.v1.model;
 
 /**
- * Protobuf enum {@code com.hearlers.v1.model.GPTModel}
+ * Protobuf enum {@code com.hearlers.v1.model.AiModel}
  */
-public enum GPTModel
+public enum AiModel
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>GPTMODEL_UNSPECIFIED = 0;</code>
+   * <code>AI_MODEL_UNSPECIFIED = 0;</code>
    */
-  GPTMODEL_UNSPECIFIED(0),
+  AI_MODEL_UNSPECIFIED(0),
   /**
+   * <pre>
+   * OpenAI
+   * </pre>
+   *
    * <code>GPT_3_5_TURBO = 1;</code>
    */
   GPT_3_5_TURBO(1),
@@ -26,6 +30,10 @@ public enum GPTModel
    * <code>GPT_4O = 3;</code>
    */
   GPT_4O(3),
+  /**
+   * <code>GPT_4O_MINI = 4;</code>
+   */
+  GPT_4O_MINI(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -36,13 +44,17 @@ public enum GPTModel
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      GPTModel.class.getName());
+      AiModel.class.getName());
   }
   /**
-   * <code>GPTMODEL_UNSPECIFIED = 0;</code>
+   * <code>AI_MODEL_UNSPECIFIED = 0;</code>
    */
-  public static final int GPTMODEL_UNSPECIFIED_VALUE = 0;
+  public static final int AI_MODEL_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * OpenAI
+   * </pre>
+   *
    * <code>GPT_3_5_TURBO = 1;</code>
    */
   public static final int GPT_3_5_TURBO_VALUE = 1;
@@ -54,6 +66,10 @@ public enum GPTModel
    * <code>GPT_4O = 3;</code>
    */
   public static final int GPT_4O_VALUE = 3;
+  /**
+   * <code>GPT_4O_MINI = 4;</code>
+   */
+  public static final int GPT_4O_MINI_VALUE = 4;
 
 
   public final int getNumber() {
@@ -70,7 +86,7 @@ public enum GPTModel
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static GPTModel valueOf(int value) {
+  public static AiModel valueOf(int value) {
     return forNumber(value);
   }
 
@@ -78,25 +94,26 @@ public enum GPTModel
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static GPTModel forNumber(int value) {
+  public static AiModel forNumber(int value) {
     switch (value) {
-      case 0: return GPTMODEL_UNSPECIFIED;
+      case 0: return AI_MODEL_UNSPECIFIED;
       case 1: return GPT_3_5_TURBO;
       case 2: return GPT_4;
       case 3: return GPT_4O;
+      case 4: return GPT_4O_MINI;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<GPTModel>
+  public static com.google.protobuf.Internal.EnumLiteMap<AiModel>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      GPTModel> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<GPTModel>() {
-          public GPTModel findValueByNumber(int number) {
-            return GPTModel.forNumber(number);
+      AiModel> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AiModel>() {
+          public AiModel findValueByNumber(int number) {
+            return AiModel.forNumber(number);
           }
         };
 
@@ -117,9 +134,9 @@ public enum GPTModel
     return com.hearlers.api.proto.v1.model.CounselPrompt.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final GPTModel[] VALUES = values();
+  private static final AiModel[] VALUES = values();
 
-  public static GPTModel valueOf(
+  public static AiModel valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -133,10 +150,10 @@ public enum GPTModel
 
   private final int value;
 
-  private GPTModel(int value) {
+  private AiModel(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:com.hearlers.v1.model.GPTModel)
+  // @@protoc_insertion_point(enum_scope:com.hearlers.v1.model.AiModel)
 }
 

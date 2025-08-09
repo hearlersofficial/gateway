@@ -5,7 +5,7 @@
 
 package com.hearlers.api.proto.v1.service;
 
-public interface FindGptModelRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.hearlers.v1.service.FindGptModelRequest)
+public interface FindAiModelRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:com.hearlers.v1.service.FindAiModelRequest)
     com.google.protobuf.MessageOrBuilder {
 }

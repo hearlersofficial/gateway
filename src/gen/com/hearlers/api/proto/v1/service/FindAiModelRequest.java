@@ -10,12 +10,12 @@ package com.hearlers.api.proto.v1.service;
  * GPT Model
  * </pre>
  *
- * Protobuf type {@code com.hearlers.v1.service.FindGptModelRequest}
+ * Protobuf type {@code com.hearlers.v1.service.FindAiModelRequest}
  */
-public final class FindGptModelRequest extends
+public final class FindAiModelRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.FindGptModelRequest)
-    FindGptModelRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.FindAiModelRequest)
+    FindAiModelRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -24,26 +24,26 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      FindGptModelRequest.class.getName());
+      FindAiModelRequest.class.getName());
   }
-  // Use FindGptModelRequest.newBuilder() to construct.
-  private FindGptModelRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use FindAiModelRequest.newBuilder() to construct.
+  private FindAiModelRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private FindGptModelRequest() {
+  private FindAiModelRequest() {
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindGptModelRequest_descriptor;
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindAiModelRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindGptModelRequest_fieldAccessorTable
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindAiModelRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hearlers.api.proto.v1.service.FindGptModelRequest.class, com.hearlers.api.proto.v1.service.FindGptModelRequest.Builder.class);
+            com.hearlers.api.proto.v1.service.FindAiModelRequest.class, com.hearlers.api.proto.v1.service.FindAiModelRequest.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -79,10 +79,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hearlers.api.proto.v1.service.FindGptModelRequest)) {
+    if (!(obj instanceof com.hearlers.api.proto.v1.service.FindAiModelRequest)) {
       return super.equals(obj);
     }
-    com.hearlers.api.proto.v1.service.FindGptModelRequest other = (com.hearlers.api.proto.v1.service.FindGptModelRequest) obj;
+    com.hearlers.api.proto.v1.service.FindAiModelRequest other = (com.hearlers.api.proto.v1.service.FindAiModelRequest) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -100,44 +100,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(byte[] data)
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -145,26 +145,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseDelimitedFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hearlers.api.proto.v1.service.FindGptModelRequest prototype) {
+  public static Builder newBuilder(com.hearlers.api.proto.v1.service.FindAiModelRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -197,26 +197,26 @@ private static final long serialVersionUID = 0L;
    * GPT Model
    * </pre>
    *
-   * Protobuf type {@code com.hearlers.v1.service.FindGptModelRequest}
+   * Protobuf type {@code com.hearlers.v1.service.FindAiModelRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.FindGptModelRequest)
-      com.hearlers.api.proto.v1.service.FindGptModelRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.FindAiModelRequest)
+      com.hearlers.api.proto.v1.service.FindAiModelRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindGptModelRequest_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindAiModelRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindGptModelRequest_fieldAccessorTable
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindAiModelRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hearlers.api.proto.v1.service.FindGptModelRequest.class, com.hearlers.api.proto.v1.service.FindGptModelRequest.Builder.class);
+              com.hearlers.api.proto.v1.service.FindAiModelRequest.class, com.hearlers.api.proto.v1.service.FindAiModelRequest.Builder.class);
     }
 
-    // Construct using com.hearlers.api.proto.v1.service.FindGptModelRequest.newBuilder()
+    // Construct using com.hearlers.api.proto.v1.service.FindAiModelRequest.newBuilder()
     private Builder() {
 
     }
@@ -235,17 +235,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindGptModelRequest_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindAiModelRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindGptModelRequest getDefaultInstanceForType() {
-      return com.hearlers.api.proto.v1.service.FindGptModelRequest.getDefaultInstance();
+    public com.hearlers.api.proto.v1.service.FindAiModelRequest getDefaultInstanceForType() {
+      return com.hearlers.api.proto.v1.service.FindAiModelRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindGptModelRequest build() {
-      com.hearlers.api.proto.v1.service.FindGptModelRequest result = buildPartial();
+    public com.hearlers.api.proto.v1.service.FindAiModelRequest build() {
+      com.hearlers.api.proto.v1.service.FindAiModelRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -253,24 +253,24 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindGptModelRequest buildPartial() {
-      com.hearlers.api.proto.v1.service.FindGptModelRequest result = new com.hearlers.api.proto.v1.service.FindGptModelRequest(this);
+    public com.hearlers.api.proto.v1.service.FindAiModelRequest buildPartial() {
+      com.hearlers.api.proto.v1.service.FindAiModelRequest result = new com.hearlers.api.proto.v1.service.FindAiModelRequest(this);
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hearlers.api.proto.v1.service.FindGptModelRequest) {
-        return mergeFrom((com.hearlers.api.proto.v1.service.FindGptModelRequest)other);
+      if (other instanceof com.hearlers.api.proto.v1.service.FindAiModelRequest) {
+        return mergeFrom((com.hearlers.api.proto.v1.service.FindAiModelRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindGptModelRequest other) {
-      if (other == com.hearlers.api.proto.v1.service.FindGptModelRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindAiModelRequest other) {
+      if (other == com.hearlers.api.proto.v1.service.FindAiModelRequest.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -313,23 +313,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.FindGptModelRequest)
+    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.FindAiModelRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.FindGptModelRequest)
-  private static final com.hearlers.api.proto.v1.service.FindGptModelRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.FindAiModelRequest)
+  private static final com.hearlers.api.proto.v1.service.FindAiModelRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.FindGptModelRequest();
+    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.FindAiModelRequest();
   }
 
-  public static com.hearlers.api.proto.v1.service.FindGptModelRequest getDefaultInstance() {
+  public static com.hearlers.api.proto.v1.service.FindAiModelRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FindGptModelRequest>
-      PARSER = new com.google.protobuf.AbstractParser<FindGptModelRequest>() {
+  private static final com.google.protobuf.Parser<FindAiModelRequest>
+      PARSER = new com.google.protobuf.AbstractParser<FindAiModelRequest>() {
     @java.lang.Override
-    public FindGptModelRequest parsePartialFrom(
+    public FindAiModelRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -348,17 +348,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<FindGptModelRequest> parser() {
+  public static com.google.protobuf.Parser<FindAiModelRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FindGptModelRequest> getParserForType() {
+  public com.google.protobuf.Parser<FindAiModelRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hearlers.api.proto.v1.service.FindGptModelRequest getDefaultInstanceForType() {
+  public com.hearlers.api.proto.v1.service.FindAiModelRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

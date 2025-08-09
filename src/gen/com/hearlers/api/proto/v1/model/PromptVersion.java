@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     description_ = "";
-    gptModel_ = 0;
+    aiModel_ = 0;
     counselorScopedPrompts_ = java.util.Collections.emptyList();
     toneScopedPrompts_ = java.util.Collections.emptyList();
     createdAt_ = "";
@@ -202,22 +202,22 @@ private static final long serialVersionUID = 0L;
     return isBookmarked_;
   }
 
-  public static final int GPT_MODEL_FIELD_NUMBER = 7;
-  private int gptModel_ = 0;
+  public static final int AI_MODEL_FIELD_NUMBER = 7;
+  private int aiModel_ = 0;
   /**
-   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
-   * @return The enum numeric value on the wire for gptModel.
+   * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
+   * @return The enum numeric value on the wire for aiModel.
    */
-  @java.lang.Override public int getGptModelValue() {
-    return gptModel_;
+  @java.lang.Override public int getAiModelValue() {
+    return aiModel_;
   }
   /**
-   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
-   * @return The gptModel.
+   * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
+   * @return The aiModel.
    */
-  @java.lang.Override public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
-    com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
-    return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+  @java.lang.Override public com.hearlers.api.proto.v1.model.AiModel getAiModel() {
+    com.hearlers.api.proto.v1.model.AiModel result = com.hearlers.api.proto.v1.model.AiModel.forNumber(aiModel_);
+    return result == null ? com.hearlers.api.proto.v1.model.AiModel.UNRECOGNIZED : result;
   }
 
   public static final int COUNSELOR_SCOPED_PROMPTS_FIELD_NUMBER = 8;
@@ -487,8 +487,8 @@ private static final long serialVersionUID = 0L;
     if (isBookmarked_ != false) {
       output.writeBool(6, isBookmarked_);
     }
-    if (gptModel_ != com.hearlers.api.proto.v1.model.GPTModel.GPTMODEL_UNSPECIFIED.getNumber()) {
-      output.writeEnum(7, gptModel_);
+    if (aiModel_ != com.hearlers.api.proto.v1.model.AiModel.AI_MODEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, aiModel_);
     }
     for (int i = 0; i < counselorScopedPrompts_.size(); i++) {
       output.writeMessage(8, counselorScopedPrompts_.get(i));
@@ -535,9 +535,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, isBookmarked_);
     }
-    if (gptModel_ != com.hearlers.api.proto.v1.model.GPTModel.GPTMODEL_UNSPECIFIED.getNumber()) {
+    if (aiModel_ != com.hearlers.api.proto.v1.model.AiModel.AI_MODEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(7, gptModel_);
+        .computeEnumSize(7, aiModel_);
     }
     for (int i = 0; i < counselorScopedPrompts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -583,7 +583,7 @@ private static final long serialVersionUID = 0L;
         != other.getIsTemporary()) return false;
     if (getIsBookmarked()
         != other.getIsBookmarked()) return false;
-    if (gptModel_ != other.gptModel_) return false;
+    if (aiModel_ != other.aiModel_) return false;
     if (!getCounselorScopedPromptsList()
         .equals(other.getCounselorScopedPromptsList())) return false;
     if (!getToneScopedPromptsList()
@@ -623,8 +623,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_BOOKMARKED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsBookmarked());
-    hash = (37 * hash) + GPT_MODEL_FIELD_NUMBER;
-    hash = (53 * hash) + gptModel_;
+    hash = (37 * hash) + AI_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + aiModel_;
     if (getCounselorScopedPromptsCount() > 0) {
       hash = (37 * hash) + COUNSELOR_SCOPED_PROMPTS_FIELD_NUMBER;
       hash = (53 * hash) + getCounselorScopedPromptsList().hashCode();
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
       isActive_ = false;
       isTemporary_ = false;
       isBookmarked_ = false;
-      gptModel_ = 0;
+      aiModel_ = 0;
       if (counselorScopedPromptsBuilder_ == null) {
         counselorScopedPrompts_ = java.util.Collections.emptyList();
       } else {
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
         result.isBookmarked_ = isBookmarked_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.gptModel_ = gptModel_;
+        result.aiModel_ = aiModel_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createdAt_ = createdAt_;
@@ -922,8 +922,8 @@ private static final long serialVersionUID = 0L;
       if (other.getIsBookmarked() != false) {
         setIsBookmarked(other.getIsBookmarked());
       }
-      if (other.gptModel_ != 0) {
-        setGptModelValue(other.getGptModelValue());
+      if (other.aiModel_ != 0) {
+        setAiModelValue(other.getAiModelValue());
       }
       if (counselorScopedPromptsBuilder_ == null) {
         if (!other.counselorScopedPrompts_.isEmpty()) {
@@ -1049,7 +1049,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 48
             case 56: {
-              gptModel_ = input.readEnum();
+              aiModel_ = input.readEnum();
               bitField0_ |= 0x00000040;
               break;
             } // case 56
@@ -1423,55 +1423,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int gptModel_ = 0;
+    private int aiModel_ = 0;
     /**
-     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
-     * @return The enum numeric value on the wire for gptModel.
+     * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
+     * @return The enum numeric value on the wire for aiModel.
      */
-    @java.lang.Override public int getGptModelValue() {
-      return gptModel_;
+    @java.lang.Override public int getAiModelValue() {
+      return aiModel_;
     }
     /**
-     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
-     * @param value The enum numeric value on the wire for gptModel to set.
+     * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
+     * @param value The enum numeric value on the wire for aiModel to set.
      * @return This builder for chaining.
      */
-    public Builder setGptModelValue(int value) {
-      gptModel_ = value;
+    public Builder setAiModelValue(int value) {
+      aiModel_ = value;
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
-     * @return The gptModel.
+     * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
+     * @return The aiModel.
      */
     @java.lang.Override
-    public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
-      com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
-      return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+    public com.hearlers.api.proto.v1.model.AiModel getAiModel() {
+      com.hearlers.api.proto.v1.model.AiModel result = com.hearlers.api.proto.v1.model.AiModel.forNumber(aiModel_);
+      return result == null ? com.hearlers.api.proto.v1.model.AiModel.UNRECOGNIZED : result;
     }
     /**
-     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
-     * @param value The gptModel to set.
+     * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
+     * @param value The aiModel to set.
      * @return This builder for chaining.
      */
-    public Builder setGptModel(com.hearlers.api.proto.v1.model.GPTModel value) {
+    public Builder setAiModel(com.hearlers.api.proto.v1.model.AiModel value) {
       if (value == null) {
         throw new NullPointerException();
       }
       bitField0_ |= 0x00000040;
-      gptModel_ = value.getNumber();
+      aiModel_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.com.hearlers.v1.model.GPTModel gpt_model = 7 [json_name = "gptModel"];</code>
+     * <code>.com.hearlers.v1.model.AiModel ai_model = 7 [json_name = "aiModel"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearGptModel() {
+    public Builder clearAiModel() {
       bitField0_ = (bitField0_ & ~0x00000040);
-      gptModel_ = 0;
+      aiModel_ = 0;
       onChanged();
       return this;
     }

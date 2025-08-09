@@ -82,4 +82,15 @@ public interface UpdateCounselTechniqueRequestOrBuilder extends
    * @return The messageThreshold.
    */
   int getMessageThreshold();
+
+  /**
+   * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+   * @return Whether the temperature field is set.
+   */
+  boolean hasTemperature();
+  /**
+   * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+   * @return The temperature.
+   */
+  float getTemperature();
 }

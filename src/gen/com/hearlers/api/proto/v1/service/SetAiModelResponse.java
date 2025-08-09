@@ -6,12 +6,12 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
- * Protobuf type {@code com.hearlers.v1.service.SetGptModelResponse}
+ * Protobuf type {@code com.hearlers.v1.service.SetAiModelResponse}
  */
-public final class SetGptModelResponse extends
+public final class SetAiModelResponse extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.SetGptModelResponse)
-    SetGptModelResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.SetAiModelResponse)
+    SetAiModelResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,53 +20,53 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      SetGptModelResponse.class.getName());
+      SetAiModelResponse.class.getName());
   }
-  // Use SetGptModelResponse.newBuilder() to construct.
-  private SetGptModelResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use SetAiModelResponse.newBuilder() to construct.
+  private SetAiModelResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private SetGptModelResponse() {
-    gptModel_ = 0;
+  private SetAiModelResponse() {
+    aiModel_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetGptModelResponse_descriptor;
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetAiModelResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetGptModelResponse_fieldAccessorTable
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetAiModelResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hearlers.api.proto.v1.service.SetGptModelResponse.class, com.hearlers.api.proto.v1.service.SetGptModelResponse.Builder.class);
+            com.hearlers.api.proto.v1.service.SetAiModelResponse.class, com.hearlers.api.proto.v1.service.SetAiModelResponse.Builder.class);
   }
 
   private int bitField0_;
-  public static final int GPT_MODEL_FIELD_NUMBER = 1;
-  private int gptModel_ = 0;
+  public static final int AI_MODEL_FIELD_NUMBER = 1;
+  private int aiModel_ = 0;
   /**
-   * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-   * @return Whether the gptModel field is set.
+   * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+   * @return Whether the aiModel field is set.
    */
-  @java.lang.Override public boolean hasGptModel() {
+  @java.lang.Override public boolean hasAiModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-   * @return The enum numeric value on the wire for gptModel.
+   * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+   * @return The enum numeric value on the wire for aiModel.
    */
-  @java.lang.Override public int getGptModelValue() {
-    return gptModel_;
+  @java.lang.Override public int getAiModelValue() {
+    return aiModel_;
   }
   /**
-   * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-   * @return The gptModel.
+   * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+   * @return The aiModel.
    */
-  @java.lang.Override public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
-    com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
-    return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+  @java.lang.Override public com.hearlers.api.proto.v1.model.AiModel getAiModel() {
+    com.hearlers.api.proto.v1.model.AiModel result = com.hearlers.api.proto.v1.model.AiModel.forNumber(aiModel_);
+    return result == null ? com.hearlers.api.proto.v1.model.AiModel.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -84,7 +84,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, gptModel_);
+      output.writeEnum(1, aiModel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -97,7 +97,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, gptModel_);
+        .computeEnumSize(1, aiModel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -109,14 +109,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hearlers.api.proto.v1.service.SetGptModelResponse)) {
+    if (!(obj instanceof com.hearlers.api.proto.v1.service.SetAiModelResponse)) {
       return super.equals(obj);
     }
-    com.hearlers.api.proto.v1.service.SetGptModelResponse other = (com.hearlers.api.proto.v1.service.SetGptModelResponse) obj;
+    com.hearlers.api.proto.v1.service.SetAiModelResponse other = (com.hearlers.api.proto.v1.service.SetAiModelResponse) obj;
 
-    if (hasGptModel() != other.hasGptModel()) return false;
-    if (hasGptModel()) {
-      if (gptModel_ != other.gptModel_) return false;
+    if (hasAiModel() != other.hasAiModel()) return false;
+    if (hasAiModel()) {
+      if (aiModel_ != other.aiModel_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -129,53 +129,53 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasGptModel()) {
-      hash = (37 * hash) + GPT_MODEL_FIELD_NUMBER;
-      hash = (53 * hash) + gptModel_;
+    if (hasAiModel()) {
+      hash = (37 * hash) + AI_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + aiModel_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(byte[] data)
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -183,26 +183,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseDelimitedFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse parseFrom(
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -215,7 +215,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hearlers.api.proto.v1.service.SetGptModelResponse prototype) {
+  public static Builder newBuilder(com.hearlers.api.proto.v1.service.SetAiModelResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -231,26 +231,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.hearlers.v1.service.SetGptModelResponse}
+   * Protobuf type {@code com.hearlers.v1.service.SetAiModelResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.SetGptModelResponse)
-      com.hearlers.api.proto.v1.service.SetGptModelResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.SetAiModelResponse)
+      com.hearlers.api.proto.v1.service.SetAiModelResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetGptModelResponse_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetAiModelResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetGptModelResponse_fieldAccessorTable
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetAiModelResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hearlers.api.proto.v1.service.SetGptModelResponse.class, com.hearlers.api.proto.v1.service.SetGptModelResponse.Builder.class);
+              com.hearlers.api.proto.v1.service.SetAiModelResponse.class, com.hearlers.api.proto.v1.service.SetAiModelResponse.Builder.class);
     }
 
-    // Construct using com.hearlers.api.proto.v1.service.SetGptModelResponse.newBuilder()
+    // Construct using com.hearlers.api.proto.v1.service.SetAiModelResponse.newBuilder()
     private Builder() {
 
     }
@@ -264,24 +264,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      gptModel_ = 0;
+      aiModel_ = 0;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetGptModelResponse_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_SetAiModelResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.SetGptModelResponse getDefaultInstanceForType() {
-      return com.hearlers.api.proto.v1.service.SetGptModelResponse.getDefaultInstance();
+    public com.hearlers.api.proto.v1.service.SetAiModelResponse getDefaultInstanceForType() {
+      return com.hearlers.api.proto.v1.service.SetAiModelResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.SetGptModelResponse build() {
-      com.hearlers.api.proto.v1.service.SetGptModelResponse result = buildPartial();
+    public com.hearlers.api.proto.v1.service.SetAiModelResponse build() {
+      com.hearlers.api.proto.v1.service.SetAiModelResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -289,18 +289,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.SetGptModelResponse buildPartial() {
-      com.hearlers.api.proto.v1.service.SetGptModelResponse result = new com.hearlers.api.proto.v1.service.SetGptModelResponse(this);
+    public com.hearlers.api.proto.v1.service.SetAiModelResponse buildPartial() {
+      com.hearlers.api.proto.v1.service.SetAiModelResponse result = new com.hearlers.api.proto.v1.service.SetAiModelResponse(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.hearlers.api.proto.v1.service.SetGptModelResponse result) {
+    private void buildPartial0(com.hearlers.api.proto.v1.service.SetAiModelResponse result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.gptModel_ = gptModel_;
+        result.aiModel_ = aiModel_;
         to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
@@ -308,18 +308,18 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hearlers.api.proto.v1.service.SetGptModelResponse) {
-        return mergeFrom((com.hearlers.api.proto.v1.service.SetGptModelResponse)other);
+      if (other instanceof com.hearlers.api.proto.v1.service.SetAiModelResponse) {
+        return mergeFrom((com.hearlers.api.proto.v1.service.SetAiModelResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hearlers.api.proto.v1.service.SetGptModelResponse other) {
-      if (other == com.hearlers.api.proto.v1.service.SetGptModelResponse.getDefaultInstance()) return this;
-      if (other.hasGptModel()) {
-        setGptModel(other.getGptModel());
+    public Builder mergeFrom(com.hearlers.api.proto.v1.service.SetAiModelResponse other) {
+      if (other == com.hearlers.api.proto.v1.service.SetAiModelResponse.getDefaultInstance()) return this;
+      if (other.hasAiModel()) {
+        setAiModel(other.getAiModel());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -348,7 +348,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              gptModel_ = input.readEnum();
+              aiModel_ = input.readEnum();
               bitField0_ |= 0x00000001;
               break;
             } // case 8
@@ -369,83 +369,83 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int gptModel_ = 0;
+    private int aiModel_ = 0;
     /**
-     * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-     * @return Whether the gptModel field is set.
+     * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+     * @return Whether the aiModel field is set.
      */
-    @java.lang.Override public boolean hasGptModel() {
+    @java.lang.Override public boolean hasAiModel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-     * @return The enum numeric value on the wire for gptModel.
+     * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+     * @return The enum numeric value on the wire for aiModel.
      */
-    @java.lang.Override public int getGptModelValue() {
-      return gptModel_;
+    @java.lang.Override public int getAiModelValue() {
+      return aiModel_;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-     * @param value The enum numeric value on the wire for gptModel to set.
+     * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+     * @param value The enum numeric value on the wire for aiModel to set.
      * @return This builder for chaining.
      */
-    public Builder setGptModelValue(int value) {
-      gptModel_ = value;
+    public Builder setAiModelValue(int value) {
+      aiModel_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-     * @return The gptModel.
+     * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+     * @return The aiModel.
      */
     @java.lang.Override
-    public com.hearlers.api.proto.v1.model.GPTModel getGptModel() {
-      com.hearlers.api.proto.v1.model.GPTModel result = com.hearlers.api.proto.v1.model.GPTModel.forNumber(gptModel_);
-      return result == null ? com.hearlers.api.proto.v1.model.GPTModel.UNRECOGNIZED : result;
+    public com.hearlers.api.proto.v1.model.AiModel getAiModel() {
+      com.hearlers.api.proto.v1.model.AiModel result = com.hearlers.api.proto.v1.model.AiModel.forNumber(aiModel_);
+      return result == null ? com.hearlers.api.proto.v1.model.AiModel.UNRECOGNIZED : result;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
-     * @param value The gptModel to set.
+     * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
+     * @param value The aiModel to set.
      * @return This builder for chaining.
      */
-    public Builder setGptModel(com.hearlers.api.proto.v1.model.GPTModel value) {
+    public Builder setAiModel(com.hearlers.api.proto.v1.model.AiModel value) {
       if (value == null) {
         throw new NullPointerException();
       }
       bitField0_ |= 0x00000001;
-      gptModel_ = value.getNumber();
+      aiModel_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional .com.hearlers.v1.model.GPTModel gpt_model = 1 [json_name = "gptModel"];</code>
+     * <code>optional .com.hearlers.v1.model.AiModel ai_model = 1 [json_name = "aiModel"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearGptModel() {
+    public Builder clearAiModel() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      gptModel_ = 0;
+      aiModel_ = 0;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.SetGptModelResponse)
+    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.SetAiModelResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.SetGptModelResponse)
-  private static final com.hearlers.api.proto.v1.service.SetGptModelResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.SetAiModelResponse)
+  private static final com.hearlers.api.proto.v1.service.SetAiModelResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.SetGptModelResponse();
+    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.SetAiModelResponse();
   }
 
-  public static com.hearlers.api.proto.v1.service.SetGptModelResponse getDefaultInstance() {
+  public static com.hearlers.api.proto.v1.service.SetAiModelResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SetGptModelResponse>
-      PARSER = new com.google.protobuf.AbstractParser<SetGptModelResponse>() {
+  private static final com.google.protobuf.Parser<SetAiModelResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SetAiModelResponse>() {
     @java.lang.Override
-    public SetGptModelResponse parsePartialFrom(
+    public SetAiModelResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -464,17 +464,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<SetGptModelResponse> parser() {
+  public static com.google.protobuf.Parser<SetAiModelResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SetGptModelResponse> getParserForType() {
+  public com.google.protobuf.Parser<SetAiModelResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hearlers.api.proto.v1.service.SetGptModelResponse getDefaultInstanceForType() {
+  public com.hearlers.api.proto.v1.service.SetAiModelResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

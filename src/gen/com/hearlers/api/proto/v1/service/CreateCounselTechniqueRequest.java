@@ -220,6 +220,17 @@ private static final long serialVersionUID = 0L;
     return messageThreshold_;
   }
 
+  public static final int TEMPERATURE_FIELD_NUMBER = 6;
+  private float temperature_ = 0F;
+  /**
+   * <code>float temperature = 6 [json_name = "temperature"];</code>
+   * @return The temperature.
+   */
+  @java.lang.Override
+  public float getTemperature() {
+    return temperature_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -249,6 +260,9 @@ private static final long serialVersionUID = 0L;
     if (messageThreshold_ != 0) {
       output.writeInt32(5, messageThreshold_);
     }
+    if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
+      output.writeFloat(6, temperature_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -273,6 +287,10 @@ private static final long serialVersionUID = 0L;
     if (messageThreshold_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, messageThreshold_);
+    }
+    if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(6, temperature_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -299,6 +317,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInstruction())) return false;
     if (getMessageThreshold()
         != other.getMessageThreshold()) return false;
+    if (java.lang.Float.floatToIntBits(getTemperature())
+        != java.lang.Float.floatToIntBits(
+            other.getTemperature())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -320,6 +341,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getInstruction().hashCode();
     hash = (37 * hash) + MESSAGE_THRESHOLD_FIELD_NUMBER;
     hash = (53 * hash) + getMessageThreshold();
+    hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getTemperature());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +487,7 @@ private static final long serialVersionUID = 0L;
       context_ = "";
       instruction_ = "";
       messageThreshold_ = 0;
+      temperature_ = 0F;
       return this;
     }
 
@@ -511,6 +536,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.messageThreshold_ = messageThreshold_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.temperature_ = temperature_;
+      }
     }
 
     @java.lang.Override
@@ -547,6 +575,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMessageThreshold() != 0) {
         setMessageThreshold(other.getMessageThreshold());
+      }
+      if (other.getTemperature() != 0F) {
+        setTemperature(other.getTemperature());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -599,6 +630,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
+            case 53: {
+              temperature_ = input.readFloat();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 53
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -932,6 +968,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearMessageThreshold() {
       bitField0_ = (bitField0_ & ~0x00000010);
       messageThreshold_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private float temperature_ ;
+    /**
+     * <code>float temperature = 6 [json_name = "temperature"];</code>
+     * @return The temperature.
+     */
+    @java.lang.Override
+    public float getTemperature() {
+      return temperature_;
+    }
+    /**
+     * <code>float temperature = 6 [json_name = "temperature"];</code>
+     * @param value The temperature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemperature(float value) {
+
+      temperature_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float temperature = 6 [json_name = "temperature"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTemperature() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      temperature_ = 0F;
       onChanged();
       return this;
     }

@@ -40,13 +40,13 @@ public interface SaveTemporaryVersionRequestOrBuilder extends
   boolean getIsBookmarked();
 
   /**
-   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
-   * @return The enum numeric value on the wire for gptModel.
+   * <code>.com.hearlers.v1.model.AiModel ai_model = 4 [json_name = "aiModel"];</code>
+   * @return The enum numeric value on the wire for aiModel.
    */
-  int getGptModelValue();
+  int getAiModelValue();
   /**
-   * <code>.com.hearlers.v1.model.GPTModel gpt_model = 4 [json_name = "gptModel"];</code>
-   * @return The gptModel.
+   * <code>.com.hearlers.v1.model.AiModel ai_model = 4 [json_name = "aiModel"];</code>
+   * @return The aiModel.
    */
-  com.hearlers.api.proto.v1.model.GPTModel getGptModel();
+  com.hearlers.api.proto.v1.model.AiModel getAiModel();
 }
