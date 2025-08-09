@@ -15,7 +15,6 @@ import com.hearlers.gateway.application.auth.AuthCommand;
 import com.hearlers.gateway.application.auth.AuthInfo;
 
 @Mapper(
-        componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS
 )
