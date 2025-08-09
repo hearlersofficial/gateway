@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,7 @@ public class CounselPromptDto {
 
     // PromptVersion 관련 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 버전 응답 DTO")
     public static class PromptVersionResponseDto {
         @Schema(description = "프롬프트 버전 ID", example = "pv_123456")
@@ -27,13 +28,13 @@ public class CounselPromptDto {
         private String description;
         
         @Schema(description = "활성화 여부", example = "true")
-        private boolean isActive;
+        private Boolean isActive;
         
         @Schema(description = "임시 버전 여부", example = "false")
-        private boolean isTemporary;
+        private Boolean isTemporary;
         
         @Schema(description = "북마크 여부", example = "false")
-        private boolean isBookmarked;
+        private Boolean isBookmarked;
 
         @Schema(description =  "AI 모델")
         private AiModel aiModel;
@@ -55,7 +56,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담사별 프롬프트 응답 DTO")
     public static class CounselorScopedPromptResponseDto {
         @Schema(description = "상담사 ID", example = "counselor_123456")
@@ -75,7 +76,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "톤별 프롬프트 응답 DTO")
     public static class ToneScopedPromptResponseDto {
         @Schema(description = "톤 ID", example = "tone_123456")
@@ -99,7 +100,7 @@ public class CounselPromptDto {
     
     // PersonaPrompt 관련 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "페르소나 프롬프트 응답 DTO")
     public static class PersonaPromptResponseDto {
         @Schema(description = "페르소나 프롬프트 ID", example = "pp_123456")
@@ -123,7 +124,7 @@ public class CounselPromptDto {
     
     // TonePrompt 관련 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "톤 프롬프트 응답 DTO")
     public static class TonePromptResponseDto {
         @Schema(description = "톤 프롬프트 ID", example = "tp_123456")
@@ -147,7 +148,7 @@ public class CounselPromptDto {
     
     // CounselTechnique 관련 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 응답 DTO")
     public static class CounselTechniqueResponseDto {
         @Schema(description = "상담 기법 ID", example = "ct_123456")
@@ -169,7 +170,7 @@ public class CounselPromptDto {
         private int messageThreshold;
         
         @Schema(description = "임시 기법 여부", example = "false")
-        private boolean isTemporary;
+        private Boolean isTemporary;
         
         @Schema(description = "다음 상담 기법 ID", example = "ct_789012")
         private String nextCounselTechniqueId;
@@ -189,7 +190,7 @@ public class CounselPromptDto {
     
     // PromptActivateHistory 관련 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 활성화 히스토리 응답 DTO")
     public static class PromptActivateHistoryResponseDto {
         @Schema(description = "프롬프트 활성화 히스토리 ID", example = "pah_123456")
@@ -213,7 +214,7 @@ public class CounselPromptDto {
     
     // 요청 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 버전 조회 요청 DTO")
     public static class FindPromptVersionsRequestDto {
         @Schema(description = "프롬프트 버전 이름", example = "2024년")
@@ -221,7 +222,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "임시 버전 저장 요청 DTO")
     public static class SaveTemporaryVersionRequestDto {
         @NotBlank(message = "이름은 필수 입력 사항입니다.")
@@ -231,10 +232,19 @@ public class CounselPromptDto {
         @NotBlank(message = "설명은 필수 입력 사항입니다.")
         @Schema(description = "프롬프트 버전 설명", example = "2024년 7월 배포 예정 버전입니다.")
         private String description;
+
+
+        @NotBlank(message = "북마크 여부는 필수 입력 사항입니다.")
+        @Schema(description = "북마크 여부")
+        private Boolean isBookmarked;
+
+        @NotBlank(message = "AI 모델은 필수 입력 사항입니다.")
+        @Schema(description = "AI 모델")
+        private AiModel aiModel;
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "톤 프롬프트 업데이트 요청 DTO")
     public static class UpdateTonePromptRequestDto {
         @NotBlank(message = "톤 ID는 필수 입력 사항입니다.")
@@ -247,7 +257,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "페르소나 프롬프트 업데이트 요청 DTO")
     public static class UpdatePersonaPromptRequestDto {
         @NotBlank(message = "상담사 ID는 필수 입력 사항입니다.")
@@ -260,7 +270,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 생성 요청 DTO")
     public static class CreateCounselTechniqueRequestDto {
         @NotBlank(message = "이름은 필수 입력 사항입니다.")
@@ -289,7 +299,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 업데이트 요청 DTO")
     public static class UpdateCounselTechniqueRequestDto {
         @Schema(description = "상담 기법 이름", example = "개선된 공감 반응 기법")
@@ -309,7 +319,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 시퀀스 저장 요청 DTO")
     public static class SaveCounselTechniqueSequenceRequestDto {
         @NotBlank(message = "톤 ID는 필수 입력 사항입니다.")
@@ -323,7 +333,7 @@ public class CounselPromptDto {
     
     // 응답 DTO
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 버전 목록 조회 응답 DTO")
     public static class FindPromptVersionsResponseDto {
         @Schema(description = "프롬프트 버전 목록")
@@ -331,7 +341,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 버전 조회 응답 DTO")
     public static class FindPromptVersionByIdResponseDto {
         @Schema(description = "프롬프트 버전")
@@ -339,7 +349,7 @@ public class CounselPromptDto {
     }
 
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "활성 버전 조회 응답 DTO")
     public static class FindActiveVersionResponseDto {
         @Schema(description = "프롬프트 버전")
@@ -347,7 +357,7 @@ public class CounselPromptDto {
     }
 
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "임시 버전 조회 응답 DTO")
     public static class FindTemporaryVersionResponseDto {
         @Schema(description = "프롬프트 버전")
@@ -355,7 +365,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "기존 프롬프트 버전 로드 응답 DTO")
     public static class LoadExistingPromptVersionResponseDto {
         @Schema(description = "프롬프트 버전")
@@ -363,7 +373,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "임시 버전 저장 응답 DTO")
     public static class SaveTemporaryVersionResponseDto {
         @Schema(description = "프롬프트 버전")
@@ -371,7 +381,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 버전 활성화 응답 DTO")
     public static class ActivatePromptVersionResponseDto {
         @Schema(description = "프롬프트 버전")
@@ -379,7 +389,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "페르소나 프롬프트 조회 응답 DTO")
     public static class FindPersonaPromptByIdResponseDto {
         @Schema(description = "페르소나 프롬프트")
@@ -387,7 +397,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "페르소나 프롬프트 업데이트 응답 DTO")
     public static class UpdatePersonaPromptResponseDto {
         @Schema(description = "페르소나 프롬프트")
@@ -395,7 +405,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "톤 프롬프트 조회 응답 DTO")
     public static class FindTonePromptByIdResponseDto {
         @Schema(description = "톤 프롬프트")
@@ -403,7 +413,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "톤 프롬프트 업데이트 응답 DTO")
     public static class UpdateTonePromptResponseDto {
         @Schema(description = "톤 프롬프트")
@@ -411,7 +421,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 생성 응답 DTO")
     public static class CreateCounselTechniqueResponseDto {
         @Schema(description = "상담 기법")
@@ -419,7 +429,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 목록 조회 응답 DTO")
     public static class FindOrderedCounselTechniquesResponseDto {
         @Schema(description = "상담 기법 목록")
@@ -427,7 +437,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 조회 응답 DTO")
     public static class FindCounselTechniqueByIdResponseDto {
         @Schema(description = "상담 기법")
@@ -435,7 +445,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 업데이트 응답 DTO")
     public static class UpdateCounselTechniqueResponseDto {
         @Schema(description = "상담 기법 목록")
@@ -443,7 +453,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "상담 기법 시퀀스 저장 응답 DTO")
     public static class SaveCounselTechniqueSequenceResponseDto {
         @Schema(description = "상담 기법 목록")
@@ -451,7 +461,7 @@ public class CounselPromptDto {
     }
     
     @Getter
-    @Setter
+    @Builder
     @Schema(description = "프롬프트 활성화 히스토리 목록 조회 응답 DTO")
     public static class FindPromptActivateHistoriesResponseDto {
         @Schema(description = "프롬프트 활성화 히스토리 목록")

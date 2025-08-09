@@ -66,26 +66,11 @@ public interface CounselPromptDtoMapper {
         return builder.build();
     }
     
-    default SaveTemporaryVersionRequest toSaveTemporaryVersionRequest(CounselPromptDto.SaveTemporaryVersionRequestDto dto) {
-        return SaveTemporaryVersionRequest.newBuilder()
-                .setName(dto.getName())
-                .setDescription(dto.getDescription())
-                .build();
-    }
+    SaveTemporaryVersionRequest toSaveTemporaryVersionRequest(CounselPromptDto.SaveTemporaryVersionRequestDto dto);
+
+    UpdateTonePromptRequest toUpdateTonePromptRequest(CounselPromptDto.UpdateTonePromptRequestDto dto);
     
-    default UpdateTonePromptRequest toUpdateTonePromptRequest(CounselPromptDto.UpdateTonePromptRequestDto dto) {
-        return UpdateTonePromptRequest.newBuilder()
-                .setToneId(dto.getToneId())
-                .setBody(dto.getBody())
-                .build();
-    }
-    
-    default UpdatePersonaPromptRequest toUpdatePersonaPromptRequest(CounselPromptDto.UpdatePersonaPromptRequestDto dto) {
-        return UpdatePersonaPromptRequest.newBuilder()
-                .setCounselorId(dto.getCounselorId())
-                .setBody(dto.getBody())
-                .build();
-    }
+    UpdatePersonaPromptRequest toUpdatePersonaPromptRequest(CounselPromptDto.UpdatePersonaPromptRequestDto dto);
     
     CreateCounselTechniqueRequest toCreateCounselTechniqueRequest(CounselPromptDto.CreateCounselTechniqueRequestDto dto);
     
@@ -109,101 +94,100 @@ public interface CounselPromptDtoMapper {
     
     // 응답 DTO 변환 메소드
     default CounselPromptDto.FindPromptVersionsResponseDto toFindPromptVersionsResponseDto(List<PromptVersion> promptVersions) {
-        CounselPromptDto.FindPromptVersionsResponseDto responseDto = new CounselPromptDto.FindPromptVersionsResponseDto();
-        responseDto.setPromptVersions(promptVersions.stream().map(this::of).collect(Collectors.toList()));
-        return responseDto;
+        return CounselPromptDto.FindPromptVersionsResponseDto.builder()
+                .promptVersions(promptVersions.stream().map(this::of).collect(Collectors.toList())).build();
     }
     
     default CounselPromptDto.FindPromptVersionByIdResponseDto toFindPromptVersionByIdResponseDto(PromptVersion promptVersion) {
-        CounselPromptDto.FindPromptVersionByIdResponseDto responseDto = new CounselPromptDto.FindPromptVersionByIdResponseDto();
-        responseDto.setPromptVersion(of(promptVersion));
-        return responseDto;
+        return CounselPromptDto.FindPromptVersionByIdResponseDto.builder()
+                .promptVersion(of(promptVersion))
+                .build();
     }
 
     CounselPromptDto.FindActiveVersionResponseDto toFindActiveVersionResponseDto(PromptVersion promptVersion);
 
 
     default CounselPromptDto.FindTemporaryVersionResponseDto toFindTemporaryVersionResponseDto(PromptVersion promptVersion) {
-        CounselPromptDto.FindTemporaryVersionResponseDto responseDto = new CounselPromptDto.FindTemporaryVersionResponseDto();
-        responseDto.setPromptVersion(of(promptVersion));
-        return responseDto;
+        return CounselPromptDto.FindTemporaryVersionResponseDto.builder()
+                .promptVersion(of(promptVersion))
+                .build();
     }
     
     default CounselPromptDto.LoadExistingPromptVersionResponseDto toLoadExistingPromptVersionResponseDto(PromptVersion promptVersion) {
-        CounselPromptDto.LoadExistingPromptVersionResponseDto responseDto = new CounselPromptDto.LoadExistingPromptVersionResponseDto();
-        responseDto.setPromptVersion(of(promptVersion));
-        return responseDto;
+        return CounselPromptDto.LoadExistingPromptVersionResponseDto.builder()
+                .promptVersion(of(promptVersion))
+                .build();
     }
     
     default CounselPromptDto.SaveTemporaryVersionResponseDto toSaveTemporaryVersionResponseDto(PromptVersion promptVersion) {
-        CounselPromptDto.SaveTemporaryVersionResponseDto responseDto = new CounselPromptDto.SaveTemporaryVersionResponseDto();
-        responseDto.setPromptVersion(of(promptVersion));
-        return responseDto;
+        return CounselPromptDto.SaveTemporaryVersionResponseDto.builder()
+                .promptVersion(of(promptVersion))
+                .build();
     }
     
     default CounselPromptDto.ActivatePromptVersionResponseDto toActivatePromptVersionResponseDto(PromptVersion promptVersion) {
-        CounselPromptDto.ActivatePromptVersionResponseDto responseDto = new CounselPromptDto.ActivatePromptVersionResponseDto();
-        responseDto.setPromptVersion(of(promptVersion));
-        return responseDto;
+        return CounselPromptDto.ActivatePromptVersionResponseDto.builder()
+                .promptVersion(of(promptVersion))
+                .build();
     }
     
     default CounselPromptDto.FindPersonaPromptByIdResponseDto toFindPersonaPromptByIdResponseDto(PersonaPrompt personaPrompt) {
-        CounselPromptDto.FindPersonaPromptByIdResponseDto responseDto = new CounselPromptDto.FindPersonaPromptByIdResponseDto();
-        responseDto.setPersonaPrompt(of(personaPrompt));
-        return responseDto;
+        return CounselPromptDto.FindPersonaPromptByIdResponseDto.builder()
+                .personaPrompt(of(personaPrompt))
+                .build();
     }
     
     default CounselPromptDto.UpdatePersonaPromptResponseDto toUpdatePersonaPromptResponseDto(PersonaPrompt personaPrompt) {
-        CounselPromptDto.UpdatePersonaPromptResponseDto responseDto = new CounselPromptDto.UpdatePersonaPromptResponseDto();
-        responseDto.setPersonaPrompt(of(personaPrompt));
-        return responseDto;
+        return CounselPromptDto.UpdatePersonaPromptResponseDto.builder()
+                .personaPrompt(of(personaPrompt))
+                .build();
     }
     
     default CounselPromptDto.FindTonePromptByIdResponseDto toFindTonePromptByIdResponseDto(TonePrompt tonePrompt) {
-        CounselPromptDto.FindTonePromptByIdResponseDto responseDto = new CounselPromptDto.FindTonePromptByIdResponseDto();
-        responseDto.setTonePrompt(of(tonePrompt));
-        return responseDto;
+        return CounselPromptDto.FindTonePromptByIdResponseDto.builder()
+                .tonePrompt(of(tonePrompt))
+                .build();
     }
     
     default CounselPromptDto.UpdateTonePromptResponseDto toUpdateTonePromptResponseDto(TonePrompt tonePrompt) {
-        CounselPromptDto.UpdateTonePromptResponseDto responseDto = new CounselPromptDto.UpdateTonePromptResponseDto();
-        responseDto.setTonePrompt(of(tonePrompt));
-        return responseDto;
+        return CounselPromptDto.UpdateTonePromptResponseDto.builder()
+                .tonePrompt(of(tonePrompt))
+                .build();
     }
     
     default CounselPromptDto.CreateCounselTechniqueResponseDto toCreateCounselTechniqueResponseDto(CounselTechnique counselTechnique) {
-        CounselPromptDto.CreateCounselTechniqueResponseDto responseDto = new CounselPromptDto.CreateCounselTechniqueResponseDto();
-        responseDto.setCounselTechnique(of(counselTechnique));
-        return responseDto;
+        return CounselPromptDto.CreateCounselTechniqueResponseDto.builder()
+                .counselTechnique(of(counselTechnique))
+                .build();
     }
     
     default CounselPromptDto.FindOrderedCounselTechniquesResponseDto toFindOrderedCounselTechniquesResponseDto(List<CounselTechnique> counselTechniques) {
-        CounselPromptDto.FindOrderedCounselTechniquesResponseDto responseDto = new CounselPromptDto.FindOrderedCounselTechniquesResponseDto();
-        responseDto.setCounselTechniques(counselTechniques.stream().map(this::of).collect(Collectors.toList()));
-        return responseDto;
+        return CounselPromptDto.FindOrderedCounselTechniquesResponseDto.builder()
+                .counselTechniques(counselTechniques.stream().map(this::of).collect(Collectors.toList()))
+                .build();
     }
     
     default CounselPromptDto.FindCounselTechniqueByIdResponseDto toFindCounselTechniqueByIdResponseDto(CounselTechnique counselTechnique) {
-        CounselPromptDto.FindCounselTechniqueByIdResponseDto responseDto = new CounselPromptDto.FindCounselTechniqueByIdResponseDto();
-        responseDto.setCounselTechnique(of(counselTechnique));
-        return responseDto;
+        return CounselPromptDto.FindCounselTechniqueByIdResponseDto.builder()
+                .counselTechnique(of(counselTechnique))
+                .build();
     }
     
     default CounselPromptDto.UpdateCounselTechniqueResponseDto toUpdateCounselTechniqueResponseDto(List<CounselTechnique> counselTechniques) {
-        CounselPromptDto.UpdateCounselTechniqueResponseDto responseDto = new CounselPromptDto.UpdateCounselTechniqueResponseDto();
-        responseDto.setCounselTechnique(counselTechniques.stream().map(this::of).collect(Collectors.toList()));
-        return responseDto;
+        return CounselPromptDto.UpdateCounselTechniqueResponseDto.builder()
+                .counselTechnique(counselTechniques.stream().map(this::of).collect(Collectors.toList()))
+                .build();
     }
     
     default CounselPromptDto.SaveCounselTechniqueSequenceResponseDto toSaveCounselTechniqueSequenceResponseDto(List<CounselTechnique> counselTechniques) {
-        CounselPromptDto.SaveCounselTechniqueSequenceResponseDto responseDto = new CounselPromptDto.SaveCounselTechniqueSequenceResponseDto();
-        responseDto.setCounselTechniques(counselTechniques.stream().map(this::of).collect(Collectors.toList()));
-        return responseDto;
+        return CounselPromptDto.SaveCounselTechniqueSequenceResponseDto.builder()
+                .counselTechniques(counselTechniques.stream().map(this::of).collect(Collectors.toList()))
+                .build();
     }
     
     default CounselPromptDto.FindPromptActivateHistoriesResponseDto toFindPromptActivateHistoriesResponseDto(List<PromptActivateHistory> promptActivateHistories) {
-        CounselPromptDto.FindPromptActivateHistoriesResponseDto responseDto = new CounselPromptDto.FindPromptActivateHistoriesResponseDto();
-        responseDto.setPromptActivateHistories(promptActivateHistories.stream().map(this::of).collect(Collectors.toList()));
-        return responseDto;
+        return CounselPromptDto.FindPromptActivateHistoriesResponseDto.builder()
+                .promptActivateHistories(promptActivateHistories.stream().map(this::of).collect(Collectors.toList()))
+                .build();
     }
 }
