@@ -1,6 +1,4 @@
-package com.hearlers.gateway.presentation.http.v1.counsel.app;
-
-import java.util.List;
+package com.hearlers.gateway.presentation.http.v1.counsel.admin;
 
 import com.hearlers.api.proto.v1.model.Counsel;
 import com.hearlers.api.proto.v1.model.CounselMessage;
@@ -9,6 +7,8 @@ import com.hearlers.api.proto.v1.service.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.ReportingPolicy;
+
+import java.util.List;
 
 @Mapper(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
@@ -24,6 +24,7 @@ public interface CounselDtoMapper {
     // Counsel
     // Create
     CreateCounselRequest toCreateCounselRequest(String userId, String counselorId, CounselDto.CreateCounselRequest request);
+
     default CounselDto.CreateCounselResponse toCreateCounselResponse(CreateCounselResponse response) {
         return CounselDto.CreateCounselResponse.builder()
                 .counsel(of(response.getCounsel()))
