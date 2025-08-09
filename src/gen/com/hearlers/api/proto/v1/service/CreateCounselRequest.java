@@ -35,6 +35,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     counselorId_ = "";
     bubbleId_ = "";
+    promptVersionId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -195,6 +196,53 @@ private static final long serialVersionUID = 0L;
     return responseOptionNo_;
   }
 
+  public static final int PROMPTVERSIONID_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object promptVersionId_ = "";
+  /**
+   * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+   * @return Whether the promptVersionId field is set.
+   */
+  @java.lang.Override
+  public boolean hasPromptVersionId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+   * @return The promptVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getPromptVersionId() {
+    java.lang.Object ref = promptVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      promptVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+   * @return The bytes for promptVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPromptVersionIdBytes() {
+    java.lang.Object ref = promptVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      promptVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -221,6 +269,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(4, responseOptionNo_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, promptVersionId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -242,6 +293,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, responseOptionNo_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, promptVersionId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -272,6 +326,11 @@ private static final long serialVersionUID = 0L;
       if (getResponseOptionNo()
           != other.getResponseOptionNo()) return false;
     }
+    if (hasPromptVersionId() != other.hasPromptVersionId()) return false;
+    if (hasPromptVersionId()) {
+      if (!getPromptVersionId()
+          .equals(other.getPromptVersionId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -294,6 +353,10 @@ private static final long serialVersionUID = 0L;
     if (hasResponseOptionNo()) {
       hash = (37 * hash) + RESPONSEOPTIONNO_FIELD_NUMBER;
       hash = (53 * hash) + getResponseOptionNo();
+    }
+    if (hasPromptVersionId()) {
+      hash = (37 * hash) + PROMPTVERSIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getPromptVersionId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -435,6 +498,7 @@ private static final long serialVersionUID = 0L;
       counselorId_ = "";
       bubbleId_ = "";
       responseOptionNo_ = 0;
+      promptVersionId_ = "";
       return this;
     }
 
@@ -483,6 +547,10 @@ private static final long serialVersionUID = 0L;
         result.responseOptionNo_ = responseOptionNo_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.promptVersionId_ = promptVersionId_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -515,6 +583,11 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasResponseOptionNo()) {
         setResponseOptionNo(other.getResponseOptionNo());
+      }
+      if (other.hasPromptVersionId()) {
+        promptVersionId_ = other.promptVersionId_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -562,6 +635,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
+            case 42: {
+              promptVersionId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -838,6 +916,85 @@ private static final long serialVersionUID = 0L;
     public Builder clearResponseOptionNo() {
       bitField0_ = (bitField0_ & ~0x00000008);
       responseOptionNo_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object promptVersionId_ = "";
+    /**
+     * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+     * @return Whether the promptVersionId field is set.
+     */
+    public boolean hasPromptVersionId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+     * @return The promptVersionId.
+     */
+    public java.lang.String getPromptVersionId() {
+      java.lang.Object ref = promptVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        promptVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+     * @return The bytes for promptVersionId.
+     */
+    public com.google.protobuf.ByteString
+        getPromptVersionIdBytes() {
+      java.lang.Object ref = promptVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        promptVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+     * @param value The promptVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptVersionId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      promptVersionId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPromptVersionId() {
+      promptVersionId_ = getDefaultInstance().getPromptVersionId();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+     * @param value The bytes for promptVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      promptVersionId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -60,4 +60,21 @@ public interface CreateCounselRequestOrBuilder extends
    * @return The responseOptionNo.
    */
   int getResponseOptionNo();
+
+  /**
+   * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+   * @return Whether the promptVersionId field is set.
+   */
+  boolean hasPromptVersionId();
+  /**
+   * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+   * @return The promptVersionId.
+   */
+  java.lang.String getPromptVersionId();
+  /**
+   * <code>optional string promptVersionId = 5 [json_name = "promptVersionId"];</code>
+   * @return The bytes for promptVersionId.
+   */
+  com.google.protobuf.ByteString
+      getPromptVersionIdBytes();
 }

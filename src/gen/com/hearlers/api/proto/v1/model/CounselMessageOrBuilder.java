@@ -97,11 +97,23 @@ public interface CounselMessageOrBuilder extends
   com.hearlers.api.proto.v1.model.CounselMessageReaction getReaction();
 
   /**
+   * <code>string counsel_technique_id = 7 [json_name = "counselTechniqueId"];</code>
+   * @return The counselTechniqueId.
+   */
+  java.lang.String getCounselTechniqueId();
+  /**
+   * <code>string counsel_technique_id = 7 [json_name = "counselTechniqueId"];</code>
+   * @return The bytes for counselTechniqueId.
+   */
+  com.google.protobuf.ByteString
+      getCounselTechniqueIdBytes();
+
+  /**
    * <pre>
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 7 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -110,7 +122,7 @@ public interface CounselMessageOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 7 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -121,7 +133,7 @@ public interface CounselMessageOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
@@ -130,7 +142,7 @@ public interface CounselMessageOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
@@ -141,7 +153,7 @@ public interface CounselMessageOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
@@ -150,7 +162,7 @@ public interface CounselMessageOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -159,7 +171,7 @@ public interface CounselMessageOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString
