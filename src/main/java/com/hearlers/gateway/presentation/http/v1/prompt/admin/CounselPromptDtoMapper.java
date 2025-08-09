@@ -75,8 +75,14 @@ public interface CounselPromptDtoMapper {
     CreateCounselTechniqueRequest toCreateCounselTechniqueRequest(CounselPromptDto.CreateCounselTechniqueRequestDto dto);
     
     UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto, String counselTechniqueId);
-    
-    SaveCounselTechniqueSequenceRequest toSaveCounselTechniqueSequenceRequest(CounselPromptDto.SaveCounselTechniqueSequenceRequestDto dto);
+
+    @Mapping(source = "counselTechniqueIds", target = "counselTechniqueIdsList")
+    default SaveCounselTechniqueSequenceRequest toSaveCounselTechniqueSequenceRequest(CounselPromptDto.SaveCounselTechniqueSequenceRequestDto dto) {
+        return SaveCounselTechniqueSequenceRequest.newBuilder()
+                .addAllCounselTechniqueIds(dto.getCounselTechniqueIds())
+                .setToneId(dto.getToneId())
+                .build();
+    }
     
     FindPromptVersionByIdRequest toFindPromptVersionByIdRequest(String promptVersionId);
     
