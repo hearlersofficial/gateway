@@ -125,10 +125,11 @@ public final class CounselPrompt {
       "\013activatedAt\022\035\n\ncreated_at\030\004 \001(\tR\tcreate" +
       "dAt\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\nde" +
       "leted_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_delet" +
-      "ed_at*^\n\007AiModel\022\030\n\024AI_MODEL_UNSPECIFIED" +
-      "\020\000\022\021\n\rGPT_3_5_TURBO\020\001\022\t\n\005GPT_4\020\002\022\n\n\006GPT_" +
-      "4O\020\003\022\017\n\013GPT_4O_MINI\020\004B#\n\037com.hearlers.ap" +
-      "i.proto.v1.modelP\001b\006proto3"
+      "ed_at*\211\001\n\007AiModel\022\030\n\024AI_MODEL_UNSPECIFIE" +
+      "D\020\000\022\021\n\rGPT_3_5_TURBO\020\001\022\t\n\005GPT_4\020\002\022\n\n\006GPT" +
+      "_4O\020\003\022\017\n\013GPT_4O_MINI\020\004\022\016\n\nGPT_5_MINI\020\005\022\t" +
+      "\n\005GPT_5\020\006\022\016\n\nGPT_5_CHAT\020\007B#\n\037com.hearler" +
+      "s.api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

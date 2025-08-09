@@ -34,6 +34,18 @@ public enum AiModel
    * <code>GPT_4O_MINI = 4;</code>
    */
   GPT_4O_MINI(4),
+  /**
+   * <code>GPT_5_MINI = 5;</code>
+   */
+  GPT_5_MINI(5),
+  /**
+   * <code>GPT_5 = 6;</code>
+   */
+  GPT_5(6),
+  /**
+   * <code>GPT_5_CHAT = 7;</code>
+   */
+  GPT_5_CHAT(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -70,6 +82,18 @@ public enum AiModel
    * <code>GPT_4O_MINI = 4;</code>
    */
   public static final int GPT_4O_MINI_VALUE = 4;
+  /**
+   * <code>GPT_5_MINI = 5;</code>
+   */
+  public static final int GPT_5_MINI_VALUE = 5;
+  /**
+   * <code>GPT_5 = 6;</code>
+   */
+  public static final int GPT_5_VALUE = 6;
+  /**
+   * <code>GPT_5_CHAT = 7;</code>
+   */
+  public static final int GPT_5_CHAT_VALUE = 7;
 
 
   public final int getNumber() {
@@ -101,6 +125,9 @@ public enum AiModel
       case 2: return GPT_4;
       case 3: return GPT_4O;
       case 4: return GPT_4O_MINI;
+      case 5: return GPT_5_MINI;
+      case 6: return GPT_5;
+      case 7: return GPT_5_CHAT;
       default: return null;
     }
   }
