@@ -27,7 +27,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GenerateCutSceneImageUrlRequest() {
-    episodeId_ = "";
+    counselorId_ = "";
     extension_ = 0;
   }
 
@@ -44,39 +44,39 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest.class, com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest.Builder.class);
   }
 
-  public static final int EPISODE_ID_FIELD_NUMBER = 1;
+  public static final int COUNSELOR_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object episodeId_ = "";
+  private volatile java.lang.Object counselorId_ = "";
   /**
-   * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-   * @return The episodeId.
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+   * @return The counselorId.
    */
   @java.lang.Override
-  public java.lang.String getEpisodeId() {
-    java.lang.Object ref = episodeId_;
+  public java.lang.String getCounselorId() {
+    java.lang.Object ref = counselorId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      episodeId_ = s;
+      counselorId_ = s;
       return s;
     }
   }
   /**
-   * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-   * @return The bytes for episodeId.
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getEpisodeIdBytes() {
-    java.lang.Object ref = episodeId_;
+      getCounselorIdBytes() {
+    java.lang.Object ref = counselorId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      episodeId_ = b;
+      counselorId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -115,8 +115,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, episodeId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, counselorId_);
     }
     if (extension_ != com.hearlers.api.proto.v1.common.Extension.EXTENSION_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, extension_);
@@ -130,8 +130,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(episodeId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, episodeId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselorId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, counselorId_);
     }
     if (extension_ != com.hearlers.api.proto.v1.common.Extension.EXTENSION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -152,8 +152,8 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest other = (com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest) obj;
 
-    if (!getEpisodeId()
-        .equals(other.getEpisodeId())) return false;
+    if (!getCounselorId()
+        .equals(other.getCounselorId())) return false;
     if (extension_ != other.extension_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -166,8 +166,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EPISODE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEpisodeId().hashCode();
+    hash = (37 * hash) + COUNSELOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCounselorId().hashCode();
     hash = (37 * hash) + EXTENSION_FIELD_NUMBER;
     hash = (53 * hash) + extension_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      episodeId_ = "";
+      counselorId_ = "";
       extension_ = 0;
       return this;
     }
@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.episodeId_ = episodeId_;
+        result.counselorId_ = counselorId_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.extension_ = extension_;
@@ -356,8 +356,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest other) {
       if (other == com.hearlers.api.proto.v1.service.GenerateCutSceneImageUrlRequest.getDefaultInstance()) return this;
-      if (!other.getEpisodeId().isEmpty()) {
-        episodeId_ = other.episodeId_;
+      if (!other.getCounselorId().isEmpty()) {
+        counselorId_ = other.counselorId_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              episodeId_ = input.readStringRequireUtf8();
+              counselorId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
@@ -417,73 +417,73 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object episodeId_ = "";
+    private java.lang.Object counselorId_ = "";
     /**
-     * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-     * @return The episodeId.
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+     * @return The counselorId.
      */
-    public java.lang.String getEpisodeId() {
-      java.lang.Object ref = episodeId_;
+    public java.lang.String getCounselorId() {
+      java.lang.Object ref = counselorId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        episodeId_ = s;
+        counselorId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-     * @return The bytes for episodeId.
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+     * @return The bytes for counselorId.
      */
     public com.google.protobuf.ByteString
-        getEpisodeIdBytes() {
-      java.lang.Object ref = episodeId_;
+        getCounselorIdBytes() {
+      java.lang.Object ref = counselorId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        episodeId_ = b;
+        counselorId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-     * @param value The episodeId to set.
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+     * @param value The counselorId to set.
      * @return This builder for chaining.
      */
-    public Builder setEpisodeId(
+    public Builder setCounselorId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      episodeId_ = value;
+      counselorId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string episode_id = 1 [json_name = "episodeId"];</code>
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearEpisodeId() {
-      episodeId_ = getDefaultInstance().getEpisodeId();
+    public Builder clearCounselorId() {
+      counselorId_ = getDefaultInstance().getCounselorId();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-     * @param value The bytes for episodeId to set.
+     * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+     * @param value The bytes for counselorId to set.
      * @return This builder for chaining.
      */
-    public Builder setEpisodeIdBytes(
+    public Builder setCounselorIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      episodeId_ = value;
+      counselorId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;

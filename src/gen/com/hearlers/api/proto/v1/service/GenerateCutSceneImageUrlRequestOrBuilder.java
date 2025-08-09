@@ -10,16 +10,16 @@ public interface GenerateCutSceneImageUrlRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-   * @return The episodeId.
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+   * @return The counselorId.
    */
-  java.lang.String getEpisodeId();
+  java.lang.String getCounselorId();
   /**
-   * <code>string episode_id = 1 [json_name = "episodeId"];</code>
-   * @return The bytes for episodeId.
+   * <code>string counselor_id = 1 [json_name = "counselorId"];</code>
+   * @return The bytes for counselorId.
    */
   com.google.protobuf.ByteString
-      getEpisodeIdBytes();
+      getCounselorIdBytes();
 
   /**
    * <code>.com.hearlers.v1.common.Extension extension = 2 [json_name = "extension"];</code>

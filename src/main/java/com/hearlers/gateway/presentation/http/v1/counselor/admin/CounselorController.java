@@ -174,12 +174,11 @@ public class CounselorController {
             @ApiResponse(responseCode = "200", description = "이미지 URL 생성 성공"),
             @ApiResponse(responseCode = "400", description = "이미지 URL 생성 실패", content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
-    @PostMapping("/v1/admin/counselors/{counselor-id}/episodes/{episode-id}/image-url")
+    @PostMapping("/v1/admin/counselors/{counselor-id}/episodes/image-url")
     public ResponseEntity<ResponseDto.Success<CounselorDto.GenerateCutSceneImageUrlResponse>> generateCutSceneImageUrl(
-            @PathVariable("episode-id") String episodeId,
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.GenerateCutSceneImageUrlRequest request) {
-        var generateCutSceneImageUrlRequest = counselorDtoMapper.toGenerateCutSceneImageUrlRequest(request, episodeId);
+        var generateCutSceneImageUrlRequest = counselorDtoMapper.toGenerateCutSceneImageUrlRequest(request, counselorId);
         var presignedUrl = counselorService.generateCutSceneImageUrl(generateCutSceneImageUrlRequest);
         var response = counselorDtoMapper.toGenerateCutSceneImageUrlResponse(presignedUrl);
 
