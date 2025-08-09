@@ -64,8 +64,8 @@ public interface CreateCounselTechniqueRequestOrBuilder extends
   int getMessageThreshold();
 
   /**
-   * <code>float temperature = 6 [json_name = "temperature"];</code>
+   * <code>double temperature = 6 [json_name = "temperature"];</code>
    * @return The temperature.
    */
-  float getTemperature();
+  double getTemperature();
 }

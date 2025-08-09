@@ -115,7 +115,7 @@ public final class CounselPrompt {
       "essageThreshold\022!\n\014is_temporary\030\007 \001(\010R\013i" +
       "sTemporary\022>\n\031next_counsel_technique_id\030" +
       "\010 \001(\tH\000R\026nextCounselTechniqueId\210\001\001\022 \n\013te" +
-      "mperature\030\t \001(\002R\013temperature\022\035\n\ncreated_" +
+      "mperature\030\t \001(\001R\013temperature\022\035\n\ncreated_" +
       "at\030\n \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR" +
       "\tupdatedAt\022\"\n\ndeleted_at\030\014 \001(\tH\001R\tdelete" +
       "dAt\210\001\001B\034\n\032_next_counsel_technique_idB\r\n\013" +

@@ -323,7 +323,7 @@ public final class CounselPrompt {
       "\030\002 \001(\tR\006toneId\022\030\n\007context\030\003 \001(\tR\007context" +
       "\022 \n\013instruction\030\004 \001(\tR\013instruction\022+\n\021me" +
       "ssage_threshold\030\005 \001(\005R\020messageThreshold\022" +
-      " \n\013temperature\030\006 \001(\002R\013temperature\"v\n\036Cre" +
+      " \n\013temperature\030\006 \001(\001R\013temperature\"v\n\036Cre" +
       "ateCounselTechniqueResponse\022T\n\021counsel_t" +
       "echnique\030\001 \001(\0132\'.com.hearlers.v1.model.C" +
       "ounselTechniqueR\020counselTechnique\"b\n#Fin" +
@@ -344,7 +344,7 @@ public final class CounselPrompt {
       "me\210\001\001\022\035\n\007context\030\003 \001(\tH\001R\007context\210\001\001\022%\n\013" +
       "instruction\030\004 \001(\tH\002R\013instruction\210\001\001\0220\n\021m" +
       "essage_threshold\030\005 \001(\005H\003R\020messageThresho" +
-      "ld\210\001\001\022%\n\013temperature\030\006 \001(\002H\004R\013temperatur" +
+      "ld\210\001\001\022%\n\013temperature\030\006 \001(\001H\004R\013temperatur" +
       "e\210\001\001B\007\n\005_nameB\n\n\010_contextB\016\n\014_instructio" +
       "nB\024\n\022_message_thresholdB\016\n\014_temperature\"" +
       "x\n\036UpdateCounselTechniqueResponse\022V\n\022cou" +

@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.AiModel;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -33,6 +34,9 @@ public class CounselPromptDto {
         
         @Schema(description = "북마크 여부", example = "false")
         private boolean isBookmarked;
+
+        @Schema(description =  "AI 모델")
+        private AiModel aiModel;
         
         @Schema(description = "상담사별 프롬프트 목록")
         private List<CounselorScopedPromptResponseDto> counselorScopedPrompts;
@@ -169,6 +173,9 @@ public class CounselPromptDto {
         
         @Schema(description = "다음 상담 기법 ID", example = "ct_789012")
         private String nextCounselTechniqueId;
+
+        @Schema(description = "AI 모델 temperature 값")
+        private double temperature;
         
         @Schema(description = "생성 시간", example = "2024-06-01T12:34:56.000Z")
         private String createdAt;
@@ -275,6 +282,10 @@ public class CounselPromptDto {
         @NotNull(message = "메시지 임계값은 필수 입력 사항입니다.")
         @Schema(description = "메시지 임계값", example = "3")
         private Integer messageThreshold;
+
+        @NotNull(message = "temperature 은 필수 입력 사항입니다.")
+        @Schema(description = "AI 모델 temperature 값")
+        private double temperature;
     }
     
     @Getter
@@ -292,6 +303,9 @@ public class CounselPromptDto {
         
         @Schema(description = "메시지 임계값", example = "5")
         private Integer messageThreshold;
+
+        @Schema(description = "AI 모델 temperature 값")
+        private double temperature;
     }
     
     @Getter

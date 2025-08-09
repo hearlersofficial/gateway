@@ -87,86 +87,25 @@ public interface CounselPromptDtoMapper {
                 .build();
     }
     
-    default CreateCounselTechniqueRequest toCreateCounselTechniqueRequest(CounselPromptDto.CreateCounselTechniqueRequestDto dto) {
-        return CreateCounselTechniqueRequest.newBuilder()
-                .setName(dto.getName())
-                .setToneId(dto.getToneId())
-                .setContext(dto.getContext())
-                .setInstruction(dto.getInstruction())
-                .setMessageThreshold(dto.getMessageThreshold())
-                .build();
-    }
+    CreateCounselTechniqueRequest toCreateCounselTechniqueRequest(CounselPromptDto.CreateCounselTechniqueRequestDto dto);
     
-    default UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto, String counselTechniqueId) {
-        UpdateCounselTechniqueRequest.Builder builder = UpdateCounselTechniqueRequest.newBuilder()
-                .setCounselTechniqueId(counselTechniqueId);
-        
-        if (dto.getName() != null) {
-            builder.setName(dto.getName());
-        }
-        if (dto.getContext() != null) {
-            builder.setContext(dto.getContext());
-        }
-        if (dto.getInstruction() != null) {
-            builder.setInstruction(dto.getInstruction());
-        }
-        if (dto.getMessageThreshold() != null) {
-            builder.setMessageThreshold(dto.getMessageThreshold());
-        }
-        
-        return builder.build();
-    }
+    UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto, String counselTechniqueId);
     
-    default SaveCounselTechniqueSequenceRequest toSaveCounselTechniqueSequenceRequest(CounselPromptDto.SaveCounselTechniqueSequenceRequestDto dto) {
-        return SaveCounselTechniqueSequenceRequest.newBuilder()
-                .setToneId(dto.getToneId())
-                .addAllCounselTechniqueIds(dto.getCounselTechniqueIds())
-                .build();
-    }
+    SaveCounselTechniqueSequenceRequest toSaveCounselTechniqueSequenceRequest(CounselPromptDto.SaveCounselTechniqueSequenceRequestDto dto);
     
-    default FindPromptVersionByIdRequest toFindPromptVersionByIdRequest(String promptVersionId) {
-        return FindPromptVersionByIdRequest.newBuilder()
-                .setPromptVersionId(promptVersionId)
-                .build();
-    }
+    FindPromptVersionByIdRequest toFindPromptVersionByIdRequest(String promptVersionId);
     
-    default ActivatePromptVersionRequest toActivatePromptVersionRequest(String promptVersionId) {
-        return ActivatePromptVersionRequest.newBuilder()
-                .setPromptVersionId(promptVersionId)
-                .build();
-    }
+    ActivatePromptVersionRequest toActivatePromptVersionRequest(String promptVersionId);
     
-    default FindPersonaPromptByIdRequest toFindPersonaPromptByIdRequest(String personaPromptId) {
-        return FindPersonaPromptByIdRequest.newBuilder()
-                .setPersonaPromptId(personaPromptId)
-                .build();
-    }
+    FindPersonaPromptByIdRequest toFindPersonaPromptByIdRequest(String personaPromptId);
     
-    default FindTonePromptByIdRequest toFindTonePromptByIdRequest(String tonePromptId) {
-        return FindTonePromptByIdRequest.newBuilder()
-                .setTonePromptId(tonePromptId)
-                .build();
-    }
+    FindTonePromptByIdRequest toFindTonePromptByIdRequest(String tonePromptId);
     
-    default FindCounselTechniqueByIdRequest toFindCounselTechniqueByIdRequest(String counselTechniqueId) {
-        return FindCounselTechniqueByIdRequest.newBuilder()
-                .setCounselTechniqueId(counselTechniqueId)
-                .build();
-    }
+    FindCounselTechniqueByIdRequest toFindCounselTechniqueByIdRequest(String counselTechniqueId);
+
+    FindOrderedCounselTechniquesRequest toFindOrderedCounselTechniquesRequest(String firstCounselTechniqueId);
     
-    default FindOrderedCounselTechniquesRequest toFindOrderedCounselTechniquesRequest(String firstCounselTechniqueId) {
-        return FindOrderedCounselTechniquesRequest.newBuilder()
-                .setFirstCounselTechniqueId(firstCounselTechniqueId)
-                .build();
-    }
-    
-    default FindPromptActivateHistoriesRequest toFindPromptActivateHistoriesRequest(String promptVersionId) {
-        FindPromptActivateHistoriesRequest.Builder builder = FindPromptActivateHistoriesRequest.newBuilder();
-        if (promptVersionId != null) {
-            builder.setPromptVersionId(promptVersionId);
-        }
-        return builder.build();
-    }
+    FindPromptActivateHistoriesRequest toFindPromptActivateHistoriesRequest(String promptVersionId);
     
     // 응답 DTO 변환 메소드
     default CounselPromptDto.FindPromptVersionsResponseDto toFindPromptVersionsResponseDto(List<PromptVersion> promptVersions) {

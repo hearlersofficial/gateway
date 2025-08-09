@@ -253,9 +253,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TEMPERATURE_FIELD_NUMBER = 6;
-  private float temperature_ = 0F;
+  private double temperature_ = 0D;
   /**
-   * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+   * <code>optional double temperature = 6 [json_name = "temperature"];</code>
    * @return Whether the temperature field is set.
    */
   @java.lang.Override
@@ -263,11 +263,11 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+   * <code>optional double temperature = 6 [json_name = "temperature"];</code>
    * @return The temperature.
    */
   @java.lang.Override
-  public float getTemperature() {
+  public double getTemperature() {
     return temperature_;
   }
 
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(5, messageThreshold_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeFloat(6, temperature_);
+      output.writeDouble(6, temperature_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -330,7 +330,7 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(6, temperature_);
+        .computeDoubleSize(6, temperature_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -371,8 +371,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasTemperature() != other.hasTemperature()) return false;
     if (hasTemperature()) {
-      if (java.lang.Float.floatToIntBits(getTemperature())
-          != java.lang.Float.floatToIntBits(
+      if (java.lang.Double.doubleToLongBits(getTemperature())
+          != java.lang.Double.doubleToLongBits(
               other.getTemperature())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -406,8 +406,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasTemperature()) {
       hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getTemperature());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTemperature()));
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
       context_ = "";
       instruction_ = "";
       messageThreshold_ = 0;
-      temperature_ = 0F;
+      temperature_ = 0D;
       return this;
     }
 
@@ -701,11 +701,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
-            case 53: {
-              temperature_ = input.readFloat();
+            case 49: {
+              temperature_ = input.readDouble();
               bitField0_ |= 0x00000020;
               break;
-            } // case 53
+            } // case 49
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1072,9 +1072,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float temperature_ ;
+    private double temperature_ ;
     /**
-     * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+     * <code>optional double temperature = 6 [json_name = "temperature"];</code>
      * @return Whether the temperature field is set.
      */
     @java.lang.Override
@@ -1082,19 +1082,19 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+     * <code>optional double temperature = 6 [json_name = "temperature"];</code>
      * @return The temperature.
      */
     @java.lang.Override
-    public float getTemperature() {
+    public double getTemperature() {
       return temperature_;
     }
     /**
-     * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+     * <code>optional double temperature = 6 [json_name = "temperature"];</code>
      * @param value The temperature to set.
      * @return This builder for chaining.
      */
-    public Builder setTemperature(float value) {
+    public Builder setTemperature(double value) {
 
       temperature_ = value;
       bitField0_ |= 0x00000020;
@@ -1102,12 +1102,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional float temperature = 6 [json_name = "temperature"];</code>
+     * <code>optional double temperature = 6 [json_name = "temperature"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTemperature() {
       bitField0_ = (bitField0_ & ~0x00000020);
-      temperature_ = 0F;
+      temperature_ = 0D;
       onChanged();
       return this;
     }

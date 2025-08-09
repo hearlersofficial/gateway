@@ -317,13 +317,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TEMPERATURE_FIELD_NUMBER = 9;
-  private float temperature_ = 0F;
+  private double temperature_ = 0D;
   /**
-   * <code>float temperature = 9 [json_name = "temperature"];</code>
+   * <code>double temperature = 9 [json_name = "temperature"];</code>
    * @return The temperature.
    */
   @java.lang.Override
-  public float getTemperature() {
+  public double getTemperature() {
     return temperature_;
   }
 
@@ -518,8 +518,8 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, nextCounselTechniqueId_);
     }
-    if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
-      output.writeFloat(9, temperature_);
+    if (java.lang.Double.doubleToRawLongBits(temperature_) != 0) {
+      output.writeDouble(9, temperature_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, createdAt_);
@@ -565,9 +565,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, nextCounselTechniqueId_);
     }
-    if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
+    if (java.lang.Double.doubleToRawLongBits(temperature_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(9, temperature_);
+        .computeDoubleSize(9, temperature_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, createdAt_);
@@ -612,8 +612,8 @@ private static final long serialVersionUID = 0L;
       if (!getNextCounselTechniqueId()
           .equals(other.getNextCounselTechniqueId())) return false;
     }
-    if (java.lang.Float.floatToIntBits(getTemperature())
-        != java.lang.Float.floatToIntBits(
+    if (java.lang.Double.doubleToLongBits(getTemperature())
+        != java.lang.Double.doubleToLongBits(
             other.getTemperature())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
@@ -655,8 +655,8 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getNextCounselTechniqueId().hashCode();
     }
     hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getTemperature());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTemperature()));
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -804,7 +804,7 @@ private static final long serialVersionUID = 0L;
       messageThreshold_ = 0;
       isTemporary_ = false;
       nextCounselTechniqueId_ = "";
-      temperature_ = 0F;
+      temperature_ = 0D;
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -931,7 +931,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000080;
         onChanged();
       }
-      if (other.getTemperature() != 0F) {
+      if (other.getTemperature() != 0D) {
         setTemperature(other.getTemperature());
       }
       if (!other.getCreatedAt().isEmpty()) {
@@ -1015,11 +1015,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 66
-            case 77: {
-              temperature_ = input.readFloat();
+            case 73: {
+              temperature_ = input.readDouble();
               bitField0_ |= 0x00000100;
               break;
-            } // case 77
+            } // case 73
             case 82: {
               createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
@@ -1555,21 +1555,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float temperature_ ;
+    private double temperature_ ;
     /**
-     * <code>float temperature = 9 [json_name = "temperature"];</code>
+     * <code>double temperature = 9 [json_name = "temperature"];</code>
      * @return The temperature.
      */
     @java.lang.Override
-    public float getTemperature() {
+    public double getTemperature() {
       return temperature_;
     }
     /**
-     * <code>float temperature = 9 [json_name = "temperature"];</code>
+     * <code>double temperature = 9 [json_name = "temperature"];</code>
      * @param value The temperature to set.
      * @return This builder for chaining.
      */
-    public Builder setTemperature(float value) {
+    public Builder setTemperature(double value) {
 
       temperature_ = value;
       bitField0_ |= 0x00000100;
@@ -1577,12 +1577,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>float temperature = 9 [json_name = "temperature"];</code>
+     * <code>double temperature = 9 [json_name = "temperature"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTemperature() {
       bitField0_ = (bitField0_ & ~0x00000100);
-      temperature_ = 0F;
+      temperature_ = 0D;
       onChanged();
       return this;
     }

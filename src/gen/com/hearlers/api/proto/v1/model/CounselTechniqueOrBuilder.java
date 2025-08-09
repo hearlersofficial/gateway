@@ -99,10 +99,10 @@ public interface CounselTechniqueOrBuilder extends
       getNextCounselTechniqueIdBytes();
 
   /**
-   * <code>float temperature = 9 [json_name = "temperature"];</code>
+   * <code>double temperature = 9 [json_name = "temperature"];</code>
    * @return The temperature.
    */
-  float getTemperature();
+  double getTemperature();
 
   /**
    * <pre>
