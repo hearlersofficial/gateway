@@ -233,12 +233,11 @@ public class CounselPromptDto {
         @Schema(description = "프롬프트 버전 설명", example = "2024년 7월 배포 예정 버전입니다.")
         private String description;
 
-
-        @NotBlank(message = "북마크 여부는 필수 입력 사항입니다.")
+        @NotNull
         @Schema(description = "북마크 여부")
         private Boolean isBookmarked;
 
-        @NotBlank(message = "AI 모델은 필수 입력 사항입니다.")
+        @NotNull
         @Schema(description = "AI 모델")
         private AiModel aiModel;
     }
