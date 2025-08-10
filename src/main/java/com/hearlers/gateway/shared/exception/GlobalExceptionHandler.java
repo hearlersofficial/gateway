@@ -54,7 +54,7 @@ public class GlobalExceptionHandler {
         }
         
         var statusCode = e.getStatus().getCode();
-        log.error("gRPC 상태 코드: {}, 메시지: {}", statusCode, errorMessage);
+        log.error("gRPC 상태 코드: {}, 메시지: {}", statusCode, errorMessage, e);
         
         GrpcStatusCode resultCode = GrpcStatusCode.fromGrpcCode(statusCode);
         

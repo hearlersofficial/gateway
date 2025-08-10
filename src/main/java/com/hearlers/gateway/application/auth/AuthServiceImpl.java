@@ -3,6 +3,7 @@ package com.hearlers.gateway.application.auth;
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.model.Authority;
+import com.hearlers.api.proto.v1.model.User;
 import com.hearlers.api.proto.v1.service.*;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -45,7 +46,7 @@ public class AuthServiceImpl implements AuthService {
             // 기존 사용자 조회
             log.info("oauthLogin - userId: {}, uniqueId: {}, authChannel: {}", userId, uniqueId, authChannel);
             AuthUser authUser = authReader.getAuthUser(uniqueId, authChannel);
-            
+
             // 권한 평가 및 필요시 업데이트
             return evaluateAndUpdateAuthority(authUser, uniqueId, providerService);
         } catch (StatusRuntimeException e) {
@@ -92,10 +93,10 @@ public class AuthServiceImpl implements AuthService {
      */
     private AuthUser handleNewOAuthLogin(String uniqueId, AuthChannel authChannel) {
         // 새 사용자 생성
-        AuthUser authUser = authStore.initializeUser(InitializeUserRequest.newBuilder().build()).getAuthUser();
+        User user = authStore.initializeUser(InitializeUserRequest.newBuilder().build()).getUser();
         
         // OAuth 채널 연결
-        ConnectAuthChannelRequest request = createConnectAuthChannelRequest(authUser.getUserId(), uniqueId, authChannel);
+        ConnectAuthChannelRequest request = createConnectAuthChannelRequest(user.getId(), uniqueId, authChannel);
         ConnectAuthChannelResponse response = authStore.connectAuthChannel(request);
         
         return response.getAuthUser();
