@@ -573,37 +573,6 @@ public final class CounselPromptServiceGrpc {
     return getSaveCounselTechniqueSequenceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SetAiModelRequest,
-      com.hearlers.api.proto.v1.service.SetAiModelResponse> getSetAiModelMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetAiModel",
-      requestType = com.hearlers.api.proto.v1.service.SetAiModelRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.SetAiModelResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SetAiModelRequest,
-      com.hearlers.api.proto.v1.service.SetAiModelResponse> getSetAiModelMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SetAiModelRequest, com.hearlers.api.proto.v1.service.SetAiModelResponse> getSetAiModelMethod;
-    if ((getSetAiModelMethod = CounselPromptServiceGrpc.getSetAiModelMethod) == null) {
-      synchronized (CounselPromptServiceGrpc.class) {
-        if ((getSetAiModelMethod = CounselPromptServiceGrpc.getSetAiModelMethod) == null) {
-          CounselPromptServiceGrpc.getSetAiModelMethod = getSetAiModelMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.SetAiModelRequest, com.hearlers.api.proto.v1.service.SetAiModelResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetAiModel"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.SetAiModelRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.SetAiModelResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("SetAiModel"))
-              .build();
-        }
-      }
-    }
-    return getSetAiModelMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest,
       com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse> getFindPromptActivateHistoriesMethod;
 
@@ -838,16 +807,6 @@ public final class CounselPromptServiceGrpc {
 
     /**
      * <pre>
-     * Ai Model
-     * </pre>
-     */
-    default void setAiModel(com.hearlers.api.proto.v1.service.SetAiModelRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SetAiModelResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetAiModelMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * prompt activate history
      * </pre>
      */
@@ -1042,17 +1001,6 @@ public final class CounselPromptServiceGrpc {
 
     /**
      * <pre>
-     * Ai Model
-     * </pre>
-     */
-    public void setAiModel(com.hearlers.api.proto.v1.service.SetAiModelRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SetAiModelResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetAiModelMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * prompt activate history
      * </pre>
      */
@@ -1219,16 +1167,6 @@ public final class CounselPromptServiceGrpc {
 
     /**
      * <pre>
-     * Ai Model
-     * </pre>
-     */
-    public com.hearlers.api.proto.v1.service.SetAiModelResponse setAiModel(com.hearlers.api.proto.v1.service.SetAiModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetAiModelMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * prompt activate history
      * </pre>
      */
@@ -1390,16 +1328,6 @@ public final class CounselPromptServiceGrpc {
     public com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveCounselTechniqueSequenceMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Ai Model
-     * </pre>
-     */
-    public com.hearlers.api.proto.v1.service.SetAiModelResponse setAiModel(com.hearlers.api.proto.v1.service.SetAiModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetAiModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1587,17 +1515,6 @@ public final class CounselPromptServiceGrpc {
 
     /**
      * <pre>
-     * Ai Model
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.SetAiModelResponse> setAiModel(
-        com.hearlers.api.proto.v1.service.SetAiModelRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetAiModelMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * prompt activate history
      * </pre>
      */
@@ -1626,8 +1543,7 @@ public final class CounselPromptServiceGrpc {
   private static final int METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID = 15;
   private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 16;
   private static final int METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE = 17;
-  private static final int METHODID_SET_AI_MODEL = 18;
-  private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 19;
+  private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1717,10 +1633,6 @@ public final class CounselPromptServiceGrpc {
         case METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE:
           serviceImpl.saveCounselTechniqueSequence((com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>) responseObserver);
-          break;
-        case METHODID_SET_AI_MODEL:
-          serviceImpl.setAiModel((com.hearlers.api.proto.v1.service.SetAiModelRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SetAiModelResponse>) responseObserver);
           break;
         case METHODID_FIND_PROMPT_ACTIVATE_HISTORIES:
           serviceImpl.findPromptActivateHistories((com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest) request,
@@ -1871,13 +1783,6 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>(
                 service, METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE)))
         .addMethod(
-          getSetAiModelMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.hearlers.api.proto.v1.service.SetAiModelRequest,
-              com.hearlers.api.proto.v1.service.SetAiModelResponse>(
-                service, METHODID_SET_AI_MODEL)))
-        .addMethod(
           getFindPromptActivateHistoriesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1950,7 +1855,6 @@ public final class CounselPromptServiceGrpc {
               .addMethod(getFindCounselTechniqueByIdMethod())
               .addMethod(getUpdateCounselTechniqueMethod())
               .addMethod(getSaveCounselTechniqueSequenceMethod())
-              .addMethod(getSetAiModelMethod())
               .addMethod(getFindPromptActivateHistoriesMethod())
               .build();
         }

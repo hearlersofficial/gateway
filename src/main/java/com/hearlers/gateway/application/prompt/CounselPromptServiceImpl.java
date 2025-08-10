@@ -55,7 +55,18 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     public PromptVersion activatePromptVersion(ActivatePromptVersionRequest request) {
         return promptStore.activatePromptVersion(request);
     }
-    
+
+    @Override
+    public PromptVersion updatePromptVersion(UpdatePromptVersionRequest request) {
+        return promptStore.updatePromptVersion(request);
+    }
+
+    @Override
+    public Boolean deletePromptVersion(DeletePromptVersionsRequest request) {
+        return promptStore.deletePromptVersion(request);
+    }
+
+
     // PromptActivateHistory 관련 메서드
     @Override
     public List<PromptActivateHistory> findPromptActivateHistories(FindPromptActivateHistoriesRequest request) {

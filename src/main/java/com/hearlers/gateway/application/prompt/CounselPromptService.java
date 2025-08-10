@@ -19,7 +19,10 @@ public interface CounselPromptService {
     PromptVersion loadExistingPromptVersion(LoadExistingPromptVersionRequest request);
     PromptVersion saveTemporaryVersion(SaveTemporaryVersionRequest request);
     PromptVersion activatePromptVersion(ActivatePromptVersionRequest request);
-    
+    PromptVersion updatePromptVersion(UpdatePromptVersionRequest request);
+    Boolean deletePromptVersion(DeletePromptVersionsRequest request);
+
+
     // PromptActivateHistory
     List<PromptActivateHistory> findPromptActivateHistories(FindPromptActivateHistoriesRequest request);
 

@@ -3,6 +3,7 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.hearlers.api.proto.v1.service.*;
 import org.mapstruct.*;
 
 import com.hearlers.api.proto.v1.model.CounselTechnique;
@@ -12,20 +13,6 @@ import com.hearlers.api.proto.v1.model.PromptActivateHistory;
 import com.hearlers.api.proto.v1.model.PromptVersion;
 import com.hearlers.api.proto.v1.model.TonePrompt;
 import com.hearlers.api.proto.v1.model.ToneScopedPrompt;
-import com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest;
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest;
-import com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest;
-import com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionByIdRequest;
-import com.hearlers.api.proto.v1.service.FindPromptVersionsRequest;
-import com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest;
-import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
-import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
-import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
 
 @Mapper(
         componentModel = "spring",
@@ -66,6 +53,14 @@ public interface CounselPromptDtoMapper {
         return builder.build();
     }
     
+    UpdatePromptVersionRequest toUpdatePromptVersionRequest(CounselPromptDto.UpdatePromptVersionRequestDto dto, String promptVersionId);
+
+    default DeletePromptVersionsRequest toDeletePromptVersionRequest(String promptVersionId) {
+        return DeletePromptVersionsRequest.newBuilder()
+                .addPromptVersionIds(promptVersionId)
+                .build();
+    }
+
     SaveTemporaryVersionRequest toSaveTemporaryVersionRequest(CounselPromptDto.SaveTemporaryVersionRequestDto dto);
 
     UpdateTonePromptRequest toUpdateTonePromptRequest(CounselPromptDto.UpdateTonePromptRequestDto dto);
@@ -104,80 +99,39 @@ public interface CounselPromptDtoMapper {
                 .promptVersions(promptVersions.stream().map(this::of).collect(Collectors.toList())).build();
     }
     
-    default CounselPromptDto.FindPromptVersionByIdResponseDto toFindPromptVersionByIdResponseDto(PromptVersion promptVersion) {
-        return CounselPromptDto.FindPromptVersionByIdResponseDto.builder()
-                .promptVersion(of(promptVersion))
-                .build();
-    }
+    CounselPromptDto.FindPromptVersionByIdResponseDto toFindPromptVersionByIdResponseDto(PromptVersion promptVersion);
+
+    CounselPromptDto.UpdatePromptVersionResponseDto toUpdatePromptVersionResponseDto(PromptVersion promptVersion);
+
+    CounselPromptDto.DeletePromptVersionResponseDto toDeletePromptVersionResponseDto(Boolean isSuccess);
 
     CounselPromptDto.FindActiveVersionResponseDto toFindActiveVersionResponseDto(PromptVersion promptVersion);
 
+    CounselPromptDto.FindTemporaryVersionResponseDto toFindTemporaryVersionResponseDto(PromptVersion promptVersion);
+    
+    CounselPromptDto.LoadExistingPromptVersionResponseDto toLoadExistingPromptVersionResponseDto(PromptVersion promptVersion);
+    
+    CounselPromptDto.SaveTemporaryVersionResponseDto toSaveTemporaryVersionResponseDto(PromptVersion promptVersion);
+    
+    CounselPromptDto.ActivatePromptVersionResponseDto toActivatePromptVersionResponseDto(PromptVersion promptVersion);
+    
+    CounselPromptDto.FindPersonaPromptByIdResponseDto toFindPersonaPromptByIdResponseDto(PersonaPrompt personaPrompt);
+    
+    CounselPromptDto.UpdatePersonaPromptResponseDto toUpdatePersonaPromptResponseDto(PersonaPrompt personaPrompt);
+    
+    CounselPromptDto.FindTonePromptByIdResponseDto toFindTonePromptByIdResponseDto(TonePrompt tonePrompt);
+    
+    CounselPromptDto.UpdateTonePromptResponseDto toUpdateTonePromptResponseDto(TonePrompt tonePrompt);
+    
+    CounselPromptDto.CreateCounselTechniqueResponseDto toCreateCounselTechniqueResponseDto(CounselTechnique counselTechnique);
 
-    default CounselPromptDto.FindTemporaryVersionResponseDto toFindTemporaryVersionResponseDto(PromptVersion promptVersion) {
-        return CounselPromptDto.FindTemporaryVersionResponseDto.builder()
-                .promptVersion(of(promptVersion))
-                .build();
-    }
-    
-    default CounselPromptDto.LoadExistingPromptVersionResponseDto toLoadExistingPromptVersionResponseDto(PromptVersion promptVersion) {
-        return CounselPromptDto.LoadExistingPromptVersionResponseDto.builder()
-                .promptVersion(of(promptVersion))
-                .build();
-    }
-    
-    default CounselPromptDto.SaveTemporaryVersionResponseDto toSaveTemporaryVersionResponseDto(PromptVersion promptVersion) {
-        return CounselPromptDto.SaveTemporaryVersionResponseDto.builder()
-                .promptVersion(of(promptVersion))
-                .build();
-    }
-    
-    default CounselPromptDto.ActivatePromptVersionResponseDto toActivatePromptVersionResponseDto(PromptVersion promptVersion) {
-        return CounselPromptDto.ActivatePromptVersionResponseDto.builder()
-                .promptVersion(of(promptVersion))
-                .build();
-    }
-    
-    default CounselPromptDto.FindPersonaPromptByIdResponseDto toFindPersonaPromptByIdResponseDto(PersonaPrompt personaPrompt) {
-        return CounselPromptDto.FindPersonaPromptByIdResponseDto.builder()
-                .personaPrompt(of(personaPrompt))
-                .build();
-    }
-    
-    default CounselPromptDto.UpdatePersonaPromptResponseDto toUpdatePersonaPromptResponseDto(PersonaPrompt personaPrompt) {
-        return CounselPromptDto.UpdatePersonaPromptResponseDto.builder()
-                .personaPrompt(of(personaPrompt))
-                .build();
-    }
-    
-    default CounselPromptDto.FindTonePromptByIdResponseDto toFindTonePromptByIdResponseDto(TonePrompt tonePrompt) {
-        return CounselPromptDto.FindTonePromptByIdResponseDto.builder()
-                .tonePrompt(of(tonePrompt))
-                .build();
-    }
-    
-    default CounselPromptDto.UpdateTonePromptResponseDto toUpdateTonePromptResponseDto(TonePrompt tonePrompt) {
-        return CounselPromptDto.UpdateTonePromptResponseDto.builder()
-                .tonePrompt(of(tonePrompt))
-                .build();
-    }
-    
-    default CounselPromptDto.CreateCounselTechniqueResponseDto toCreateCounselTechniqueResponseDto(CounselTechnique counselTechnique) {
-        return CounselPromptDto.CreateCounselTechniqueResponseDto.builder()
-                .counselTechnique(of(counselTechnique))
-                .build();
-    }
-    
     default CounselPromptDto.FindOrderedCounselTechniquesResponseDto toFindOrderedCounselTechniquesResponseDto(List<CounselTechnique> counselTechniques) {
         return CounselPromptDto.FindOrderedCounselTechniquesResponseDto.builder()
                 .counselTechniques(counselTechniques.stream().map(this::of).collect(Collectors.toList()))
                 .build();
     }
     
-    default CounselPromptDto.FindCounselTechniqueByIdResponseDto toFindCounselTechniqueByIdResponseDto(CounselTechnique counselTechnique) {
-        return CounselPromptDto.FindCounselTechniqueByIdResponseDto.builder()
-                .counselTechnique(of(counselTechnique))
-                .build();
-    }
+    CounselPromptDto.FindCounselTechniqueByIdResponseDto toFindCounselTechniqueByIdResponseDto(CounselTechnique counselTechnique);
     
     default CounselPromptDto.UpdateCounselTechniqueResponseDto toUpdateCounselTechniqueResponseDto(List<CounselTechnique> counselTechniques) {
         return CounselPromptDto.UpdateCounselTechniqueResponseDto.builder()

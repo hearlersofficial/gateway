@@ -7,14 +7,7 @@ import lombok.val;
 import org.mapstruct.factory.Mappers;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hearlers.api.proto.v1.model.CounselTechnique;
 import com.hearlers.api.proto.v1.model.PersonaPrompt;
@@ -80,6 +73,37 @@ public class CounselPromptController {
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 조회 성공");
     }
     
+
+    @Operation(summary = "프롬프트 버전 수정", description = "프롬프트 버전을 수정합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "프롬프트 버전 수정 성공"),
+            @ApiResponse(responseCode = "400", description = "프롬프트 버전 수정 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PutMapping("/prompt-versions/{prompt-version-id}")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.UpdatePromptVersionResponseDto>> updatePromptVersion(
+            @PathVariable(name = "prompt-version-id", required = true) String promptVersionId,
+            @Valid @RequestBody CounselPromptDto.UpdatePromptVersionRequestDto request) {
+        var updatePromptVersionRequest = counselPromptDtoMapper.toUpdatePromptVersionRequest(request, promptVersionId);
+        PromptVersion promptVersion = counselPromptService.updatePromptVersion(updatePromptVersionRequest);
+        var response = counselPromptDtoMapper.toUpdatePromptVersionResponseDto(promptVersion);
+        
+        return ResponseDtoUtil.okResponse(response, "프롬프트 버전 수정 성공");
+    }
+
+    @Operation(summary = "프롬프트 버전 삭제", description = "프롬프트 버전을 삭제합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "프롬프트 버전 삭제 성공"),
+            @ApiResponse(responseCode = "400", description = "프롬프트 버전 삭제 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @DeleteMapping("/prompt-versions/{prompt-version-id}")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.DeletePromptVersionResponseDto>> deletePromptVersion(
+            @PathVariable(name = "prompt-version-id", required = true) String promptVersionId) {
+        var deletePromptVersionRequest = counselPromptDtoMapper.toDeletePromptVersionRequest(promptVersionId);
+        counselPromptService.deletePromptVersion(deletePromptVersionRequest);
+        return ResponseDtoUtil.okResponse(null, "프롬프트 버전 삭제 성공");
+    }
 
 
     @Operation(summary = "현재 활성화된 프롬프트 버전 조회",

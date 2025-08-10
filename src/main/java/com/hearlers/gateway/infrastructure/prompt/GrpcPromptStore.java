@@ -2,20 +2,15 @@ package com.hearlers.gateway.infrastructure.prompt;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.service.*;
+import lombok.val;
 import org.springframework.stereotype.Component;
 
 import com.hearlers.api.proto.v1.model.CounselTechnique;
 import com.hearlers.api.proto.v1.model.PersonaPrompt;
 import com.hearlers.api.proto.v1.model.PromptVersion;
 import com.hearlers.api.proto.v1.model.TonePrompt;
-import com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest;
 import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub;
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest;
-import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest;
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest;
-import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest;
-import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest;
 import com.hearlers.gateway.application.prompt.PromptStore;
 
 import lombok.RequiredArgsConstructor;
@@ -58,5 +53,16 @@ public class GrpcPromptStore implements PromptStore {
     @Override
     public PromptVersion activatePromptVersion(ActivatePromptVersionRequest request) {
         return counselPromptServiceBlockingStub.activatePromptVersion(request).getPromptVersion();
+    }
+
+    @Override
+    public PromptVersion updatePromptVersion(UpdatePromptVersionRequest request) {
+        return counselPromptServiceBlockingStub.updatePromptVersion(request).getPromptVersion();
+    }
+
+    @Override
+    public Boolean deletePromptVersion(DeletePromptVersionsRequest request) {
+        var result = counselPromptServiceBlockingStub.deletePromptVersions(request);
+        return result != null;
     }
 }

@@ -220,7 +220,43 @@ public class CounselPromptDto {
         @Schema(description = "프롬프트 버전 이름", example = "2024년")
         private String name;
     }
-    
+
+    @Getter
+    @Builder
+    @Schema(description = "프롬프트 버전 수정 요청 DTO")
+    public static class UpdatePromptVersionRequestDto {
+        @Schema(description = "프롬프트 버전 이름", example = "2024년 7월 프롬프트 버전")
+        private String name;
+
+        @Schema(description = "프롬프트 버전 설명", example = "2024년 7월 배포 예정 버전입니다.")
+        private String description;
+        
+        @Schema(description = "북마크 여부", example = "false")
+        private Boolean isBookmarked;
+
+        @Schema(description = "AI 모델", example = "gpt-4o-mini")
+        private AiModel aiModel;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "프롬프트 버전 수정 응답 DTO")
+    public static class UpdatePromptVersionResponseDto {
+        @Schema(description = "프롬프트 버전")
+        private PromptVersionResponseDto promptVersion;
+    }
+
+
+
+    @Getter
+    @Builder
+    @Schema(description = "프롬프트 버전 삭제 응답 DTO")
+    public static class DeletePromptVersionResponseDto {
+        @Schema(description = "프롬프트 버전 삭제 성공 여부", example = "true")
+        private Boolean isSuccess;
+    }
+        
+
     @Getter
     @Builder
     @Schema(description = "임시 버전 저장 요청 DTO")
