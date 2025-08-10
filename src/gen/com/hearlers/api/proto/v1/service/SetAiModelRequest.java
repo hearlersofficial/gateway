@@ -6,6 +6,10 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
+ * <pre>
+ * 임시버전 Ai Model 설정
+ * </pre>
+ *
  * Protobuf type {@code com.hearlers.v1.service.SetAiModelRequest}
  */
 public final class SetAiModelRequest extends
@@ -218,6 +222,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 임시버전 Ai Model 설정
+   * </pre>
+   *
    * Protobuf type {@code com.hearlers.v1.service.SetAiModelRequest}
    */
   public static final class Builder extends
