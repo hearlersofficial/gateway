@@ -3,14 +3,9 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
 import org.mapstruct.*;
-
-import com.hearlers.api.proto.v1.model.CounselTechnique;
-import com.hearlers.api.proto.v1.model.PersonaPrompt;
-import com.hearlers.api.proto.v1.model.PromptActivateHistory;
-import com.hearlers.api.proto.v1.model.PromptVersion;
-import com.hearlers.api.proto.v1.model.TonePrompt;
 
 @Mapper(
         componentModel = "spring",
@@ -18,128 +13,111 @@ import com.hearlers.api.proto.v1.model.TonePrompt;
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS
 )
 public interface CounselPromptDtoMapper {
-    
-    // PromptVersion 관련 매핑
+    /*
+    프롬프트 버전
+     */
     CounselPromptDto.PromptVersionResponseDto of(PromptVersion promptVersion);
-
-    // PersonaPrompt 관련 매핑
-    CounselPromptDto.PersonaPromptResponseDto of(PersonaPrompt personaPrompt);
-    
-    // TonePrompt 관련 매핑
-    CounselPromptDto.TonePromptResponseDto of(TonePrompt tonePrompt);
-    
-    // CounselTechnique 관련 매핑
-    CounselPromptDto.CounselTechniqueResponseDto of(CounselTechnique counselTechnique);
-    
-    // PromptActivateHistory 관련 매핑
-    CounselPromptDto.PromptActivateHistoryResponseDto of(PromptActivateHistory promptActivateHistory);
-    
-    // 요청 DTO 변환 메소드
-    default FindPromptVersionsRequest toFindPromptVersionsRequest(CounselPromptDto.FindPromptVersionsRequestDto dto) {
-        FindPromptVersionsRequest.Builder builder = FindPromptVersionsRequest.newBuilder();
-        if (dto.getName() != null) {
-            builder.setName(dto.getName());
-        }
-        return builder.build();
-    }
-    
     UpdatePromptVersionRequest toUpdatePromptVersionRequest(CounselPromptDto.UpdatePromptVersionRequestDto dto, String promptVersionId);
-
+    CounselPromptDto.UpdatePromptVersionResponseDto toUpdatePromptVersionResponseDto(PromptVersion promptVersion);
+    SaveTemporaryVersionRequest toSaveTemporaryVersionRequest(CounselPromptDto.SaveTemporaryVersionRequestDto dto);
+    CounselPromptDto.SaveTemporaryVersionResponseDto toSaveTemporaryVersionResponseDto(PromptVersion promptVersion);
+    ActivatePromptVersionRequest toActivatePromptVersionRequest(String promptVersionId);
+    CounselPromptDto.ActivatePromptVersionResponseDto toActivatePromptVersionResponseDto(PromptVersion promptVersion);
+    CounselPromptDto.LoadExistingPromptVersionResponseDto toLoadExistingPromptVersionResponseDto(PromptVersion promptVersion);
     default DeletePromptVersionsRequest toDeletePromptVersionRequest(String promptVersionId) {
         return DeletePromptVersionsRequest.newBuilder()
                 .addPromptVersionIds(promptVersionId)
                 .build();
     }
-
-    SaveTemporaryVersionRequest toSaveTemporaryVersionRequest(CounselPromptDto.SaveTemporaryVersionRequestDto dto);
-
-    UpdateTonePromptRequest toUpdateTonePromptRequest(CounselPromptDto.UpdateTonePromptRequestDto dto);
-    
-    UpdatePersonaPromptRequest toUpdatePersonaPromptRequest(CounselPromptDto.UpdatePersonaPromptRequestDto dto);
-    
-    CreateCounselTechniqueRequest toCreateCounselTechniqueRequest(CounselPromptDto.CreateCounselTechniqueRequestDto dto);
-    
-    UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto, String counselTechniqueId);
-    
+    CounselPromptDto.DeletePromptVersionResponseDto toDeletePromptVersionResponseDto(Boolean isSuccess);
     FindPromptVersionByIdRequest toFindPromptVersionByIdRequest(String promptVersionId);
-    
-    ActivatePromptVersionRequest toActivatePromptVersionRequest(String promptVersionId);
-    
-    FindPersonaPromptByIdRequest toFindPersonaPromptByIdRequest(String personaPromptId);
-    
-    FindTonePromptByIdRequest toFindTonePromptByIdRequest(String tonePromptId);
-    
-    FindCounselTechniqueByIdRequest toFindCounselTechniqueByIdRequest(String counselTechniqueId);
-
-    FindPromptActivateHistoriesRequest toFindPromptActivateHistoriesRequest(String promptVersionId);
-    
-    FindPersonaPromptsRequest toFindPersonaPromptsRequest(CounselPromptDto.FindPersonaPromptsRequestDto dto);
-    
-    FindTonePromptsRequest toFindTonePromptsRequest(CounselPromptDto.FindTonePromptsRequestDto dto);
-    
-    FindCounselTechniquesRequest toFindCounselTechniquesRequest(CounselPromptDto.FindCounselTechniquesRequestDto dto);
-    
-    // 응답 DTO 변환 메소드
+    CounselPromptDto.FindPromptVersionByIdResponseDto toFindPromptVersionByIdResponseDto(PromptVersion promptVersion);
+    FindPromptVersionsRequest toFindPromptVersionsRequest(CounselPromptDto.FindPromptVersionsRequestDto dto);
     default CounselPromptDto.FindPromptVersionsResponseDto toFindPromptVersionsResponseDto(List<PromptVersion> promptVersions) {
         return CounselPromptDto.FindPromptVersionsResponseDto.builder()
                 .promptVersions(promptVersions.stream().map(this::of).collect(Collectors.toList())).build();
     }
-    
-    CounselPromptDto.FindPromptVersionByIdResponseDto toFindPromptVersionByIdResponseDto(PromptVersion promptVersion);
-
-    CounselPromptDto.UpdatePromptVersionResponseDto toUpdatePromptVersionResponseDto(PromptVersion promptVersion);
-
-    CounselPromptDto.DeletePromptVersionResponseDto toDeletePromptVersionResponseDto(Boolean isSuccess);
-
     CounselPromptDto.FindActiveVersionResponseDto toFindActiveVersionResponseDto(PromptVersion promptVersion);
-
     CounselPromptDto.FindTemporaryVersionResponseDto toFindTemporaryVersionResponseDto(PromptVersion promptVersion);
-    
-    CounselPromptDto.LoadExistingPromptVersionResponseDto toLoadExistingPromptVersionResponseDto(PromptVersion promptVersion);
-    
-    CounselPromptDto.SaveTemporaryVersionResponseDto toSaveTemporaryVersionResponseDto(PromptVersion promptVersion);
-    
-    CounselPromptDto.ActivatePromptVersionResponseDto toActivatePromptVersionResponseDto(PromptVersion promptVersion);
-    
-    CounselPromptDto.FindPersonaPromptByIdResponseDto toFindPersonaPromptByIdResponseDto(PersonaPrompt personaPrompt);
-    
-    default CounselPromptDto.FindPersonaPromptsResponseDto toFindPersonaPromptsResponseDto(List<PersonaPrompt> personaPrompts) {
-        return CounselPromptDto.FindPersonaPromptsResponseDto.builder()
-                .personaPrompts(personaPrompts.stream().map(this::of).collect(Collectors.toList()))
-                .build();
-    }
-    
-    CounselPromptDto.UpdatePersonaPromptResponseDto toUpdatePersonaPromptResponseDto(PersonaPrompt personaPrompt);
-    
-    CounselPromptDto.FindTonePromptByIdResponseDto toFindTonePromptByIdResponseDto(TonePrompt tonePrompt);
 
-    default CounselPromptDto.FindTonePromptsResponseDto toFindTonePromptsResponseDto(List<TonePrompt> tonePrompts) {
-        return CounselPromptDto.FindTonePromptsResponseDto.builder()
-                .tonePrompts(tonePrompts.stream().map(this::of).collect(Collectors.toList()))
-                .build();
-    }
-    
-    CounselPromptDto.UpdateTonePromptResponseDto toUpdateTonePromptResponseDto(TonePrompt tonePrompt);
-    
+    /*
+    상담 기법
+     */
+    CounselPromptDto.CounselTechniqueResponseDto of(CounselTechnique counselTechnique);
+    CreateCounselTechniqueRequest toCreateCounselTechniqueRequest(CounselPromptDto.CreateCounselTechniqueRequestDto dto);
     CounselPromptDto.CreateCounselTechniqueResponseDto toCreateCounselTechniqueResponseDto(CounselTechnique counselTechnique);
-
-    
+    UpdateCounselTechniqueRequest toUpdateCounselTechniqueRequest(CounselPromptDto.UpdateCounselTechniqueRequestDto dto, String counselTechniqueId);
+    CounselPromptDto.UpdateCounselTechniqueResponseDto toUpdateCounselTechniqueResponseDto(CounselTechnique counselTechnique);
+    FindCounselTechniqueByIdRequest toFindCounselTechniqueByIdRequest(String counselTechniqueId);
     CounselPromptDto.FindCounselTechniqueByIdResponseDto toFindCounselTechniqueByIdResponseDto(CounselTechnique counselTechnique);
-
+    FindCounselTechniquesRequest toFindCounselTechniquesRequest(CounselPromptDto.FindCounselTechniquesRequestDto dto);
     default CounselPromptDto.FindCounselTechniquesResponseDto toFindCounselTechniquesResponseDto(List<CounselTechnique> counselTechniques) {
         return CounselPromptDto.FindCounselTechniquesResponseDto.builder()
                 .counselTechniques(counselTechniques.stream().map(this::of).collect(Collectors.toList()))
                 .build();
     }
-    
-    default CounselPromptDto.UpdateCounselTechniqueResponseDto toUpdateCounselTechniqueResponseDto(CounselTechnique counselTechnique) {
-        return CounselPromptDto.UpdateCounselTechniqueResponseDto.builder()
-                .counselTechnique(this.of(counselTechnique))
+
+
+
+
+
+
+    /*
+    페르소나 프롬프트
+     */
+    CounselPromptDto.PersonaPromptResponseDto of(PersonaPrompt personaPrompt);
+    UpdatePersonaPromptRequest toUpdatePersonaPromptRequest(CounselPromptDto.UpdatePersonaPromptRequestDto dto);
+    CounselPromptDto.UpdatePersonaPromptResponseDto toUpdatePersonaPromptResponseDto(PersonaPrompt personaPrompt);
+    FindPersonaPromptByIdRequest toFindPersonaPromptByIdRequest(String personaPromptId);
+    CounselPromptDto.FindPersonaPromptByIdResponseDto toFindPersonaPromptByIdResponseDto(PersonaPrompt personaPrompt);
+    FindPersonaPromptsRequest toFindPersonaPromptsRequest(CounselPromptDto.FindPersonaPromptsRequestDto dto);
+    default CounselPromptDto.FindPersonaPromptsResponseDto toFindPersonaPromptsResponseDto(List<PersonaPrompt> personaPrompts) {
+        return CounselPromptDto.FindPersonaPromptsResponseDto.builder()
+                .personaPrompts(personaPrompts.stream().map(this::of).collect(Collectors.toList()))
                 .build();
     }
 
-    
-     default CounselPromptDto.FindPromptActivateHistoriesResponseDto toFindPromptActivateHistoriesResponseDto(List<PromptActivateHistory> promptActivateHistories) {
+
+
+    /*
+    톤 프롬프트
+     */
+    CounselPromptDto.TonePromptResponseDto of(TonePrompt tonePrompt);
+    UpdateTonePromptRequest toUpdateTonePromptRequest(CounselPromptDto.UpdateTonePromptRequestDto dto);
+    CounselPromptDto.UpdateTonePromptResponseDto toUpdateTonePromptResponseDto(TonePrompt tonePrompt);
+    FindTonePromptByIdRequest toFindTonePromptByIdRequest(String tonePromptId);
+    CounselPromptDto.FindTonePromptByIdResponseDto toFindTonePromptByIdResponseDto(TonePrompt tonePrompt);
+    FindTonePromptsRequest toFindTonePromptsRequest(CounselPromptDto.FindTonePromptsRequestDto dto);
+    default CounselPromptDto.FindTonePromptsResponseDto toFindTonePromptsResponseDto(List<TonePrompt> tonePrompts) {
+        return CounselPromptDto.FindTonePromptsResponseDto.builder()
+                .tonePrompts(tonePrompts.stream().map(this::of).collect(Collectors.toList()))
+                .build();
+    }
+
+    /*
+    상담 기법 전환 규칙
+     */
+    CounselPromptDto.CounselTechniqueTransitionRuleResponseDto of(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
+    CreateCounselTechniqueTransitionRuleRequest toCreateTransitionRuleRequest(CounselPromptDto.CreateCounselTechniqueTransitionRuleRequestDto dto);
+    CounselPromptDto.CreateCounselTechniqueTransitionRuleResponseDto toCreateTransitionRuleResponse(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
+    UpdateCounselTechniqueTransitionRuleRequest toUpdateTransitionRuleRequest(CounselPromptDto.UpdateCounselTechniqueTransitionRuleRequestDto dto, String counselTechniqueTransitionRuleId);
+    CounselPromptDto.UpdateCounselTechniqueTransitionRuleResponseDto toUpdateTransitionRuleResponse(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
+    DeleteCounselTechniqueTransitionRuleRequest toDeleteTransitionRuleRequest(String counselTechniqueTransitionRuleId);
+    FindCounselTechniqueTransitionRuleByIdRequest toFindTransitionRuleByIdRequest(String counselTechniqueTransitionRuleId);
+    CounselPromptDto.FindCounselTechniqueTransitionRuleByIdResponseDto toFindTransitionRuleByIdResponseDto(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
+    FindCounselTechniqueTransitionRulesRequest toFindTransitionRulesRequest(CounselPromptDto.FindCounselTechniqueTransitionRulesRequestDto dto);
+    default CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto toFindTransitionRulesResponseDto(List<CounselTechniqueTransitionRule> counselTechniqueTransitionRules) {
+        return CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto.builder()
+                .counselTechniqueTransitionRules(counselTechniqueTransitionRules.stream().map(this::of).collect(Collectors.toList()))
+                .build();
+    }
+
+    /*
+    상담 활성화 히스토리
+     */
+    CounselPromptDto.PromptActivateHistoryResponseDto of(PromptActivateHistory promptActivateHistory);
+    FindPromptActivateHistoriesRequest toFindPromptActivateHistoriesRequest(String promptVersionId);
+    default CounselPromptDto.FindPromptActivateHistoriesResponseDto toFindPromptActivateHistoriesResponseDto(List<PromptActivateHistory> promptActivateHistories) {
         return CounselPromptDto.FindPromptActivateHistoriesResponseDto.builder()
                 .promptActivateHistories(promptActivateHistories.stream().map(this::of).collect(Collectors.toList()))
                 .build();
