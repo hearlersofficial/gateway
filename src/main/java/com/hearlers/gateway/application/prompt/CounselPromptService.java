@@ -29,15 +29,16 @@ public interface CounselPromptService {
     // TonePrompt
     TonePrompt updateTonePrompt(UpdateTonePromptRequest request);
     TonePrompt findTonePromptById(FindTonePromptByIdRequest request);
+    List<TonePrompt> findTonePrompts(FindTonePromptsRequest request);
 
     // PersonaPrompt
     PersonaPrompt updatePersonaPrompt(UpdatePersonaPromptRequest request);
     PersonaPrompt findPersonaPromptById(FindPersonaPromptByIdRequest request);
+    List<PersonaPrompt> findPersonaPrompts(FindPersonaPromptsRequest request);
 
     // CounselTechnique
     CounselTechnique createCounselTechnique(CreateCounselTechniqueRequest request);
-    List<CounselTechnique> updateCounselTechnique(UpdateCounselTechniqueRequest request);
+    CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request);
     CounselTechnique findCounselTechniqueById(FindCounselTechniqueByIdRequest request);
-    List<CounselTechnique> findOrderedCounselTechniques(FindOrderedCounselTechniquesRequest request);
-    List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request);
+    List<CounselTechnique> findCounselTechniques(FindCounselTechniquesRequest request);
 }

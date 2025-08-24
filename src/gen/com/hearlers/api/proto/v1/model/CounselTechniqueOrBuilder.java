@@ -76,33 +76,28 @@ public interface CounselTechniqueOrBuilder extends
   int getMessageThreshold();
 
   /**
-   * <code>bool is_temporary = 7 [json_name = "isTemporary"];</code>
-   * @return The isTemporary.
+   * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return The isStartTechnique.
    */
-  boolean getIsTemporary();
+  boolean getIsStartTechnique();
 
   /**
-   * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-   * @return Whether the nextCounselTechniqueId field is set.
-   */
-  boolean hasNextCounselTechniqueId();
-  /**
-   * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The nextCounselTechniqueId.
-   */
-  java.lang.String getNextCounselTechniqueId();
-  /**
-   * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The bytes for nextCounselTechniqueId.
-   */
-  com.google.protobuf.ByteString
-      getNextCounselTechniqueIdBytes();
-
-  /**
-   * <code>double temperature = 9 [json_name = "temperature"];</code>
+   * <code>double temperature = 8 [json_name = "temperature"];</code>
    * @return The temperature.
    */
   double getTemperature();
+
+  /**
+   * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+   * @return The promptVersionId.
+   */
+  java.lang.String getPromptVersionId();
+  /**
+   * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+   * @return The bytes for promptVersionId.
+   */
+  com.google.protobuf.ByteString
+      getPromptVersionIdBytes();
 
   /**
    * <pre>

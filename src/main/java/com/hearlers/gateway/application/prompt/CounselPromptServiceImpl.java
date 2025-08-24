@@ -84,6 +84,12 @@ public class CounselPromptServiceImpl implements CounselPromptService {
         return promptReader.findTonePromptById(request);
     }
 
+    @Override
+    public List<TonePrompt> findTonePrompts(FindTonePromptsRequest request) {
+        return promptReader.findTonePrompts(request);
+    }
+
+
     // PersonaPrompt 관련 메서드
     @Override
     public PersonaPrompt updatePersonaPrompt(UpdatePersonaPromptRequest request) {
@@ -95,6 +101,11 @@ public class CounselPromptServiceImpl implements CounselPromptService {
         return promptReader.findPersonaPromptById(request);
     }
 
+    @Override
+    public List<PersonaPrompt> findPersonaPrompts(FindPersonaPromptsRequest request) {
+        return promptReader.findPersonaPrompts(request);
+    }
+
     // CounselTechnique 관련 메서드
     @Override
     public CounselTechnique createCounselTechnique(CreateCounselTechniqueRequest request) {
@@ -102,13 +113,8 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     }
 
     @Override
-    public List<CounselTechnique> updateCounselTechnique(UpdateCounselTechniqueRequest request) {
+    public CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request) {
         return promptStore.updateCounselTechnique(request);
-    }
-
-    @Override
-    public List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request) {
-        return promptStore.saveCounselTechniqueSequence(request);
     }
 
     @Override
@@ -117,7 +123,8 @@ public class CounselPromptServiceImpl implements CounselPromptService {
     }
 
     @Override
-    public List<CounselTechnique> findOrderedCounselTechniques(FindOrderedCounselTechniquesRequest request) {
-        return promptReader.findOrderedCounselTechniques(request);
+    public List<CounselTechnique> findCounselTechniques(FindCounselTechniquesRequest request) {
+        return promptReader.findCounselTechniques(request);
     }
+
 }

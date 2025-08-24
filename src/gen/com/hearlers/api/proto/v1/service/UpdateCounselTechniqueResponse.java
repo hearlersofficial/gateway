@@ -27,7 +27,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateCounselTechniqueResponse() {
-    counselTechniques_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -43,45 +42,31 @@ private static final long serialVersionUID = 0L;
             com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse.class, com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse.Builder.class);
   }
 
-  public static final int COUNSEL_TECHNIQUES_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private java.util.List<com.hearlers.api.proto.v1.model.CounselTechnique> counselTechniques_;
+  private int bitField0_;
+  public static final int COUNSEL_TECHNIQUE_FIELD_NUMBER = 1;
+  private com.hearlers.api.proto.v1.model.CounselTechnique counselTechnique_;
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * @return Whether the counselTechnique field is set.
    */
   @java.lang.Override
-  public java.util.List<com.hearlers.api.proto.v1.model.CounselTechnique> getCounselTechniquesList() {
-    return counselTechniques_;
+  public boolean hasCounselTechnique() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+   * @return The counselTechnique.
    */
   @java.lang.Override
-  public java.util.List<? extends com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> 
-      getCounselTechniquesOrBuilderList() {
-    return counselTechniques_;
+  public com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechnique() {
+    return counselTechnique_ == null ? com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance() : counselTechnique_;
   }
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+   * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
    */
   @java.lang.Override
-  public int getCounselTechniquesCount() {
-    return counselTechniques_.size();
-  }
-  /**
-   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-   */
-  @java.lang.Override
-  public com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechniques(int index) {
-    return counselTechniques_.get(index);
-  }
-  /**
-   * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-   */
-  @java.lang.Override
-  public com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniquesOrBuilder(
-      int index) {
-    return counselTechniques_.get(index);
+  public com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniqueOrBuilder() {
+    return counselTechnique_ == null ? com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance() : counselTechnique_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -98,8 +83,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < counselTechniques_.size(); i++) {
-      output.writeMessage(1, counselTechniques_.get(i));
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getCounselTechnique());
     }
     getUnknownFields().writeTo(output);
   }
@@ -110,9 +95,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < counselTechniques_.size(); i++) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, counselTechniques_.get(i));
+        .computeMessageSize(1, getCounselTechnique());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -129,8 +114,11 @@ private static final long serialVersionUID = 0L;
     }
     com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse other = (com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse) obj;
 
-    if (!getCounselTechniquesList()
-        .equals(other.getCounselTechniquesList())) return false;
+    if (hasCounselTechnique() != other.hasCounselTechnique()) return false;
+    if (hasCounselTechnique()) {
+      if (!getCounselTechnique()
+          .equals(other.getCounselTechnique())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -142,9 +130,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getCounselTechniquesCount() > 0) {
-      hash = (37 * hash) + COUNSEL_TECHNIQUES_FIELD_NUMBER;
-      hash = (53 * hash) + getCounselTechniquesList().hashCode();
+    if (hasCounselTechnique()) {
+      hash = (37 * hash) + COUNSEL_TECHNIQUE_FIELD_NUMBER;
+      hash = (53 * hash) + getCounselTechnique().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -265,25 +253,29 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getCounselTechniqueFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      if (counselTechniquesBuilder_ == null) {
-        counselTechniques_ = java.util.Collections.emptyList();
-      } else {
-        counselTechniques_ = null;
-        counselTechniquesBuilder_.clear();
+      counselTechnique_ = null;
+      if (counselTechniqueBuilder_ != null) {
+        counselTechniqueBuilder_.dispose();
+        counselTechniqueBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -310,26 +302,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse buildPartial() {
       com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse result = new com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse result) {
-      if (counselTechniquesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          counselTechniques_ = java.util.Collections.unmodifiableList(counselTechniques_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.counselTechniques_ = counselTechniques_;
-      } else {
-        result.counselTechniques_ = counselTechniquesBuilder_.build();
-      }
-    }
-
     private void buildPartial0(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.counselTechnique_ = counselTechniqueBuilder_ == null
+            ? counselTechnique_
+            : counselTechniqueBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -344,31 +331,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse other) {
       if (other == com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse.getDefaultInstance()) return this;
-      if (counselTechniquesBuilder_ == null) {
-        if (!other.counselTechniques_.isEmpty()) {
-          if (counselTechniques_.isEmpty()) {
-            counselTechniques_ = other.counselTechniques_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureCounselTechniquesIsMutable();
-            counselTechniques_.addAll(other.counselTechniques_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.counselTechniques_.isEmpty()) {
-          if (counselTechniquesBuilder_.isEmpty()) {
-            counselTechniquesBuilder_.dispose();
-            counselTechniquesBuilder_ = null;
-            counselTechniques_ = other.counselTechniques_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            counselTechniquesBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getCounselTechniquesFieldBuilder() : null;
-          } else {
-            counselTechniquesBuilder_.addAllMessages(other.counselTechniques_);
-          }
-        }
+      if (other.hasCounselTechnique()) {
+        mergeCounselTechnique(other.getCounselTechnique());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -397,16 +361,10 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              com.hearlers.api.proto.v1.model.CounselTechnique m =
-                  input.readMessage(
-                      com.hearlers.api.proto.v1.model.CounselTechnique.parser(),
-                      extensionRegistry);
-              if (counselTechniquesBuilder_ == null) {
-                ensureCounselTechniquesIsMutable();
-                counselTechniques_.add(m);
-              } else {
-                counselTechniquesBuilder_.addMessage(m);
-              }
+              input.readMessage(
+                  getCounselTechniqueFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             default: {
@@ -426,244 +384,125 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.hearlers.api.proto.v1.model.CounselTechnique> counselTechniques_ =
-      java.util.Collections.emptyList();
-    private void ensureCounselTechniquesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        counselTechniques_ = new java.util.ArrayList<com.hearlers.api.proto.v1.model.CounselTechnique>(counselTechniques_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.hearlers.api.proto.v1.model.CounselTechnique, com.hearlers.api.proto.v1.model.CounselTechnique.Builder, com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> counselTechniquesBuilder_;
-
+    private com.hearlers.api.proto.v1.model.CounselTechnique counselTechnique_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.hearlers.api.proto.v1.model.CounselTechnique, com.hearlers.api.proto.v1.model.CounselTechnique.Builder, com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> counselTechniqueBuilder_;
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * @return Whether the counselTechnique field is set.
      */
-    public java.util.List<com.hearlers.api.proto.v1.model.CounselTechnique> getCounselTechniquesList() {
-      if (counselTechniquesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(counselTechniques_);
+    public boolean hasCounselTechnique() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     * @return The counselTechnique.
+     */
+    public com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechnique() {
+      if (counselTechniqueBuilder_ == null) {
+        return counselTechnique_ == null ? com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance() : counselTechnique_;
       } else {
-        return counselTechniquesBuilder_.getMessageList();
+        return counselTechniqueBuilder_.getMessage();
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
-    public int getCounselTechniquesCount() {
-      if (counselTechniquesBuilder_ == null) {
-        return counselTechniques_.size();
-      } else {
-        return counselTechniquesBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.CounselTechnique getCounselTechniques(int index) {
-      if (counselTechniquesBuilder_ == null) {
-        return counselTechniques_.get(index);
-      } else {
-        return counselTechniquesBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public Builder setCounselTechniques(
-        int index, com.hearlers.api.proto.v1.model.CounselTechnique value) {
-      if (counselTechniquesBuilder_ == null) {
+    public Builder setCounselTechnique(com.hearlers.api.proto.v1.model.CounselTechnique value) {
+      if (counselTechniqueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.set(index, value);
-        onChanged();
+        counselTechnique_ = value;
       } else {
-        counselTechniquesBuilder_.setMessage(index, value);
+        counselTechniqueBuilder_.setMessage(value);
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
-    public Builder setCounselTechniques(
-        int index, com.hearlers.api.proto.v1.model.CounselTechnique.Builder builderForValue) {
-      if (counselTechniquesBuilder_ == null) {
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        counselTechniquesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public Builder addCounselTechniques(com.hearlers.api.proto.v1.model.CounselTechnique value) {
-      if (counselTechniquesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.add(value);
-        onChanged();
-      } else {
-        counselTechniquesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public Builder addCounselTechniques(
-        int index, com.hearlers.api.proto.v1.model.CounselTechnique value) {
-      if (counselTechniquesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.add(index, value);
-        onChanged();
-      } else {
-        counselTechniquesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public Builder addCounselTechniques(
+    public Builder setCounselTechnique(
         com.hearlers.api.proto.v1.model.CounselTechnique.Builder builderForValue) {
-      if (counselTechniquesBuilder_ == null) {
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.add(builderForValue.build());
-        onChanged();
+      if (counselTechniqueBuilder_ == null) {
+        counselTechnique_ = builderForValue.build();
       } else {
-        counselTechniquesBuilder_.addMessage(builderForValue.build());
+        counselTechniqueBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     */
+    public Builder mergeCounselTechnique(com.hearlers.api.proto.v1.model.CounselTechnique value) {
+      if (counselTechniqueBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+          counselTechnique_ != null &&
+          counselTechnique_ != com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance()) {
+          getCounselTechniqueBuilder().mergeFrom(value);
+        } else {
+          counselTechnique_ = value;
+        }
+      } else {
+        counselTechniqueBuilder_.mergeFrom(value);
+      }
+      if (counselTechnique_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
-    public Builder addCounselTechniques(
-        int index, com.hearlers.api.proto.v1.model.CounselTechnique.Builder builderForValue) {
-      if (counselTechniquesBuilder_ == null) {
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        counselTechniquesBuilder_.addMessage(index, builderForValue.build());
+    public Builder clearCounselTechnique() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      counselTechnique_ = null;
+      if (counselTechniqueBuilder_ != null) {
+        counselTechniqueBuilder_.dispose();
+        counselTechniqueBuilder_ = null;
       }
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
-    public Builder addAllCounselTechniques(
-        java.lang.Iterable<? extends com.hearlers.api.proto.v1.model.CounselTechnique> values) {
-      if (counselTechniquesBuilder_ == null) {
-        ensureCounselTechniquesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, counselTechniques_);
-        onChanged();
+    public com.hearlers.api.proto.v1.model.CounselTechnique.Builder getCounselTechniqueBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getCounselTechniqueFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
+     */
+    public com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniqueOrBuilder() {
+      if (counselTechniqueBuilder_ != null) {
+        return counselTechniqueBuilder_.getMessageOrBuilder();
       } else {
-        counselTechniquesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public Builder clearCounselTechniques() {
-      if (counselTechniquesBuilder_ == null) {
-        counselTechniques_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        counselTechniquesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public Builder removeCounselTechniques(int index) {
-      if (counselTechniquesBuilder_ == null) {
-        ensureCounselTechniquesIsMutable();
-        counselTechniques_.remove(index);
-        onChanged();
-      } else {
-        counselTechniquesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.CounselTechnique.Builder getCounselTechniquesBuilder(
-        int index) {
-      return getCounselTechniquesFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder getCounselTechniquesOrBuilder(
-        int index) {
-      if (counselTechniquesBuilder_ == null) {
-        return counselTechniques_.get(index);  } else {
-        return counselTechniquesBuilder_.getMessageOrBuilder(index);
+        return counselTechnique_ == null ?
+            com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance() : counselTechnique_;
       }
     }
     /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
+     * <code>.com.hearlers.v1.model.CounselTechnique counsel_technique = 1 [json_name = "counselTechnique"];</code>
      */
-    public java.util.List<? extends com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> 
-         getCounselTechniquesOrBuilderList() {
-      if (counselTechniquesBuilder_ != null) {
-        return counselTechniquesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(counselTechniques_);
-      }
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.CounselTechnique.Builder addCounselTechniquesBuilder() {
-      return getCounselTechniquesFieldBuilder().addBuilder(
-          com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public com.hearlers.api.proto.v1.model.CounselTechnique.Builder addCounselTechniquesBuilder(
-        int index) {
-      return getCounselTechniquesFieldBuilder().addBuilder(
-          index, com.hearlers.api.proto.v1.model.CounselTechnique.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .com.hearlers.v1.model.CounselTechnique counsel_techniques = 1 [json_name = "counselTechniques"];</code>
-     */
-    public java.util.List<com.hearlers.api.proto.v1.model.CounselTechnique.Builder> 
-         getCounselTechniquesBuilderList() {
-      return getCounselTechniquesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.SingleFieldBuilder<
         com.hearlers.api.proto.v1.model.CounselTechnique, com.hearlers.api.proto.v1.model.CounselTechnique.Builder, com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder> 
-        getCounselTechniquesFieldBuilder() {
-      if (counselTechniquesBuilder_ == null) {
-        counselTechniquesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        getCounselTechniqueFieldBuilder() {
+      if (counselTechniqueBuilder_ == null) {
+        counselTechniqueBuilder_ = new com.google.protobuf.SingleFieldBuilder<
             com.hearlers.api.proto.v1.model.CounselTechnique, com.hearlers.api.proto.v1.model.CounselTechnique.Builder, com.hearlers.api.proto.v1.model.CounselTechniqueOrBuilder>(
-                counselTechniques_,
-                ((bitField0_ & 0x00000001) != 0),
+                getCounselTechnique(),
                 getParentForChildren(),
                 isClean());
-        counselTechniques_ = null;
+        counselTechnique_ = null;
       }
-      return counselTechniquesBuilder_;
+      return counselTechniqueBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.UpdateCounselTechniqueResponse)

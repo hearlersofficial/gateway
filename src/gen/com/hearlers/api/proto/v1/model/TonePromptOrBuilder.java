@@ -46,11 +46,23 @@ public interface TonePromptOrBuilder extends
       getToneIdBytes();
 
   /**
+   * <code>string prompt_version_id = 4 [json_name = "promptVersionId"];</code>
+   * @return The promptVersionId.
+   */
+  java.lang.String getPromptVersionId();
+  /**
+   * <code>string prompt_version_id = 4 [json_name = "promptVersionId"];</code>
+   * @return The bytes for promptVersionId.
+   */
+  com.google.protobuf.ByteString
+      getPromptVersionIdBytes();
+
+  /**
    * <pre>
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 4 [json_name = "createdAt"];</code>
+   * <code>string created_at = 5 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -59,7 +71,7 @@ public interface TonePromptOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 4 [json_name = "createdAt"];</code>
+   * <code>string created_at = 5 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -70,7 +82,7 @@ public interface TonePromptOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 5 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
@@ -79,7 +91,7 @@ public interface TonePromptOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 5 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
@@ -90,7 +102,7 @@ public interface TonePromptOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 6 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
@@ -99,7 +111,7 @@ public interface TonePromptOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 6 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -108,7 +120,7 @@ public interface TonePromptOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 6 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 7 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

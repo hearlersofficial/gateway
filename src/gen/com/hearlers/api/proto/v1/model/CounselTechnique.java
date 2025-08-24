@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
     toneId_ = "";
     context_ = "";
     instruction_ = "";
-    nextCounselTechniqueId_ = "";
+    promptVersionId_ = "";
     createdAt_ = "";
     updatedAt_ = "";
     deletedAt_ = "";
@@ -258,73 +258,65 @@ private static final long serialVersionUID = 0L;
     return messageThreshold_;
   }
 
-  public static final int IS_TEMPORARY_FIELD_NUMBER = 7;
-  private boolean isTemporary_ = false;
+  public static final int IS_START_TECHNIQUE_FIELD_NUMBER = 7;
+  private boolean isStartTechnique_ = false;
   /**
-   * <code>bool is_temporary = 7 [json_name = "isTemporary"];</code>
-   * @return The isTemporary.
+   * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return The isStartTechnique.
    */
   @java.lang.Override
-  public boolean getIsTemporary() {
-    return isTemporary_;
+  public boolean getIsStartTechnique() {
+    return isStartTechnique_;
   }
 
-  public static final int NEXT_COUNSEL_TECHNIQUE_ID_FIELD_NUMBER = 8;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object nextCounselTechniqueId_ = "";
+  public static final int TEMPERATURE_FIELD_NUMBER = 8;
+  private double temperature_ = 0D;
   /**
-   * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-   * @return Whether the nextCounselTechniqueId field is set.
+   * <code>double temperature = 8 [json_name = "temperature"];</code>
+   * @return The temperature.
    */
   @java.lang.Override
-  public boolean hasNextCounselTechniqueId() {
-    return ((bitField0_ & 0x00000001) != 0);
+  public double getTemperature() {
+    return temperature_;
   }
+
+  public static final int PROMPT_VERSION_ID_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object promptVersionId_ = "";
   /**
-   * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The nextCounselTechniqueId.
+   * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+   * @return The promptVersionId.
    */
   @java.lang.Override
-  public java.lang.String getNextCounselTechniqueId() {
-    java.lang.Object ref = nextCounselTechniqueId_;
+  public java.lang.String getPromptVersionId() {
+    java.lang.Object ref = promptVersionId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      nextCounselTechniqueId_ = s;
+      promptVersionId_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-   * @return The bytes for nextCounselTechniqueId.
+   * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+   * @return The bytes for promptVersionId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNextCounselTechniqueIdBytes() {
-    java.lang.Object ref = nextCounselTechniqueId_;
+      getPromptVersionIdBytes() {
+    java.lang.Object ref = promptVersionId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      nextCounselTechniqueId_ = b;
+      promptVersionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int TEMPERATURE_FIELD_NUMBER = 9;
-  private double temperature_ = 0D;
-  /**
-   * <code>double temperature = 9 [json_name = "temperature"];</code>
-   * @return The temperature.
-   */
-  @java.lang.Override
-  public double getTemperature() {
-    return temperature_;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 10;
@@ -434,7 +426,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasDeletedAt() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -512,14 +504,14 @@ private static final long serialVersionUID = 0L;
     if (messageThreshold_ != 0) {
       output.writeInt32(6, messageThreshold_);
     }
-    if (isTemporary_ != false) {
-      output.writeBool(7, isTemporary_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, nextCounselTechniqueId_);
+    if (isStartTechnique_ != false) {
+      output.writeBool(7, isStartTechnique_);
     }
     if (java.lang.Double.doubleToRawLongBits(temperature_) != 0) {
-      output.writeDouble(9, temperature_);
+      output.writeDouble(8, temperature_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(promptVersionId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, promptVersionId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, createdAt_);
@@ -527,7 +519,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, updatedAt_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, deletedAt_);
     }
     getUnknownFields().writeTo(output);
@@ -558,16 +550,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, messageThreshold_);
     }
-    if (isTemporary_ != false) {
+    if (isStartTechnique_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, isTemporary_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, nextCounselTechniqueId_);
+        .computeBoolSize(7, isStartTechnique_);
     }
     if (java.lang.Double.doubleToRawLongBits(temperature_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(9, temperature_);
+        .computeDoubleSize(8, temperature_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(promptVersionId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, promptVersionId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, createdAt_);
@@ -575,7 +567,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, updatedAt_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -605,16 +597,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInstruction())) return false;
     if (getMessageThreshold()
         != other.getMessageThreshold()) return false;
-    if (getIsTemporary()
-        != other.getIsTemporary()) return false;
-    if (hasNextCounselTechniqueId() != other.hasNextCounselTechniqueId()) return false;
-    if (hasNextCounselTechniqueId()) {
-      if (!getNextCounselTechniqueId()
-          .equals(other.getNextCounselTechniqueId())) return false;
-    }
+    if (getIsStartTechnique()
+        != other.getIsStartTechnique()) return false;
     if (java.lang.Double.doubleToLongBits(getTemperature())
         != java.lang.Double.doubleToLongBits(
             other.getTemperature())) return false;
+    if (!getPromptVersionId()
+        .equals(other.getPromptVersionId())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -647,16 +636,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getInstruction().hashCode();
     hash = (37 * hash) + MESSAGE_THRESHOLD_FIELD_NUMBER;
     hash = (53 * hash) + getMessageThreshold();
-    hash = (37 * hash) + IS_TEMPORARY_FIELD_NUMBER;
+    hash = (37 * hash) + IS_START_TECHNIQUE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsTemporary());
-    if (hasNextCounselTechniqueId()) {
-      hash = (37 * hash) + NEXT_COUNSEL_TECHNIQUE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNextCounselTechniqueId().hashCode();
-    }
+        getIsStartTechnique());
     hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getTemperature()));
+    hash = (37 * hash) + PROMPT_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPromptVersionId().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -802,9 +789,9 @@ private static final long serialVersionUID = 0L;
       context_ = "";
       instruction_ = "";
       messageThreshold_ = 0;
-      isTemporary_ = false;
-      nextCounselTechniqueId_ = "";
+      isStartTechnique_ = false;
       temperature_ = 0D;
+      promptVersionId_ = "";
       createdAt_ = "";
       updatedAt_ = "";
       deletedAt_ = "";
@@ -860,15 +847,13 @@ private static final long serialVersionUID = 0L;
         result.messageThreshold_ = messageThreshold_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.isTemporary_ = isTemporary_;
+        result.isStartTechnique_ = isStartTechnique_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.nextCounselTechniqueId_ = nextCounselTechniqueId_;
-        to_bitField0_ |= 0x00000001;
+        result.temperature_ = temperature_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.temperature_ = temperature_;
+        result.promptVersionId_ = promptVersionId_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createdAt_ = createdAt_;
@@ -876,9 +861,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updatedAt_ = updatedAt_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.deletedAt_ = deletedAt_;
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -923,16 +909,16 @@ private static final long serialVersionUID = 0L;
       if (other.getMessageThreshold() != 0) {
         setMessageThreshold(other.getMessageThreshold());
       }
-      if (other.getIsTemporary() != false) {
-        setIsTemporary(other.getIsTemporary());
-      }
-      if (other.hasNextCounselTechniqueId()) {
-        nextCounselTechniqueId_ = other.nextCounselTechniqueId_;
-        bitField0_ |= 0x00000080;
-        onChanged();
+      if (other.getIsStartTechnique() != false) {
+        setIsStartTechnique(other.getIsStartTechnique());
       }
       if (other.getTemperature() != 0D) {
         setTemperature(other.getTemperature());
+      }
+      if (!other.getPromptVersionId().isEmpty()) {
+        promptVersionId_ = other.promptVersionId_;
+        bitField0_ |= 0x00000100;
+        onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
@@ -1006,20 +992,20 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 48
             case 56: {
-              isTemporary_ = input.readBool();
+              isStartTechnique_ = input.readBool();
               bitField0_ |= 0x00000040;
               break;
             } // case 56
-            case 66: {
-              nextCounselTechniqueId_ = input.readStringRequireUtf8();
+            case 65: {
+              temperature_ = input.readDouble();
               bitField0_ |= 0x00000080;
               break;
-            } // case 66
-            case 73: {
-              temperature_ = input.readDouble();
+            } // case 65
+            case 74: {
+              promptVersionId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
               break;
-            } // case 73
+            } // case 74
             case 82: {
               createdAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
@@ -1444,120 +1430,41 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isTemporary_ ;
+    private boolean isStartTechnique_ ;
     /**
-     * <code>bool is_temporary = 7 [json_name = "isTemporary"];</code>
-     * @return The isTemporary.
+     * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @return The isStartTechnique.
      */
     @java.lang.Override
-    public boolean getIsTemporary() {
-      return isTemporary_;
+    public boolean getIsStartTechnique() {
+      return isStartTechnique_;
     }
     /**
-     * <code>bool is_temporary = 7 [json_name = "isTemporary"];</code>
-     * @param value The isTemporary to set.
+     * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @param value The isStartTechnique to set.
      * @return This builder for chaining.
      */
-    public Builder setIsTemporary(boolean value) {
+    public Builder setIsStartTechnique(boolean value) {
 
-      isTemporary_ = value;
+      isStartTechnique_ = value;
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>bool is_temporary = 7 [json_name = "isTemporary"];</code>
+     * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearIsTemporary() {
+    public Builder clearIsStartTechnique() {
       bitField0_ = (bitField0_ & ~0x00000040);
-      isTemporary_ = false;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object nextCounselTechniqueId_ = "";
-    /**
-     * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-     * @return Whether the nextCounselTechniqueId field is set.
-     */
-    public boolean hasNextCounselTechniqueId() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-     * @return The nextCounselTechniqueId.
-     */
-    public java.lang.String getNextCounselTechniqueId() {
-      java.lang.Object ref = nextCounselTechniqueId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nextCounselTechniqueId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-     * @return The bytes for nextCounselTechniqueId.
-     */
-    public com.google.protobuf.ByteString
-        getNextCounselTechniqueIdBytes() {
-      java.lang.Object ref = nextCounselTechniqueId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextCounselTechniqueId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-     * @param value The nextCounselTechniqueId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextCounselTechniqueId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      nextCounselTechniqueId_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNextCounselTechniqueId() {
-      nextCounselTechniqueId_ = getDefaultInstance().getNextCounselTechniqueId();
-      bitField0_ = (bitField0_ & ~0x00000080);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string next_counsel_technique_id = 8 [json_name = "nextCounselTechniqueId"];</code>
-     * @param value The bytes for nextCounselTechniqueId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextCounselTechniqueIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      nextCounselTechniqueId_ = value;
-      bitField0_ |= 0x00000080;
+      isStartTechnique_ = false;
       onChanged();
       return this;
     }
 
     private double temperature_ ;
     /**
-     * <code>double temperature = 9 [json_name = "temperature"];</code>
+     * <code>double temperature = 8 [json_name = "temperature"];</code>
      * @return The temperature.
      */
     @java.lang.Override
@@ -1565,24 +1472,96 @@ private static final long serialVersionUID = 0L;
       return temperature_;
     }
     /**
-     * <code>double temperature = 9 [json_name = "temperature"];</code>
+     * <code>double temperature = 8 [json_name = "temperature"];</code>
      * @param value The temperature to set.
      * @return This builder for chaining.
      */
     public Builder setTemperature(double value) {
 
       temperature_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double temperature = 8 [json_name = "temperature"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTemperature() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      temperature_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object promptVersionId_ = "";
+    /**
+     * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+     * @return The promptVersionId.
+     */
+    public java.lang.String getPromptVersionId() {
+      java.lang.Object ref = promptVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        promptVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+     * @return The bytes for promptVersionId.
+     */
+    public com.google.protobuf.ByteString
+        getPromptVersionIdBytes() {
+      java.lang.Object ref = promptVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        promptVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+     * @param value The promptVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptVersionId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      promptVersionId_ = value;
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>double temperature = 9 [json_name = "temperature"];</code>
+     * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTemperature() {
+    public Builder clearPromptVersionId() {
+      promptVersionId_ = getDefaultInstance().getPromptVersionId();
       bitField0_ = (bitField0_ & ~0x00000100);
-      temperature_ = 0D;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prompt_version_id = 9 [json_name = "promptVersionId"];</code>
+     * @param value The bytes for promptVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      promptVersionId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

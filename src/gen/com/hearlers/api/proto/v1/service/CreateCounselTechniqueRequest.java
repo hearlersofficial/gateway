@@ -231,6 +231,17 @@ private static final long serialVersionUID = 0L;
     return temperature_;
   }
 
+  public static final int IS_START_TECHNIQUE_FIELD_NUMBER = 7;
+  private boolean isStartTechnique_ = false;
+  /**
+   * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return The isStartTechnique.
+   */
+  @java.lang.Override
+  public boolean getIsStartTechnique() {
+    return isStartTechnique_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -263,6 +274,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToRawLongBits(temperature_) != 0) {
       output.writeDouble(6, temperature_);
     }
+    if (isStartTechnique_ != false) {
+      output.writeBool(7, isStartTechnique_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -292,6 +306,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, temperature_);
     }
+    if (isStartTechnique_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, isStartTechnique_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -320,6 +338,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getTemperature())
         != java.lang.Double.doubleToLongBits(
             other.getTemperature())) return false;
+    if (getIsStartTechnique()
+        != other.getIsStartTechnique()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -344,6 +364,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getTemperature()));
+    hash = (37 * hash) + IS_START_TECHNIQUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsStartTechnique());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -488,6 +511,7 @@ private static final long serialVersionUID = 0L;
       instruction_ = "";
       messageThreshold_ = 0;
       temperature_ = 0D;
+      isStartTechnique_ = false;
       return this;
     }
 
@@ -539,6 +563,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.temperature_ = temperature_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.isStartTechnique_ = isStartTechnique_;
+      }
     }
 
     @java.lang.Override
@@ -578,6 +605,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTemperature() != 0D) {
         setTemperature(other.getTemperature());
+      }
+      if (other.getIsStartTechnique() != false) {
+        setIsStartTechnique(other.getIsStartTechnique());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -635,6 +665,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 49
+            case 56: {
+              isStartTechnique_ = input.readBool();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1000,6 +1035,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearTemperature() {
       bitField0_ = (bitField0_ & ~0x00000020);
       temperature_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private boolean isStartTechnique_ ;
+    /**
+     * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @return The isStartTechnique.
+     */
+    @java.lang.Override
+    public boolean getIsStartTechnique() {
+      return isStartTechnique_;
+    }
+    /**
+     * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @param value The isStartTechnique to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsStartTechnique(boolean value) {
+
+      isStartTechnique_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsStartTechnique() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      isStartTechnique_ = false;
       onChanged();
       return this;
     }

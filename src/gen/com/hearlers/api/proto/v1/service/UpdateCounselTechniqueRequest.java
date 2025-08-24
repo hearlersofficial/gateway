@@ -271,6 +271,25 @@ private static final long serialVersionUID = 0L;
     return temperature_;
   }
 
+  public static final int IS_START_TECHNIQUE_FIELD_NUMBER = 7;
+  private boolean isStartTechnique_ = false;
+  /**
+   * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return Whether the isStartTechnique field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsStartTechnique() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return The isStartTechnique.
+   */
+  @java.lang.Override
+  public boolean getIsStartTechnique() {
+    return isStartTechnique_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -303,6 +322,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeDouble(6, temperature_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(7, isStartTechnique_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -331,6 +353,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, temperature_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, isStartTechnique_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -375,6 +401,11 @@ private static final long serialVersionUID = 0L;
           != java.lang.Double.doubleToLongBits(
               other.getTemperature())) return false;
     }
+    if (hasIsStartTechnique() != other.hasIsStartTechnique()) return false;
+    if (hasIsStartTechnique()) {
+      if (getIsStartTechnique()
+          != other.getIsStartTechnique()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -408,6 +439,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getTemperature()));
+    }
+    if (hasIsStartTechnique()) {
+      hash = (37 * hash) + IS_START_TECHNIQUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsStartTechnique());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -552,6 +588,7 @@ private static final long serialVersionUID = 0L;
       instruction_ = "";
       messageThreshold_ = 0;
       temperature_ = 0D;
+      isStartTechnique_ = false;
       return this;
     }
 
@@ -609,6 +646,10 @@ private static final long serialVersionUID = 0L;
         result.temperature_ = temperature_;
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.isStartTechnique_ = isStartTechnique_;
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -649,6 +690,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTemperature()) {
         setTemperature(other.getTemperature());
+      }
+      if (other.hasIsStartTechnique()) {
+        setIsStartTechnique(other.getIsStartTechnique());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -706,6 +750,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 49
+            case 56: {
+              isStartTechnique_ = input.readBool();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1108,6 +1157,46 @@ private static final long serialVersionUID = 0L;
     public Builder clearTemperature() {
       bitField0_ = (bitField0_ & ~0x00000020);
       temperature_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private boolean isStartTechnique_ ;
+    /**
+     * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @return Whether the isStartTechnique field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsStartTechnique() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @return The isStartTechnique.
+     */
+    @java.lang.Override
+    public boolean getIsStartTechnique() {
+      return isStartTechnique_;
+    }
+    /**
+     * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @param value The isStartTechnique to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsStartTechnique(boolean value) {
+
+      isStartTechnique_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsStartTechnique() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      isStartTechnique_ = false;
       onChanged();
       return this;
     }

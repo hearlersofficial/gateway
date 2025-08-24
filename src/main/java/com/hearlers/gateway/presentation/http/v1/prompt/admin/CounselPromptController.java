@@ -229,7 +229,24 @@ public class CounselPromptController {
         
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 조회 성공");
     }
-    
+
+    @Operation(summary = "페르소나 프롬프트 전체 조회", 
+               description = "페르소나 프롬프트를 전체 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "페르소나 프롬프트 전체 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "페르소나 프롬프트 전체 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/persona-prompts")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindPersonaPromptsResponseDto>> getPersonaPrompts(
+            @Valid @ParameterObject @ModelAttribute CounselPromptDto.FindPersonaPromptsRequestDto requestDto) {
+        var request = counselPromptDtoMapper.toFindPersonaPromptsRequest(requestDto);
+        List<PersonaPrompt> personaPrompts = counselPromptService.findPersonaPrompts(request);
+        var response = counselPromptDtoMapper.toFindPersonaPromptsResponseDto(personaPrompts);
+        
+        return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 전체 조회 성공");
+    }
+
     @Operation(summary = "임시 버전에서 페르소나 프롬프트 업데이트", 
                description = "임시 버전에서 페르소나 프롬프트를 업데이트합니다. 카운셀러 ID와 본문을 지정할 수 있습니다.")
     @ApiResponses(value = {
@@ -269,7 +286,24 @@ public class CounselPromptController {
         
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 조회 성공");
     }
-    
+
+    @Operation(summary = "톤 프롬프트 전체 조회", 
+               description = "톤 프롬프트를 전체 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "톤 프롬프트 전체 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "톤 프롬프트 전체 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/tone-prompts")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindTonePromptsResponseDto>> getTonePrompts(
+            @Valid @ParameterObject @ModelAttribute CounselPromptDto.FindTonePromptsRequestDto requestDto) {
+        var request = counselPromptDtoMapper.toFindTonePromptsRequest(requestDto);
+        List<TonePrompt> tonePrompts = counselPromptService.findTonePrompts(request);
+        var response = counselPromptDtoMapper.toFindTonePromptsResponseDto(tonePrompts);
+        
+        return ResponseDtoUtil.okResponse(response, "톤 프롬프트 전체 조회 성공");
+    }
+
     @Operation(summary = "임시 버전에서 톤 프롬프트 업데이트", 
                description = "임시 버전에서 톤 프롬프트를 업데이트합니다. 톤 ID와 본문을 지정할 수 있습니다.")
     @ApiResponses(value = {
@@ -286,6 +320,7 @@ public class CounselPromptController {
         
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 업데이트 성공");
     }
+    
     
     //----------------------
     // 상담 기법 (CounselTechnique) API
@@ -311,11 +346,10 @@ public class CounselPromptController {
     }
     
     @Operation(
-        summary = "상담 기법 전체 조회 || 첫 번째 상담 기법 ID를 통해 연결된 모든 상담 기법 목록 조회", 
+        summary = "상담 기법 전체 조회",
         description = """
-            상담 기법을 전체 조회하거나, 첫 번째 상담 기법 ID를 통해 연결된 모든 상담 기법 목록을 조회합니다.
-            first-counsel-technique-id 파라미터가 없으면 전체 조회, 있으면 해당 ID로 시작하는 연결된 기법들을 순서대로 반환합니다.
-            **현재 전체 조회는 구현되지 않았습니다. 이에 따라 쿼리 파라미터가 필수입니다.
+            상담 기법을 전체 조회합니다.
+            prompt-version-id는 필수 파라미터입니다.
             """
     )
     @ApiResponses(value = {
@@ -324,11 +358,11 @@ public class CounselPromptController {
                     content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
     })
     @GetMapping("/counsel-techniques")
-    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindOrderedCounselTechniquesResponseDto>> getOrderedCounselTechniques(
-            @RequestParam(required = true, name = "first-counsel-technique-id") String firstCounselTechniqueId) {
-        var findOrderedCounselTechniquesRequest = counselPromptDtoMapper.toFindOrderedCounselTechniquesRequest(firstCounselTechniqueId);
-        List<CounselTechnique> counselTechniques = counselPromptService.findOrderedCounselTechniques(findOrderedCounselTechniquesRequest);
-        var response = counselPromptDtoMapper.toFindOrderedCounselTechniquesResponseDto(counselTechniques);
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindCounselTechniquesResponseDto>> getCounselTechniques(
+            @Valid @ParameterObject @ModelAttribute  CounselPromptDto.FindCounselTechniquesRequestDto requestDto) {
+        var request = counselPromptDtoMapper.toFindCounselTechniquesRequest(requestDto);
+        List<CounselTechnique> counselTechniques = counselPromptService.findCounselTechniques(request);
+        var response = counselPromptDtoMapper.toFindCounselTechniquesResponseDto(counselTechniques);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 목록 조회 성공");
     }
@@ -364,28 +398,12 @@ public class CounselPromptController {
             @PathVariable(name = "counsel-technique-id", required = true) String counselTechniqueId,
             @Valid @RequestBody CounselPromptDto.UpdateCounselTechniqueRequestDto request) {
         var updateCounselTechniqueRequest = counselPromptDtoMapper.toUpdateCounselTechniqueRequest(request, counselTechniqueId);
-        List<CounselTechnique> counselTechnique = counselPromptService.updateCounselTechnique(updateCounselTechniqueRequest);
+        CounselTechnique counselTechnique = counselPromptService.updateCounselTechnique(updateCounselTechniqueRequest);
         var response = counselPromptDtoMapper.toUpdateCounselTechniqueResponseDto(counselTechnique);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 업데이트 성공");
     }
-    
-    @Operation(summary = "임시 버전에서 상담 기법 시퀀스 저장", 
-               description = "임시 버전에서 상담 기법 시퀀스를 저장합니다. 기존 기법 및 임시기법들을 연결하고, 연결된 최종 기법 리스트를 반환합니다.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "상담 기법 시퀀스 저장 성공"),
-            @ApiResponse(responseCode = "400", description = "상담 기법 시퀀스 저장 실패", 
-                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
-    })
-    @PostMapping("/prompt-versions/temporary-version/counsel-techniques/all/sequences")
-    public ResponseEntity<ResponseDto.Success<CounselPromptDto.SaveCounselTechniqueSequenceResponseDto>> saveCounselTechniqueSequence(
-            @Valid @RequestBody CounselPromptDto.SaveCounselTechniqueSequenceRequestDto request) {
-        var saveCounselTechniqueSequenceRequest = counselPromptDtoMapper.toSaveCounselTechniqueSequenceRequest(request);
-        List<CounselTechnique> counselTechniques = counselPromptService.saveCounselTechniqueSequence(saveCounselTechniqueSequenceRequest);
-        var response = counselPromptDtoMapper.toSaveCounselTechniqueSequenceResponseDto(counselTechniques);
-        
-        return ResponseDtoUtil.okResponse(response, "상담 기법 시퀀스 저장 성공");
-    }
+
     
     //----------------------
     // 프롬프트 활성화 히스토리 (PromptActivateHistory) API

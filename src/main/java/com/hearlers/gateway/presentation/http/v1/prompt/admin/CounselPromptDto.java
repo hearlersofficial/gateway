@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,12 +39,6 @@ public class CounselPromptDto {
 
         @Schema(description =  "AI 모델")
         private AiModel aiModel;
-        
-        @Schema(description = "상담사별 프롬프트 목록")
-        private List<CounselorScopedPromptResponseDto> counselorScopedPrompts;
-        
-        @Schema(description = "톤별 프롬프트 목록")
-        private List<ToneScopedPromptResponseDto> toneScopedPrompts;
         
         @Schema(description = "생성 시간", example = "2024-06-01T12:34:56.000Z")
         private String createdAt;
@@ -105,6 +100,9 @@ public class CounselPromptDto {
     public static class PersonaPromptResponseDto {
         @Schema(description = "페르소나 프롬프트 ID", example = "pp_123456")
         private String id;
+
+        @Schema(description =  "프롬프트 버전 ID", example = "334324523543")
+        private String promptVersionId;
         
         @Schema(description = "페르소나 프롬프트 내용", example = "저는 10년 경력의 심리상담사로, 우울증과 불안장애 분야를 전문으로 다룹니다.")
         private String body;
@@ -129,6 +127,9 @@ public class CounselPromptDto {
     public static class TonePromptResponseDto {
         @Schema(description = "톤 프롬프트 ID", example = "tp_123456")
         private String id;
+
+        @Schema(description =  "프롬프트 버전 ID", example = "334324523543")
+        private String promptVersionId;
         
         @Schema(description = "톤 프롬프트 내용", example = "공감적이고 따뜻한 어조로 대화하세요.")
         private String body;
@@ -153,7 +154,10 @@ public class CounselPromptDto {
     public static class CounselTechniqueResponseDto {
         @Schema(description = "상담 기법 ID", example = "ct_123456")
         private String id;
-        
+
+        @Schema(description =  "프롬프트 버전 ID", example = "334324523543")
+        private String promptVersionId;
+
         @Schema(description = "상담 기법 이름", example = "공감 반응 기법")
         private String name;
         
@@ -169,11 +173,8 @@ public class CounselPromptDto {
         @Schema(description = "메시지 임계값", example = "3")
         private int messageThreshold;
         
-        @Schema(description = "임시 기법 여부", example = "false")
-        private Boolean isTemporary;
-        
-        @Schema(description = "다음 상담 기법 ID", example = "ct_789012")
-        private String nextCounselTechniqueId;
+        @Schema(description = "시작 기법 여부", example = "false")
+        private Boolean isStartTechnique;
 
         @Schema(description = "AI 모델 temperature 값")
         private double temperature;
@@ -219,6 +220,7 @@ public class CounselPromptDto {
     public static class FindPromptVersionsRequestDto {
         @Schema(description = "프롬프트 버전 이름", example = "2024년")
         private String name;
+
     }
 
     @Getter
@@ -430,6 +432,14 @@ public class CounselPromptDto {
         @Schema(description = "페르소나 프롬프트")
         private PersonaPromptResponseDto personaPrompt;
     }
+
+    @Getter
+    @Builder
+    @Schema(description = "페르소나 프롬프트 전체 조회 응답 DTO")
+    public static class FindPersonaPromptsResponseDto {
+        @Schema(description = "페르소나 프롬프트 목록")
+        private List<PersonaPromptResponseDto> personaPrompts;
+    }
     
     @Getter
     @Builder
@@ -445,6 +455,14 @@ public class CounselPromptDto {
     public static class FindTonePromptByIdResponseDto {
         @Schema(description = "톤 프롬프트")
         private TonePromptResponseDto tonePrompt;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "톤 프롬프트 전체 조회 응답 DTO")
+    public static class FindTonePromptsResponseDto {
+        @Schema(description = "톤 프롬프트 목록")
+        private List<TonePromptResponseDto> tonePrompts;
     }
     
     @Getter
@@ -465,8 +483,8 @@ public class CounselPromptDto {
     
     @Getter
     @Builder
-    @Schema(description = "상담 기법 목록 조회 응답 DTO")
-    public static class FindOrderedCounselTechniquesResponseDto {
+    @Schema(description = "상담 기법 전체 조회 응답 DTO")
+    public static class FindCounselTechniquesResponseDto {
         @Schema(description = "상담 기법 목록")
         private List<CounselTechniqueResponseDto> counselTechniques;
     }
@@ -483,17 +501,10 @@ public class CounselPromptDto {
     @Builder
     @Schema(description = "상담 기법 업데이트 응답 DTO")
     public static class UpdateCounselTechniqueResponseDto {
-        @Schema(description = "상담 기법 목록")
-        private List<CounselTechniqueResponseDto> counselTechnique;
+        @Schema(description = "상담 기법")
+        private CounselTechniqueResponseDto counselTechnique;
     }
     
-    @Getter
-    @Builder
-    @Schema(description = "상담 기법 시퀀스 저장 응답 DTO")
-    public static class SaveCounselTechniqueSequenceResponseDto {
-        @Schema(description = "상담 기법 목록")
-        private List<CounselTechniqueResponseDto> counselTechniques;
-    }
     
     @Getter
     @Builder
@@ -501,5 +512,42 @@ public class CounselPromptDto {
     public static class FindPromptActivateHistoriesResponseDto {
         @Schema(description = "프롬프트 활성화 히스토리 목록")
         private List<PromptActivateHistoryResponseDto> promptActivateHistories;
+    }
+    
+    // 요청 DTO 추가
+    @Getter
+    @Builder
+    @Schema(description = "페르소나 프롬프트 전체 조회 요청 DTO")
+    public static class FindPersonaPromptsRequestDto {
+        @Schema(description = "프롬프트 버전 ID", example = "pv_123456")
+        @NotNull
+        private String promptVersionId;
+        
+        @Schema(description = "상담사 ID", example = "counselor_123456")
+        private String counselorId;
+    }
+    
+    @Getter
+    @Builder
+    @Schema(description = "톤 프롬프트 전체 조회 요청 DTO")
+    public static class FindTonePromptsRequestDto {
+        @Schema(description = "프롬프트 버전 ID", example = "pv_123456")
+        @NotNull
+        private String promptVersionId;
+        
+        @Schema(description = "톤 ID", example = "tone_123456")
+        private String toneId;
+    }
+    
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전체 조회 요청 DTO")
+    public static class FindCounselTechniquesRequestDto {
+        @Schema(description = "프롬프트 버전 ID", example = "pv_123456")
+        @NotNull
+        private String promptVersionId;
+        
+        @Schema(description = "톤 ID", example = "tone_123456")
+        private String toneId;
     }
 }

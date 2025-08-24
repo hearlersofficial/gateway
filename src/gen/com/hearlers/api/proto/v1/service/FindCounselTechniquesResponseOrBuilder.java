@@ -5,8 +5,8 @@
 
 package com.hearlers.api.proto.v1.service;
 
-public interface SaveCounselTechniqueSequenceResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.hearlers.v1.service.SaveCounselTechniqueSequenceResponse)
+public interface FindCounselTechniquesResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:com.hearlers.v1.service.FindCounselTechniquesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -2,14 +2,10 @@ package com.hearlers.gateway.infrastructure.prompt;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
 import org.springframework.stereotype.Component;
 
-import com.hearlers.api.proto.v1.model.CounselTechnique;
-import com.hearlers.api.proto.v1.model.PersonaPrompt;
-import com.hearlers.api.proto.v1.model.PromptActivateHistory;
-import com.hearlers.api.proto.v1.model.PromptVersion;
-import com.hearlers.api.proto.v1.model.TonePrompt;
 import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub;
 import com.hearlers.gateway.application.prompt.PromptReader;
 
@@ -26,22 +22,34 @@ public class GrpcPromptReader implements PromptReader {
     public TonePrompt findTonePromptById(FindTonePromptByIdRequest request) {
         return counselPromptServiceBlockingStub.findTonePromptById(request).getTonePrompt();
     }
-    
+
+    @Override
+    public List<TonePrompt> findTonePrompts(FindTonePromptsRequest request) {
+        return counselPromptServiceBlockingStub.findTonePrompts(request).getTonePromptsList();
+    }
+
+
     @Override
     public PersonaPrompt findPersonaPromptById(FindPersonaPromptByIdRequest request) {
         return counselPromptServiceBlockingStub.findPersonaPromptById(request).getPersonaPrompt();
     }
-    
+
+    @Override
+    public List<PersonaPrompt> findPersonaPrompts(FindPersonaPromptsRequest request) {
+        return counselPromptServiceBlockingStub.findPersonaPrompts(request).getPersonaPromptsList();
+    }
+
     @Override
     public CounselTechnique findCounselTechniqueById(FindCounselTechniqueByIdRequest request) {
         return counselPromptServiceBlockingStub.findCounselTechniqueById(request).getCounselTechnique();
     }
 
     @Override
-    public List<CounselTechnique> findOrderedCounselTechniques(FindOrderedCounselTechniquesRequest request) {
-        return counselPromptServiceBlockingStub.findOrderedCounselTechniques(request).getCounselTechniquesList();
+    public List<CounselTechnique> findCounselTechniques(FindCounselTechniquesRequest request) {
+        return counselPromptServiceBlockingStub.findCounselTechniques(request).getCounselTechniquesList();
     }
-    
+
+
     @Override
     public PromptVersion findPromptVersionById(FindPromptVersionByIdRequest request) {
         return counselPromptServiceBlockingStub.findPromptVersionById(request).getPromptVersion();
@@ -70,5 +78,15 @@ public class GrpcPromptReader implements PromptReader {
     @Override
     public List<PromptActivateHistory> findPromptActivateHistories(FindPromptActivateHistoriesRequest request) {
         return counselPromptServiceBlockingStub.findPromptActivateHistories(request).getPromptActivateHistoriesList();
+    }
+
+    @Override
+    public CounselTechniqueTransitionRule findCounselTechniqueTransitionRuleById(FindCounselTechniqueTransitionRuleByIdRequest request) {
+        return counselPromptServiceBlockingStub.findCounselTechniqueTransitionRuleById(request).getCounselTechniqueTransitionRule();
+    }
+
+    @Override
+    public List<CounselTechniqueTransitionRule> findCounselTechniqueTransitionRules(FindCounselTechniqueTransitionRulesRequest request) {
+        return counselPromptServiceBlockingStub.findCounselTechniqueTransitionRules(request).getCounselTechniqueTransitionRulesList();
     }
 }
