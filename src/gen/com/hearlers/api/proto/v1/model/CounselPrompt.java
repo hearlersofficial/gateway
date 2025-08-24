@@ -104,78 +104,72 @@ public final class CounselPrompt {
       "tivatedAt\022\035\n\ncreated_at\030\004 \001(\tR\tcreatedAt" +
       "\022\035\n\nupdated_at\030\005 \001(\tR\tupdatedAt\022\"\n\ndelet" +
       "ed_at\030\006 \001(\tH\000R\tdeletedAt\210\001\001B\r\n\013_deleted_" +
-      "at\"\305\024\n\036CounselTechniqueTransitionRule\022\016\n" +
+      "at\"\341\022\n\036CounselTechniqueTransitionRule\022\016\n" +
       "\002id\030\001 \001(\tR\002id\022*\n\021prompt_version_id\030\002 \001(\t" +
       "R\017promptVersionId\0229\n\031from_counsel_techni" +
       "que_id\030\003 \001(\tR\026fromCounselTechniqueId\0225\n\027" +
       "to_counsel_technique_id\030\004 \001(\tR\024toCounsel" +
       "TechniqueId\022\032\n\010priority\030\005 \001(\005R\010priority\022" +
-      "K\n min_not_compressed_message_count\030\006 \001(" +
-      "\005H\000R\034minNotCompressedMessageCount\210\001\001\022K\n " +
-      "max_not_compressed_message_count\030\007 \001(\005H\001" +
-      "R\034maxNotCompressedMessageCount\210\001\001\022Q\n#min" +
-      "_current_technique_message_count\030\010 \001(\005H\002" +
-      "R\037minCurrentTechniqueMessageCount\210\001\001\022Q\n#" +
-      "max_current_technique_message_count\030\t \001(" +
-      "\005H\003R\037maxCurrentTechniqueMessageCount\210\001\001\022" +
-      "[\n\027required_impact_domains\030\n \003(\0162#.com.h" +
-      "earlers.v1.model.ImpactDomainR\025requiredI" +
-      "mpactDomains\022Q\n\023required_timeframes\030\013 \003(" +
-      "\0162 .com.hearlers.v1.model.TimeframeR\022req" +
-      "uiredTimeframes\022c\n\032required_emotion_prim" +
-      "aries\030\014 \003(\0162%.com.hearlers.v1.model.Emot" +
-      "ionPrimaryR\030requiredEmotionPrimaries\022K\n\021" +
-      "required_valences\030\r \003(\0162\036.com.hearlers.v" +
-      "1.model.ValenceR\020requiredValences\022[\n\027req" +
-      "uired_arousal_levels\030\016 \003(\0162#.com.hearler" +
-      "s.v1.model.ArousalLevelR\025requiredArousal" +
-      "Levels\0227\n\025min_emotion_intensity\030\017 \001(\005H\004R" +
-      "\023minEmotionIntensity\210\001\001\0227\n\025max_emotion_i" +
-      "ntensity\030\020 \001(\005H\005R\023maxEmotionIntensity\210\001\001" +
-      "\022g\n\033required_perceived_controls\030\021 \003(\0162\'." +
-      "com.hearlers.v1.model.PerceivedControlR\031" +
-      "requiredPerceivedControls\022d\n\032required_mo" +
-      "tivation_stages\030\022 \003(\0162&.com.hearlers.v1." +
-      "model.MotivationStageR\030requiredMotivatio" +
-      "nStages\022/\n\021min_self_efficacy\030\023 \001(\005H\006R\017mi" +
-      "nSelfEfficacy\210\001\001\022/\n\021max_self_efficacy\030\024 " +
-      "\001(\005H\007R\017maxSelfEfficacy\210\001\001\022n\n\036required_so" +
-      "cial_support_levels\030\025 \003(\0162).com.hearlers" +
-      ".v1.model.SocialSupportLevelR\033requiredSo" +
-      "cialSupportLevels\022O\n\023required_risk_kinds" +
-      "\030\026 \003(\0162\037.com.hearlers.v1.model.RiskKindR" +
-      "\021requiredRiskKinds\022/\n\021min_risk_severity\030" +
-      "\027 \001(\005H\010R\017minRiskSeverity\210\001\001\022/\n\021max_risk_" +
-      "severity\030\030 \001(\005H\tR\017maxRiskSeverity\210\001\001\022]\n\030" +
-      "required_sleep_qualities\030\031 \003(\0162#.com.hea" +
-      "rlers.v1.model.SleepQualityR\026requiredSle" +
-      "epQualities\022P\n\"required_physical_symptom" +
-      "s_present\030\032 \001(\010H\nR\037requiredPhysicalSympt" +
-      "omsPresent\210\001\001\022^\n\030required_cognitive_load" +
-      "s\030\033 \003(\0162$.com.hearlers.v1.model.Cognitiv" +
-      "eLoadR\026requiredCognitiveLoads\022g\n\033require" +
-      "d_alliance_strengths\030\034 \003(\0162\'.com.hearler" +
-      "s.v1.model.AllianceStrengthR\031requiredAll" +
-      "ianceStrengths\022>\n\031required_consent_to_de" +
-      "pth\030\035 \001(\010H\013R\026requiredConsentToDepth\210\001\001\022\035" +
-      "\n\ncreated_at\030\036 \001(\tR\tcreatedAt\022\035\n\nupdated" +
-      "_at\030\037 \001(\tR\tupdatedAt\022\"\n\ndeleted_at\030  \001(\t" +
-      "H\014R\tdeletedAt\210\001\001B#\n!_min_not_compressed_" +
-      "message_countB#\n!_max_not_compressed_mes" +
-      "sage_countB&\n$_min_current_technique_mes" +
-      "sage_countB&\n$_max_current_technique_mes" +
-      "sage_countB\030\n\026_min_emotion_intensityB\030\n\026" +
-      "_max_emotion_intensityB\024\n\022_min_self_effi" +
-      "cacyB\024\n\022_max_self_efficacyB\024\n\022_min_risk_" +
-      "severityB\024\n\022_max_risk_severityB%\n#_requi" +
-      "red_physical_symptoms_presentB\034\n\032_requir" +
-      "ed_consent_to_depthB\r\n\013_deleted_at*\263\001\n\007A" +
-      "iModel\022\030\n\024AI_MODEL_UNSPECIFIED\020\000\022\021\n\rGPT_" +
-      "3_5_TURBO\020\001\022\t\n\005GPT_4\020\002\022\n\n\006GPT_4O\020\003\022\017\n\013GP" +
-      "T_4O_MINI\020\004\022\016\n\nGPT_5_MINI\020\005\022\t\n\005GPT_5\020\006\022\016" +
-      "\n\nGPT_5_CHAT\020\007\022\024\n\020GEMINI_2_5_FLASH\020\010\022\022\n\016" +
-      "GEMINI_2_5_PRO\020\tB#\n\037com.hearlers.api.pro" +
-      "to.v1.modelP\001b\006proto3"
+      "Q\n#min_current_technique_message_count\030\010" +
+      " \001(\005H\000R\037minCurrentTechniqueMessageCount\210" +
+      "\001\001\022Q\n#max_current_technique_message_coun" +
+      "t\030\t \001(\005H\001R\037maxCurrentTechniqueMessageCou" +
+      "nt\210\001\001\022[\n\027required_impact_domains\030\n \003(\0162#" +
+      ".com.hearlers.v1.model.ImpactDomainR\025req" +
+      "uiredImpactDomains\022Q\n\023required_timeframe" +
+      "s\030\013 \003(\0162 .com.hearlers.v1.model.Timefram" +
+      "eR\022requiredTimeframes\022c\n\032required_emotio" +
+      "n_primaries\030\014 \003(\0162%.com.hearlers.v1.mode" +
+      "l.EmotionPrimaryR\030requiredEmotionPrimari" +
+      "es\022K\n\021required_valences\030\r \003(\0162\036.com.hear" +
+      "lers.v1.model.ValenceR\020requiredValences\022" +
+      "[\n\027required_arousal_levels\030\016 \003(\0162#.com.h" +
+      "earlers.v1.model.ArousalLevelR\025requiredA" +
+      "rousalLevels\0227\n\025min_emotion_intensity\030\017 " +
+      "\001(\005H\002R\023minEmotionIntensity\210\001\001\0227\n\025max_emo" +
+      "tion_intensity\030\020 \001(\005H\003R\023maxEmotionIntens" +
+      "ity\210\001\001\022g\n\033required_perceived_controls\030\021 " +
+      "\003(\0162\'.com.hearlers.v1.model.PerceivedCon" +
+      "trolR\031requiredPerceivedControls\022d\n\032requi" +
+      "red_motivation_stages\030\022 \003(\0162&.com.hearle" +
+      "rs.v1.model.MotivationStageR\030requiredMot" +
+      "ivationStages\022/\n\021min_self_efficacy\030\023 \001(\005" +
+      "H\004R\017minSelfEfficacy\210\001\001\022/\n\021max_self_effic" +
+      "acy\030\024 \001(\005H\005R\017maxSelfEfficacy\210\001\001\022n\n\036requi" +
+      "red_social_support_levels\030\025 \003(\0162).com.he" +
+      "arlers.v1.model.SocialSupportLevelR\033requ" +
+      "iredSocialSupportLevels\022O\n\023required_risk" +
+      "_kinds\030\026 \003(\0162\037.com.hearlers.v1.model.Ris" +
+      "kKindR\021requiredRiskKinds\022/\n\021min_risk_sev" +
+      "erity\030\027 \001(\005H\006R\017minRiskSeverity\210\001\001\022/\n\021max" +
+      "_risk_severity\030\030 \001(\005H\007R\017maxRiskSeverity\210" +
+      "\001\001\022]\n\030required_sleep_qualities\030\031 \003(\0162#.c" +
+      "om.hearlers.v1.model.SleepQualityR\026requi" +
+      "redSleepQualities\022P\n\"required_physical_s" +
+      "ymptoms_present\030\032 \001(\010H\010R\037requiredPhysica" +
+      "lSymptomsPresent\210\001\001\022^\n\030required_cognitiv" +
+      "e_loads\030\033 \003(\0162$.com.hearlers.v1.model.Co" +
+      "gnitiveLoadR\026requiredCognitiveLoads\022g\n\033r" +
+      "equired_alliance_strengths\030\034 \003(\0162\'.com.h" +
+      "earlers.v1.model.AllianceStrengthR\031requi" +
+      "redAllianceStrengths\022>\n\031required_consent" +
+      "_to_depth\030\035 \001(\010H\tR\026requiredConsentToDept" +
+      "h\210\001\001\022\035\n\ncreated_at\030\036 \001(\tR\tcreatedAt\022\035\n\nu" +
+      "pdated_at\030\037 \001(\tR\tupdatedAt\022\"\n\ndeleted_at" +
+      "\030  \001(\tH\nR\tdeletedAt\210\001\001B&\n$_min_current_t" +
+      "echnique_message_countB&\n$_max_current_t" +
+      "echnique_message_countB\030\n\026_min_emotion_i" +
+      "ntensityB\030\n\026_max_emotion_intensityB\024\n\022_m" +
+      "in_self_efficacyB\024\n\022_max_self_efficacyB\024" +
+      "\n\022_min_risk_severityB\024\n\022_max_risk_severi" +
+      "tyB%\n#_required_physical_symptoms_presen" +
+      "tB\034\n\032_required_consent_to_depthB\r\n\013_dele" +
+      "ted_at*\263\001\n\007AiModel\022\030\n\024AI_MODEL_UNSPECIFI" +
+      "ED\020\000\022\021\n\rGPT_3_5_TURBO\020\001\022\t\n\005GPT_4\020\002\022\n\n\006GP" +
+      "T_4O\020\003\022\017\n\013GPT_4O_MINI\020\004\022\016\n\nGPT_5_MINI\020\005\022" +
+      "\t\n\005GPT_5\020\006\022\016\n\nGPT_5_CHAT\020\007\022\024\n\020GEMINI_2_5" +
+      "_FLASH\020\010\022\022\n\016GEMINI_2_5_PRO\020\tB#\n\037com.hear" +
+      "lers.api.proto.v1.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -217,7 +211,7 @@ public final class CounselPrompt {
     internal_static_com_hearlers_v1_model_CounselTechniqueTransitionRule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_hearlers_v1_model_CounselTechniqueTransitionRule_descriptor,
-        new java.lang.String[] { "Id", "PromptVersionId", "FromCounselTechniqueId", "ToCounselTechniqueId", "Priority", "MinNotCompressedMessageCount", "MaxNotCompressedMessageCount", "MinCurrentTechniqueMessageCount", "MaxCurrentTechniqueMessageCount", "RequiredImpactDomains", "RequiredTimeframes", "RequiredEmotionPrimaries", "RequiredValences", "RequiredArousalLevels", "MinEmotionIntensity", "MaxEmotionIntensity", "RequiredPerceivedControls", "RequiredMotivationStages", "MinSelfEfficacy", "MaxSelfEfficacy", "RequiredSocialSupportLevels", "RequiredRiskKinds", "MinRiskSeverity", "MaxRiskSeverity", "RequiredSleepQualities", "RequiredPhysicalSymptomsPresent", "RequiredCognitiveLoads", "RequiredAllianceStrengths", "RequiredConsentToDepth", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "PromptVersionId", "FromCounselTechniqueId", "ToCounselTechniqueId", "Priority", "MinCurrentTechniqueMessageCount", "MaxCurrentTechniqueMessageCount", "RequiredImpactDomains", "RequiredTimeframes", "RequiredEmotionPrimaries", "RequiredValences", "RequiredArousalLevels", "MinEmotionIntensity", "MaxEmotionIntensity", "RequiredPerceivedControls", "RequiredMotivationStages", "MinSelfEfficacy", "MaxSelfEfficacy", "RequiredSocialSupportLevels", "RequiredRiskKinds", "MinRiskSeverity", "MaxRiskSeverity", "RequiredSleepQualities", "RequiredPhysicalSymptomsPresent", "RequiredCognitiveLoads", "RequiredAllianceStrengths", "RequiredConsentToDepth", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
     com.hearlers.api.proto.v1.model.CounselOuterClass.getDescriptor();
   }

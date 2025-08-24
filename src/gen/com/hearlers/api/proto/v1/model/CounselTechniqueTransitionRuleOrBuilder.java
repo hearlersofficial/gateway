@@ -64,28 +64,6 @@ public interface CounselTechniqueTransitionRuleOrBuilder extends
   int getPriority();
 
   /**
-   * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-   * @return Whether the minNotCompressedMessageCount field is set.
-   */
-  boolean hasMinNotCompressedMessageCount();
-  /**
-   * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-   * @return The minNotCompressedMessageCount.
-   */
-  int getMinNotCompressedMessageCount();
-
-  /**
-   * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-   * @return Whether the maxNotCompressedMessageCount field is set.
-   */
-  boolean hasMaxNotCompressedMessageCount();
-  /**
-   * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-   * @return The maxNotCompressedMessageCount.
-   */
-  int getMaxNotCompressedMessageCount();
-
-  /**
    * <code>optional int32 min_current_technique_message_count = 8 [json_name = "minCurrentTechniqueMessageCount"];</code>
    * @return Whether the minCurrentTechniqueMessageCount field is set.
    */

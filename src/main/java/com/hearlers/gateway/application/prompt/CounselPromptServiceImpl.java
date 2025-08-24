@@ -2,14 +2,9 @@ package com.hearlers.gateway.application.prompt;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
 import org.springframework.stereotype.Service;
-
-import com.hearlers.api.proto.v1.model.CounselTechnique;
-import com.hearlers.api.proto.v1.model.PersonaPrompt;
-import com.hearlers.api.proto.v1.model.PromptActivateHistory;
-import com.hearlers.api.proto.v1.model.PromptVersion;
-import com.hearlers.api.proto.v1.model.TonePrompt;
 
 import lombok.RequiredArgsConstructor;
 
@@ -127,4 +122,29 @@ public class CounselPromptServiceImpl implements CounselPromptService {
         return promptReader.findCounselTechniques(request);
     }
 
+    // CounselTechniqueTransitionRule 관련 메서드
+    @Override
+    public CounselTechniqueTransitionRule createCounselTechniqueTransitionRule(CreateCounselTechniqueTransitionRuleRequest request) {
+        return promptStore.createCounselTechniqueTransitionRule(request);
+    }
+
+    @Override
+    public CounselTechniqueTransitionRule updateCounselTechniqueTransitionRule(UpdateCounselTechniqueTransitionRuleRequest request) {
+        return promptStore.updateCounselTechniqueTransitionRule(request);
+    }
+
+    @Override
+    public Boolean deleteCounselTechniqueTransitionRule(DeleteCounselTechniqueTransitionRuleRequest request) {
+        return promptStore.deleteCounselTechniqueTransitionRule(request);
+    }
+
+    @Override
+    public CounselTechniqueTransitionRule findCounselTechniqueTransitionRuleById(FindCounselTechniqueTransitionRuleByIdRequest request) {
+        return promptReader.findCounselTechniqueTransitionRuleById(request);
+    }
+
+    @Override
+    public List<CounselTechniqueTransitionRule> findCounselTechniqueTransitionRules(FindCounselTechniqueTransitionRulesRequest request) {
+        return promptReader.findCounselTechniqueTransitionRules(request);
+    }
 }

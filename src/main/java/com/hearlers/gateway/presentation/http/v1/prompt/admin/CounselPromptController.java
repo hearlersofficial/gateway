@@ -2,18 +2,13 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.FindActiveVersionRequest;
-import lombok.val;
 import org.mapstruct.factory.Mappers;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.hearlers.api.proto.v1.model.CounselTechnique;
-import com.hearlers.api.proto.v1.model.PersonaPrompt;
-import com.hearlers.api.proto.v1.model.PromptActivateHistory;
-import com.hearlers.api.proto.v1.model.PromptVersion;
-import com.hearlers.api.proto.v1.model.TonePrompt;
 import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest;
 import com.hearlers.gateway.application.prompt.CounselPromptService;
 import com.hearlers.gateway.shared.response.ResponseDto;
@@ -402,6 +397,93 @@ public class CounselPromptController {
         var response = counselPromptDtoMapper.toUpdateCounselTechniqueResponseDto(counselTechnique);
         
         return ResponseDtoUtil.okResponse(response, "상담 기법 업데이트 성공");
+    }
+
+    //----------------------
+    // 상담 기법 전환 규칙 (CounselTechniqueTransitionRule) API
+    //----------------------
+    @Operation(summary = "상담 기법 전환 규칙 조회", 
+               description = "ID로 상담 기법 전환 규칙을 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "상담 기법 전환 규칙 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "상담 기법 전환 규칙 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/counsel-techniques/transition-rules/{transition-rule-id}")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindCounselTechniqueTransitionRuleByIdResponseDto>> getCounselTechniqueTransitionRuleById(
+            @PathVariable(name = "transition-rule-id") String counselTechniqueTransitionRuleId) {
+        var findCounselTechniqueTransitionRuleByIdRequest = counselPromptDtoMapper.toFindTransitionRuleByIdRequest(counselTechniqueTransitionRuleId);
+        CounselTechniqueTransitionRule counselTechniqueTransitionRule = counselPromptService.findCounselTechniqueTransitionRuleById(findCounselTechniqueTransitionRuleByIdRequest);
+        var response = counselPromptDtoMapper.toFindTransitionRuleByIdResponseDto(counselTechniqueTransitionRule);
+        
+        return ResponseDtoUtil.okResponse(response, "상담 기법 전환 규칙 조회 성공");
+    }
+
+    @Operation(summary = "상담 기법 전환 규칙 전체 조회", 
+               description = "상담 기법 전환 규칙을 전체 조회합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "상담 기법 전환 규칙 목록 조회 성공"),
+            @ApiResponse(responseCode = "400", description = "상담 기법 전환 규칙 목록 조회 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @GetMapping("/counsel-techniques/transition-rules")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto>> getCounselTechniqueTransitionRules(
+            @Valid @ParameterObject @ModelAttribute  CounselPromptDto.FindCounselTechniqueTransitionRulesRequestDto requestDto) {
+        var request = counselPromptDtoMapper.toFindTransitionRulesRequest(requestDto);
+        List<CounselTechniqueTransitionRule> counselTechniqueTransitionRules = counselPromptService.findCounselTechniqueTransitionRules(request);
+        var response = counselPromptDtoMapper.toFindTransitionRulesResponseDto(counselTechniqueTransitionRules);
+        
+        return ResponseDtoUtil.okResponse(response, "상담 기법 전환 규칙 목록 조회 성공");
+    }
+
+    @Operation(summary = "상담 기법 전환 규칙 생성", 
+               description = "상담 기법 전환 규칙을 생성합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "상담 기법 전환 규칙 생성 성공"),
+            @ApiResponse(responseCode = "400", description = "상담 기법 전환 규칙 생성 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PostMapping("/counsel-techniques/transition-rules")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.CreateCounselTechniqueTransitionRuleResponseDto>> createCounselTechniqueTransitionRule(
+            @Valid @RequestBody CounselPromptDto.CreateCounselTechniqueTransitionRuleRequestDto request) {
+        var createCounselTechniqueTransitionRuleRequest = counselPromptDtoMapper.toCreateTransitionRuleRequest(request);
+        CounselTechniqueTransitionRule counselTechniqueTransitionRule = counselPromptService.createCounselTechniqueTransitionRule(createCounselTechniqueTransitionRuleRequest);
+        var response = counselPromptDtoMapper.toCreateTransitionRuleResponse(counselTechniqueTransitionRule);
+        
+        return ResponseDtoUtil.okResponse(response, "상담 기법 전환 규칙 생성 성공");
+    }
+
+    @Operation(summary = "상담 기법 전환 규칙 수정",
+            description = "상담 기법 전환 규칙을 수정합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "상담 기법 전환 규칙 수정 성공"),
+            @ApiResponse(responseCode = "400", description = "상담 기법 전환 규칙 수정 실패",
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @PutMapping("/counsel-techniques/transition-rules/{transition-rule-id}")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.UpdateCounselTechniqueTransitionRuleResponseDto>> updateCounselTechniqueTransitionRule(
+            @PathVariable(name = "transition-rule-id") String counselTechniqueTransitionRuleId,
+            @Valid @RequestBody CounselPromptDto.UpdateCounselTechniqueTransitionRuleRequestDto request) {
+        var updateCounselTechniqueTransitionRuleRequest = counselPromptDtoMapper.toUpdateTransitionRuleRequest(request, counselTechniqueTransitionRuleId);
+        CounselTechniqueTransitionRule counselTechniqueTransitionRule = counselPromptService.updateCounselTechniqueTransitionRule(updateCounselTechniqueTransitionRuleRequest);
+        var response = counselPromptDtoMapper.toUpdateTransitionRuleResponse(counselTechniqueTransitionRule);
+
+        return ResponseDtoUtil.okResponse(response, "상담 기법 전환 규칙 수정 성공");
+    }
+
+    @Operation(summary = "상담 기법 전환 규칙 삭제", 
+               description = "상담 기법 전환 규칙을 삭제합니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "상담 기법 전환 규칙 삭제 성공"),
+            @ApiResponse(responseCode = "400", description = "상담 기법 전환 규칙 삭제 실패", 
+                    content = @Content(schema = @Schema(implementation = ResponseDto.Error.class)))
+    })
+    @DeleteMapping("/counsel-techniques/transition-rules/{transition-rule-id}")
+    public ResponseEntity<ResponseDto.Success<CounselPromptDto.DeleteCounselTechniqueTransitionRuleResponseDto>> deleteCounselTechniqueTransitionRule(
+            @PathVariable(name = "transition-rule-id") String counselTechniqueTransitionRuleId) {
+        var deleteCounselTechniqueTransitionRuleRequest = counselPromptDtoMapper.toDeleteTransitionRuleRequest(counselTechniqueTransitionRuleId);
+        counselPromptService.deleteCounselTechniqueTransitionRule(deleteCounselTechniqueTransitionRuleRequest);
+        return ResponseDtoUtil.okResponse(null, "프롬프트 버전 삭제 성공");
     }
 
     

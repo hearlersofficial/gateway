@@ -2,11 +2,7 @@ package com.hearlers.gateway.application.prompt;
 
 import java.util.List;
 
-import com.hearlers.api.proto.v1.model.CounselTechnique;
-import com.hearlers.api.proto.v1.model.PersonaPrompt;
-import com.hearlers.api.proto.v1.model.PromptActivateHistory;
-import com.hearlers.api.proto.v1.model.PromptVersion;
-import com.hearlers.api.proto.v1.model.TonePrompt;
+import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
 
 public interface CounselPromptService {
@@ -41,4 +37,11 @@ public interface CounselPromptService {
     CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request);
     CounselTechnique findCounselTechniqueById(FindCounselTechniqueByIdRequest request);
     List<CounselTechnique> findCounselTechniques(FindCounselTechniquesRequest request);
+
+    // CounselTechniqueTransitionRule
+    CounselTechniqueTransitionRule createCounselTechniqueTransitionRule(CreateCounselTechniqueTransitionRuleRequest request);
+    CounselTechniqueTransitionRule updateCounselTechniqueTransitionRule(UpdateCounselTechniqueTransitionRuleRequest request);
+    Boolean deleteCounselTechniqueTransitionRule(DeleteCounselTechniqueTransitionRuleRequest request);
+    CounselTechniqueTransitionRule findCounselTechniqueTransitionRuleById(FindCounselTechniqueTransitionRuleByIdRequest request);
+    List<CounselTechniqueTransitionRule> findCounselTechniqueTransitionRules(FindCounselTechniqueTransitionRulesRequest request);
 }

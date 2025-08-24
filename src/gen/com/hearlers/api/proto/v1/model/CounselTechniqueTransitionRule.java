@@ -229,44 +229,6 @@ private static final long serialVersionUID = 0L;
     return priority_;
   }
 
-  public static final int MIN_NOT_COMPRESSED_MESSAGE_COUNT_FIELD_NUMBER = 6;
-  private int minNotCompressedMessageCount_ = 0;
-  /**
-   * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-   * @return Whether the minNotCompressedMessageCount field is set.
-   */
-  @java.lang.Override
-  public boolean hasMinNotCompressedMessageCount() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-   * @return The minNotCompressedMessageCount.
-   */
-  @java.lang.Override
-  public int getMinNotCompressedMessageCount() {
-    return minNotCompressedMessageCount_;
-  }
-
-  public static final int MAX_NOT_COMPRESSED_MESSAGE_COUNT_FIELD_NUMBER = 7;
-  private int maxNotCompressedMessageCount_ = 0;
-  /**
-   * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-   * @return Whether the maxNotCompressedMessageCount field is set.
-   */
-  @java.lang.Override
-  public boolean hasMaxNotCompressedMessageCount() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-   * @return The maxNotCompressedMessageCount.
-   */
-  @java.lang.Override
-  public int getMaxNotCompressedMessageCount() {
-    return maxNotCompressedMessageCount_;
-  }
-
   public static final int MIN_CURRENT_TECHNIQUE_MESSAGE_COUNT_FIELD_NUMBER = 8;
   private int minCurrentTechniqueMessageCount_ = 0;
   /**
@@ -275,7 +237,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMinCurrentTechniqueMessageCount() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>optional int32 min_current_technique_message_count = 8 [json_name = "minCurrentTechniqueMessageCount"];</code>
@@ -294,7 +256,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMaxCurrentTechniqueMessageCount() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>optional int32 max_current_technique_message_count = 9 [json_name = "maxCurrentTechniqueMessageCount"];</code>
@@ -603,7 +565,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMinEmotionIntensity() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>optional int32 min_emotion_intensity = 15 [json_name = "minEmotionIntensity"];</code>
@@ -622,7 +584,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMaxEmotionIntensity() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <code>optional int32 max_emotion_intensity = 16 [json_name = "maxEmotionIntensity"];</code>
@@ -757,7 +719,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMinSelfEfficacy() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <code>optional int32 min_self_efficacy = 19 [json_name = "minSelfEfficacy"];</code>
@@ -776,7 +738,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMaxSelfEfficacy() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    * <code>optional int32 max_self_efficacy = 20 [json_name = "maxSelfEfficacy"];</code>
@@ -911,7 +873,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMinRiskSeverity() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <code>optional int32 min_risk_severity = 23 [json_name = "minRiskSeverity"];</code>
@@ -930,7 +892,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMaxRiskSeverity() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <code>optional int32 max_risk_severity = 24 [json_name = "maxRiskSeverity"];</code>
@@ -1007,7 +969,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasRequiredPhysicalSymptomsPresent() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <code>optional bool required_physical_symptoms_present = 26 [json_name = "requiredPhysicalSymptomsPresent"];</code>
@@ -1142,7 +1104,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasRequiredConsentToDepth() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <code>optional bool required_consent_to_depth = 29 [json_name = "requiredConsentToDepth"];</code>
@@ -1240,7 +1202,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasDeletedAt() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    * <code>optional string deleted_at = 32 [json_name = "deletedAt"];</code>
@@ -1309,15 +1271,9 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(5, priority_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt32(6, minNotCompressedMessageCount_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeInt32(7, maxNotCompressedMessageCount_);
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(8, minCurrentTechniqueMessageCount_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(9, maxCurrentTechniqueMessageCount_);
     }
     if (getRequiredImpactDomainsList().size() > 0) {
@@ -1355,10 +1311,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requiredArousalLevels_.size(); i++) {
       output.writeEnumNoTag(requiredArousalLevels_.getInt(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(15, minEmotionIntensity_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(16, maxEmotionIntensity_);
     }
     if (getRequiredPerceivedControlsList().size() > 0) {
@@ -1375,10 +1331,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requiredMotivationStages_.size(); i++) {
       output.writeEnumNoTag(requiredMotivationStages_.getInt(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(19, minSelfEfficacy_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(20, maxSelfEfficacy_);
     }
     if (getRequiredSocialSupportLevelsList().size() > 0) {
@@ -1395,10 +1351,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requiredRiskKinds_.size(); i++) {
       output.writeEnumNoTag(requiredRiskKinds_.getInt(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(23, minRiskSeverity_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(24, maxRiskSeverity_);
     }
     if (getRequiredSleepQualitiesList().size() > 0) {
@@ -1408,7 +1364,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requiredSleepQualities_.size(); i++) {
       output.writeEnumNoTag(requiredSleepQualities_.getInt(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeBool(26, requiredPhysicalSymptomsPresent_);
     }
     if (getRequiredCognitiveLoadsList().size() > 0) {
@@ -1425,7 +1381,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requiredAllianceStrengths_.size(); i++) {
       output.writeEnumNoTag(requiredAllianceStrengths_.getInt(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(29, requiredConsentToDepth_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
@@ -1434,7 +1390,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 31, updatedAt_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 32, deletedAt_);
     }
     getUnknownFields().writeTo(output);
@@ -1464,17 +1420,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, minNotCompressedMessageCount_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, maxNotCompressedMessageCount_);
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, minCurrentTechniqueMessageCount_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(9, maxCurrentTechniqueMessageCount_);
     }
@@ -1538,11 +1486,11 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }requiredArousalLevelsMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(15, minEmotionIntensity_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(16, maxEmotionIntensity_);
     }
@@ -1570,11 +1518,11 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }requiredMotivationStagesMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(19, minSelfEfficacy_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(20, maxSelfEfficacy_);
     }
@@ -1602,11 +1550,11 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }requiredRiskKindsMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(23, minRiskSeverity_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(24, maxRiskSeverity_);
     }
@@ -1622,7 +1570,7 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }requiredSleepQualitiesMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(26, requiredPhysicalSymptomsPresent_);
     }
@@ -1650,7 +1598,7 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }requiredAllianceStrengthsMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(29, requiredConsentToDepth_);
     }
@@ -1660,7 +1608,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(31, updatedAt_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(32, deletedAt_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1688,16 +1636,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getToCounselTechniqueId())) return false;
     if (getPriority()
         != other.getPriority()) return false;
-    if (hasMinNotCompressedMessageCount() != other.hasMinNotCompressedMessageCount()) return false;
-    if (hasMinNotCompressedMessageCount()) {
-      if (getMinNotCompressedMessageCount()
-          != other.getMinNotCompressedMessageCount()) return false;
-    }
-    if (hasMaxNotCompressedMessageCount() != other.hasMaxNotCompressedMessageCount()) return false;
-    if (hasMaxNotCompressedMessageCount()) {
-      if (getMaxNotCompressedMessageCount()
-          != other.getMaxNotCompressedMessageCount()) return false;
-    }
     if (hasMinCurrentTechniqueMessageCount() != other.hasMinCurrentTechniqueMessageCount()) return false;
     if (hasMinCurrentTechniqueMessageCount()) {
       if (getMinCurrentTechniqueMessageCount()
@@ -1790,14 +1728,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getToCounselTechniqueId().hashCode();
     hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + getPriority();
-    if (hasMinNotCompressedMessageCount()) {
-      hash = (37 * hash) + MIN_NOT_COMPRESSED_MESSAGE_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getMinNotCompressedMessageCount();
-    }
-    if (hasMaxNotCompressedMessageCount()) {
-      hash = (37 * hash) + MAX_NOT_COMPRESSED_MESSAGE_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxNotCompressedMessageCount();
-    }
     if (hasMinCurrentTechniqueMessageCount()) {
       hash = (37 * hash) + MIN_CURRENT_TECHNIQUE_MESSAGE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getMinCurrentTechniqueMessageCount();
@@ -2032,41 +1962,39 @@ private static final long serialVersionUID = 0L;
       fromCounselTechniqueId_ = "";
       toCounselTechniqueId_ = "";
       priority_ = 0;
-      minNotCompressedMessageCount_ = 0;
-      maxNotCompressedMessageCount_ = 0;
       minCurrentTechniqueMessageCount_ = 0;
       maxCurrentTechniqueMessageCount_ = 0;
       requiredImpactDomains_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000080);
       requiredTimeframes_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000100);
       requiredEmotionPrimaries_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000200);
       requiredValences_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       requiredArousalLevels_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       minEmotionIntensity_ = 0;
       maxEmotionIntensity_ = 0;
       requiredPerceivedControls_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       requiredMotivationStages_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       minSelfEfficacy_ = 0;
       maxSelfEfficacy_ = 0;
       requiredSocialSupportLevels_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       requiredRiskKinds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       minRiskSeverity_ = 0;
       maxRiskSeverity_ = 0;
       requiredSleepQualities_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       requiredPhysicalSymptomsPresent_ = false;
       requiredCognitiveLoads_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       requiredAllianceStrengths_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       requiredConsentToDepth_ = false;
       createdAt_ = "";
       updatedAt_ = "";
@@ -2104,64 +2032,64 @@ private static final long serialVersionUID = 0L;
     }
 
     private void buildPartialRepeatedFields(com.hearlers.api.proto.v1.model.CounselTechniqueTransitionRule result) {
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         requiredImpactDomains_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.requiredImpactDomains_ = requiredImpactDomains_;
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         requiredTimeframes_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.requiredTimeframes_ = requiredTimeframes_;
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         requiredEmotionPrimaries_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.requiredEmotionPrimaries_ = requiredEmotionPrimaries_;
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         requiredValences_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.requiredValences_ = requiredValences_;
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         requiredArousalLevels_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.requiredArousalLevels_ = requiredArousalLevels_;
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         requiredPerceivedControls_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00004000);
       }
       result.requiredPerceivedControls_ = requiredPerceivedControls_;
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         requiredMotivationStages_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00008000);
       }
       result.requiredMotivationStages_ = requiredMotivationStages_;
-      if (((bitField0_ & 0x00100000) != 0)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         requiredSocialSupportLevels_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00040000);
       }
       result.requiredSocialSupportLevels_ = requiredSocialSupportLevels_;
-      if (((bitField0_ & 0x00200000) != 0)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         requiredRiskKinds_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00080000);
       }
       result.requiredRiskKinds_ = requiredRiskKinds_;
-      if (((bitField0_ & 0x01000000) != 0)) {
+      if (((bitField0_ & 0x00400000) != 0)) {
         requiredSleepQualities_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00400000);
       }
       result.requiredSleepQualities_ = requiredSleepQualities_;
-      if (((bitField0_ & 0x04000000) != 0)) {
+      if (((bitField0_ & 0x01000000) != 0)) {
         requiredCognitiveLoads_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
       }
       result.requiredCognitiveLoads_ = requiredCognitiveLoads_;
-      if (((bitField0_ & 0x08000000) != 0)) {
+      if (((bitField0_ & 0x02000000) != 0)) {
         requiredAllianceStrengths_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
       }
       result.requiredAllianceStrengths_ = requiredAllianceStrengths_;
     }
@@ -2185,62 +2113,54 @@ private static final long serialVersionUID = 0L;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.minNotCompressedMessageCount_ = minNotCompressedMessageCount_;
+        result.minCurrentTechniqueMessageCount_ = minCurrentTechniqueMessageCount_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.maxNotCompressedMessageCount_ = maxNotCompressedMessageCount_;
+        result.maxCurrentTechniqueMessageCount_ = maxCurrentTechniqueMessageCount_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.minCurrentTechniqueMessageCount_ = minCurrentTechniqueMessageCount_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.minEmotionIntensity_ = minEmotionIntensity_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.maxCurrentTechniqueMessageCount_ = maxCurrentTechniqueMessageCount_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.maxEmotionIntensity_ = maxEmotionIntensity_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.minEmotionIntensity_ = minEmotionIntensity_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.minSelfEfficacy_ = minSelfEfficacy_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.maxEmotionIntensity_ = maxEmotionIntensity_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.maxSelfEfficacy_ = maxSelfEfficacy_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.minSelfEfficacy_ = minSelfEfficacy_;
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.minRiskSeverity_ = minRiskSeverity_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.maxSelfEfficacy_ = maxSelfEfficacy_;
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.maxRiskSeverity_ = maxRiskSeverity_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.minRiskSeverity_ = minRiskSeverity_;
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.requiredPhysicalSymptomsPresent_ = requiredPhysicalSymptomsPresent_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.maxRiskSeverity_ = maxRiskSeverity_;
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.requiredConsentToDepth_ = requiredConsentToDepth_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.requiredPhysicalSymptomsPresent_ = requiredPhysicalSymptomsPresent_;
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.requiredConsentToDepth_ = requiredConsentToDepth_;
-        to_bitField0_ |= 0x00000800;
-      }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.createdAt_ = createdAt_;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.updatedAt_ = updatedAt_;
       }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.deletedAt_ = deletedAt_;
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2280,12 +2200,6 @@ private static final long serialVersionUID = 0L;
       if (other.getPriority() != 0) {
         setPriority(other.getPriority());
       }
-      if (other.hasMinNotCompressedMessageCount()) {
-        setMinNotCompressedMessageCount(other.getMinNotCompressedMessageCount());
-      }
-      if (other.hasMaxNotCompressedMessageCount()) {
-        setMaxNotCompressedMessageCount(other.getMaxNotCompressedMessageCount());
-      }
       if (other.hasMinCurrentTechniqueMessageCount()) {
         setMinCurrentTechniqueMessageCount(other.getMinCurrentTechniqueMessageCount());
       }
@@ -2295,7 +2209,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredImpactDomains_.isEmpty()) {
         if (requiredImpactDomains_.isEmpty()) {
           requiredImpactDomains_ = other.requiredImpactDomains_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureRequiredImpactDomainsIsMutable();
           requiredImpactDomains_.addAll(other.requiredImpactDomains_);
@@ -2305,7 +2219,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredTimeframes_.isEmpty()) {
         if (requiredTimeframes_.isEmpty()) {
           requiredTimeframes_ = other.requiredTimeframes_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureRequiredTimeframesIsMutable();
           requiredTimeframes_.addAll(other.requiredTimeframes_);
@@ -2315,7 +2229,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredEmotionPrimaries_.isEmpty()) {
         if (requiredEmotionPrimaries_.isEmpty()) {
           requiredEmotionPrimaries_ = other.requiredEmotionPrimaries_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureRequiredEmotionPrimariesIsMutable();
           requiredEmotionPrimaries_.addAll(other.requiredEmotionPrimaries_);
@@ -2325,7 +2239,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredValences_.isEmpty()) {
         if (requiredValences_.isEmpty()) {
           requiredValences_ = other.requiredValences_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureRequiredValencesIsMutable();
           requiredValences_.addAll(other.requiredValences_);
@@ -2335,7 +2249,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredArousalLevels_.isEmpty()) {
         if (requiredArousalLevels_.isEmpty()) {
           requiredArousalLevels_ = other.requiredArousalLevels_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureRequiredArousalLevelsIsMutable();
           requiredArousalLevels_.addAll(other.requiredArousalLevels_);
@@ -2351,7 +2265,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredPerceivedControls_.isEmpty()) {
         if (requiredPerceivedControls_.isEmpty()) {
           requiredPerceivedControls_ = other.requiredPerceivedControls_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         } else {
           ensureRequiredPerceivedControlsIsMutable();
           requiredPerceivedControls_.addAll(other.requiredPerceivedControls_);
@@ -2361,7 +2275,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredMotivationStages_.isEmpty()) {
         if (requiredMotivationStages_.isEmpty()) {
           requiredMotivationStages_ = other.requiredMotivationStages_;
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         } else {
           ensureRequiredMotivationStagesIsMutable();
           requiredMotivationStages_.addAll(other.requiredMotivationStages_);
@@ -2377,7 +2291,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredSocialSupportLevels_.isEmpty()) {
         if (requiredSocialSupportLevels_.isEmpty()) {
           requiredSocialSupportLevels_ = other.requiredSocialSupportLevels_;
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         } else {
           ensureRequiredSocialSupportLevelsIsMutable();
           requiredSocialSupportLevels_.addAll(other.requiredSocialSupportLevels_);
@@ -2387,7 +2301,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredRiskKinds_.isEmpty()) {
         if (requiredRiskKinds_.isEmpty()) {
           requiredRiskKinds_ = other.requiredRiskKinds_;
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         } else {
           ensureRequiredRiskKindsIsMutable();
           requiredRiskKinds_.addAll(other.requiredRiskKinds_);
@@ -2403,7 +2317,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredSleepQualities_.isEmpty()) {
         if (requiredSleepQualities_.isEmpty()) {
           requiredSleepQualities_ = other.requiredSleepQualities_;
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x00400000);
         } else {
           ensureRequiredSleepQualitiesIsMutable();
           requiredSleepQualities_.addAll(other.requiredSleepQualities_);
@@ -2416,7 +2330,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredCognitiveLoads_.isEmpty()) {
         if (requiredCognitiveLoads_.isEmpty()) {
           requiredCognitiveLoads_ = other.requiredCognitiveLoads_;
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         } else {
           ensureRequiredCognitiveLoadsIsMutable();
           requiredCognitiveLoads_.addAll(other.requiredCognitiveLoads_);
@@ -2426,7 +2340,7 @@ private static final long serialVersionUID = 0L;
       if (!other.requiredAllianceStrengths_.isEmpty()) {
         if (requiredAllianceStrengths_.isEmpty()) {
           requiredAllianceStrengths_ = other.requiredAllianceStrengths_;
-          bitField0_ = (bitField0_ & ~0x08000000);
+          bitField0_ = (bitField0_ & ~0x02000000);
         } else {
           ensureRequiredAllianceStrengthsIsMutable();
           requiredAllianceStrengths_.addAll(other.requiredAllianceStrengths_);
@@ -2438,17 +2352,17 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt_ = other.createdAt_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (!other.getUpdatedAt().isEmpty()) {
         updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (other.hasDeletedAt()) {
         deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2502,24 +2416,14 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
-            case 48: {
-              minNotCompressedMessageCount_ = input.readInt32();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 48
-            case 56: {
-              maxNotCompressedMessageCount_ = input.readInt32();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 56
             case 64: {
               minCurrentTechniqueMessageCount_ = input.readInt32();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000020;
               break;
             } // case 64
             case 72: {
               maxCurrentTechniqueMessageCount_ = input.readInt32();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000040;
               break;
             } // case 72
             case 80: {
@@ -2609,12 +2513,12 @@ private static final long serialVersionUID = 0L;
             } // case 114
             case 120: {
               minEmotionIntensity_ = input.readInt32();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00001000;
               break;
             } // case 120
             case 128: {
               maxEmotionIntensity_ = input.readInt32();
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00002000;
               break;
             } // case 128
             case 136: {
@@ -2653,12 +2557,12 @@ private static final long serialVersionUID = 0L;
             } // case 146
             case 152: {
               minSelfEfficacy_ = input.readInt32();
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00010000;
               break;
             } // case 152
             case 160: {
               maxSelfEfficacy_ = input.readInt32();
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00020000;
               break;
             } // case 160
             case 168: {
@@ -2697,12 +2601,12 @@ private static final long serialVersionUID = 0L;
             } // case 178
             case 184: {
               minRiskSeverity_ = input.readInt32();
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00100000;
               break;
             } // case 184
             case 192: {
               maxRiskSeverity_ = input.readInt32();
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x00200000;
               break;
             } // case 192
             case 200: {
@@ -2724,7 +2628,7 @@ private static final long serialVersionUID = 0L;
             } // case 202
             case 208: {
               requiredPhysicalSymptomsPresent_ = input.readBool();
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x00800000;
               break;
             } // case 208
             case 216: {
@@ -2763,22 +2667,22 @@ private static final long serialVersionUID = 0L;
             } // case 226
             case 232: {
               requiredConsentToDepth_ = input.readBool();
-              bitField0_ |= 0x10000000;
+              bitField0_ |= 0x04000000;
               break;
             } // case 232
             case 242: {
               createdAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x20000000;
+              bitField0_ |= 0x08000000;
               break;
             } // case 242
             case 250: {
               updatedAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x40000000;
+              bitField0_ |= 0x10000000;
               break;
             } // case 250
             case 258: {
               deletedAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x80000000;
+              bitField0_ |= 0x20000000;
               break;
             } // case 258
             default: {
@@ -3118,86 +3022,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int minNotCompressedMessageCount_ ;
-    /**
-     * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-     * @return Whether the minNotCompressedMessageCount field is set.
-     */
-    @java.lang.Override
-    public boolean hasMinNotCompressedMessageCount() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-     * @return The minNotCompressedMessageCount.
-     */
-    @java.lang.Override
-    public int getMinNotCompressedMessageCount() {
-      return minNotCompressedMessageCount_;
-    }
-    /**
-     * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-     * @param value The minNotCompressedMessageCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMinNotCompressedMessageCount(int value) {
-
-      minNotCompressedMessageCount_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional int32 min_not_compressed_message_count = 6 [json_name = "minNotCompressedMessageCount"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMinNotCompressedMessageCount() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      minNotCompressedMessageCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int maxNotCompressedMessageCount_ ;
-    /**
-     * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-     * @return Whether the maxNotCompressedMessageCount field is set.
-     */
-    @java.lang.Override
-    public boolean hasMaxNotCompressedMessageCount() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-     * @return The maxNotCompressedMessageCount.
-     */
-    @java.lang.Override
-    public int getMaxNotCompressedMessageCount() {
-      return maxNotCompressedMessageCount_;
-    }
-    /**
-     * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-     * @param value The maxNotCompressedMessageCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaxNotCompressedMessageCount(int value) {
-
-      maxNotCompressedMessageCount_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional int32 max_not_compressed_message_count = 7 [json_name = "maxNotCompressedMessageCount"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMaxNotCompressedMessageCount() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      maxNotCompressedMessageCount_ = 0;
-      onChanged();
-      return this;
-    }
-
     private int minCurrentTechniqueMessageCount_ ;
     /**
      * <code>optional int32 min_current_technique_message_count = 8 [json_name = "minCurrentTechniqueMessageCount"];</code>
@@ -3205,7 +3029,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMinCurrentTechniqueMessageCount() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>optional int32 min_current_technique_message_count = 8 [json_name = "minCurrentTechniqueMessageCount"];</code>
@@ -3223,7 +3047,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMinCurrentTechniqueMessageCount(int value) {
 
       minCurrentTechniqueMessageCount_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3232,7 +3056,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMinCurrentTechniqueMessageCount() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000020);
       minCurrentTechniqueMessageCount_ = 0;
       onChanged();
       return this;
@@ -3245,7 +3069,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMaxCurrentTechniqueMessageCount() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>optional int32 max_current_technique_message_count = 9 [json_name = "maxCurrentTechniqueMessageCount"];</code>
@@ -3263,7 +3087,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMaxCurrentTechniqueMessageCount(int value) {
 
       maxCurrentTechniqueMessageCount_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3272,7 +3096,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMaxCurrentTechniqueMessageCount() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxCurrentTechniqueMessageCount_ = 0;
       onChanged();
       return this;
@@ -3281,9 +3105,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredImpactDomains_ =
       emptyIntList();
     private void ensureRequiredImpactDomainsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         requiredImpactDomains_ = makeMutableCopy(requiredImpactDomains_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -3359,7 +3183,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredImpactDomains() {
       requiredImpactDomains_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3421,9 +3245,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredTimeframes_ =
       emptyIntList();
     private void ensureRequiredTimeframesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         requiredTimeframes_ = makeMutableCopy(requiredTimeframes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -3499,7 +3323,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredTimeframes() {
       requiredTimeframes_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3561,9 +3385,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredEmotionPrimaries_ =
       emptyIntList();
     private void ensureRequiredEmotionPrimariesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         requiredEmotionPrimaries_ = makeMutableCopy(requiredEmotionPrimaries_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -3639,7 +3463,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredEmotionPrimaries() {
       requiredEmotionPrimaries_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3701,9 +3525,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredValences_ =
       emptyIntList();
     private void ensureRequiredValencesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         requiredValences_ = makeMutableCopy(requiredValences_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -3779,7 +3603,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredValences() {
       requiredValences_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3841,9 +3665,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredArousalLevels_ =
       emptyIntList();
     private void ensureRequiredArousalLevelsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         requiredArousalLevels_ = makeMutableCopy(requiredArousalLevels_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -3919,7 +3743,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredArousalLevels() {
       requiredArousalLevels_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3985,7 +3809,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMinEmotionIntensity() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional int32 min_emotion_intensity = 15 [json_name = "minEmotionIntensity"];</code>
@@ -4003,7 +3827,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMinEmotionIntensity(int value) {
 
       minEmotionIntensity_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4012,7 +3836,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMinEmotionIntensity() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       minEmotionIntensity_ = 0;
       onChanged();
       return this;
@@ -4025,7 +3849,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMaxEmotionIntensity() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>optional int32 max_emotion_intensity = 16 [json_name = "maxEmotionIntensity"];</code>
@@ -4043,7 +3867,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMaxEmotionIntensity(int value) {
 
       maxEmotionIntensity_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4052,7 +3876,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMaxEmotionIntensity() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       maxEmotionIntensity_ = 0;
       onChanged();
       return this;
@@ -4061,9 +3885,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredPerceivedControls_ =
       emptyIntList();
     private void ensureRequiredPerceivedControlsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         requiredPerceivedControls_ = makeMutableCopy(requiredPerceivedControls_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00004000;
       }
     }
     /**
@@ -4139,7 +3963,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredPerceivedControls() {
       requiredPerceivedControls_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4201,9 +4025,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredMotivationStages_ =
       emptyIntList();
     private void ensureRequiredMotivationStagesIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         requiredMotivationStages_ = makeMutableCopy(requiredMotivationStages_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00008000;
       }
     }
     /**
@@ -4279,7 +4103,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredMotivationStages() {
       requiredMotivationStages_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4345,7 +4169,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMinSelfEfficacy() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <code>optional int32 min_self_efficacy = 19 [json_name = "minSelfEfficacy"];</code>
@@ -4363,7 +4187,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMinSelfEfficacy(int value) {
 
       minSelfEfficacy_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4372,7 +4196,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMinSelfEfficacy() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       minSelfEfficacy_ = 0;
       onChanged();
       return this;
@@ -4385,7 +4209,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMaxSelfEfficacy() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      * <code>optional int32 max_self_efficacy = 20 [json_name = "maxSelfEfficacy"];</code>
@@ -4403,7 +4227,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMaxSelfEfficacy(int value) {
 
       maxSelfEfficacy_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4412,7 +4236,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMaxSelfEfficacy() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       maxSelfEfficacy_ = 0;
       onChanged();
       return this;
@@ -4421,9 +4245,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredSocialSupportLevels_ =
       emptyIntList();
     private void ensureRequiredSocialSupportLevelsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         requiredSocialSupportLevels_ = makeMutableCopy(requiredSocialSupportLevels_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00040000;
       }
     }
     /**
@@ -4499,7 +4323,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredSocialSupportLevels() {
       requiredSocialSupportLevels_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4561,9 +4385,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredRiskKinds_ =
       emptyIntList();
     private void ensureRequiredRiskKindsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         requiredRiskKinds_ = makeMutableCopy(requiredRiskKinds_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00080000;
       }
     }
     /**
@@ -4639,7 +4463,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredRiskKinds() {
       requiredRiskKinds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -4705,7 +4529,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMinRiskSeverity() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      * <code>optional int32 min_risk_severity = 23 [json_name = "minRiskSeverity"];</code>
@@ -4723,7 +4547,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMinRiskSeverity(int value) {
 
       minRiskSeverity_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -4732,7 +4556,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMinRiskSeverity() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       minRiskSeverity_ = 0;
       onChanged();
       return this;
@@ -4745,7 +4569,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasMaxRiskSeverity() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      * <code>optional int32 max_risk_severity = 24 [json_name = "maxRiskSeverity"];</code>
@@ -4763,7 +4587,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMaxRiskSeverity(int value) {
 
       maxRiskSeverity_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -4772,7 +4596,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMaxRiskSeverity() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       maxRiskSeverity_ = 0;
       onChanged();
       return this;
@@ -4781,9 +4605,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredSleepQualities_ =
       emptyIntList();
     private void ensureRequiredSleepQualitiesIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x00400000) != 0)) {
         requiredSleepQualities_ = makeMutableCopy(requiredSleepQualities_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00400000;
       }
     }
     /**
@@ -4859,7 +4683,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredSleepQualities() {
       requiredSleepQualities_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -4925,7 +4749,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasRequiredPhysicalSymptomsPresent() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      * <code>optional bool required_physical_symptoms_present = 26 [json_name = "requiredPhysicalSymptomsPresent"];</code>
@@ -4943,7 +4767,7 @@ private static final long serialVersionUID = 0L;
     public Builder setRequiredPhysicalSymptomsPresent(boolean value) {
 
       requiredPhysicalSymptomsPresent_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -4952,7 +4776,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRequiredPhysicalSymptomsPresent() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       requiredPhysicalSymptomsPresent_ = false;
       onChanged();
       return this;
@@ -4961,9 +4785,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredCognitiveLoads_ =
       emptyIntList();
     private void ensureRequiredCognitiveLoadsIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         requiredCognitiveLoads_ = makeMutableCopy(requiredCognitiveLoads_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x01000000;
       }
     }
     /**
@@ -5039,7 +4863,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredCognitiveLoads() {
       requiredCognitiveLoads_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -5101,9 +4925,9 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList requiredAllianceStrengths_ =
       emptyIntList();
     private void ensureRequiredAllianceStrengthsIsMutable() {
-      if (!((bitField0_ & 0x08000000) != 0)) {
+      if (!((bitField0_ & 0x02000000) != 0)) {
         requiredAllianceStrengths_ = makeMutableCopy(requiredAllianceStrengths_);
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x02000000;
       }
     }
     /**
@@ -5179,7 +5003,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequiredAllianceStrengths() {
       requiredAllianceStrengths_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -5245,7 +5069,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasRequiredConsentToDepth() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      * <code>optional bool required_consent_to_depth = 29 [json_name = "requiredConsentToDepth"];</code>
@@ -5263,7 +5087,7 @@ private static final long serialVersionUID = 0L;
     public Builder setRequiredConsentToDepth(boolean value) {
 
       requiredConsentToDepth_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -5272,7 +5096,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRequiredConsentToDepth() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       requiredConsentToDepth_ = false;
       onChanged();
       return this;
@@ -5321,7 +5145,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       createdAt_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -5331,7 +5155,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -5345,7 +5169,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       createdAt_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -5393,7 +5217,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       updatedAt_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -5403,7 +5227,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUpdatedAt() {
       updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -5417,7 +5241,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       updatedAt_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -5428,7 +5252,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the deletedAt field is set.
      */
     public boolean hasDeletedAt() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      * <code>optional string deleted_at = 32 [json_name = "deletedAt"];</code>
@@ -5472,7 +5296,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deletedAt_ = value;
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -5482,7 +5306,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeletedAt() {
       deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -5496,7 +5320,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deletedAt_ = value;
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

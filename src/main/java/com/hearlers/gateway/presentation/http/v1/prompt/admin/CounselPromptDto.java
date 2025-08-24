@@ -2,15 +2,16 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
 import java.util.List;
 
-import com.hearlers.api.proto.v1.model.AiModel;
+import com.hearlers.api.proto.v1.model.*;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public class CounselPromptDto {
 
@@ -212,7 +213,105 @@ public class CounselPromptDto {
         @Schema(description = "삭제 시간", example = "null")
         private String deletedAt;
     }
-    
+
+
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 규칙 응답 DTO")
+    public static class CounselTechniqueTransitionRuleResponseDto {
+        @Schema(description = "상담 기법 전환 규칙 ID", example = "cttr_12345678")
+        private String id;
+
+        @Schema(description = "프롬프트 버전 ID", example = "pv_12345678")
+        private String promptVersionId;
+
+        @Schema(description = "선행 상담 기법 ID", example = "ct_12345678")
+        private String fromCounselTechniqueId;
+
+        @Schema(description = "타겟 상담 기법 ID", example = "ct_87654321")
+        private String toCounselTechniqueId;
+
+        @Schema(description = "우선순위", example = "1")
+        private int priority;
+
+        @Schema(description = "최소 현재 기법 메시지 개수", example = "3")
+        private Integer minCurrentTechniqueMessageCount;
+
+        @Schema(description = "최대 현재 기법 메시지 개수", example = "8")
+        private Integer maxCurrentTechniqueMessageCount;
+
+        @Schema(description = "필수 영향 도메인")
+        private List<ImpactDomain> requiredImpactDomains;
+
+        @Schema(description = "필수 시간 프레임")
+        private List<Timeframe> requiredTimeframes;
+
+        @Schema(description = "필수 1차 감정")
+        private List<EmotionPrimary> requiredEmotionPrimaries;
+
+        @Schema(description = "필수 감정 긍부정")
+        private List<Valence> requiredValences;
+
+        @Schema(description = "필수 감정 각성 수준")
+        private List<ArousalLevel> requiredArousalLevels;
+
+        @Schema(description = "최소 감정 강도", example = "3")
+        private Integer minEmotionIntensity;
+
+        @Schema(description = "최대 감정 강도", example = "7")
+        private Integer maxEmotionIntensity;
+
+        @Schema(description = "필수 인지된 통제 수준")
+        private List<PerceivedControl> requiredPerceivedControls;
+
+        @Schema(description = "필수 동기 단계")
+        private List<MotivationStage> requiredMotivationStages;
+
+        @Schema(description = "최소 자기 효능감", example = "4")
+        private Integer minSelfEfficacy;
+
+        @Schema(description = "최대 자기 효능감", example = "8")
+        private Integer maxSelfEfficacy;
+
+        @Schema(description = "필수 사회적 지지 수준")
+        private List<SocialSupportLevel> requiredSocialSupportLevels;
+
+        @Schema(description = "필수 위험 종류")
+        private List<RiskKind> requiredRiskKinds;
+
+        @Schema(description = "최소 위험 심각도", example = "2")
+        private Integer minRiskSeverity;
+
+        @Schema(description = "최대 위험 심각도", example = "5")
+        private Integer maxRiskSeverity;
+
+        @Schema(description = "필수 수면의 질")
+        private List<SleepQuality> requiredSleepQualities;
+
+        @Schema(description = "신체 증상 존재 여부 필요 조건", example = "true")
+        private Boolean requiredPhysicalSymptomsPresent;
+
+        @Schema(description = "필수 인지 부하 수준")
+        private List<CognitiveLoad> requiredCognitiveLoads;
+
+        @Schema(description = "필수 동맹 강도")
+        private List<AllianceStrength> requiredAllianceStrengths;
+
+        @Schema(description = "심층 탐색 동의 필요 여부", example = "false")
+        private Boolean requiredConsentToDepth;
+
+        @Schema(description = "생성 시각", example = "2025-08-24T17:30:00Z")
+        private String createdAt;
+
+        @Schema(description = "수정 시각", example = "2025-08-24T18:00:00Z")
+        private String updatedAt;
+
+        @Schema(description = "삭제 시각", example = "null")
+        private String deletedAt;
+    }
+
+
     // 요청 DTO
     @Getter
     @Builder
@@ -528,6 +627,7 @@ public class CounselPromptDto {
     }
     
     @Getter
+    @Setter
     @Builder
     @Schema(description = "톤 프롬프트 전체 조회 요청 DTO")
     public static class FindTonePromptsRequestDto {
@@ -540,6 +640,7 @@ public class CounselPromptDto {
     }
     
     @Getter
+    @Setter
     @Builder
     @Schema(description = "상담 기법 전체 조회 요청 DTO")
     public static class FindCounselTechniquesRequestDto {
@@ -549,5 +650,269 @@ public class CounselPromptDto {
         
         @Schema(description = "톤 ID", example = "tone_123456")
         private String toneId;
+    }
+
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 규칙 생성 요청 DTO")
+    public static class CreateCounselTechniqueTransitionRuleRequestDto {
+
+        @Schema(description = "선행 상담 기법 ID", example = "ct_12345678")
+        @NotNull
+        private String fromCounselTechniqueId;
+
+        @Schema(description = "타겟 상담 기법 ID", example = "ct_87654321")
+        @NotNull
+        private String toCounselTechniqueId;
+
+        @Schema(description = "우선순위", example = "1")
+        @NotNull
+        private int priority;
+
+        @Schema(description = "최소 현재 기법 메시지 개수", example = "3")
+        @NotNull
+        private Integer minCurrentTechniqueMessageCount;
+
+        @Schema(description = "최대 현재 기법 메시지 개수", example = "8")
+        @NotNull
+        private Integer maxCurrentTechniqueMessageCount;
+
+        @Schema(description = "필수 영향 도메인")
+        @NotNull
+        private List<ImpactDomain> requiredImpactDomains;
+
+        @Schema(description = "필수 시간 프레임")
+        @NotNull
+        private List<Timeframe> requiredTimeframes;
+
+        @Schema(description = "필수 1차 감정")
+        @NotNull
+        private List<EmotionPrimary> requiredEmotionPrimaries;
+
+        @Schema(description = "필수 감정 긍부정")
+        @NotNull
+        private List<Valence> requiredValences;
+
+        @Schema(description = "필수 감정 각성 수준")
+        @NotNull
+        private List<ArousalLevel> requiredArousalLevels;
+
+        @Schema(description = "최소 감정 강도", example = "3")
+        @Nullable
+        private Integer minEmotionIntensity;
+
+        @Schema(description = "최대 감정 강도", example = "7")
+        @Nullable
+        private Integer maxEmotionIntensity;
+
+        @Schema(description = "필수 인지된 통제 수준")
+        @NotNull
+        private List<PerceivedControl> requiredPerceivedControls;
+
+        @Schema(description = "필수 동기 단계")
+        @NotNull
+        private List<MotivationStage> requiredMotivationStages;
+
+        @Schema(description = "최소 자기 효능감", example = "4")
+        @Nullable
+        private Integer minSelfEfficacy;
+
+        @Schema(description = "최대 자기 효능감", example = "8")
+        @Nullable
+        private Integer maxSelfEfficacy;
+
+        @Schema(description = "필수 사회적 지지 수준")
+        @NotNull
+        private List<SocialSupportLevel> requiredSocialSupportLevels;
+
+        @Schema(description = "필수 위험 종류")
+        @NotNull
+        private List<RiskKind> requiredRiskKinds;
+
+        @Schema(description = "최소 위험 심각도", example = "2")
+        @Nullable
+        private Integer minRiskSeverity;
+
+        @Schema(description = "최대 위험 심각도", example = "5")
+        @Nullable
+        private Integer maxRiskSeverity;
+
+        @Schema(description = "필수 수면의 질")
+        @NotNull
+        private List<SleepQuality> requiredSleepQualities;
+
+        @Schema(description = "신체 증상 존재 여부 필요 조건", example = "true")
+        @Nullable
+        private Boolean requiredPhysicalSymptomsPresent;
+
+        @Schema(description = "필수 인지 부하 수준")
+        @NotNull
+        private List<CognitiveLoad> requiredCognitiveLoads;
+
+        @Schema(description = "필수 동맹 강도")
+        @NotNull
+        private List<AllianceStrength> requiredAllianceStrengths;
+
+        @Schema(description = "심층 탐색 동의 필요 여부", example = "false")
+        @Nullable
+        private Boolean requiredConsentToDepth;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 조건 생성 응답 DTO")
+    public static class CreateCounselTechniqueTransitionRuleResponseDto {
+        @Schema(description = "상담 기번 전환 조건")
+        private CounselTechniqueTransitionRuleResponseDto counselTechniqueTransitionRule;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 규칙 수정 요청 DTO")
+    public static class UpdateCounselTechniqueTransitionRuleRequestDto {
+
+        @Schema(description = "우선순위", example = "1")
+        private int priority;
+
+        @Schema(description = "최소 현재 기법 메시지 개수", example = "3")
+        @NotNull
+        private int minCurrentTechniqueMessageCount;
+
+        @Schema(description = "최대 현재 기법 메시지 개수", example = "8")
+        @NotNull
+        private int maxCurrentTechniqueMessageCount;
+
+        @Schema(description = "필수 영향 도메인")
+        @NotNull
+        private List<ImpactDomain> requiredImpactDomains;
+
+        @Schema(description = "필수 시간 프레임")
+        @NotNull
+        private List<Timeframe> requiredTimeframes;
+
+        @Schema(description = "필수 1차 감정")
+        @NotNull
+        private List<EmotionPrimary> requiredEmotionPrimaries;
+
+        @Schema(description = "필수 감정 긍부정")
+        @NotNull
+        private List<Valence> requiredValences;
+
+        @Schema(description = "필수 감정 각성 수준")
+        @NotNull
+        private List<ArousalLevel> requiredArousalLevels;
+
+        @Schema(description = "최소 감정 강도", example = "3")
+        @Nullable
+        private Integer minEmotionIntensity;
+
+        @Schema(description = "최대 감정 강도", example = "7")
+        @Nullable
+        private Integer maxEmotionIntensity;
+
+        @Schema(description = "필수 인지된 통제 수준")
+        @NotNull
+        private List<PerceivedControl> requiredPerceivedControls;
+
+        @Schema(description = "필수 동기 단계")
+        @NotNull
+        private List<MotivationStage> requiredMotivationStages;
+
+        @Schema(description = "최소 자기 효능감", example = "4")
+        @Nullable
+        private Integer minSelfEfficacy;
+
+        @Schema(description = "최대 자기 효능감", example = "8")
+        @Nullable
+        private Integer maxSelfEfficacy;
+
+        @Schema(description = "필수 사회적 지지 수준")
+        @NotNull
+        private List<SocialSupportLevel> requiredSocialSupportLevels;
+
+        @Schema(description = "필수 위험 종류") 
+        @NotNull
+        private List<RiskKind> requiredRiskKinds;
+
+        @Schema(description = "최소 위험 심각도", example = "2")
+        @Nullable
+        private Integer minRiskSeverity;
+
+        @Schema(description = "최대 위험 심각도", example = "5")
+        @Nullable
+        private Integer maxRiskSeverity;
+
+        @Schema(description = "필수 수면의 질")
+        @NotNull
+        private List<SleepQuality> requiredSleepQualities;
+
+        @Schema(description = "신체 증상 존재 여부 필요 조건", example = "true")
+        @Nullable
+        private Boolean requiredPhysicalSymptomsPresent;
+
+        @Schema(description = "필수 인지 부하 수준")
+        @NotNull
+        private List<CognitiveLoad> requiredCognitiveLoads;
+
+        @Schema(description = "필수 동맹 강도")
+        @NotNull
+        private List<AllianceStrength> requiredAllianceStrengths;
+
+        @Schema(description = "심층 탐색 동의 필요 여부", example = "false")
+        @Nullable
+        private Boolean requiredConsentToDepth;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 조건 수정 응답 DTO")
+    public static class UpdateCounselTechniqueTransitionRuleResponseDto {
+        @Schema(description = "상담 기번 전환 조건")
+        private CounselTechniqueTransitionRuleResponseDto counselTechniqueTransitionRule;
+    }
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 조건 삭제 응답 DTO")
+    public static class DeleteCounselTechniqueTransitionRuleResponseDto {
+        @Schema(description = "프롬프트 버전 삭제 성공 여부", example = "true")
+        private Boolean isSuccess;
+    }
+
+
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 조건 조회 응답 DTO")
+    public static class FindCounselTechniqueTransitionRuleByIdResponseDto {
+        @Schema(description = "상담 기번 전환 조건")
+        private CounselTechniqueTransitionRuleResponseDto counselTechniqueTransitionRule;
+    }
+
+    @Getter
+    @Setter
+    @Schema(description = "상담 기법 전환 조건 목록 조회 요청 DTO")
+    public static class FindCounselTechniqueTransitionRulesRequestDto {
+        @Schema(description = "선행 상담 기법 ID", example = "ct_123456")
+        @Nullable
+        private String fromCounselTechniqueId;
+
+        @Schema(description = "후행 상담 기법 ID", example = "ct_123456")
+        @Nullable
+        private String toCounselTechniqueId;
+
+        @Schema(description = "프롬프트 버전 ID", example = "pv_123456")
+        @NotNull
+        private String promptVersionId;
+    }
+
+
+    @Getter
+    @Builder
+    @Schema(description = "상담 기법 전환 조건 목록 조회 응답 DTO")
+    public static class FindCounselTechniqueTransitionRulesResponseDto {
+        @Schema(description = "상담 기번 전환 조건 목록")
+        private List<CounselTechniqueTransitionRuleResponseDto> counselTechniqueTransitionRules;
     }
 }
