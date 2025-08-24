@@ -46,6 +46,18 @@ public enum AiModel
    * <code>GPT_5_CHAT = 7;</code>
    */
   GPT_5_CHAT(7),
+  /**
+   * <pre>
+   * Gemini
+   * </pre>
+   *
+   * <code>GEMINI_2_5_FLASH = 8;</code>
+   */
+  GEMINI_2_5_FLASH(8),
+  /**
+   * <code>GEMINI_2_5_PRO = 9;</code>
+   */
+  GEMINI_2_5_PRO(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -94,6 +106,18 @@ public enum AiModel
    * <code>GPT_5_CHAT = 7;</code>
    */
   public static final int GPT_5_CHAT_VALUE = 7;
+  /**
+   * <pre>
+   * Gemini
+   * </pre>
+   *
+   * <code>GEMINI_2_5_FLASH = 8;</code>
+   */
+  public static final int GEMINI_2_5_FLASH_VALUE = 8;
+  /**
+   * <code>GEMINI_2_5_PRO = 9;</code>
+   */
+  public static final int GEMINI_2_5_PRO_VALUE = 9;
 
 
   public final int getNumber() {
@@ -128,6 +152,8 @@ public enum AiModel
       case 5: return GPT_5_MINI;
       case 6: return GPT_5;
       case 7: return GPT_5_CHAT;
+      case 8: return GEMINI_2_5_FLASH;
+      case 9: return GEMINI_2_5_PRO;
       default: return null;
     }
   }

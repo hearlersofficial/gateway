@@ -93,4 +93,15 @@ public interface UpdateCounselTechniqueRequestOrBuilder extends
    * @return The temperature.
    */
   double getTemperature();
+
+  /**
+   * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return Whether the isStartTechnique field is set.
+   */
+  boolean hasIsStartTechnique();
+  /**
+   * <code>optional bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return The isStartTechnique.
+   */
+  boolean getIsStartTechnique();
 }

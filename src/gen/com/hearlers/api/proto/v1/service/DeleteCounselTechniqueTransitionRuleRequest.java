@@ -6,12 +6,12 @@
 package com.hearlers.api.proto.v1.service;
 
 /**
- * Protobuf type {@code com.hearlers.v1.service.FindOrderedCounselTechniquesRequest}
+ * Protobuf type {@code com.hearlers.v1.service.DeleteCounselTechniqueTransitionRuleRequest}
  */
-public final class FindOrderedCounselTechniquesRequest extends
+public final class DeleteCounselTechniqueTransitionRuleRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.FindOrderedCounselTechniquesRequest)
-    FindOrderedCounselTechniquesRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.hearlers.v1.service.DeleteCounselTechniqueTransitionRuleRequest)
+    DeleteCounselTechniqueTransitionRuleRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,62 +20,62 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 2,
       /* suffix= */ "",
-      FindOrderedCounselTechniquesRequest.class.getName());
+      DeleteCounselTechniqueTransitionRuleRequest.class.getName());
   }
-  // Use FindOrderedCounselTechniquesRequest.newBuilder() to construct.
-  private FindOrderedCounselTechniquesRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use DeleteCounselTechniqueTransitionRuleRequest.newBuilder() to construct.
+  private DeleteCounselTechniqueTransitionRuleRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private FindOrderedCounselTechniquesRequest() {
-    firstCounselTechniqueId_ = "";
+  private DeleteCounselTechniqueTransitionRuleRequest() {
+    counselTechniqueTransitionRuleId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_descriptor;
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_DeleteCounselTechniqueTransitionRuleRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_fieldAccessorTable
+    return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_DeleteCounselTechniqueTransitionRuleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.class, com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.Builder.class);
+            com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.class, com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.Builder.class);
   }
 
-  public static final int FIRST_COUNSEL_TECHNIQUE_ID_FIELD_NUMBER = 1;
+  public static final int COUNSEL_TECHNIQUE_TRANSITION_RULE_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object firstCounselTechniqueId_ = "";
+  private volatile java.lang.Object counselTechniqueTransitionRuleId_ = "";
   /**
-   * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
-   * @return The firstCounselTechniqueId.
+   * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
+   * @return The counselTechniqueTransitionRuleId.
    */
   @java.lang.Override
-  public java.lang.String getFirstCounselTechniqueId() {
-    java.lang.Object ref = firstCounselTechniqueId_;
+  public java.lang.String getCounselTechniqueTransitionRuleId() {
+    java.lang.Object ref = counselTechniqueTransitionRuleId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      firstCounselTechniqueId_ = s;
+      counselTechniqueTransitionRuleId_ = s;
       return s;
     }
   }
   /**
-   * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
-   * @return The bytes for firstCounselTechniqueId.
+   * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
+   * @return The bytes for counselTechniqueTransitionRuleId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getFirstCounselTechniqueIdBytes() {
-    java.lang.Object ref = firstCounselTechniqueId_;
+      getCounselTechniqueTransitionRuleIdBytes() {
+    java.lang.Object ref = counselTechniqueTransitionRuleId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      firstCounselTechniqueId_ = b;
+      counselTechniqueTransitionRuleId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -96,8 +96,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(firstCounselTechniqueId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, firstCounselTechniqueId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselTechniqueTransitionRuleId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, counselTechniqueTransitionRuleId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -108,8 +108,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(firstCounselTechniqueId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, firstCounselTechniqueId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(counselTechniqueTransitionRuleId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, counselTechniqueTransitionRuleId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -121,13 +121,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest)) {
+    if (!(obj instanceof com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest)) {
       return super.equals(obj);
     }
-    com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest other = (com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest) obj;
+    com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest other = (com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest) obj;
 
-    if (!getFirstCounselTechniqueId()
-        .equals(other.getFirstCounselTechniqueId())) return false;
+    if (!getCounselTechniqueTransitionRuleId()
+        .equals(other.getCounselTechniqueTransitionRuleId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -139,51 +139,51 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FIRST_COUNSEL_TECHNIQUE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getFirstCounselTechniqueId().hashCode();
+    hash = (37 * hash) + COUNSEL_TECHNIQUE_TRANSITION_RULE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCounselTechniqueTransitionRuleId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(byte[] data)
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -191,26 +191,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseDelimitedFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest parseFrom(
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest prototype) {
+  public static Builder newBuilder(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -239,26 +239,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.hearlers.v1.service.FindOrderedCounselTechniquesRequest}
+   * Protobuf type {@code com.hearlers.v1.service.DeleteCounselTechniqueTransitionRuleRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.FindOrderedCounselTechniquesRequest)
-      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.hearlers.v1.service.DeleteCounselTechniqueTransitionRuleRequest)
+      com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_DeleteCounselTechniqueTransitionRuleRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_fieldAccessorTable
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_DeleteCounselTechniqueTransitionRuleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.class, com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.Builder.class);
+              com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.class, com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.Builder.class);
     }
 
-    // Construct using com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.newBuilder()
+    // Construct using com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.newBuilder()
     private Builder() {
 
     }
@@ -272,24 +272,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      firstCounselTechniqueId_ = "";
+      counselTechniqueTransitionRuleId_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_FindOrderedCounselTechniquesRequest_descriptor;
+      return com.hearlers.api.proto.v1.service.CounselPrompt.internal_static_com_hearlers_v1_service_DeleteCounselTechniqueTransitionRuleRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest getDefaultInstanceForType() {
-      return com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.getDefaultInstance();
+    public com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest getDefaultInstanceForType() {
+      return com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest build() {
-      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest result = buildPartial();
+    public com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest build() {
+      com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -297,34 +297,34 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest buildPartial() {
-      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest result = new com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest(this);
+    public com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest buildPartial() {
+      com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest result = new com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest result) {
+    private void buildPartial0(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.firstCounselTechniqueId_ = firstCounselTechniqueId_;
+        result.counselTechniqueTransitionRuleId_ = counselTechniqueTransitionRuleId_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest) {
-        return mergeFrom((com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest)other);
+      if (other instanceof com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest) {
+        return mergeFrom((com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest other) {
-      if (other == com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.getDefaultInstance()) return this;
-      if (!other.getFirstCounselTechniqueId().isEmpty()) {
-        firstCounselTechniqueId_ = other.firstCounselTechniqueId_;
+    public Builder mergeFrom(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest other) {
+      if (other == com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.getDefaultInstance()) return this;
+      if (!other.getCounselTechniqueTransitionRuleId().isEmpty()) {
+        counselTechniqueTransitionRuleId_ = other.counselTechniqueTransitionRuleId_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              firstCounselTechniqueId_ = input.readStringRequireUtf8();
+              counselTechniqueTransitionRuleId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
@@ -376,95 +376,95 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object firstCounselTechniqueId_ = "";
+    private java.lang.Object counselTechniqueTransitionRuleId_ = "";
     /**
-     * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
-     * @return The firstCounselTechniqueId.
+     * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
+     * @return The counselTechniqueTransitionRuleId.
      */
-    public java.lang.String getFirstCounselTechniqueId() {
-      java.lang.Object ref = firstCounselTechniqueId_;
+    public java.lang.String getCounselTechniqueTransitionRuleId() {
+      java.lang.Object ref = counselTechniqueTransitionRuleId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        firstCounselTechniqueId_ = s;
+        counselTechniqueTransitionRuleId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
-     * @return The bytes for firstCounselTechniqueId.
+     * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
+     * @return The bytes for counselTechniqueTransitionRuleId.
      */
     public com.google.protobuf.ByteString
-        getFirstCounselTechniqueIdBytes() {
-      java.lang.Object ref = firstCounselTechniqueId_;
+        getCounselTechniqueTransitionRuleIdBytes() {
+      java.lang.Object ref = counselTechniqueTransitionRuleId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        firstCounselTechniqueId_ = b;
+        counselTechniqueTransitionRuleId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
-     * @param value The firstCounselTechniqueId to set.
+     * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
+     * @param value The counselTechniqueTransitionRuleId to set.
      * @return This builder for chaining.
      */
-    public Builder setFirstCounselTechniqueId(
+    public Builder setCounselTechniqueTransitionRuleId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      firstCounselTechniqueId_ = value;
+      counselTechniqueTransitionRuleId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
+     * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearFirstCounselTechniqueId() {
-      firstCounselTechniqueId_ = getDefaultInstance().getFirstCounselTechniqueId();
+    public Builder clearCounselTechniqueTransitionRuleId() {
+      counselTechniqueTransitionRuleId_ = getDefaultInstance().getCounselTechniqueTransitionRuleId();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string first_counsel_technique_id = 1 [json_name = "firstCounselTechniqueId"];</code>
-     * @param value The bytes for firstCounselTechniqueId to set.
+     * <code>string counsel_technique_transition_rule_id = 1 [json_name = "counselTechniqueTransitionRuleId"];</code>
+     * @param value The bytes for counselTechniqueTransitionRuleId to set.
      * @return This builder for chaining.
      */
-    public Builder setFirstCounselTechniqueIdBytes(
+    public Builder setCounselTechniqueTransitionRuleIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      firstCounselTechniqueId_ = value;
+      counselTechniqueTransitionRuleId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.FindOrderedCounselTechniquesRequest)
+    // @@protoc_insertion_point(builder_scope:com.hearlers.v1.service.DeleteCounselTechniqueTransitionRuleRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.FindOrderedCounselTechniquesRequest)
-  private static final com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.hearlers.v1.service.DeleteCounselTechniqueTransitionRuleRequest)
+  private static final com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest();
+    DEFAULT_INSTANCE = new com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest();
   }
 
-  public static com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest getDefaultInstance() {
+  public static com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FindOrderedCounselTechniquesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<FindOrderedCounselTechniquesRequest>() {
+  private static final com.google.protobuf.Parser<DeleteCounselTechniqueTransitionRuleRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DeleteCounselTechniqueTransitionRuleRequest>() {
     @java.lang.Override
-    public FindOrderedCounselTechniquesRequest parsePartialFrom(
+    public DeleteCounselTechniqueTransitionRuleRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -483,17 +483,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<FindOrderedCounselTechniquesRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteCounselTechniqueTransitionRuleRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FindOrderedCounselTechniquesRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteCounselTechniqueTransitionRuleRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest getDefaultInstanceForType() {
+  public com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

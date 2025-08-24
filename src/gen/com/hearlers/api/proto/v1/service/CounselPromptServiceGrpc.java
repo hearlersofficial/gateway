@@ -325,6 +325,37 @@ public final class CounselPromptServiceGrpc {
     return getFindPersonaPromptByIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest,
+      com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse> getFindPersonaPromptsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindPersonaPrompts",
+      requestType = com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest,
+      com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse> getFindPersonaPromptsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest, com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse> getFindPersonaPromptsMethod;
+    if ((getFindPersonaPromptsMethod = CounselPromptServiceGrpc.getFindPersonaPromptsMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getFindPersonaPromptsMethod = CounselPromptServiceGrpc.getFindPersonaPromptsMethod) == null) {
+          CounselPromptServiceGrpc.getFindPersonaPromptsMethod = getFindPersonaPromptsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest, com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindPersonaPrompts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindPersonaPrompts"))
+              .build();
+        }
+      }
+    }
+    return getFindPersonaPromptsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest,
       com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse> getUpdatePersonaPromptMethod;
 
@@ -385,6 +416,37 @@ public final class CounselPromptServiceGrpc {
       }
     }
     return getFindTonePromptByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonePromptsRequest,
+      com.hearlers.api.proto.v1.service.FindTonePromptsResponse> getFindTonePromptsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindTonePrompts",
+      requestType = com.hearlers.api.proto.v1.service.FindTonePromptsRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindTonePromptsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonePromptsRequest,
+      com.hearlers.api.proto.v1.service.FindTonePromptsResponse> getFindTonePromptsMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindTonePromptsRequest, com.hearlers.api.proto.v1.service.FindTonePromptsResponse> getFindTonePromptsMethod;
+    if ((getFindTonePromptsMethod = CounselPromptServiceGrpc.getFindTonePromptsMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getFindTonePromptsMethod = CounselPromptServiceGrpc.getFindTonePromptsMethod) == null) {
+          CounselPromptServiceGrpc.getFindTonePromptsMethod = getFindTonePromptsMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindTonePromptsRequest, com.hearlers.api.proto.v1.service.FindTonePromptsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindTonePrompts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindTonePromptsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindTonePromptsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindTonePrompts"))
+              .build();
+        }
+      }
+    }
+    return getFindTonePromptsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateTonePromptRequest,
@@ -449,35 +511,35 @@ public final class CounselPromptServiceGrpc {
     return getCreateCounselTechniqueMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest,
-      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse> getFindOrderedCounselTechniquesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> getFindCounselTechniquesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FindOrderedCounselTechniques",
-      requestType = com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselTechniques",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest,
-      com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse> getFindOrderedCounselTechniquesMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest, com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse> getFindOrderedCounselTechniquesMethod;
-    if ((getFindOrderedCounselTechniquesMethod = CounselPromptServiceGrpc.getFindOrderedCounselTechniquesMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> getFindCounselTechniquesMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest, com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> getFindCounselTechniquesMethod;
+    if ((getFindCounselTechniquesMethod = CounselPromptServiceGrpc.getFindCounselTechniquesMethod) == null) {
       synchronized (CounselPromptServiceGrpc.class) {
-        if ((getFindOrderedCounselTechniquesMethod = CounselPromptServiceGrpc.getFindOrderedCounselTechniquesMethod) == null) {
-          CounselPromptServiceGrpc.getFindOrderedCounselTechniquesMethod = getFindOrderedCounselTechniquesMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest, com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse>newBuilder()
+        if ((getFindCounselTechniquesMethod = CounselPromptServiceGrpc.getFindCounselTechniquesMethod) == null) {
+          CounselPromptServiceGrpc.getFindCounselTechniquesMethod = getFindCounselTechniquesMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest, com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindOrderedCounselTechniques"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselTechniques"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest.getDefaultInstance()))
+                  com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindOrderedCounselTechniques"))
+                  com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindCounselTechniques"))
               .build();
         }
       }
     }
-    return getFindOrderedCounselTechniquesMethod;
+    return getFindCounselTechniquesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest,
@@ -542,37 +604,6 @@ public final class CounselPromptServiceGrpc {
     return getUpdateCounselTechniqueMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest,
-      com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> getSaveCounselTechniqueSequenceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SaveCounselTechniqueSequence",
-      requestType = com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.class,
-      responseType = com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest,
-      com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> getSaveCounselTechniqueSequenceMethod() {
-    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest, com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> getSaveCounselTechniqueSequenceMethod;
-    if ((getSaveCounselTechniqueSequenceMethod = CounselPromptServiceGrpc.getSaveCounselTechniqueSequenceMethod) == null) {
-      synchronized (CounselPromptServiceGrpc.class) {
-        if ((getSaveCounselTechniqueSequenceMethod = CounselPromptServiceGrpc.getSaveCounselTechniqueSequenceMethod) == null) {
-          CounselPromptServiceGrpc.getSaveCounselTechniqueSequenceMethod = getSaveCounselTechniqueSequenceMethod =
-              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest, com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SaveCounselTechniqueSequence"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("SaveCounselTechniqueSequence"))
-              .build();
-        }
-      }
-    }
-    return getSaveCounselTechniqueSequenceMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest,
       com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse> getFindPromptActivateHistoriesMethod;
 
@@ -602,6 +633,161 @@ public final class CounselPromptServiceGrpc {
       }
     }
     return getFindPromptActivateHistoriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest,
+      com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse> getCreateCounselTechniqueTransitionRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCounselTechniqueTransitionRule",
+      requestType = com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest,
+      com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse> getCreateCounselTechniqueTransitionRuleMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest, com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse> getCreateCounselTechniqueTransitionRuleMethod;
+    if ((getCreateCounselTechniqueTransitionRuleMethod = CounselPromptServiceGrpc.getCreateCounselTechniqueTransitionRuleMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getCreateCounselTechniqueTransitionRuleMethod = CounselPromptServiceGrpc.getCreateCounselTechniqueTransitionRuleMethod) == null) {
+          CounselPromptServiceGrpc.getCreateCounselTechniqueTransitionRuleMethod = getCreateCounselTechniqueTransitionRuleMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest, com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCounselTechniqueTransitionRule"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("CreateCounselTechniqueTransitionRule"))
+              .build();
+        }
+      }
+    }
+    return getCreateCounselTechniqueTransitionRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse> getFindCounselTechniqueTransitionRuleByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselTechniqueTransitionRuleById",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse> getFindCounselTechniqueTransitionRuleByIdMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest, com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse> getFindCounselTechniqueTransitionRuleByIdMethod;
+    if ((getFindCounselTechniqueTransitionRuleByIdMethod = CounselPromptServiceGrpc.getFindCounselTechniqueTransitionRuleByIdMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getFindCounselTechniqueTransitionRuleByIdMethod = CounselPromptServiceGrpc.getFindCounselTechniqueTransitionRuleByIdMethod) == null) {
+          CounselPromptServiceGrpc.getFindCounselTechniqueTransitionRuleByIdMethod = getFindCounselTechniqueTransitionRuleByIdMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest, com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselTechniqueTransitionRuleById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindCounselTechniqueTransitionRuleById"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselTechniqueTransitionRuleByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse> getFindCounselTechniqueTransitionRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindCounselTechniqueTransitionRules",
+      requestType = com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest,
+      com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse> getFindCounselTechniqueTransitionRulesMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest, com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse> getFindCounselTechniqueTransitionRulesMethod;
+    if ((getFindCounselTechniqueTransitionRulesMethod = CounselPromptServiceGrpc.getFindCounselTechniqueTransitionRulesMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getFindCounselTechniqueTransitionRulesMethod = CounselPromptServiceGrpc.getFindCounselTechniqueTransitionRulesMethod) == null) {
+          CounselPromptServiceGrpc.getFindCounselTechniqueTransitionRulesMethod = getFindCounselTechniqueTransitionRulesMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest, com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindCounselTechniqueTransitionRules"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("FindCounselTechniqueTransitionRules"))
+              .build();
+        }
+      }
+    }
+    return getFindCounselTechniqueTransitionRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest,
+      com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse> getUpdateCounselTechniqueTransitionRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCounselTechniqueTransitionRule",
+      requestType = com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest,
+      com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse> getUpdateCounselTechniqueTransitionRuleMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest, com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse> getUpdateCounselTechniqueTransitionRuleMethod;
+    if ((getUpdateCounselTechniqueTransitionRuleMethod = CounselPromptServiceGrpc.getUpdateCounselTechniqueTransitionRuleMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getUpdateCounselTechniqueTransitionRuleMethod = CounselPromptServiceGrpc.getUpdateCounselTechniqueTransitionRuleMethod) == null) {
+          CounselPromptServiceGrpc.getUpdateCounselTechniqueTransitionRuleMethod = getUpdateCounselTechniqueTransitionRuleMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest, com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCounselTechniqueTransitionRule"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("UpdateCounselTechniqueTransitionRule"))
+              .build();
+        }
+      }
+    }
+    return getUpdateCounselTechniqueTransitionRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest,
+      com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse> getDeleteCounselTechniqueTransitionRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCounselTechniqueTransitionRule",
+      requestType = com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.class,
+      responseType = com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest,
+      com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse> getDeleteCounselTechniqueTransitionRuleMethod() {
+    io.grpc.MethodDescriptor<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest, com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse> getDeleteCounselTechniqueTransitionRuleMethod;
+    if ((getDeleteCounselTechniqueTransitionRuleMethod = CounselPromptServiceGrpc.getDeleteCounselTechniqueTransitionRuleMethod) == null) {
+      synchronized (CounselPromptServiceGrpc.class) {
+        if ((getDeleteCounselTechniqueTransitionRuleMethod = CounselPromptServiceGrpc.getDeleteCounselTechniqueTransitionRuleMethod) == null) {
+          CounselPromptServiceGrpc.getDeleteCounselTechniqueTransitionRuleMethod = getDeleteCounselTechniqueTransitionRuleMethod =
+              io.grpc.MethodDescriptor.<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest, com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCounselTechniqueTransitionRule"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CounselPromptServiceMethodDescriptorSupplier("DeleteCounselTechniqueTransitionRule"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCounselTechniqueTransitionRuleMethod;
   }
 
   /**
@@ -745,6 +931,13 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    default void findPersonaPrompts(com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindPersonaPromptsMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updatePersonaPrompt(com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePersonaPromptMethod(), responseObserver);
@@ -758,6 +951,13 @@ public final class CounselPromptServiceGrpc {
     default void findTonePromptById(com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonePromptByIdResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindTonePromptByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findTonePrompts(com.hearlers.api.proto.v1.service.FindTonePromptsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonePromptsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindTonePromptsMethod(), responseObserver);
     }
 
     /**
@@ -779,9 +979,9 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
-    default void findOrderedCounselTechniques(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindOrderedCounselTechniquesMethod(), responseObserver);
+    default void findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselTechniquesMethod(), responseObserver);
     }
 
     /**
@@ -799,13 +999,6 @@ public final class CounselPromptServiceGrpc {
     }
 
     /**
-     */
-    default void saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveCounselTechniqueSequenceMethod(), responseObserver);
-    }
-
-    /**
      * <pre>
      * prompt activate history
      * </pre>
@@ -813,6 +1006,44 @@ public final class CounselPromptServiceGrpc {
     default void findPromptActivateHistories(com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindPromptActivateHistoriesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * counsel technique transition rule
+     * </pre>
+     */
+    default void createCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCounselTechniqueTransitionRuleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findCounselTechniqueTransitionRuleById(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselTechniqueTransitionRuleByIdMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void findCounselTechniqueTransitionRules(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindCounselTechniqueTransitionRulesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCounselTechniqueTransitionRuleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCounselTechniqueTransitionRuleMethod(), responseObserver);
     }
   }
 
@@ -931,6 +1162,14 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public void findPersonaPrompts(com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindPersonaPromptsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void updatePersonaPrompt(com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest request,
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -946,6 +1185,14 @@ public final class CounselPromptServiceGrpc {
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonePromptByIdResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindTonePromptByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findTonePrompts(com.hearlers.api.proto.v1.service.FindTonePromptsRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonePromptsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindTonePromptsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -969,10 +1216,10 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
-    public void findOrderedCounselTechniques(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse> responseObserver) {
+    public void findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFindOrderedCounselTechniquesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getFindCounselTechniquesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -992,14 +1239,6 @@ public final class CounselPromptServiceGrpc {
     }
 
     /**
-     */
-    public void saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request,
-        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSaveCounselTechniqueSequenceMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
      * <pre>
      * prompt activate history
      * </pre>
@@ -1008,6 +1247,49 @@ public final class CounselPromptServiceGrpc {
         io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindPromptActivateHistoriesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * counsel technique transition rule
+     * </pre>
+     */
+    public void createCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCounselTechniqueTransitionRuleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findCounselTechniqueTransitionRuleById(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselTechniqueTransitionRuleByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findCounselTechniqueTransitionRules(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindCounselTechniqueTransitionRulesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCounselTechniqueTransitionRuleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest request,
+        io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCounselTechniqueTransitionRuleMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1105,6 +1387,13 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse findPersonaPrompts(com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindPersonaPromptsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse updatePersonaPrompt(com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePersonaPromptMethod(), getCallOptions(), request);
@@ -1118,6 +1407,13 @@ public final class CounselPromptServiceGrpc {
     public com.hearlers.api.proto.v1.service.FindTonePromptByIdResponse findTonePromptById(com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindTonePromptByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindTonePromptsResponse findTonePrompts(com.hearlers.api.proto.v1.service.FindTonePromptsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTonePromptsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1139,9 +1435,9 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
-    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse findOrderedCounselTechniques(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest request) {
+    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindOrderedCounselTechniquesMethod(), getCallOptions(), request);
+          getChannel(), getFindCounselTechniquesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1159,13 +1455,6 @@ public final class CounselPromptServiceGrpc {
     }
 
     /**
-     */
-    public com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSaveCounselTechniqueSequenceMethod(), getCallOptions(), request);
-    }
-
-    /**
      * <pre>
      * prompt activate history
      * </pre>
@@ -1173,6 +1462,44 @@ public final class CounselPromptServiceGrpc {
     public com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse findPromptActivateHistories(com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindPromptActivateHistoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * counsel technique transition rule
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse createCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselTechniqueTransitionRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse findCounselTechniqueTransitionRuleById(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniqueTransitionRuleByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse findCounselTechniqueTransitionRules(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniqueTransitionRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse updateCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCounselTechniqueTransitionRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse deleteCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCounselTechniqueTransitionRuleMethod(), getCallOptions(), request);
     }
   }
 
@@ -1270,6 +1597,13 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse findPersonaPrompts(com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindPersonaPromptsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse updatePersonaPrompt(com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePersonaPromptMethod(), getCallOptions(), request);
@@ -1283,6 +1617,13 @@ public final class CounselPromptServiceGrpc {
     public com.hearlers.api.proto.v1.service.FindTonePromptByIdResponse findTonePromptById(com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindTonePromptByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindTonePromptsResponse findTonePrompts(com.hearlers.api.proto.v1.service.FindTonePromptsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTonePromptsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1304,9 +1645,9 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
-    public com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse findOrderedCounselTechniques(com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest request) {
+    public com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse findCounselTechniques(com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindOrderedCounselTechniquesMethod(), getCallOptions(), request);
+          getChannel(), getFindCounselTechniquesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1324,13 +1665,6 @@ public final class CounselPromptServiceGrpc {
     }
 
     /**
-     */
-    public com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse saveCounselTechniqueSequence(com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSaveCounselTechniqueSequenceMethod(), getCallOptions(), request);
-    }
-
-    /**
      * <pre>
      * prompt activate history
      * </pre>
@@ -1338,6 +1672,44 @@ public final class CounselPromptServiceGrpc {
     public com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse findPromptActivateHistories(com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindPromptActivateHistoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * counsel technique transition rule
+     * </pre>
+     */
+    public com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse createCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCounselTechniqueTransitionRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse findCounselTechniqueTransitionRuleById(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniqueTransitionRuleByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse findCounselTechniqueTransitionRules(com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindCounselTechniqueTransitionRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse updateCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCounselTechniqueTransitionRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse deleteCounselTechniqueTransitionRule(com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCounselTechniqueTransitionRuleMethod(), getCallOptions(), request);
     }
   }
 
@@ -1445,6 +1817,14 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse> findPersonaPrompts(
+        com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindPersonaPromptsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse> updatePersonaPrompt(
         com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1460,6 +1840,14 @@ public final class CounselPromptServiceGrpc {
         com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindTonePromptByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindTonePromptsResponse> findTonePrompts(
+        com.hearlers.api.proto.v1.service.FindTonePromptsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindTonePromptsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1483,10 +1871,10 @@ public final class CounselPromptServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse> findOrderedCounselTechniques(
-        com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse> findCounselTechniques(
+        com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindOrderedCounselTechniquesMethod(), getCallOptions()), request);
+          getChannel().newCall(getFindCounselTechniquesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1506,14 +1894,6 @@ public final class CounselPromptServiceGrpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse> saveCounselTechniqueSequence(
-        com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSaveCounselTechniqueSequenceMethod(), getCallOptions()), request);
-    }
-
-    /**
      * <pre>
      * prompt activate history
      * </pre>
@@ -1522,6 +1902,49 @@ public final class CounselPromptServiceGrpc {
         com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindPromptActivateHistoriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * counsel technique transition rule
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse> createCounselTechniqueTransitionRule(
+        com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCounselTechniqueTransitionRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse> findCounselTechniqueTransitionRuleById(
+        com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselTechniqueTransitionRuleByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse> findCounselTechniqueTransitionRules(
+        com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindCounselTechniqueTransitionRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse> updateCounselTechniqueTransitionRule(
+        com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCounselTechniqueTransitionRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse> deleteCounselTechniqueTransitionRule(
+        com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCounselTechniqueTransitionRuleMethod(), getCallOptions()), request);
     }
   }
 
@@ -1535,15 +1958,21 @@ public final class CounselPromptServiceGrpc {
   private static final int METHODID_ACTIVATE_PROMPT_VERSION = 7;
   private static final int METHODID_DELETE_PROMPT_VERSIONS = 8;
   private static final int METHODID_FIND_PERSONA_PROMPT_BY_ID = 9;
-  private static final int METHODID_UPDATE_PERSONA_PROMPT = 10;
-  private static final int METHODID_FIND_TONE_PROMPT_BY_ID = 11;
-  private static final int METHODID_UPDATE_TONE_PROMPT = 12;
-  private static final int METHODID_CREATE_COUNSEL_TECHNIQUE = 13;
-  private static final int METHODID_FIND_ORDERED_COUNSEL_TECHNIQUES = 14;
-  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID = 15;
-  private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 16;
-  private static final int METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE = 17;
-  private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 18;
+  private static final int METHODID_FIND_PERSONA_PROMPTS = 10;
+  private static final int METHODID_UPDATE_PERSONA_PROMPT = 11;
+  private static final int METHODID_FIND_TONE_PROMPT_BY_ID = 12;
+  private static final int METHODID_FIND_TONE_PROMPTS = 13;
+  private static final int METHODID_UPDATE_TONE_PROMPT = 14;
+  private static final int METHODID_CREATE_COUNSEL_TECHNIQUE = 15;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUES = 16;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID = 17;
+  private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE = 18;
+  private static final int METHODID_FIND_PROMPT_ACTIVATE_HISTORIES = 19;
+  private static final int METHODID_CREATE_COUNSEL_TECHNIQUE_TRANSITION_RULE = 20;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_TRANSITION_RULE_BY_ID = 21;
+  private static final int METHODID_FIND_COUNSEL_TECHNIQUE_TRANSITION_RULES = 22;
+  private static final int METHODID_UPDATE_COUNSEL_TECHNIQUE_TRANSITION_RULE = 23;
+  private static final int METHODID_DELETE_COUNSEL_TECHNIQUE_TRANSITION_RULE = 24;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1602,6 +2031,10 @@ public final class CounselPromptServiceGrpc {
           serviceImpl.findPersonaPromptById((com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaPromptByIdResponse>) responseObserver);
           break;
+        case METHODID_FIND_PERSONA_PROMPTS:
+          serviceImpl.findPersonaPrompts((com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse>) responseObserver);
+          break;
         case METHODID_UPDATE_PERSONA_PROMPT:
           serviceImpl.updatePersonaPrompt((com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdatePersonaPromptResponse>) responseObserver);
@@ -1609,6 +2042,10 @@ public final class CounselPromptServiceGrpc {
         case METHODID_FIND_TONE_PROMPT_BY_ID:
           serviceImpl.findTonePromptById((com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonePromptByIdResponse>) responseObserver);
+          break;
+        case METHODID_FIND_TONE_PROMPTS:
+          serviceImpl.findTonePrompts((com.hearlers.api.proto.v1.service.FindTonePromptsRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindTonePromptsResponse>) responseObserver);
           break;
         case METHODID_UPDATE_TONE_PROMPT:
           serviceImpl.updateTonePrompt((com.hearlers.api.proto.v1.service.UpdateTonePromptRequest) request,
@@ -1618,9 +2055,9 @@ public final class CounselPromptServiceGrpc {
           serviceImpl.createCounselTechnique((com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse>) responseObserver);
           break;
-        case METHODID_FIND_ORDERED_COUNSEL_TECHNIQUES:
-          serviceImpl.findOrderedCounselTechniques((com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse>) responseObserver);
+        case METHODID_FIND_COUNSEL_TECHNIQUES:
+          serviceImpl.findCounselTechniques((com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse>) responseObserver);
           break;
         case METHODID_FIND_COUNSEL_TECHNIQUE_BY_ID:
           serviceImpl.findCounselTechniqueById((com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest) request,
@@ -1630,13 +2067,29 @@ public final class CounselPromptServiceGrpc {
           serviceImpl.updateCounselTechnique((com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse>) responseObserver);
           break;
-        case METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE:
-          serviceImpl.saveCounselTechniqueSequence((com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest) request,
-              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>) responseObserver);
-          break;
         case METHODID_FIND_PROMPT_ACTIVATE_HISTORIES:
           serviceImpl.findPromptActivateHistories((com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest) request,
               (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_COUNSEL_TECHNIQUE_TRANSITION_RULE:
+          serviceImpl.createCounselTechniqueTransitionRule((com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSEL_TECHNIQUE_TRANSITION_RULE_BY_ID:
+          serviceImpl.findCounselTechniqueTransitionRuleById((com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse>) responseObserver);
+          break;
+        case METHODID_FIND_COUNSEL_TECHNIQUE_TRANSITION_RULES:
+          serviceImpl.findCounselTechniqueTransitionRules((com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_COUNSEL_TECHNIQUE_TRANSITION_RULE:
+          serviceImpl.updateCounselTechniqueTransitionRule((com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_COUNSEL_TECHNIQUE_TRANSITION_RULE:
+          serviceImpl.deleteCounselTechniqueTransitionRule((com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1727,6 +2180,13 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.FindPersonaPromptByIdResponse>(
                 service, METHODID_FIND_PERSONA_PROMPT_BY_ID)))
         .addMethod(
+          getFindPersonaPromptsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest,
+              com.hearlers.api.proto.v1.service.FindPersonaPromptsResponse>(
+                service, METHODID_FIND_PERSONA_PROMPTS)))
+        .addMethod(
           getUpdatePersonaPromptMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1740,6 +2200,13 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest,
               com.hearlers.api.proto.v1.service.FindTonePromptByIdResponse>(
                 service, METHODID_FIND_TONE_PROMPT_BY_ID)))
+        .addMethod(
+          getFindTonePromptsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindTonePromptsRequest,
+              com.hearlers.api.proto.v1.service.FindTonePromptsResponse>(
+                service, METHODID_FIND_TONE_PROMPTS)))
         .addMethod(
           getUpdateTonePromptMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1755,12 +2222,12 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.CreateCounselTechniqueResponse>(
                 service, METHODID_CREATE_COUNSEL_TECHNIQUE)))
         .addMethod(
-          getFindOrderedCounselTechniquesMethod(),
+          getFindCounselTechniquesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesRequest,
-              com.hearlers.api.proto.v1.service.FindOrderedCounselTechniquesResponse>(
-                service, METHODID_FIND_ORDERED_COUNSEL_TECHNIQUES)))
+              com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest,
+              com.hearlers.api.proto.v1.service.FindCounselTechniquesResponse>(
+                service, METHODID_FIND_COUNSEL_TECHNIQUES)))
         .addMethod(
           getFindCounselTechniqueByIdMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1776,19 +2243,47 @@ public final class CounselPromptServiceGrpc {
               com.hearlers.api.proto.v1.service.UpdateCounselTechniqueResponse>(
                 service, METHODID_UPDATE_COUNSEL_TECHNIQUE)))
         .addMethod(
-          getSaveCounselTechniqueSequenceMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceRequest,
-              com.hearlers.api.proto.v1.service.SaveCounselTechniqueSequenceResponse>(
-                service, METHODID_SAVE_COUNSEL_TECHNIQUE_SEQUENCE)))
-        .addMethod(
           getFindPromptActivateHistoriesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest,
               com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesResponse>(
                 service, METHODID_FIND_PROMPT_ACTIVATE_HISTORIES)))
+        .addMethod(
+          getCreateCounselTechniqueTransitionRuleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest,
+              com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleResponse>(
+                service, METHODID_CREATE_COUNSEL_TECHNIQUE_TRANSITION_RULE)))
+        .addMethod(
+          getFindCounselTechniqueTransitionRuleByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest,
+              com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdResponse>(
+                service, METHODID_FIND_COUNSEL_TECHNIQUE_TRANSITION_RULE_BY_ID)))
+        .addMethod(
+          getFindCounselTechniqueTransitionRulesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest,
+              com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesResponse>(
+                service, METHODID_FIND_COUNSEL_TECHNIQUE_TRANSITION_RULES)))
+        .addMethod(
+          getUpdateCounselTechniqueTransitionRuleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest,
+              com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleResponse>(
+                service, METHODID_UPDATE_COUNSEL_TECHNIQUE_TRANSITION_RULE)))
+        .addMethod(
+          getDeleteCounselTechniqueTransitionRuleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest,
+              com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleResponse>(
+                service, METHODID_DELETE_COUNSEL_TECHNIQUE_TRANSITION_RULE)))
         .build();
   }
 
@@ -1847,15 +2342,21 @@ public final class CounselPromptServiceGrpc {
               .addMethod(getActivatePromptVersionMethod())
               .addMethod(getDeletePromptVersionsMethod())
               .addMethod(getFindPersonaPromptByIdMethod())
+              .addMethod(getFindPersonaPromptsMethod())
               .addMethod(getUpdatePersonaPromptMethod())
               .addMethod(getFindTonePromptByIdMethod())
+              .addMethod(getFindTonePromptsMethod())
               .addMethod(getUpdateTonePromptMethod())
               .addMethod(getCreateCounselTechniqueMethod())
-              .addMethod(getFindOrderedCounselTechniquesMethod())
+              .addMethod(getFindCounselTechniquesMethod())
               .addMethod(getFindCounselTechniqueByIdMethod())
               .addMethod(getUpdateCounselTechniqueMethod())
-              .addMethod(getSaveCounselTechniqueSequenceMethod())
               .addMethod(getFindPromptActivateHistoriesMethod())
+              .addMethod(getCreateCounselTechniqueTransitionRuleMethod())
+              .addMethod(getFindCounselTechniqueTransitionRuleByIdMethod())
+              .addMethod(getFindCounselTechniqueTransitionRulesMethod())
+              .addMethod(getUpdateCounselTechniqueTransitionRuleMethod())
+              .addMethod(getDeleteCounselTechniqueTransitionRuleMethod())
               .build();
         }
       }

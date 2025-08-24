@@ -75,59 +75,11 @@ public interface PromptVersionOrBuilder extends
   com.hearlers.api.proto.v1.model.AiModel getAiModel();
 
   /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
-   */
-  java.util.List<com.hearlers.api.proto.v1.model.CounselorScopedPrompt> 
-      getCounselorScopedPromptsList();
-  /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
-   */
-  com.hearlers.api.proto.v1.model.CounselorScopedPrompt getCounselorScopedPrompts(int index);
-  /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
-   */
-  int getCounselorScopedPromptsCount();
-  /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
-   */
-  java.util.List<? extends com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder> 
-      getCounselorScopedPromptsOrBuilderList();
-  /**
-   * <code>repeated .com.hearlers.v1.model.CounselorScopedPrompt counselor_scoped_prompts = 8 [json_name = "counselorScopedPrompts"];</code>
-   */
-  com.hearlers.api.proto.v1.model.CounselorScopedPromptOrBuilder getCounselorScopedPromptsOrBuilder(
-      int index);
-
-  /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
-   */
-  java.util.List<com.hearlers.api.proto.v1.model.ToneScopedPrompt> 
-      getToneScopedPromptsList();
-  /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
-   */
-  com.hearlers.api.proto.v1.model.ToneScopedPrompt getToneScopedPrompts(int index);
-  /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
-   */
-  int getToneScopedPromptsCount();
-  /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
-   */
-  java.util.List<? extends com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder> 
-      getToneScopedPromptsOrBuilderList();
-  /**
-   * <code>repeated .com.hearlers.v1.model.ToneScopedPrompt tone_scoped_prompts = 9 [json_name = "toneScopedPrompts"];</code>
-   */
-  com.hearlers.api.proto.v1.model.ToneScopedPromptOrBuilder getToneScopedPromptsOrBuilder(
-      int index);
-
-  /**
    * <pre>
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 10 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -136,7 +88,7 @@ public interface PromptVersionOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string created_at = 10 [json_name = "createdAt"];</code>
+   * <code>string created_at = 8 [json_name = "createdAt"];</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -147,7 +99,7 @@ public interface PromptVersionOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
@@ -156,7 +108,7 @@ public interface PromptVersionOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+   * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
@@ -167,7 +119,7 @@ public interface PromptVersionOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
@@ -176,7 +128,7 @@ public interface PromptVersionOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   java.lang.String getDeletedAt();
@@ -185,7 +137,7 @@ public interface PromptVersionOrBuilder extends
    * ISO 8601 (2024-12-29T12:34:56.000Z)
    * </pre>
    *
-   * <code>optional string deleted_at = 12 [json_name = "deletedAt"];</code>
+   * <code>optional string deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The bytes for deletedAt.
    */
   com.google.protobuf.ByteString

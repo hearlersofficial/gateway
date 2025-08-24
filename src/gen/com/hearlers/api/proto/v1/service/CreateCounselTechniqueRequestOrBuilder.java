@@ -68,4 +68,10 @@ public interface CreateCounselTechniqueRequestOrBuilder extends
    * @return The temperature.
    */
   double getTemperature();
+
+  /**
+   * <code>bool is_start_technique = 7 [json_name = "isStartTechnique"];</code>
+   * @return The isStartTechnique.
+   */
+  boolean getIsStartTechnique();
 }

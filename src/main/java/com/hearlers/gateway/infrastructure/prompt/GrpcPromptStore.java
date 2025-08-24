@@ -2,14 +2,11 @@ package com.hearlers.gateway.infrastructure.prompt;
 
 import java.util.List;
 
+import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
 import lombok.val;
 import org.springframework.stereotype.Component;
 
-import com.hearlers.api.proto.v1.model.CounselTechnique;
-import com.hearlers.api.proto.v1.model.PersonaPrompt;
-import com.hearlers.api.proto.v1.model.PromptVersion;
-import com.hearlers.api.proto.v1.model.TonePrompt;
 import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub;
 import com.hearlers.gateway.application.prompt.PromptStore;
 
@@ -18,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 public class GrpcPromptStore implements PromptStore {
+
     private final CounselPromptServiceBlockingStub counselPromptServiceBlockingStub;
     
     @Override
@@ -36,14 +34,10 @@ public class GrpcPromptStore implements PromptStore {
     }
 
     @Override
-    public List<CounselTechnique> updateCounselTechnique(UpdateCounselTechniqueRequest request) {
-        return counselPromptServiceBlockingStub.updateCounselTechnique(request).getCounselTechniquesList();
+    public CounselTechnique updateCounselTechnique(UpdateCounselTechniqueRequest request) {
+        return counselPromptServiceBlockingStub.updateCounselTechnique(request).getCounselTechnique();
     }
 
-    @Override
-    public List<CounselTechnique> saveCounselTechniqueSequence(SaveCounselTechniqueSequenceRequest request) {
-        return counselPromptServiceBlockingStub.saveCounselTechniqueSequence(request).getCounselTechniquesList();
-    }
     
     @Override
     public PromptVersion saveTemporaryVersion(SaveTemporaryVersionRequest request) {
@@ -63,6 +57,22 @@ public class GrpcPromptStore implements PromptStore {
     @Override
     public Boolean deletePromptVersion(DeletePromptVersionsRequest request) {
         var result = counselPromptServiceBlockingStub.deletePromptVersions(request);
+        return result != null;
+    }
+
+    @Override
+    public CounselTechniqueTransitionRule createCounselTechniqueTransitionRule(CreateCounselTechniqueTransitionRuleRequest request) {
+        return counselPromptServiceBlockingStub.createCounselTechniqueTransitionRule(request).getCounselTechniqueTransitionRule();
+    }
+
+    @Override
+    public CounselTechniqueTransitionRule updateCounselTechniqueTransitionRule(UpdateCounselTechniqueTransitionRuleRequest request) {
+        return counselPromptServiceBlockingStub.updateCounselTechniqueTransitionRule(request).getCounselTechniqueTransitionRule();
+    }
+
+    @Override
+    public Boolean deleteCounselTechniqueTransitionRule(DeleteCounselTechniqueTransitionRuleRequest request) {
+        var result = counselPromptServiceBlockingStub.deleteCounselTechniqueTransitionRule(request);
         return result != null;
     }
 }
