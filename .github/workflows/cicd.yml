@@ -74,7 +74,7 @@ jobs:
         run: |
           sudo docker pull ${{ env.DOCKER_IMAGE }}:latest
 
-          CONTAINER_ID=$(sudo docker ps -a -q -f name=${{ env.DOCKER_CONTAINER }})
+          CONTAINER_ID=$(sudo docker ps -a -q -f "name=^/${{ env.DOCKER_CONTAINER }}$")
           if [ -n "$CONTAINER_ID" ]; then
             echo "Stopping and removing existing container: $CONTAINER_ID"
             sudo docker stop $CONTAINER_ID && sudo docker rm $CONTAINER_ID
