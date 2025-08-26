@@ -24,3 +24,7 @@ springdoc:
     tags-sorter: alpha
     doc-expansion: none
   use-fqn: false
+
+grpc:
+  targets:
+    nest: ${GRPC_NEST_TARGET}

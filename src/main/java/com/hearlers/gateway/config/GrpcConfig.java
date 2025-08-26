@@ -1,22 +1,43 @@
 package com.hearlers.gateway.config;
 
-import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc;
-import com.hearlers.api.proto.v1.service.CounselServiceGrpc;
-import com.hearlers.api.proto.v1.service.CounselorServiceGrpc;
-import com.hearlers.api.proto.v1.service.UserServiceGrpc;
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GrpcConfig {
 
+    private final JwtProvider.GrpcTargets grpcTargets;
+
+    public GrpcConfig(JwtProvider.GrpcTargets grpcTargets) {
+        this.grpcTargets = grpcTargets;
+    }
+
     @Bean
-    public ManagedChannel managedChannel() {
-        return ManagedChannelBuilder.forTarget("rpc.dev.hearlers.com")
-                .useTransportSecurity() // TLS 사용
-                .build();
+    public ManagedChannel nestManagedChannel() {
+        return buildChannel(grpcTargets.getNest());
+    }
+
+//    @Bean
+//    public ManagedChannel springManagedChannel() {
+//        return buildChannel(grpcTargets.getSpring());
+//    }
+
+    private ManagedChannel buildChannel(String target) {
+        ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forTarget(target);
+
+        if (isLocalhost(target)) {
+            builder.usePlaintext(); // TLS 미사용
+        } else {
+            builder.useTransportSecurity(); // TLS 사용
+        }
+
+        return builder.build();
+    }
+
+    private boolean isLocalhost(String target) {
+        return target.startsWith("localhost") || target.startsWith("127.0.0.1");
     }
 }

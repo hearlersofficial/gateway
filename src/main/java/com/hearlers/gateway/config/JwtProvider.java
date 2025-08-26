@@ -6,6 +6,7 @@ import java.util.Date;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.Authority;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
@@ -138,4 +139,16 @@ public class JwtProvider {
     public long getRefreshTokenExpTime() {
         return jwtProperties.getRefreshExpirationTime();
     }
-} 
+
+    @ConfigurationProperties(prefix = "grpc.targets")
+    public static class GrpcTargets {
+        private String nest;
+        private String spring;
+
+        public String getNest() { return nest; }
+        public void setNest(String nest) { this.nest = nest; }
+
+    //    public String getSpring() { return spring; }
+    //    public void setSpring(String spring) { this.spring = spring; }
+    }
+}
