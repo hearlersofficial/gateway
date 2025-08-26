@@ -671,11 +671,11 @@ public class CounselPromptDto {
         private int priority;
 
         @Schema(description = "최소 현재 기법 메시지 개수", example = "3")
-        @NotNull
+        @Nullable
         private Integer minCurrentTechniqueMessageCount;
 
         @Schema(description = "최대 현재 기법 메시지 개수", example = "8")
-        @NotNull
+        @Nullable
         private Integer maxCurrentTechniqueMessageCount;
 
         @Schema(description = "필수 영향 도메인")
@@ -773,15 +773,15 @@ public class CounselPromptDto {
     public static class UpdateCounselTechniqueTransitionRuleRequestDto {
 
         @Schema(description = "우선순위", example = "1")
-        private int priority;
+        private Integer priority;
 
         @Schema(description = "최소 현재 기법 메시지 개수", example = "3")
-        @NotNull
-        private int minCurrentTechniqueMessageCount;
+        @Nullable
+        private Integer minCurrentTechniqueMessageCount;
 
         @Schema(description = "최대 현재 기법 메시지 개수", example = "8")
-        @NotNull
-        private int maxCurrentTechniqueMessageCount;
+        @Nullable
+        private Integer maxCurrentTechniqueMessageCount;
 
         @Schema(description = "필수 영향 도메인")
         @NotNull

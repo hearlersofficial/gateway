@@ -1,0 +1,26 @@
+# src/test/resources/application.yml
+
+kakao:
+  client_id: "test-kakao-client-id"
+  admin_key: "test-kakao-admin-key"
+  redirect_uri: http://localhost:8080/v1/auth/callback/kakao
+  admin_unique_ids:
+    - 1234567890
+
+jwt:
+  secret: "YS12ZXJ5LWxvbmctYW5kLXNlY3VyZS1zZWNyZXQta2V5LWZvci10ZXN0aW5nLTEyMzQ1"
+  access_expiration_time: 86400
+  refresh_expiration_time: 2592000
+
+springdoc:
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    doc-expansion: none
+  use-fqn: false
+
+grpc:
+  targets:
+    nest: http://localhost:50051

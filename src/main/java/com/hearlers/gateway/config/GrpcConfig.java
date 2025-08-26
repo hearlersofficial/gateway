@@ -1,17 +1,30 @@
 package com.hearlers.gateway.config;
 
-
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Configuration
 public class GrpcConfig {
 
-    private final JwtProvider.GrpcTargets grpcTargets;
+    @ConfigurationProperties(prefix = "grpc.targets")
+    @Getter
+    @Setter
+    public static class GrpcTargets {
+        private String nest;
+        private String spring;
+    }
 
-    public GrpcConfig(JwtProvider.GrpcTargets grpcTargets) {
+    private final GrpcTargets grpcTargets;
+
+    public GrpcConfig(GrpcTargets grpcTargets) {
         this.grpcTargets = grpcTargets;
     }
 
@@ -20,24 +33,30 @@ public class GrpcConfig {
         return buildChannel(grpcTargets.getNest());
     }
 
-//    @Bean
-//    public ManagedChannel springManagedChannel() {
-//        return buildChannel(grpcTargets.getSpring());
-//    }
-
     private ManagedChannel buildChannel(String target) {
-        ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forTarget(target);
+        URI uri;
+        try {
+            uri = new URI(target);
+        } catch (URISyntaxException e) {
+            throw new IllegalArgumentException("Invalid gRPC target URI: " + target, e);
+        }
 
-        if (isLocalhost(target)) {
-            builder.usePlaintext(); // TLS 미사용
+        String host = uri.getHost();
+        int port = uri.getPort();
+
+        if (host == null || port == -1) {
+            throw new IllegalArgumentException("Host or port is missing in gRPC target URI: " + target);
+        }
+
+        ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forAddress(host, port);
+
+        String scheme = uri.getScheme();
+        if ("https".equalsIgnoreCase(scheme)) {
+            builder.useTransportSecurity();
         } else {
-            builder.useTransportSecurity(); // TLS 사용
+            builder.usePlaintext();
         }
 
         return builder.build();
-    }
-
-    private boolean isLocalhost(String target) {
-        return target.startsWith("localhost") || target.startsWith("127.0.0.1");
     }
 }
