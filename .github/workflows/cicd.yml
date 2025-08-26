@@ -2,11 +2,9 @@ name: CI/CD Pipeline with Gradle
 
 on:
   push:
-    branches: ["main"]
+    branches: ["develop"]
 
 env:
-  KAKAO_CLIENT_ID: ${{ secrets.KAKAO_CLIENT_ID }}
-  JWT_SECRET: ${{ secrets.JWT_SECRET }}
   DOCKER_IMAGE: ghcr.io/devheun/hearlers
   DOCKER_CONTAINER: hearlers
 
@@ -66,7 +64,8 @@ jobs:
           echo "KAKAO_CLIENT_ID=${{ secrets.KAKAO_CLIENT_ID }}" >> .env
           echo "KAKAO_ADMIN_KEY=${{ secrets.KAKAO_ADMIN_KEY }}" >> .env
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
-          echo "SERVER_URL=${{ secrets.SERVER_URL }}" >> .env
+          echo "SERVER_URL=${{ secrets.DEV_SERVER_URL }}" >> .env
+          echo "GPRC_NEST_TARGET=${{ secrets.DEV_GRPC_NEST_TARGET }}" >> .env
 
       - name: Run Docker Container
         run: |

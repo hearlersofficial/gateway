@@ -42,6 +42,7 @@ public interface CounselorDtoMapper {
     }
 
     // Create
+    @Mapping(target = "counselorGender", source =  "gender")
     CreateCounselorRequest toCreateCounselorRequest(CounselorDto.CreateCounselorRequest request);
     CounselorDto.CreateCounselorResponse toCreateCounselorResponse(Counselor counselor);
 
