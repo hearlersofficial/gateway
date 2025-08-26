@@ -72,10 +72,12 @@ jobs:
 
       - name: Run Docker Container
         run: |
-          if [ $(sudo docker ps -a -q -f name=${{ env.DOCKER_CONTAINER }}) ]; then
-            sudo docker stop ${{ env.DOCKER_CONTAINER }} && sudo docker rm ${{ env.DOCKER_CONTAINER }}
+          sudo docker pull ${{ env.DOCKER_IMAGE }}:latest
+
+          CONTAINER_ID=$(sudo docker ps -a -q -f name=${{ env.DOCKER_CONTAINER }})
+          if [ -n "$CONTAINER_ID" ]; then
+            echo "Stopping and removing existing container: $CONTAINER_ID"
+            sudo docker stop $CONTAINER_ID && sudo docker rm $CONTAINER_ID
           fi
-          if [ $(sudo docker images -q ${{ env.DOCKER_IMAGE }}:latest) ]; then
-            sudo docker rmi ${{ env.DOCKER_IMAGE }}:latest
-          fi
+
           sudo docker run --env-file ./.env --platform linux/amd64 -d -p ${{ secrets.PORT }}:${{ secrets.PORT }} --name ${{ env.DOCKER_CONTAINER }} --network gateway --restart always ${{ env.DOCKER_IMAGE }}:latest
