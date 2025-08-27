@@ -10,7 +10,8 @@ import org.mapstruct.*;
 @Mapper(
         componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
-        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS
+        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
+        collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED
 )
 public interface CounselPromptDtoMapper {
     /*
@@ -97,17 +98,68 @@ public interface CounselPromptDtoMapper {
     /*
     상담 기법 전환 규칙
      */
+    @Mappings({
+            @Mapping(target = "requiredImpactDomains", source = "requiredImpactDomainsList"),
+            @Mapping(target = "requiredTimeframes", source = "requiredTimeframesList"),
+            @Mapping(target = "requiredEmotionPrimaries", source = "requiredEmotionPrimariesList"),
+            @Mapping(target = "requiredValences", source = "requiredValencesList"),
+            @Mapping(target = "requiredArousalLevels", source = "requiredArousalLevelsList"),
+            @Mapping(target = "requiredPerceivedControls", source = "requiredPerceivedControlsList"),
+            @Mapping(target = "requiredMotivationStages", source = "requiredMotivationStagesList"),
+            @Mapping(target = "requiredSocialSupportLevels", source = "requiredSocialSupportLevelsList"),
+            @Mapping(target = "requiredRiskKinds", source = "requiredRiskKindsList"),
+            @Mapping(target = "requiredSleepQualities", source = "requiredSleepQualitiesList"),
+            @Mapping(target = "requiredCognitiveLoads", source = "requiredCognitiveLoadsList"),
+            @Mapping(target = "requiredAllianceStrengths", source = "requiredAllianceStrengthsList")
+    })
     CounselPromptDto.CounselTechniqueTransitionRuleResponseDto of(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
+    @Mappings({
+            @Mapping(target = "requiredImpactDomainsList", source = "requiredImpactDomains"),
+            @Mapping(target = "requiredTimeframesList", source = "requiredTimeframes"),
+            @Mapping(target = "requiredEmotionPrimariesList", source = "requiredEmotionPrimaries"),
+            @Mapping(target = "requiredValencesList", source = "requiredValences"),
+            @Mapping(target = "requiredArousalLevelsList", source = "requiredArousalLevels"),
+            @Mapping(target = "requiredPerceivedControlsList", source = "requiredPerceivedControls"),
+            @Mapping(target = "requiredMotivationStagesList", source = "requiredMotivationStages"),
+            @Mapping(target = "requiredSocialSupportLevelsList", source = "requiredSocialSupportLevels"),
+            @Mapping(target = "requiredRiskKindsList", source = "requiredRiskKinds"),
+            @Mapping(target = "requiredSleepQualitiesList", source = "requiredSleepQualities"),
+            @Mapping(target = "requiredCognitiveLoadsList", source = "requiredCognitiveLoads"),
+            @Mapping(target = "requiredAllianceStrengthsList", source = "requiredAllianceStrengths")
+    })
     CreateCounselTechniqueTransitionRuleRequest toCreateTransitionRuleRequest(CounselPromptDto.CreateCounselTechniqueTransitionRuleRequestDto dto);
     CounselPromptDto.CreateCounselTechniqueTransitionRuleResponseDto toCreateTransitionRuleResponse(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
+    @Mappings({
+            @Mapping(target = "requiredImpactDomainsList", source = "dto.requiredImpactDomains"),
+            @Mapping(target = "requiredTimeframesList", source = "dto.requiredTimeframes"),
+            @Mapping(target = "requiredEmotionPrimariesList", source = "dto.requiredEmotionPrimaries"),
+            @Mapping(target = "requiredValencesList", source = "dto.requiredValences"),
+            @Mapping(target = "requiredArousalLevelsList", source = "dto.requiredArousalLevels"),
+            @Mapping(target = "requiredPerceivedControlsList", source = "dto.requiredPerceivedControls"),
+            @Mapping(target = "requiredMotivationStagesList", source = "dto.requiredMotivationStages"),
+            @Mapping(target = "requiredSocialSupportLevelsList", source = "dto.requiredSocialSupportLevels"),
+            @Mapping(target = "requiredRiskKindsList", source = "dto.requiredRiskKinds"),
+            @Mapping(target = "requiredSleepQualitiesList", source = "dto.requiredSleepQualities"),
+            @Mapping(target = "requiredCognitiveLoadsList", source = "dto.requiredCognitiveLoads"),
+            @Mapping(target = "requiredAllianceStrengthsList", source = "dto.requiredAllianceStrengths")
+    })
     UpdateCounselTechniqueTransitionRuleRequest toUpdateTransitionRuleRequest(CounselPromptDto.UpdateCounselTechniqueTransitionRuleRequestDto dto, String counselTechniqueTransitionRuleId);
     CounselPromptDto.UpdateCounselTechniqueTransitionRuleResponseDto toUpdateTransitionRuleResponse(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
     DeleteCounselTechniqueTransitionRuleRequest toDeleteTransitionRuleRequest(String counselTechniqueTransitionRuleId);
     FindCounselTechniqueTransitionRuleByIdRequest toFindTransitionRuleByIdRequest(String counselTechniqueTransitionRuleId);
     CounselPromptDto.FindCounselTechniqueTransitionRuleByIdResponseDto toFindTransitionRuleByIdResponseDto(CounselTechniqueTransitionRule counselTechniqueTransitionRule);
     FindCounselTechniqueTransitionRulesRequest toFindTransitionRulesRequest(CounselPromptDto.FindCounselTechniqueTransitionRulesRequestDto dto);
+//    @Mapping(target = "counselTechniqueTransitionRulesList", source = "counselTechniqueTransitionRules")
+//    CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto toFindTransitionRulesResponseDto(List<CounselTechniqueTransitionRule> counselTechniqueTransitionRules);
     default CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto toFindTransitionRulesResponseDto(List<CounselTechniqueTransitionRule> counselTechniqueTransitionRules) {
-        return CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto.builder()
+        System.out.println("--- 로그 시작 ---");
+        counselTechniqueTransitionRules.stream()
+                .peek(ct -> System.out.println("CounselTechniqueTransitionRule 객체: " + ct.getRequiredEmotionPrimariesList()))
+                .map(ct -> ct.getRequiredEmotionPrimariesList().stream())
+                // 원하는 다음 연산
+                .forEach(System.out::println);
+        System.out.println("--- 로그 끝 ---");
+    return CounselPromptDto.FindCounselTechniqueTransitionRulesResponseDto.builder()
                 .counselTechniqueTransitionRules(counselTechniqueTransitionRules.stream().map(this::of).collect(Collectors.toList()))
                 .build();
     }
