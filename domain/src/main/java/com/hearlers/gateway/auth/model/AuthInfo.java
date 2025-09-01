@@ -2,6 +2,7 @@ package com.hearlers.gateway.auth.model;
 
 import com.hearlers.api.proto.v1.model.Gender;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -9,9 +10,8 @@ import java.time.LocalDateTime;
 
 public class AuthInfo {
 
-    @Getter
-    @Builder
-    @ToString
+
+    @Data
     public static class TokenInfo {
         private final String accessToken;
         private final String refreshToken;
@@ -19,9 +19,7 @@ public class AuthInfo {
         private final LocalDateTime refreshTokenExpiresAt;
     }
 
-    @Getter
-    @Builder
-    @ToString
+    @Data
     public static class OAuthUserInfo {
         private final String id;  
         private final String name;
