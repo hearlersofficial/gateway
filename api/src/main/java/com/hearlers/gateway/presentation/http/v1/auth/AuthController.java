@@ -7,15 +7,20 @@ import java.util.Arrays;
 import java.util.Base64;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hearlers.api.proto.v1.model.AuthUser;
+import com.hearlers.api.proto.v1.model.Authority;
+import com.hearlers.api.proto.v1.service.InitializeUserRequest;
+import com.hearlers.gateway.AuthUserUseCase;
+import com.hearlers.gateway.TokenManagingUseCase;
+import com.hearlers.gateway.auth.model.AuthInfo;
 import jakarta.servlet.http.Cookie;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
-import com.hearlers.gateway.application.auth.AuthFacade;
-import com.hearlers.gateway.application.auth.AuthInfo;
 import com.hearlers.gateway.shared.exception.HttpException;
 import com.hearlers.gateway.shared.exception.HttpResultCode;
 import com.hearlers.gateway.shared.response.ResponseDto;
@@ -39,10 +44,13 @@ import org.slf4j.LoggerFactory;
 @Tag(name = "인증", description = "로그인, 회원가입, 토큰 발급 등 인증 관련 API")
 public class AuthController {
     private static final Logger log = LoggerFactory.getLogger(AuthController.class);
-    private final AuthFacade authFacade;
+//    private final AuthFacade authFacade;
+    private final AuthUserUseCase authUserUseCase;
+    private final TokenManagingUseCase tokenManagingUseCase;
+
     private final ObjectMapper objectMapper;
-    private static final int ACCESS_TOKEN_MAX_AGE = 60 * 60; // 1시간
-    private static final int REFRESH_TOKEN_MAX_AGE = 60 * 60 * 24 * 7; // 7일
+    @Value("${token.access_expiration_time}") int accessExpirationTime;
+    @Value("${token.refresh_expiration_time}") int refreshExpirationTime;
     private static final String REFRESH_TOKEN_COOKIE = "refreshToken";
     private static final String ACCESS_TOKEN_COOKIE = "accessToken";
     private static final String ACCESS_TOKEN_EXPIRES_AT_COOKIE = "accessTokenExpiresAt";
@@ -57,12 +65,17 @@ public class AuthController {
     @PostMapping("/v1/auth/initiate")
     public ResponseEntity<ResponseDto.Success<AuthDto.TokenResponseDto>> createUser(HttpServletRequest request, HttpServletResponse response) {
         // 퍼사드를 통해 유저 생성 및 토큰 발급
-        AuthInfo.TokenInfo tokenInfo = authFacade.createUser();
+        var initializeUserResponse = authUserUseCase.initializeUser(
+                InitializeUserRequest.newBuilder().build());
+        var userId = initializeUserResponse.getUser().getId();
+        var authChannel = initializeUserResponse.getAuthUser().getAuthChannel();
+        var tokenInfo = tokenManagingUseCase.generateToken(userId, authChannel, false, Authority.AUTHORITY_USER);
+
         String domain = extractDomainFromOrigin(request.getHeader("Origin"));
         
         // 발급받은 accessToken 쿠키에 저장
-        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
-        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, accessExpirationTime, domain);
+        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, accessExpirationTime, domain);
         clearCookie(response, REFRESH_TOKEN_COOKIE, domain); // 비로그인 유저는 리프레시 토큰이 없음
         clearCookie(response, REFRESH_TOKEN_EXPIRES_AT_COOKIE, domain); // 비로그인 유저는 리프레시 토큰이 없음
         
@@ -95,7 +108,7 @@ public class AuthController {
         String encodedState = encodeState(stateInfo);
         
         // 퍼사드를 통해 카카오 로그인 URL 생성
-        String kakaoAuthUrl = authFacade.generateOAuthLoginUrl(AuthChannel.AUTH_CHANNEL_KAKAO ,encodedState);
+        String kakaoAuthUrl = authUserUseCase.generateOAuthLoginUrl(AuthChannel.AUTH_CHANNEL_KAKAO ,encodedState);
         response.sendRedirect(kakaoAuthUrl);
     }
 
@@ -117,14 +130,15 @@ public class AuthController {
         String clientRedirectUrl = stateInfo.getRedirectUrl();
 
         // 퍼사드를 통해 카카오 로그인 콜백 처리
-        AuthInfo.TokenInfo tokenInfo = authFacade.handleOAuthCallback(AuthChannel.AUTH_CHANNEL_KAKAO ,code, encodedState, userId);
+        AuthUser authUser = authUserUseCase.oauthLogin(AuthChannel.AUTH_CHANNEL_KAKAO ,code, encodedState, userId);
+        AuthInfo.TokenInfo tokenInfo = tokenManagingUseCase.generateToken(authUser.getUserId(), authUser.getAuthChannel(), true, authUser.getAuthority());
 
         String domain = extractDomainFromOrigin(clientRedirectUrl);
         // 발급받은 토큰 쿠키에 저장
-        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
-        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain); ;
-        addCookieToResponse(response, tokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
-        addCookieToResponse(response, tokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, accessExpirationTime, domain);
+        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, accessExpirationTime, domain); ;
+        addCookieToResponse(response, tokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, refreshExpirationTime, domain);
+        addCookieToResponse(response, tokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, refreshExpirationTime, domain);
 
         // 클라이언트로 리다이렉트
         response.sendRedirect(clientRedirectUrl);
@@ -139,14 +153,14 @@ public class AuthController {
     @PostMapping("/v1/auth/refresh")
     public ResponseEntity<ResponseDto.Success<AuthDto.TokenResponseDto>> refreshToken(@RequestAttribute(value = "userId" , required = true) String userId, @RequestAttribute(value = "authChannel" , required = true) AuthChannel authChannel, HttpServletRequest request, HttpServletResponse response) {
         String refreshToken = extractCookieValue(request, REFRESH_TOKEN_COOKIE);
-        AuthInfo.TokenInfo newTokenInfo = authFacade.refreshToken(userId, authChannel, refreshToken);
+        AuthInfo.TokenInfo newTokenInfo = tokenManagingUseCase.refreshToken(userId, authChannel, refreshToken);
 
         String domain = extractDomainFromOrigin(request.getHeader("Origin"));
 
-        addCookieToResponse(response, newTokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
-        addCookieToResponse(response, newTokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, ACCESS_TOKEN_MAX_AGE, domain);
-        addCookieToResponse(response, newTokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
-        addCookieToResponse(response, newTokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, REFRESH_TOKEN_MAX_AGE, domain);
+        addCookieToResponse(response, newTokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, accessExpirationTime, domain);
+        addCookieToResponse(response, newTokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, accessExpirationTime, domain);
+        addCookieToResponse(response, newTokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, refreshExpirationTime, domain);
+        addCookieToResponse(response, newTokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, refreshExpirationTime, domain);
 
         AuthDto.TokenResponseDto tokenResponseDto = AuthDto.TokenResponseDto.builder()
                 .accessToken(newTokenInfo.getAccessToken())

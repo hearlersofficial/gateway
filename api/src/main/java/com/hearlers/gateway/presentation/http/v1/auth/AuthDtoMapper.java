@@ -1,5 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.auth;
 
+import com.hearlers.gateway.auth.model.AuthInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.NullValueCheckStrategy;
@@ -11,8 +12,6 @@ import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.model.UserProfile;
 import com.hearlers.api.proto.v1.service.InitializeUserResponse;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
-import com.hearlers.gateway.application.auth.AuthCommand;
-import com.hearlers.gateway.application.auth.AuthInfo;
 
 @Mapper(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
@@ -37,13 +36,4 @@ public interface AuthDtoMapper {
 
     // TokenInfo -> TokenResponseDto
     AuthDto.TokenResponseDto of(AuthInfo.TokenInfo token);
-
-    // InitializeUserResponse -> GenerateTokenCommand
-    @Mapping(target = "id", source = "user.id")
-    @Mapping(target = "authChannel", source = "authUser.authChannel")
-    AuthCommand.GenerateTokenCommand of(InitializeUserResponse initializeUserResponse);
-
-    // String id, AuthChannel authChannel -> GenerateTokenCommand
-    AuthCommand.GenerateTokenCommand of(String id, AuthChannel authChannel);
-
 }
