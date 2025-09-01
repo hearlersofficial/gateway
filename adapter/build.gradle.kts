@@ -1,3 +1,4 @@
+
 subprojects {
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
@@ -6,7 +7,6 @@ subprojects {
     dependencies {
         implementation(project(":proto"))
         implementation(project(":domain"))
-        implementation("org.springframework:spring-context")
-        implementation("org.slf4j:slf4j-api")
+        implementation(project(":usecase:core"))
     }
 }

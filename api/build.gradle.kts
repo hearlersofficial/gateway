@@ -1,10 +1,18 @@
-
-apply(plugin = "org.springframework.boot")
 apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+apply(plugin = "org.springframework.boot")
 
 
 dependencies {
     implementation(project(":proto"))
+    implementation(project(":domain"))
+
+    implementation(project(":usecase:auth-usecase"))
+    implementation(project(":usecase:counsel-usecase"))
+    implementation(project(":usecase:counselor-usecase"))
+    implementation(project(":usecase:prompt-usecase"))
+    implementation(project(":usecase:user-usecase"))
+
+    implementation(project(":adapter:grpc"))
 
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-web")
