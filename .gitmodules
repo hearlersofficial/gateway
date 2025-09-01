@@ -1,3 +1,6 @@
 [submodule "src/proto"]
 	path = src/proto
 	url = https://github.com/hearlersofficial/hearlers-proto.git
+[submodule "proto/src/proto"]
+	path = proto/src/proto
+	url = git@github.com:hearlersofficial/hearlers-proto.git
