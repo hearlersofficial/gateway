@@ -2,19 +2,13 @@ kakao:
   client_id: ${KAKAO_CLIENT_ID}
   admin_key: ${KAKAO_ADMIN_KEY}
   redirect_uri: ${SERVER_URL}/v1/auth/callback/kakao
-  admin_unique_ids:
-    - 3726748107 # 김도훈
-    - 4282012818 # 이승준
-    - 4282012818 # 김성현 or 윤현지?
-    - 4252068228 # 김성현 or 윤현지?
-    - 3783518117 # 이시흔?
-    - 3424055264 # 히얼러스 카카오 계정
-    - 3424046442 # 여주은
+  admin_unique_ids: 3726748107, 4282012818, 4282012818, 4252068228, 3783518117, 3424055264, 3424046442
 
-jwt:
-  secret: ${JWT_SECRET}
+token:
   access_expiration_time: 86400 # Access token 만료 시간 : 하루
   refresh_expiration_time: 2592000 # Refresh token 만료 시간 : 한달
+  jwt:
+    secret: ${JWT_SECRET}
 
 springdoc:
   default-consumes-media-type: application/json
