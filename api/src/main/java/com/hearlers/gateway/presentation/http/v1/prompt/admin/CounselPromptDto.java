@@ -171,9 +171,6 @@ public class CounselPromptDto {
         @Schema(description = "지시사항", example = "내담자의 감정을 반영하고 공감하세요.")
         private String instruction;
         
-        @Schema(description = "메시지 임계값", example = "3")
-        private int messageThreshold;
-        
         @Schema(description = "시작 기법 여부", example = "false")
         private Boolean isStartTechnique;
 
@@ -424,10 +421,6 @@ public class CounselPromptDto {
         @NotBlank(message = "지시사항은 필수 입력 사항입니다.")
         @Schema(description = "지시사항", example = "내담자의 감정을 반영하고 공감하세요.")
         private String instruction;
-        
-        @NotNull(message = "메시지 임계값은 필수 입력 사항입니다.")
-        @Schema(description = "메시지 임계값", example = "3")
-        private Integer messageThreshold;
 
         @NotNull(message = "temperature 은 필수 입력 사항입니다.")
         @Schema(description = "AI 모델 temperature 값")
@@ -446,9 +439,6 @@ public class CounselPromptDto {
         
         @Schema(description = "지시사항", example = "내담자의 감정을 더 깊이 반영하고 공감하세요.")
         private String instruction;
-        
-        @Schema(description = "메시지 임계값", example = "5")
-        private Integer messageThreshold;
 
         @Schema(description = "AI 모델 temperature 값")
         private double temperature;
