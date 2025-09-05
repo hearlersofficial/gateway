@@ -1,3 +1,4 @@
+import io.spring.gradle.dependencymanagement.internal.DependencyManagement
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -32,6 +33,13 @@ subprojects {
             extendsFrom(configurations.annotationProcessor.get())
         }
     }
+
+    the<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension>().apply {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
+        }
+    }
+
 
     repositories {
         mavenCentral()
