@@ -42,8 +42,8 @@ subprojects {
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
         // Lombok
-        compileOnly("org.projectlombok:lombok")
-        annotationProcessor("org.projectlombok:lombok")
+        compileOnly("org.projectlombok:lombok:1.18.30")
+        annotationProcessor("org.projectlombok:lombok:1.18.30")
 
         // MapStruct & Lombok
         implementation("org.mapstruct:mapstruct:1.5.5.Final")

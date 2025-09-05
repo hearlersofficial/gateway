@@ -1,5 +1,3 @@
-import build.buf.gradle.GENERATED_DIR
-
 plugins {
     `java-library`
     id("build.buf") version "0.10.3"
@@ -14,6 +12,7 @@ buf {
     generate {
         includeImports = true
     }
+    enforceFormat = false
 }
 
 repositories {
