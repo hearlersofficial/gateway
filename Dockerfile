@@ -9,7 +9,7 @@ RUN ./gradlew build --no-daemon -x test
 
 # 실행 단계
 FROM openjdk:21-slim
-ARG JAR_FILE=build/libs/*.jar
+ARG JAR_FILE=api/build/libs/*.jar
 WORKDIR /app
 COPY --from=build /app/${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
