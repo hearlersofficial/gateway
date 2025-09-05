@@ -15,7 +15,6 @@ version = "0.0.1-SNAPSHOT"
 subprojects {
     apply(plugin = "java")
     apply(plugin = "idea")
-    apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
