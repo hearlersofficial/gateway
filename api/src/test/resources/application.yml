@@ -4,13 +4,13 @@ kakao:
   client_id: "test-kakao-client-id"
   admin_key: "test-kakao-admin-key"
   redirect_uri: http://localhost:8080/v1/auth/callback/kakao
-  admin_unique_ids:
-    - 1234567890
+  admin_unique_ids: 3726748107, 4282012818, 4282012818, 4252068228, 3783518117, 3424055264, 3424046442
 
-jwt:
-  secret: "YS12ZXJ5LWxvbmctYW5kLXNlY3VyZS1zZWNyZXQta2V5LWZvci10ZXN0aW5nLTEyMzQ1"
-  access_expiration_time: 86400
-  refresh_expiration_time: 2592000
+token:
+  access_expiration_time: 86400 # Access token 만료 시간 : 하루
+  refresh_expiration_time: 2592000 # Refresh token 만료 시간 : 한달
+  jwt:
+    secret: "YS12ZXJ5LWxvbmctYW5kLXNlY3VyZS1zZWNyZXQta2V5LWZvci10ZXN0aW5nLTEyMzQ1"
 
 springdoc:
   default-consumes-media-type: application/json
