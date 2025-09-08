@@ -1,14 +1,11 @@
 package com.hearlers.gateway.shared.exception;
 
-import com.hearlers.gateway.shared.response.ResponseDtoUtil;
-
 import com.hearlers.gateway.shared.response.ResponseDto;
+import com.hearlers.gateway.shared.response.ResponseDtoUtil;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
 import jakarta.servlet.ServletException;
-
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MissingRequestHeaderException;

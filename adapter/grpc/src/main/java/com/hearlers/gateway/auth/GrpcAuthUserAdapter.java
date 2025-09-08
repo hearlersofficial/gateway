@@ -1,17 +1,15 @@
 package com.hearlers.gateway.auth;
 
+import com.hearlers.api.proto.v1.model.AuthChannel;
+import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub;
 import com.hearlers.gateway.auth.exception.AuthUserNotFoundException;
 import com.hearlers.gateway.port.AuthUserPort;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
-import org.springframework.stereotype.Component;
-
-import com.hearlers.api.proto.v1.model.AuthChannel;
-import com.hearlers.api.proto.v1.model.AuthUser;
-import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor

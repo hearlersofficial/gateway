@@ -1,16 +1,11 @@
 package com.hearlers.gateway.infrastructure.prompt;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
-import lombok.val;
-import org.springframework.stereotype.Component;
-
 import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub;
 import com.hearlers.gateway.application.prompt.PromptStore;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor

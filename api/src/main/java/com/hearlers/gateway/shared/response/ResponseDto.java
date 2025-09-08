@@ -1,15 +1,13 @@
 package com.hearlers.gateway.shared.response;
 
-import java.util.List;
-
-import org.springframework.http.HttpStatus;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+import java.util.List;
 
 @Schema(description = "응답 DTO")
 public class ResponseDto {

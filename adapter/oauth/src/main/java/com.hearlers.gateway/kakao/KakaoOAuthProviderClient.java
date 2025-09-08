@@ -3,15 +3,12 @@ package com.hearlers.gateway.kakao;
 import com.hearlers.gateway.OAuthProviderClient;
 import com.hearlers.gateway.auth.exception.OauthProcessingErrorException;
 import com.hearlers.gateway.auth.model.AuthInfo;
-import com.hearlers.gateway.command.AuthCommand;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
 @Slf4j

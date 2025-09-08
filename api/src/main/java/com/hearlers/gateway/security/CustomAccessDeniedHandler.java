@@ -1,17 +1,16 @@
 package com.hearlers.gateway.security;
 
-import java.io.IOException;
-
 import com.hearlers.gateway.shared.response.ResponseFormatter;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.web.access.AccessDeniedHandler;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.web.access.AccessDeniedHandler;
+
+import java.io.IOException;
 
 /**
  * 인증된 사용자가 권한이 없는 리소스에 접근할 때 호출되는 핸들러

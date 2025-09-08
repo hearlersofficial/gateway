@@ -3,7 +3,6 @@ package com.hearlers.gateway.presentation.http.v1.counsel.app;
 import com.hearlers.gateway.application.counsel.CounselService;
 import com.hearlers.gateway.shared.response.ResponseDto;
 import com.hearlers.gateway.shared.response.ResponseDtoUtil;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

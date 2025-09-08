@@ -1,16 +1,15 @@
 package com.hearlers.gateway.kakao;
 
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Optional;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.hearlers.api.proto.v1.model.Gender;
 import com.hearlers.gateway.auth.exception.OauthProcessingErrorException;
 import com.hearlers.gateway.auth.model.AuthInfo;
-
 import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Optional;
 
 /**
  * KAKAO HTTP API에서 오는 응답 타입만 정의합니다.

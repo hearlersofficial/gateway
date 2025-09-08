@@ -1,20 +1,18 @@
 package com.hearlers.gateway.security;
 
-import java.io.IOException;
-import java.util.Arrays;
-
-import com.hearlers.gateway.shared.response.ResponseFormatter;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.AuthenticationEntryPoint;
-
 import com.hearlers.gateway.shared.exception.HttpException;
-
+import com.hearlers.gateway.shared.response.ResponseFormatter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.AuthenticationEntryPoint;
+
+import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * 인증되지 않은 사용자가 보호된 리소스에 접근할 때 호출되는 진입점

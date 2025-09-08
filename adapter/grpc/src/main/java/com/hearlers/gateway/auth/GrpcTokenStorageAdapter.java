@@ -1,14 +1,11 @@
 package com.hearlers.gateway.auth;
 
-import com.hearlers.api.proto.v1.model.AuthChannel;
-import com.hearlers.api.proto.v1.model.AuthUser;
-import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenResponse;
 import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub;
-import com.hearlers.gateway.auth.exception.AuthUserNotFoundException;
-import com.hearlers.gateway.port.AuthUserPort;
+import com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest;
+import com.hearlers.api.proto.v1.service.VerifyRefreshTokenResponse;
 import com.hearlers.gateway.port.TokenStoragePort;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

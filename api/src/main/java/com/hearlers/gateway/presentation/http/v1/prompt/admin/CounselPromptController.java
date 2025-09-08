@@ -1,19 +1,11 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.FindActiveVersionRequest;
-import org.mapstruct.factory.Mappers;
-import org.springdoc.core.annotations.ParameterObject;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest;
 import com.hearlers.gateway.application.prompt.CounselPromptService;
 import com.hearlers.gateway.shared.response.ResponseDto;
 import com.hearlers.gateway.shared.response.ResponseDtoUtil;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,6 +14,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.factory.Mappers;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController("v1CounselPromptAdminController")
 @RequestMapping("/v1/admin")

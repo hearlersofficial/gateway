@@ -1,15 +1,14 @@
 package com.hearlers.gateway.presentation.http.v1.auth;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.Gender;
 import com.hearlers.api.proto.v1.model.Mbti;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
 
 public class AuthDto {
     @Getter

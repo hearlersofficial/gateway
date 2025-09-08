@@ -1,21 +1,13 @@
 package com.hearlers.gateway.config;
 
-import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc;
-import com.hearlers.api.proto.v1.service.CounselServiceGrpc;
-import com.hearlers.api.proto.v1.service.CounselorServiceGrpc;
-import com.hearlers.api.proto.v1.service.UserServiceGrpc;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import lombok.RequiredArgsConstructor;
-import org.springdoc.core.models.GroupedOpenApi;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.springdoc.core.models.GroupedOpenApi;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfig {

@@ -1,16 +1,14 @@
 package com.hearlers.gateway.infrastructure.counselor;
 
 import com.hearlers.api.proto.v1.model.Bubble;
-import com.hearlers.api.proto.v1.model.Episode;
-import com.hearlers.api.proto.v1.service.*;
-import org.springframework.stereotype.Component;
-
 import com.hearlers.api.proto.v1.model.Counselor;
+import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.CounselorServiceGrpc.CounselorServiceBlockingStub;
+import com.hearlers.api.proto.v1.service.*;
 import com.hearlers.gateway.application.counselor.CounselorStore;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor

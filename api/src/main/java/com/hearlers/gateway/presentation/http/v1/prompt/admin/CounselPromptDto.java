@@ -1,7 +1,5 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.model.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.Nullable;
@@ -11,7 +9,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 public class CounselPromptDto {
 

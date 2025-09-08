@@ -1,12 +1,12 @@
 package com.hearlers.gateway.application.counselor;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Episode;
 import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
+
+import java.util.List;
 
 public interface CounselorReader {
     // Counselor

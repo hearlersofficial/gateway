@@ -1,16 +1,14 @@
 package com.hearlers.gateway.infrastructure.prompt;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.model.*;
-import com.hearlers.api.proto.v1.service.*;
-import org.springframework.stereotype.Component;
-
 import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub;
+import com.hearlers.api.proto.v1.service.*;
 import com.hearlers.gateway.application.prompt.PromptReader;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Slf4j
 @Component
