@@ -50,22 +50,9 @@ public class KakaoService implements OAuthProviderPort {
     
     @Override
     public AuthInfo.OAuthUserInfo getUserInfo(String code, String state) {
-        AuthCommand.GetOAuthAccessTokenRequest tokenRequest =
-                AuthCommand.GetOAuthAccessTokenRequest.builder()
-                        .code(code)
-                        .build();
 
-        // 2. OAuth 제공자로부터 액세스 토큰 획득
-        AuthInfo.TokenInfo tokenInfo = kakaoOAuthProviderClient.getToken(tokenRequest, clientId);
-
-        // 3. OAuth 제공자로부터 사용자 정보 조회
-        AuthCommand.GetOAuthUserInfoRequest userInfoRequest =
-                AuthCommand.GetOAuthUserInfoRequest.builder()
-                        .accessToken(tokenInfo.getAccessToken())
-                        .build();
-
-        // 4. 사용자 정보 반환
-        return kakaoOAuthProviderClient.getOAuthUser(userInfoRequest);
+        AuthInfo.TokenInfo tokenInfo = kakaoOAuthProviderClient.getToken(code, state, clientId);
+        return kakaoOAuthProviderClient.getOAuthUser(tokenInfo.getAccessToken());
     }
     
     @Override
