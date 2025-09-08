@@ -1,7 +1,10 @@
 package com.hearlers.gateway.config;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.Nulls;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hearlers.gateway.DefaultObjectMapper;
+import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -10,8 +13,9 @@ import org.springframework.context.annotation.Primary;
 public class JacksonConfig {
 
     @Bean
-    @Primary
-    public ObjectMapper objectMapper() {
-        return new DefaultObjectMapper();
+    public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
+        return builder -> builder.postConfigurer(objectMapper -> {
+            objectMapper.setDefaultSetterInfo(JsonSetter.Value.forValueNulls(Nulls.AS_EMPTY));
+        });
     }
 }
