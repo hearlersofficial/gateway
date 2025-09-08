@@ -425,6 +425,9 @@ public class CounselPromptDto {
         @NotNull(message = "temperature 은 필수 입력 사항입니다.")
         @Schema(description = "AI 모델 temperature 값")
         private double temperature;
+
+        @Schema(description = "시작 기법 여부")
+        private Boolean isStartTechnique;
     }
     
     @Getter
@@ -442,6 +445,9 @@ public class CounselPromptDto {
 
         @Schema(description = "AI 모델 temperature 값")
         private double temperature;
+
+        @Schema(description = "시작 기법 여부")
+        private Boolean isStartTechnique;
     }
     
     @Getter
