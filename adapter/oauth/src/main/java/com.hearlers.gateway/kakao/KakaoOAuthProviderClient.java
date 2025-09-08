@@ -24,14 +24,14 @@ class KakaoOAuthProviderClient implements OAuthProviderClient {
 
     @Override
     public AuthInfo.TokenInfo getToken(
-            AuthCommand.GetOAuthAccessTokenRequest request, String clientId) {
+            String code, String state, String clientId) {
         KakaoDto.KakaoTokenResponse response = WebClient.create(KAKAO_TOKEN_URL_HOST).post()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
                         .path("/oauth/token")
                         .queryParam("grant_type", "authorization_code")
                         .queryParam("client_id", clientId)
-                        .queryParam("code", request.getCode())
+                        .queryParam("code", code)
                         .build(true))
                 .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
                 .retrieve()
@@ -51,7 +51,7 @@ class KakaoOAuthProviderClient implements OAuthProviderClient {
     }
 
     @Override
-    public AuthInfo.OAuthUserInfo getOAuthUser(AuthCommand.GetOAuthUserInfoRequest request) {
+    public AuthInfo.OAuthUserInfo getOAuthUser(String accessToken) {
 
         KakaoDto.KakaoAccountInformation response = WebClient.create(KAUTH_USER_URL_HOST)
                 .get()
@@ -59,7 +59,7 @@ class KakaoOAuthProviderClient implements OAuthProviderClient {
                         .scheme("https")
                         .path("/v2/user/me")
                         .build(true))
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + request.getAccessToken())
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
                 .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
                 .retrieve()
                 .onStatus(HttpStatusCode::is4xxClientError, clientResponse ->
