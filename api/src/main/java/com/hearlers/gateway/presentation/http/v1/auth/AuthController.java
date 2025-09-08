@@ -1,31 +1,17 @@
 package com.hearlers.gateway.presentation.http.v1.auth;
 
-import java.io.IOException;
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Base64;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.api.proto.v1.service.InitializeUserRequest;
 import com.hearlers.gateway.AuthUserUseCase;
 import com.hearlers.gateway.TokenManagingUseCase;
 import com.hearlers.gateway.auth.model.AuthInfo;
-import jakarta.servlet.http.Cookie;
-import lombok.*;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseCookie;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.gateway.shared.exception.HttpException;
 import com.hearlers.gateway.shared.exception.HttpResultCode;
 import com.hearlers.gateway.shared.response.ResponseDto;
 import com.hearlers.gateway.shared.response.ResponseDtoUtil;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -34,10 +20,25 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseCookie;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Base64;
 
 @RestController
 @RequiredArgsConstructor

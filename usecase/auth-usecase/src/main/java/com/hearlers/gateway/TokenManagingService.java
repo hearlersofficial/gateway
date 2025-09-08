@@ -3,20 +3,17 @@ package com.hearlers.gateway;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.Authority;
-import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
+import com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest;
 import com.hearlers.gateway.auth.exception.TokenInvalidException;
 import com.hearlers.gateway.auth.model.AuthInfo;
-import com.hearlers.gateway.command.AuthCommand;
-import com.hearlers.gateway.port.AuthUserPort;
 import com.hearlers.gateway.port.TokenProviderPort;
 import com.hearlers.gateway.port.TokenStoragePort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
 @Component
 @RequiredArgsConstructor

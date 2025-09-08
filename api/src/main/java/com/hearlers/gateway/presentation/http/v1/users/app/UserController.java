@@ -1,6 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.users.app;
 
-import com.hearlers.api.proto.v1.model.AuthUser;
+import com.hearlers.api.proto.v1.service.FindUserByUserIdRequest;
 import com.hearlers.gateway.application.user.UserService;
 import com.hearlers.gateway.shared.response.ResponseDto;
 import com.hearlers.gateway.shared.response.ResponseDtoUtil;
@@ -14,9 +14,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-import com.hearlers.api.proto.v1.service.FindUserByUserIdRequest;
 
 
 @RestController("v1UserAppController")

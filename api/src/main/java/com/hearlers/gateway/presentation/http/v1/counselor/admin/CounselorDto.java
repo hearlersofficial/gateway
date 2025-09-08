@@ -1,14 +1,17 @@
 package com.hearlers.gateway.presentation.http.v1.counselor.admin;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.common.Extension;
 import com.hearlers.api.proto.v1.model.CounselorGender;
 import com.hearlers.api.proto.v1.model.Speaker;
 import com.hearlers.gateway.shared.response.PresignedUrlResponse;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 public class CounselorDto {
 

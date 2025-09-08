@@ -1,26 +1,11 @@
 package com.hearlers.gateway.security;
 
-import java.io.IOException;
-import java.security.SignatureException;
-import java.util.*;
-import java.util.stream.Collectors;
-
 import com.hearlers.api.proto.v1.model.AuthChannel;
+import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.gateway.TokenManagingUseCase;
 import com.hearlers.gateway.auth.model.AuthInfo;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.web.filter.OncePerRequestFilter;
-
-import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.gateway.shared.exception.HttpException;
 import com.hearlers.gateway.shared.exception.HttpResultCode;
-
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
@@ -29,6 +14,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class AuthTokenFilter extends OncePerRequestFilter {

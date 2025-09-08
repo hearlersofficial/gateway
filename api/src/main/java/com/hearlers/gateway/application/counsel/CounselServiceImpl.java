@@ -1,7 +1,8 @@
 package com.hearlers.gateway.application.counsel;
 
 import com.hearlers.api.proto.v1.model.Counsel;
-import com.hearlers.api.proto.v1.model.*;
+import com.hearlers.api.proto.v1.model.CounselMessage;
+import com.hearlers.api.proto.v1.model.CounselorUserRelationship;
 import com.hearlers.api.proto.v1.service.*;
 import com.hearlers.gateway.shared.exception.HttpException;
 import com.hearlers.gateway.shared.exception.HttpResultCode;

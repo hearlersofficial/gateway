@@ -1,10 +1,7 @@
 package com.hearlers.gateway.auth.model;
 
 import com.hearlers.api.proto.v1.model.Gender;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.ToString;
 
 import java.time.LocalDateTime;
 

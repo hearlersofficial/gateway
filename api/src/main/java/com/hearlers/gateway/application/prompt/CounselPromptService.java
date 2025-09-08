@@ -1,9 +1,9 @@
 package com.hearlers.gateway.application.prompt;
 
-import java.util.List;
-
 import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
+
+import java.util.List;
 
 public interface CounselPromptService {
 

@@ -1,11 +1,11 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.hearlers.api.proto.v1.model.*;
 import com.hearlers.api.proto.v1.service.*;
 import org.mapstruct.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Mapper(
         componentModel = "spring",

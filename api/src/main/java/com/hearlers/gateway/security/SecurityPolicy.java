@@ -1,15 +1,13 @@
 package com.hearlers.gateway.security;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
-
+import com.hearlers.api.proto.v1.model.Authority;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.util.AntPathMatcher;
 
-import com.hearlers.api.proto.v1.model.Authority;
-
-import lombok.extern.slf4j.Slf4j;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 @Slf4j
 public class SecurityPolicy {

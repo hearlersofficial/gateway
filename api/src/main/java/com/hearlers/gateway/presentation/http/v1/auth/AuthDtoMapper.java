@@ -1,17 +1,13 @@
 package com.hearlers.gateway.presentation.http.v1.auth;
 
-import com.hearlers.gateway.auth.model.AuthInfo;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.NullValueCheckStrategy;
-import org.mapstruct.ReportingPolicy;
-
 import com.hearlers.api.proto.v1.message.User;
-import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.model.UserProfile;
-import com.hearlers.api.proto.v1.service.InitializeUserResponse;
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest;
+import com.hearlers.gateway.auth.model.AuthInfo;
+import org.mapstruct.Mapper;
+import org.mapstruct.NullValueCheckStrategy;
+import org.mapstruct.ReportingPolicy;
 
 @Mapper(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,

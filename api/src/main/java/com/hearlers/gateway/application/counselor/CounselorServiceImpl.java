@@ -4,15 +4,12 @@ import com.hearlers.api.proto.v1.common.PresignedUrl;
 import com.hearlers.api.proto.v1.model.Bubble;
 import com.hearlers.api.proto.v1.model.Counselor;
 import com.hearlers.api.proto.v1.model.Episode;
+import com.hearlers.api.proto.v1.model.Tone;
 import com.hearlers.api.proto.v1.service.*;
-
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import com.hearlers.api.proto.v1.model.Tone;
 
 @Service
 @RequiredArgsConstructor

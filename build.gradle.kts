@@ -1,4 +1,3 @@
-import io.spring.gradle.dependencymanagement.internal.DependencyManagement
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
