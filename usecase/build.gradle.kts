@@ -1,5 +1,4 @@
 subprojects {
-    apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
 

@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("java")
     id("org.springframework.boot") version "3.5.5" apply false
-    id("io.spring.dependency-management") version "1.1.7" apply false
     kotlin("jvm") version "2.2.10" apply false
     kotlin("plugin.spring") version "2.2.10" apply false
 }
@@ -15,7 +14,6 @@ version = "0.0.1-SNAPSHOT"
 subprojects {
     apply(plugin = "java")
     apply(plugin = "idea")
-    apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
 
@@ -33,11 +31,6 @@ subprojects {
         }
     }
 
-    the<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension>().apply {
-        imports {
-            mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
-        }
-    }
 
 
     repositories {
@@ -46,6 +39,8 @@ subprojects {
 
 
     dependencies {
+        implementation(platform(project.dependencies.create("org.springframework.boot:spring-boot-dependencies:3.5.5")))
+        annotationProcessor(platform(project.dependencies.create("org.springframework.boot:spring-boot-dependencies:3.5.5")))
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
         // Lombok
