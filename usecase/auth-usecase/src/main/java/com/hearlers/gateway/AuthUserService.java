@@ -52,7 +52,7 @@ public class AuthUserService implements AuthUserUseCase {
             return evaluateAndUpdateAuthority(authUser, uniqueId, providerPort);
         } catch (AuthUserNotFoundException e) {
             // 신규 로그인의 경우
-            if (userId == null) {
+            if (userId == null || userId == "") {
                 AuthUser newAuthUser = handleNewOAuthLogin(uniqueId, authChannel);
                 return evaluateAndUpdateAuthority(newAuthUser, uniqueId, providerPort);
             }
