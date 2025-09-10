@@ -12,7 +12,7 @@ public class JacksonConfig {
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
         return builder -> builder.postConfigurer(objectMapper -> {
-            objectMapper.setDefaultSetterInfo(JsonSetter.Value.forValueNulls(Nulls.AS_EMPTY));
+            objectMapper.setDefaultSetterInfo(JsonSetter.Value.forValueNulls(Nulls.DEFAULT));
         });
     }
 }
