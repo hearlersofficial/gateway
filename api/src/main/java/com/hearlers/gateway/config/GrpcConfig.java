@@ -1,9 +1,6 @@
 package com.hearlers.gateway.config;
 
-import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc;
-import com.hearlers.api.proto.v1.service.CounselServiceGrpc;
-import com.hearlers.api.proto.v1.service.CounselorServiceGrpc;
-import com.hearlers.api.proto.v1.service.UserServiceGrpc;
+import com.hearlers.api.proto.v1.service.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import lombok.Getter;
@@ -18,6 +15,7 @@ import java.net.URISyntaxException;
 @Configuration
 public class GrpcConfig {
 
+    // TODO: 리펙터링 완료 후 grpc adapter로 이전
     @ConfigurationProperties(prefix = "grpc.targets")
     @Getter
     @Setter
@@ -82,5 +80,10 @@ public class GrpcConfig {
     @Bean
     public CounselorServiceGrpc.CounselorServiceBlockingStub counselorServiceBlockingStub(ManagedChannel managedChannel) {
         return CounselorServiceGrpc.newBlockingStub(managedChannel);
+    }
+
+    @Bean
+    public CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub counselorServiceCoroutineStub(ManagedChannel managedChannel) {
+        return new CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub(managedChannel);
     }
 }
