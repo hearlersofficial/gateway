@@ -32,4 +32,9 @@ dependencies {
 
     // Spring Security
     implementation("org.springframework.boot:spring-boot-starter-security")
+
+    // resilience
+    implementation("io.github.resilience4j:resilience4j-ratelimiter:2.3.0")
+    implementation("io.github.resilience4j:resilience4j-spring-boot3:2.3.0")
+
 }
