@@ -3,48 +3,52 @@ package com.hearlers.gateway.prompt
 import com.hearlers.api.proto.v1.model.CounselTechnique
 import com.hearlers.api.proto.v1.model.CounselTechniqueTransitionRule
 import com.hearlers.api.proto.v1.service.*
-import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc.CounselPromptServiceBlockingStub
 import com.hearlers.com.hearlers.gateway.port.CounselTechniquePort
 import org.springframework.stereotype.Component
 
 @Component
 class GrpcCounselTechniqueAdapter(
-    private val counselPromptServiceBlockingStub: CounselPromptServiceBlockingStub
+    private val counselPromptServiceCoroutineStub: CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub
 ) : CounselTechniquePort {
-    override fun findCounselTechniqueById(request: FindCounselTechniqueByIdRequest): CounselTechnique? {
-        return this.counselPromptServiceBlockingStub.findCounselTechniqueById(request).counselTechnique
+    override suspend fun findCounselTechniqueById(request: FindCounselTechniqueByIdRequest): CounselTechnique? {
+        return this.counselPromptServiceCoroutineStub.findCounselTechniqueById(request).counselTechnique
     }
 
-    override fun findCounselTechniques(request: FindCounselTechniquesRequest): List<CounselTechnique> {
-        return this.counselPromptServiceBlockingStub.findCounselTechniques(request).counselTechniquesList
+    override suspend fun findCounselTechniques(request: FindCounselTechniquesRequest): List<CounselTechnique> {
+        return this.counselPromptServiceCoroutineStub.findCounselTechniques(request).counselTechniquesList
     }
 
-    override fun createCounselTechnique(request: CreateCounselTechniqueRequest): CounselTechnique {
-        return this.counselPromptServiceBlockingStub.createCounselTechnique(request).counselTechnique
+    override suspend fun createCounselTechnique(request: CreateCounselTechniqueRequest): CounselTechnique {
+        return this.counselPromptServiceCoroutineStub.createCounselTechnique(request).counselTechnique
     }
 
-    override fun updateCounselTechnique(request: UpdateCounselTechniqueRequest): CounselTechnique {
-        return this.counselPromptServiceBlockingStub.updateCounselTechnique(request).counselTechnique
+    override suspend fun updateCounselTechnique(request: UpdateCounselTechniqueRequest): CounselTechnique {
+        return this.counselPromptServiceCoroutineStub.updateCounselTechnique(request).counselTechnique
     }
 
-    override fun findCounselTechniqueTransitionRuleById(request: FindCounselTechniqueTransitionRuleByIdRequest): CounselTechniqueTransitionRule? {
-        return this.counselPromptServiceBlockingStub.findCounselTechniqueTransitionRuleById(request).counselTechniqueTransitionRule
+    override suspend fun findCounselTechniqueTransitionRuleById(request: FindCounselTechniqueTransitionRuleByIdRequest): CounselTechniqueTransitionRule? {
+        return this.counselPromptServiceCoroutineStub.findCounselTechniqueTransitionRuleById(request).counselTechniqueTransitionRule
     }
 
-    override fun findCounselTechniqueTransitionRules(request: FindCounselTechniqueTransitionRulesRequest): List<CounselTechniqueTransitionRule> {
-        return this.counselPromptServiceBlockingStub.findCounselTechniqueTransitionRules(request).counselTechniqueTransitionRulesList
+    override suspend fun findCounselTechniqueTransitionRules(request: FindCounselTechniqueTransitionRulesRequest): List<CounselTechniqueTransitionRule> {
+        return this.counselPromptServiceCoroutineStub.findCounselTechniqueTransitionRules(request).counselTechniqueTransitionRulesList
     }
 
-    override fun createCounselTechniqueTransitionRule(request: CreateCounselTechniqueTransitionRuleRequest): CounselTechniqueTransitionRule {
-        return this.counselPromptServiceBlockingStub.createCounselTechniqueTransitionRule(request).counselTechniqueTransitionRule
+    override suspend fun createCounselTechniqueTransitionRule(request: CreateCounselTechniqueTransitionRuleRequest): CounselTechniqueTransitionRule {
+        return this.counselPromptServiceCoroutineStub.createCounselTechniqueTransitionRule(request).counselTechniqueTransitionRule
 
     }
 
-    override fun updateCounselTechniqueTransitionRule(request: UpdateCounselTechniqueTransitionRuleRequest): CounselTechniqueTransitionRule {
-        return this.counselPromptServiceBlockingStub.updateCounselTechniqueTransitionRule(request).counselTechniqueTransitionRule
+    override suspend fun updateCounselTechniqueTransitionRule(request: UpdateCounselTechniqueTransitionRuleRequest): CounselTechniqueTransitionRule {
+        return this.counselPromptServiceCoroutineStub.updateCounselTechniqueTransitionRule(request).counselTechniqueTransitionRule
     }
 
-    override fun deleteCounselTechniqueTransitionRule(request: DeleteCounselTechniqueTransitionRuleRequest): Boolean {
-        return this.counselPromptServiceBlockingStub.deleteCounselTechniqueTransitionRule(request) != null
+    override suspend fun deleteCounselTechniqueTransitionRule(request: DeleteCounselTechniqueTransitionRuleRequest): Boolean {
+        return try {
+            this.counselPromptServiceCoroutineStub.deleteCounselTechniqueTransitionRule(request)
+            true
+        }  catch (e: Exception) {
+            false
+        }
     }
 }
