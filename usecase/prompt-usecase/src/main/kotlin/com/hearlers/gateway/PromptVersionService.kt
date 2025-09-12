@@ -20,43 +20,43 @@ class PromptVersionService
 (
     private val promptVersionPort: PromptVersionPort
 ) : PromptVersionUseCase {
-    override fun findPromptVersionById(request: FindPromptVersionByIdRequest): PromptVersion? {
+    override suspend fun findPromptVersionById(request: FindPromptVersionByIdRequest): PromptVersion? {
         return promptVersionPort.findPromptVersionById(request);
     }
 
-    override fun findPromptVersions(request: FindPromptVersionsRequest): List<PromptVersion> {
+    override suspend fun findPromptVersions(request: FindPromptVersionsRequest): List<PromptVersion> {
         return promptVersionPort.findPromptVersions(request);
     }
 
-    override fun findActiveVersion(request: FindActiveVersionRequest): PromptVersion {
+    override suspend fun findActiveVersion(request: FindActiveVersionRequest): PromptVersion {
         return promptVersionPort.findActiveVersion(request);
     }
 
-    override fun findTemporaryVersion(request: FindTemporaryVersionRequest): PromptVersion {
+    override suspend fun findTemporaryVersion(request: FindTemporaryVersionRequest): PromptVersion {
         return promptVersionPort.findTemporaryVersion(request);
     }
 
-    override fun loadExistingPromptVersion(request: LoadExistingPromptVersionRequest): PromptVersion {
+    override suspend fun loadExistingPromptVersion(request: LoadExistingPromptVersionRequest): PromptVersion {
         return promptVersionPort.loadExistingPromptVersion(request);
     }
 
-    override fun findPromptActivateHistories(request: FindPromptActivateHistoriesRequest): List<PromptActivateHistory> {
+    override suspend fun findPromptActivateHistories(request: FindPromptActivateHistoriesRequest): List<PromptActivateHistory> {
         return promptVersionPort.findPromptActivateHistories(request);
     }
 
-    override fun saveTemporaryVersion(request: SaveTemporaryVersionRequest): PromptVersion {
+    override suspend fun saveTemporaryVersion(request: SaveTemporaryVersionRequest): PromptVersion {
         return promptVersionPort.saveTemporaryVersion(request);
     }
 
-    override fun activatePromptVersion(request: ActivatePromptVersionRequest): PromptVersion {
+    override suspend fun activatePromptVersion(request: ActivatePromptVersionRequest): PromptVersion {
         return promptVersionPort.activatePromptVersion(request);
     }
 
-    override fun updatePromptVersion(request: UpdatePromptVersionRequest): PromptVersion {
+    override suspend fun updatePromptVersion(request: UpdatePromptVersionRequest): PromptVersion {
         return promptVersionPort.updatePromptVersion(request);
     }
 
-    override fun deletePromptVersion(request: DeletePromptVersionsRequest): Boolean {
+    override suspend fun deletePromptVersion(request: DeletePromptVersionsRequest): Boolean {
         return promptVersionPort.deletePromptVersion(request);
     }
 }
