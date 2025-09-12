@@ -15,27 +15,27 @@ import org.springframework.stereotype.Service
 class PromptService(
     private val promptPort: PromptPort
 ) : PromptUseCase {
-    override fun updateTonePrompt(request: UpdateTonePromptRequest): TonePrompt {
+    override suspend fun updateTonePrompt(request: UpdateTonePromptRequest): TonePrompt {
         return promptPort.updateTonePrompt(request);
     }
 
-    override fun updatePersonaPrompt(request: UpdatePersonaPromptRequest): PersonaPrompt {
+    override suspend fun updatePersonaPrompt(request: UpdatePersonaPromptRequest): PersonaPrompt {
         return promptPort.updatePersonaPrompt(request);
     }
 
-    override fun findTonePromptById(request: FindTonePromptByIdRequest): TonePrompt? {
+    override suspend fun findTonePromptById(request: FindTonePromptByIdRequest): TonePrompt? {
         return promptPort.findTonePromptById(request);
     }
 
-    override fun findTonePrompts(request: FindTonePromptsRequest): List<TonePrompt> {
+    override suspend fun findTonePrompts(request: FindTonePromptsRequest): List<TonePrompt> {
         return promptPort.findTonePrompts(request);
     }
 
-    override fun findPersonaPromptById(request: FindPersonaPromptByIdRequest): PersonaPrompt? {
+    override suspend fun findPersonaPromptById(request: FindPersonaPromptByIdRequest): PersonaPrompt? {
         return promptPort.findPersonaPromptById(request);
     }
 
-    override fun findPersonaPrompts(request: FindPersonaPromptsRequest): List<PersonaPrompt> {
+    override suspend fun findPersonaPrompts(request: FindPersonaPromptsRequest): List<PersonaPrompt> {
         return promptPort.findPersonaPrompts(request);
     }
 }

@@ -280,7 +280,9 @@ class CounselPromptController(
         @PathVariable(name = "persona-prompt-id", required = true) personaPromptId: String
     ): ResponseEntity<ResponseDto.Success<FindPersonaPromptByIdResponseDto>> {
         val findPersonaPromptByIdRequest = counselPromptDtoMapper.toFindPersonaPromptByIdRequest(personaPromptId)
-        val personaPrompt = promptUseCase.findPersonaPromptById(findPersonaPromptByIdRequest)
+        val personaPrompt = runBlocking {
+            promptUseCase.findPersonaPromptById(findPersonaPromptByIdRequest)
+        }
         val response = counselPromptDtoMapper.toFindPersonaPromptByIdResponseDto(personaPrompt)
 
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 조회 성공")
@@ -302,7 +304,9 @@ class CounselPromptController(
         @ParameterObject @ModelAttribute requestDto: @Valid FindPersonaPromptsRequestDto
     ): ResponseEntity<ResponseDto.Success<FindPersonaPromptsResponseDto>> {
         val request = counselPromptDtoMapper.toFindPersonaPromptsRequest(requestDto)
-        val personaPrompts = promptUseCase.findPersonaPrompts(request)
+        val personaPrompts = runBlocking {
+            promptUseCase.findPersonaPrompts(request)
+        }
         val response = counselPromptDtoMapper.toFindPersonaPromptsResponseDto(personaPrompts)
 
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 전체 조회 성공")
@@ -321,7 +325,9 @@ class CounselPromptController(
         @RequestBody request: @Valid UpdatePersonaPromptRequestDto
     ): ResponseEntity<ResponseDto.Success<UpdatePersonaPromptResponseDto>> {
         val updatePersonaPromptRequest = counselPromptDtoMapper.toUpdatePersonaPromptRequest(request)
-        val personaPrompt = promptUseCase.updatePersonaPrompt(updatePersonaPromptRequest)
+        val personaPrompt = runBlocking {
+            promptUseCase.updatePersonaPrompt(updatePersonaPromptRequest)
+        }
         val response = counselPromptDtoMapper.toUpdatePersonaPromptResponseDto(personaPrompt)
 
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 업데이트 성공")
@@ -350,7 +356,9 @@ class CounselPromptController(
         @PathVariable(name = "tone-prompt-id", required = true) tonePromptId: String
     ): ResponseEntity<ResponseDto.Success<FindTonePromptByIdResponseDto>> {
         val findTonePromptByIdRequest = counselPromptDtoMapper.toFindTonePromptByIdRequest(tonePromptId)
-        val tonePrompt = promptUseCase.findTonePromptById(findTonePromptByIdRequest)
+        val tonePrompt = runBlocking {
+            promptUseCase.findTonePromptById(findTonePromptByIdRequest)
+        }
         val response = counselPromptDtoMapper.toFindTonePromptByIdResponseDto(tonePrompt)
 
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 조회 성공")
@@ -372,7 +380,9 @@ class CounselPromptController(
         @ParameterObject @ModelAttribute requestDto: @Valid FindTonePromptsRequestDto
     ): ResponseEntity<ResponseDto.Success<FindTonePromptsResponseDto>> {
         val request = counselPromptDtoMapper.toFindTonePromptsRequest(requestDto)
-        val tonePrompts = promptUseCase.findTonePrompts(request)
+        val tonePrompts = runBlocking {
+            promptUseCase.findTonePrompts(request)
+        }
         val response = counselPromptDtoMapper.toFindTonePromptsResponseDto(tonePrompts)
 
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 전체 조회 성공")
@@ -394,7 +404,9 @@ class CounselPromptController(
         @RequestBody request: @Valid UpdateTonePromptRequestDto
     ): ResponseEntity<ResponseDto.Success<UpdateTonePromptResponseDto>> {
         val updateTonePromptRequest = counselPromptDtoMapper.toUpdateTonePromptRequest(request)
-        val tonePrompt = promptUseCase.updateTonePrompt(updateTonePromptRequest)
+        val tonePrompt = runBlocking {
+            promptUseCase.updateTonePrompt(updateTonePromptRequest)
+        }
         val response = counselPromptDtoMapper.toUpdateTonePromptResponseDto(tonePrompt)
 
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 업데이트 성공")
