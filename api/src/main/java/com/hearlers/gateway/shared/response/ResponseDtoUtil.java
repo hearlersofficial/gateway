@@ -283,4 +283,5 @@ public class ResponseDtoUtil {
     public static ResponseEntity<ResponseDto.Error<Object>> serverError(String message) {
         return errorResponse(HttpResultCode.SERVER_SYSTEM_ERROR, message);
     }
-} 
+
+}

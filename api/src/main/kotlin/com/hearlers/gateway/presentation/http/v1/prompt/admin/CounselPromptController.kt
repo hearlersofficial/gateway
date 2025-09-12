@@ -51,7 +51,9 @@ class CounselPromptController(
         @ParameterObject request: @Valid FindPromptVersionsRequestDto
     ): ResponseEntity<ResponseDto.Success<FindPromptVersionsResponseDto>> {
         val findPromptVersionsRequest = counselPromptDtoMapper.toFindPromptVersionsRequest(request)
-        val promptVersions = promptVersionUseCase.findPromptVersions(findPromptVersionsRequest)
+        val promptVersions = runBlocking {
+            promptVersionUseCase.findPromptVersions(findPromptVersionsRequest)
+        }
         val response = counselPromptDtoMapper.toFindPromptVersionsResponseDto(promptVersions)
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 목록 조회 성공")
@@ -77,7 +79,9 @@ class CounselPromptController(
         @PathVariable(name = "prompt-version-id", required = true) promptVersionId: String
     ): ResponseEntity<ResponseDto.Success<FindPromptVersionByIdResponseDto>> {
         val findPromptVersionByIdRequest = counselPromptDtoMapper.toFindPromptVersionByIdRequest(promptVersionId)
-        val promptVersion = promptVersionUseCase.findPromptVersionById(findPromptVersionByIdRequest)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.findPromptVersionById(findPromptVersionByIdRequest)
+        }
         val response = counselPromptDtoMapper.toFindPromptVersionByIdResponseDto(promptVersion)
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 조회 성공")
@@ -101,7 +105,9 @@ class CounselPromptController(
         @RequestBody request: @Valid UpdatePromptVersionRequestDto
     ): ResponseEntity<ResponseDto.Success<UpdatePromptVersionResponseDto>> {
         val updatePromptVersionRequest = counselPromptDtoMapper.toUpdatePromptVersionRequest(request, promptVersionId)
-        val promptVersion = promptVersionUseCase.updatePromptVersion(updatePromptVersionRequest)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.updatePromptVersion(updatePromptVersionRequest)
+        }
         val response = counselPromptDtoMapper.toUpdatePromptVersionResponseDto(promptVersion)
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 수정 성공")
@@ -121,10 +127,16 @@ class CounselPromptController(
     @DeleteMapping("/prompt-versions/{prompt-version-id}")
     fun deletePromptVersion(
         @PathVariable(name = "prompt-version-id", required = true) promptVersionId: String
-    ): ResponseEntity<ResponseDto.Success<DeletePromptVersionResponseDto?>> {
+    ): ResponseEntity<ResponseDto.Success<DeletePromptVersionResponseDto>> {
         val deletePromptVersionRequest = counselPromptDtoMapper.toDeletePromptVersionRequest(promptVersionId)
-        promptVersionUseCase.deletePromptVersion(deletePromptVersionRequest)
-        return ResponseDtoUtil.okResponse(null, "프롬프트 버전 삭제 성공")
+        val isSuccess : Boolean = runBlocking {
+           promptVersionUseCase.deletePromptVersion(deletePromptVersionRequest)
+        }
+        val response = DeletePromptVersionResponseDto()
+        return ResponseDtoUtil.okResponse(
+            response,
+            "프롬프트 버전 삭제 성공"
+        )
     }
 
 
@@ -148,7 +160,9 @@ class CounselPromptController(
     )
     fun getActiveVersion(): ResponseEntity<ResponseDto.Success<FindActiveVersionResponseDto>> {
         val findActiveVersionRequest = FindActiveVersionRequest.newBuilder().build()
-        val promptVersion = promptVersionUseCase.findActiveVersion(findActiveVersionRequest)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.findActiveVersion(findActiveVersionRequest)
+        }
         val response = counselPromptDtoMapper.toFindActiveVersionResponseDto(promptVersion)
         return ResponseDtoUtil.okResponse(response, "활성화된 프롬프트 버전 조회 성공")
     }
@@ -170,7 +184,9 @@ class CounselPromptController(
     )
     fun getTemporaryVersion(): ResponseEntity<ResponseDto.Success<FindTemporaryVersionResponseDto>> {
         val request = FindTemporaryVersionRequest.newBuilder().build()
-        val promptVersion = promptVersionUseCase.findTemporaryVersion(request)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.findTemporaryVersion(request)
+        }
         val response = counselPromptDtoMapper.toFindTemporaryVersionResponseDto(promptVersion)
 
         return ResponseDtoUtil.okResponse(response, "임시 프롬프트 버전 조회 성공")
@@ -198,7 +214,9 @@ class CounselPromptController(
         val request = LoadExistingPromptVersionRequest.newBuilder()
             .setPromptVersionId(promptVersionId)
             .build()
-        val promptVersion = promptVersionUseCase.loadExistingPromptVersion(request)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.loadExistingPromptVersion(request)
+        }
         val response = counselPromptDtoMapper.toLoadExistingPromptVersionResponseDto(promptVersion)
 
         return ResponseDtoUtil.okResponse(response, "기존 프롬프트 버전 로드 성공")
@@ -222,7 +240,9 @@ class CounselPromptController(
         @RequestBody request: @Valid SaveTemporaryVersionRequestDto
     ): ResponseEntity<ResponseDto.Success<SaveTemporaryVersionResponseDto>> {
         val saveTemporaryVersionRequest = counselPromptDtoMapper.toSaveTemporaryVersionRequest(request)
-        val promptVersion = promptVersionUseCase.saveTemporaryVersion(saveTemporaryVersionRequest)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.saveTemporaryVersion(saveTemporaryVersionRequest)
+        }
         val response = counselPromptDtoMapper.toSaveTemporaryVersionResponseDto(promptVersion)
 
         return ResponseDtoUtil.okResponse(response, "임시 버전 저장 성공")
@@ -251,7 +271,9 @@ class CounselPromptController(
         @PathVariable(name = "prompt-version-id", required = true) promptVersionId: String
     ): ResponseEntity<ResponseDto.Success<ActivatePromptVersionResponseDto>> {
         val activatePromptVersionRequest = counselPromptDtoMapper.toActivatePromptVersionRequest(promptVersionId)
-        val promptVersion = promptVersionUseCase.activatePromptVersion(activatePromptVersionRequest)
+        val promptVersion = runBlocking {
+            promptVersionUseCase.activatePromptVersion(activatePromptVersionRequest)
+        }
         val response = counselPromptDtoMapper.toActivatePromptVersionResponseDto(promptVersion)
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 활성화 성공")
@@ -671,8 +693,9 @@ class CounselPromptController(
     ): ResponseEntity<ResponseDto.Success<FindPromptActivateHistoriesResponseDto>> {
         val findPromptActivateHistoriesRequest =
             counselPromptDtoMapper.toFindPromptActivateHistoriesRequest(promptVersionId)
-        val promptActivateHistories =
+        val promptActivateHistories = runBlocking {
             promptVersionUseCase.findPromptActivateHistories(findPromptActivateHistoriesRequest)
+        }
         val response = counselPromptDtoMapper.toFindPromptActivateHistoriesResponseDto(promptActivateHistories)
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 활성화 히스토리 목록 조회 성공")

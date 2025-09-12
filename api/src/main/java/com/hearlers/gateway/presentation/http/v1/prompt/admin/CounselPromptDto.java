@@ -6,9 +6,7 @@ import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -348,6 +346,8 @@ public class CounselPromptDto {
     @Getter
     @Builder
     @Schema(description = "프롬프트 버전 삭제 응답 DTO")
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class DeletePromptVersionResponseDto {
         @Schema(description = "프롬프트 버전 삭제 성공 여부", example = "true")
         private Boolean isSuccess;
