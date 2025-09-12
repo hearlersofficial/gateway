@@ -22,3 +22,10 @@ springdoc:
 grpc:
   targets:
     nest: ${GRPC_NEST_TARGET}
+
+resilience4j.ratelimiter:
+  instances:
+    globalGatewayRateLimiter:
+      limit-for-period: 100
+      limit-refresh-period: 1s
+      timeout-duration: 500ms
