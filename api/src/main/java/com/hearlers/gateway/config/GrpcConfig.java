@@ -86,4 +86,14 @@ public class GrpcConfig {
     public CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub counselorServiceCoroutineStub(ManagedChannel managedChannel) {
         return new CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub(managedChannel);
     }
+
+    @Bean
+    public CounselServiceGrpcKt.CounselServiceCoroutineStub counselServiceCoroutineStub(ManagedChannel managedChannel) {
+        return new CounselServiceGrpcKt.CounselServiceCoroutineStub(managedChannel);
+    }
+
+    @Bean
+    public UserServiceGrpcKt.UserServiceCoroutineStub userServiceCoroutineStub(ManagedChannel managedChannel) {
+        return new UserServiceGrpcKt.UserServiceCoroutineStub(managedChannel);
+    }
 }
