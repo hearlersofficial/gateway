@@ -82,4 +82,4 @@ jobs:
             sudo docker stop $CONTAINER_ID && sudo docker rm $CONTAINER_ID
           fi
 
-          sudo docker run --env-file ./.env --platform linux/amd64 -d -p ${{ secrets.PORT }}:${{ secrets.PORT }} --name ${{ env.DOCKER_CONTAINER }} --network gateway --restart always ${{ env.DOCKER_IMAGE }}:latest
+          sudo docker run --env-file ./.env --platform linux/amd64 -d --name ${{ env.DOCKER_CONTAINER }} --network host --restart always ${{ env.DOCKER_IMAGE }}:latest
