@@ -6,7 +6,6 @@ plugins {
 tasks.named("compileJava").configure { dependsOn("bufGenerate") }
 tasks.named("compileKotlin").configure { dependsOn("bufGenerate") }
 
-//sourceSets["main"].java { srcDir("${layout.buildDirectory}/bufbuild/$GENERATED_DIR/java") }
 sourceSets["main"].java { srcDir("build/bufbuild/generated/java") }
 sourceSets["main"].kotlin { srcDir("build/bufbuild/generated/kotlin") }
 

@@ -2,7 +2,7 @@ kakao:
   client_id: ${KAKAO_CLIENT_ID}
   admin_key: ${KAKAO_ADMIN_KEY}
   redirect_uri: ${SERVER_URL}/v1/auth/callback/kakao
-  admin_unique_ids: 3726748107, 4282012818, 4282012818, 4252068228, 3783518117, 3424055264, 3424046442
+  admin_unique_ids: 3726748107, 4282012818, 4282012818, 4252068228, 3783518117, 3424055264, 3424046442, 4282271075
 
 token:
   access_expiration_time: 86400 # Access token 만료 시간 : 하루
