@@ -17,7 +17,7 @@ springdoc:
     operations-sorter: alpha
     tags-sorter: alpha
     doc-expansion: none
-  use-fqn: false
+  use-fqn: true
 
 grpc:
   targets:
