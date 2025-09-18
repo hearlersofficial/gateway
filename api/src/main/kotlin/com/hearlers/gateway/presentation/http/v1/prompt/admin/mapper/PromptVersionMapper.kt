@@ -27,7 +27,9 @@ class PromptVersionMapper {
 
         fun convertFindRequestToProto(request: PromptVersionDto.FindRequest): FindPromptVersionsRequest =
             findPromptVersionsRequest {
-                name = request.name
+                request.name?.let {
+                    name = request.name
+                }
             }
 
         fun convertUpdateRequestToProto(

@@ -40,7 +40,7 @@ object PromptVersionDto {
     @Schema(description = "프롬프트 버전 조회 요청 DTO")
     data class FindRequest(
         @field:Schema(description = "프롬프트 버전 이름", example = "2024년")
-        val name: String,
+        val name: String?,
     )
 
     @Schema(description = "프롬프트 버전 수정 요청 DTO")
