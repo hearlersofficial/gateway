@@ -31,7 +31,7 @@ dependencies {
     implementation("io.grpc:grpc-stub:1.62.2")
     implementation("io.grpc:grpc-kotlin-stub:1.4.3")
     compileOnly("javax.annotation:javax.annotation-api:1.3.2") // for @Generated
-    implementation("com.google.protobuf:protobuf-kotlin:4.32.0")
+    api("com.google.protobuf:protobuf-kotlin:4.32.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22")
 
