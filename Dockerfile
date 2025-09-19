@@ -5,6 +5,10 @@ WORKDIR /app
 # Gradle 설정 파일들 먼저 복사 (캐싱을 위해)
 COPY build.gradle.kts settings.gradle ./
 COPY gradle/ gradle/
+COPY gradlew gradlew.bat ./
+
+# gradlew 실행 권한 부여
+RUN chmod +x ./gradlew
 
 # 의존성 다운로드 (캐싱 활용)
 RUN ./gradlew dependencies --no-daemon
