@@ -1,0 +1,13 @@
+# Overrides for development environment
+replicaCount: 1
+
+image:
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
+# Optionally override env here via --set or this file
+env: {}
