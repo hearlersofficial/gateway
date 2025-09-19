@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Build outputs
+build/
+bin/
+out/
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+README*
+
+# Helm charts (not needed in Docker build)
+helm/
+
+# CI/CD
+.github/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
