@@ -8,10 +8,6 @@ build/
 bin/
 out/
 
-# Gradle
-.gradle/
-gradle/wrapper/gradle-wrapper.jar
-
 # IDE
 .idea/
 .vscode/
