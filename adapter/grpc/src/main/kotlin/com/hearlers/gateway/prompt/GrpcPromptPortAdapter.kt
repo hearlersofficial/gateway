@@ -2,13 +2,7 @@ package com.hearlers.gateway.prompt
 
 import com.hearlers.api.proto.v1.model.PersonaPrompt
 import com.hearlers.api.proto.v1.model.TonePrompt
-import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpcKt
-import com.hearlers.api.proto.v1.service.FindPersonaPromptByIdRequest
-import com.hearlers.api.proto.v1.service.FindPersonaPromptsRequest
-import com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest
-import com.hearlers.api.proto.v1.service.FindTonePromptsRequest
-import com.hearlers.api.proto.v1.service.UpdatePersonaPromptRequest
-import com.hearlers.api.proto.v1.service.UpdateTonePromptRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.com.hearlers.gateway.port.PromptPort
 import org.springframework.stereotype.Component
 

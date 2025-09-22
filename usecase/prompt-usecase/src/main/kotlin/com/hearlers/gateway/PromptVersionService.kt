@@ -2,16 +2,7 @@ package com.hearlers.gateway
 
 import com.hearlers.api.proto.v1.model.PromptActivateHistory
 import com.hearlers.api.proto.v1.model.PromptVersion
-import com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest
-import com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest
-import com.hearlers.api.proto.v1.service.FindActiveVersionRequest
-import com.hearlers.api.proto.v1.service.FindPromptActivateHistoriesRequest
-import com.hearlers.api.proto.v1.service.FindPromptVersionByIdRequest
-import com.hearlers.api.proto.v1.service.FindPromptVersionsRequest
-import com.hearlers.api.proto.v1.service.FindTemporaryVersionRequest
-import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest
-import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest
-import com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.com.hearlers.gateway.port.PromptVersionPort
 import org.springframework.stereotype.Service
 

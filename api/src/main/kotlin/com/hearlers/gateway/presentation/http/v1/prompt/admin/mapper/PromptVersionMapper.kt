@@ -1,12 +1,7 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper
 
 import com.hearlers.api.proto.v1.model.PromptVersion
-import com.hearlers.api.proto.v1.service.FindPromptVersionsRequest
-import com.hearlers.api.proto.v1.service.SaveTemporaryVersionRequest
-import com.hearlers.api.proto.v1.service.UpdatePromptVersionRequest
-import com.hearlers.api.proto.v1.service.findPromptVersionsRequest
-import com.hearlers.api.proto.v1.service.saveTemporaryVersionRequest
-import com.hearlers.api.proto.v1.service.updatePromptVersionRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.PromptVersionDto
 
 class PromptVersionMapper {

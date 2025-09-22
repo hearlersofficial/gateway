@@ -1,12 +1,7 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper
 
 import com.hearlers.api.proto.v1.model.CounselTechnique
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest
-import com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest
-import com.hearlers.api.proto.v1.service.createCounselTechniqueRequest
-import com.hearlers.api.proto.v1.service.findCounselTechniquesRequest
-import com.hearlers.api.proto.v1.service.updateCounselTechniqueRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.CounselTechniqueDto
 
 class CounselTechniqueMapper {

@@ -2,15 +2,7 @@ package com.hearlers.gateway
 
 import com.hearlers.api.proto.v1.model.CounselTechnique
 import com.hearlers.api.proto.v1.model.CounselTechniqueTransitionRule
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueRequest
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest
-import com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest
-import com.hearlers.api.proto.v1.service.FindCounselTechniquesRequest
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueRequest
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.com.hearlers.gateway.port.CounselTechniquePort
 import org.springframework.stereotype.Service
 

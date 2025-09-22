@@ -1,12 +1,7 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper
 
 import com.hearlers.api.proto.v1.model.CounselTechniqueTransitionRule
-import com.hearlers.api.proto.v1.service.CreateCounselTechniqueTransitionRuleRequest
-import com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRulesRequest
-import com.hearlers.api.proto.v1.service.UpdateCounselTechniqueTransitionRuleRequest
-import com.hearlers.api.proto.v1.service.createCounselTechniqueTransitionRuleRequest
-import com.hearlers.api.proto.v1.service.findCounselTechniqueTransitionRulesRequest
-import com.hearlers.api.proto.v1.service.updateCounselTechniqueTransitionRuleRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.CounselTechniqueTransitionRuleDto
 
 class CounselTechniqueTransitionRuleMapper {
