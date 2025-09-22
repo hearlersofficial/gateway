@@ -5,6 +5,7 @@ import com.hearlers.api.proto.v1.model.AuthUser;
 import com.hearlers.api.proto.v1.model.Authority;
 import com.hearlers.api.proto.v1.model.User;
 import com.hearlers.api.proto.v1.service.*;
+import com.hearlers.com.hearlers.gateway.port.AuthCachePort;
 import com.hearlers.gateway.auth.exception.AuthUserNotFoundException;
 import com.hearlers.gateway.auth.model.AuthInfo;
 import com.hearlers.gateway.factory.OAuthProviderFactory;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Service;
 public class AuthUserService implements AuthUserUseCase {
     private final OAuthProviderFactory oAuthProviderFactory;
     private final AuthUserPort authUserPort;
+    private final AuthCachePort authCachePort;
 
     @Override
     public InitializeUserResponse initializeUser(InitializeUserRequest request) {
@@ -35,10 +37,14 @@ public class AuthUserService implements AuthUserUseCase {
 
     @Override
     public AuthUser oauthLogin(AuthChannel authChannel, String code, String state, String userId) {
-        // OAuth Provider 서비스 가져오기
+
+        // NOTE: 뒤로가기 등으로 중복 요청이 들어온 경우 중복 요청을 방지하기 위해 5초간만 멱등 응답을 줌
+        var existingValue = authCachePort.get(code, state);
+        if(existingValue != null) return existingValue;
+
+
         OAuthProviderPort providerPort = oAuthProviderFactory.getOAuthProviderPort(authChannel);
         
-        // OAuth 사용자 정보 조회
         AuthInfo.OAuthUserInfo oAuthUserInfo = providerPort.getUserInfo(code, state);
         String uniqueId = oAuthUserInfo.getId();
         
@@ -52,7 +58,7 @@ public class AuthUserService implements AuthUserUseCase {
             return evaluateAndUpdateAuthority(authUser, uniqueId, providerPort);
         } catch (AuthUserNotFoundException e) {
             // 신규 로그인의 경우
-            if (userId == null || userId == "") {
+            if (userId == null || userId.isEmpty()) {
                 AuthUser newAuthUser = handleNewOAuthLogin(uniqueId, authChannel);
                 return evaluateAndUpdateAuthority(newAuthUser, uniqueId, providerPort);
             }

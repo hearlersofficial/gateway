@@ -130,14 +130,13 @@ public class AuthController {
         String userId = stateInfo.getUserId();
         String clientRedirectUrl = stateInfo.getRedirectUrl();
 
-        // 퍼사드를 통해 카카오 로그인 콜백 처리
         AuthUser authUser = authUserUseCase.oauthLogin(AuthChannel.AUTH_CHANNEL_KAKAO ,code, encodedState, userId);
         AuthInfo.TokenInfo tokenInfo = tokenManagingUseCase.generateToken(authUser.getUserId(), authUser.getAuthChannel(), true, authUser.getAuthority());
 
         String domain = extractDomainFromOrigin(clientRedirectUrl);
         // 발급받은 토큰 쿠키에 저장
         addCookieToResponse(response, tokenInfo.getAccessToken(), ACCESS_TOKEN_COOKIE, accessExpirationTime, domain);
-        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, accessExpirationTime, domain); ;
+        addCookieToResponse(response, tokenInfo.getAccessTokenExpiresAt().toString(), ACCESS_TOKEN_EXPIRES_AT_COOKIE, accessExpirationTime, domain);
         addCookieToResponse(response, tokenInfo.getRefreshToken(), REFRESH_TOKEN_COOKIE, refreshExpirationTime, domain);
         addCookieToResponse(response, tokenInfo.getRefreshTokenExpiresAt().toString(), REFRESH_TOKEN_EXPIRES_AT_COOKIE, refreshExpirationTime, domain);
 
