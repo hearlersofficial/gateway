@@ -1,10 +1,13 @@
 package com.hearlers.gateway.presentation.http.v1.counsel.app
 
-import com.hearlers.gateway.CounselService
+import com.hearlers.gateway.CounselUseCase
+import com.hearlers.gateway.presentation.http.v1.counsel.app.dto.CounselDto
+import com.hearlers.gateway.presentation.http.v1.counsel.app.mapper.CounselDtoMapper
+import com.hearlers.gateway.shared.exception.HttpException
+import com.hearlers.gateway.shared.exception.HttpResultCode
 import com.hearlers.gateway.shared.response.ResponseDto
 import com.hearlers.gateway.shared.response.ResponseDtoUtil
 import io.swagger.v3.oas.annotations.Operation
-import io.swagger.v3.oas.annotations.Parameter
 import io.swagger.v3.oas.annotations.media.Content
 import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse
@@ -12,16 +15,15 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
 import kotlinx.coroutines.runBlocking
-import org.mapstruct.factory.Mappers
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController("v1CounselAppController")
-@RequestMapping
+@RequestMapping("/v1/app")
 @Tag(name = "앱/상담", description = "상담 관련 API")
-class CounselController(private val counselService: CounselService) {
-
-    private val counselDtoMapper = Mappers.getMapper(CounselDtoMapper::class.java)
+class CounselController(
+    private val counselUseCase: CounselUseCase
+) {
 
     @Operation(summary = "상담 생성", description = "새로운 상담을 생성합니다.")
     @ApiResponses(
@@ -34,22 +36,19 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @PostMapping("/v1/counselors/{counselor-id}/counsels")
+    @PostMapping("/counselors/{counselorId}/counsels")
     fun createCounsel(
-        @PathVariable("counselor-id") counselorId: String,
-        @RequestAttribute(value = "userId", required = false) userId: String?,
+        @PathVariable counselorId: String,
+        @RequestAttribute(value = "userId") userId: String,
         @Valid @RequestBody request: CounselDto.CreateCounselRequest
     ): ResponseEntity<ResponseDto.Success<CounselDto.CreateCounselResponse>> {
-        val createCounselRequest = counselDtoMapper.toCreateCounselRequest(userId, counselorId, request)
-        val counsel = runBlocking {
-            counselService.createCounsel(createCounselRequest)
-        }
-        val response = counselDtoMapper.toCreateCounselResponse(counsel)
-
+        val createCounselRequest = CounselDtoMapper.toCreateCounselRequest(userId, counselorId, request)
+        val counsel = runBlocking { counselUseCase.createCounsel(createCounselRequest) }
+        val response = CounselDtoMapper.toCreateCounselResponse(counsel)
         return ResponseDtoUtil.createdResponse(response, "상담 생성 성공")
     }
 
-    @Operation(summary = "상담 목록 조회", description = "상담사 ID 또는 'all'을 입력하여 상담 목록을 조회합니다.")
+    @Operation(summary = "상담 목록 조회", description = "상담사 ID 또는 'me'를 입력하여 상담 목록을 조회합니다.")
     @ApiResponses(
         value = [
             ApiResponse(responseCode = "200", description = "상담 목록 조회 성공"),
@@ -60,26 +59,15 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @GetMapping("/v1/counselors/{counselor-id}/counsels")
+    @GetMapping("/counsels")
     fun getCounsels(
-        @Parameter(
-            name = "counselor-id",
-            description = "상담사 ID 또는 'all' 입력 시 전체 조회",
-            example = "all"
-        )
-        @PathVariable("counselor-id") counselorId: String,
-        @RequestAttribute(value = "userId", required = false) userId: String?
+        @RequestAttribute(value = "userId") userId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselsResponse>> {
-        val resolvedCounselorId = if ("all".equals(counselorId, ignoreCase = true)) null else counselorId
-        val findCounselsRequest = counselDtoMapper.toFindCounselsRequest(userId, resolvedCounselorId)
-        val counsels = runBlocking {
-            counselService.findCounsels(findCounselsRequest)
-        }
-        val response = counselDtoMapper.toFindCounselsResponse(counsels)
-
+        val findCounselsRequest = CounselDtoMapper.toFindCounselsRequest(userId, null)
+        val counsels = runBlocking { counselUseCase.findCounsels(findCounselsRequest) }
+        val response = CounselDtoMapper.toFindCounselsResponse(counsels)
         return ResponseDtoUtil.okResponse(response, "상담 목록 조회 성공")
     }
-
 
     @Operation(summary = "상담 단건 조회", description = "상담을 단건 조회합니다.")
     @ApiResponses(
@@ -92,17 +80,13 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @GetMapping("/v1/counselors/{counselor-id}/counsels/{counsel-id}")
+    @GetMapping("/counsels/{counselId}")
     fun getCounsel(
-        @PathVariable("counselor-id") counselorId: String,
-        @PathVariable("counsel-id") counselId: String
+        @PathVariable counselId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselByIdResponse>> {
-        val findCounselByIdRequest = counselDtoMapper.toFindCounselByIdRequest(counselId)
-        val counsel = runBlocking {
-            counselService.findCounselById(findCounselByIdRequest)
-        }
-        val response = counselDtoMapper.toFindCounselByIdResponse(counsel)
-
+        val findCounselByIdRequest = CounselDtoMapper.toFindCounselByIdRequest(counselId)
+        val counsel = runBlocking { counselUseCase.findCounselById(findCounselByIdRequest) } ?: throw HttpException(HttpResultCode.NOT_FOUND)
+        val response = CounselDtoMapper.toFindCounselByIdResponse(counsel)
         return ResponseDtoUtil.okResponse(response, "상담 조회 성공")
     }
 
@@ -117,18 +101,15 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @PostMapping("/v1/counselors/{counselor-id}/counsels/{counsel-id}/messages")
+    @PostMapping("/counsels/{counselId}/messages")
     fun createMessage(
-        @PathVariable("counselor-id") counselorId: String,
-        @PathVariable("counsel-id") counselId: String,
-        @RequestAttribute(value = "userId", required = true) userId: String,
+        @PathVariable counselId: String,
+        @RequestAttribute(value = "userId") userId: String,
         @Valid @RequestBody request: CounselDto.CreateMessageRequest
     ): ResponseEntity<ResponseDto.Success<CounselDto.CreateMessageResponse>> {
-        val createMessageRequest = counselDtoMapper.toCreateMessageRequest(counselId, request)
-        val createMessageResponse = runBlocking {
-            counselService.createMessage(createMessageRequest, userId)
-        }
-        val response = counselDtoMapper.toCreateMessageResponse(createMessageResponse)
+        val createMessageRequest = CounselDtoMapper.toCreateMessageRequest(counselId, request)
+        val createMessageResponse = runBlocking { counselUseCase.createMessage(createMessageRequest, userId) }
+        val response = CounselDtoMapper.toCreateMessageResponse(createMessageResponse)
         return ResponseDtoUtil.createdResponse(response, "메시지 생성 성공")
     }
 
@@ -143,17 +124,13 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @GetMapping("/v1/counselors/{counselor-id}/counsels/{counsel-id}/messages")
+    @GetMapping("/counsels/{counselId}/messages")
     fun getMessages(
-        @PathVariable("counselor-id") counselorId: String,
-        @PathVariable("counsel-id") counselId: String
+        @PathVariable counselId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindMessagesResponse>> {
-        val findMessagesRequest = counselDtoMapper.toFindMessagesRequest(counselId)
-        val counselMessages = runBlocking {
-            counselService.findMessages(findMessagesRequest)
-        }
-        val response = counselDtoMapper.toFindMessagesResponse(counselMessages)
-
+        val findMessagesRequest = CounselDtoMapper.toFindMessagesRequest(counselId)
+        val counselMessages = runBlocking { counselUseCase.findMessages(findMessagesRequest) }
+        val response = CounselDtoMapper.toFindMessagesResponse(counselMessages)
         return ResponseDtoUtil.okResponse(response, "메시지 목록 조회 성공")
     }
 
@@ -168,19 +145,14 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @PostMapping("/v1/counselors/{counselor-id}/counsels/{counsel-id}/messages/{message-id}/react")
+    @PostMapping("/messages/{messageId}/react")
     fun reactMessage(
-        @PathVariable("counselor-id") counselorId: String,
-        @PathVariable("counsel-id") counselId: String,
-        @PathVariable("message-id") messageId: String,
+        @PathVariable messageId: String,
         @Valid @RequestBody request: CounselDto.ReactMessageRequest
     ): ResponseEntity<ResponseDto.Success<CounselDto.ReactMessageResponse>> {
-        val reactMessageRequest = counselDtoMapper.toReactMessageRequest(messageId, request)
-        val counselMessage = runBlocking {
-            counselService.reactMessage(reactMessageRequest)
-        }
-        val response = counselDtoMapper.toReactMessageResponse(counselMessage)
-
+        val reactMessageRequest = CounselDtoMapper.toReactMessageRequest(messageId, request)
+        val counselMessage = runBlocking { counselUseCase.reactMessage(reactMessageRequest) }
+        val response = CounselDtoMapper.toReactMessageResponse(counselMessage)
         return ResponseDtoUtil.okResponse(response, "메시지 반응 성공")
     }
 
@@ -195,17 +167,14 @@ class CounselController(private val counselService: CounselService) {
             )
         ]
     )
-    @GetMapping("/v1/counselors/{counselor-id}/relationships")
+    @GetMapping("/counselor-user-relationships")
     fun getCounselorUserRelationships(
-        @PathVariable("counselor-id") counselorId: String,
-        @RequestAttribute(value = "userId", required = false) userId: String?
+        @RequestParam(required = false) counselorId: String?,
+        @RequestAttribute(value = "userId") userId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselorUserRelationshipsResponse>> {
-        val findRelationshipsRequest = counselDtoMapper.toFindCounselorUserRelationshipsRequest(counselorId, userId)
-        val relationships = runBlocking {
-            counselService.findCounselorUserRelationships(findRelationshipsRequest)
-        }
-        val response = counselDtoMapper.toFindCounselorUserRelationshipsResponse(relationships)
-
+        val findRelationshipsRequest = CounselDtoMapper.toFindCounselorUserRelationshipsRequest(counselorId, userId)
+        val relationships = runBlocking { counselUseCase.findCounselorUserRelationships(findRelationshipsRequest) }
+        val response = CounselDtoMapper.toFindCounselorUserRelationshipsResponse(relationships)
         return ResponseDtoUtil.okResponse(response, "관계 조회 성공")
     }
 }
