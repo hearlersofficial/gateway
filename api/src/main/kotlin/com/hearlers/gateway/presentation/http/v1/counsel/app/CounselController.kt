@@ -169,10 +169,9 @@ class CounselController(
     )
     @GetMapping("/counselor-user-relationships")
     fun getCounselorUserRelationships(
-        @RequestParam(required = false) counselorId: String?,
         @RequestAttribute(value = "userId") userId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselorUserRelationshipsResponse>> {
-        val findRelationshipsRequest = CounselDtoMapper.toFindCounselorUserRelationshipsRequest(counselorId, userId)
+        val findRelationshipsRequest = CounselDtoMapper.toFindCounselorUserRelationshipsRequest(userId)
         val relationships = runBlocking { counselUseCase.findCounselorUserRelationships(findRelationshipsRequest) }
         val response = CounselDtoMapper.toFindCounselorUserRelationshipsResponse(relationships)
         return ResponseDtoUtil.okResponse(response, "관계 조회 성공")
