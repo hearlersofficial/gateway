@@ -12,6 +12,8 @@ env:
   JWT_SECRET: ${{ secrets.JWT_SECRET }}
   SERVER_URL: ${{ secrets.DEV_SERVER_URL }}
   GRPC_NEST_TARGET: ${{ secrets.DEV_GRPC_NEST_TARGET }}
+  REDIS_HOST: ${{ secrets.DEV_REDIS_HOST }}
+  REDIS_PORT: ${{ secrets.DEV_REDIS_PORT }}
 
 jobs:
   build:
@@ -119,4 +121,6 @@ jobs:
             --set env.KAKAO_ADMIN_KEY='${{ env.KAKAO_ADMIN_KEY }}' \
             --set env.JWT_SECRET='${{ env.JWT_SECRET }}' \
             --set env.SERVER_URL='${{ env.SERVER_URL }}' \
-            --set env.GRPC_NEST_TARGET='${{ env.GRPC_NEST_TARGET }}'
+            --set env.GRPC_NEST_TARGET='${{ env.GRPC_NEST_TARGET }}' \
+            --set env.REDIS_HOST='${{ env.REDIS_HOST }}' \
+            --set env.REDIS_PORT='${{ env.REDIS_PORT }}'
