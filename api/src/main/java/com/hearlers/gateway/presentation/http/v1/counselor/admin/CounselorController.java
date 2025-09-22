@@ -1,6 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.counselor.admin;
 
-import com.hearlers.gateway.application.counselor.CounselorService;
+import com.hearlers.gateway.CounselorUseCase;
 import com.hearlers.gateway.shared.response.ResponseDto;
 import com.hearlers.gateway.shared.response.ResponseDtoUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "어드민/상담사", description = "상담사 관련 API")
 public class CounselorController {
 
-    private final CounselorService counselorService;
+    private final CounselorUseCase counselorUseCase;
     CounselorDtoMapper counselorDtoMapper = Mappers.getMapper(CounselorDtoMapper.class);
 
     @Operation(summary = "상담사 단건 조회", description = "상담사를 단건 조회합니다.")
@@ -33,7 +33,7 @@ public class CounselorController {
     @GetMapping("/v1/admin/counselors/{counselor-id}")
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorByIdResponse>> getCounselor(@PathVariable("counselor-id") String counselorId) {
         var findCounselorByIdRequest = counselorDtoMapper.toFindCounselorRequest(counselorId);
-        var counselor = counselorService.findCounselorById(findCounselorByIdRequest);
+        var counselor = counselorUseCase.findCounselorById(findCounselorByIdRequest);
         var response = counselorDtoMapper.toFindCounselorResponse(counselor);
 
         return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
@@ -48,7 +48,7 @@ public class CounselorController {
     @GetMapping("/v1/admin/counselors")
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindCounselorsResponse>> getCounselors(@Valid @ParameterObject CounselorDto.FindCounselorsRequest request) {
         var findCounselorsRequest = counselorDtoMapper.toFindCounselorsRequest(request);
-        var counselors = counselorService.findCounselors(findCounselorsRequest);
+        var counselors = counselorUseCase.findCounselors(findCounselorsRequest);
         var response = counselorDtoMapper.toFindCounselorsResponse(counselors);
 
         return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
@@ -63,7 +63,7 @@ public class CounselorController {
     public ResponseEntity<ResponseDto.Success<CounselorDto.CreateCounselorResponse>> createCounselor(
             @Valid @RequestBody CounselorDto.CreateCounselorRequest request) {
         var createCounselorRequest = counselorDtoMapper.toCreateCounselorRequest(request);
-        var counselor = counselorService.createCounselor(createCounselorRequest);
+        var counselor = counselorUseCase.createCounselor(createCounselorRequest);
         var response = counselorDtoMapper.toCreateCounselorResponse(counselor);
 
         return ResponseDtoUtil.createdResponse(response, "상담사 생성 성공");
@@ -80,7 +80,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.UpdateCounselorRequest request) {
         var updateCounselorRequest = counselorDtoMapper.toUpdateCounselorRequest(counselorId, request);
-        var counselor = counselorService.updateCounselor(updateCounselorRequest);
+        var counselor = counselorUseCase.updateCounselor(updateCounselorRequest);
         var response = counselorDtoMapper.toUpdateCounselorResponse(counselor);
 
         return ResponseDtoUtil.okResponse(response, "상담사 업데이트 성공");
@@ -94,7 +94,7 @@ public class CounselorController {
     @GetMapping("/v1/admin/tones/{tone-id}")
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindToneByIdResponse>> getTone(@PathVariable("tone-id") String toneId) {
         var findToneByIdRequest = counselorDtoMapper.toFindToneRequest(toneId);
-        var tone = counselorService.findToneById(findToneByIdRequest);
+        var tone = counselorUseCase.findToneById(findToneByIdRequest);
         var response = counselorDtoMapper.toFindToneResponse(tone);
         return ResponseDtoUtil.okResponse(response, "톤 조회 성공");
     }
@@ -107,7 +107,7 @@ public class CounselorController {
     @GetMapping("/v1/admin/tones")
     public ResponseEntity<ResponseDto.Success<CounselorDto.FindTonesResponse>> getTones(@Valid @ParameterObject CounselorDto.FindTonesRequest request) {
         var findTonesRequest = counselorDtoMapper.toFindTonesRequest(request);
-        var tones = counselorService.findTones(findTonesRequest);
+        var tones = counselorUseCase.findTones(findTonesRequest);
         var response = counselorDtoMapper.toFindTonesResponse(tones);
         return ResponseDtoUtil.okResponse(response, "톤 조회 성공");
     }
@@ -121,7 +121,7 @@ public class CounselorController {
     public ResponseEntity<ResponseDto.Success<CounselorDto.CreateToneResponse>> createTone(
             @Valid @RequestBody CounselorDto.CreateToneRequest request) {
         var createToneRequest = counselorDtoMapper.toCreateToneRequest(request);
-        var tone = counselorService.createTone(createToneRequest);
+        var tone = counselorUseCase.createTone(createToneRequest);
         var response = counselorDtoMapper.toCreateToneResponse(tone);
 
         return ResponseDtoUtil.createdResponse(response, "톤 생성 성공");
@@ -138,7 +138,7 @@ public class CounselorController {
             @PathVariable("tone-id") String toneId,
             @Valid @RequestBody CounselorDto.UpdateToneRequest request) {
         var updateToneRequest = counselorDtoMapper.toUpdateToneRequest(toneId, request);
-        var tone = counselorService.updateTone(updateToneRequest);
+        var tone = counselorUseCase.updateTone(updateToneRequest);
         var response = counselorDtoMapper.toUpdateToneResponse(tone);
 
         return ResponseDtoUtil.okResponse(response, "톤 업데이트 성공");
@@ -154,7 +154,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.GenerateCounselorImageUrlRequest request) {
         var generateCounselorImageUrlRequest = counselorDtoMapper.toGenerateCounselorImageUrlRequest(request, counselorId);
-        var presignedUrl = counselorService.generateCounselorImageUrl(generateCounselorImageUrlRequest);
+        var presignedUrl = counselorUseCase.generateCounselorImageUrl(generateCounselorImageUrlRequest);
         var response = counselorDtoMapper.toGenerateCounselorImageUrlResponse(presignedUrl);
 
         return ResponseDtoUtil.okResponse(response, "상담사 이미지 URL 생성 성공");
@@ -170,7 +170,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.GenerateCutSceneImageUrlRequest request) {
         var generateCutSceneImageUrlRequest = counselorDtoMapper.toGenerateCutSceneImageUrlRequest(request, counselorId);
-        var presignedUrl = counselorService.generateCutSceneImageUrl(generateCutSceneImageUrlRequest);
+        var presignedUrl = counselorUseCase.generateCutSceneImageUrl(generateCutSceneImageUrlRequest);
         var response = counselorDtoMapper.toGenerateCutSceneImageUrlResponse(presignedUrl);
 
         return ResponseDtoUtil.okResponse(response, "컷신 이미지 URL 생성 성공");
@@ -188,7 +188,7 @@ public class CounselorController {
     ) {
         var withTemporary = true; // Assuming this is a placeholder for any additional parameters needed
         var findEpisodeByIdRequest = counselorDtoMapper.toFindEpisodeByIdRequest(episodeId, withTemporary);
-        var episode = counselorService.findEpisodeById(findEpisodeByIdRequest);
+        var episode = counselorUseCase.findEpisodeById(findEpisodeByIdRequest);
         var response = counselorDtoMapper.toFindEpisodeByIdResponse(episode);
 
         return ResponseDtoUtil.okResponse(response, "에피소드 조회 성공");
@@ -205,7 +205,7 @@ public class CounselorController {
     ) {
         var withTemporary = true;
         var findEpisodesRequest = counselorDtoMapper.toFindEpisodesRequest(counselorId, withTemporary);
-        var episodes = counselorService.findEpisodes(findEpisodesRequest);
+        var episodes = counselorUseCase.findEpisodes(findEpisodesRequest);
         var response = counselorDtoMapper.toFindEpisodesResponse(episodes);
 
         return ResponseDtoUtil.okResponse(response, "에피소드 조회 성공");
@@ -221,7 +221,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.CreateEpisodeRequest request) {
         var createEpisodeRequest = counselorDtoMapper.toCreateEpisodeRequest(counselorId, request);
-        var episode = counselorService.createEpisode(createEpisodeRequest);
+        var episode = counselorUseCase.createEpisode(createEpisodeRequest);
         var response = counselorDtoMapper.toCreateEpisodeResponse(episode);
 
         return ResponseDtoUtil.createdResponse(response, "에피소드 생성 성공");
@@ -244,7 +244,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.UpdateEpisodeRequest request) {
         var updateEpisodeRequest = counselorDtoMapper.toUpdateEpisodeRequest(episodeId, request);
-        var episode = counselorService.updateEpisode(updateEpisodeRequest);
+        var episode = counselorUseCase.updateEpisode(updateEpisodeRequest);
         var response = counselorDtoMapper.toUpdateEpisodeResponse(episode);
 
         return ResponseDtoUtil.okResponse(response, "에피소드 업데이트 성공");
@@ -261,7 +261,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.CreateBubbleRequest request) {
         var createBubbleRequest = counselorDtoMapper.toCreateBubbleRequest(counselorId, request);
-        var bubble = counselorService.createBubble(createBubbleRequest);
+        var bubble = counselorUseCase.createBubble(createBubbleRequest);
         var response = counselorDtoMapper.toCreateBubbleResponse(bubble);
         return ResponseDtoUtil.createdResponse(response, "버블 생성 성공");
     }
@@ -278,7 +278,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId,
             @Valid @RequestBody CounselorDto.UpdateBubbleRequest request) {
         var updateBubbleRequest = counselorDtoMapper.toUpdateBubbleRequest(counselorId, bubbleId, request);
-        var bubble = counselorService.updateBubble(updateBubbleRequest);
+        var bubble = counselorUseCase.updateBubble(updateBubbleRequest);
         var response = counselorDtoMapper.toUpdateBubbleResponse(bubble);
         return ResponseDtoUtil.okResponse(response, "버블 업데이트 성공");
     }
@@ -295,7 +295,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId
     ) {
         var findBubbleByIdRequest = counselorDtoMapper.toFindBubbleByIdRequest(counselorId, bubbleId);
-        var bubble = counselorService.findBubbleById(findBubbleByIdRequest);
+        var bubble = counselorUseCase.findBubbleById(findBubbleByIdRequest);
         var response = counselorDtoMapper.toFindBubbleByIdResponse(bubble);
         return ResponseDtoUtil.okResponse(response, "상담사 조회 성공");
     }
@@ -310,7 +310,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId
     ) {
         var findRandomBubbleRequest = counselorDtoMapper.toFindRandomBubbleRequest(counselorId);
-        var bubble = counselorService.findRandomBubble(findRandomBubbleRequest);
+        var bubble = counselorUseCase.findRandomBubble(findRandomBubbleRequest);
         var response = counselorDtoMapper.toFindBubbleByIdResponse(bubble);
         return ResponseDtoUtil.okResponse(response, "버블 랜덤 조회 성공");
     }
@@ -325,7 +325,7 @@ public class CounselorController {
             @PathVariable("counselor-id") String counselorId
     ) {
         var findBubblesRequest = counselorDtoMapper.toFindBubblesRequest(counselorId);
-        var bubbles = counselorService.findBubbles(findBubblesRequest);
+        var bubbles = counselorUseCase.findBubbles(findBubblesRequest);
         var response = counselorDtoMapper.toFindBubblesResponse(bubbles);
         return ResponseDtoUtil.okResponse(response, "버블 조회 성공");
     }
