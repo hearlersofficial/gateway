@@ -16,3 +16,4 @@ include('adapter:grpc')
 include('adapter:jwt')
 include('adapter:oauth')
 include 'adapter:kafka'
+include 'adapter:redis'

@@ -16,6 +16,7 @@ dependencies {
     implementation(project(":adapter:grpc"))
     implementation(project(":adapter:jwt"))
     implementation(project(":adapter:oauth"))
+    implementation(project(":adapter:redis"))
 
 
     // Spring Boot

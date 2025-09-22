@@ -1,6 +1,11 @@
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
 kakao:
   client_id: ${KAKAO_CLIENT_ID}
-  admin_key: ${KAKAO_ADMIN_KEY}
   redirect_uri: ${SERVER_URL}/v1/auth/callback/kakao
   admin_unique_ids: 3726748107, 4282012818, 4282012818, 4252068228, 3783518117, 3424055264, 3424046442, 4282271075
 

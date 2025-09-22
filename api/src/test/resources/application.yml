@@ -1,8 +1,10 @@
-# src/test/resources/application.yml
-
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
 kakao:
   client_id: "test-kakao-client-id"
-  admin_key: "test-kakao-admin-key"
   redirect_uri: http://localhost:8080/v1/auth/callback/kakao
   admin_unique_ids: 3726748107, 4282012818, 4282012818, 4252068228, 3783518117, 3424055264, 3424046442
 
