@@ -16,7 +16,6 @@ subprojects {
     apply(plugin = "idea")
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
-
     configure<JavaPluginExtension> {
         sourceCompatibility = JavaVersion.VERSION_21
         toolchain {
