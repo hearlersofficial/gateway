@@ -42,6 +42,7 @@ subprojects {
         implementation(platform(project.dependencies.create("org.springframework.boot:spring-boot-dependencies:3.5.5")))
         annotationProcessor(platform(project.dependencies.create("org.springframework.boot:spring-boot-dependencies:3.5.5")))
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+        implementation("org.slf4j:slf4j-api")
 
         // Lombok
         compileOnly("org.projectlombok:lombok:1.18.30")
@@ -55,6 +56,7 @@ subprojects {
         // Kotlin
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+        implementation("io.github.oshai:kotlin-logging-jvm:7.0.13")
     }
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
