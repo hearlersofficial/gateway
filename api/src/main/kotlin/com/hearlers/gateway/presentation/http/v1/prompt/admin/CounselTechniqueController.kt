@@ -3,6 +3,7 @@ package com.hearlers.gateway.presentation.http.v1.prompt.admin
 import com.hearlers.api.proto.v1.service.FindCounselTechniqueByIdRequest
 import com.hearlers.gateway.CounselTechniqueUseCase
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.CounselTechniqueDto
+import com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper.CounselTechniqueMapper
 import com.hearlers.gateway.shared.exception.HttpException
 import com.hearlers.gateway.shared.exception.HttpResultCode
 import com.hearlers.gateway.shared.response.ResponseDto
@@ -16,16 +17,8 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
 import kotlinx.coroutines.runBlocking
 import org.springdoc.core.annotations.ParameterObject
-import com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper.CounselTechniqueMapper
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.ModelAttribute
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController("v1CounselTechniqueAdminController")
 @RequestMapping("/v1/admin")

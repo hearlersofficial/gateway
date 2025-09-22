@@ -1,11 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin
 
-import com.hearlers.api.proto.v1.service.DeletePromptVersionsRequest
-import com.hearlers.api.proto.v1.service.FindActiveVersionRequest
-import com.hearlers.api.proto.v1.service.FindTemporaryVersionRequest
-import com.hearlers.api.proto.v1.service.LoadExistingPromptVersionRequest
-import com.hearlers.api.proto.v1.service.ActivatePromptVersionRequest
-import com.hearlers.api.proto.v1.service.FindPromptVersionByIdRequest
+import com.hearlers.api.proto.v1.service.*
 import com.hearlers.gateway.PromptVersionUseCase
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.PromptVersionDto
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper.PromptVersionMapper
@@ -23,14 +18,7 @@ import jakarta.validation.Valid
 import kotlinx.coroutines.runBlocking
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController("v1PromptVersionAdminController")
 @RequestMapping("/v1/admin")
