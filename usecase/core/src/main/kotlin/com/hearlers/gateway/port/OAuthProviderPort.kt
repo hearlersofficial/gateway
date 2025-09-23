@@ -1,4 +1,4 @@
-package com.hearlers.com.hearlers.gateway.port
+package com.hearlers.gateway.port
 
 import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.AuthUser
@@ -9,7 +9,7 @@ interface OAuthProviderPort {
     /**
      * OAuth 제공자가 지원하는 인증 채널을 반환합니다.
      */
-    fun getSupportedChannel(): AuthChannel
+    val supportedChannel: AuthChannel
 
     /**
      * OAuth 인증 URL을 생성합니다.

@@ -1,6 +1,6 @@
 package com.hearlers.gateway.config;
 
-import com.hearlers.gateway.TokenManagingUseCase;
+import com.hearlers.gateway.AuthTokenManagingUseCase;
 import com.hearlers.gateway.security.*;
 import com.hearlers.gateway.shared.response.ResponseFormatter;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final ResponseFormatter responseFormatter;
-    private final TokenManagingUseCase tokenManagingUseCase;
+    private final AuthTokenManagingUseCase tokenManagingUseCase;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {

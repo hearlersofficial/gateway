@@ -3,8 +3,8 @@ package com.hearlers.gateway.kakao
 import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.AuthUser
 import com.hearlers.api.proto.v1.model.Authority
-import com.hearlers.com.hearlers.gateway.port.OAuthProviderPort
 import com.hearlers.gateway.auth.model.AuthInfo
+import com.hearlers.gateway.port.OAuthProviderPort
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.stereotype.Service
@@ -19,14 +19,12 @@ data class KakaoProperties(
 )
 
 @Service
-class KakaoService(
+class KakaoOAuthProviderAdapter(
     private val kakaoProperties: KakaoProperties,
     private val kakaoOAuthProviderClient: KakaoOAuthProviderClient
 ) : OAuthProviderPort {
 
-    override fun getSupportedChannel(): AuthChannel {
-        return AuthChannel.AUTH_CHANNEL_KAKAO
-    }
+    override var supportedChannel: AuthChannel = AuthChannel.AUTH_CHANNEL_KAKAO
 
     override fun generateAuthorizationUrl(state: String): String {
         return "https://kauth.kakao.com/oauth/authorize?" +
