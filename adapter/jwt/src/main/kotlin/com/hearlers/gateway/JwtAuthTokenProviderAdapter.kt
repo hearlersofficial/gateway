@@ -2,7 +2,7 @@ package com.hearlers.gateway
 
 import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.Authority
-import com.hearlers.com.hearlers.gateway.port.TokenProviderPort
+import com.hearlers.com.hearlers.gateway.port.AuthTokenProviderPort
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.jsonwebtoken.*
 import io.jsonwebtoken.io.Decoders
@@ -27,9 +27,9 @@ data class JwtConfig(
 )
 
 @Component
-class JwtTokenProviderAdapter(
+class JwtAuthTokenProviderAdapter(
     jwtProperties: JwtProperties,
-) : TokenProviderPort {
+) : AuthTokenProviderPort {
 
     private val key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtProperties.jwt.secret))
     override val accessTokenExpirationTime: Long = jwtProperties.accessExpirationTime

@@ -4,7 +4,7 @@ import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.Authority
 import java.time.LocalDateTime
 
-interface TokenProviderPort {
+interface AuthTokenProviderPort {
     fun validateToken(token: String): Boolean
     fun isTokenExpired(token: String): Boolean
     fun getUserId(token: String): String

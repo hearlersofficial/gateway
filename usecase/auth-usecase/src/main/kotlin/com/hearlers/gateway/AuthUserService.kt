@@ -6,13 +6,15 @@ import com.hearlers.api.proto.v1.model.Authority
 import com.hearlers.api.proto.v1.model.User
 import com.hearlers.api.proto.v1.service.*
 import com.hearlers.com.hearlers.gateway.port.AuthCachePort
-import com.hearlers.com.hearlers.gateway.port.OAuthProviderPort
 import com.hearlers.gateway.auth.exception.AuthUserNotFoundException
 import com.hearlers.gateway.auth.model.AuthInfo
 import com.hearlers.gateway.factory.OAuthProviderFactory
 import com.hearlers.gateway.port.AuthUserPort
-import org.slf4j.LoggerFactory
+import com.hearlers.gateway.port.OAuthProviderPort
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
+
+private val logger = KotlinLogging.logger {}
 
 @Service
 class AuthUserService(
@@ -21,9 +23,8 @@ class AuthUserService(
     private val authCachePort: AuthCachePort
 ) : AuthUserUseCase {
 
-    private val log = LoggerFactory.getLogger(AuthUserService::class.java)
 
-    override fun initializeUser(request: InitializeUserRequest): InitializeUserResponse {
+    override suspend fun initializeUser(request: InitializeUserRequest): InitializeUserResponse {
         return authUserPort.initializeUser(request)
     }
 
@@ -44,7 +45,7 @@ class AuthUserService(
 
         return try {
             // 기존 사용자 조회
-            log.info("oauthLogin - userId: {}, uniqueId: {}, authChannel: {}", userId, uniqueId, authChannel)
+            logger.info { "oauthLogin - userId: $userId, uniqueId: $uniqueId, authChannel: $authChannel" }
             val authUser: AuthUser = authUserPort.getAuthUser(uniqueId, authChannel)
 
             // 권한 평가 및 필요시 업데이트
@@ -64,14 +65,14 @@ class AuthUserService(
     /**
      * 사용자 권한을 평가하고 필요한 경우 업데이트합니다.
      */
-    private fun evaluateAndUpdateAuthority(authUser: AuthUser, uniqueId: String, providerPort: OAuthProviderPort): AuthUser {
+    private suspend fun evaluateAndUpdateAuthority(authUser: AuthUser, uniqueId: String, providerPort: OAuthProviderPort): AuthUser {
         // OAuth 제공자로부터 권한 평가 받기
         val expectedAuthority: Authority = providerPort.evaluateAuthority(authUser, uniqueId)
         val currentAuthority: Authority = authUser.authority
         
         // 현재 권한과 기대 권한이 다르면 업데이트
         if (currentAuthority != expectedAuthority) {
-            log.info("Updating authority for user: {} from {} to {}", authUser.userId, currentAuthority, expectedAuthority)
+            logger.info { "Updating authority for user: ${authUser.userId} from $currentAuthority to $expectedAuthority" }
             val response: UpdateAuthorityResponse = authUserPort.updateAuthority(
                 UpdateAuthorityRequest.newBuilder()
                     .setAuthUserId(authUser.id)
@@ -87,7 +88,7 @@ class AuthUserService(
     /**
      * 새로운 OAuth 로그인 처리
      */
-    private fun handleNewOAuthLogin(uniqueId: String, authChannel: AuthChannel): AuthUser {
+    private suspend fun handleNewOAuthLogin(uniqueId: String, authChannel: AuthChannel): AuthUser {
         // 새 사용자 생성
         val user: User = authUserPort.initializeUser(InitializeUserRequest.newBuilder().build()).user
         
@@ -101,7 +102,7 @@ class AuthUserService(
     /**
      * 임시 유저를 OAuth 계정과 연결
      */
-    private fun handleTempUserOAuthLogin(userId: String, oAuthUniqueId: String, authChannel: AuthChannel): AuthUser {
+    private suspend fun handleTempUserOAuthLogin(userId: String, oAuthUniqueId: String, authChannel: AuthChannel): AuthUser {
         val request: ConnectAuthChannelRequest = createConnectAuthChannelRequest(userId, oAuthUniqueId, authChannel)
         val response: ConnectAuthChannelResponse = authUserPort.connectAuthChannel(request)
         return response.authUser

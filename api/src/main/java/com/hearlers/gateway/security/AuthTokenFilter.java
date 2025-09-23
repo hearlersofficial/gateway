@@ -2,7 +2,7 @@ package com.hearlers.gateway.security;
 
 import com.hearlers.api.proto.v1.model.AuthChannel;
 import com.hearlers.api.proto.v1.model.Authority;
-import com.hearlers.gateway.TokenManagingUseCase;
+import com.hearlers.gateway.AuthTokenManagingUseCase;
 import com.hearlers.gateway.auth.model.AuthInfo;
 import com.hearlers.gateway.shared.exception.HttpException;
 import com.hearlers.gateway.shared.exception.HttpResultCode;
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class AuthTokenFilter extends OncePerRequestFilter {
-    private final TokenManagingUseCase tokenManagingUseCase;
+    private final AuthTokenManagingUseCase tokenManagingUseCase;
     private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
     @Override

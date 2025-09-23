@@ -9,7 +9,7 @@ interface AuthUserUseCase {
     /**
      * 사용자 초기화
      */
-    fun initializeUser(request: InitializeUserRequest): InitializeUserResponse
+    suspend fun initializeUser(request: InitializeUserRequest): InitializeUserResponse
 
     /**
      * OAuth 로그인 URL 생성
