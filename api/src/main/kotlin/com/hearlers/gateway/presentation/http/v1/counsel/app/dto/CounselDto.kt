@@ -19,10 +19,6 @@ object CounselDto {
         val lastChatedAt: String?,
         @field:Schema(description = "프롬프트 버전 ID", example = "5435345345")
         val promptVersionId: String,
-        @field:Schema(description = "상담 테크닉 ID", example = "436534342321")
-        val counselTechniqueId: String,
-        @field:Schema(description = "상담사와 유저의 관계 ID", example = "436534342321")
-        val counselorUserRelationshipId: String,
         @field:Schema(description = "상담 생성 시간")
         val createdAt: String,
         @field:Schema(description = "상담 수정 시간")

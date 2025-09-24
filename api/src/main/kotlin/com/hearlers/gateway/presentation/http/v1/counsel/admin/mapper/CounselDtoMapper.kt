@@ -16,8 +16,6 @@ object CounselDtoMapper {
             lastMessage = counsel.lastMessage,
             lastChatedAt = counsel.lastChatedAt,
             promptVersionId = counsel.promptVersionId,
-            counselTechniqueId = counsel.counselTechniqueId,
-            counselorUserRelationshipId = counsel.counselorUserRelationshipId,
             createdAt = counsel.createdAt,
             updatedAt = counsel.updatedAt,
             deletedAt = counsel.deletedAt
@@ -128,10 +126,9 @@ object CounselDtoMapper {
         return CounselDto.ReactMessageResponse(counselMessage = of(counselMessage))
     }
 
-    fun toFindCounselorUserRelationshipsRequest(counselorId: String?, userId: String?): FindCounselorUserRelationshipsRequest {
+    fun toFindCounselorUserRelationshipsRequest(userId: String?): FindCounselorUserRelationshipsRequest {
         return FindCounselorUserRelationshipsRequest.newBuilder()
             .apply {
-                counselorId?.let { setCounselorId(it) }
                 userId?.let { setUserId(it) }
             }
             .build()
