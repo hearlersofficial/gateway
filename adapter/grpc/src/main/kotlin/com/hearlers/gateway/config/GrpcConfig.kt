@@ -1,12 +1,10 @@
 package com.hearlers.gateway.config
 
-import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub
-import com.hearlers.api.proto.v1.service.CounselServiceGrpcKt.CounselServiceCoroutineStub
+import com.hearlers.api.proto.v1.service.CounselPromptServiceGrpc
+import com.hearlers.api.proto.v1.service.CounselServiceGrpc
+import com.hearlers.api.proto.v1.service.CounselServiceGrpc.CounselServiceBlockingStub
 import com.hearlers.api.proto.v1.service.CounselorServiceGrpc
-import com.hearlers.api.proto.v1.service.CounselorServiceGrpc.CounselorServiceBlockingStub
 import com.hearlers.api.proto.v1.service.UserServiceGrpc
-import com.hearlers.api.proto.v1.service.UserServiceGrpc.UserServiceBlockingStub
-import com.hearlers.api.proto.v1.service.UserServiceGrpcKt.UserServiceCoroutineStub
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder
 import org.springframework.boot.context.properties.ConfigurationProperties
@@ -34,17 +32,17 @@ class GrpcConfig(private val grpcTargets: GrpcTargets) {
         try {
             uri = URI(target)
         } catch (e: URISyntaxException) {
-            throw IllegalArgumentException("Invalid gRPC target URI: " + target, e)
+            throw IllegalArgumentException("Invalid gRPC target URI:  $target" , e)
         }
 
-        val host = uri.getHost()
-        val port = uri.getPort()
+        val host = uri.host
+        val port = uri.port
 
-        require(!(host == null || port == -1)) { "Host or port is missing in gRPC target URI: " + target }
+        require(!(host == null || port == -1)) { "Host or port is missing in gRPC target URI: $target" }
 
         val builder = ManagedChannelBuilder.forAddress(host, port)
 
-        val scheme = uri.getScheme()
+        val scheme = uri.scheme
         if ("https".equals(scheme, ignoreCase = true)) {
             builder.useTransportSecurity()
         } else {
@@ -55,28 +53,22 @@ class GrpcConfig(private val grpcTargets: GrpcTargets) {
     }
 
     @Bean
-    fun userServiceBlockingStub(managedChannel: ManagedChannel?): UserServiceBlockingStub? {
+    fun userServiceBlockingStub(managedChannel: ManagedChannel): UserServiceGrpc.UserServiceBlockingStub {
         return UserServiceGrpc.newBlockingStub(managedChannel)
     }
 
-
     @Bean
-    fun counselorServiceBlockingStub(managedChannel: ManagedChannel?): CounselorServiceBlockingStub? {
+    fun counselorServiceBlockingStub(managedChannel: ManagedChannel): CounselorServiceGrpc.CounselorServiceBlockingStub {
         return CounselorServiceGrpc.newBlockingStub(managedChannel)
     }
 
     @Bean
-    fun counselorServiceCoroutineStub(managedChannel: ManagedChannel): CounselPromptServiceCoroutineStub {
-        return CounselPromptServiceCoroutineStub(managedChannel)
+    fun counselServiceBlockingStub(managedChannel: ManagedChannel): CounselServiceBlockingStub {
+        return CounselServiceGrpc.newBlockingStub(managedChannel)
     }
 
     @Bean
-    fun counselServiceCoroutineStub(managedChannel: ManagedChannel): CounselServiceCoroutineStub {
-        return CounselServiceCoroutineStub(managedChannel)
-    }
-
-    @Bean
-    fun userServiceCoroutineStub(managedChannel: ManagedChannel): UserServiceCoroutineStub {
-        return UserServiceCoroutineStub(managedChannel)
+    fun counselPromptServiceBlockingStub(managedChannel: ManagedChannel): CounselPromptServiceGrpc.CounselPromptServiceBlockingStub {
+        return CounselPromptServiceGrpc.newBlockingStub(managedChannel)
     }
 }

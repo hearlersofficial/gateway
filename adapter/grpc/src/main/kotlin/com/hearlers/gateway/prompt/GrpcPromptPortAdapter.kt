@@ -8,30 +8,30 @@ import org.springframework.stereotype.Component
 
 @Component
 class GrpcPromptPortAdapter(
-    private val counselPromptServiceCoroutineStub: CounselPromptServiceGrpcKt.CounselPromptServiceCoroutineStub
+    private val stub: CounselPromptServiceGrpc.CounselPromptServiceBlockingStub
 
 ) : PromptPort {
-    override suspend fun updateTonePrompt(request: UpdateTonePromptRequest): TonePrompt {
-        return this.counselPromptServiceCoroutineStub.updateTonePrompt(request).tonePrompt
+    override fun updateTonePrompt(request: UpdateTonePromptRequest): TonePrompt {
+        return this.stub.updateTonePrompt(request).tonePrompt
     }
 
-    override suspend fun updatePersonaPrompt(request: UpdatePersonaPromptRequest): PersonaPrompt {
-        return this.counselPromptServiceCoroutineStub.updatePersonaPrompt(request).personaPrompt
+    override fun updatePersonaPrompt(request: UpdatePersonaPromptRequest): PersonaPrompt {
+        return this.stub.updatePersonaPrompt(request).personaPrompt
     }
 
-    override suspend fun findTonePromptById(request: FindTonePromptByIdRequest): TonePrompt? {
-        return this.counselPromptServiceCoroutineStub.findTonePromptById(request).tonePrompt
+    override fun findTonePromptById(request: FindTonePromptByIdRequest): TonePrompt? {
+        return this.stub.findTonePromptById(request).tonePrompt
     }
 
-    override suspend fun findTonePrompts(request: FindTonePromptsRequest): List<TonePrompt> {
-        return this.counselPromptServiceCoroutineStub.findTonePrompts(request).tonePromptsList
+    override fun findTonePrompts(request: FindTonePromptsRequest): List<TonePrompt> {
+        return this.stub.findTonePrompts(request).tonePromptsList
     }
 
-    override suspend fun findPersonaPromptById(request: FindPersonaPromptByIdRequest): PersonaPrompt? {
-        return this.counselPromptServiceCoroutineStub.findPersonaPromptById(request).personaPrompt
+    override fun findPersonaPromptById(request: FindPersonaPromptByIdRequest): PersonaPrompt? {
+        return this.stub.findPersonaPromptById(request).personaPrompt
     }
 
-    override suspend fun findPersonaPrompts(request: FindPersonaPromptsRequest): List<PersonaPrompt> {
-        return this.counselPromptServiceCoroutineStub.findPersonaPrompts(request).personaPromptsList
+    override fun findPersonaPrompts(request: FindPersonaPromptsRequest): List<PersonaPrompt> {
+        return this.stub.findPersonaPrompts(request).personaPromptsList
     }
 }

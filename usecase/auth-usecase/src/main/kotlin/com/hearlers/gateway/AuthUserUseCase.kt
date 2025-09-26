@@ -9,7 +9,7 @@ interface AuthUserUseCase {
     /**
      * 사용자 초기화
      */
-    suspend fun initializeUser(request: InitializeUserRequest): InitializeUserResponse
+    fun initializeUser(request: InitializeUserRequest): InitializeUserResponse
 
     /**
      * OAuth 로그인 URL 생성
@@ -19,5 +19,5 @@ interface AuthUserUseCase {
     /**
      * OAuth 로그인 처리
      */
-    suspend fun oauthLogin(authChannel: AuthChannel, code: String, state: String, userId: String?): AuthUser
+    fun oauthLogin(authChannel: AuthChannel, code: String, state: String, userId: String?): AuthUser
 }

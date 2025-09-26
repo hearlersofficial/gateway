@@ -1,5 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.user.admin
 
+import com.hearlers.api.proto.v1.model.user
 import com.hearlers.gateway.UserUseCase
 import com.hearlers.gateway.presentation.http.v1.user.admin.dto.UserDto
 import com.hearlers.gateway.presentation.http.v1.user.admin.mapper.UserDtoMapper
@@ -13,7 +14,6 @@ import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
-import kotlinx.coroutines.runBlocking
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -41,10 +41,8 @@ class UserController(
     @GetMapping("/{user-id}")
     fun getUser(@PathVariable("user-id") userId: String): ResponseEntity<ResponseDto.Success<UserDto.FindUserByIdResponse>> {
         val findUserRequest = UserDtoMapper.toFindUserByUserIdRequest(userId)
-        val user = runBlocking {
-            userUseCase.findUserByUserId(findUserRequest)
+        val user = userUseCase.findUserByUserId(findUserRequest)
                 ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        }
         val response = UserDtoMapper.toFindUserByIdResponse(user)
         return ResponseDtoUtil.okResponse(response, "유저 조회 성공")
     }

@@ -19,7 +19,7 @@ interface OAuthProviderPort {
     /**
      * OAuth 코드를 이용하여 사용자 정보를 조회합니다.
      */
-    suspend fun getUserInfo(code: String, state: String): OAuthUserInfo
+    fun getUserInfo(code: String, state: String): OAuthUserInfo
 
     /**
      * 사용자 권한을 평가합니다.

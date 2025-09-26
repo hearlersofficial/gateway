@@ -14,7 +14,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
-import kotlinx.coroutines.runBlocking
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -39,7 +38,7 @@ class CounselController(
         @RequestBody @Valid request: CounselDto.CreateCounselRequest
     ): ResponseEntity<ResponseDto.Success<CounselDto.CreateCounselResponse>> {
         val createCounselRequest = CounselDtoMapper.toCreateCounselRequest(userId, counselorId, request)
-        val response = runBlocking { counselUseCase.createCounsel(createCounselRequest) }
+        val response = counselUseCase.createCounsel(createCounselRequest)
         val counselResponse = CounselDtoMapper.toCreateCounselResponse(response)
         return ResponseDtoUtil.okResponse(counselResponse, "상담 생성 성공")
     }
@@ -57,7 +56,7 @@ class CounselController(
         @RequestParam(required = false) counselorId: String?
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselsResponse>> {
         val findCounselsRequest = CounselDtoMapper.toFindCounselsRequest(userId, counselorId)
-        val counsels = runBlocking { counselUseCase.findCounsels(findCounselsRequest) }
+        val counsels = counselUseCase.findCounsels(findCounselsRequest)
         val response = CounselDtoMapper.toFindCounselsResponse(counsels)
         return ResponseDtoUtil.okResponse(response, "상담 목록 조회 성공")
     }
@@ -74,7 +73,8 @@ class CounselController(
         @PathVariable counselId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselByIdResponse>> {
         val findCounselByIdRequest = CounselDtoMapper.toFindCounselByIdRequest(counselId)
-        val counsel = runBlocking { counselUseCase.findCounselById(findCounselByIdRequest) } ?: throw HttpException(HttpResultCode.NOT_FOUND)
+        val counsel = counselUseCase.findCounselById(findCounselByIdRequest)
+            ?: throw HttpException(HttpResultCode.NOT_FOUND)
         val response = CounselDtoMapper.toFindCounselByIdResponse(counsel)
         return ResponseDtoUtil.okResponse(response, "상담 조회 성공")
     }
@@ -93,7 +93,7 @@ class CounselController(
         @RequestAttribute(value = "userId", required = true) userId: String,
         ): ResponseEntity<ResponseDto.Success<CounselDto.CreateMessageResponse>> {
         val createMessageRequest = CounselDtoMapper.toCreateMessageRequest(counselId, request)
-        val response = runBlocking { counselUseCase.createMessage(createMessageRequest, userId) }
+        val response = counselUseCase.createMessage(createMessageRequest, userId)
         val messageResponse = CounselDtoMapper.toCreateMessageResponse(response)
         return ResponseDtoUtil.okResponse(messageResponse, "메시지 생성 성공")
     }
@@ -109,7 +109,7 @@ class CounselController(
         @PathVariable counselId: String
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindMessagesResponse>> {
         val findMessagesRequest = CounselDtoMapper.toFindMessagesRequest(counselId)
-        val counselMessages = runBlocking { counselUseCase.findMessages(findMessagesRequest) }
+        val counselMessages = counselUseCase.findMessages(findMessagesRequest)
         val response = CounselDtoMapper.toFindMessagesResponse(counselMessages)
         return ResponseDtoUtil.okResponse(response, "메시지 목록 조회 성공")
     }
@@ -127,7 +127,7 @@ class CounselController(
         @RequestBody @Valid request: CounselDto.ReactMessageRequest
     ): ResponseEntity<ResponseDto.Success<CounselDto.ReactMessageResponse>> {
         val reactMessageRequest = CounselDtoMapper.toReactMessageRequest(messageId, request)
-        val counselMessage = runBlocking { counselUseCase.reactMessage(reactMessageRequest) }
+        val counselMessage = counselUseCase.reactMessage(reactMessageRequest)
         val response = CounselDtoMapper.toReactMessageResponse(counselMessage)
         return ResponseDtoUtil.okResponse(response, "메시지 반응 성공")
     }
@@ -143,7 +143,7 @@ class CounselController(
         @RequestParam(required = false) userId: String?
     ): ResponseEntity<ResponseDto.Success<CounselDto.FindCounselorUserRelationshipsResponse>> {
         val request = CounselDtoMapper.toFindCounselorUserRelationshipsRequest(userId)
-        val relationships = runBlocking { counselUseCase.findCounselorUserRelationships(request) }
+        val relationships = counselUseCase.findCounselorUserRelationships(request)
         val response = CounselDtoMapper.toFindCounselorUserRelationshipsResponse(relationships)
         return ResponseDtoUtil.okResponse(response, "관계 조회 성공")
     }

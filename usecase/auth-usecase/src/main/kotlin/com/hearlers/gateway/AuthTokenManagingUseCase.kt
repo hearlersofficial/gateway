@@ -5,7 +5,7 @@ import com.hearlers.api.proto.v1.model.Authority
 import com.hearlers.gateway.auth.model.AuthInfo.TokenInfo
 
 interface AuthTokenManagingUseCase {
-    suspend fun generateToken(
+    fun generateToken(
         userId: String,
         authChannel: AuthChannel,
         withRefreshToken: Boolean,
@@ -16,5 +16,5 @@ interface AuthTokenManagingUseCase {
     fun getAuthChannelFromToken(token: String): AuthChannel
     fun getAuthorityFromToken(token: String): Authority
     fun validateToken(token: String): Boolean
-    suspend fun refreshToken(userId: String, authChannel: AuthChannel, refreshToken: String): TokenInfo
+    fun refreshToken(userId: String, authChannel: AuthChannel, refreshToken: String): TokenInfo
 }

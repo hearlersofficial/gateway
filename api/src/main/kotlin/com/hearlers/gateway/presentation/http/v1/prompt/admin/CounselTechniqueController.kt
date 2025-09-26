@@ -15,7 +15,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
-import kotlinx.coroutines.runBlocking
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -48,10 +47,10 @@ class CounselTechniqueController(
         val findCounselTechniqueByIdRequest = FindCounselTechniqueByIdRequest.newBuilder()
             .setCounselTechniqueId(counselTechniqueId)
             .build()
-        val counselTechnique = runBlocking {
+        val counselTechnique =
             counselTechniqueUseCase.findCounselTechniqueById(findCounselTechniqueByIdRequest)
                 ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        }
+
         val response = CounselTechniqueDto.FindByIdResponse(CounselTechniqueMapper.convertProtoToResponseModel(counselTechnique))
         return ResponseDtoUtil.okResponse(response, "상담 기법 조회 성공")
     }
@@ -76,7 +75,7 @@ class CounselTechniqueController(
         val request = CounselTechniqueMapper.convertFindRequestToProto(requestDto)
         print(request)
         print(requestDto)
-        val counselTechniques = runBlocking { counselTechniqueUseCase.findCounselTechniques(request) }
+        val counselTechniques = counselTechniqueUseCase.findCounselTechniques(request)
         val response = CounselTechniqueDto.FindResponse(counselTechniques.map { CounselTechniqueMapper.convertProtoToResponseModel(it) })
 
         return ResponseDtoUtil.okResponse(response, "상담 기법 목록 조회 성공")
@@ -101,7 +100,7 @@ class CounselTechniqueController(
         @RequestBody request: @Valid CounselTechniqueDto.CreateRequest
     ): ResponseEntity<ResponseDto.Success<CounselTechniqueDto.CreateResponse>> {
         val createCounselTechniqueRequest = CounselTechniqueMapper.convertCreateRequestToProto(request)
-        val counselTechnique = runBlocking { counselTechniqueUseCase.createCounselTechnique(createCounselTechniqueRequest) }
+        val counselTechnique = counselTechniqueUseCase.createCounselTechnique(createCounselTechniqueRequest)
         val response = CounselTechniqueDto.CreateResponse(CounselTechniqueMapper.convertProtoToResponseModel(counselTechnique))
 
         return ResponseDtoUtil.createdResponse(response, "상담 기법 생성 성공")
@@ -132,7 +131,7 @@ class CounselTechniqueController(
     ): ResponseEntity<ResponseDto.Success<CounselTechniqueDto.UpdateResponse>> {
         val updateCounselTechniqueRequest =
             CounselTechniqueMapper.convertUpdateRequestToProto(counselTechniqueId, request)
-        val counselTechnique = runBlocking { counselTechniqueUseCase.updateCounselTechnique(updateCounselTechniqueRequest) }
+        val counselTechnique = counselTechniqueUseCase.updateCounselTechnique(updateCounselTechniqueRequest)
         val response = CounselTechniqueDto.UpdateResponse(CounselTechniqueMapper.convertProtoToResponseModel(counselTechnique))
 
         return ResponseDtoUtil.okResponse(response, "상담 기법 업데이트 성공")
