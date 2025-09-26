@@ -55,12 +55,12 @@ class JwtAuthTokenProviderAdapter(
             true
         } catch (e: Exception) {
             when (e) {
-                is SecurityException, is MalformedJwtException -> logger.debug("Invalid JWT Token", e)
-                is ExpiredJwtException -> logger.debug("Expired JWT Token", e)
-                is UnsupportedJwtException -> logger.debug("Unsupported JWT Token", e)
-                is IllegalArgumentException -> logger.debug("JWT claims string is empty.", e)
+                is SecurityException, is MalformedJwtException -> logger.debug(e) { "Invalid JWT Token" }
+                is ExpiredJwtException -> logger.debug(e) {"Expired JWT Token" }
+                is UnsupportedJwtException -> logger.debug(e) { "Unsupported JWT Token" }
+                is IllegalArgumentException -> logger.debug(e) { "JWT claims string is empty." }
                 else -> {
-                    logger.error("An unexpected error occurred during token validation", e)
+                    logger.error(e) { "An unexpected error occurred during token validation" }
                 }
             }
             false
@@ -76,10 +76,10 @@ class JwtAuthTokenProviderAdapter(
             claims.expiration.before(Date())
         } catch (e: Exception) {
             when (e) {
-                is ExpiredJwtException -> logger.debug("Token has already expired.", e)
+                is ExpiredJwtException -> logger.debug(e) { "Token has already expired." }
                 is SecurityException, is MalformedJwtException, is UnsupportedJwtException, is IllegalArgumentException ->
-                    logger.debug("Token validation failed, considering as expired.", e)
-                else -> logger.error("An unexpected error occurred during token expiration check", e)
+                    logger.debug(e) {"Token validation failed, considering as expired." }
+                else -> logger.error(e) { "An unexpected error occurred during token expiration check" }
             }
             // 예외 발생 시 만료된 것으로 간주
             true
