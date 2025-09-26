@@ -21,7 +21,7 @@ class KakaoOAuthProviderClient : OAuthProviderClient {
     private val kakaoAuthClient = WebClient.create("https://kauth.kakao.com")
     private val kakaoApiClient = WebClient.create("https://kapi.kakao.com")
 
-    override suspend fun getToken(code: String, state: String, clientId: String): AuthInfo.TokenInfo {
+    override fun getToken(code: String, state: String, clientId: String): AuthInfo.TokenInfo {
         logger.debug { "Requesting Kakao token with code: $code" }
 
         val response = kakaoAuthClient.post()
@@ -35,17 +35,16 @@ class KakaoOAuthProviderClient : OAuthProviderClient {
             }
             .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
             .retrieve()
-            .onStatus(HttpStatusCode::isError) { response ->
-                response.bodyToMono<String>()
-                    .flatMap { body -> Mono.error(OauthProcessingErrorException("Kakao token error: $body")) }
-            }
-            .awaitBody<KakaoDto.KakaoTokenResponse>()
+            .bodyToMono<KakaoDto.KakaoTokenResponse>() // 1. Mono<T> 타입으로 변환
+            .block() // 2. 결과가 올 때까지 현재 스레드를 블로킹
+            ?: throw OauthProcessingErrorException("Failed to get Kakao user info or response was empty.") // 3. null일 경우 예외 처리
+
 
         logger.info { "Received Kakao token response." }
         return response.toTokenInfo()
     }
 
-    override suspend fun getOAuthUser(accessToken: String): AuthInfo.OAuthUserInfo {
+    override fun getOAuthUser(accessToken: String): AuthInfo.OAuthUserInfo {
         logger.debug { "Requesting Kakao user info." }
 
         val response = kakaoApiClient.get()
@@ -53,11 +52,10 @@ class KakaoOAuthProviderClient : OAuthProviderClient {
             .header(HttpHeaders.AUTHORIZATION, "Bearer $accessToken")
             .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
             .retrieve()
-            .onStatus(HttpStatusCode::isError) { response ->
-                response.bodyToMono<String>()
-                    .flatMap { body -> Mono.error(OauthProcessingErrorException("Kakao user info error: $body")) }
-            }
-            .awaitBody<KakaoDto.KakaoAccountInformation>()
+            .bodyToMono<KakaoDto.KakaoAccountInformation>() // 1. Mono<T> 타입으로 변환
+            .block() // 2. 결과가 올 때까지 현재 스레드를 블로킹
+            ?: throw OauthProcessingErrorException("Failed to get Kakao user info or response was empty.") // 3. null일 경우 예외 처리
+
 
         logger.info { "Received Kakao user info for user ID: ${response.id}" }
         return response.toOAuthUserInfo()

@@ -1,4 +1,4 @@
-package com.hearlers.com.hearlers.gateway.port
+package com.hearlers.gateway.port
 
 import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.Authority

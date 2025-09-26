@@ -4,7 +4,7 @@ import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.Authority
 import com.hearlers.api.proto.v1.service.SaveRefreshTokenRequest
 import com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest
-import com.hearlers.com.hearlers.gateway.port.AuthTokenProviderPort
+import com.hearlers.gateway.port.AuthTokenProviderPort
 import com.hearlers.gateway.auth.exception.TokenInvalidException
 import com.hearlers.gateway.auth.model.AuthInfo
 import com.hearlers.gateway.port.AuthTokenStoragePort
@@ -21,7 +21,7 @@ class AuthTokenManagingService(
     private val tokenProviderPort: AuthTokenProviderPort
 ) : AuthTokenManagingUseCase {
 
-    override suspend fun generateToken(userId: String, authChannel: AuthChannel, withRefreshToken: Boolean, authority: Authority): AuthInfo.TokenInfo {
+    override fun generateToken(userId: String, authChannel: AuthChannel, withRefreshToken: Boolean, authority: Authority): AuthInfo.TokenInfo {
         val tokenInfo = createToken(userId, authChannel, withRefreshToken, authority)
         if (withRefreshToken) {
             authTokenStoragePort.saveRefreshToken(
@@ -47,7 +47,7 @@ class AuthTokenManagingService(
     override fun validateToken(token: String): Boolean =
         tokenProviderPort.validateToken(token)
 
-    override suspend fun refreshToken(userId: String, authChannel: AuthChannel, refreshToken: String): AuthInfo.TokenInfo {
+    override fun refreshToken(userId: String, authChannel: AuthChannel, refreshToken: String): AuthInfo.TokenInfo {
         // 리프레시 토큰 존재 여부 확인
         val isTokenExist = authTokenStoragePort.verifyRefreshToken(
             VerifyRefreshTokenRequest.newBuilder()

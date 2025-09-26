@@ -6,6 +6,6 @@ import com.hearlers.api.proto.v1.service.VerifyRefreshTokenRequest
 import com.hearlers.api.proto.v1.service.VerifyRefreshTokenResponse
 
 interface AuthTokenStoragePort {
-    suspend fun saveRefreshToken(request: SaveRefreshTokenRequest): SaveRefreshTokenResponse
-    suspend fun verifyRefreshToken(request: VerifyRefreshTokenRequest): VerifyRefreshTokenResponse
+    fun saveRefreshToken(request: SaveRefreshTokenRequest): SaveRefreshTokenResponse
+    fun verifyRefreshToken(request: VerifyRefreshTokenRequest): VerifyRefreshTokenResponse
 }

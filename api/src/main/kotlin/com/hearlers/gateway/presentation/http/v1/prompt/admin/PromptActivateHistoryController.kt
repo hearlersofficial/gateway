@@ -13,7 +13,6 @@ import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
-import kotlinx.coroutines.runBlocking
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -45,9 +44,9 @@ class PromptActivateHistoryController(
                 }
                 .build()
 
-        val promptActivateHistories = runBlocking {
+        val promptActivateHistories =
             promptVersionUseCase.findPromptActivateHistories(findPromptActivateHistoriesRequest)
-        }
+
         val response = PromptActivateHistoryDto.FindResponse(promptActivateHistories.map { PromptActivateHistoryMapper.convertProtoToResponseModel(it) })
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 활성화 히스토리 목록 조회 성공")

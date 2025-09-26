@@ -15,7 +15,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
-import kotlinx.coroutines.runBlocking
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -48,10 +47,10 @@ class PersonaPromptController(
         val findPersonaPromptByIdRequest = FindPersonaPromptByIdRequest.newBuilder()
             .setPersonaPromptId(personaPromptId)
             .build()
-        val personaPrompt = runBlocking {
+        val personaPrompt =
             promptUseCase.findPersonaPromptById(findPersonaPromptByIdRequest)
                 ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        }
+
         val response = PersonaPromptDto.FindByIdResponse(PersonaPromptMapper.convertProtoToResponseModel(personaPrompt))
 
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 조회 성공")
@@ -73,9 +72,9 @@ class PersonaPromptController(
         @ParameterObject @ModelAttribute requestDto: @Valid PersonaPromptDto.FindRequest
     ): ResponseEntity<ResponseDto.Success<PersonaPromptDto.FindResponse>> {
         val request = PersonaPromptMapper.convertFindRequestToProto(requestDto)
-        val personaPrompts = runBlocking {
+        val personaPrompts =
             promptUseCase.findPersonaPrompts(request)
-        }
+
         val response = PersonaPromptDto.FindResponse(personaPrompts.map { PersonaPromptMapper.convertProtoToResponseModel(it) })
 
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 전체 조회 성공")
@@ -94,9 +93,9 @@ class PersonaPromptController(
         @RequestBody request: @Valid PersonaPromptDto.UpdateRequest
     ): ResponseEntity<ResponseDto.Success<PersonaPromptDto.UpdateResponse>> {
         val updatePersonaPromptRequest = PersonaPromptMapper.convertUpdateRequestToProto(request)
-        val personaPrompt = runBlocking {
+        val personaPrompt =
             promptUseCase.updatePersonaPrompt(updatePersonaPromptRequest)
-        }
+
         val response = PersonaPromptDto.UpdateResponse(PersonaPromptMapper.convertProtoToResponseModel(personaPrompt))
 
         return ResponseDtoUtil.okResponse(response, "페르소나 프롬프트 업데이트 성공")

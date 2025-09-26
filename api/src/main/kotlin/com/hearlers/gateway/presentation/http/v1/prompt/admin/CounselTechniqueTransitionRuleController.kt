@@ -1,7 +1,9 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin
 
+import com.hearlers.api.proto.v1.model.counselTechniqueTransitionRule
 import com.hearlers.api.proto.v1.service.DeleteCounselTechniqueTransitionRuleRequest
 import com.hearlers.api.proto.v1.service.FindCounselTechniqueTransitionRuleByIdRequest
+import com.hearlers.api.proto.v1.service.deleteCounselTechniqueTransitionRuleResponse
 import com.hearlers.gateway.CounselTechniqueUseCase
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.CounselTechniqueTransitionRuleDto
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.mapper.CounselTechniqueTransitionRuleMapper
@@ -16,7 +18,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
-import kotlinx.coroutines.runBlocking
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -44,11 +45,10 @@ class CounselTechniqueTransitionRuleController(
             FindCounselTechniqueTransitionRuleByIdRequest.newBuilder()
                 .setCounselTechniqueTransitionRuleId(counselTechniqueTransitionRuleId)
                 .build()
-        val counselTechniqueTransitionRule = runBlocking {
+        val counselTechniqueTransitionRule =
             counselTechniqueUseCase.findCounselTechniqueTransitionRuleById(
                 findCounselTechniqueTransitionRuleByIdRequest
             ) ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        }
         val response = CounselTechniqueTransitionRuleDto.FindByIdResponse(
             CounselTechniqueTransitionRuleMapper.convertProtoToResponseModel(counselTechniqueTransitionRule)
         )
@@ -74,9 +74,9 @@ class CounselTechniqueTransitionRuleController(
         @ParameterObject @ModelAttribute requestDto: @Valid CounselTechniqueTransitionRuleDto.FindRequest
     ): ResponseEntity<ResponseDto.Success<CounselTechniqueTransitionRuleDto.FindResponse>> {
         val request = CounselTechniqueTransitionRuleMapper.convertFindRequestToProto(requestDto)
-        val counselTechniqueTransitionRules = runBlocking {
+        val counselTechniqueTransitionRules =
             counselTechniqueUseCase.findCounselTechniqueTransitionRules(request)
-        }
+
         val response = CounselTechniqueTransitionRuleDto.FindResponse(
             counselTechniqueTransitionRules.map {
                 CounselTechniqueTransitionRuleMapper.convertProtoToResponseModel(it)
@@ -102,9 +102,9 @@ class CounselTechniqueTransitionRuleController(
         @RequestBody request: @Valid CounselTechniqueTransitionRuleDto.CreateRequest
     ): ResponseEntity<ResponseDto.Success<CounselTechniqueTransitionRuleDto.CreateResponse>> {
         val createCounselTechniqueTransitionRuleRequest = CounselTechniqueTransitionRuleMapper.convertCreateRequestToProto(request)
-        val counselTechniqueTransitionRule = runBlocking {
+        val counselTechniqueTransitionRule =
             counselTechniqueUseCase.createCounselTechniqueTransitionRule(createCounselTechniqueTransitionRuleRequest)
-        }
+
         val response = CounselTechniqueTransitionRuleDto.CreateResponse(CounselTechniqueTransitionRuleMapper.convertProtoToResponseModel(counselTechniqueTransitionRule))
 
         return ResponseDtoUtil.okResponse(
@@ -128,9 +128,9 @@ class CounselTechniqueTransitionRuleController(
     ): ResponseEntity<ResponseDto.Success<CounselTechniqueTransitionRuleDto.UpdateResponse>> {
         val updateCounselTechniqueTransitionRuleRequest =
             CounselTechniqueTransitionRuleMapper.convertUpdateRequestToProto(counselTechniqueTransitionRuleId, request)
-        val counselTechniqueTransitionRule = runBlocking {
+        val counselTechniqueTransitionRule =
             counselTechniqueUseCase.updateCounselTechniqueTransitionRule(updateCounselTechniqueTransitionRuleRequest)
-        }
+
         val response = CounselTechniqueTransitionRuleDto.UpdateResponse(CounselTechniqueTransitionRuleMapper.convertProtoToResponseModel(counselTechniqueTransitionRule))
 
         return ResponseDtoUtil.okResponse(
@@ -155,9 +155,9 @@ class CounselTechniqueTransitionRuleController(
             DeleteCounselTechniqueTransitionRuleRequest.newBuilder()
                 .setCounselTechniqueTransitionRuleId(counselTechniqueTransitionRuleId)
                 .build()
-        val deleteCounselTechniqueTransitionRuleResponse = runBlocking {
+        val deleteCounselTechniqueTransitionRuleResponse =
             counselTechniqueUseCase.deleteCounselTechniqueTransitionRule(deleteCounselTechniqueTransitionRuleRequest)
-        }
+
         val response = CounselTechniqueTransitionRuleDto.DeleteResponse(deleteCounselTechniqueTransitionRuleResponse)
 
         return ResponseDtoUtil.okResponse(response, "상담 기법 전환 규칙 삭제 성공")

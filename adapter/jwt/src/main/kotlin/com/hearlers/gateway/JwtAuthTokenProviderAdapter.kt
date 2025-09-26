@@ -2,7 +2,7 @@ package com.hearlers.gateway
 
 import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.Authority
-import com.hearlers.com.hearlers.gateway.port.AuthTokenProviderPort
+import com.hearlers.gateway.port.AuthTokenProviderPort
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.jsonwebtoken.*
 import io.jsonwebtoken.io.Decoders

@@ -2,7 +2,7 @@ package com.hearlers.gateway.auth
 
 import com.hearlers.gateway.DefaultObjectMapper
 import com.hearlers.api.proto.v1.model.AuthUser
-import com.hearlers.com.hearlers.gateway.port.AuthCachePort
+import com.hearlers.gateway.port.AuthCachePort
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Component
 

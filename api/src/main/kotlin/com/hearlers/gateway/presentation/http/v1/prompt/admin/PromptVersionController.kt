@@ -1,5 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin
 
+import com.hearlers.api.proto.v1.model.promptVersion
 import com.hearlers.api.proto.v1.service.*
 import com.hearlers.gateway.PromptVersionUseCase
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.PromptVersionDto
@@ -15,7 +16,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
-import kotlinx.coroutines.runBlocking
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -42,9 +42,9 @@ class PromptVersionController(
     fun getPromptVersions(
         @ParameterObject request: @Valid PromptVersionDto.FindRequest
     ): ResponseEntity<ResponseDto.Success<PromptVersionDto.FindResponse>> {
-        val promptVersions = runBlocking {
+        val promptVersions =
             promptVersionUseCase.findPromptVersions(PromptVersionMapper.convertFindRequestToProto(request))
-        }
+
         val response = PromptVersionDto.FindResponse(
             promptVersions.map { PromptVersionMapper.convertProtoToResponseModel(it) },
         )
@@ -70,13 +70,13 @@ class PromptVersionController(
     fun getPromptVersionById(
         @PathVariable(name = "prompt-version-id", required = true) promptVersionId: String
     ): ResponseEntity<ResponseDto.Success<PromptVersionDto.FindByIdResponse>> {
-        val promptVersion = runBlocking {
+        val promptVersion =
             promptVersionUseCase.findPromptVersionById(
                 FindPromptVersionByIdRequest.newBuilder()
                     .setPromptVersionId(promptVersionId)
                     .build()
             )
-        } ?: throw HttpException(HttpResultCode.NOT_FOUND)
+         ?: throw HttpException(HttpResultCode.NOT_FOUND)
         val response = PromptVersionDto.FindByIdResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 조회 성공")
@@ -100,9 +100,8 @@ class PromptVersionController(
         @RequestBody request: @Valid PromptVersionDto.UpdateRequest
     ): ResponseEntity<ResponseDto.Success<PromptVersionDto.UpdateResponse>> {
         val updatePromptVersionRequest = PromptVersionMapper.convertUpdateRequestToProto(promptVersionId, request)
-        val promptVersion = runBlocking {
-            promptVersionUseCase.updatePromptVersion(updatePromptVersionRequest)
-        }
+        val promptVersion = promptVersionUseCase.updatePromptVersion(updatePromptVersionRequest)
+
         val response = PromptVersionDto.UpdateResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 수정 성공")
@@ -126,9 +125,8 @@ class PromptVersionController(
         val deletePromptVersionRequest = DeletePromptVersionsRequest.newBuilder()
             .addPromptVersionIds(promptVersionId)
             .build()
-        val isSuccess : Boolean = runBlocking {
-            promptVersionUseCase.deletePromptVersion(deletePromptVersionRequest)
-        }
+        val isSuccess : Boolean = promptVersionUseCase.deletePromptVersion(deletePromptVersionRequest)
+
         val response = PromptVersionDto.DeleteResponse(isSuccess)
         return ResponseDtoUtil.okResponse(
             response,
@@ -157,9 +155,8 @@ class PromptVersionController(
     )
     fun getActiveVersion(): ResponseEntity<ResponseDto.Success<PromptVersionDto.FindActiveVersionResponse>> {
         val findActiveVersionRequest = FindActiveVersionRequest.newBuilder().build()
-        val promptVersion = runBlocking {
-            promptVersionUseCase.findActiveVersion(findActiveVersionRequest)
-        }
+        val promptVersion = promptVersionUseCase.findActiveVersion(findActiveVersionRequest)
+
         val response = PromptVersionDto.FindActiveVersionResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
         return ResponseDtoUtil.okResponse(response, "활성화된 프롬프트 버전 조회 성공")
     }
@@ -181,9 +178,8 @@ class PromptVersionController(
     )
     fun getTemporaryVersion(): ResponseEntity<ResponseDto.Success<PromptVersionDto.FindTemporaryVersionResponse>> {
         val request = FindTemporaryVersionRequest.newBuilder().build()
-        val promptVersion = runBlocking {
-            promptVersionUseCase.findTemporaryVersion(request)
-        }
+        val promptVersion = promptVersionUseCase.findTemporaryVersion(request)
+
         val response = PromptVersionDto.FindTemporaryVersionResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
 
         return ResponseDtoUtil.okResponse(response, "임시 프롬프트 버전 조회 성공")
@@ -211,9 +207,8 @@ class PromptVersionController(
         val request = LoadExistingPromptVersionRequest.newBuilder()
             .setPromptVersionId(promptVersionId)
             .build()
-        val promptVersion = runBlocking {
-            promptVersionUseCase.loadExistingPromptVersion(request)
-        }
+        val promptVersion = promptVersionUseCase.loadExistingPromptVersion(request)
+
         val response = PromptVersionDto.LoadExistingPromptVersionResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
 
         return ResponseDtoUtil.okResponse(response, "기존 프롬프트 버전 로드 성공")
@@ -237,9 +232,8 @@ class PromptVersionController(
         @RequestBody request: @Valid PromptVersionDto.SaveTemporaryVersionRequest
     ): ResponseEntity<ResponseDto.Success<PromptVersionDto.SaveTemporaryVersionResponse>> {
         val saveTemporaryVersionRequest = PromptVersionMapper.convertSaveTemporaryVersionRequestToProto(request)
-        val promptVersion = runBlocking {
-            promptVersionUseCase.saveTemporaryVersion(saveTemporaryVersionRequest)
-        }
+        val promptVersion = promptVersionUseCase.saveTemporaryVersion(saveTemporaryVersionRequest)
+
         val response = PromptVersionDto.SaveTemporaryVersionResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
 
         return ResponseDtoUtil.okResponse(response, "임시 버전 저장 성공")
@@ -270,9 +264,8 @@ class PromptVersionController(
         val activatePromptVersionRequest = ActivatePromptVersionRequest.newBuilder()
             .setPromptVersionId(promptVersionId)
             .build()
-        val promptVersion = runBlocking {
-            promptVersionUseCase.activatePromptVersion(activatePromptVersionRequest)
-        }
+        val promptVersion = promptVersionUseCase.activatePromptVersion(activatePromptVersionRequest)
+
         val response = PromptVersionDto.ActivatePromptVersionResponse(PromptVersionMapper.convertProtoToResponseModel(promptVersion))
 
         return ResponseDtoUtil.okResponse(response, "프롬프트 버전 활성화 성공")

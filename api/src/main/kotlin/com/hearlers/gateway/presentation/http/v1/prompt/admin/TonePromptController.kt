@@ -1,5 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.prompt.admin
 
+import com.hearlers.api.proto.v1.model.tonePrompt
 import com.hearlers.api.proto.v1.service.FindTonePromptByIdRequest
 import com.hearlers.gateway.PromptUseCase
 import com.hearlers.gateway.presentation.http.v1.prompt.admin.dto.TonePromptDto
@@ -48,10 +49,9 @@ class TonePromptController(
         val findTonePromptByIdRequest = FindTonePromptByIdRequest.newBuilder()
             .setTonePromptId(tonePromptId)
             .build()
-        val tonePrompt = runBlocking {
-            promptUseCase.findTonePromptById(findTonePromptByIdRequest)
+        val tonePrompt = promptUseCase.findTonePromptById(findTonePromptByIdRequest)
                 ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        }
+
         val response = TonePromptDto.FindByIdResponse(TonePromptMapper.convertProtoToResponseModel(tonePrompt))
 
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 조회 성공")
@@ -73,9 +73,8 @@ class TonePromptController(
         @ParameterObject @ModelAttribute requestDto: @Valid TonePromptDto.FindRequest
     ): ResponseEntity<ResponseDto.Success<TonePromptDto.FindResponse>> {
         val request = TonePromptMapper.convertFindRequestToProto(requestDto)
-        val tonePrompts = runBlocking {
-            promptUseCase.findTonePrompts(request)
-        }
+        val tonePrompts = promptUseCase.findTonePrompts(request)
+
         val response = TonePromptDto.FindResponse(tonePrompts.map { TonePromptMapper.convertProtoToResponseModel(it) })
 
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 전체 조회 성공")
@@ -97,9 +96,8 @@ class TonePromptController(
         @RequestBody request: @Valid TonePromptDto.UpdateRequest
     ): ResponseEntity<ResponseDto.Success<TonePromptDto.UpdateResponse>> {
         val updateTonePromptRequest = TonePromptMapper.convertUpdateRequestToProto(request)
-        val tonePrompt = runBlocking {
-            promptUseCase.updateTonePrompt(updateTonePromptRequest)
-        }
+        val tonePrompt = promptUseCase.updateTonePrompt(updateTonePromptRequest)
+
         val response = TonePromptDto.UpdateResponse(TonePromptMapper.convertProtoToResponseModel(tonePrompt))
 
         return ResponseDtoUtil.okResponse(response, "톤 프롬프트 업데이트 성공")

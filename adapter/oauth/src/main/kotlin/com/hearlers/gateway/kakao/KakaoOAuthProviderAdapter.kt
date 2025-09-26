@@ -34,7 +34,7 @@ class KakaoOAuthProviderAdapter(
                 "&state=$state"
     }
 
-    override suspend fun getUserInfo(code: String, state: String): AuthInfo.OAuthUserInfo {
+    override fun getUserInfo(code: String, state: String): AuthInfo.OAuthUserInfo {
         val tokenInfo = kakaoOAuthProviderClient.getToken(code, state, kakaoProperties.clientId)
         // accessToken이 nullable일 수 있으므로 non-null 단언 또는 안전 호출 필요
         return kakaoOAuthProviderClient.getOAuthUser(tokenInfo.accessToken!!)

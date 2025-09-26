@@ -9,6 +9,7 @@ import com.hearlers.api.proto.v1.service.InitializeUserRequest
 import com.hearlers.api.proto.v1.service.InitializeUserResponse
 import com.hearlers.api.proto.v1.service.UpdateAuthorityRequest
 import com.hearlers.api.proto.v1.service.UpdateAuthorityResponse
+import com.hearlers.api.proto.v1.service.UserServiceGrpc
 import com.hearlers.api.proto.v1.service.UserServiceGrpcKt
 import com.hearlers.gateway.auth.exception.AuthUserNotFoundException
 import com.hearlers.gateway.port.AuthUserPort
@@ -19,16 +20,16 @@ import org.springframework.stereotype.Component
 
 @Component
 class GrpcAuthUserAdapter(
-    private val userServiceCoroutineStub: UserServiceGrpcKt.UserServiceCoroutineStub
+    private val stub: UserServiceGrpc.UserServiceBlockingStub
 ) : AuthUserPort {
 
-    override suspend fun getAuthUser(uniqueId: String, authChannel: AuthChannel): AuthUser {
+    override fun getAuthUser(uniqueId: String, authChannel: AuthChannel): AuthUser {
         try {
             val request = FindAuthUserByChannelInfoRequest.newBuilder()
                 .setUniqueId(uniqueId)
                 .setAuthChannel(authChannel)
                 .build()
-            val response = userServiceCoroutineStub.findAuthUserByChannelInfo(request)
+            val response = stub.findAuthUserByChannelInfo(request)
             return response.authUser
         } catch (e: StatusRuntimeException) {
             if (e.status.code == Status.Code.NOT_FOUND) {
@@ -39,15 +40,15 @@ class GrpcAuthUserAdapter(
         }
     }
 
-    override suspend fun initializeUser(request: InitializeUserRequest): InitializeUserResponse {
-        return userServiceCoroutineStub.initializeUser(request)
+    override fun initializeUser(request: InitializeUserRequest): InitializeUserResponse {
+        return stub.initializeUser(request)
     }
 
-    override suspend fun connectAuthChannel(request: ConnectAuthChannelRequest): ConnectAuthChannelResponse {
-        return userServiceCoroutineStub.connectAuthChannel(request)
+    override fun connectAuthChannel(request: ConnectAuthChannelRequest): ConnectAuthChannelResponse {
+        return stub.connectAuthChannel(request)
     }
 
-    override suspend fun updateAuthority(request: UpdateAuthorityRequest): UpdateAuthorityResponse {
-        return userServiceCoroutineStub.updateAuthority(request)
+    override fun updateAuthority(request: UpdateAuthorityRequest): UpdateAuthorityResponse {
+        return stub.updateAuthority(request)
     }
 }

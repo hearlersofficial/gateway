@@ -15,7 +15,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
-import kotlinx.coroutines.runBlocking
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -42,10 +41,9 @@ class UserController(
         @RequestAttribute(value = "userId", required = true) userId: String
     ): ResponseEntity<ResponseDto.Success<UserDto.FindMyUserResponse>> {
         val findUserRequest = FindUserByUserIdRequest.newBuilder().setUserId(userId).build()
-        val user = runBlocking {
-            userUseCase.findUserByUserId(findUserRequest)
+        val user = userUseCase.findUserByUserId(findUserRequest)
                 ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        }
+
         val response = UserDtoMapper.toFindMyUserResponse(user)
         return ResponseDtoUtil.okResponse(response, "내 정보 조회 성공")
     }
@@ -72,9 +70,8 @@ class UserController(
         @Valid @RequestBody request: UserDto.UpdateMyUserRequest
     ): ResponseEntity<ResponseDto.Success<UserDto.UpdateMyUserResponse>> {
         val updateUserRequest = UserDtoMapper.toUpdateUserRequest(userId, request)
-        val user = runBlocking {
-            userUseCase.updateUser(updateUserRequest)
-        }
+        val user = userUseCase.updateUser(updateUserRequest)
+
         val response = UserDtoMapper.toUpdateMyUserResponse(user)
         return ResponseDtoUtil.okResponse(response, "프로필 업데이트 성공")
     }

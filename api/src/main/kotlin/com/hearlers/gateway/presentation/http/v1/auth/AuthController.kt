@@ -3,6 +3,7 @@ package com.hearlers.gateway.presentation.http.v1.auth
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.hearlers.api.proto.v1.model.AuthChannel
 import com.hearlers.api.proto.v1.model.Authority
+import com.hearlers.api.proto.v1.model.authUser
 import com.hearlers.api.proto.v1.service.InitializeUserRequest
 import com.hearlers.gateway.AuthUserUseCase
 import com.hearlers.gateway.JwtProperties
@@ -24,9 +25,7 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.servlet.http.Cookie
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
-import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.http.ResponseCookie
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -61,15 +60,13 @@ class AuthController(
     ])
     @PostMapping("/v1/auth/initiate")
     fun createUser(request: HttpServletRequest, response: HttpServletResponse): ResponseEntity<ResponseDto.Success<AuthDto.TokenResponse>> {
-        // 퍼사드를 통해 유저 생성 및 토큰 발급
-        val initializeUserResponse = runBlocking {
+        val initializeUserResponse =
             authUserUseCase.initializeUser(InitializeUserRequest.newBuilder().build())
-        }
         val userId = initializeUserResponse.user.id
         val authChannel = initializeUserResponse.authUser.authChannel
-        val tokenInfo = runBlocking {
+        val tokenInfo =
             tokenManagingUseCase.generateToken(userId, authChannel, false, Authority.AUTHORITY_USER)
-        }
+
 
         val domain = extractDomainFromOrigin(request.getHeader("Origin"))
         
@@ -123,12 +120,12 @@ class AuthController(
         val userId = stateInfo.userId
         val clientRedirectUrl = stateInfo.redirectUrl
 
-        val authUser = runBlocking {
+        val authUser =
             authUserUseCase.oauthLogin(AuthChannel.AUTH_CHANNEL_KAKAO, code, encodedState, userId)
-        }
-        val tokenInfo = runBlocking {
+
+        val tokenInfo =
             tokenManagingUseCase.generateToken(authUser.userId, authUser.authChannel, true, authUser.authority)
-        }
+
 
         val domain = extractDomainFromOrigin(clientRedirectUrl)
         // 발급받은 토큰 쿠키에 저장
@@ -155,9 +152,9 @@ class AuthController(
         response: HttpServletResponse
     ): ResponseEntity<ResponseDto.Success<AuthDto.TokenResponse>> {
         val refreshToken = extractCookieValue(request, REFRESH_TOKEN_COOKIE)
-        val newTokenInfo = runBlocking {
+        val newTokenInfo =
             tokenManagingUseCase.refreshToken(userId, authChannel, refreshToken)
-        }
+
 
         val domain = extractDomainFromOrigin(request.getHeader("Origin"))
 
