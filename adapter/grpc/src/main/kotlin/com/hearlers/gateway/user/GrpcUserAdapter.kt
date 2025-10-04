@@ -1,6 +1,7 @@
 package com.hearlers.gateway.user
 
 import com.hearlers.api.proto.v1.model.User
+import com.hearlers.api.proto.v1.model.UserTracking
 import com.hearlers.api.proto.v1.service.*
 import com.hearlers.gateway.port.UserPort
 import com.hearlers.gateway.counsel.exception.NoRemainingTokenException
@@ -35,4 +36,11 @@ class GrpcUserAdapter(
         }
     }
 
+    override fun getUserTrackingByUserId(userId: String): UserTracking {
+        return stub.findTrackingByUserId(findTrackingByUserIdRequest { this.userId = userId }).userTracking
+    }
+
+    override fun upsertUserTracking(request: UpdateTrackingRequest): UserTracking {
+        return stub.updateTracking(request).userTracking
+    }
 }

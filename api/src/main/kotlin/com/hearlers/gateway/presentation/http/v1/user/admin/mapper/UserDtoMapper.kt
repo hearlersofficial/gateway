@@ -2,6 +2,7 @@ package com.hearlers.gateway.presentation.http.v1.user.admin.mapper
 
 import com.hearlers.api.proto.v1.model.User
 import com.hearlers.api.proto.v1.model.UserProfile
+import com.hearlers.api.proto.v1.model.UserTracking
 import com.hearlers.api.proto.v1.service.FindUserByUserIdRequest
 import com.hearlers.gateway.presentation.http.v1.user.admin.dto.UserDto
 
@@ -27,11 +28,13 @@ object UserDtoMapper {
         )
     }
 
-    fun toFindUserByUserIdRequest(userId: String): FindUserByUserIdRequest {
-        return FindUserByUserIdRequest.newBuilder().setUserId(userId).build()
+    fun of(userTracking: UserTracking): UserDto.UserTracking {
+        return UserDto.UserTracking(
+            userTracking.hasSeenIntroCutscene,
+            userTracking.createdAt,
+            userTracking.updatedAt,
+            userTracking.deletedAt
+        )
     }
 
-    fun toFindUserByIdResponse(user: User): UserDto.FindUserByIdResponse {
-        return UserDto.FindUserByIdResponse(user = of(user))
-    }
 }

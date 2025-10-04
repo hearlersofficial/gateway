@@ -1,6 +1,8 @@
 package com.hearlers.gateway.presentation.http.v1.user.app
 
+import com.hearlers.api.proto.v1.model.userTracking
 import com.hearlers.api.proto.v1.service.FindUserByUserIdRequest
+import com.hearlers.api.proto.v1.service.updateUserRequest
 import com.hearlers.gateway.UserUseCase
 import com.hearlers.gateway.presentation.http.v1.user.app.dto.UserDto
 import com.hearlers.gateway.presentation.http.v1.user.app.mapper.UserDtoMapper
@@ -75,4 +77,35 @@ class UserController(
         val response = UserDtoMapper.toUpdateMyUserResponse(user)
         return ResponseDtoUtil.okResponse(response, "프로필 업데이트 성공")
     }
+
+
+    @Operation(summary = "내 트래킹 조회", description = "유저 트래킹을 단건 조회합니다. 존재하지 않으면 기본 값으로 생성됩니다.")
+    @ApiResponses(
+        value = [
+            ApiResponse(responseCode = "200", description = "유저 조회 성공"),
+            ApiResponse(
+                responseCode = "404",
+                description = "유저를 찾을 수 없음",
+                content = [Content(schema = Schema(implementation = ResponseDto.Error::class))]
+            )
+        ]
+    )
+    @GetMapping("/me/tracking")
+    fun getUserTracking(
+        @RequestAttribute(value = "userId", required = true) userId: String,
+    ): ResponseEntity<ResponseDto.Success<UserDto.UserTracking>> {
+        val userTracking = userUseCase.getUserTrackingByUserId(userId)
+        return ResponseDtoUtil.okResponse(UserDtoMapper.of(userTracking), "유저 조회 성공")
+    }
+
+    @PutMapping("/me/tracking")
+    fun upsertMyTracking(
+        @RequestAttribute(value = "userId", required = true) userId: String,
+        @Valid @RequestBody request: UserDto.UpsertMyTrackingRequest
+    ): ResponseEntity<ResponseDto.Success<UserDto.UserTracking>> {
+        val request = UserDtoMapper.toUpsertTrackingRequest(userId, request)
+        val userTracking = userUseCase.updateUserTracking(request)
+        return ResponseDtoUtil.okResponse(UserDtoMapper.of(userTracking), "프로필 업데이트 성공")
+    }
+
 }

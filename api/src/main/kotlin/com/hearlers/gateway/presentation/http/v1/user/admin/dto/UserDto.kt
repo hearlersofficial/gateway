@@ -22,6 +22,18 @@ object UserDto {
         val deletedAt: String?
     )
 
+    @Schema(description = "유저 트래킹 정보")
+    data class UserTracking(
+        @field:Schema(description = "인트로 컷씬 시청 유무")
+        val hasSeenIntroCutscene: Boolean,
+        @field:Schema(description = "생성 시간")
+        val createdAt: String,
+        @field:Schema(description = "수정 시간")
+        val updatedAt: String,
+        @field:Schema(description = "삭제 시간", nullable = true)
+        val deletedAt: String?
+    )
+
     @Schema(description = "유저 프로필 정보")
     data class UserProfile(
         @field:Schema(description = "프로필 이미지 URL", nullable = true)
@@ -38,5 +50,11 @@ object UserDto {
     data class FindUserByIdResponse(
         @field:Schema(description = "유저 정보")
         val user: User
+    )
+
+    @Schema(description = "유저 트래킹 조회 응답")
+    data class FindUserTrackingResponse(
+        @field:Schema(description = "유저 트래킹 정보")
+        val userTracking: UserTracking
     )
 }

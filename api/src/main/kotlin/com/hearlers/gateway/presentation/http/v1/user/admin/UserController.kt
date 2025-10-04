@@ -1,6 +1,6 @@
 package com.hearlers.gateway.presentation.http.v1.user.admin
 
-import com.hearlers.api.proto.v1.model.user
+import com.hearlers.api.proto.v1.service.findUserByUserIdRequest
 import com.hearlers.gateway.UserUseCase
 import com.hearlers.gateway.presentation.http.v1.user.admin.dto.UserDto
 import com.hearlers.gateway.presentation.http.v1.user.admin.mapper.UserDtoMapper
@@ -24,7 +24,8 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/v1/admin/users")
 @Tag(name = "어드민/유저", description = "유저 관련 API")
 class UserController(
-    private val userUseCase: UserUseCase
+    private val userUseCase: UserUseCase,
+    useCase: UserUseCase
 ) {
 
     @Operation(summary = "유저 단건 조회", description = "유저를 단건 조회합니다.")
@@ -40,10 +41,28 @@ class UserController(
     )
     @GetMapping("/{user-id}")
     fun getUser(@PathVariable("user-id") userId: String): ResponseEntity<ResponseDto.Success<UserDto.FindUserByIdResponse>> {
-        val findUserRequest = UserDtoMapper.toFindUserByUserIdRequest(userId)
+        val findUserRequest = findUserByUserIdRequest { this.userId = userId }
         val user = userUseCase.findUserByUserId(findUserRequest)
                 ?: throw HttpException(HttpResultCode.NOT_FOUND)
-        val response = UserDtoMapper.toFindUserByIdResponse(user)
+        val response = UserDto.FindUserByIdResponse(UserDtoMapper.of(user))
+        return ResponseDtoUtil.okResponse(response, "유저 조회 성공")
+    }
+
+    @Operation(summary = "유저 트래킹 조회", description = "유저 트래킹을 단건 조회합니다. 존재하지 않으면 기본 값으로 생성됩니다.")
+    @ApiResponses(
+        value = [
+            ApiResponse(responseCode = "200", description = "유저 조회 성공"),
+            ApiResponse(
+                responseCode = "404",
+                description = "유저를 찾을 수 없음",
+                content = [Content(schema = Schema(implementation = ResponseDto.Error::class))]
+            )
+        ]
+    )
+    @GetMapping("/{user-id}/tracking")
+    fun getUserTracking(@PathVariable("user-id") userId: String): ResponseEntity<ResponseDto.Success<UserDto.FindUserTrackingResponse>> {
+        val userTracking = userUseCase.getUserTrackingByUserId(userId)
+        val response = UserDto.FindUserTrackingResponse(UserDtoMapper.of(userTracking))
         return ResponseDtoUtil.okResponse(response, "유저 조회 성공")
     }
 }

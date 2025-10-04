@@ -1,6 +1,7 @@
 package com.hearlers.gateway.port
 
 import com.hearlers.api.proto.v1.model.User
+import com.hearlers.api.proto.v1.model.UserTracking
 import com.hearlers.api.proto.v1.service.*
 
 
@@ -9,4 +10,6 @@ interface UserPort {
     fun updateUser(request: UpdateUserRequest): User
     fun checkRemainingTokens(request: CheckRemainingTokensRequest): CheckRemainingTokensResponse
     fun reserveToken(request: ReserveTokensRequest): ReserveTokensResponse
+    fun getUserTrackingByUserId(userId: String): UserTracking
+    fun upsertUserTracking(request: UpdateTrackingRequest): UserTracking
 }
