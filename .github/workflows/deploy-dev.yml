@@ -14,6 +14,7 @@ env:
   GRPC_NEST_TARGET: ${{ secrets.DEV_GRPC_NEST_TARGET }}
   REDIS_HOST: ${{ secrets.DEV_REDIS_HOST }}
   REDIS_PORT: ${{ secrets.DEV_REDIS_PORT }}
+  GIT_SHA: ${{ github.sha }}
 
 jobs:
   build:
@@ -47,7 +48,9 @@ jobs:
           platforms: linux/amd64
           context: .
           push: true
-          tags: ${{ env.DOCKER_IMAGE }}:latest
+          tags: |
+            ${{ env.DOCKER_IMAGE }}:${{ env.GIT_SHA }}
+            ${{ env.DOCKER_IMAGE }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
@@ -116,7 +119,7 @@ jobs:
             --create-namespace \
             --wait \
             --set image.repository=${{ env.DOCKER_IMAGE }} \
-            --set image.tag=latest \
+            --set image.tag=${{ env.GIT_SHA }} \
             --set env.KAKAO_CLIENT_ID='${{ env.KAKAO_CLIENT_ID }}' \
             --set env.KAKAO_ADMIN_KEY='${{ env.KAKAO_ADMIN_KEY }}' \
             --set env.JWT_SECRET='${{ env.JWT_SECRET }}' \
