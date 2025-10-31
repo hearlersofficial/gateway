@@ -6,12 +6,15 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
 import jakarta.servlet.ServletException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @Slf4j
 @RestControllerAdvice
@@ -63,6 +66,13 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ResponseDto.Error<Object>> handleHttpMessageNotReadable(
+            HttpMessageNotReadableException ex) {
+
+        return ResponseDtoUtil.errorResponse(HttpResultCode.NOT_FOUND, "유효하지 않은 요청입니다. 형식을 확인해 주세요.");
+    }
+
     /**
      * ServletException 처리
      */
@@ -90,6 +100,14 @@ public class GlobalExceptionHandler {
                     "지원하지 않는 HTTP Method입니다."
             );
         }
+
+        if (rootCause instanceof  NoResourceFoundException resourceFoundException) {
+            return ResponseDtoUtil.errorResponse(
+                    HttpResultCode.NOT_FOUND,
+                    "적합한 리소스를 찾을 수 없습니다. URI를 확인해주세요."
+            );
+        }
+
 
         // 기본 서버 오류 처리
     
